@@ -1,0 +1,787 @@
+[
+  {
+    "dataset": "carrot_weeds_germany",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 52.18,
+    "epochs": 50
+  },
+  {
+    "dataset": "sugarbeet_weed_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 53.59,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_flower_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 68.38,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_segmentation_minnesota",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 79.08,
+    "epochs": 50
+  },
+  {
+    "dataset": "rice_seedling_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 52.2,
+    "epochs": 50
+  },
+  {
+    "dataset": "peachpear_flower_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 72.58,
+    "epochs": 50
+  },
+  {
+    "dataset": "red_grapes_and_leaves_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 49.18,
+    "epochs": 50
+  },
+  {
+    "dataset": "white_grapes_and_leaves_segmentation",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 51.93,
+    "epochs": 50
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 69.01,
+    "epochs": 50
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 63.99,
+    "epochs": 50
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "segmentation",
+    "metricName": "mIOU",
+    "metricValue": 70.35,
+    "epochs": 50
+  },
+  {
+    "dataset": "mango_detection_australia",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 95.32,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_detection_usa",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 94.16,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 86.65,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP",
+    "metricValue": 79.62,
+    "epochs": 50
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5072494132458618,
+    "model": "yolo11l",
+    "mAP50": 0.8601733668427034,
+    "precision": 0.8104349835380228,
+    "recall": 0.7988342667927443
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5134246428119603,
+    "model": "yolo11m",
+    "mAP50": 0.8992294395315695,
+    "precision": 0.8608394830617053,
+    "recall": 0.7991967871485943
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5022398615976896,
+    "model": "yolo11n",
+    "mAP50": 0.8956789461187679,
+    "precision": 0.8507723684861725,
+    "recall": 0.8225628237831374
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4866340253378222,
+    "model": "yolo11s",
+    "mAP50": 0.8609606179092347,
+    "precision": 0.7951189701449942,
+    "recall": 0.8106776508309076
+  },
+  {
+    "dataset": "apple_detection_drone_brazil",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5166210943431347,
+    "model": "yolo11x",
+    "mAP50": 0.910928163353364,
+    "precision": 0.8069007869601802,
+    "recall": 0.8775295985640813
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.579262748646173,
+    "model": "yolo11l",
+    "mAP50": 0.9371364896175589,
+    "precision": 0.895859485025347,
+    "recall": 0.8555849489543671
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6027847361615526,
+    "model": "yolo11m",
+    "mAP50": 0.9436276131565261,
+    "precision": 0.886427547531193,
+    "recall": 0.8813830876330876
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5968358978532009,
+    "model": "yolo11n",
+    "mAP50": 0.9422717351592312,
+    "precision": 0.8772810873702708,
+    "recall": 0.8794449125384377
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5950217456217229,
+    "model": "yolo11s",
+    "mAP50": 0.9460649029636068,
+    "precision": 0.9028280294123243,
+    "recall": 0.8805440582444066
+  },
+  {
+    "dataset": "apple_detection_spain",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5872286398209259,
+    "model": "yolo11x",
+    "mAP50": 0.9251687653229144,
+    "precision": 0.8854823467235927,
+    "recall": 0.8588322246858833
+  },
+  {
+    "dataset": "apple_detection_usa",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7811112753679461,
+    "model": "yolo11n",
+    "mAP50": 0.9748424668962935,
+    "precision": 0.9270838048818623,
+    "recall": 0.9338242039905568
+  },
+  {
+    "dataset": "apple_detection_usa",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.8303136510701614,
+    "model": "yolo11s",
+    "mAP50": 0.9798209001351015,
+    "precision": 0.9470802220658486,
+    "recall": 0.9347684279191129
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5416057642125035,
+    "model": "yolo11l",
+    "mAP50": 0.8641094337838477,
+    "precision": 0.7840810800621841,
+    "recall": 0.8191062145159602
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4507520456030815,
+    "model": "yolo11m",
+    "mAP50": 0.7917153211939195,
+    "precision": 0.7699396847252584,
+    "recall": 0.7049490920251014
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5653289765966472,
+    "model": "yolo11n",
+    "mAP50": 0.9282310037207211,
+    "precision": 0.9226956515783662,
+    "recall": 0.8428619967059985
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5785717028098898,
+    "model": "yolo11s",
+    "mAP50": 0.9011810080939855,
+    "precision": 0.8749349608578184,
+    "recall": 0.8491066178862222
+  },
+  {
+    "dataset": "fruit_detection_worldwide",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5012090094387892,
+    "model": "yolo11x",
+    "mAP50": 0.7872813915634435,
+    "precision": 0.78655473099151,
+    "recall": 0.7043307364199446
+  },
+  {
+    "dataset": "ghai_broccoli_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5635296062946676,
+    "model": "yolo11l",
+    "mAP50": 0.7428713423394218,
+    "precision": 0.7409921665653947,
+    "recall": 0.7277157702805868
+  },
+  {
+    "dataset": "ghai_broccoli_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5599340879416073,
+    "model": "yolo11m",
+    "mAP50": 0.7584831482913197,
+    "precision": 0.7576714485757008,
+    "recall": 0.7369239726716079
+  },
+  {
+    "dataset": "ghai_broccoli_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.469799986880626,
+    "model": "yolo11n",
+    "mAP50": 0.6838369761182593,
+    "precision": 0.7377016001185307,
+    "recall": 0.6524970264004617
+  },
+  {
+    "dataset": "ghai_broccoli_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5386676297103012,
+    "model": "yolo11s",
+    "mAP50": 0.7388249529707553,
+    "precision": 0.7329678146138658,
+    "recall": 0.724735813460258
+  },
+  {
+    "dataset": "ghai_broccoli_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5935923090810958,
+    "model": "yolo11x",
+    "mAP50": 0.7708247492458355,
+    "precision": 0.7672524763778574,
+    "recall": 0.7342813692020289
+  },
+  {
+    "dataset": "ghai_green_cabbage_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7118640967709261,
+    "model": "yolo11l",
+    "mAP50": 0.9116406496856747,
+    "precision": 0.8613838860312255,
+    "recall": 0.8429330535008768
+  },
+  {
+    "dataset": "ghai_green_cabbage_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6944137082286287,
+    "model": "yolo11m",
+    "mAP50": 0.8907064681223883,
+    "precision": 0.8673449730257053,
+    "recall": 0.8342857142857143
+  },
+  {
+    "dataset": "ghai_green_cabbage_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6591389190599897,
+    "model": "yolo11n",
+    "mAP50": 0.8691196766626649,
+    "precision": 0.8355977884325566,
+    "recall": 0.8151426059182874
+  },
+  {
+    "dataset": "ghai_green_cabbage_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7139257965173013,
+    "model": "yolo11s",
+    "mAP50": 0.9102921460534825,
+    "precision": 0.8857430201563139,
+    "recall": 0.8585525715610961
+  },
+  {
+    "dataset": "ghai_green_cabbage_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.704366630205667,
+    "model": "yolo11x",
+    "mAP50": 0.9109117546708069,
+    "precision": 0.8884185216941978,
+    "recall": 0.8343497989006972
+  },
+  {
+    "dataset": "ghai_iceberg_lettuce_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5308984079738271,
+    "model": "yolo11l",
+    "mAP50": 0.880281737114181,
+    "precision": 0.8842813590120964,
+    "recall": 0.78
+  },
+  {
+    "dataset": "ghai_iceberg_lettuce_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5447845441322091,
+    "model": "yolo11m",
+    "mAP50": 0.8882337959487256,
+    "precision": 0.8565205192561391,
+    "recall": 0.852
+  },
+  {
+    "dataset": "ghai_iceberg_lettuce_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5689564386149899,
+    "model": "yolo11n",
+    "mAP50": 0.8951989397183541,
+    "precision": 0.9075705684362595,
+    "recall": 0.8520705116070535
+  },
+  {
+    "dataset": "ghai_iceberg_lettuce_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5381306510663206,
+    "model": "yolo11s",
+    "mAP50": 0.8701965203008429,
+    "precision": 0.8848128837651625,
+    "recall": 0.7824267782426778
+  },
+  {
+    "dataset": "ghai_iceberg_lettuce_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5270984046669671,
+    "model": "yolo11x",
+    "mAP50": 0.8649674277006355,
+    "precision": 0.8744060262501543,
+    "recall": 0.7860519492425313
+  },
+  {
+    "dataset": "ghai_romaine_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7699090606095494,
+    "model": "yolo11l",
+    "mAP50": 0.9193170125873877,
+    "precision": 0.9368473966694478,
+    "recall": 0.8546757717214724
+  },
+  {
+    "dataset": "ghai_romaine_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7907666278321335,
+    "model": "yolo11m",
+    "mAP50": 0.9444871705216602,
+    "precision": 0.9313772904604823,
+    "recall": 0.8590308370044053
+  },
+  {
+    "dataset": "ghai_romaine_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7745598409185308,
+    "model": "yolo11n",
+    "mAP50": 0.9274152280108815,
+    "precision": 0.9536018902378349,
+    "recall": 0.8477366255144033
+  },
+  {
+    "dataset": "ghai_romaine_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7972501823711204,
+    "model": "yolo11s",
+    "mAP50": 0.9511326333399283,
+    "precision": 0.9421641001234269,
+    "recall": 0.8611664812460607
+  },
+  {
+    "dataset": "ghai_romaine_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7400014802754252,
+    "model": "yolo11x",
+    "mAP50": 0.9086774326923178,
+    "precision": 0.9223680838425339,
+    "recall": 0.8123984591915938
+  },
+  {
+    "dataset": "ghai_strawberry_fruit_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.36858859954370954,
+    "model": "yolo11l",
+    "mAP50": 0.5360449682848161,
+    "precision": 0.6448881162125962,
+    "recall": 0.49763784192355615
+  },
+  {
+    "dataset": "ghai_strawberry_fruit_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.27921732332490995,
+    "model": "yolo11m",
+    "mAP50": 0.444863565990511,
+    "precision": 0.5757778491011301,
+    "recall": 0.4415712268148009
+  },
+  {
+    "dataset": "ghai_strawberry_fruit_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.26189911059565196,
+    "model": "yolo11n",
+    "mAP50": 0.43768460776658524,
+    "precision": 0.43024502781160584,
+    "recall": 0.47812476497970713
+  },
+  {
+    "dataset": "ghai_strawberry_fruit_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.2693731453786905,
+    "model": "yolo11s",
+    "mAP50": 0.39689324528219905,
+    "precision": 0.5058797129220138,
+    "recall": 0.3943899456162283
+  },
+  {
+    "dataset": "ghai_strawberry_fruit_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.3375521022306996,
+    "model": "yolo11x",
+    "mAP50": 0.47375836147430367,
+    "precision": 0.5031699374002283,
+    "recall": 0.4661095882326068
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4349909954379633,
+    "model": "yolo11l",
+    "mAP50": 0.7488084760197763,
+    "precision": 0.7359297112238289,
+    "recall": 0.6666666666666666
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4722895973277059,
+    "model": "yolo11m",
+    "mAP50": 0.8077534084598061,
+    "precision": 0.7773064938902419,
+    "recall": 0.7374353226465903
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4354202972550957,
+    "model": "yolo11n",
+    "mAP50": 0.7950193029970769,
+    "precision": 0.7763716212075286,
+    "recall": 0.6999522564038694
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.4587987241064469,
+    "model": "yolo11s",
+    "mAP50": 0.7758377164119181,
+    "precision": 0.7714644290308007,
+    "recall": 0.7016129032258065
+  },
+  {
+    "dataset": "grape_detection_californiaday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.46120749873436406,
+    "model": "yolo11x",
+    "mAP50": 0.7929902314501572,
+    "precision": 0.7741723749893685,
+    "recall": 0.7342657342657343
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.38727844233662967,
+    "model": "yolo11l",
+    "mAP50": 0.7789473565331466,
+    "precision": 0.8205106047713361,
+    "recall": 0.714765100671141
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.3955797325963587,
+    "model": "yolo11m",
+    "mAP50": 0.7597497390103658,
+    "precision": 0.7498171113931226,
+    "recall": 0.6684950129807627
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.38862968136840154,
+    "model": "yolo11n",
+    "mAP50": 0.7710866835242444,
+    "precision": 0.8047380714047381,
+    "recall": 0.6868892702226036
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.437436860925854,
+    "model": "yolo11s",
+    "mAP50": 0.8017478762899578,
+    "precision": 0.7567877803719415,
+    "recall": 0.7690381054281749
+  },
+  {
+    "dataset": "grape_detection_californianight",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.45322934116927815,
+    "model": "yolo11x",
+    "mAP50": 0.7811544936516707,
+    "precision": 0.736821555156227,
+    "recall": 0.7449392712550608
+  },
+  {
+    "dataset": "grape_detection_syntheticday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.720114342036841,
+    "model": "yolo11l",
+    "mAP50": 0.9180702791053456,
+    "precision": 0.9479649653275937,
+    "recall": 0.8096817356076615
+  },
+  {
+    "dataset": "grape_detection_syntheticday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6451196561441267,
+    "model": "yolo11m",
+    "mAP50": 0.8824423748033108,
+    "precision": 0.9209415736623586,
+    "recall": 0.7480933095611995
+  },
+  {
+    "dataset": "grape_detection_syntheticday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6597935907906964,
+    "model": "yolo11n",
+    "mAP50": 0.8866848206786255,
+    "precision": 0.967477944679693,
+    "recall": 0.7243090046568308
+  },
+  {
+    "dataset": "grape_detection_syntheticday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6526962340923247,
+    "model": "yolo11s",
+    "mAP50": 0.8756332872383675,
+    "precision": 0.937753124746368,
+    "recall": 0.7158730158730159
+  },
+  {
+    "dataset": "grape_detection_syntheticday",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.6670388816374231,
+    "model": "yolo11x",
+    "mAP50": 0.8939851564733988,
+    "precision": 0.9046948366020652,
+    "recall": 0.7638888888888888
+  },
+  {
+    "dataset": "mango_detection_australia",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7329004634628975,
+    "model": "yolo11n",
+    "mAP50": 0.9905041965687286,
+    "precision": 0.9608107469068398,
+    "recall": 0.9592006661115737
+  },
+  {
+    "dataset": "mango_detection_australia",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7417234866786149,
+    "model": "yolo11s",
+    "mAP50": 0.9897904628631954,
+    "precision": 0.9621686178541151,
+    "recall": 0.9601259181532005
+  },
+  {
+    "dataset": "plant_doc_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.28933845111216405,
+    "model": "yolo11n",
+    "mAP50": 0.49983071722743755,
+    "precision": 0.5699978210221228,
+    "recall": 0.4667694854146501
+  },
+  {
+    "dataset": "plant_doc_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.3287203928993561,
+    "model": "yolo11s",
+    "mAP50": 0.5618029491774192,
+    "precision": 0.5208979589174184,
+    "recall": 0.5696899647509104
+  },
+  {
+    "dataset": "tomato_ripeness_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.7272230615344513,
+    "model": "yolo11n",
+    "mAP50": 0.8782874784766541,
+    "precision": 0.8604115397443802,
+    "recall": 0.797066972977987
+  },
+  {
+    "dataset": "tomato_ripeness_detection",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.766808600552848,
+    "model": "yolo11s",
+    "mAP50": 0.9121278256507654,
+    "precision": 0.8229190445960298,
+    "recall": 0.8835138959024996
+  },
+  {
+    "dataset": "wheat_head_counting",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5784247103757646,
+    "model": "yolo11l",
+    "mAP50": 0.9340138625325242,
+    "precision": 0.9245879212203956,
+    "recall": 0.8779604425952586
+  },
+  {
+    "dataset": "wheat_head_counting",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5713564029858087,
+    "model": "yolo11m",
+    "mAP50": 0.9366175742380312,
+    "precision": 0.9183902766224068,
+    "recall": 0.8840558731996816
+  },
+  {
+    "dataset": "wheat_head_counting",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5556535027937193,
+    "model": "yolo11n",
+    "mAP50": 0.9281931030761819,
+    "precision": 0.9171613583006002,
+    "recall": 0.8632682396662342
+  },
+  {
+    "dataset": "wheat_head_counting",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5679245907418896,
+    "model": "yolo11s",
+    "mAP50": 0.93777255866261,
+    "precision": 0.9254287063231834,
+    "recall": 0.8788046106055802
+  },
+  {
+    "dataset": "wheat_head_counting",
+    "task": "detection",
+    "metricName": "mAP50-95",
+    "metricValue": 0.5721022258377911,
+    "model": "yolo11x",
+    "mAP50": 0.9271253514411493,
+    "precision": 0.9223821425244931,
+    "recall": 0.8769885342336543
+  }
+]
