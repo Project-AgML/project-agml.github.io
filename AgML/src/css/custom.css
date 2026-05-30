@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2d8b5b;
+  --ifm-color-primary-dark: #267b50;
+  --ifm-color-primary-darker: #236f48;
+  --ifm-color-primary-darkest: #1b5a3a;
+  --ifm-color-primary-light: #3aa96d;
+  --ifm-color-primary-lighter: #45b879;
+  --ifm-color-primary-lightest: #66cf95;
+  --ifm-font-family-base: 'Space Grotesk', 'Noto Sans', sans-serif;
+  --ifm-heading-font-family: 'Fraunces', 'Ibarra Real Nova', serif;
+  --ifm-code-font-family: 'Source Code Pro', 'Fira Code', monospace;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(16, 28, 22, 0.08);
+  --agml-page-bg: linear-gradient(130deg, #f6f3ec 0%, #eaf4ee 45%, #f4efe6 100%);
+  --agml-surface: rgba(255, 255, 255, 0.88);
+  --agml-surface-strong: rgba(255, 255, 255, 0.95);
+  --agml-surface-soft: rgba(234, 244, 238, 0.8);
+  --agml-border: rgba(25, 45, 33, 0.12);
+  --agml-border-strong: rgba(25, 45, 33, 0.18);
+  --agml-shadow: 0 20px 40px rgba(25, 45, 33, 0.08);
+  --agml-shadow-strong: 0 28px 60px rgba(25, 45, 33, 0.12);
+  --agml-text: #1c2b21;
+  --agml-muted: #4a5f52;
+  --agml-accent-soft: rgba(45, 139, 91, 0.15);
+  --agml-accent-border: rgba(45, 139, 91, 0.35);
+  --agml-warning-soft: rgba(189, 139, 76, 0.12);
+  --agml-warning-text: #7a4e2a;
+  --ifm-background-color: transparent;
+  --ifm-navbar-background-color: var(--agml-surface);
+  --ifm-footer-background-color: var(--agml-surface);
+  --ifm-card-background-color: var(--agml-surface-strong);
+  --ifm-toc-background-color: var(--agml-surface);
+  --ifm-toc-border-color: var(--agml-border);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+html[data-theme='dark'] {
+  --ifm-color-primary: #5ccf9a;
+  --ifm-color-primary-dark: #44b983;
+  --ifm-color-primary-darker: #3aa975;
+  --ifm-color-primary-darkest: #2f8a5f;
+  --ifm-color-primary-light: #6fdaaa;
+  --ifm-color-primary-lighter: #7fe1b6;
+  --ifm-color-primary-lightest: #9fe9c9;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.35);
+  --agml-page-bg: linear-gradient(130deg, #0d1410 0%, #101b15 45%, #151f18 100%);
+  --agml-surface: rgba(18, 26, 21, 0.88);
+  --agml-surface-strong: rgba(21, 30, 24, 0.96);
+  --agml-surface-soft: rgba(32, 43, 36, 0.9);
+  --agml-border: rgba(255, 255, 255, 0.09);
+  --agml-border-strong: rgba(255, 255, 255, 0.14);
+  --agml-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+  --agml-shadow-strong: 0 28px 60px rgba(0, 0, 0, 0.34);
+  --agml-text: #e8f0ea;
+  --agml-muted: #a6b7ad;
+  --agml-accent-soft: rgba(92, 207, 154, 0.16);
+  --agml-accent-border: rgba(92, 207, 154, 0.3);
+  --agml-warning-soft: rgba(189, 139, 76, 0.18);
+  --agml-warning-text: #d9b084;
+  --ifm-background-color: transparent;
+  --ifm-navbar-background-color: var(--agml-surface);
+  --ifm-footer-background-color: var(--agml-surface);
+  --ifm-card-background-color: var(--agml-surface-strong);
+  --ifm-toc-background-color: var(--agml-surface);
+  --ifm-toc-border-color: var(--agml-border);
+}
+
+html,
+body,
+#__docusaurus {
+  background: var(--agml-page-bg);
+  color: var(--agml-text);
+}
+
+body {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar,
+.footer,
+.main-wrapper,
+.theme-doc-markdown,
+.theme-doc-sidebar-container,
+.theme-doc-sidebar-menu,
+.table-of-contents,
+.pagination-nav,
+.card,
+.theme-admonition,
+.theme-code-block,
+.table-of-contents__link {
+  color: var(--agml-text);
+}
+
+.navbar,
+.footer,
+.main-wrapper,
+.theme-doc-markdown,
+.theme-doc-sidebar-container,
+.table-of-contents,
+.pagination-nav,
+.card,
+.theme-admonition,
+.theme-code-block {
+  background: var(--agml-surface);
+  border-color: var(--agml-border);
+  box-shadow: var(--agml-shadow);
+}
+
+.navbar,
+.footer {
+  backdrop-filter: blur(14px);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--agml-border);
+}
+
+.footer {
+  border-top: 1px solid var(--agml-border);
+}
+
+.theme-doc-markdown {
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.main-wrapper {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--agml-border);
+}
+
+.theme-doc-sidebar-item-link,
+.table-of-contents__link,
+.menu__link,
+.navbar__link,
+.footer__link-item {
+  color: var(--agml-text);
+}
+
+.theme-doc-sidebar-item-link--active,
+.menu__link--active,
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+.theme-code-block pre,
+.prism-code {
+  background: var(--agml-surface-strong) !important;
+}

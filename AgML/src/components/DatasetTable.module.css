@@ -1,0 +1,119 @@
+.section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: var(--agml-surface);
+  border: 1px solid var(--agml-border);
+  box-shadow: var(--agml-shadow);
+  color: var(--agml-text);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.count {
+  font-weight: 600;
+  margin: 0;
+  color: var(--agml-text);
+}
+
+.helper {
+  margin: 0.35rem 0 0;
+  color: var(--agml-muted);
+  font-size: 0.9rem;
+}
+
+.searchLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--agml-muted);
+}
+
+.searchInput {
+  min-width: 220px;
+  border-radius: 999px;
+  border: 1px solid var(--agml-border-strong);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  background: var(--agml-surface-strong);
+  color: var(--agml-text);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2f8a5b;
+  box-shadow: 0 0 0 3px rgba(47, 138, 91, 0.15);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  background: var(--agml-surface-strong);
+  border: 1px solid var(--agml-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--agml-border);
+  text-align: left;
+}
+
+.datasetButton {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #2f8a5b;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.datasetButton:hover,
+.datasetButton:focus-visible {
+  text-decoration: underline;
+}
+
+.datasetButton:focus-visible {
+  outline: 2px solid #2f8a5b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--agml-muted);
+  background: var(--agml-surface-soft);
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.status {
+  color: var(--agml-muted);
+}
+
+:global(html[data-theme='dark']) .tableWrap {
+  background: var(--agml-surface-strong);
+}
