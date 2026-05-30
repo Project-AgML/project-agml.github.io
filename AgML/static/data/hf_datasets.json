@@ -1,0 +1,63 @@
+[
+  {
+    "name": "HF Demo Dataset",
+    "machine_learning_task": "classification",
+    "agricultural_task": "crop_health_monitoring",
+    "location": [
+      "France",
+      "Spain",
+      "Italy"
+    ],
+    "environment": "lab",
+    "augmented_num_images": 480,
+    "crop_types": [
+      "tomato",
+      "pepper",
+      "lettuce"
+    ],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "huggingface",
+    "input_data_format": "image_folder",
+    "annotation_format": "folder_names",
+    "num_images": 0,
+    "documentation": "https://huggingface.co/datasets/your-org/hf-demo-dataset",
+    "classes": [
+      "healthy",
+      "diseased"
+    ],
+    "stats_mean": null,
+    "stats_std": null,
+    "examples_image_url": null,
+    "license": null,
+    "citation": null,
+    "parent_dataset": null,
+    "zip_size_bytes": null,
+    "source": "huggingface"
+  },
+  {
+    "name": "HF Demo Dataset 2",
+    "machine_learning_task": "detection",
+    "agricultural_task": "crop_health_monitoring",
+    "location": "global",
+    "environment": "field",
+    "crop_types": [
+      "grapes"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "huggingface",
+    "input_data_format": "image_folder",
+    "annotation_format": "hf",
+    "num_images": 20,
+    "documentation": "https://huggingface.co/datasets/your-org/hf-demo-dataset",
+    "classes": "",
+    "stats_mean": null,
+    "stats_std": null,
+    "examples_image_url": null,
+    "license": null,
+    "citation": null,
+    "parent_dataset": null,
+    "zip_size_bytes": null,
+    "source": "huggingface"
+  }
+]

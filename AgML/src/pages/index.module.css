@@ -1,0 +1,192 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--agml-page-bg);
+  color: var(--agml-text);
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle at top, rgba(44, 133, 90, 0.45), transparent 70%);
+}
+
+.hero::after {
+  width: 340px;
+  height: 340px;
+  bottom: -140px;
+  right: -90px;
+  background: radial-gradient(circle at bottom, var(--agml-warning-soft), transparent 70%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--agml-muted);
+  margin: 0 0 0.8rem;
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 3vw, 3.6rem);
+  margin-bottom: 1rem;
+  color: var(--agml-text);
+}
+
+.heroSubtitle {
+  font-size: 1.05rem;
+  color: var(--agml-muted);
+  margin: 0 0 1.8rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: var(--agml-text);
+  color: #fff;
+  box-shadow: var(--agml-shadow);
+}
+
+.secondaryButton {
+  border: 1px solid var(--agml-border-strong);
+  color: var(--agml-text);
+  background: var(--agml-surface);
+}
+
+.heroVisual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.heroVisual img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid var(--agml-border);
+  box-shadow: var(--agml-shadow-strong);
+  background: var(--agml-surface-strong);
+}
+
+.main {
+  padding: 3.5rem 2rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.highlightCard {
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: var(--agml-surface-strong);
+  border: 1px solid var(--agml-border);
+  box-shadow: var(--agml-shadow);
+}
+
+.highlightCard h2 {
+  margin-top: 0;
+  color: var(--agml-text);
+}
+
+.highlightCard p {
+  margin-bottom: 0;
+  color: var(--agml-muted);
+}
+
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 2rem;
+  border-radius: 24px;
+  background: var(--agml-surface);
+  border: 1px solid var(--agml-border);
+  box-shadow: var(--agml-shadow);
+  color: var(--agml-text);
+}
+
+.mapSection {
+  display: grid;
+  gap: 1.8rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.mapImage {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--agml-border);
+  box-shadow: var(--agml-shadow);
+  background: var(--agml-surface-strong);
+}
+
+:global(html[data-theme='dark']) .hero::before {
+  opacity: 0.22;
+}
+
+:global(html[data-theme='dark']) .hero::after {
+  opacity: 0.18;
+}
+
+@media (max-width: 996px) {
+  .hero {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  .main {
+    padding: 3rem 1.5rem 3.5rem;
+  }
+}

@@ -1,0 +1,29 @@
+name: test-deploy
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: AgML/package-lock.json
+
+      - name: Install dependencies
+        working-directory: AgML
+        run: npm ci
+
+      - name: Build site
+        working-directory: AgML
+        run: npm run build
