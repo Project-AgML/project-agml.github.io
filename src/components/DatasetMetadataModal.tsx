@@ -24,6 +24,24 @@ function formatArray(value: number[] | null) {
 	return `[${value.map((entry) => entry.toFixed(3)).join(', ')}]`;
 }
 
+function formatBytesDecimal(bytes: number | null | undefined) {
+	if (bytes == null) return 'Unknown';
+	if (!Number.isFinite(bytes) || bytes < 0) return 'Unknown';
+
+	const units = ['B', 'kB', 'MB', 'GB', 'TB'];
+	let value = bytes;
+	let unitIndex = 0;
+
+	while (value >= 1000 && unitIndex < units.length - 1) {
+		value /= 1000;
+		unitIndex += 1;
+	}
+
+	const formatted = value >= 100 ? Math.round(value).toString() : value.toFixed(1);
+	const trimmed = formatted.endsWith('.0') ? formatted.slice(0, -2) : formatted;
+	return `${trimmed} ${units[unitIndex]}`;
+}
+
 function hasExampleImage(url: string | null): url is string {
 	return Boolean(url && url.startsWith('http'));
 }
@@ -82,6 +100,7 @@ export function DatasetMetadataModal({
 		['Input format', formatValue(dataset.input_data_format)],
 		['Annotation format', formatValue(dataset.annotation_format)],
 		['Number of images', formatImageCount(dataset.num_images)],
+		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
 	] as const;
 	const loader = formatLoaderInstructions(dataset);
 
@@ -121,6 +140,7 @@ export function DatasetMetadataModal({
 							<section className={styles.secondarySection}>
 								<h3 className={styles.sectionTitle}>Classes</h3>
 								<p className={styles.bodyText}>{dataset.classes}</p>
+
 							</section>
 						)}
 						{(dataset.stats_mean || dataset.stats_std) && (
