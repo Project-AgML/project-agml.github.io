@@ -6,7 +6,7 @@
     "location": [
       "Italy"
     ],
-    "environment": "real",
+    "environment": "field",
     "crop_types": [
       "grapes"
     ],
@@ -27,9 +27,10 @@
     "source": "huggingface"
   },
   {
-    "name": "Project-AgML/Strawberry-DS_strawberry_detection",
+    "name": "Strawberry-DS_strawberry_detection",
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_maturity_monitoring",
+    "real_or_synthetic": "real",
     "location": "Egypt",
     "environment": "field",
     "crop_types": [
@@ -56,6 +57,33 @@
     "citation": null,
     "parent_dataset": null,
     "zip_size_bytes": 293000000,
+    "source": "huggingface"
+  },
+  {
+    "name": "synthetic_cowpea_flower_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "environment": "field",
+    "real_or_synthetic": "synthetic",
+    "crop_types": [
+      "cowpea"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "ground",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 1634,
+    "augmented_num_images": 8170,
+    "classes": [
+      "Flower"
+    ],
+    "stats_mean": null,
+    "stats_std": null,
+    "examples_image_url": null,
+    "license": null,
+    "citation": null,
+    "parent_dataset": null,
+    "zip_size_bytes": 246700000,
     "source": "huggingface"
   }
 ]

@@ -50,8 +50,8 @@ function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
 		return {
 			title: 'Load from Hugging Face',
-			body: `Use agml.data.loadhfdataset("Project-AgML/${dataset.name}") to load this dataset from Hugging Face.`,
-			code: `import agml\n\nloader = agml.data.loadhfdataset("Project-AgML/${dataset.name}")`,
+			body: `Use agml.data.hf_loader.HuggingFaceDataLoader("Project-AgML/${dataset.name}") to load this dataset from Hugging Face.`,
+			code: `from agml.data.hf_loader import HuggingFaceDataLoader\n\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
 		};
 	}
 
