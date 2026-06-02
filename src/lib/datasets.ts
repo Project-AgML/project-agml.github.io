@@ -17,6 +17,7 @@ export interface Dataset {
   annotation_format: string | null;
   num_images: number | null;
   augmented_num_images: number | null;
+  augmented_zip_size_bytes: number | null;
   documentation: string | null;
   classes: string | null;
   stats_mean: number[] | null;
@@ -129,6 +130,7 @@ function normalizeDataset(raw: unknown): Dataset | null {
     annotation_format: firstString(raw.annotation_format),
     num_images: toNumber(raw.num_images ?? raw.n_images ?? raw.image_count),
     augmented_num_images: augmentedNumImages,
+    augmented_zip_size_bytes: toNumber(raw.augmented_zip_size_bytes ?? raw.augmentedZipSizeBytes),
     documentation: firstString(raw.documentation, raw.docs_url, raw.doc_url, raw.url),
     classes: toText(raw.classes),
     stats_mean: toNumberArray(raw.stats_mean ?? stats?.mean),
@@ -158,6 +160,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
     annotation_format: current.annotation_format ?? incoming.annotation_format,
     num_images: current.num_images ?? incoming.num_images,
     augmented_num_images: current.augmented_num_images ?? incoming.augmented_num_images,
+    augmented_zip_size_bytes: current.augmented_zip_size_bytes ?? incoming.augmented_zip_size_bytes,
     documentation: current.documentation ?? incoming.documentation,
     classes: current.classes ?? incoming.classes,
     stats_mean: current.stats_mean ?? incoming.stats_mean,

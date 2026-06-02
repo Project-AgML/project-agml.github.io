@@ -101,7 +101,13 @@ export function DatasetMetadataModal({
 		['Annotation format', formatValue(dataset.annotation_format)],
 		['Number of images', formatImageCount(dataset.num_images)],
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
-	] as const;
+		...(dataset.augmented_num_images != null
+			? ([['Augmented images', formatImageCount(dataset.augmented_num_images)]] as const)
+			: []),
+		...(dataset.augmented_zip_size_bytes != null
+			? ([['Augmented size', formatBytesDecimal(dataset.augmented_zip_size_bytes)]] as const)
+			: []),
+	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
 
 	return (
