@@ -27,6 +27,7 @@ export interface Dataset {
   citation: string | null;
   parent_dataset?: string | null;
   zip_size_bytes?: number | null;
+  hf_link?: string | null;
 }
 
 type DatasetRecord = Record<string, unknown>;
@@ -140,6 +141,7 @@ function normalizeDataset(raw: unknown): Dataset | null {
     citation: firstString(raw.citation),
     parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
     zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
+    hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
   };
 }
 
@@ -170,6 +172,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
     citation: current.citation ?? incoming.citation,
     parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
     zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
+    hf_link: current.hf_link ?? incoming.hf_link,
   };
 }
 

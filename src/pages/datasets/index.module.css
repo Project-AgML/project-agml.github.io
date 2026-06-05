@@ -526,7 +526,15 @@ html[data-theme='dark'] .dropdownOptionSelected {
 }
 
 html[data-theme='dark'] .chipActive {
-  color: #0d1410;
+  background: var(--agml-accent-soft);
+  color: var(--ifm-color-primary);
+  border-color: var(--agml-accent-border);
+}
+
+html[data-theme='dark'] .activeChip {
+  background: var(--agml-accent-soft);
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--agml-accent-border);
 }
 
 html[data-theme='dark'] .toggle input {

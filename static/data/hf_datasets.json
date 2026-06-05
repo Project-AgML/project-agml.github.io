@@ -24,7 +24,8 @@
     "citation": null,
     "parent_dataset": null,
     "zip_size_bytes": 1410000000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/wGrapeUNIPD-DL_white_grape_bunch_detection"
   },
   {
     "name": "Strawberry-DS_strawberry_detection",
@@ -57,7 +58,8 @@
     "citation": null,
     "parent_dataset": null,
     "zip_size_bytes": 293000000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Strawberry-DS_strawberry_detection"
   },
   {
     "name": "synthetic_cowpea_flower_detection",
@@ -85,7 +87,8 @@
     "parent_dataset": null,
     "zip_size_bytes": 246700000,
     "augmented_zip_size_bytes": 6020000000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_flower_detection"
   },
   {
     "name": "synthetic_cowpea_pod_detection",
@@ -113,7 +116,8 @@
     "parent_dataset": null,
     "zip_size_bytes": 222000000,
     "augmented_zip_size_bytes": 5440000000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_pod_detection"
   },
   {
     "name": "GEMINI_cowpea_pod_detection",
@@ -140,7 +144,8 @@
     "citation": null,
     "parent_dataset": null,
     "zip_size_bytes": 45600000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GEMINI_cowpea_pod_detection"
   },
   {
     "name": "GEMINI_cowpea_flower_detection",
@@ -167,7 +172,8 @@
     "citation": null,
     "parent_dataset": null,
     "zip_size_bytes": 79700000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GEMINI_cowpea_flower_detection"
   },
   {
     "name": "cotton_leaf_disease_classification",
@@ -197,6 +203,43 @@
     "citation": "Ripon, Shamim; Gani , Raiyan ; Niha, Nazratan Mazumder ; Rahat, Wasimul Bari ; Toufiq, Shafaeat Hasan ; Maisha, Mushfida Ferdous ; Ahmed, Jubaer  (2025), “Cotton Leaf Image Dataset for Disease Classification ”, Mendeley Data, V1, doi: 10.17632/t9hgvk2h9p.1",
     "zip_size_bytes": 61300000,
     "augmented_zip_size_bytes": 359300000,
-    "source": "huggingface"
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cotton_leaf_disease_classification"
+  },
+  {
+    "name": "eggplant_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "eggplant"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3116,
+    "augmented_num_images": 10000,
+    "classes": [
+      "Aphids",
+      "Cercospora Leaf Spot",
+      "Defect Eggplant",
+      "Flea Beetles",
+      "Fresh Eggplant",
+      "Fresh Eggplant Leaf",
+      "Leaf Wilt",
+      "Phytophthora Blight",
+      "Powdery Mildew",
+      "Tobacco Mosaic Virus"
+    ],
+    "examples_image_url": "/img/agml/sample_images/eggplant_leaf_disease_classification_sample.png",
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112140",
+    "citation": "Nirob, Md Asraful Sharker; Bishshash, Prayma; Ayan, Mariyam Bin; Khatun, Tania; Uddin, Mohammad Shorif (2024), “Eggplant Dataset: A Comprehensive Dataset for Agricultural Research and Disease Detection”, Mendeley Data, V1, doi: 10.17632/5drkk544k8.1",
+    "zip_size_bytes": 499400000,
+    "augmented_zip_size_bytes": 767800000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/eggplant_leaf_disease_classification"
   }
 ]

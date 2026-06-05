@@ -168,6 +168,12 @@
 	background: var(--agml-surface-strong);
 }
 
+.linkRow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
 .externalLink {
 	display: inline-flex;
 	width: fit-content;
@@ -184,6 +190,25 @@
 .externalLink:focus-visible {
 	background: var(--ifm-color-primary-dark);
 	border-color: var(--ifm-color-primary-dark);
+	outline: none;
+}
+
+.hfLink {
+	display: inline-flex;
+	width: fit-content;
+	border-radius: 999px;
+	padding: 0.6rem 1rem;
+	border: 1px solid #f5a000;
+	background: #f5a000;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.hfLink:hover,
+.hfLink:focus-visible {
+	background: #d98c00;
+	border-color: #d98c00;
 	outline: none;
 }
 

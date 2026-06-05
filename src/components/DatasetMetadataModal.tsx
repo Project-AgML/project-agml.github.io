@@ -178,10 +178,19 @@ export function DatasetMetadataModal({
 						<pre className={styles.codeBlock}>{loader.code}</pre>
 					</section>
 
-					{dataset.documentation && (
-						<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
-							Open source documentation
-						</a>
+					{(dataset.documentation || dataset.hf_link) && (
+						<div className={styles.linkRow}>
+							{dataset.documentation && (
+								<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
+									Open source documentation
+								</a>
+							)}
+							{dataset.hf_link && (
+								<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
+									View on Hugging Face
+								</a>
+							)}
+						</div>
 					)}
 				</div>
 			</div>
