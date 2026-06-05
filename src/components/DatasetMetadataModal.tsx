@@ -43,7 +43,7 @@ function formatBytesDecimal(bytes: number | null | undefined) {
 }
 
 function hasExampleImage(url: string | null): url is string {
-	return Boolean(url && url.startsWith('http'));
+	return Boolean(url);
 }
 
 function formatLoaderInstructions(dataset: Dataset) {
