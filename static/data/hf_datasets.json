@@ -241,5 +241,34 @@
     "augmented_zip_size_bytes": 767800000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/eggplant_leaf_disease_classification"
+  },
+  {
+    "name": "MoringaLeafNet_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "moringa"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2817,
+    "augmented_num_images": 11268,
+    "classes": [
+      "Bacterial Leaf Spot",
+      "Cercospora Leaf Spot",
+      "Healthy",
+      "Yellow"
+    ],
+    "license": "cc-by-nc-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112174",
+    "citation": "Khan, Abid; Preanto, Sabit Ahamed; Paul, Tapon; Bijoy, Md Hasan Imam (2025), “MoringaLeafNet: A Multi-Class Leaf Disease Dataset for Precision Agriculture and Deep Learning Research”, Mendeley Data, V5, doi: 10.17632/w8sr775pjb.5",
+    "zip_size_bytes": 1130000000,
+    "augmented_zip_size_bytes": 2860000000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MoringaLeafNet_disease_classification"
   }
 ]
