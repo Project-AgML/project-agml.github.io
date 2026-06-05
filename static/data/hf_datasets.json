@@ -173,7 +173,7 @@
     "name": "cotton_leaf_disease_classification",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
-    "location": "Bangladesh, India",
+    "location": "Dhaka, Bangladesh",
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
