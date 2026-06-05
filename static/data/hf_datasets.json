@@ -168,5 +168,35 @@
     "parent_dataset": null,
     "zip_size_bytes": 79700000,
     "source": "huggingface"
+  },
+  {
+    "name": "cotton_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Dhaka, Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cotton"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1373,
+    "augmented_num_images": 4963,
+    "classes": [
+      "Alternaria Leaf Spot",
+      "Bacterial Blight",
+      "Fusarium Wilt",
+      "Healthy Leaf",
+      "Verticillium Wilt"
+    ],
+    "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_sample.png",
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112142",
+    "citation": "Ripon, Shamim; Gani , Raiyan ; Niha, Nazratan Mazumder ; Rahat, Wasimul Bari ; Toufiq, Shafaeat Hasan ; Maisha, Mushfida Ferdous ; Ahmed, Jubaer  (2025), “Cotton Leaf Image Dataset for Disease Classification ”, Mendeley Data, V1, doi: 10.17632/t9hgvk2h9p.1",
+    "zip_size_bytes": 61300000,
+    "augmented_zip_size_bytes": 359300000,
+    "source": "huggingface"
   }
 ]
