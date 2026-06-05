@@ -125911,7 +125911,7 @@
     "agricultural_task": "None",
     "location": "None",
     "sensor_modality": "RGB",
-    "real_or_synthetic": "None",
+    "real_or_synthetic": "real",
     "platform": "None",
     "input_data_format": "jpg",
     "annotation_format": "coco_json",
