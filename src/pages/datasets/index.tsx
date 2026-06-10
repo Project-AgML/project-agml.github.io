@@ -393,7 +393,10 @@ export default function DatasetBrowserPage() {
     [safeData]
   );
   const totalImageCount = useMemo(
-    () => safeData.reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0),
+    () =>
+      safeData
+        .filter((dataset) => !dataset.parent_dataset && !dataset.name.startsWith('iNatAg-mini'))
+        .reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0),
     [safeData]
   );
 

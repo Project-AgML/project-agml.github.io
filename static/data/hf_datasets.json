@@ -270,5 +270,153 @@
     "augmented_zip_size_bytes": 2860000000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MoringaLeafNet_disease_classification"
+  },
+  {
+    "name": "ash_gourd_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "ash gourd"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2676,
+    "classes": [
+      "Aphid",
+      "Downy Mildew",
+      "Healthy",
+      "Leaf Curl",
+      "Leaf Miner"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111997",
+    "citation": "Jahan, Nusrat; Hasan, Md Zahid (2024), “Ash Gourd Leaf Healthy and Disease Dataset”, Mendeley Data, V2, doi: 10.17632/zj4th6xvdp.2",
+    "zip_size_bytes": 1170000000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ash_gourd_disease_classification"
+  },
+  {
+    "name": "jujube_bruise_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "health_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "jujube"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1464,
+    "augmented_num_images": 5856,
+    "classes": [
+      "Bruised",
+      "Healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112031",
+    "citation": "Tabib, Md Arham; Liza, Sumyia Sabrin; Rahman, Md Mizanur (2025), “JujubeBruiseNet: A Dataset for Bruise Detection in Ziziphus mauritiana”, Mendeley Data, V5, doi: 10.17632/3mtdhrwgfr.5",
+    "zip_size_bytes": 21700000,
+    "augmented_zip_size_bytes": 162900000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/jujube_bruise_classification"
+  },
+  {
+    "name": "MangoImageBD_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 5703,
+    "augmented_num_images": 17109,
+    "classes": [
+      "Amrapali",
+      "Ashshina Classic",
+      "Ashshina Zhinuk",
+      "Banana Mango",
+      "Bari-11",
+      "Bari-4",
+      "Fazli Classic",
+      "Fazli Shurmai",
+      "Gourmoti",
+      "Harivanga",
+      "Himsagor",
+      "Katimon",
+      "Langra",
+      "Rupali",
+      "Shada"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111908",
+    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Ahmed, Masud ; Rahoman, Md Mizanur; Islam, Mohammad Manzurul; Ali, Sawkat; Islam, Maheen; Rasel, Ahmed Abdal Shafi; Rahman, Md. Atiqur; Jabid, Taskeed; Ibrahim, Muhammad (2024), “MangoImageBD: An Extensive Image Dataset of Common and Popular Mango Varieties in Bangladesh for Identification and Classification”, Mendeley Data, V2, doi: 10.17632/hp2cdckpdr.2",
+    "zip_size_bytes": 163600000,
+    "augmented_zip_size_bytes": 1140000000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MangoImageBD_classification"
+  },
+  {
+    "name": "okra_maturity_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "okra"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 364,
+    "classes": [
+      "Mature",
+      "Over-Mature",
+      "Under-Mature"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111982",
+    "citation": "Bharathi, Nikhilesh Kumar; FJ, Ferbin ; Sivapatham, Shoba (2025), “Okra Image Dataset”, Mendeley Data, V1, doi: 10.17632/jmhz4826f2.1",
+    "zip_size_bytes": 62600000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/okra_maturity_classification"
+  },
+  {
+    "name": "pomegranate_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": "Iraq",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pomegranate"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2178,
+    "classes": [
+      "Colletotrichum spp",
+      "Ectomyelois ceratoniae",
+      "Healthy",
+      "Sunburn"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112298",
+    "citation": "Mohammed, B. A., Abdalla, P. A., & Hassan, H. O. (2025). Halabja Pomegranate Fruit Disease Image Dataset. Zenodo. https://doi.org/10.5281/zenodo.15856012",
+    "zip_size_bytes": 778600000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/pomegranate_disease_classification"
   }
 ]
