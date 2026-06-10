@@ -25,7 +25,10 @@
     "examples_image_url": "/img/agml/sample_images/almond_bloom_2023_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "almond"
+    ]
   },
   {
     "name": "almond_harvest_2021",
@@ -53,7 +56,10 @@
     "examples_image_url": "/img/agml/sample_images/almond_harvest_2021_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "almond"
+    ]
   },
   {
     "name": "apple_detection_drone_brazil",
@@ -81,7 +87,10 @@
     "examples_image_url": "/img/agml/sample_images/apple_detection_drone_brazil_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@article{DBLP:journals/corr/abs-2110-12331,\n  author    = {Thiago T. Santos and\n               Luciano Gebler},\n  title     = {A methodology for detection and localization of fruits in apples orchards\n               from aerial images},\n  journal   = {CoRR},\n  volume    = {abs/2110.12331},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2110.12331},\n  eprinttype = {arXiv},\n  eprint    = {2110.12331},\n  timestamp = {Thu, 28 Oct 2021 15:25:31 +0200},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}"
+    "citation": "@article{DBLP:journals/corr/abs-2110-12331,\n  author    = {Thiago T. Santos and\n               Luciano Gebler},\n  title     = {A methodology for detection and localization of fruits in apples orchards\n               from aerial images},\n  journal   = {CoRR},\n  volume    = {abs/2110.12331},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2110.12331},\n  eprinttype = {arXiv},\n  eprint    = {2110.12331},\n  timestamp = {Thu, 28 Oct 2021 15:25:31 +0200},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
+    "crop_types": [
+      "apple"
+    ]
   },
   {
     "name": "apple_detection_spain",
@@ -109,7 +118,10 @@
     "examples_image_url": "/img/agml/sample_images/apple_detection_spain_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, RGB-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle “Multi-modal Deep Learning for Fruit Detection Using RGB-D Cameras and their Radiometric Capabilities” [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. RGB-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji RGB-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (RGB), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}"
+    "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gen\u00e9-Mola and Ver\u00f3nica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, RGB-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle \u201cMulti-modal Deep Learning for Fruit Detection Using RGB-D Cameras and their Radiometric Capabilities\u201d [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. RGB-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji RGB-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (RGB), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}",
+    "crop_types": [
+      "apple"
+    ]
   },
   {
     "name": "apple_detection_usa",
@@ -137,7 +149,10 @@
     "examples_image_url": "/img/agml/sample_images/apple_detection_usa_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@article{karkee2019apple,\n  title={Apple Dataset Benchmark from Orchard Environment in Modern Fruiting Wall},\n  author={Karkee, Manoj and Bhusal, Santosh and Zhang, Qin},\n  year={2019}\n}"
+    "citation": "@article{karkee2019apple,\n  title={Apple Dataset Benchmark from Orchard Environment in Modern Fruiting Wall},\n  author={Karkee, Manoj and Bhusal, Santosh and Zhang, Qin},\n  year={2019}\n}",
+    "crop_types": [
+      "apple"
+    ]
   },
   {
     "name": "apple_flower_segmentation",
@@ -165,7 +180,10 @@
     "examples_image_url": "/img/agml/sample_images/apple_flower_segmentation_examples.png",
     "source": "agml",
     "license": "US Public Domain",
-    "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}"
+    "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}",
+    "crop_types": [
+      "apple"
+    ]
   },
   {
     "name": "apple_segmentation_minnesota",
@@ -193,7 +211,10 @@
     "examples_image_url": "/img/agml/sample_images/apple_segmentation_minnesota_examples.png",
     "source": "agml",
     "license": "MIT",
-    "citation": "@misc{hani2019minneapple,\n    title={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\n    author={Nicolai Häni and Pravakar Roy and Volkan Isler}\n    year={2019},\n    eprint={1909.06441},\n    archivePrefix={arXiv},\n    primaryClass={cs.CV}\n}"
+    "citation": "@misc{hani2019minneapple,\n    title={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\n    author={Nicolai H\u00e4ni and Pravakar Roy and Volkan Isler}\n    year={2019},\n    eprint={1909.06441},\n    archivePrefix={arXiv},\n    primaryClass={cs.CV}\n}",
+    "crop_types": [
+      "apple"
+    ]
   },
   {
     "name": "arabica_coffee_leaf_disease_classification",
@@ -221,7 +242,10 @@
     "examples_image_url": "/img/agml/sample_images/arabica_coffee_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "@article{JEPKOECH2021107142, title = {Arabica coffee leaf images dataset for coffee leaf disease detection and classification}, journal = {Data in Brief}, volume = {36}, pages = {107142}, year = {2021}, issn = {2352-3409}, doi = {https://doi.org/10.1016/j.dib.2021.107142}, url = {https://www.sciencedirect.com/science/article/pii/S2352340921004261}, author = {Jennifer Jepkoech and David Muchangi Mugo and Benson K. Kenduiywo and Edna Chebet Too}}"
+    "citation": "@article{JEPKOECH2021107142, title = {Arabica coffee leaf images dataset for coffee leaf disease detection and classification}, journal = {Data in Brief}, volume = {36}, pages = {107142}, year = {2021}, issn = {2352-3409}, doi = {https://doi.org/10.1016/j.dib.2021.107142}, url = {https://www.sciencedirect.com/science/article/pii/S2352340921004261}, author = {Jennifer Jepkoech and David Muchangi Mugo and Benson K. Kenduiywo and Edna Chebet Too}}",
+    "crop_types": [
+      "coffee"
+    ]
   },
   {
     "name": "autonomous_greenhouse_regression",
@@ -241,7 +265,10 @@
     "examples_image_url": null,
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@misc{https://doi.org/10.4121/15023088.v1,\n  doi = {10.4121/15023088.V1},\n  url = {https://data.4tu.nl/articles/_/15023088/1},\n  author = {Hemming,  S. (Silke) and de Zwart,  H.F. (Feije) and Elings,  A. (Anne) and bijlaard,  monique and Marrewijk,  van,  Bart and Petropoulou,  Anna},\n  keywords = {Horticultural Crops,  Mechanical Engineering,  FOS: Mechanical engineering,  Artificial Intelligence and Image Processing,  FOS: Computer and information sciences,  Horticultural Production,  FOS: Agriculture,  forestry and fisheries,  Autonomous Greenhouse Challenge,  autonomous greenhouse,  Artificial Intelligence,  image processing,  computer vision,  Horticulture,  Lettuce,  sensors,  non-destructive sensing},\n  title = {3rd Autonomous Greenhouse Challenge: Online Challenge Lettuce Images},\n  publisher = {4TU.ResearchData},\n  year = {2021},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
+    "citation": "@misc{https://doi.org/10.4121/15023088.v1,\n  doi = {10.4121/15023088.V1},\n  url = {https://data.4tu.nl/articles/_/15023088/1},\n  author = {Hemming,  S. (Silke) and de Zwart,  H.F. (Feije) and Elings,  A. (Anne) and bijlaard,  monique and Marrewijk,  van,  Bart and Petropoulou,  Anna},\n  keywords = {Horticultural Crops,  Mechanical Engineering,  FOS: Mechanical engineering,  Artificial Intelligence and Image Processing,  FOS: Computer and information sciences,  Horticultural Production,  FOS: Agriculture,  forestry and fisheries,  Autonomous Greenhouse Challenge,  autonomous greenhouse,  Artificial Intelligence,  image processing,  computer vision,  Horticulture,  Lettuce,  sensors,  non-destructive sensing},\n  title = {3rd Autonomous Greenhouse Challenge: Online Challenge Lettuce Images},\n  publisher = {4TU.ResearchData},\n  year = {2021},\n  copyright = {Creative Commons Attribution 4.0 International}\n}",
+    "crop_types": [
+      "lettuce"
+    ]
   },
   {
     "name": "banana_leaf_disease_classification",
@@ -269,7 +296,10 @@
     "examples_image_url": "/img/agml/sample_images/banana_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "hailu, yordanos (2021), “Banana Leaf Disease Images”, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1"
+    "citation": "hailu, yordanos (2021), \u201cBanana Leaf Disease Images\u201d, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1",
+    "crop_types": [
+      "banana"
+    ]
   },
   {
     "name": "bean_disease_uganda",
@@ -297,7 +327,10 @@
     "examples_image_url": "/img/agml/sample_images/bean_disease_uganda_examples.png",
     "source": "agml",
     "license": "MIT",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "bean"
+    ]
   },
   {
     "name": "bean_synthetic_earlygrowth_aerial",
@@ -317,7 +350,10 @@
     "examples_image_url": "/img/agml/sample_images/bean_synthetic_earlygrowth_aerial_examples.png",
     "source": "agml",
     "license": "MIT",
-    "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}"
+    "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}",
+    "crop_types": [
+      "bean"
+    ]
   },
   {
     "name": "betel_leaf_disease_classification",
@@ -345,7 +381,10 @@
     "examples_image_url": "/img/agml/sample_images/betel_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Rashid, Mohammad Rifat Ahmmad; Hossain, Md. Miskat ; Biswas,  Joy ; Majumder, Hredoy  (2024), “Betel Leaf Image Dataset from Bangladesh”, Mendeley Data, V2, doi: 10.17632/g7fpgj57wc.2"
+    "citation": "Rashid, Mohammad Rifat Ahmmad; Hossain, Md. Miskat ; Biswas,  Joy ; Majumder, Hredoy  (2024), \u201cBetel Leaf Image Dataset from Bangladesh\u201d, Mendeley Data, V2, doi: 10.17632/g7fpgj57wc.2",
+    "crop_types": [
+      "betel"
+    ]
   },
   {
     "name": "blackgram_plant_leaf_disease_classification",
@@ -365,7 +404,10 @@
     "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3"
+    "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), \u201cBlackgram Plant Leaf Disease Dataset\u201d, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
+    "crop_types": [
+      "blackgram"
+    ]
   },
   {
     "name": "carrot_weeds_germany",
@@ -393,7 +435,10 @@
     "examples_image_url": "/img/agml/sample_images/carrot_weeds_germany_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@inproceedings{haug15,\n  author={Haug, Sebastian and Ostermann, J{\\\"o}rn},\n  title={A Crop/Weed Field Image Dataset for the Evaluation of Computer Vision Based Precision Agriculture Tasks},\n  year={2015},\n  booktitle={Computer Vision - ECCV 2014 Workshops},\n  doi={10.1007/978-3-319-16220-1_8},\n  url={http://dx.doi.org/10.1007/978-3-319-16220-1_8},\n  pages={105--116}\n}"
+    "citation": "@inproceedings{haug15,\n  author={Haug, Sebastian and Ostermann, J{\\\"o}rn},\n  title={A Crop/Weed Field Image Dataset for the Evaluation of Computer Vision Based Precision Agriculture Tasks},\n  year={2015},\n  booktitle={Computer Vision - ECCV 2014 Workshops},\n  doi={10.1007/978-3-319-16220-1_8},\n  url={http://dx.doi.org/10.1007/978-3-319-16220-1_8},\n  pages={105--116}\n}",
+    "crop_types": [
+      "carrot"
+    ]
   },
   {
     "name": "chilli_leaf_classification",
@@ -421,7 +466,10 @@
     "examples_image_url": "/img/agml/sample_images/chilli_leaf_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. "
+    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. ",
+    "crop_types": [
+      "chilli"
+    ]
   },
   {
     "name": "coconut_tree_disease_classification",
@@ -449,7 +497,10 @@
     "examples_image_url": "/img/agml/sample_images/coconut_tree_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "PATIL, Kailas; Thite, Sandip; Suryawanshi, Yogesh; chumchu, prawit (2023), “Coconut Tree Disease Dataset”, Mendeley Data, V1, doi: 10.17632/gh56wbsnj5.1"
+    "citation": "PATIL, Kailas; Thite, Sandip; Suryawanshi, Yogesh; chumchu, prawit (2023), \u201cCoconut Tree Disease Dataset\u201d, Mendeley Data, V1, doi: 10.17632/gh56wbsnj5.1",
+    "crop_types": [
+      "coconut"
+    ]
   },
   {
     "name": "corn_maize_leaf_disease",
@@ -477,7 +528,11 @@
     "examples_image_url": "/img/agml/sample_images/corn_maize_leaf_disease_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "Singh D, Jain N, Jain P, Kayal P, Kumawat S, Batra N. PlantDoc: a dataset for visual plant disease detection. InProceedings of the 7th ACM IKDD CoDS and 25th COMAD 2020 Jan 5 (pp. 249-253)."
+    "citation": "Singh D, Jain N, Jain P, Kayal P, Kumawat S, Batra N. PlantDoc: a dataset for visual plant disease detection. InProceedings of the 7th ACM IKDD CoDS and 25th COMAD 2020 Jan 5 (pp. 249-253).",
+    "crop_types": [
+      "corn",
+      "maize"
+    ]
   },
   {
     "name": "crop_weeds_greece",
@@ -505,7 +560,11 @@
     "examples_image_url": "/img/agml/sample_images/crop_weeds_greece_examples.png",
     "source": "agml",
     "license": "MIT",
-    "citation": "@article{ESPEJOGARCIA2020105306,\n  title = {Towards weeds identification assistance through transfer learning},\n  journal = {Computers and Electronics in Agriculture},\n  volume = {171},\n  pages = {105306},\n  year = {2020},\n  issn = {0168-1699},\n  doi = {https://doi.org/10.1016/j.compag.2020.105306},\n  url = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\n  author = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou},\n  keywords = {Weed identification, Deep learning, Transfer learning, Open data, Precision agriculture},\n  abstract = {Reducing the use of pesticides through selective spraying is an important component towards a more sustainable computer-assisted agriculture. Weed identification at early growth stage contributes to reduced herbicide rates. However, while computer vision alongside deep learning have overcome the performance of approaches that use hand-crafted features, there are still some open challenges in the development of a reliable automatic plant identification system. These type of systems have to take into account different sources of variability, such as growth stages and soil conditions, with the added constraint of the limited size of usual datasets. This study proposes a novel crop/weed identification system that relies on a combination of fine-tuning pre-trained convolutional networks (Xception, Inception-Resnet, VGNets, Mobilenet and Densenet) with the “traditional” machine learning classifiers (Support Vector Machines, XGBoost and Logistic Regression) trained with the previously deep extracted features. The aim of this approach was to avoid overfitting and to obtain a robust and consistent performance. To evaluate this approach, an open access dataset of two crop [tomato (Solanum lycopersicum L.) and cotton (Gossypium hirsutum L.)] and two weed species [black nightshade (Solanum nigrum L.) and velvetleaf (Abutilon theophrasti Medik.)] was generated. The pictures were taken by different production sites across Greece under natural variable light conditions from RGB cameras. The results revealed that a combination of fine-tuned Densenet and Support Vector Machine achieved a micro F1 score of 99.29% with a very low performance difference between train and test sets. Other evaluated approaches also obtained repeatedly more than 95% F1 score. Additionally, our results analysis provides some heuristics for designing transfer-learning based systems to avoid overfitting without decreasing performance.}\n}"
+    "citation": "@article{ESPEJOGARCIA2020105306,\n  title = {Towards weeds identification assistance through transfer learning},\n  journal = {Computers and Electronics in Agriculture},\n  volume = {171},\n  pages = {105306},\n  year = {2020},\n  issn = {0168-1699},\n  doi = {https://doi.org/10.1016/j.compag.2020.105306},\n  url = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\n  author = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou},\n  keywords = {Weed identification, Deep learning, Transfer learning, Open data, Precision agriculture},\n  abstract = {Reducing the use of pesticides through selective spraying is an important component towards a more sustainable computer-assisted agriculture. Weed identification at early growth stage contributes to reduced herbicide rates. However, while computer vision alongside deep learning have overcome the performance of approaches that use hand-crafted features, there are still some open challenges in the development of a reliable automatic plant identification system. These type of systems have to take into account different sources of variability, such as growth stages and soil conditions, with the added constraint of the limited size of usual datasets. This study proposes a novel crop/weed identification system that relies on a combination of fine-tuning pre-trained convolutional networks (Xception, Inception-Resnet, VGNets, Mobilenet and Densenet) with the \u201ctraditional\u201d machine learning classifiers (Support Vector Machines, XGBoost and Logistic Regression) trained with the previously deep extracted features. The aim of this approach was to avoid overfitting and to obtain a robust and consistent performance. To evaluate this approach, an open access dataset of two crop [tomato (Solanum lycopersicum L.) and cotton (Gossypium hirsutum L.)] and two weed species [black nightshade (Solanum nigrum L.) and velvetleaf (Abutilon theophrasti Medik.)] was generated. The pictures were taken by different production sites across Greece under natural variable light conditions from RGB cameras. The results revealed that a combination of fine-tuned Densenet and Support Vector Machine achieved a micro F1 score of 99.29% with a very low performance difference between train and test sets. Other evaluated approaches also obtained repeatedly more than 95% F1 score. Additionally, our results analysis provides some heuristics for designing transfer-learning based systems to avoid overfitting without decreasing performance.}\n}",
+    "crop_types": [
+      "cotton",
+      "tomato"
+    ]
   },
   {
     "name": "cucumber_disease_classification",
@@ -533,7 +592,10 @@
     "examples_image_url": "/img/agml/sample_images/cucumber_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Sultana, Nusrat; Shorif, Sumaita Binte ; Akter, Morium ; Uddin, Mohammad Shorif  (2022), “Cucumber Disease Recognition Dataset”, Mendeley Data, V1, doi: 10.17632/y6d3z6f8z9.1"
+    "citation": "Sultana, Nusrat; Shorif, Sumaita Binte ; Akter, Morium ; Uddin, Mohammad Shorif  (2022), \u201cCucumber Disease Recognition Dataset\u201d, Mendeley Data, V1, doi: 10.17632/y6d3z6f8z9.1",
+    "crop_types": [
+      "cucumber"
+    ]
   },
   {
     "name": "embrapa_wgisd_grape_detection",
@@ -561,7 +623,10 @@
     "examples_image_url": "/img/agml/sample_images/embrapa_wgisd_grape_detection_examples.png",
     "source": "agml",
     "license": "CC BY-NC 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "grape"
+    ]
   },
   {
     "name": "fruit_detection_worldwide",
@@ -589,7 +654,16 @@
     "examples_image_url": "/img/agml/sample_images/fruit_detection_worldwide_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@Article{s16081222,\n  AUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\n  TITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\n  JOURNAL = {Sensors},\n  VOLUME = {16},\n  YEAR = {2016},\n  NUMBER = {8},\n  ARTICLE-NUMBER = {1222},\n  URL = {https://www.mdpi.com/1424-8220/16/8/1222},\n  ISSN = {1424-8220},\n  ABSTRACT = {This paper presents a novel approach to fruit detection using deep convolutional neural networks. The aim is to build an accurate, fast and reliable fruit detection system, which is a vital element of an autonomous agricultural robotic platform; it is a key element for fruit yield estimation and automated harvesting. Recent work in deep neural networks has led to the development of a state-of-the-art object detector termed Faster Region-based CNN (Faster R-CNN). We adapt this model, through transfer learning, for the task of fruit detection using imagery obtained from two modalities: colour (RGB) and Near-Infrared (NIR). Early and late fusion methods are explored for combining the multi-modal (RGB and NIR) information. This leads to a novel multi-modal Faster R-CNN model, which achieves state-of-the-art results compared to prior work with the F1 score, which takes into account both precision and recall performances improving from     0 . 807     to     0 . 838     for the detection of sweet pepper. In addition to improved accuracy, this approach is also much quicker to deploy for new fruits, as it requires bounding box annotation rather than pixel-level annotation (annotating bounding boxes is approximately an order of magnitude quicker to perform). The model is retrained to perform the detection of seven fruits, with the entire process taking four hours to annotate and train the new model per fruit.},\n  DOI = {10.3390/s16081222}\n}"
+    "citation": "@Article{s16081222,\n  AUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\n  TITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\n  JOURNAL = {Sensors},\n  VOLUME = {16},\n  YEAR = {2016},\n  NUMBER = {8},\n  ARTICLE-NUMBER = {1222},\n  URL = {https://www.mdpi.com/1424-8220/16/8/1222},\n  ISSN = {1424-8220},\n  ABSTRACT = {This paper presents a novel approach to fruit detection using deep convolutional neural networks. The aim is to build an accurate, fast and reliable fruit detection system, which is a vital element of an autonomous agricultural robotic platform; it is a key element for fruit yield estimation and automated harvesting. Recent work in deep neural networks has led to the development of a state-of-the-art object detector termed Faster Region-based CNN (Faster R-CNN). We adapt this model, through transfer learning, for the task of fruit detection using imagery obtained from two modalities: colour (RGB) and Near-Infrared (NIR). Early and late fusion methods are explored for combining the multi-modal (RGB and NIR) information. This leads to a novel multi-modal Faster R-CNN model, which achieves state-of-the-art results compared to prior work with the F1 score, which takes into account both precision and recall performances improving from     0 . 807     to     0 . 838     for the detection of sweet pepper. In addition to improved accuracy, this approach is also much quicker to deploy for new fruits, as it requires bounding box annotation rather than pixel-level annotation (annotating bounding boxes is approximately an order of magnitude quicker to perform). The model is retrained to perform the detection of seven fruits, with the entire process taking four hours to annotate and train the new model per fruit.},\n  DOI = {10.3390/s16081222}\n}",
+    "crop_types": [
+      "avocado",
+      "rockmelon",
+      "apple",
+      "orange",
+      "strawberry",
+      "mango",
+      "capsicum"
+    ]
   },
   {
     "name": "gemini_flower_detection_2022",
@@ -617,7 +691,10 @@
     "examples_image_url": "/img/agml/sample_images/gemini_flower_detection_2022_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
   },
   {
     "name": "gemini_leaf_detection_2022",
@@ -645,7 +722,10 @@
     "examples_image_url": "/img/agml/sample_images/gemini_leaf_detection_2022_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
   },
   {
     "name": "gemini_plant_detection_2022",
@@ -673,7 +753,10 @@
     "examples_image_url": "/img/agml/sample_images/gemini_plant_detection_2022_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
   },
   {
     "name": "gemini_pod_detection_2022",
@@ -701,7 +784,10 @@
     "examples_image_url": "/img/agml/sample_images/gemini_pod_detection_2022_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
   },
   {
     "name": "ghai_broccoli_detection",
@@ -721,7 +807,10 @@
     "examples_image_url": "/img/agml/sample_images/ghai_broccoli_detection_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "broccoli"
+    ]
   },
   {
     "name": "ghai_green_cabbage_detection",
@@ -741,7 +830,10 @@
     "examples_image_url": null,
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "cabbage"
+    ]
   },
   {
     "name": "ghai_iceberg_lettuce_detection",
@@ -761,7 +853,10 @@
     "examples_image_url": null,
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "lettuce"
+    ]
   },
   {
     "name": "ghai_romaine_detection",
@@ -781,7 +876,10 @@
     "examples_image_url": null,
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "lettuce"
+    ]
   },
   {
     "name": "ghai_strawberry_fruit_detection",
@@ -801,7 +899,10 @@
     "examples_image_url": "/img/agml/sample_images/ghai_strawberry_fruit_detection_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "strawberry"
+    ]
   },
   {
     "name": "grape_detection_californiaday",
@@ -829,7 +930,10 @@
     "examples_image_url": "/img/agml/sample_images/grape_detection_californiaday_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@misc{GrapeDay,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2019 Day},\n  year      = {2019},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n "
+    "citation": "@misc{GrapeDay,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2019 Day},\n  year      = {2019},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n ",
+    "crop_types": [
+      "grape"
+    ]
   },
   {
     "name": "grape_detection_californianight",
@@ -857,7 +961,10 @@
     "examples_image_url": "/img/agml/sample_images/grape_detection_californianight_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@misc{GrapeNight,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2020 Night},\n  year      = {2020},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n "
+    "citation": "@misc{GrapeNight,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2020 Night},\n  year      = {2020},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n ",
+    "crop_types": [
+      "grape"
+    ]
   },
   {
     "name": "grape_detection_syntheticday",
@@ -885,7 +992,10 @@
     "examples_image_url": "/img/agml/sample_images/grape_detection_syntheticday_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}"
+    "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}",
+    "crop_types": [
+      "grape"
+    ]
   },
   {
     "name": "growliflower_cauliflower_segmentation",
@@ -905,7 +1015,10 @@
     "examples_image_url": "/img/agml/sample_images/growliflower_cauliflower_segmentation_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "Kierdorf, Jana & Junker-Frohn, Laura & Delaney, Mike & Olave, Mariele & Burkart, Andreas & Jaenicke, Hannah & Muller, Onno & Roscher, Ribana. (2022). GrowliFlower: An image time‐series dataset for GROWth analysis of cauLIFLOWER. Journal of Field Robotics. 40. 10.1002/rob.22122. "
+    "citation": "Kierdorf, Jana & Junker-Frohn, Laura & Delaney, Mike & Olave, Mariele & Burkart, Andreas & Jaenicke, Hannah & Muller, Onno & Roscher, Ribana. (2022). GrowliFlower: An image time\u2010series dataset for GROWth analysis of cauLIFLOWER. Journal of Field Robotics. 40. 10.1002/rob.22122. ",
+    "crop_types": [
+      "cauliflower"
+    ]
   },
   {
     "name": "guava_disease_pakistan",
@@ -933,7 +1046,10 @@
     "examples_image_url": "/img/agml/sample_images/guava_disease_pakistan_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@article{Rauf_Lali_2021, \n    title={A Guava Fruits and Leaves Dataset for Detection and Classification of Guava Diseases through Machine Learning}, \n    volume={1}, \n    url={https://data.mendeley.com/datasets/s8x6jn5cvr/1}, \n    DOI={10.17632/s8x6jn5cvr.1}, \n    abstractNote={(1) Plant diseases are the primary cause of reduced productivity in agriculture, which results in economic losses. Guava is a big source of nutrients for humans all over the world. Guava diseases, on the other hand, harm the yield and quality of the crop. (2) For the identification and classification of plant diseases, computer vision and image processing methods have been commonly used. (3) The dataset includes an image gallery of healthy and unhealthy Guava fruits and leaves that could be used by researchers to adopt advanced computer vision techniques to protect plants from disease. Dot, Canker, Mummification, and Rust are the diseases targeted in the data sets. (4) The dataset contains 306 images of healthy and unhealthy images for both Guava fruits and leaves collectively. Each image contains 6000 * 4000 dimensions with 300 dpi resolution. (5) All images were acquired from the tropical areas of Pakistan under the supervision of Prof. Dr. Ikramullah Lali. (6) All images were annotated manually by the domain expert such as For Guava fruits and leaves; Dot (76), Canker (77), Mummification (83), and Rust (70) Note: The data labeling was manual and can be updated by automatic labeling through machine learning. In the meantime, the authors can also use the data set for the clustering problem.}, \n    author={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah}, \n    year={2021}, month={Apr} \n}\n"
+    "citation": "@article{Rauf_Lali_2021, \n    title={A Guava Fruits and Leaves Dataset for Detection and Classification of Guava Diseases through Machine Learning}, \n    volume={1}, \n    url={https://data.mendeley.com/datasets/s8x6jn5cvr/1}, \n    DOI={10.17632/s8x6jn5cvr.1}, \n    abstractNote={(1) Plant diseases are the primary cause of reduced productivity in agriculture, which results in economic losses. Guava is a big source of nutrients for humans all over the world. Guava diseases, on the other hand, harm the yield and quality of the crop. (2) For the identification and classification of plant diseases, computer vision and image processing methods have been commonly used. (3) The dataset includes an image gallery of healthy and unhealthy Guava fruits and leaves that could be used by researchers to adopt advanced computer vision techniques to protect plants from disease. Dot, Canker, Mummification, and Rust are the diseases targeted in the data sets. (4) The dataset contains 306 images of healthy and unhealthy images for both Guava fruits and leaves collectively. Each image contains 6000 * 4000 dimensions with 300 dpi resolution. (5) All images were acquired from the tropical areas of Pakistan under the supervision of Prof. Dr. Ikramullah Lali. (6) All images were annotated manually by the domain expert such as For Guava fruits and leaves; Dot (76), Canker (77), Mummification (83), and Rust (70) Note: The data labeling was manual and can be updated by automatic labeling through machine learning. In the meantime, the authors can also use the data set for the clustering problem.}, \n    author={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah}, \n    year={2021}, month={Apr} \n}\n",
+    "crop_types": [
+      "guava"
+    ]
   },
   {
     "name": "iNatAg",
@@ -40773,7 +40889,7 @@
     "citation": "https://www.inaturalist.org/"
   },
   {
-    "name": "iNatAg-mini/musa_acuminata_×_balbisiana",
+    "name": "iNatAg-mini/musa_acuminata_\u00d7_balbisiana",
     "machine_learning_task": "image_classification",
     "agricultural_task": "image_classification",
     "location": "worldwide, worldwide",
@@ -102891,7 +103007,7 @@
     "citation": "https://www.inaturalist.org/"
   },
   {
-    "name": "iNatAg/musa_acuminata_×_balbisiana",
+    "name": "iNatAg/musa_acuminata_\u00d7_balbisiana",
     "machine_learning_task": "image_classification",
     "agricultural_task": "image_classification",
     "location": "worldwide, worldwide",
@@ -125239,7 +125355,10 @@
     "examples_image_url": "/img/agml/sample_images/java_plum_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Bhowmik, Auvick Chandra; Ahad, Taimur (2024), “Java Plum Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/43d75vptz4.3"
+    "citation": "Bhowmik, Auvick Chandra; Ahad, Taimur (2024), \u201cJava Plum Leaf Disease Dataset\u201d, Mendeley Data, V3, doi: 10.17632/43d75vptz4.3",
+    "crop_types": [
+      "java plum"
+    ]
   },
   {
     "name": "leaf_counting_denmark",
@@ -125267,7 +125386,8 @@
     "examples_image_url": "/img/agml/sample_images/leaf_counting_denmark_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@Article{s18051580,\n  author = {Teimouri, Nima and Dyrmann, Mads and Nielsen, Per  Rydahl and Mathiassen, Solvejg  Kopp and Somerville, Gayle  J. and Jørgensen, Rasmus  Nyholm},\n  title = {Weed Growth Stage Estimator Using Deep Convolutional Neural Networks},\n  journal = {Sensors},\n  volume = {18},\n  year = {2018},\n  number = {5},\n  url = {http://www.mdpi.com/1424-8220/18/5/1580},\n  issn = {1424-8220}\n}"
+    "citation": "@Article{s18051580,\n  author = {Teimouri, Nima and Dyrmann, Mads and Nielsen, Per  Rydahl and Mathiassen, Solvejg  Kopp and Somerville, Gayle  J. and J\u00f8rgensen, Rasmus  Nyholm},\n  title = {Weed Growth Stage Estimator Using Deep Convolutional Neural Networks},\n  journal = {Sensors},\n  volume = {18},\n  year = {2018},\n  number = {5},\n  url = {http://www.mdpi.com/1424-8220/18/5/1580},\n  issn = {1424-8220}\n}",
+    "crop_types": null
   },
   {
     "name": "mango_detection_australia",
@@ -125295,7 +125415,10 @@
     "examples_image_url": "/img/agml/sample_images/mango_detection_australia_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@Misc{Koirala2019,\n  author={Koirala, Anand and Walsh, Kerry and Wang, Z. and McCarthy, C.},\n  title={MangoYOLO data set},\n  year={2019},\n  month={2021},\n  day={10-19},\n  publisher={Central Queensland University},\n  keywords={Mango images; Fruit detection; Yield estimation; Mango; Agricultural Land Management; Horticultural Crop Growth and Development},\n  abstract={Datasets and directories are structured similar to the PASCAL VOC dataset, avoiding the need to change scripts already available, with the detection frameworks ready to parse PASCAL VOC annotations into their format. The sub-directory JPEGImages consist of 1730 images (612x512 pixels) used for train, test and validation. Each image has at least one annotated fruit. The sub-directory Annotations consists of all the annotation files (record of bounding box coordinates for each image) in xml format and have the same name as the image name. The sub-directory Main consists of the text file that contains image names (without extension) used for train, test and validation. Training set (train.txt) lists 1300 train images  Validation set (val.txt) lists 130 validation images Test set (test.txt) lists 300 test images Each image has an XML annotation file (filename = image name) and each image set (training validation and test set) has associated text files (train.txt, val.txt and test.txt) containing the list of image names to be used for training and testing.  The XML annotation file contains the image attributes (name, width, height), the object attributes (class name, object bounding box co-ordinates (xmin, ymin, xmax, ymax)). (xmin, ymin) and (xmax, ymax) are the pixel co-ordinates of the bounding box's top-left corner and bottom-right corner respectively.},\n  note={CC-BY-4.0},\n  url={https://figshare.com/articles/dataset/MangoYOLO_data_set/13450661, https://researchdata.edu.au/mangoyolo-set},\n  language={English}\n}"
+    "citation": "@Misc{Koirala2019,\n  author={Koirala, Anand and Walsh, Kerry and Wang, Z. and McCarthy, C.},\n  title={MangoYOLO data set},\n  year={2019},\n  month={2021},\n  day={10-19},\n  publisher={Central Queensland University},\n  keywords={Mango images; Fruit detection; Yield estimation; Mango; Agricultural Land Management; Horticultural Crop Growth and Development},\n  abstract={Datasets and directories are structured similar to the PASCAL VOC dataset, avoiding the need to change scripts already available, with the detection frameworks ready to parse PASCAL VOC annotations into their format. The sub-directory JPEGImages consist of 1730 images (612x512 pixels) used for train, test and validation. Each image has at least one annotated fruit. The sub-directory Annotations consists of all the annotation files (record of bounding box coordinates for each image) in xml format and have the same name as the image name. The sub-directory Main consists of the text file that contains image names (without extension) used for train, test and validation. Training set (train.txt) lists 1300 train images  Validation set (val.txt) lists 130 validation images Test set (test.txt) lists 300 test images Each image has an XML annotation file (filename = image name) and each image set (training validation and test set) has associated text files (train.txt, val.txt and test.txt) containing the list of image names to be used for training and testing.  The XML annotation file contains the image attributes (name, width, height), the object attributes (class name, object bounding box co-ordinates (xmin, ymin, xmax, ymax)). (xmin, ymin) and (xmax, ymax) are the pixel co-ordinates of the bounding box's top-left corner and bottom-right corner respectively.},\n  note={CC-BY-4.0},\n  url={https://figshare.com/articles/dataset/MangoYOLO_data_set/13450661, https://researchdata.edu.au/mangoyolo-set},\n  language={English}\n}",
+    "crop_types": [
+      "mango"
+    ]
   },
   {
     "name": "mango_leaf_disease_classification",
@@ -125323,7 +125446,10 @@
     "examples_image_url": "/img/agml/sample_images/mango_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY-NC 4.0",
-    "citation": "Ali, Sawkat; Ibrahim, Muhammad ; Ahmed, Sarder Iftekhar ; Nadim, Md. ; Mizanur, Mizanur Rahman; Shejunti, Maria Mehjabin ; Jabid, Taskeed (2022), “MangoLeafBD Dataset”, Mendeley Data, V1, doi: 10.17632/hxsnvwty3r.1"
+    "citation": "Ali, Sawkat; Ibrahim, Muhammad ; Ahmed, Sarder Iftekhar ; Nadim, Md. ; Mizanur, Mizanur Rahman; Shejunti, Maria Mehjabin ; Jabid, Taskeed (2022), \u201cMangoLeafBD Dataset\u201d, Mendeley Data, V1, doi: 10.17632/hxsnvwty3r.1",
+    "crop_types": [
+      "mango"
+    ]
   },
   {
     "name": "onion_leaf_classification",
@@ -125351,7 +125477,10 @@
     "examples_image_url": "/img/agml/sample_images/onion_leaf_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. "
+    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. ",
+    "crop_types": [
+      "onion"
+    ]
   },
   {
     "name": "orange_leaf_disease_classification",
@@ -125379,7 +125508,10 @@
     "examples_image_url": "/img/agml/sample_images/orange_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Emon, Yousuf Rayhan; Ahad, Md Taimur (2023), “Multi-format open-source sweet orange leaf dataset for disease detection, classification, and analysis.”, Mendeley Data, V1, doi: 10.17632/f7cr74mwpj.1"
+    "citation": "Emon, Yousuf Rayhan; Ahad, Md Taimur (2023), \u201cMulti-format open-source sweet orange leaf dataset for disease detection, classification, and analysis.\u201d, Mendeley Data, V1, doi: 10.17632/f7cr74mwpj.1",
+    "crop_types": [
+      "orange"
+    ]
   },
   {
     "name": "paddy_disease_classification",
@@ -125407,7 +125539,10 @@
     "examples_image_url": "/img/agml/sample_images/paddy_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Petchiammal A, Briskline Kiruba S, Murugan D, Pandarasamy Arjunan. (2022). Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking. IEEE Dataport. https://dx.doi.org/10.21227/hz4v-af08"
+    "citation": "Petchiammal A, Briskline Kiruba S, Murugan D, Pandarasamy Arjunan. (2022). Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking. IEEE Dataport. https://dx.doi.org/10.21227/hz4v-af08",
+    "crop_types": [
+      "paddy"
+    ]
   },
   {
     "name": "papaya_leaf_disease_classification",
@@ -125427,7 +125562,10 @@
     "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Sarker, Arpita ; Mustofa, Sumaya; Ahad, Md Taimur  (2023), “BDPapayaLeaf: A annotation based image dataset of papaya leaf disease.”, Mendeley Data, V1, doi: 10.17632/p997fvf526.1"
+    "citation": "Sarker, Arpita ; Mustofa, Sumaya; Ahad, Md Taimur  (2023), \u201cBDPapayaLeaf: A annotation based image dataset of papaya leaf disease.\u201d, Mendeley Data, V1, doi: 10.17632/p997fvf526.1",
+    "crop_types": [
+      "papaya"
+    ]
   },
   {
     "name": "peachpear_flower_segmentation",
@@ -125455,7 +125593,11 @@
     "examples_image_url": "/img/agml/sample_images/peachpear_flower_segmentation_examples.png",
     "source": "agml",
     "license": "US Public Domain",
-    "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}"
+    "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}",
+    "crop_types": [
+      "peach",
+      "pear"
+    ]
   },
   {
     "name": "plant_doc_classification",
@@ -125483,7 +125625,8 @@
     "examples_image_url": "/img/agml/sample_images/plant_doc_classification_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }"
+    "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249\u2013253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
+    "crop_types": null
   },
   {
     "name": "plant_doc_detection",
@@ -125511,7 +125654,8 @@
     "examples_image_url": "/img/agml/sample_images/plant_doc_detection_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }"
+    "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249\u2013253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
+    "crop_types": null
   },
   {
     "name": "plant_seedlings_aarhus",
@@ -125539,7 +125683,8 @@
     "examples_image_url": "/img/agml/sample_images/plant_seedlings_aarhus_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@article{Giselsson2017,\n  author = {Giselsson, Thomas Mosgaard and Dyrmann, Mads and J{\\o}rgensen, Rasmus Nyholm and Jensen, Peter Kryger and Midtiby, Henrik Skov},\n  journal = {arXiv preprint},\n  keywords = {benchmark,database,plant seedlings,segmentation,site-specific weed control},\n  title = {{A Public Image Database for Benchmark of Plant Seedling Classification Algorithms}},\n  year = {2017}\n}"
+    "citation": "@article{Giselsson2017,\n  author = {Giselsson, Thomas Mosgaard and Dyrmann, Mads and J{\\o}rgensen, Rasmus Nyholm and Jensen, Peter Kryger and Midtiby, Henrik Skov},\n  journal = {arXiv preprint},\n  keywords = {benchmark,database,plant seedlings,segmentation,site-specific weed control},\n  title = {{A Public Image Database for Benchmark of Plant Seedling Classification Algorithms}},\n  year = {2017}\n}",
+    "crop_types": null
   },
   {
     "name": "plant_village_classification",
@@ -125567,7 +125712,8 @@
     "examples_image_url": "/img/agml/sample_images/plant_village_classification_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@article{DBLP:journals/corr/HughesS15,\n  author    = {David P. Hughes and\n               Marcel Salath{'{e} } },\n  title     = {An open access repository of images on plant health to enable the\n               development of mobile disease diagnostics through machine\n               learning and crowdsourcing},\n  journal   = {CoRR},\n  volume    = {abs/1511.08060},\n  year      = {2015},\n  url       = {http://arxiv.org/abs/1511.08060},\n  archivePrefix = {arXiv},\n  eprint    = {1511.08060},\n  timestamp = {Mon, 13 Aug 2018 16:48:21 +0200},\n  biburl    = {https://dblp.org/rec/bib/journals/corr/HughesS15},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}"
+    "citation": "@article{DBLP:journals/corr/HughesS15,\n  author    = {David P. Hughes and\n               Marcel Salath{'{e} } },\n  title     = {An open access repository of images on plant health to enable the\n               development of mobile disease diagnostics through machine\n               learning and crowdsourcing},\n  journal   = {CoRR},\n  volume    = {abs/1511.08060},\n  year      = {2015},\n  url       = {http://arxiv.org/abs/1511.08060},\n  archivePrefix = {arXiv},\n  eprint    = {1511.08060},\n  timestamp = {Mon, 13 Aug 2018 16:48:21 +0200},\n  biburl    = {https://dblp.org/rec/bib/journals/corr/HughesS15},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
+    "crop_types": null
   },
   {
     "name": "rangeland_weeds_australia",
@@ -125595,7 +125741,8 @@
     "examples_image_url": "/img/agml/sample_images/rangeland_weeds_australia_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@Article{Olsen2019,\n  author={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\n  title={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\n  journal={Scientific Reports},\n  year={2019},\n  month={Feb},\n  day={14},\n  volume={9},\n  number={1},\n  pages={2058},\n  abstract={Robotic weed control has seen increased research of late with its potential for boosting productivity in agriculture. Majority of works focus on developing robotics for croplands, ignoring the weed management problems facing rangeland stock farmers. Perhaps the greatest obstacle to widespread uptake of robotic weed control is the robust classification of weed species in their natural environment. The unparalleled successes of deep learning make it an ideal candidate for recognising various weed species in the complex rangeland environment. This work contributes the first large, public, multiclass image dataset of weed species from the Australian rangelands; allowing for the development of robust classification methods to make robotic weed control viable. The DeepWeeds dataset consists of 17,509 labelled images of eight nationally significant weed species native to eight locations across northern Australia. This paper presents a baseline for classification performance on the dataset using the benchmark deep learning models, Inception-v3 and ResNet-50. These models achieved an average classification accuracy of 95.1{\\%} and 95.7{\\%}, respectively. We also demonstrate real time performance of the ResNet-50 architecture, with an average inference time of 53.4 ms per image. These strong results bode well for future field implementation of robotic weed control methods in the Australian rangelands.},\n  issn={2045-2322},\n  doi={10.1038/s41598-018-38343-3},\n  url={https://doi.org/10.1038/s41598-018-38343-3}\n}"
+    "citation": "@Article{Olsen2019,\n  author={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\n  title={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\n  journal={Scientific Reports},\n  year={2019},\n  month={Feb},\n  day={14},\n  volume={9},\n  number={1},\n  pages={2058},\n  abstract={Robotic weed control has seen increased research of late with its potential for boosting productivity in agriculture. Majority of works focus on developing robotics for croplands, ignoring the weed management problems facing rangeland stock farmers. Perhaps the greatest obstacle to widespread uptake of robotic weed control is the robust classification of weed species in their natural environment. The unparalleled successes of deep learning make it an ideal candidate for recognising various weed species in the complex rangeland environment. This work contributes the first large, public, multiclass image dataset of weed species from the Australian rangelands; allowing for the development of robust classification methods to make robotic weed control viable. The DeepWeeds dataset consists of 17,509 labelled images of eight nationally significant weed species native to eight locations across northern Australia. This paper presents a baseline for classification performance on the dataset using the benchmark deep learning models, Inception-v3 and ResNet-50. These models achieved an average classification accuracy of 95.1{\\%} and 95.7{\\%}, respectively. We also demonstrate real time performance of the ResNet-50 architecture, with an average inference time of 53.4 ms per image. These strong results bode well for future field implementation of robotic weed control methods in the Australian rangelands.},\n  issn={2045-2322},\n  doi={10.1038/s41598-018-38343-3},\n  url={https://doi.org/10.1038/s41598-018-38343-3}\n}",
+    "crop_types": null
   },
   {
     "name": "red_grapes_and_leaves_segmentation",
@@ -125623,7 +125770,10 @@
     "examples_image_url": "/img/agml/sample_images/red_grapes_and_leaves_segmentation_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}"
+    "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}",
+    "crop_types": [
+      "grape"
+    ]
   },
   {
     "name": "rice_leaf_disease_classification",
@@ -125651,7 +125801,10 @@
     "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "rice"
+    ]
   },
   {
     "name": "rice_seedling_segmentation",
@@ -125679,7 +125832,10 @@
     "examples_image_url": "/img/agml/sample_images/rice_seedling_segmentation_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@Article{electronics9101602,\n  AUTHOR = {Khan, Abbas and Ilyas, Talha and Umraiz, Muhammad and Mannan, Zubaer Ibna and Kim, Hyongsuk},\n  TITLE = {CED-Net: Crops and Weeds Segmentation for Smart Farming Using a Small Cascaded Encoder-Decoder Architecture},\n  JOURNAL = {Electronics},\n  VOLUME = {9},\n  YEAR = {2020},\n  NUMBER = {10},\n  ARTICLE-NUMBER = {1602},\n  URL = {https://www.mdpi.com/2079-9292/9/10/1602},\n  ISSN = {2079-9292},\n  ABSTRACT = {Convolutional neural networks (CNNs) have achieved state-of-the-art performance in numerous aspects of human life and the agricultural sector is no exception. One of the main objectives of deep learning for smart farming is to identify the precise location of weeds and crops on farmland. In this paper, we propose a semantic segmentation method based on a cascaded encoder-decoder network, namely CED-Net, to differentiate weeds from crops. The existing architectures for weeds and crops segmentation are quite deep, with millions of parameters that require longer training time. To overcome such limitations, we propose an idea of training small networks in cascade to obtain coarse-to-fine predictions, which are then combined to produce the final results. Evaluation of the proposed network and comparison with other state-of-the-art networks are conducted using four publicly available datasets: rice seeding and weed dataset, BoniRob dataset, carrot crop vs. weed dataset, and a paddy&ndash;millet dataset. The experimental results and their comparisons proclaim that the proposed network outperforms state-of-the-art architectures, such as U-Net, SegNet, FCN-8s, and DeepLabv3, over intersection over union (IoU), F1-score, sensitivity, true detection rate, and average precision comparison metrics by utilizing only (1/5.74 &times; U-Net), (1/5.77 &times; SegNet), (1/3.04 &times; FCN-8s), and (1/3.24 &times; DeepLabv3) fractions of total parameters.},\n  DOI = {10.3390/electronics9101602}\n}"
+    "citation": "@Article{electronics9101602,\n  AUTHOR = {Khan, Abbas and Ilyas, Talha and Umraiz, Muhammad and Mannan, Zubaer Ibna and Kim, Hyongsuk},\n  TITLE = {CED-Net: Crops and Weeds Segmentation for Smart Farming Using a Small Cascaded Encoder-Decoder Architecture},\n  JOURNAL = {Electronics},\n  VOLUME = {9},\n  YEAR = {2020},\n  NUMBER = {10},\n  ARTICLE-NUMBER = {1602},\n  URL = {https://www.mdpi.com/2079-9292/9/10/1602},\n  ISSN = {2079-9292},\n  ABSTRACT = {Convolutional neural networks (CNNs) have achieved state-of-the-art performance in numerous aspects of human life and the agricultural sector is no exception. One of the main objectives of deep learning for smart farming is to identify the precise location of weeds and crops on farmland. In this paper, we propose a semantic segmentation method based on a cascaded encoder-decoder network, namely CED-Net, to differentiate weeds from crops. The existing architectures for weeds and crops segmentation are quite deep, with millions of parameters that require longer training time. To overcome such limitations, we propose an idea of training small networks in cascade to obtain coarse-to-fine predictions, which are then combined to produce the final results. Evaluation of the proposed network and comparison with other state-of-the-art networks are conducted using four publicly available datasets: rice seeding and weed dataset, BoniRob dataset, carrot crop vs. weed dataset, and a paddy&ndash;millet dataset. The experimental results and their comparisons proclaim that the proposed network outperforms state-of-the-art architectures, such as U-Net, SegNet, FCN-8s, and DeepLabv3, over intersection over union (IoU), F1-score, sensitivity, true detection rate, and average precision comparison metrics by utilizing only (1/5.74 &times; U-Net), (1/5.77 &times; SegNet), (1/3.04 &times; FCN-8s), and (1/3.24 &times; DeepLabv3) fractions of total parameters.},\n  DOI = {10.3390/electronics9101602}\n}",
+    "crop_types": [
+      "rice"
+    ]
   },
   {
     "name": "riseholme_strawberry_classification_2021",
@@ -125707,7 +125863,10 @@
     "examples_image_url": "/img/agml/sample_images/riseholme_strawberry_classification_2021_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@inproceedings{CWSC21,\n  title={Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies},\n  author={Choi, Taeyeong and Would, Owen and Salazar-Gomez, Adrian and Cielniak, Grzegorz},\n  booktitle={2022 International Conference on Robotics and Automation (ICRA)},\n  pages={2266--2272},\n  year={2022},\n  organization={IEEE}\n}"
+    "citation": "@inproceedings{CWSC21,\n  title={Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies},\n  author={Choi, Taeyeong and Would, Owen and Salazar-Gomez, Adrian and Cielniak, Grzegorz},\n  booktitle={2022 International Conference on Robotics and Automation (ICRA)},\n  pages={2266--2272},\n  year={2022},\n  organization={IEEE}\n}",
+    "crop_types": [
+      "strawberry"
+    ]
   },
   {
     "name": "soybean_insect_classification",
@@ -125735,7 +125894,10 @@
     "examples_image_url": "/img/agml/sample_images/soybean_insect_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Mignoni, Maria Eloisa (2021), “Images of Soybean Leaves”, Mendeley Data, V1, doi: 10.17632/bycbh73438.1"
+    "citation": "Mignoni, Maria Eloisa (2021), \u201cImages of Soybean Leaves\u201d, Mendeley Data, V1, doi: 10.17632/bycbh73438.1",
+    "crop_types": [
+      "soybean"
+    ]
   },
   {
     "name": "soybean_weed_uav_brazil",
@@ -125763,7 +125925,10 @@
     "examples_image_url": "/img/agml/sample_images/soybean_weed_uav_brazil_examples.png",
     "source": "agml",
     "license": "CC BY-NC 3.0",
-    "citation": "dos Santos Ferreira, Alessandro; Pistori, Hemerson; Matte Freitas, Daniel; Gonçalves da Silva, Gercina (2017), “Data for: Weed Detection in Soybean Crops Using ConvNets”, Mendeley Data, V2, doi: 10.17632/3fmjm7ncc6.2"
+    "citation": "dos Santos Ferreira, Alessandro; Pistori, Hemerson; Matte Freitas, Daniel; Gon\u00e7alves da Silva, Gercina (2017), \u201cData for: Weed Detection in Soybean Crops Using ConvNets\u201d, Mendeley Data, V2, doi: 10.17632/3fmjm7ncc6.2",
+    "crop_types": [
+      "soybean"
+    ]
   },
   {
     "name": "strawberry_detection_2022",
@@ -125791,7 +125956,10 @@
     "examples_image_url": "/img/agml/sample_images/strawberry_detection_2022_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "strawberry"
+    ]
   },
   {
     "name": "strawberry_detection_2023",
@@ -125819,7 +125987,10 @@
     "examples_image_url": "/img/agml/sample_images/strawberry_detection_2023_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "strawberry"
+    ]
   },
   {
     "name": "sugarbeet_weed_segmentation",
@@ -125847,7 +126018,10 @@
     "examples_image_url": "/img/agml/sample_images/sugarbeet_weed_segmentation_examples.png",
     "source": "agml",
     "license": "GPL-3.0",
-    "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}"
+    "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popovi\u0107 and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
+    "crop_types": [
+      "sugarbeet"
+    ]
   },
   {
     "name": "sugarcane_damage_usa",
@@ -125875,7 +126049,10 @@
     "examples_image_url": "/img/agml/sample_images/sugarcane_damage_usa_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@ARTICLE{8412587,\n  author={Alencastre-Miranda, Moises and Davidson, Joseph R. and Johnson, Richard M. and Waguespack, Herman and Krebs, Hermano Igo},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Robotics for Sugarcane Cultivation: Analysis of Billet Quality using Computer Vision}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3828-3835},\n  doi={10.1109/LRA.2018.2856999}}"
+    "citation": "@ARTICLE{8412587,\n  author={Alencastre-Miranda, Moises and Davidson, Joseph R. and Johnson, Richard M. and Waguespack, Herman and Krebs, Hermano Igo},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Robotics for Sugarcane Cultivation: Analysis of Billet Quality using Computer Vision}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3828-3835},\n  doi={10.1109/LRA.2018.2856999}}",
+    "crop_types": [
+      "sugarcane"
+    ]
   },
   {
     "name": "sunflower_disease_classification",
@@ -125903,7 +126080,10 @@
     "examples_image_url": "/img/agml/sample_images/sunflower_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY 4.0",
-    "citation": "Rajbongshi, Aditya; Sara, Umme ; Akter, Bonna ; Shakil, Rashiduzzaman ; Sazzad, Sadia (2022), “Sun Flower Fruits and Leaves dataset for Sunflower Disease Classification through Machine Learning and Deep Learning”, Mendeley Data, V1, doi: 10.17632/b83hmrzth8.1"
+    "citation": "Rajbongshi, Aditya; Sara, Umme ; Akter, Bonna ; Shakil, Rashiduzzaman ; Sazzad, Sadia (2022), \u201cSun Flower Fruits and Leaves dataset for Sunflower Disease Classification through Machine Learning and Deep Learning\u201d, Mendeley Data, V1, doi: 10.17632/b83hmrzth8.1",
+    "crop_types": [
+      "sunflower"
+    ]
   },
   {
     "name": "susnato_plant_disease_detection_processed",
@@ -125923,7 +126103,8 @@
     "examples_image_url": null,
     "source": "agml",
     "license": "cc-by-4.0",
-    "citation": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196}}"
+    "citation": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196}}",
+    "crop_types": null
   },
   {
     "name": "tea_leaf_disease_classification",
@@ -125951,7 +126132,10 @@
     "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_examples.png",
     "source": "agml",
     "license": "CC BY-NC 4.0",
-    "citation": "@article{BALASUNDARAM2025103784, title = {Tea leaf disease detection using segment anything model and deep convolutional neural networks}, journal = {Results in Engineering}, volume = {25}, pages = {103784}, year = {2025}, issn = {2590-1230}, doi = {https://doi.org/10.1016/j.rineng.2024.103784}, url = {https://www.sciencedirect.com/science/article/pii/S2590123024020279}, author = {Ananthakrishnan Balasundaram and Prem Sundaresan and Aryan Bhavsar and Mishti Mattu and Muthu Subash Kavitha and Ayesha Shaik}}"
+    "citation": "@article{BALASUNDARAM2025103784, title = {Tea leaf disease detection using segment anything model and deep convolutional neural networks}, journal = {Results in Engineering}, volume = {25}, pages = {103784}, year = {2025}, issn = {2590-1230}, doi = {https://doi.org/10.1016/j.rineng.2024.103784}, url = {https://www.sciencedirect.com/science/article/pii/S2590123024020279}, author = {Ananthakrishnan Balasundaram and Prem Sundaresan and Aryan Bhavsar and Mishti Mattu and Muthu Subash Kavitha and Ayesha Shaik}}",
+    "crop_types": [
+      "tea"
+    ]
   },
   {
     "name": "tomato_leaf_disease",
@@ -125979,7 +126163,10 @@
     "examples_image_url": "/img/agml/sample_images/tomato_leaf_disease_examples.png",
     "source": "agml",
     "license": "CC0: Public Domain",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "tomato"
+    ]
   },
   {
     "name": "tomato_ripeness_detection",
@@ -126007,7 +126194,10 @@
     "examples_image_url": "/img/agml/sample_images/tomato_ripeness_detection_examples.png",
     "source": "agml",
     "license": "CC BY-NC-SA 4.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "tomato"
+    ]
   },
   {
     "name": "vegann_multicrop_presence_segmentation",
@@ -126035,7 +126225,8 @@
     "examples_image_url": "/img/agml/sample_images/vegann_multicrop_presence_segmentation_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop RGB images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of RGB images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop RGB images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n"
+    "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop RGB images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of RGB images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop RGB images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n",
+    "crop_types": null
   },
   {
     "name": "vine_virus_photo_dataset",
@@ -126063,7 +126254,10 @@
     "examples_image_url": "/img/agml/sample_images/vine_virus_photo_dataset_examples.png",
     "source": "agml",
     "license": "Apache 2.0",
-    "citation": ""
+    "citation": "",
+    "crop_types": [
+      "vine"
+    ]
   },
   {
     "name": "wheat_head_counting",
@@ -126091,7 +126285,10 @@
     "examples_image_url": "/img/agml/sample_images/wheat_head_counting_examples.png",
     "source": "agml",
     "license": "CC BY-SA 4.0",
-    "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }"
+    "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }",
+    "crop_types": [
+      "wheat"
+    ]
   },
   {
     "name": "white_grapes_and_leaves_segmentation",
@@ -126119,6 +126316,9 @@
     "examples_image_url": "/img/agml/sample_images/white_grapes_and_leaves_segmentation_examples.png",
     "source": "agml",
     "license": "",
-    "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}"
+    "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}",
+    "crop_types": [
+      "grape"
+    ]
   }
 ]
