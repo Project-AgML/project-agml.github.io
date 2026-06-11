@@ -161,8 +161,7 @@
 .exampleImage {
 	display: block;
 	width: 100%;
-	max-height: 300px;
-	object-fit: contain;
+	height: auto;
 	border-radius: 18px;
 	border: 1px solid var(--agml-border);
 	background: var(--agml-surface-strong);
