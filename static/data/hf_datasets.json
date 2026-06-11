@@ -418,5 +418,65 @@
     "zip_size_bytes": 778600000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pomegranate_disease_classification"
-  }
+  },
+  {
+    "name": "rice_disease_classification_bangladesh",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2769,
+    "augmented_num_images": 18536,
+    "classes": [
+      "Healthy",
+      "Insect",
+      "Leaf Scald",
+      "Rice",
+      "Rice Blast",
+      "Rice Leaffolder",
+      "Rice Stripes",
+      "Rice Tungro"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111977",
+    "citation": "Rifat, Shakhawath Hossain; Layes, Tanvir Almas; Hasan, Afif; Mojumdar, Mayen Uddin  (2024), “Rice Leaf Disease and Pest Dataset Overview”, Mendeley Data, V1, doi: 10.17632/vwv3nry3wr.1",
+    "zip_size_bytes": 550444671,
+    "augmented_zip_size_bytes": 2828265966,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_disease_classification_bangladesh",
+    "examples_image_url": "/img/agml/sample_images/rice_disease_classification_bangladesh_sample.png"
+  },
+  {
+    "name": "RoseLeafInsight_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": ["rose"],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3228,
+    "classes": [
+      "Black Spot",
+      "Healthy Leaf",
+      "Insect  Hole",
+      "Yellow Mosaic Virus"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111968",
+    "citation": "Shacha, Arnob Das; Durjoy, Sabbir Hossain; Shikder, Md Emon; Kamal, MD Mostafa; Shoib, Md Mehedi Hasan; Bijoy, Md Hasan Imam (2025), “RoseLeafInsight: A High-Resolution Image Dataset for Rose Leaf Disease Recognition”, Mendeley Data, V1, doi: 10.17632/8chrjdxn79.1",
+    "zip_size_bytes": 5150705758,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/RoseLeafInsight_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/RoseLeafInsight_disease_classification_sample.png"
+}
 ]
