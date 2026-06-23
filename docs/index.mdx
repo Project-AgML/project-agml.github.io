@@ -108,6 +108,10 @@ train_ds.as_torch_dataset()
 
 You're now ready to use AgML for training your own models! Luckily, AgML comes with a training module that enables quick-start training of standard deep learning models on agricultural datasets. Training a grape detection model is as simple as the following code:
 
+:::warning Deprecation Notice
+`agml.models` is deprecated and will be removed in a future release. The example below still works but will emit a `DeprecationWarning` at import time.
+:::
+
 ```python
 import agml
 import agml.models
@@ -125,6 +129,29 @@ model = agml.models.DetectionModel(num_classes=loader.num_classes)
 
 model.run_training(loader)
 ```
+
+## HuggingFace Integration
+
+AgML now includes a `HuggingFaceDataLoader` for loading datasets directly from the [Hugging Face Hub](https://huggingface.co/datasets) into native HuggingFace `DatasetDict` objects, compatible with `transformers` and `diffusers` pipelines.
+
+```python
+from agml.data import HuggingFaceDataLoader
+
+# Load a dataset from the Hub
+loader = HuggingFaceDataLoader("org/dataset-name")
+
+# Load a specific config/subset
+loader = HuggingFaceDataLoader("org/dataset-name", config="augmented")
+
+# Split into train/val/test with optional stratification
+dataset = loader.split(val_size=0.1, test_size=0.1, stratify_cols="label")
+# Returns a DatasetDict with 'train', 'val', and 'test' splits
+
+# Access the underlying DatasetDict at any time
+dataset = loader.dataset
+```
+
+The `HuggingFaceDataLoader` automatically casts image-like columns to the HuggingFace `Image` type for decoded pixel access. Stratified splitting is supported across one or more columns using a composite key.
 
 ## Public Datasets
 
