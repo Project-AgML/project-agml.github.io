@@ -19,7 +19,7 @@
     "documentation": "wGrapeUNIPD-DL_white_grape_bunch_detection",
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/wGrapeUNIPD-DL_white_grape_bunch_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/wGrapeUNIPD-DL_white_grape_bunch_detection_sample.webp",
     "license": "cc-by-4.0",
     "citation": null,
     "parent_dataset": null,
@@ -53,7 +53,7 @@
     ],
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/Strawberry-DS_strawberry_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/Strawberry-DS_strawberry_detection_sample.webp",
     "license": null,
     "citation": null,
     "parent_dataset": null,
@@ -81,7 +81,7 @@
     ],
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/synthetic_cowpea_flower_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/synthetic_cowpea_flower_detection_sample.webp",
     "license": null,
     "citation": null,
     "parent_dataset": null,
@@ -110,7 +110,7 @@
     ],
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/synthetic_cowpea_pod_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/synthetic_cowpea_pod_detection_sample.webp",
     "license": null,
     "citation": null,
     "parent_dataset": null,
@@ -139,7 +139,7 @@
     ],
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/GEMINI_cowpea_pod_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/GEMINI_cowpea_pod_detection_sample.webp",
     "license": null,
     "citation": null,
     "parent_dataset": null,
@@ -167,7 +167,7 @@
     ],
     "stats_mean": null,
     "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/GEMINI_cowpea_flower_detection_sample.png",
+    "examples_image_url": "/img/agml/sample_images/GEMINI_cowpea_flower_detection_sample.webp",
     "license": null,
     "citation": null,
     "parent_dataset": null,
@@ -197,10 +197,10 @@
       "Healthy Leaf",
       "Verticillium Wilt"
     ],
-    "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_sample.webp",
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112142",
-    "citation": "Ripon, Shamim; Gani , Raiyan ; Niha, Nazratan Mazumder ; Rahat, Wasimul Bari ; Toufiq, Shafaeat Hasan ; Maisha, Mushfida Ferdous ; Ahmed, Jubaer  (2025), \u201cCotton Leaf Image Dataset for Disease Classification \u201d, Mendeley Data, V1, doi: 10.17632/t9hgvk2h9p.1",
+    "citation": "Ripon, Shamim; Gani , Raiyan ; Niha, Nazratan Mazumder ; Rahat, Wasimul Bari ; Toufiq, Shafaeat Hasan ; Maisha, Mushfida Ferdous ; Ahmed, Jubaer  (2025), “Cotton Leaf Image Dataset for Disease Classification ”, Mendeley Data, V1, doi: 10.17632/t9hgvk2h9p.1",
     "zip_size_bytes": 61300000,
     "augmented_zip_size_bytes": 359300000,
     "source": "huggingface",
@@ -233,10 +233,10 @@
       "Powdery Mildew",
       "Tobacco Mosaic Virus"
     ],
-    "examples_image_url": "/img/agml/sample_images/eggplant_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/eggplant_leaf_disease_classification_sample.webp",
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112140",
-    "citation": "Nirob, Md Asraful Sharker; Bishshash, Prayma; Ayan, Mariyam Bin; Khatun, Tania; Uddin, Mohammad Shorif (2024), \u201cEggplant Dataset: A Comprehensive Dataset for Agricultural Research and Disease Detection\u201d, Mendeley Data, V1, doi: 10.17632/5drkk544k8.1",
+    "citation": "Nirob, Md Asraful Sharker; Bishshash, Prayma; Ayan, Mariyam Bin; Khatun, Tania; Uddin, Mohammad Shorif (2024), “Eggplant Dataset: A Comprehensive Dataset for Agricultural Research and Disease Detection”, Mendeley Data, V1, doi: 10.17632/5drkk544k8.1",
     "zip_size_bytes": 499400000,
     "augmented_zip_size_bytes": 767800000,
     "source": "huggingface",
@@ -265,12 +265,12 @@
     ],
     "license": "cc-by-nc-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112174",
-    "citation": "Khan, Abid; Preanto, Sabit Ahamed; Paul, Tapon; Bijoy, Md Hasan Imam (2025), \u201cMoringaLeafNet: A Multi-Class Leaf Disease Dataset for Precision Agriculture and Deep Learning Research\u201d, Mendeley Data, V5, doi: 10.17632/w8sr775pjb.5",
+    "citation": "Khan, Abid; Preanto, Sabit Ahamed; Paul, Tapon; Bijoy, Md Hasan Imam (2025), “MoringaLeafNet: A Multi-Class Leaf Disease Dataset for Precision Agriculture and Deep Learning Research”, Mendeley Data, V5, doi: 10.17632/w8sr775pjb.5",
     "zip_size_bytes": 1130000000,
     "augmented_zip_size_bytes": 2860000000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MoringaLeafNet_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/MoringaLeafNet_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/MoringaLeafNet_disease_classification_sample.webp"
   },
   {
     "name": "ash_gourd_disease_classification",
@@ -295,11 +295,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111997",
-    "citation": "Jahan, Nusrat; Hasan, Md Zahid (2024), \u201cAsh Gourd Leaf Healthy and Disease Dataset\u201d, Mendeley Data, V2, doi: 10.17632/zj4th6xvdp.2",
+    "citation": "Jahan, Nusrat; Hasan, Md Zahid (2024), “Ash Gourd Leaf Healthy and Disease Dataset”, Mendeley Data, V2, doi: 10.17632/zj4th6xvdp.2",
     "zip_size_bytes": 1170000000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/ash_gourd_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/ash_gourd_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/ash_gourd_disease_classification_sample.webp"
   },
   {
     "name": "jujube_bruise_classification",
@@ -322,12 +322,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112031",
-    "citation": "Tabib, Md Arham; Liza, Sumyia Sabrin; Rahman, Md Mizanur (2025), \u201cJujubeBruiseNet: A Dataset for Bruise Detection in Ziziphus mauritiana\u201d, Mendeley Data, V5, doi: 10.17632/3mtdhrwgfr.5",
+    "citation": "Tabib, Md Arham; Liza, Sumyia Sabrin; Rahman, Md Mizanur (2025), “JujubeBruiseNet: A Dataset for Bruise Detection in Ziziphus mauritiana”, Mendeley Data, V5, doi: 10.17632/3mtdhrwgfr.5",
     "zip_size_bytes": 21700000,
     "augmented_zip_size_bytes": 162900000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/jujube_bruise_classification",
-    "examples_image_url": "/img/agml/sample_images/jujube_bruise_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/jujube_bruise_classification_sample.webp"
   },
   {
     "name": "MangoImageBD_classification",
@@ -363,12 +363,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111908",
-    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Ahmed, Masud ; Rahoman, Md Mizanur; Islam, Mohammad Manzurul; Ali, Sawkat; Islam, Maheen; Rasel, Ahmed Abdal Shafi; Rahman, Md. Atiqur; Jabid, Taskeed; Ibrahim, Muhammad (2024), \u201cMangoImageBD: An Extensive Image Dataset of Common and Popular Mango Varieties in Bangladesh for Identification and Classification\u201d, Mendeley Data, V2, doi: 10.17632/hp2cdckpdr.2",
+    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Ahmed, Masud ; Rahoman, Md Mizanur; Islam, Mohammad Manzurul; Ali, Sawkat; Islam, Maheen; Rasel, Ahmed Abdal Shafi; Rahman, Md. Atiqur; Jabid, Taskeed; Ibrahim, Muhammad (2024), “MangoImageBD: An Extensive Image Dataset of Common and Popular Mango Varieties in Bangladesh for Identification and Classification”, Mendeley Data, V2, doi: 10.17632/hp2cdckpdr.2",
     "zip_size_bytes": 163600000,
     "augmented_zip_size_bytes": 1140000000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MangoImageBD_classification",
-    "examples_image_url": "/img/agml/sample_images/MangoImageBD_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/MangoImageBD_classification_sample.webp"
   },
   {
     "name": "okra_maturity_classification",
@@ -391,11 +391,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111982",
-    "citation": "Bharathi, Nikhilesh Kumar; FJ, Ferbin ; Sivapatham, Shoba (2025), \u201cOkra Image Dataset\u201d, Mendeley Data, V1, doi: 10.17632/jmhz4826f2.1",
+    "citation": "Bharathi, Nikhilesh Kumar; FJ, Ferbin ; Sivapatham, Shoba (2025), “Okra Image Dataset”, Mendeley Data, V1, doi: 10.17632/jmhz4826f2.1",
     "zip_size_bytes": 62600000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/okra_maturity_classification",
-    "examples_image_url": "/img/agml/sample_images/okra_maturity_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/okra_maturity_classification_sample.webp"
   },
   {
     "name": "pomegranate_disease_classification",
@@ -423,7 +423,7 @@
     "zip_size_bytes": 778600000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pomegranate_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/pomegranate_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/pomegranate_disease_classification_sample.webp"
   },
   {
     "name": "rice_disease_classification_bangladesh",
@@ -452,12 +452,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111977",
-    "citation": "Rifat, Shakhawath Hossain; Layes, Tanvir Almas; Hasan, Afif; Mojumdar, Mayen Uddin  (2024), \u201cRice Leaf Disease and Pest Dataset Overview\u201d, Mendeley Data, V1, doi: 10.17632/vwv3nry3wr.1",
+    "citation": "Rifat, Shakhawath Hossain; Layes, Tanvir Almas; Hasan, Afif; Mojumdar, Mayen Uddin  (2024), “Rice Leaf Disease and Pest Dataset Overview”, Mendeley Data, V1, doi: 10.17632/vwv3nry3wr.1",
     "zip_size_bytes": 550444671,
     "augmented_zip_size_bytes": 2828265966,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_disease_classification_bangladesh",
-    "examples_image_url": "/img/agml/sample_images/rice_disease_classification_bangladesh_sample.png"
+    "examples_image_url": "/img/agml/sample_images/rice_disease_classification_bangladesh_sample.webp"
   },
   {
     "name": "RoseLeafInsight_disease_classification",
@@ -481,11 +481,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111968",
-    "citation": "Shacha, Arnob Das; Durjoy, Sabbir Hossain; Shikder, Md Emon; Kamal, MD Mostafa; Shoib, Md Mehedi Hasan; Bijoy, Md Hasan Imam (2025), \u201cRoseLeafInsight: A High-Resolution Image Dataset for Rose Leaf Disease Recognition\u201d, Mendeley Data, V1, doi: 10.17632/8chrjdxn79.1",
+    "citation": "Shacha, Arnob Das; Durjoy, Sabbir Hossain; Shikder, Md Emon; Kamal, MD Mostafa; Shoib, Md Mehedi Hasan; Bijoy, Md Hasan Imam (2025), “RoseLeafInsight: A High-Resolution Image Dataset for Rose Leaf Disease Recognition”, Mendeley Data, V1, doi: 10.17632/8chrjdxn79.1",
     "zip_size_bytes": 5150705758,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/RoseLeafInsight_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/RoseLeafInsight_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/RoseLeafInsight_disease_classification_sample.webp"
   },
   {
     "name": "taro_blight_stage_classification",
@@ -512,11 +512,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111869",
-    "citation": "Yinka-Banjo, Chika; Nwaneto, Chidiebere; Ugot, Ogban-Asuquo; Umeugochukwu, Obiageli; Annor, Thompson (2024), \u201cAn Image Dataset of Taro Leaf Blight Disease Collected from the West African Sub-Region\u201d, Mendeley Data, V2, doi: 10.17632/3knm93dkc5.2",
+    "citation": "Yinka-Banjo, Chika; Nwaneto, Chidiebere; Ugot, Ogban-Asuquo; Umeugochukwu, Obiageli; Annor, Thompson (2024), “An Image Dataset of Taro Leaf Blight Disease Collected from the West African Sub-Region”, Mendeley Data, V2, doi: 10.17632/3knm93dkc5.2",
     "zip_size_bytes": 1275148970,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/taro_blight_stage_classification",
-    "examples_image_url": "/img/agml/sample_images/taro_blight_stage_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/taro_blight_stage_classification_sample.webp"
   },
   {
     "name": "jute_disease_classification",
@@ -545,7 +545,7 @@
     "zip_size_bytes": 391487547,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/jute_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/jute_disease_classification.png"
+    "examples_image_url": "/img/agml/sample_images/jute_disease_classification.webp"
   },
   {
     "name": "grape_leaf_disease_classification",
@@ -569,11 +569,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111716",
-    "citation": "Dharrao, Madhuri; Dharrao, Deepak; Sonawane, Rakesh; zade, Nilima (2025), \u201cNiphad Grape Leaf Disease Dataset (NGLD)\u201d, Mendeley Data, V5, doi: 10.17632/8nnd2ypcv3.5",
+    "citation": "Dharrao, Madhuri; Dharrao, Deepak; Sonawane, Rakesh; zade, Nilima (2025), “Niphad Grape Leaf Disease Dataset (NGLD)”, Mendeley Data, V5, doi: 10.17632/8nnd2ypcv3.5",
     "zip_size_bytes": 26151761,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grape_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/grape_leaf_disease_classification.png"
+    "examples_image_url": "/img/agml/sample_images/grape_leaf_disease_classification.webp"
   },
   {
     "name": "durian_disease_classification_vietnam",
@@ -599,11 +599,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111845",
-    "citation": "Thanh Truong, Nguyen; Xuan Linh, Nguyen; Thang, Cap Pham Dinh; Tuong, Le (2025), \u201cA Durian Leaf Image Dataset of Common Diseases in Vietnam for Agricultural Diagnosis \u201d, Mendeley Data, V4, doi: 10.17632/pxzvksbwnj.4",
+    "citation": "Thanh Truong, Nguyen; Xuan Linh, Nguyen; Thang, Cap Pham Dinh; Tuong, Le (2025), “A Durian Leaf Image Dataset of Common Diseases in Vietnam for Agricultural Diagnosis ”, Mendeley Data, V4, doi: 10.17632/pxzvksbwnj.4",
     "zip_size_bytes": 183109270,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/durian_disease_classification_vietnam",
-    "examples_image_url": "/img/agml/sample_images/durian_disease_classification_vietnam_sample.png"
+    "examples_image_url": "/img/agml/sample_images/durian_disease_classification_vietnam_sample.webp"
   },
   {
     "name": "teaLeafBD_disease_classification_classification",
@@ -630,11 +630,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111769",
-    "citation": "Alam, B M Shahria; Ahammed, Fahad; Kibria, Golam; Noor, Mohammad Tahmid; Shikdar, Omar Faruq; Mahazabin, Kazi Isat; Ali, Md Nawab Yousuf (2025), \u201cteaLeafBD\u201d, Mendeley Data, V4, doi: 10.17632/744vznw5k2.4",
+    "citation": "Alam, B M Shahria; Ahammed, Fahad; Kibria, Golam; Noor, Mohammad Tahmid; Shikdar, Omar Faruq; Mahazabin, Kazi Isat; Ali, Md Nawab Yousuf (2025), “teaLeafBD”, Mendeley Data, V4, doi: 10.17632/744vznw5k2.4",
     "zip_size_bytes": 1353513825,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/teaLeafBD_disease_classification_classification",
-    "examples_image_url": "/img/agml/sample_images/teaLeafBD_disease_classification_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/teaLeafBD_disease_classification_classification_sample.webp"
   },
   {
     "name": "mango_growth_detection",
@@ -658,11 +658,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111780",
-    "citation": "Kabir, Sayem ; Rashid, Mohammad Rifat Ahmmad (2024), \u201cImage Dataset for Mango Growth Stages  Analysis\u201d, Mendeley Data, V1, doi: 10.17632/5snwpzdtzs.1",
+    "citation": "Kabir, Sayem ; Rashid, Mohammad Rifat Ahmmad (2024), “Image Dataset for Mango Growth Stages  Analysis”, Mendeley Data, V1, doi: 10.17632/5snwpzdtzs.1",
     "zip_size_bytes": 76123361,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_growth_object_detection",
-    "examples_image_url": "/img/agml/sample_images/mango_growth_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/mango_growth_detection_sample.webp"
   },
   {
     "name": "betel_leaf_disease_classification_2",
@@ -686,12 +686,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111564",
-    "citation": "Hridoy, Rashidul Hasan; Habib, Md Tarek; Mahmud, Imran; Haque, Aminul; Mamun, Md Abdulla Al (2025), \u201cComprehensive Betel Leaf Disease Dataset for Advanced Pathology Research \u201d, Mendeley Data, V1, doi: 10.17632/vpzkntzjty.1",
+    "citation": "Hridoy, Rashidul Hasan; Habib, Md Tarek; Mahmud, Imran; Haque, Aminul; Mamun, Md Abdulla Al (2025), “Comprehensive Betel Leaf Disease Dataset for Advanced Pathology Research ”, Mendeley Data, V1, doi: 10.17632/vpzkntzjty.1",
     "zip_size_bytes": 202790683,
     "augmented_zip_size_bytes": 1195037270,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/betel_leaf_disease_classification_2",
-    "examples_image_url": "/img/agml/sample_images/betel_leaf_disease_classification_2_sample.png"
+    "examples_image_url": "/img/agml/sample_images/betel_leaf_disease_classification_2_sample.webp"
   },
   {
     "name": "coffee_bean_quality_classification",
@@ -720,11 +720,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111434",
-    "citation": "Nair, Bipin (2024), \u201cCBD_Coffee Bean Dataset\u201d, Mendeley Data, V1, doi: 10.17632/52877z55vr.1",
+    "citation": "Nair, Bipin (2024), “CBD_Coffee Bean Dataset”, Mendeley Data, V1, doi: 10.17632/52877z55vr.1",
     "zip_size_bytes": 337175739,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/coffee_bean_quality_classification",
-    "examples_image_url": "/img/agml/sample_images/coffee_bean_quality_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/coffee_bean_quality_classification_sample.webp"
   },
   {
     "name": "eggplant_disease_classification",
@@ -751,12 +751,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111353",
-    "citation": "Howlader, Shakib; Ahamed, Md. Sabbir; Mojumdar, Mayen Uddin  (2025), \u201cEggplant Leaf Disease Detection Dataset\u201d, Mendeley Data, V2, doi: 10.17632/d3ypkphghb.2",
+    "citation": "Howlader, Shakib; Ahamed, Md. Sabbir; Mojumdar, Mayen Uddin  (2025), “Eggplant Leaf Disease Detection Dataset”, Mendeley Data, V2, doi: 10.17632/d3ypkphghb.2",
     "zip_size_bytes": 2711819609,
     "augmented_zip_size_bytes": 135488596,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/eggplant_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/eggplant_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/eggplant_disease_classification_sample.webp"
   },
   {
     "name": "olive_tree_crown_detection",
@@ -775,11 +775,11 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111515",
-    "citation": "Hnida, Youness; Mahraz, Mohamed Adnane; Achebour, Ali; Yahyaouy, Ali; Riffi, Jamal; Tairi, Hamid (2024), \u201cOliveTreeCrownsDb: A High-Resolution UAV Dataset for Detection and Segmentation in Agricultural Computer Vision\u201d, Mendeley Data, V3, doi: 10.17632/xym8rd2srf.3",
+    "citation": "Hnida, Youness; Mahraz, Mohamed Adnane; Achebour, Ali; Yahyaouy, Ali; Riffi, Jamal; Tairi, Hamid (2024), “OliveTreeCrownsDb: A High-Resolution UAV Dataset for Detection and Segmentation in Agricultural Computer Vision”, Mendeley Data, V3, doi: 10.17632/xym8rd2srf.3",
     "zip_size_bytes": 2045083876,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/olive_tree_crown_detection",
-    "examples_image_url": "/img/agml/sample_images/olive_tree_crown_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/olive_tree_crown_detection_sample.webp"
   },
   {
     "name": "CS-D_tea_leaf_disease_classification",
@@ -805,11 +805,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112251",
-    "citation": "Gupta, Megha (2025), \u201cTea Leaf Dataset\u201d, Mendeley Data, V1, doi: 10.17632/94fzcdz8gz.1",
+    "citation": "Gupta, Megha (2025), “Tea Leaf Dataset”, Mendeley Data, V1, doi: 10.17632/94fzcdz8gz.1",
     "zip_size_bytes": 1989289395,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CS-D_tea_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/CS-D_tea_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/CS-D_tea_leaf_disease_classification_sample.webp"
   },
   {
     "name": "turmeric_leaf_disease_classification",
@@ -834,12 +834,12 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112184",
-    "citation": "Hossain , Md Riyad ; Rashid, Mohammad Rifat Ahmmad; Jahangir , Tasfia binte ; Hossain , Md. Samir ; Rahman, Md. Mahamudur ; Gani , Raiyan ; Ahmed , Jubaer ; Islam, Raihan Ul; Khan, M. Saddam Hossain  (2025), \u201cImage Dataset for Turmeric Plant Leaf Disease Detection \u201d, Mendeley Data, V2, doi: 10.17632/jtttfbx342.2",
+    "citation": "Hossain , Md Riyad ; Rashid, Mohammad Rifat Ahmmad; Jahangir , Tasfia binte ; Hossain , Md. Samir ; Rahman, Md. Mahamudur ; Gani , Raiyan ; Ahmed , Jubaer ; Islam, Raihan Ul; Khan, M. Saddam Hossain  (2025), “Image Dataset for Turmeric Plant Leaf Disease Detection ”, Mendeley Data, V2, doi: 10.17632/jtttfbx342.2",
     "zip_size_bytes": 3313266143,
     "augmented_zip_size_bytes": 16019083,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/turmeric_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/turmeric_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/turmeric_leaf_disease_classification_sample.webp"
   },
   {
     "name": "banana_bunch_maturity_classification_classification",
@@ -861,11 +861,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.112337",
-    "citation": "Hayat, Ahatsham; Baglat, Preety; Mendon\u00e7a, Fabio; Mostafa, Sheikh Shanawaz; Morgado-Dias, Fernando  (2024), \u201cBanana Bunch Harvesting Dataset\u201d, Mendeley Data, V1, doi: 10.17632/kjrsb7ztr9.1",
+    "citation": "Hayat, Ahatsham; Baglat, Preety; Mendonça, Fabio; Mostafa, Sheikh Shanawaz; Morgado-Dias, Fernando  (2024), “Banana Bunch Harvesting Dataset”, Mendeley Data, V1, doi: 10.17632/kjrsb7ztr9.1",
     "zip_size_bytes": 4881666205,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_bunch_maturity_classification_classification",
-    "examples_image_url": "/img/agml/sample_images/banana_bunch_maturity_classification_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/banana_bunch_maturity_classification_classification_sample.webp"
   },
   {
     "name": "BrinjalFruitX_disease_classification",
@@ -890,11 +890,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2026.112490",
-    "citation": "Hasan, Md. Zahid ; Bitto, Abu Kowshir; Bijoy, Md Hasan Imam (2025), \u201cBrinjalFruitX: A Field-Collected Image Dataset for Machine Learning and Deep Learning-Based Disease Identification in Brinjal Fruits\u201d, Mendeley Data, V1, doi: 10.17632/ngc58fsxgd.1",
+    "citation": "Hasan, Md. Zahid ; Bitto, Abu Kowshir; Bijoy, Md Hasan Imam (2025), “BrinjalFruitX: A Field-Collected Image Dataset for Machine Learning and Deep Learning-Based Disease Identification in Brinjal Fruits”, Mendeley Data, V1, doi: 10.17632/ngc58fsxgd.1",
     "zip_size_bytes": 1903658616,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/BrinjalFruitX_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/BrinjalFruitX_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/BrinjalFruitX_disease_classification_sample.webp"
   },
   {
     "name": "SIMPDV1_plant_classification",
@@ -953,11 +953,11 @@
     ],
     "license": "cc-by-nc-3.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111660",
-    "citation": "T, gopu; k, uma (2025), \u201cSIMPD V1: South Indian Medicinal Plants dataset (Version 1)\u201d, Mendeley Data, V2, doi: 10.17632/9d89vjcghv.2",
+    "citation": "T, gopu; k, uma (2025), “SIMPD V1: South Indian Medicinal Plants dataset (Version 1)”, Mendeley Data, V2, doi: 10.17632/9d89vjcghv.2",
     "zip_size_bytes": 5320816465,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/SIMPDV1_plant_classification",
-    "examples_image_url": "/img/agml/sample_images/SIMPDV1_plant_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/SIMPDV1_plant_classification_sample.webp"
   },
   {
     "name": "TOM2024_disease_classification",
@@ -1005,11 +1005,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111357",
-    "citation": "Appiah, Obed; Hackman, Kwame Oppong ; Diallo, Belko Abdoul Aziz; Ogunjobi, Kehinde O; Ouedraogo, Valentin; Bebe, Momo; SON, Diakalia (2024), \u201cTOM2024\u201d, Mendeley Data, V1, doi: 10.17632/3d4yg89rtr.1",
+    "citation": "Appiah, Obed; Hackman, Kwame Oppong ; Diallo, Belko Abdoul Aziz; Ogunjobi, Kehinde O; Ouedraogo, Valentin; Bebe, Momo; SON, Diakalia (2024), “TOM2024”, Mendeley Data, V1, doi: 10.17632/3d4yg89rtr.1",
     "zip_size_bytes": 132628646,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/TOM2024_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/TOM2024_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/TOM2024_disease_classification_sample.webp"
   },
   {
     "name": "vineyard_pruning_segmentation",
@@ -1032,11 +1032,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111335",
-    "citation": "Pacioni, Elia; Abengozar-Garc\u00eda, Eugenio; Mac\u00edas Mac\u00edas, Miguel; Garc\u00eda Orellana, Carlos J.; Gonz\u00e1lez Velasco, Horacio M.; Garc\u00eda Manso, Antonio (2024), \u201cVineyard dataset for pruning\u201d, Mendeley Data, V2, doi: 10.17632/n8cs4ns97p.2",
+    "citation": "Pacioni, Elia; Abengozar-García, Eugenio; Macías Macías, Miguel; García Orellana, Carlos J.; González Velasco, Horacio M.; García Manso, Antonio (2024), “Vineyard dataset for pruning”, Mendeley Data, V2, doi: 10.17632/n8cs4ns97p.2",
     "zip_size_bytes": 3109602543,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/vineyard_pruning_segmentation",
-    "examples_image_url": "/img/agml/sample_images/vineyard_pruning_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/vineyard_pruning_segmentation_sample.webp"
   },
   {
     "name": "AFruitDB_fruit_grade_classification",
@@ -1064,11 +1064,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111380",
-    "citation": "Mojumdar, Mayen Uddin ; Mamun, Md Al ; Islam, Shahrin; Hasan, Rifat (2024), \u201cA Dataset of Common Asian Fruits for Quality Grading and Biodiversity Research\u201d, Mendeley Data, V1, doi: 10.17632/bz65dz2pbj.1",
+    "citation": "Mojumdar, Mayen Uddin ; Mamun, Md Al ; Islam, Shahrin; Hasan, Rifat (2024), “A Dataset of Common Asian Fruits for Quality Grading and Biodiversity Research”, Mendeley Data, V1, doi: 10.17632/bz65dz2pbj.1",
     "zip_size_bytes": 3206870630,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/AFruitDB_fruit_grade_classification",
-    "examples_image_url": "/img/agml/sample_images/AFruitDB_fruit_grade_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/AFruitDB_fruit_grade_classification_sample.webp"
   },
   {
     "name": "turmeric_disease_classification",
@@ -1095,11 +1095,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111435",
-    "citation": "SIAM, A K M FAZLUL KOBIR ; Nirob, Md Asraful Sharker; Bishshash, Prayma (2025), \u201cTurmeric Plant Disease Dataset: Advancing AI for Agricultural Sustainability\u201d, Mendeley Data, V2, doi: 10.17632/g46dvrcvwn.2",
+    "citation": "SIAM, A K M FAZLUL KOBIR ; Nirob, Md Asraful Sharker; Bishshash, Prayma (2025), “Turmeric Plant Disease Dataset: Advancing AI for Agricultural Sustainability”, Mendeley Data, V2, doi: 10.17632/g46dvrcvwn.2",
     "zip_size_bytes": 261469058,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/turmeric_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/turmeric_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/turmeric_disease_classification_sample.webp"
   },
   {
     "name": "black_gram_disease_classification",
@@ -1124,11 +1124,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111347",
-    "citation": "Shoib, Md Mehedi Hasan; Saeem, Shahnewaz; Tonima, Afia Benta Aziz; Mojumdar, Mayen Uddin  (2024), \u201cImage Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves: A Resource for Machine Learning Research\u201d, Mendeley Data, V3, doi: 10.17632/z55yrbmn2d.3",
+    "citation": "Shoib, Md Mehedi Hasan; Saeem, Shahnewaz; Tonima, Afia Benta Aziz; Mojumdar, Mayen Uddin  (2024), “Image Dataset for Disease Detection in Black Gram (Vigna mungo) Leaves: A Resource for Machine Learning Research”, Mendeley Data, V3, doi: 10.17632/z55yrbmn2d.3",
     "zip_size_bytes": 1961562620,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/black_gram_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/black_gram_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/black_gram_disease_classification_sample.webp"
   },
   {
     "name": "african_plum_grading_classification",
@@ -1158,7 +1158,7 @@
     "zip_size_bytes": 307720141,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/african_plum_grading_classification",
-    "examples_image_url": "/img/agml/sample_images/african_plum_grading_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/african_plum_grading_classification_sample.webp"
   },
   {
     "name": "hog_plum_leaf_disease_classification",
@@ -1182,11 +1182,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111311",
-    "citation": "Durjoy, Sabbir Hossain; EMON, MD EMON SHIKDER; Mojumdar, Mayen Uddin  (2024), \u201cHog Plum Leaf Disease Detection Dataset\u201d, Mendeley Data, V1, doi: 10.17632/yvtn2gp8zg.1",
+    "citation": "Durjoy, Sabbir Hossain; EMON, MD EMON SHIKDER; Mojumdar, Mayen Uddin  (2024), “Hog Plum Leaf Disease Detection Dataset”, Mendeley Data, V1, doi: 10.17632/yvtn2gp8zg.1",
     "zip_size_bytes": 2747105764,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/hog_plum_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/hog_plum_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/hog_plum_leaf_disease_classification_sample.webp"
   },
   {
     "name": "dragonfruit_disease_classification",
@@ -1212,11 +1212,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111411",
-    "citation": "Sarkar, Pronob; Pranta, Gourab Kumar ; Mojumdar, Mayen Uddin  (2024), \u201cDragon fruit & leaf Dataset from Bangladesh for Classification and Ecological Research\u201d, Mendeley Data, V1, doi: 10.17632/cfchfdpfw5.1",
+    "citation": "Sarkar, Pronob; Pranta, Gourab Kumar ; Mojumdar, Mayen Uddin  (2024), “Dragon fruit & leaf Dataset from Bangladesh for Classification and Ecological Research”, Mendeley Data, V1, doi: 10.17632/cfchfdpfw5.1",
     "zip_size_bytes": 2288654839,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/dragonfruit_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/dragonfruit_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/dragonfruit_disease_classification_sample.webp"
   },
   {
     "name": "tea_leaf_disease_classification_bangladesh",
@@ -1240,11 +1240,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111379",
-    "citation": "Ahmad, MD Hasan (2024), \u201cAdvanced Tea Crop Disease Study: High-Resolution Dataset for Precision Agriculture and Pathological Insight\u201d, Mendeley Data, V4, doi: 10.17632/tt2smzrzrs.4",
+    "citation": "Ahmad, MD Hasan (2024), “Advanced Tea Crop Disease Study: High-Resolution Dataset for Precision Agriculture and Pathological Insight”, Mendeley Data, V4, doi: 10.17632/tt2smzrzrs.4",
     "zip_size_bytes": 258979082,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification_bangladesh",
-    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_bangladesh_sample.png"
+    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_bangladesh_sample.webp"
   },
   {
     "name": "vegetable_classification_bangladesh_classification",
@@ -1287,11 +1287,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111441",
-    "citation": "Ahmed, Md Jobayer; Saha, Ratu; Dutta , Arpon Kishore ; Mojumdar, Mayen Uddin  (2025), \u201cVegetable Image Dataset for Classification Models: A Bangladeshi Perspective\u201d, Mendeley Data, V4, doi: 10.17632/b9rvg4f2st.4",
+    "citation": "Ahmed, Md Jobayer; Saha, Ratu; Dutta , Arpon Kishore ; Mojumdar, Mayen Uddin  (2025), “Vegetable Image Dataset for Classification Models: A Bangladeshi Perspective”, Mendeley Data, V4, doi: 10.17632/b9rvg4f2st.4",
     "zip_size_bytes": 2298701986,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/vegetable_classification_bangladesh",
-    "examples_image_url": "/img/agml/sample_images/vegetable_classification_bangladesh_sample.png"
+    "examples_image_url": "/img/agml/sample_images/vegetable_classification_bangladesh_sample.webp"
   },
   {
     "name": "centella_asiatica_leaves",
@@ -1314,11 +1314,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111150",
-    "citation": "Suryawanshi, Yogesh; Wakode, Krishna; PATIL, Kailas; chumchu, prawit (2024), \u201cCentella Asiatica Leaf Image Dataset\u201d, Mendeley Data, V2, doi: 10.17632/hrx2kgphy5.2",
+    "citation": "Suryawanshi, Yogesh; Wakode, Krishna; PATIL, Kailas; chumchu, prawit (2024), “Centella Asiatica Leaf Image Dataset”, Mendeley Data, V2, doi: 10.17632/hrx2kgphy5.2",
     "zip_size_bytes": 1640898283,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/centella_asiatica_leaves",
-    "examples_image_url": "/img/agml/sample_images/centella_asiatica_leaves_sample.png"
+    "examples_image_url": "/img/agml/sample_images/centella_asiatica_leaves_sample.webp"
   },
   {
     "name": "date_palm_leaf_disease_classification",
@@ -1347,11 +1347,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.110933",
-    "citation": "Namoun, Abdallah; Alkhodre, Ahmad B.; Abi Sen, Adnan Ahmad ; Alsaawy, Yazed; Almoamari, Hani (2024), \u201cDiseases of date palm leaves dataset\u201d, Mendeley Data, V2, doi: 10.17632/g684ghfxvg.2",
+    "citation": "Namoun, Abdallah; Alkhodre, Ahmad B.; Abi Sen, Adnan Ahmad ; Alsaawy, Yazed; Almoamari, Hani (2024), “Diseases of date palm leaves dataset”, Mendeley Data, V2, doi: 10.17632/g684ghfxvg.2",
     "zip_size_bytes": 208299356,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/date_palm_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/date_palm_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/date_palm_leaf_disease_classification_sample.webp"
   },
   {
     "name": "rice_seedling_classification",
@@ -1378,7 +1378,7 @@
     "zip_size_bytes": 37940285,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_seedling_classification",
-    "examples_image_url": "/img/agml/sample_images/rice_seedling_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/rice_seedling_classification_sample.webp"
   },
   {
     "name": "bay_leaf_disease_classification",
@@ -1401,11 +1401,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111024",
-    "citation": "PAYGUDE, PRIYANKA; CHAVAN, PRASHANT; Gayakwad, Milind (2024), \u201cIndian Bay Leaves or Cinnamomum Tamala Leaves Dataset\u201d, Mendeley Data, V2, doi: 10.17632/s9t7sr52wg.2",
+    "citation": "PAYGUDE, PRIYANKA; CHAVAN, PRASHANT; Gayakwad, Milind (2024), “Indian Bay Leaves or Cinnamomum Tamala Leaves Dataset”, Mendeley Data, V2, doi: 10.17632/s9t7sr52wg.2",
     "zip_size_bytes": 2844559582,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/bay_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/bay_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/bay_leaf_disease_classification_sample.webp"
   },
   {
     "name": "bean_cowpea_leaf_disease_classification",
@@ -1432,11 +1432,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111023",
-    "citation": "Rashid, Mohammad Rifat Ahmmad; Hasan, Mahamudul; Gani, Raiyan ; Kamara, Raka ; Tarin, Taslima Khan ; Rabbi, Sheikh Fajlay  (2024), \u201cImage Dataset for Bean and Cowpea Plant Leaf Disease Detection and Freshness Assessment from Bangladesh \u201d, Mendeley Data, V1, doi: 10.17632/ykvcrjffzd.1",
+    "citation": "Rashid, Mohammad Rifat Ahmmad; Hasan, Mahamudul; Gani, Raiyan ; Kamara, Raka ; Tarin, Taslima Khan ; Rabbi, Sheikh Fajlay  (2024), “Image Dataset for Bean and Cowpea Plant Leaf Disease Detection and Freshness Assessment from Bangladesh ”, Mendeley Data, V1, doi: 10.17632/ykvcrjffzd.1",
     "zip_size_bytes": 1254989904,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/bean_cowpea_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/bean_cowpea_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/bean_cowpea_leaf_disease_classification_sample.webp"
   },
   {
     "name": "papaya_leaf_disease_detection",
@@ -1461,11 +1461,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.110910",
-    "citation": "Sarker, Arpita ; Mustofa, Sumaya; Ahad, Md Taimur  (2024), \u201cBDPapayaLeaf: A annotation based image dataset of papaya leaf disease.\u201d, Mendeley Data, V2, doi: 10.17632/p997fvf526.2",
+    "citation": "Sarker, Arpita ; Mustofa, Sumaya; Ahad, Md Taimur  (2024), “BDPapayaLeaf: A annotation based image dataset of papaya leaf disease.”, Mendeley Data, V2, doi: 10.17632/p997fvf526.2",
     "zip_size_bytes": 118718405,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/papaya_leaf_disease_detection",
-    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_detection_sample.webp"
   },
   {
     "name": "REMP_plant_classification",
@@ -1516,11 +1516,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.110895",
-    "citation": "Islam, Mohammad Manzurul; Rahman, Sanjida; Hoque, Nahida; Mamun, Md. Al; Moheuddin, Md. Sultan (2024), \u201cREMP: A Unique Dataset of Rare and Endangered Medicinal Plants in Bangladesh\u201d, Mendeley Data, V1, doi: 10.17632/hnwrxg8zm8.1",
+    "citation": "Islam, Mohammad Manzurul; Rahman, Sanjida; Hoque, Nahida; Mamun, Md. Al; Moheuddin, Md. Sultan (2024), “REMP: A Unique Dataset of Rare and Endangered Medicinal Plants in Bangladesh”, Mendeley Data, V1, doi: 10.17632/hnwrxg8zm8.1",
     "zip_size_bytes": 108863130,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/REMP_plant_classification",
-    "examples_image_url": "/img/agml/sample_images/REMP_plant_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/REMP_plant_classification_sample.webp"
   },
   {
     "name": "cotton_leaf_disease_classification_bangladesh_2",
@@ -1549,11 +1549,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.110913",
-    "citation": "Bishshash, Prayma; Nirob, Md Asraful Sharker; Shikder, Md. Habibur; Sarower, Afjal (2024), \u201cSAR-CLD-2024: A Comprehensive Dataset for Cotton Leaf Disease Detection\u201d, Mendeley Data, V2, doi: 10.17632/b3jy2p6k8w.2",
+    "citation": "Bishshash, Prayma; Nirob, Md Asraful Sharker; Shikder, Md. Habibur; Sarower, Afjal (2024), “SAR-CLD-2024: A Comprehensive Dataset for Cotton Leaf Disease Detection”, Mendeley Data, V2, doi: 10.17632/b3jy2p6k8w.2",
     "zip_size_bytes": 300324698,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cotton_leaf_disease_classification_bangladesh_2",
-    "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_bangladesh_2_sample.png"
+    "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_bangladesh_2_sample.webp"
   },
   {
     "name": "banana_guava_quality_classification",
@@ -1577,11 +1577,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111025",
-    "citation": "KUMARI, ABIBAN; Singh, Jaswinder (2024), \u201cFruits (Banana and Guava) datasets for non-destructive quality classifications\u201d, Mendeley Data, V2, doi: 10.17632/56td5w4wz2.2",
+    "citation": "KUMARI, ABIBAN; Singh, Jaswinder (2024), “Fruits (Banana and Guava) datasets for non-destructive quality classifications”, Mendeley Data, V2, doi: 10.17632/56td5w4wz2.2",
     "zip_size_bytes": 477412221,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_guava_quality_classification",
-    "examples_image_url": "/img/agml/sample_images/banana_guava_quality_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/banana_guava_quality_classification_sample.webp"
   },
   {
     "name": "BDMANGO_variety_classification",
@@ -1609,11 +1609,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111241",
-    "citation": "Islam, Mohammad Manzurul; Das, Aritra; Hasan, Md. Rakibul; Rashid, Mohammad Rifat Ahmmad (2024), \u201cImage Dataset of Bangladeshi Mango Leaf\u201d, Mendeley Data, V5, doi: 10.17632/nnh69sng8p.5",
+    "citation": "Islam, Mohammad Manzurul; Das, Aritra; Hasan, Md. Rakibul; Rashid, Mohammad Rifat Ahmmad (2024), “Image Dataset of Bangladeshi Mango Leaf”, Mendeley Data, V5, doi: 10.17632/nnh69sng8p.5",
     "zip_size_bytes": 14898089,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/BDMANGO_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/BDMANGO_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/BDMANGO_variety_classification_sample.webp"
   },
   {
     "name": "money_plant_disease_classification",
@@ -1636,11 +1636,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111216",
-    "citation": "Ahmad, MD Hasan (2024), \u201cAdvanced Dataset on Money Plant Diseases for AI Pathology Research\u201d, Mendeley Data, V3, doi: 10.17632/rzjww3vdxt.3",
+    "citation": "Ahmad, MD Hasan (2024), “Advanced Dataset on Money Plant Diseases for AI Pathology Research”, Mendeley Data, V3, doi: 10.17632/rzjww3vdxt.3",
     "zip_size_bytes": 10368132,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/money_plant_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/money_plant_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/money_plant_disease_classification_sample.webp"
   },
   {
     "name": "radish_leaf_disease_classification",
@@ -1665,11 +1665,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111263",
-    "citation": "Rashid, Mohammad Rifat Ahmmad; Hasan, Mahamudul; Gani, Raiyan ; Tarin, Taslima Khan ; Kamara, Raka ; Rabbi, Sheikh Fajlay  (2024), \u201cImage Dataset for Radish Plant Leaf Disease Detection and Freshness Assessment from Bangladesh \u201d, Mendeley Data, V1, doi: 10.17632/s973cz2jcd.1",
+    "citation": "Rashid, Mohammad Rifat Ahmmad; Hasan, Mahamudul; Gani, Raiyan ; Tarin, Taslima Khan ; Kamara, Raka ; Rabbi, Sheikh Fajlay  (2024), “Image Dataset for Radish Plant Leaf Disease Detection and Freshness Assessment from Bangladesh ”, Mendeley Data, V1, doi: 10.17632/s973cz2jcd.1",
     "zip_size_bytes": 472584908,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/radish_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/radish_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/radish_leaf_disease_classification_sample.webp"
   },
   {
     "name": "IDDMSLD_spinach_leaf_disease_classification",
@@ -1694,11 +1694,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111293",
-    "citation": "Sayeem , Adnan Rahman; Omi  , Jannatul Ferdous; Hasan , Mehedi; Mojumdar, Mayen Uddin  (2024), \u201cMalabar Spinach Disease Detection Dataset\u201d, Mendeley Data, V2, doi: 10.17632/sy69db2nz5.2",
+    "citation": "Sayeem , Adnan Rahman; Omi  , Jannatul Ferdous; Hasan , Mehedi; Mojumdar, Mayen Uddin  (2024), “Malabar Spinach Disease Detection Dataset”, Mendeley Data, V2, doi: 10.17632/sy69db2nz5.2",
     "zip_size_bytes": 336744844,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/IDDMSLD_spinach_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/IDDMSLD_spinach_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/IDDMSLD_spinach_leaf_disease_classification_sample.webp"
   },
   {
     "name": "BananaImageBD_variety_classification",
@@ -1724,11 +1724,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111239",
-    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Rasel, Ahmed Abdal Shafi Rasel; Ahmed, Masud; Saykot, Md. Jahid Hassan; Shanta, Shanjida Sultan; Akter, Sonali; Das, Ankan Chandra; Islam, Mohammad Manzurul; Hasan, Mahamudul; Ali, Sawkat (2024), \u201cBananaImageBD: A Comprehensive Image Dataset of Common Banana Varieties with Different Ripeness Stages in Bangladesh.\u201d, Mendeley Data, V2, doi: 10.17632/ptfscwtnyz.2",
+    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Rasel, Ahmed Abdal Shafi Rasel; Ahmed, Masud; Saykot, Md. Jahid Hassan; Shanta, Shanjida Sultan; Akter, Sonali; Das, Ankan Chandra; Islam, Mohammad Manzurul; Hasan, Mahamudul; Ali, Sawkat (2024), “BananaImageBD: A Comprehensive Image Dataset of Common Banana Varieties with Different Ripeness Stages in Bangladesh.”, Mendeley Data, V2, doi: 10.17632/ptfscwtnyz.2",
     "zip_size_bytes": 12210739,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/BananaImageBD_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/BananaImageBD_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/BananaImageBD_variety_classification_sample.webp"
   },
   {
     "name": "BananaImageBD_ripeness_classification",
@@ -1754,11 +1754,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111239",
-    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Rasel, Ahmed Abdal Shafi Rasel; Ahmed, Masud; Saykot, Md. Jahid Hassan; Shanta, Shanjida Sultan; Akter, Sonali; Das, Ankan Chandra; Islam, Mohammad Manzurul; Hasan, Mahamudul; Ali, Sawkat (2024), \u201cBananaImageBD: A Comprehensive Image Dataset of Common Banana Varieties with Different Ripeness Stages in Bangladesh.\u201d, Mendeley Data, V2, doi: 10.17632/ptfscwtnyz.2",
+    "citation": "Ferdaus, Md Hasanul; Prito, Rizvee Hassan; Rasel, Ahmed Abdal Shafi Rasel; Ahmed, Masud; Saykot, Md. Jahid Hassan; Shanta, Shanjida Sultan; Akter, Sonali; Das, Ankan Chandra; Islam, Mohammad Manzurul; Hasan, Mahamudul; Ali, Sawkat (2024), “BananaImageBD: A Comprehensive Image Dataset of Common Banana Varieties with Different Ripeness Stages in Bangladesh.”, Mendeley Data, V2, doi: 10.17632/ptfscwtnyz.2",
     "zip_size_bytes": 3717349,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/BananaImageBD_ripeness_classification",
-    "examples_image_url": "/img/agml/sample_images/BananaImageBD_ripeness_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/BananaImageBD_ripeness_classification_sample.webp"
   },
   {
     "name": "lemon_leaf_disease_classification",
@@ -1789,11 +1789,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111244",
-    "citation": "Siam, A K M Fazlul Kobir; Bishshash, Prayma; Nirob, Md Asraful Sharker; Mamun, Sajib Bin; Assaduzzaman, Md; Noori, Sheak Rashed Haider  (2024), \u201cComprehensive Lemon Leaf Disease Dataset for Advanced Detection and Sustainable Agriculture\u201d, Mendeley Data, V1, doi: 10.17632/44nrn4593f.1",
+    "citation": "Siam, A K M Fazlul Kobir; Bishshash, Prayma; Nirob, Md Asraful Sharker; Mamun, Sajib Bin; Assaduzzaman, Md; Noori, Sheak Rashed Haider  (2024), “Comprehensive Lemon Leaf Disease Dataset for Advanced Detection and Sustainable Agriculture”, Mendeley Data, V1, doi: 10.17632/44nrn4593f.1",
     "zip_size_bytes": 356691214,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/lemon_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/lemon_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/lemon_leaf_disease_classification_sample.webp"
   },
   {
     "name": "lentil_disease_classification",
@@ -1817,11 +1817,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111224",
-    "citation": "Mahamud, Eram ; Tapos, Md Assaduzzaman (2024), \u201cLentil Plant Disease Image Dataset (4 Class)\u201d, Mendeley Data, V2, doi: 10.17632/7vb77bz2st.2",
+    "citation": "Mahamud, Eram ; Tapos, Md Assaduzzaman (2024), “Lentil Plant Disease Image Dataset (4 Class)”, Mendeley Data, V2, doi: 10.17632/7vb77bz2st.2",
     "zip_size_bytes": 74050616,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/lentil_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/lentil_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/lentil_disease_classification_sample.webp"
   },
   {
     "name": "GYMNSA_pear_rust_detection",
@@ -1840,11 +1840,11 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111271",
-    "citation": "Ma\u00df, Virginia; Alirezazadeh, Pendar; Seidl-Schulz, Johannes; Leipnitz, Matthias; Fritzsche, Eric; Ibraheem, Rasheed Ali Adam; Geyer, Martin; Pflanz, Michael; Reim, Stefanie (2024), \u201cGYMNSA dataset\u201d, Mendeley Data, V1, doi: 10.17632/44kjgc4gkc.1",
+    "citation": "Maß, Virginia; Alirezazadeh, Pendar; Seidl-Schulz, Johannes; Leipnitz, Matthias; Fritzsche, Eric; Ibraheem, Rasheed Ali Adam; Geyer, Martin; Pflanz, Michael; Reim, Stefanie (2024), “GYMNSA dataset”, Mendeley Data, V1, doi: 10.17632/44kjgc4gkc.1",
     "zip_size_bytes": 207266525,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/GYMNSA_pear_rust_detection",
-    "examples_image_url": "/img/agml/sample_images/GYMNSA_pear_rust_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/GYMNSA_pear_rust_detection_sample.webp"
   },
   {
     "name": "oyster_mushroom_maturity_detection",
@@ -1866,11 +1866,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "",
-    "citation": "Duman, Sonay; Elewi, Abdullah; Hajhamed, Abdulsalam; Khankan, Rasheed ; Souag, Amina; Ahmed, Asma (2024), \u201cAnnotated Oyster Mushroom Images\u201d, Mendeley Data, V1, doi: 10.17632/hf55tkx489.1",
+    "citation": "Duman, Sonay; Elewi, Abdullah; Hajhamed, Abdulsalam; Khankan, Rasheed ; Souag, Amina; Ahmed, Asma (2024), “Annotated Oyster Mushroom Images”, Mendeley Data, V1, doi: 10.17632/hf55tkx489.1",
     "zip_size_bytes": 281852598,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/oyster_mushroom_maturity_detection",
-    "examples_image_url": "/img/agml/sample_images/oyster_mushroom_maturity_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/oyster_mushroom_maturity_detection_sample.webp"
   },
   {
     "name": "guava_disease_classification",
@@ -1899,11 +1899,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111378",
-    "citation": "Shihab, Md Montsir Rahman; Saim, Nafiu Islam; Mojumdar, Mayen Uddin  (2024), \u201cImage Dataset for Detection and classification of Diseases of Guava Fruits and Leaves \u201d, Mendeley Data, V1, doi: 10.17632/fspx44mwfp.1",
+    "citation": "Shihab, Md Montsir Rahman; Saim, Nafiu Islam; Mojumdar, Mayen Uddin  (2024), “Image Dataset for Detection and classification of Diseases of Guava Fruits and Leaves ”, Mendeley Data, V1, doi: 10.17632/fspx44mwfp.1",
     "zip_size_bytes": 2156708924,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_sample.webp"
   },
   {
     "name": "COLD_chili_leaf_disease_classification",
@@ -1912,7 +1912,9 @@
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Chili"],
+    "crop_types": [
+      "Chili"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -1932,7 +1934,7 @@
     "zip_size_bytes": 13504653,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/COLD_chili_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/COLD_chili_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/COLD_chili_leaf_disease_classification_sample.webp"
   },
   {
     "name": "EfficientMaize_classification",
@@ -1941,7 +1943,9 @@
     "location": "Ghana",
     "environment": "lab",
     "real_or_synthetic": "real",
-    "crop_types": ["maize"],
+    "crop_types": [
+      "maize"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -1958,7 +1962,7 @@
     "zip_size_bytes": 7328640,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/EfficientMaize_classification",
-    "examples_image_url": "/img/agml/sample_images/EfficientMaize_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/EfficientMaize_classification_sample.webp"
   },
   {
     "name": "mulberry_leaf_variety_classification",
@@ -1967,7 +1971,9 @@
     "location": "Thailand",
     "environment": "Field",
     "real_or_synthetic": "real",
-    "crop_types": ["mulberry"],
+    "crop_types": [
+      "mulberry"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -1990,7 +1996,7 @@
     "zip_size_bytes": 101911765,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/mulberry_leaf_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/mulberry_leaf_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/mulberry_leaf_variety_classification_sample.webp"
   },
   {
     "name": "rice_grain_variety_classification",
@@ -1999,7 +2005,9 @@
     "location": "Bangladesh",
     "environment": "Lab",
     "real_or_synthetic": "real",
-    "crop_types": ["rice"],
+    "crop_types": [
+      "rice"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -2034,7 +2042,7 @@
     "zip_size_bytes": 281483801,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_grain_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/rice_grain_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/rice_grain_variety_classification_sample.webp"
   },
   {
     "name": "COLD_onion_leaf_disease_classification",
@@ -2043,7 +2051,9 @@
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Onion"],
+    "crop_types": [
+      "Onion"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -2062,10 +2072,168 @@
     "zip_size_bytes": 16399214,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/COLD_onion_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/COLD_onion_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/COLD_onion_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "MedLeafX_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Camphor",
+      "Haritaki",
+      "Sojina",
+      "Neem"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 10858,
+    "classes": [
+      "Bacterial Spot",
+      "Healthy Leaf",
+      "Powdery Mildew",
+      "Shot Hole",
+      "Shot Hole Leaf",
+      "Yellow Leaf"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111945",
+    "citation": "Ferdous, Md. Fahim; Nissan, Faysal Bin Khaled ; Nibir, Nur Muhammad ; Bijoy, Md Hasan Imam (2025), “AI-MedLeafX: A Large-Scale Computer Vision Dataset for Medicinal Plant Diagnosis”, Mendeley Data, V1, doi: 10.17632/zz7r5y4dc6.1",
+    "zip_size_bytes": 705955036,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MedLeafX_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/MedLeafX_disease_classification_sample.webp"
+  },
+  {
+    "name": "cotton_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "United States",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cotton"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 262,
+    "classes": [
+      "weed",
+      "cotton"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2026.112483",
+    "citation": "Das, Anindita; Subburaj, Vinitha; Yang, Yong; Bednarz, Craig (2025), “A UAV Image Dataset for Object Detection with Annotations Generated Using LabelImg and Roboflow ”, Mendeley Data, V1, doi: 10.17632/sx2tphzvcw.1",
+    "zip_size_bytes": 2193177286,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cotton_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/cotton_weed_detection_sample.webp"
+  },
+  {
+    "name": "Hibiscus_Tea_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Hibiscus",
+      "Tea"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1411,
+    "augmented_num_images": 12417,
+    "augmented_zip_size_bytes": 4348866831,
+    "classes": [
+      "Tea Algal Spot",
+      "Tea Brown Blight",
+      "Citruspot",
+      "Early_Mild_Spotting",
+      "Fungal_Infected",
+      "Tea Grey Blight",
+      "Healthy",
+      "Mild_Edge_Damage",
+      "Tea Red Spot",
+      "Senescent",
+      "Slightly_Diseased",
+      "Wrinkled_Leaf"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112357",
+    "citation": "Billah, Md Masum; Sagor, Saifuddin ;  Shorif Uddin, Mohammad; Hossain, Shahariar (2025), “A Real-World Hibiscus and Tea Leaf Image Dataset for Classification”, Mendeley Data, V4, doi: 10.17632/5bzy89brkv.4",
+    "zip_size_bytes": 680126599,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Hibiscus_Tea_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/Hibiscus_Tea_disease_classification_sample.webp"
+  },
+  {
+    "name": "soybean_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Indonesia",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 12683,
+    "classes": [
+      "Anjasmoro",
+      "Dega",
+      "Grobogan"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2026.112524",
+    "citation": "Syahraza, Muhammad Ariyo; Hanafiah, Diana Sofia ; Purnamasari, Fanindia; Nurhasanah, Rossy (2025), “Image Dataset of Local Indonesian Soybean Seed Varieties (Anjasmoro, Grobogan, and DEGA-1)”, Mendeley Data, V3, doi: 10.17632/c733bjz4m3.3",
+    "zip_size_bytes": 857721637,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/soybean_variety_classification_sample.webp"
+  },
+  {
+    "name": "three_plant_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Aegle Marmelos",
+      "Hog Plum",
+      "Lemon"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3941,
+    "augmented_num_images": 12295,
+    "augmented_zip_size_bytes": 59100493,
+    "classes": [
+      "Anthracnose",
+      "Caterpillars_Infestation",
+      "Cercospora_Leaf",
+      "Citrus",
+      "Healthy_Leaf",
+      "Heathy_Leaf",
+      "Leaf_Curl",
+      "Leaf_Spot",
+      "Sooty_Mold"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111590",
+    "citation": "Huq, Rezwan; Ahmed, Jubaer; Nessa, Maherun; Islam, Tasmia; Gani, Raiyan  (2024), “Smartphone Image Dataset for Aegle Marmelos, Hog Plum and Lemon Plant Leaf ”, Mendeley Data, V1, doi: 10.17632/54r883j5zr.1",
+    "zip_size_bytes": 98465473,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/three_plant_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/three_plant_leaf_disease_classification_sample.webp"
   }
-
-
-
-
 ]
