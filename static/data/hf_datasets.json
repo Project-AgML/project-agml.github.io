@@ -2235,5 +2235,146 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/three_plant_leaf_disease_classification",
     "examples_image_url": "/img/agml/sample_images/three_plant_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "dragonfruit_quality_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "quality_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Dragonfruit"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1652,
+    "augmented_num_images": 5000,
+    "augmented_zip_size_bytes": 466484284,
+    "classes": [
+      "Defect Dragon Fruit",
+      "Fresh Dragon Fruit"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109936",
+    "citation": "Khatun, Tania; Nirob, Md. Asraful Sharker ; Bishshash, Prayma  ; Uddin, Mohammad Shorif  (2023), “Dragon Fruit Maturity Detection and Quality Grading Dataset”, Mendeley Data, V1, doi: 10.17632/2jpzbx8tm6.1",
+    "zip_size_bytes": 188944567,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/dragonfruit_quality_classification",
+    "examples_image_url": "/img/agml/sample_images/dragonfruit_quality_classification_sample.webp"
+  },
+  {
+    "name": "dragonfruit_maturity_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Dragonfruit"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2127,
+    "augmented_num_images": 5010,
+    "augmented_zip_size_bytes": 708656807,
+    "classes": [
+      "Immature Dragon Fruit",
+      "Mature Dragon Fruit"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109936",
+    "citation": "Khatun, Tania; Nirob, Md. Asraful Sharker ; Bishshash, Prayma  ; Uddin, Mohammad Shorif  (2023), “Dragon Fruit Maturity Detection and Quality Grading Dataset”, Mendeley Data, V1, doi: 10.17632/2jpzbx8tm6.1",
+    "zip_size_bytes": 316006035,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/dragonfruit_maturity_classification",
+    "examples_image_url": "/img/agml/sample_images/dragonfruit_maturity_classification_sample.webp"
+  },
+  {
+    "name": "potato_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Indonesia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Potato"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3076,
+    "classes": [
+      "Bacteria",
+      "Fungi",
+      "Healthy",
+      "Nematode",
+      "Pest",
+      "Phytopthora",
+      "Virus"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109955",
+    "citation": "Shabrina, Nabila Husna; Indarti, Siwi; Maharani, Rina; Kristiyanti, Dinar Ajeng; Irmawati, Irmawati; Prastomo, Niki; M, Tika Adillah (2023), “Potato Leaf Disease Dataset in Uncontrolled Environment”, Mendeley Data, V1, doi: 10.17632/ptz377bwb8.1",
+    "zip_size_bytes": 754551435,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/potato_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/potato_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "sorghum_weed_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sorghum"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 4312,
+    "classes": [
+      "BroadLeafWeed",
+      "Grass",
+      "Sorghum"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109935",
+    "citation": "Michael, Justina; M, Thenmozhi (2023), “SorghumWeedDataset_Classification”, Mendeley Data, V1, doi: 10.17632/4gkcyxjyss.1",
+    "zip_size_bytes": 67474262,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sorghum_weed_classification",
+    "examples_image_url": "/img/agml/sample_images/sorghum_weed_classification_sample.webp"
+  },
+  {
+    "name": "sorghum_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sorghum"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "segmentationMask",
+    "num_images": 252,
+    "classes": [
+      "BroadLeafWeed",
+      "Grass",
+      "Sorghum"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109935",
+    "citation": "Michael, Justina; M, Thenmozhi (2023), “SorghumWeedDataset_Segmentation”, Mendeley Data, V1, doi: 10.17632/y9bmtf4xmr.1",
+    "zip_size_bytes": 3061615932,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sorghum_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/sorghum_weed_segmentation_sample.webp"
   }
 ]
