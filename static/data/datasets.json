@@ -217,37 +217,6 @@
     ]
   },
   {
-    "name": "arabica_coffee_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "arabica_coffee_leaf_disease_classification",
-    "location": "Kenya, Africa",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "jpg, jpeg",
-    "annotation_format": "directory_names",
-    "num_images": 58549,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2352340921004261?via%3Dihub#sec0001",
-    "classes": "Cerscospora, Healthy, Leaf_rust, Miner, Phoma",
-    "stats_mean": [
-      0.466,
-      0.613,
-      0.405
-    ],
-    "stats_std": [
-      0.132,
-      0.101,
-      0.139
-    ],
-    "examples_image_url": "/img/agml/sample_images/arabica_coffee_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "@article{JEPKOECH2021107142, title = {Arabica coffee leaf images dataset for coffee leaf disease detection and classification}, journal = {Data in Brief}, volume = {36}, pages = {107142}, year = {2021}, issn = {2352-3409}, doi = {https://doi.org/10.1016/j.dib.2021.107142}, url = {https://www.sciencedirect.com/science/article/pii/S2352340921004261}, author = {Jennifer Jepkoech and David Muchangi Mugo and Benson K. Kenduiywo and Edna Chebet Too}}",
-    "crop_types": [
-      "coffee"
-    ]
-  },
-  {
     "name": "autonomous_greenhouse_regression",
     "machine_learning_task": null,
     "agricultural_task": null,
@@ -268,68 +237,6 @@
     "citation": "@misc{https://doi.org/10.4121/15023088.v1,\n  doi = {10.4121/15023088.V1},\n  url = {https://data.4tu.nl/articles/_/15023088/1},\n  author = {Hemming,  S. (Silke) and de Zwart,  H.F. (Feije) and Elings,  A. (Anne) and bijlaard,  monique and Marrewijk,  van,  Bart and Petropoulou,  Anna},\n  keywords = {Horticultural Crops,  Mechanical Engineering,  FOS: Mechanical engineering,  Artificial Intelligence and Image Processing,  FOS: Computer and information sciences,  Horticultural Production,  FOS: Agriculture,  forestry and fisheries,  Autonomous Greenhouse Challenge,  autonomous greenhouse,  Artificial Intelligence,  image processing,  computer vision,  Horticulture,  Lettuce,  sensors,  non-destructive sensing},\n  title = {3rd Autonomous Greenhouse Challenge: Online Challenge Lettuce Images},\n  publisher = {4TU.ResearchData},\n  year = {2021},\n  copyright = {Creative Commons Attribution 4.0 International}\n}",
     "crop_types": [
       "lettuce"
-    ]
-  },
-  {
-    "name": "banana_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "banana_leaf_disease_classification",
-    "location": "Ethiopia, Africa",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 1288,
-    "documentation": "https://www.researchgate.net/publication/380900090_Sigatoka_and_Xanthomonas_Banana_Leaf_Disease_Detection_Via_Transfer_Learning",
-    "classes": "healthy, segatoka, xamthomonas",
-    "stats_mean": [
-      0.44,
-      0.479,
-      0.23
-    ],
-    "stats_std": [
-      0.205,
-      0.204,
-      0.186
-    ],
-    "examples_image_url": "/img/agml/sample_images/banana_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "hailu, yordanos (2021), “Banana Leaf Disease Images”, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1",
-    "crop_types": [
-      "banana"
-    ]
-  },
-  {
-    "name": "bean_disease_uganda",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "disease_classification",
-    "location": "Uganda, Africa",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "handheld",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 1295,
-    "documentation": "https://github.com/AI-Lab-Makerere/ibean/",
-    "classes": "angular_leaf_spot, bean_rust, healthy",
-    "stats_mean": [
-      0.485,
-      0.519,
-      0.311
-    ],
-    "stats_std": [
-      0.182,
-      0.199,
-      0.169
-    ],
-    "examples_image_url": "/img/agml/sample_images/bean_disease_uganda_examples.webp",
-    "source": "agml",
-    "license": "MIT",
-    "citation": "",
-    "crop_types": [
-      "bean"
     ]
   },
   {
@@ -387,29 +294,6 @@
     ]
   },
   {
-    "name": "blackgram_plant_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "blackgram_plant_leaf_disease_classification",
-    "location": "India, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 1007,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2352340922009295",
-    "classes": "anthracnose, healthy, leaf_crinckle, powdery_mildew, yellow_mosaic",
-    "stats_mean": null,
-    "stats_std": null,
-    "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
-    "crop_types": [
-      "blackgram"
-    ]
-  },
-  {
     "name": "carrot_weeds_germany",
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
@@ -438,37 +322,6 @@
     "citation": "@inproceedings{haug15,\n  author={Haug, Sebastian and Ostermann, J{\\\"o}rn},\n  title={A Crop/Weed Field Image Dataset for the Evaluation of Computer Vision Based Precision Agriculture Tasks},\n  year={2015},\n  booktitle={Computer Vision - ECCV 2014 Workshops},\n  doi={10.1007/978-3-319-16220-1_8},\n  url={http://dx.doi.org/10.1007/978-3-319-16220-1_8},\n  pages={105--116}\n}",
     "crop_types": [
       "carrot"
-    ]
-  },
-  {
-    "name": "chilli_leaf_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "chilli_leaf_classification",
-    "location": "India, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 10974,
-    "documentation": "https://www.researchgate.net/publication/380611658_Dataset_of_Chilli_and_Onion_Plant_Leaf_Images_for_Classification_and_Detection",
-    "classes": "cercospora, healthy, mites_and_trips, nutritional, powdery_mildew",
-    "stats_mean": [
-      0.54,
-      0.562,
-      0.4
-    ],
-    "stats_std": [
-      0.178,
-      0.177,
-      0.182
-    ],
-    "examples_image_url": "/img/agml/sample_images/chilli_leaf_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. ",
-    "crop_types": [
-      "chilli"
     ]
   },
   {
