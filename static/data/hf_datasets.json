@@ -2579,5 +2579,209 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/potato_leaf_blight_classification",
     "examples_image_url": "/img/agml/sample_images/potato_leaf_blight_classification_sample.webp"
+  },
+  {
+    "name": "fruit_leaf_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Aegle marmelos",
+      "Black plum",
+      "Custard Apple",
+      "Guava",
+      "Jackfruit",
+      "Lotkon",
+      "Lychee",
+      "Mango",
+      "Plum",
+      "Star Fruit"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3173,
+    "classes": [
+      "Aegle marmelos",
+      "Black plum",
+      "Custard Apple",
+      "Guava",
+      "Jackfruit",
+      "Lotkon",
+      "Lychee",
+      "Mango",
+      "Plum",
+      "Star Fruit"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111879",
+    "citation": "Abedin, Minhajul ; Islam, Md. Sujon ; Sultana, Dr. Naznin  (2025), “Multi-Class Fruit Leaf Classification Dataset (10 Classes)”, Mendeley Data, V2, doi: 10.17632/4gxzx6h7gv.2",
+    "zip_size_bytes": 10452246264,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fruit_leaf_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/fruit_leaf_variety_classification_sample.png"
+  },
+  {
+    "name": "tropical_flower_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Bougainvillea",
+      "Crown of thorns",
+      "Hibiscus",
+      "Jungle geranium",
+      "Madagascar periwinkle",
+      "Marigold",
+      "Rose"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 4319,
+    "classes": [
+      "Bougainvillea",
+      "Crown of thorns",
+      "Hibiscus",
+      "Jungle geranium",
+      "Madagascar periwinkle",
+      "Marigold",
+      "Rose"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111374",
+    "citation": "Rahat, Riazul Islam; hossain, Md.Sohag; Mojumdar, Mayen Uddin ; Chakraborty, Narayan Ranjan; Noori, Sheak Rashed Haider; Siddiquee, Shah Md Tanvir (2024), “Tropical Flower Dataset: Seven Species from Bangladesh for Classification and Ecological Research.”, Mendeley Data, V1, doi: 10.17632/njfg9nh92t.1",
+    "zip_size_bytes": 1666250266,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_flower_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/tropical_flower_variety_classification_sample.png"
+  },
+  {
+    "name": "arabica_coffee_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Kenya, Africa",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "uav",
+    "environment": "field",
+    "input_data_format": "jpg, jpeg",
+    "annotation_format": "classLabel",
+    "num_images": 58549,
+    "documentation": "https://doi.org/10.1016/j.dib.2021.107142",
+    "classes": ["Cerscospora, Healthy, Leaf_rust, Miner, Phoma"],
+    "stats_mean": [
+      0.466,
+      0.613,
+      0.405
+    ],
+    "stats_std": [
+      0.132,
+      0.101,
+      0.139
+    ],
+    "examples_image_url": "/img/agml/sample_images/arabica_coffee_leaf_disease_classification_sample.png",
+    "source": "huggingface",
+    "license": "cc-by-4.0",
+    "citation": "Jepkoech, jennifer; Kenduiywo, Benson; Mugo, David; Chebet, Edna (2021), “JMuBEN”, Mendeley Data, V1, doi: 10.17632/t2r6rszp5c.1",
+    "crop_types": [
+      "coffee"
+    ],
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/arabica_coffee_leaf_disease_classification"
+  },
+  {
+    "name": "banana_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Ethiopia, Africa",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "uav",
+    "environment": "field",
+    "input_data_format": "JPG",
+    "annotation_format": "classLabel",
+    "num_images": 1288,
+    "documentation": "https://www.researchgate.net/publication/380900090_Sigatoka_and_Xanthomonas_Banana_Leaf_Disease_Detection_Via_Transfer_Learning",
+    "classes": "healthy, segatoka, xamthomonas",
+    "stats_mean": [
+      0.44,
+      0.479,
+      0.23
+    ],
+    "stats_std": [
+      0.205,
+      0.204,
+      0.186
+    ],
+    "examples_image_url": "/img/agml/sample_images/banana_leaf_disease_classification_examples.webp",
+    "source": "agml",
+    "license": "CC BY 4.0",
+    "citation": "hailu, yordanos (2021), “Banana Leaf Disease Images”, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1",
+    "crop_types": [
+      "banana"
+    ],
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_leaf_disease_classification"
+  },
+  {
+    "name": "bean_disease_uganda",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Uganda, Africa",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "handheld",
+    "environment": "Field",
+    "input_data_format": "JPG",
+    "annotation_format": "classLabel",
+    "num_images": 1295,
+    "documentation": "https://github.com/AI-Lab-Makerere/ibean/",
+    "classes": "angular_leaf_spot, bean_rust, healthy",
+    "stats_mean": [
+      0.485,
+      0.519,
+      0.311
+    ],
+    "stats_std": [
+      0.182,
+      0.199,
+      0.169
+    ],
+    "examples_image_url": "/img/agml/sample_images/bean_disease_uganda_examples.webp",
+    "source": "agml",
+    "license": "MIT",
+    "citation": "",
+    "crop_types": [
+      "bean"
+    ],
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/bean_disease_uganda"
+  },
+  {
+    "name": "blackgram_plant_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India, Asia",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "uav",
+    "environment": "Field",
+    "input_data_format": "JPG",
+    "annotation_format": "classLabel",
+    "num_images": 1007,
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108725",
+    "classes": ["anthracnose, healthy, leaf_crinckle, powdery_mildew, yellow_mosaic"],
+    "stats_mean": null,
+    "stats_std": null,
+    "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.webp",
+    "source": "agml",
+    "license": "CC BY 4.0",
+    "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
+    "crop_types": [
+      "blackgram"
+    ],
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/blackgram_plant_leaf_disease_classification"
   }
 ]
