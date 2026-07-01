@@ -7,6 +7,10 @@ const projectRoot = path.resolve(__dirname, '..');
 const staticDataDir = path.join(projectRoot, 'static', 'data');
 const datasetsPath = path.join(staticDataDir, 'datasets.json');
 const hfDatasetsPath = path.join(staticDataDir, 'hf_datasets.json');
+const performanceDir = path.join(staticDataDir, 'performance');
+const performanceIndexPath = path.join(performanceDir, 'index.json');
+const performanceGlobalPath = path.join(performanceDir, 'global.json');
+const PERFORMANCE_MANIFEST_FILES = new Set(['index.json', 'global.json']);
 
 function readJson(filePath) {
   if (!fs.existsSync(filePath)) return null;
@@ -31,6 +35,61 @@ function writeJson(filePath, value) {
   fs.writeFileSync(filePath, JSON.stringify(value, null, 2), 'utf8');
 }
 
+function buildDatasetMetadataLookup(...manifests) {
+  const lookup = new Map();
+  for (const manifest of manifests) {
+    for (const entry of manifest ?? []) {
+      const name = typeof entry?.name === 'string' ? entry.name : null;
+      if (!name || lookup.has(name)) continue;
+      const cropTypes = Array.isArray(entry.crop_types)
+        ? entry.crop_types.filter((c) => typeof c === 'string' && c.trim()).map((c) => c.toLowerCase())
+        : null;
+      const mlTask = typeof entry.machine_learning_task === 'string' && entry.machine_learning_task.trim()
+        ? entry.machine_learning_task
+        : null;
+      lookup.set(name, { crop_types: cropTypes?.length ? cropTypes : null, machine_learning_task: mlTask });
+    }
+  }
+  return lookup;
+}
+
+function sortLeaderboardEntries(entries) {
+  return [...entries].sort((a, b) => {
+    const rankA = typeof a.rank === 'number' ? a.rank : null;
+    const rankB = typeof b.rank === 'number' ? b.rank : null;
+    if (rankA != null && rankB != null) return rankA - rankB;
+    const scoreA = typeof a.score === 'number' ? a.score : null;
+    const scoreB = typeof b.score === 'number' ? b.score : null;
+    if (scoreA != null && scoreB != null) return scoreB - scoreA;
+    return 0;
+  });
+}
+
+function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
+  const records = [];
+  for (const datasetName of performanceDatasets) {
+    const raw = readJson(path.join(performanceDir, `${datasetName}.json`));
+    const leaderboard = Array.isArray(raw) ? raw : Array.isArray(raw?.leaderboard) ? raw.leaderboard : [];
+    const entries = sortLeaderboardEntries(leaderboard.filter((entry) => typeof entry?.model === 'string' && entry.model.trim()));
+    const total = entries.length;
+    if (total === 0) continue;
+
+    const meta = metadataLookup.get(datasetName) ?? { crop_types: null, machine_learning_task: null };
+    entries.forEach((entry, index) => {
+      const rank = index + 1;
+      const percentile = total > 1 ? ((total - rank) / (total - 1)) * 100 : 100;
+      records.push({
+        model: entry.model.trim(),
+        dataset: datasetName,
+        percentile,
+        crop_types: meta.crop_types,
+        machine_learning_task: meta.machine_learning_task,
+      });
+    });
+  }
+  return records;
+}
+
 async function generateDatasets() {
   const datasets = normalizeManifest(readJson(datasetsPath));
   const hfDatasetsRaw = readJson(hfDatasetsPath);
@@ -45,6 +104,21 @@ async function generateDatasets() {
     writeJson(hfDatasetsPath, hfDatasets);
     console.log('Wrote', hfDatasetsPath);
   }
+
+  const performanceDatasets = fs.existsSync(performanceDir)
+    ? fs
+        .readdirSync(performanceDir)
+        .filter((file) => file.endsWith('.json') && !PERFORMANCE_MANIFEST_FILES.has(file))
+        .map((file) => file.slice(0, -'.json'.length))
+        .sort()
+    : [];
+  writeJson(performanceIndexPath, performanceDatasets);
+  console.log('Wrote', performanceIndexPath, '—', performanceDatasets.length, 'performance datasets');
+
+  const metadataLookup = buildDatasetMetadataLookup(datasets, hfDatasets);
+  const globalPerformance = buildGlobalPerformanceRecords(performanceDatasets, metadataLookup);
+  writeJson(performanceGlobalPath, globalPerformance);
+  console.log('Wrote', performanceGlobalPath, '—', globalPerformance.length, 'performance records');
 }
 
 generateDatasets().catch((err) => {

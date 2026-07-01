@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation } from '../lib/datasets';
+import { useDatasetPerformance } from '../lib/performance';
 import styles from './DatasetMetadataModal.module.css';
 
 function formatImageCount(count: number | null) {
@@ -87,6 +88,8 @@ export function DatasetMetadataModal({
 			window.removeEventListener('keydown', onKeyDown);
 		};
 	}, [open, onClose]);
+
+	const datasetPerformance = useDatasetPerformance(open ? (dataset?.name ?? null) : null);
 
 	if (!open || dataset == null) return null;
 
@@ -192,6 +195,51 @@ export function DatasetMetadataModal({
 							)}
 						</div>
 					)}
+
+					<section className={styles.secondarySection}>
+						<h3 className={styles.sectionTitle}>Model performance leaderboard</h3>
+						{datasetPerformance.loading ? (
+							<p className={styles.bodyText}>Loading leaderboard…</p>
+						) : datasetPerformance.data && datasetPerformance.data.entries.length > 0 ? (
+							<div className={styles.leaderboardWrap}>
+								{datasetPerformance.data.metric && (
+									<p className={styles.bodyText}>
+										<span className={styles.inlineLabel}>Metric:</span> {datasetPerformance.data.metric}
+									</p>
+								)}
+								<table className={styles.leaderboardTable}>
+									<thead>
+										<tr>
+											<th>Rank</th>
+											<th>Model</th>
+											<th>Score</th>
+											<th>Submitted by</th>
+										</tr>
+									</thead>
+									<tbody>
+										{datasetPerformance.data.entries.map((entry, index) => (
+											<tr key={`${entry.model}-${index}`}>
+												<td>{entry.rank ?? index + 1}</td>
+												<td>
+													{entry.link ? (
+														<a href={entry.link} target="_blank" rel="noreferrer">
+															{entry.model}
+														</a>
+													) : (
+														entry.model
+													)}
+												</td>
+												<td>{entry.score != null ? entry.score.toLocaleString() : '—'}</td>
+												<td>{entry.submitted_by ?? '—'}</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+						) : (
+							<p className={styles.bodyText}>No leaderboard results have been submitted for this dataset yet.</p>
+						)}
+					</section>
 				</div>
 			</div>
 		</div>

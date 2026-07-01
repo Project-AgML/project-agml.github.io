@@ -45,7 +45,7 @@
 .hero {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto 2.5rem;
   padding: 2.5rem 2.5rem 2rem;
   border-radius: 28px;
@@ -112,7 +112,7 @@
 .controls {
   position: relative;
   z-index: 30;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto 1.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -259,7 +259,7 @@
 .chipsSection {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto 1.5rem;
   display: flex;
   flex-direction: column;
@@ -336,7 +336,7 @@
 .activeFilters {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto 1.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -374,7 +374,7 @@
 .results {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 

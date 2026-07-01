@@ -10,7 +10,7 @@
 }
 
 .modal {
-	width: min(780px, 100%);
+	width: min(1200px, 92vw);
 	max-height: min(88vh, 920px);
 	overflow: auto;
 	border-radius: 28px;
@@ -209,6 +209,52 @@
 	background: #d98c00;
 	border-color: #d98c00;
 	outline: none;
+}
+
+.leaderboardWrap {
+	overflow-x: auto;
+}
+
+.leaderboardTable {
+	width: 100%;
+	margin-top: 0.6rem;
+	border-collapse: collapse;
+	font-size: 0.88rem;
+}
+
+.leaderboardTable th,
+.leaderboardTable td {
+	padding: 0.55rem 0.7rem;
+	text-align: left;
+	border-bottom: 1px solid var(--agml-border);
+	white-space: nowrap;
+}
+
+.leaderboardTable th {
+	font-size: 0.68rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--agml-muted);
+}
+
+.leaderboardTable td {
+	color: var(--agml-text);
+}
+
+.leaderboardTable tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.leaderboardTable a {
+	color: var(--ifm-color-primary);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.leaderboardTable a:hover,
+.leaderboardTable a:focus-visible {
+	text-decoration: underline;
 }
 
 :global(html[data-theme='dark']) .backdrop {
