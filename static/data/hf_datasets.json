@@ -2621,7 +2621,7 @@
     "zip_size_bytes": 10452246264,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/fruit_leaf_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/fruit_leaf_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/fruit_leaf_variety_classification_sample.webp"
   },
   {
     "name": "tropical_flower_variety_classification",
@@ -2658,7 +2658,7 @@
     "zip_size_bytes": 1666250266,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_flower_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/tropical_flower_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/tropical_flower_variety_classification_sample.webp"
   },
   {
     "name": "arabica_coffee_leaf_disease_classification",
@@ -2673,7 +2673,9 @@
     "annotation_format": "classLabel",
     "num_images": 58549,
     "documentation": "https://doi.org/10.1016/j.dib.2021.107142",
-    "classes": ["Cerscospora, Healthy, Leaf_rust, Miner, Phoma"],
+    "classes": [
+      "Cerscospora, Healthy, Leaf_rust, Miner, Phoma"
+    ],
     "stats_mean": [
       0.466,
       0.613,
@@ -2684,7 +2686,7 @@
       0.101,
       0.139
     ],
-    "examples_image_url": "/img/agml/sample_images/arabica_coffee_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/arabica_coffee_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "license": "cc-by-4.0",
     "citation": "Jepkoech, jennifer; Kenduiywo, Benson; Mugo, David; Chebet, Edna (2021), “JMuBEN”, Mendeley Data, V1, doi: 10.17632/t2r6rszp5c.1",
@@ -2772,7 +2774,9 @@
     "annotation_format": "classLabel",
     "num_images": 1007,
     "documentation": "https://doi.org/10.1016/j.dib.2022.108725",
-    "classes": ["anthracnose, healthy, leaf_crinckle, powdery_mildew, yellow_mosaic"],
+    "classes": [
+      "anthracnose, healthy, leaf_crinckle, powdery_mildew, yellow_mosaic"
+    ],
     "stats_mean": null,
     "stats_std": null,
     "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.webp",
@@ -2783,5 +2787,122 @@
       "blackgram"
     ],
     "hf_link": "https://huggingface.co/datasets/Project-AgML/blackgram_plant_leaf_disease_classification"
+  },
+  {
+    "name": "pomegranate_disease_classification_india",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pomegranate"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 5099,
+    "classes": [
+      "Alternaria",
+      "Anthracnose",
+      "Bacterial_Blight",
+      "Cercospora",
+      "Healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110284",
+    "citation": "B, Pakruddin; R, Dr. Hemavathy  (2023), “Pomegranate Fruit Diseases Dataset for Deep Learning Models”, Mendeley Data, V1, doi: 10.17632/b6s2rkpmvh.1",
+    "zip_size_bytes": 4537091632,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/pomegranate_disease_classification_india",
+    "examples_image_url": "/img/agml/sample_images/pomegranate_disease_classification_india_sample.webp"
+  },
+  {
+    "name": "papaya_leaf_disease_classification_bangladesh",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Papaya"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1400,
+    "augmented_num_images": 6618,
+    "augmented_zip_size_bytes": 228947187,
+    "classes": [
+      "Healthy Leaf",
+      "Leaf Curl",
+      "Mealybug",
+      "Mite Disease",
+      "Mosaic",
+      "Ring Spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110599",
+    "citation": "Rashid, Mohammad Rifat Ahmmad; Gani , Raiyan ; Ahmed, Jubaer ; Isty , Maherun Nessa ; Ali, Sawkat (2024), “Healthy and Unhealthy Papaya Leaf Images from Bangladeshi Orchards”, Mendeley Data, V1, doi: 10.17632/44p8v6ywsm.1",
+    "zip_size_bytes": 4809581691,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/papaya_leaf_disease_classification_bangladesh",
+    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_classification_bangladesh_sample.webp"
+  },
+  {
+    "name": "malabar_spinach_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Spinach"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 603,
+    "augmented_num_images": 5868,
+    "augmented_zip_size_bytes": 7868278749,
+    "classes": [
+      "anthracnose_leaf_spot",
+      "healthy",
+      "straw_mite"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111532",
+    "citation": "Rahman, Mushfiqur; Mukherjee, Anirban ; Shanto , Md Hasibul Hasan  (2023), “Malabar Spinach dataset for diseases classification using deep learning approach”, Mendeley Data, V2, doi: 10.17632/n56pn9fncw.2",
+    "zip_size_bytes": 709321236,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/malabar_spinach_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/malabar_spinach_disease_classification_sample.webp"
+  },
+  {
+    "name": "cauliflower_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Cauliflower"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2661,
+    "classes": [
+      "Black Rot",
+      "Healthy",
+      "Insect Hole"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111594",
+    "citation": "Durjoy, Sabbir Hossain; Shikder, Md Emon; Shoib, Md Mehedi Hasan; Bijoy, Md Hasan Imam (2025), “Cauliflower Leaf Diseases: A Computer Vision Dataset for Smart Agriculture”, Mendeley Data, V1, doi: 10.17632/x995snz7p3.1",
+    "zip_size_bytes": 5259954184,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cauliflower_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/cauliflower_leaf_disease_classification_sample.webp"
   }
 ]
