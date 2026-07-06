@@ -212,13 +212,14 @@ export function DatasetMetadataModal({
 										<tr>
 											<th>Rank</th>
 											<th>Model</th>
+											<th>Result type</th>
 											<th>Score</th>
 											<th>Submitted by</th>
 										</tr>
 									</thead>
 									<tbody>
 										{datasetPerformance.data.entries.map((entry, index) => (
-											<tr key={`${entry.model}-${index}`}>
+											<tr key={`${entry.model}-${entry.variant ?? 'default'}-${index}`}>
 												<td>{entry.rank ?? index + 1}</td>
 												<td>
 													{entry.link ? (
@@ -228,7 +229,9 @@ export function DatasetMetadataModal({
 													) : (
 														entry.model
 													)}
+													{entry.notes && <div className={styles.detailLabel}>{entry.notes}</div>}
 												</td>
+												<td>{entry.variant === 'fine-tuned' ? 'Fine-tuned' : entry.variant === 'zero-shot' ? 'Zero-shot' : '—'}</td>
 												<td>{entry.score != null ? entry.score.toLocaleString() : '—'}</td>
 												<td>{entry.submitted_by ?? '—'}</td>
 											</tr>

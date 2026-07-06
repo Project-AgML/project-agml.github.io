@@ -161,6 +161,7 @@ export default function GlobalLeaderboardPage() {
                     <th>Model</th>
                     <th>Avg. percentile</th>
                     <th>Appearances</th>
+                    <th>Fine-tuned</th>
                     <th>Datasets</th>
                   </tr>
                 </thead>
@@ -171,6 +172,11 @@ export default function GlobalLeaderboardPage() {
                       <td>{entry.model}</td>
                       <td>{entry.averagePercentile.toFixed(1)}</td>
                       <td>{entry.appearances}</td>
+                      <td>
+                        {entry.fineTunedDatasets.length > 0
+                          ? `${entry.fineTunedDatasets.length} of ${entry.datasets.length}`
+                          : '—'}
+                      </td>
                       <td className={styles.datasetsCell}>{entry.datasets.map((name) => toLabel(name)).join(', ')}</td>
                     </tr>
                   ))}

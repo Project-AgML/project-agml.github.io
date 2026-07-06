@@ -53,6 +53,96 @@ function buildDatasetMetadataLookup(...manifests) {
   return lookup;
 }
 
+// Raw benchmark run records (see static/data/performance/<dataset>.json) are converted into
+// leaderboard rows here. This logic is mirrored in src/lib/performance.ts for client-side
+// rendering of the same files — keep the two in sync if the run schema changes.
+const TASK_METRIC_KEYS = {
+  classification: ['f1', 'accuracy', 'top1_accuracy'],
+  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5'],
+  segmentation: ['miou', 'iou', 'mean_iou'],
+};
+
+function isFiniteNumber(value) {
+  return typeof value === 'number' && Number.isFinite(value);
+}
+
+function resolveMetricKey(task, metrics) {
+  const candidates = TASK_METRIC_KEYS[task] ?? [];
+  for (const key of candidates) {
+    if (isFiniteNumber(metrics[key])) return key;
+  }
+  return Object.keys(metrics).find((key) => isFiniteNumber(metrics[key])) ?? null;
+}
+
+function buildRunNote(entry) {
+  const parts = [];
+  if (isFiniteNumber(entry.num_samples)) parts.push(`${entry.num_samples} samples`);
+  if (typeof entry.device === 'string' && entry.device.trim()) parts.push(entry.device.trim());
+  return parts.length ? parts.join(' · ') : null;
+}
+
+function buildFinetuneNote(finetune) {
+  if (!finetune || typeof finetune !== 'object') return null;
+  const parts = [];
+  if (isFiniteNumber(finetune.epochs)) parts.push(`${finetune.epochs} epochs`);
+  if (isFiniteNumber(finetune.train_samples)) parts.push(`${finetune.train_samples} train samples`);
+  return parts.length ? parts.join(' · ') : null;
+}
+
+function makeLeaderboardRow(entry, metricKey, variant) {
+  return {
+    model: entry.model.trim(),
+    score: entry.metrics[metricKey],
+    variant,
+    date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
+    submitted_by: null,
+    link: null,
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(entry.finetune) : buildRunNote(entry),
+  };
+}
+
+// A model can appear multiple times per dataset (repeated runs, or a fine-tuned run alongside
+// a zero-shot one). The leaderboard shows the best zero-shot result and the best fine-tuned
+// result per model, side by side, rather than collapsing to a single row.
+function buildLeaderboardFromRawResults(rawResults) {
+  const scored = [];
+  for (const entry of rawResults) {
+    if (!entry || typeof entry !== 'object') continue;
+    if (typeof entry.model !== 'string' || !entry.model.trim()) continue;
+    if (!entry.metrics || typeof entry.metrics !== 'object') continue;
+    const metricKey = resolveMetricKey(entry.task, entry.metrics);
+    if (!metricKey || !isFiniteNumber(entry.metrics[metricKey])) continue;
+    scored.push({
+      entry,
+      metricKey,
+      score: entry.metrics[metricKey],
+      isFinetune: entry.finetune != null && typeof entry.finetune === 'object',
+    });
+  }
+
+  const byModel = new Map();
+  for (const item of scored) {
+    const model = item.entry.model.trim();
+    const group = byModel.get(model) ?? { zeroShot: null, fineTuned: null };
+    const slot = item.isFinetune ? 'fineTuned' : 'zeroShot';
+    if (!group[slot] || item.score > group[slot].score) group[slot] = item;
+    byModel.set(model, group);
+  }
+
+  const rows = [];
+  for (const group of byModel.values()) {
+    if (group.zeroShot) rows.push(makeLeaderboardRow(group.zeroShot.entry, group.zeroShot.metricKey, 'zero-shot'));
+    if (group.fineTuned) rows.push(makeLeaderboardRow(group.fineTuned.entry, group.fineTuned.metricKey, 'fine-tuned'));
+  }
+
+  rows.sort((a, b) => (b.score ?? -Infinity) - (a.score ?? -Infinity));
+  rows.forEach((row, index) => {
+    row.rank = index + 1;
+  });
+
+  return { metric: scored.length ? scored[0].metricKey : null, leaderboard: rows };
+}
+
 function sortLeaderboardEntries(entries) {
   return [...entries].sort((a, b) => {
     const rankA = typeof a.rank === 'number' ? a.rank : null;
@@ -69,7 +159,11 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
   const records = [];
   for (const datasetName of performanceDatasets) {
     const raw = readJson(path.join(performanceDir, `${datasetName}.json`));
-    const leaderboard = Array.isArray(raw) ? raw : Array.isArray(raw?.leaderboard) ? raw.leaderboard : [];
+    const leaderboard = Array.isArray(raw)
+      ? buildLeaderboardFromRawResults(raw).leaderboard
+      : Array.isArray(raw?.leaderboard)
+        ? raw.leaderboard
+        : [];
     const entries = sortLeaderboardEntries(leaderboard.filter((entry) => typeof entry?.model === 'string' && entry.model.trim()));
     const total = entries.length;
     if (total === 0) continue;
@@ -84,6 +178,7 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
         percentile,
         crop_types: meta.crop_types,
         machine_learning_task: meta.machine_learning_task,
+        variant: entry.variant === 'zero-shot' || entry.variant === 'fine-tuned' ? entry.variant : null,
       });
     });
   }
