@@ -325,69 +325,6 @@
     ]
   },
   {
-    "name": "coconut_tree_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "coconut_tree_disease_classification",
-    "location": "India, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 5798,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2352340923007692#sec0003",
-    "classes": "Bud_Root_Dropping, Bud_Rot, Gray_Leaf_Spot, Leaf_Rot, Stem_Bleeding",
-    "stats_mean": [
-      0.492,
-      0.495,
-      0.435
-    ],
-    "stats_std": [
-      0.212,
-      0.208,
-      0.22
-    ],
-    "examples_image_url": "/img/agml/sample_images/coconut_tree_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "PATIL, Kailas; Thite, Sandip; Suryawanshi, Yogesh; chumchu, prawit (2023), “Coconut Tree Disease Dataset”, Mendeley Data, V1, doi: 10.17632/gh56wbsnj5.1",
-    "crop_types": [
-      "coconut"
-    ]
-  },
-  {
-    "name": "corn_maize_leaf_disease",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "disease_classification",
-    "location": "Worldwide",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "handheld",
-    "input_data_format": "jpg, png, jpeg, JPG",
-    "annotation_format": "directory_names",
-    "num_images": 4188,
-    "documentation": "https://www.kaggle.com/datasets/smaranjitghose/corn-or-maize-leaf-disease-dataset/data",
-    "classes": "Blight, Common_Rust, Gray_Leaf_Spot, Healthy",
-    "stats_mean": [
-      0.438,
-      0.498,
-      0.376
-    ],
-    "stats_std": [
-      0.179,
-      0.167,
-      0.174
-    ],
-    "examples_image_url": "/img/agml/sample_images/corn_maize_leaf_disease_examples.webp",
-    "source": "agml",
-    "license": "",
-    "citation": "Singh D, Jain N, Jain P, Kayal P, Kumawat S, Batra N. PlantDoc: a dataset for visual plant disease detection. InProceedings of the 7th ACM IKDD CoDS and 25th COMAD 2020 Jan 5 (pp. 249-253).",
-    "crop_types": [
-      "corn",
-      "maize"
-    ]
-  },
-  {
     "name": "crop_weeds_greece",
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
@@ -417,37 +354,6 @@
     "crop_types": [
       "cotton",
       "tomato"
-    ]
-  },
-  {
-    "name": "cucumber_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "cucumber_disease_classification",
-    "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 7689,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2352340923004389",
-    "classes": "Anthracnose, Bacterial_Wilt, Belly_Rot, Downy_Mildew, Fresh_Cucumber, Fresh_Leaf, Gummy_Stem_Blight, Pythium_Fruit_Rot",
-    "stats_mean": [
-      0.466,
-      0.527,
-      0.398
-    ],
-    "stats_std": [
-      0.192,
-      0.184,
-      0.179
-    ],
-    "examples_image_url": "/img/agml/sample_images/cucumber_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Sultana, Nusrat; Shorif, Sumaita Binte ; Akter, Morium ; Uddin, Mohammad Shorif  (2022), “Cucumber Disease Recognition Dataset”, Mendeley Data, V1, doi: 10.17632/y6d3z6f8z9.1",
-    "crop_types": [
-      "cucumber"
     ]
   },
   {
@@ -125183,37 +125089,6 @@
     "citation": "https://www.inaturalist.org/"
   },
   {
-    "name": "java_plum_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "java_plum_leaf_disease_classification",
-    "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 2400,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2772375524001059#sec0003",
-    "classes": "Bacterial_Spot, Brown_Blight, Dry, Healthy, Powdery_Mildew, Sooty_Mold",
-    "stats_mean": [
-      0.689,
-      0.706,
-      0.65
-    ],
-    "stats_std": [
-      0.219,
-      0.208,
-      0.302
-    ],
-    "examples_image_url": "/img/agml/sample_images/java_plum_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Bhowmik, Auvick Chandra; Ahad, Taimur (2024), “Java Plum Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/43d75vptz4.3",
-    "crop_types": [
-      "java plum"
-    ]
-  },
-  {
     "name": "leaf_counting_denmark",
     "machine_learning_task": "image_classification",
     "agricultural_task": "leaf_counting",
@@ -125271,130 +125146,6 @@
     "citation": "@Misc{Koirala2019,\n  author={Koirala, Anand and Walsh, Kerry and Wang, Z. and McCarthy, C.},\n  title={MangoYOLO data set},\n  year={2019},\n  month={2021},\n  day={10-19},\n  publisher={Central Queensland University},\n  keywords={Mango images; Fruit detection; Yield estimation; Mango; Agricultural Land Management; Horticultural Crop Growth and Development},\n  abstract={Datasets and directories are structured similar to the PASCAL VOC dataset, avoiding the need to change scripts already available, with the detection frameworks ready to parse PASCAL VOC annotations into their format. The sub-directory JPEGImages consist of 1730 images (612x512 pixels) used for train, test and validation. Each image has at least one annotated fruit. The sub-directory Annotations consists of all the annotation files (record of bounding box coordinates for each image) in xml format and have the same name as the image name. The sub-directory Main consists of the text file that contains image names (without extension) used for train, test and validation. Training set (train.txt) lists 1300 train images  Validation set (val.txt) lists 130 validation images Test set (test.txt) lists 300 test images Each image has an XML annotation file (filename = image name) and each image set (training validation and test set) has associated text files (train.txt, val.txt and test.txt) containing the list of image names to be used for training and testing.  The XML annotation file contains the image attributes (name, width, height), the object attributes (class name, object bounding box co-ordinates (xmin, ymin, xmax, ymax)). (xmin, ymin) and (xmax, ymax) are the pixel co-ordinates of the bounding box's top-left corner and bottom-right corner respectively.},\n  note={CC-BY-4.0},\n  url={https://figshare.com/articles/dataset/MangoYOLO_data_set/13450661, https://researchdata.edu.au/mangoyolo-set},\n  language={English}\n}",
     "crop_types": [
       "mango"
-    ]
-  },
-  {
-    "name": "mango_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "disease_classification",
-    "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "handheld",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 4000,
-    "documentation": "https://data.mendeley.com/datasets/hxsnvwty3r/1",
-    "classes": "Anthracnose, Bacterial_Canker, Cutting_Weevil, Die_Back, Gall_Midge, Healthy, Powdery_Mildew, Sooty_Mold",
-    "stats_mean": [
-      0.665,
-      0.69,
-      0.689
-    ],
-    "stats_std": [
-      0.197,
-      0.186,
-      0.257
-    ],
-    "examples_image_url": "/img/agml/sample_images/mango_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY-NC 4.0",
-    "citation": "Ali, Sawkat; Ibrahim, Muhammad ; Ahmed, Sarder Iftekhar ; Nadim, Md. ; Mizanur, Mizanur Rahman; Shejunti, Maria Mehjabin ; Jabid, Taskeed (2022), “MangoLeafBD Dataset”, Mendeley Data, V1, doi: 10.17632/hxsnvwty3r.1",
-    "crop_types": [
-      "mango"
-    ]
-  },
-  {
-    "name": "onion_leaf_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "onion_leaf_classification",
-    "location": "India, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 4502,
-    "documentation": "https://www.researchgate.net/publication/380611658_Dataset_of_Chilli_and_Onion_Plant_Leaf_Images_for_Classification_and_Detection",
-    "classes": "healthy, iris_yellow_virus, leaf_blight, purple_blotch",
-    "stats_mean": [
-      0.493,
-      0.506,
-      0.335
-    ],
-    "stats_std": [
-      0.186,
-      0.146,
-      0.157
-    ],
-    "examples_image_url": "/img/agml/sample_images/onion_leaf_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Aishwarya, M.P & Reddy, A.. (2024). Dataset of Chilli and Onion Plant Leaf Images for Classification and Detection. Data in Brief. 54. 110524. 10.1016/j.dib.2024.110524. ",
-    "crop_types": [
-      "onion"
-    ]
-  },
-  {
-    "name": "orange_leaf_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "orange_leaf_disease_classification",
-    "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPEG",
-    "annotation_format": "directory_names",
-    "num_images": 5813,
-    "documentation": "https://www.sciencedirect.com/science/article/pii/S2352340924006802#sec0004",
-    "classes": "citrus_canker, citrus_greening, citrus_mealybugs, die_back, foliage_damaged, healthy_leaf, powdery_mildew, shot_hole, spiny_whitefly, yellow_dragon, yellow_leaves",
-    "stats_mean": [
-      0.642,
-      0.645,
-      0.541
-    ],
-    "stats_std": [
-      0.215,
-      0.196,
-      0.265
-    ],
-    "examples_image_url": "/img/agml/sample_images/orange_leaf_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Emon, Yousuf Rayhan; Ahad, Md Taimur (2023), “Multi-format open-source sweet orange leaf dataset for disease detection, classification, and analysis.”, Mendeley Data, V1, doi: 10.17632/f7cr74mwpj.1",
-    "crop_types": [
-      "orange"
-    ]
-  },
-  {
-    "name": "paddy_disease_classification",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "paddy_disease_classification",
-    "location": "India, Asia",
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
-    "platform": "uav",
-    "input_data_format": "JPG",
-    "annotation_format": "directory_names",
-    "num_images": 10407,
-    "documentation": "https://www.kaggle.com/competitions/paddy-disease-classification/data",
-    "classes": "bacterial_leaf_blight, bacterial_leaf_streak, bacterial_panicle_blight, blast, brown_spot, dead_heart, downy_mildew, hispa, normal, tungro",
-    "stats_mean": [
-      0.497,
-      0.588,
-      0.23
-    ],
-    "stats_std": [
-      0.233,
-      0.233,
-      0.19
-    ],
-    "examples_image_url": "/img/agml/sample_images/paddy_disease_classification_examples.webp",
-    "source": "agml",
-    "license": "CC BY 4.0",
-    "citation": "Petchiammal A, Briskline Kiruba S, Murugan D, Pandarasamy Arjunan. (2022). Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking. IEEE Dataport. https://dx.doi.org/10.21227/hz4v-af08",
-    "crop_types": [
-      "paddy"
     ]
   },
   {
