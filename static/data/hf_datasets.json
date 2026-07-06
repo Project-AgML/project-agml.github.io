@@ -2929,7 +2929,7 @@
       0.208,
       0.22
     ],
-    "examples_image_url": "/img/agml/sample_images/coconut_tree_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/coconut_tree_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/coconut_tree_disease_classification",
     "license": "CC BY 4.0",
@@ -3029,7 +3029,7 @@
       0.208,
       0.302
     ],
-    "examples_image_url": "/img/agml/sample_images/java_plum_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/java_plum_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/java_plum_leaf_disease_classification",
     "license": "CC BY 4.0",
@@ -3063,7 +3063,7 @@
       0.186,
       0.257
     ],
-    "examples_image_url": "/img/agml/sample_images/mango_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/mango_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_leaf_disease_classification",
     "license": "CC BY-NC 4.0",
@@ -3096,7 +3096,7 @@
       0.196,
       0.265
     ],
-    "examples_image_url": "/img/agml/sample_images/orange_leaf_disease_classification_sample.png",
+    "examples_image_url": "/img/agml/sample_images/orange_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/orange_leaf_disease_classification",
     "license": "CC BY 4.0",
@@ -3137,5 +3137,506 @@
     "crop_types": [
       "rice"
     ]
+  },
+  {
+    "name": "almond_bloom_2023",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "flower_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 100,
+    "documentation": null,
+    "classes": "Visible Fruit/Flower",
+    "stats_mean": [
+      0.328,
+      0.349,
+      0.349
+    ],
+    "stats_std": [
+      0.237,
+      0.247,
+      0.24
+    ],
+    "examples_image_url": "/img/agml/sample_images/almond_bloom_2023_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/almond_bloom_2023",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "almond"
+    ]
+  },
+  {
+    "name": "almond_harvest_2021",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 50,
+    "documentation": null,
+    "classes": "Visible Fruit/Flower, Partially Visible Fruit/Flower, Visible Occluded Fruit/Flower, Partially Visible Occluded Fruit/Flower",
+    "stats_mean": [
+      0.151,
+      0.152,
+      0.148
+    ],
+    "stats_std": [
+      0.17,
+      0.17,
+      0.167
+    ],
+    "examples_image_url": "/img/agml/sample_images/almond_harvest_2021_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/almond_harvest_2021",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "almond"
+    ]
+  },
+  {
+    "name": "apple_detection_drone_brazil",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "Brazil, South America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 689,
+    "documentation": "https://github.com/thsant/add256/tree/zenodo-1.0",
+    "classes": "apple",
+    "stats_mean": [
+      0.336,
+      0.482,
+      0.32
+    ],
+    "stats_std": [
+      0.184,
+      0.187,
+      0.173
+    ],
+    "examples_image_url": "/img/agml/sample_images/apple_detection_drone_brazil_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_detection_drone_brazil",
+    "license": "CC BY-SA 4.0",
+    "citation": "@article{DBLP:journals/corr/abs-2110-12331,\n  author    = {Thiago T. Santos and\n               Luciano Gebler},\n  title     = {A methodology for detection and localization of fruits in apples orchards\n               from aerial images},\n  journal   = {CoRR},\n  volume    = {abs/2110.12331},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2110.12331},\n  eprinttype = {arXiv},\n  eprint    = {2110.12331},\n  timestamp = {Thu, 28 Oct 2021 15:25:31 +0200},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
+    "crop_types": [
+      "apple"
+    ]
+  },
+  {
+    "name": "apple_detection_spain",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "Spain, Europe",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 967,
+    "documentation": "https://www.grap.udl.cat/en/publications/KFuji_RGBDS_database.html",
+    "classes": "apple",
+    "stats_mean": [
+      0.375,
+      0.47,
+      0.393
+    ],
+    "stats_std": [
+      0.272,
+      0.28,
+      0.283
+    ],
+    "examples_image_url": "/img/agml/sample_images/apple_detection_spain_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_detection_spain",
+    "license": "",
+    "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, RGB-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle “Multi-modal Deep Learning for Fruit Detection Using RGB-D Cameras and their Radiometric Capabilities” [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. RGB-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji RGB-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (RGB), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}",
+    "crop_types": [
+      "apple"
+    ]
+  },
+  {
+    "name": "apple_detection_usa",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "PNG",
+    "annotation_format": "coco_json",
+    "num_images": 2290,
+    "documentation": "https://hdl.handle.net/2376/17721",
+    "classes": "apple",
+    "stats_mean": [
+      0.281,
+      0.29,
+      0.278
+    ],
+    "stats_std": [
+      0.189,
+      0.186,
+      0.189
+    ],
+    "examples_image_url": "/img/agml/sample_images/apple_detection_usa_sample.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_detection_usa",
+    "license": "",
+    "citation": "@article{karkee2019apple,\n  title={Apple Dataset Benchmark from Orchard Environment in Modern Fruiting Wall},\n  author={Karkee, Manoj and Bhusal, Santosh and Zhang, Qin},\n  year={2019}\n}",
+    "crop_types": [
+      "apple"
+    ]
+  },
+  {
+    "name": "embrapa_wgisd_grape_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "grape_bunch_detection",
+    "location": "Worldwide",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "handheld/ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 239,
+    "documentation": "https://github.com/thsant/wgisd/tree/master",
+    "stats_mean": [
+      0.502,
+      0.536,
+      0.43
+    ],
+    "stats_std": [
+      0.235,
+      0.212,
+      0.222
+    ],
+    "examples_image_url": "/img/agml/sample_images/embrapa_wgisd_grape_detection_sample.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/embrapa_wgisd_grape_detection",
+    "license": "CC BY-NC 4.0",
+    "citation": "",
+    "crop_types": [
+      "grape"
+    ]
+  },
+  {
+    "name": "fruit_detection_worldwide",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "Worldwide",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "platform": "mixed",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 565,
+    "documentation": "https://drive.google.com/drive/folders/1CmsZb1caggLRN7ANfika8WuPiywo4mBb",
+    "classes": "avocado, rockmelon, apple, orange, strawberry, mango, capsicum",
+    "stats_mean": [
+      0.378,
+      0.409,
+      0.287
+    ],
+    "stats_std": [
+      0.231,
+      0.225,
+      0.218
+    ],
+    "examples_image_url": "/img/agml/sample_images/fruit_detection_worldwide_sample.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fruit_detection_worldwide",
+    "license": "",
+    "citation": "@Article{s16081222,\n  AUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\n  TITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\n  JOURNAL = {Sensors},\n  VOLUME = {16},\n  YEAR = {2016},\n  NUMBER = {8},\n  ARTICLE-NUMBER = {1222},\n  URL = {https://www.mdpi.com/1424-8220/16/8/1222},\n  ISSN = {1424-8220},\n  ABSTRACT = {This paper presents a novel approach to fruit detection using deep convolutional neural networks. The aim is to build an accurate, fast and reliable fruit detection system, which is a vital element of an autonomous agricultural robotic platform; it is a key element for fruit yield estimation and automated harvesting. Recent work in deep neural networks has led to the development of a state-of-the-art object detector termed Faster Region-based CNN (Faster R-CNN). We adapt this model, through transfer learning, for the task of fruit detection using imagery obtained from two modalities: colour (RGB) and Near-Infrared (NIR). Early and late fusion methods are explored for combining the multi-modal (RGB and NIR) information. This leads to a novel multi-modal Faster R-CNN model, which achieves state-of-the-art results compared to prior work with the F1 score, which takes into account both precision and recall performances improving from     0 . 807     to     0 . 838     for the detection of sweet pepper. In addition to improved accuracy, this approach is also much quicker to deploy for new fruits, as it requires bounding box annotation rather than pixel-level annotation (annotating bounding boxes is approximately an order of magnitude quicker to perform). The model is retrained to perform the detection of seven fruits, with the entire process taking four hours to annotate and train the new model per fruit.},\n  DOI = {10.3390/s16081222}\n}",
+    "crop_types": [
+      "avocado",
+      "rockmelon",
+      "apple",
+      "orange",
+      "strawberry",
+      "mango",
+      "capsicum"
+    ]
+  },
+  {
+    "name": "gemini_flower_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "flower_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 134,
+    "documentation": "http://gemini-breeding.github.io/",
+    "classes": "object",
+    "stats_mean": [
+      0.432,
+      0.462,
+      0.307
+    ],
+    "stats_std": [
+      0.158,
+      0.152,
+      0.145
+    ],
+    "examples_image_url": "/img/agml/sample_images/gemini_flower_detection_2022_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_flower_detection",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
+  },
+  {
+    "name": "gemini_leaf_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "leaf_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 25,
+    "documentation": "http://gemini-breeding.github.io/",
+    "classes": "object",
+    "stats_mean": [
+      0.515,
+      0.481,
+      0.417
+    ],
+    "stats_std": [
+      0.175,
+      0.153,
+      0.132
+    ],
+    "examples_image_url": "/img/agml/sample_images/gemini_leaf_detection_2022_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_leaf_detection",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
+  },
+  {
+    "name": "gemini_plant_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "plant_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 402,
+    "documentation": "http://gemini-breeding.github.io/",
+    "classes": "plant, weed",
+    "stats_mean": [
+      0.514,
+      0.48,
+      0.416
+    ],
+    "stats_std": [
+      0.174,
+      0.152,
+      0.13
+    ],
+    "examples_image_url": "/img/agml/sample_images/gemini_plant_detection_2022_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_plant_detection",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
+  },
+  {
+    "name": "gemini_pod_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "pod_detection",
+    "location": "United States, North America",
+    "sensor_modality": "RGB",
+    "real_or_synthetic": "real",
+    "environment": "Field",
+    "platform": "ground",
+    "input_data_format": "JPG",
+    "annotation_format": "coco_json",
+    "num_images": 98,
+    "documentation": "http://gemini-breeding.github.io/",
+    "classes": "object",
+    "stats_mean": [
+      0.416,
+      0.473,
+      0.285
+    ],
+    "stats_std": [
+      0.166,
+      0.161,
+      0.165
+    ],
+    "examples_image_url": "/img/agml/sample_images/gemini_pod_detection_2022_examples.webp",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_pod_detection",
+    "license": "Apache 2.0",
+    "citation": "",
+    "crop_types": [
+      "cowpea"
+    ]
+  },
+  {
+    "name": "ghai_broccoli_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "broccoli"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 500,
+    "classes": [
+      "Canopy",
+      "Crown"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/broccoli.md",
+    "citation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/broccoli.md",
+    "zip_size_bytes": 386125667,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ghai_broccoli_detection",
+    "examples_image_url": "/img/agml/sample_images/ghai_broccoli_detection_sample.webp"
+  },
+  {
+    "name": "ghai_green_cabbage_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cabbage"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 500,
+    "classes": [
+      "Crop"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "",
+    "zip_size_bytes": 334830342,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ghai_green_cabbage_detection",
+    "examples_image_url": "/img/agml/sample_images/ghai_green_cabbage_detection_sample.webp"
+  },
+  {
+    "name": "ghai_iceberg_lettuce_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "lettuce"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 500,
+    "classes": [
+      "Crop"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/iceberg.md",
+    "citation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/iceberg.md",
+    "zip_size_bytes": 415692449,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ghai_iceberg_lettuce_detection",
+    "examples_image_url": "/img/agml/sample_images/ghai_iceberg_lettuce_detection_sample.webp"
+  },
+  {
+    "name": "ghai_romaine_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "lettuce"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 500,
+    "classes": [
+      "Crop"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/romaine.md",
+    "citation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/romaine.md",
+    "zip_size_bytes": 388843754,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ghai_romaine_detection",
+    "examples_image_url": "/img/agml/sample_images/ghai_romaine_detection_sample.webp"
+  },
+  {
+    "name": "ghai_strawberry_fruit_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "strawberry"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 500,
+    "classes": [
+      "Bud",
+      "Calyx",
+      "Detached Fruit",
+      "Flower",
+      "Large green",
+      "Leaf",
+      "Ripe fruit",
+      "Small Green",
+      "Stem",
+      "Unripe fruit"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/strawberry.md",
+    "citation": "https://github.com/AxisAg/GHAIDatasets/blob/main/datasets/strawberry.md",
+    "zip_size_bytes": 464818366,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ghai_strawberry_fruit_detection",
+    "examples_image_url": "/img/agml/sample_images/ghai_strawberry_fruit_detection_sample.webp"
   }
 ]
