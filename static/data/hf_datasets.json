@@ -4858,5 +4858,413 @@
     "crop_types": [
       "grape"
     ]
+  },
+  {
+    "name": "BDHerbalPlants_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1792,
+    "augmented_num_images": 14336,
+    "augmented_zip_size_bytes": 1207623710,
+    "classes": [
+      "Datura (Datura stramonium)",
+      "Dhonya Pata ( Coriandrum Sativum)",
+      "Kalokeshi",
+      "Neem (Azadirachta indica)",
+      "Pathor Kuchi (Kalanchoe pinnata)",
+      "Pudina (Mentha Arvensis)",
+      "Thankuni (Centella asiatica)",
+      "Tulsi (Ocimum tenuiflorum)"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111885",
+    "citation": "Khandaker, Sunzil; Rahman, Md Mizanur (2025), “BDHerbalPlants”, Mendeley Data, V3, doi: 10.17632/md59kt54jy.3",
+    "zip_size_bytes": 111453681,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/BDHerbalPlants_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/BDHerbalPlants_variety_classification_sample.webp"
+  },
+  {
+    "name": "PriBel_betel_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Betel Leaf"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1800,
+    "classes": [
+      "Diseased",
+      "Dried",
+      "Healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111674",
+    "citation": "Mane, Gauri; Bhise, Raghav; Kadam, Rutuja; Kaur, Gagandeep; Verma, Devika; Chopade, Rupali; Shinde, Gitanjali ; Tejani, Ghanshyam; Mousavirad, Seyed (2025), “Betel Leaf Dataset: A Primary Dataset From Field And Controlled Environment ”, Mendeley Data, V2, doi: 10.17632/btdym2t6mt.2",
+    "zip_size_bytes": 8944788969,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/PriBel_betel_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/PriBel_betel_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "OkraDiseaseNet_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "okra"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1495,
+    "classes": [
+      "Alternaria Leaf Spot",
+      "Cercospora Leaf Spot",
+      "Downy Mildew",
+      "Healthy",
+      "Leaf curly virus",
+      "Phyllosticta leaf spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111662",
+    "citation": "Kumarakuru, Sowmiya; M, Thenmozhi (2024), “Okra DiseaseNet Dataset”, Mendeley Data, V1, doi: 10.17632/nh7zk4hv8z.1",
+    "zip_size_bytes": 8792505621,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OkraDiseaseNet_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/OkraDiseaseNet_disease_classification_sample.webp"
+  },
+  {
+    "name": "MH_SoyaHealthVision_disease_classification_leaf",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2782,
+    "classes": [
+      "Caterpillar_Semilooper_Pest",
+      "Frog_Leaf_Eye",
+      "Healthy",
+      "Mosaic",
+      "Rust",
+      "Spectoria_Brown_Spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111517",
+    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian UAV and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
+    "zip_size_bytes": 6127121748,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MH_SoyaHealthVision_disease_classification_leaf",
+    "examples_image_url": "/img/agml/sample_images/MH_SoyaHealthVision_disease_classification_leaf_sample.webp"
+  },
+  {
+    "name": "MH_SoyaHealthVision_disease_classification_uav",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2842,
+    "classes": [
+      "Healthy",
+      "Mosaic",
+      "Rust",
+      "Semilooper_Pest"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111517",
+    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian UAV and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
+    "zip_size_bytes": 4442239686,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MH_SoyaHealthVision_disease_classification_uav",
+    "examples_image_url": "/img/agml/sample_images/MH_SoyaHealthVision_disease_classification_uav_sample.webp"
+  },
+  {
+    "name": "citrusuat_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Mexico",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "orange"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 953,
+    "classes": [
+      "Citrus_leafminer",
+      "Fe",
+      "Greasy_spot",
+      "HLB",
+      "Healthy",
+      "Mg",
+      "Mn",
+      "N",
+      "Red_scale",
+      "Red_scale_sequelae",
+      "Texas_mite",
+      "Zn"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109908",
+    "citation": "Wilfrido Gómez Flores. (2023). CitrusUAT: A Dataset of Orange Citrus sinensis Leaves for Abnormality Detection Using Image Analysis Techniques [Data set]. In CitrusUAT: A dataset of orange Citrus sinensis leaves for abnormality detection using image analysis techniques (1.0, Vol. 52, p. 109908). Zenodo. https://doi.org/10.5281/zenodo.8294078",
+    "zip_size_bytes": 1884106286,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/citrusuat_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/citrusuat_disease_classification_sample.webp"
+  },
+  {
+    "name": "soybean_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1176,
+    "classes": [
+      "Bacterial leaf Blight",
+      "Dry_leaf",
+      "Healthy",
+      "Root_images",
+      "Septoria_Brown_Spot",
+      "Vein Necrosis"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110216",
+    "citation": "Kotwal, Jameer ; kashyap, Ramgopal (2023), “   An India soyabean leaf dataset”, Mendeley Data, V1, doi: 10.17632/bshkvgbzpt.1",
+    "zip_size_bytes": 2848537079,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/soybean_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "watermelon_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Watermelon"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1155,
+    "augmented_num_images": 5775,
+    "augmented_zip_size_bytes": 4426672888,
+    "classes": [
+      "Anthracnose",
+      "Downy_Mildew",
+      "Healthy",
+      "Mosaic_Virus"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110182",
+    "citation": "Nakib, Mohammad Imtiaz ; Mridha, Firoz (2023), “Watermelon Disease Recognition Dataset”, Mendeley Data, V1, doi: 10.17632/ntzym554jp.1",
+    "zip_size_bytes": 2385722480,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/watermelon_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/watermelon_disease_classification_sample.webp"
+  },
+  {
+    "name": "fig_leaf_ficus_worm_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "Iraq",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Fig"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2321,
+    "classes": [
+      "healthy",
+      "infected"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109958",
+    "citation": "Hafi, Saad; Mohammed Abdallazez, Mohammed; Hamed , Dhafar; Alaskar, Haya; Hussain, Abir (2023), “fig leaves dataset”, Mendeley Data, V2, doi: 10.17632/f7dk2yknff.2",
+    "zip_size_bytes": 709637530,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fig_leaf_ficus_worm_classification",
+    "examples_image_url": "/img/agml/sample_images/fig_leaf_ficus_worm_classification_sample.webp"
+  },
+  {
+    "name": "apple_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Apple"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 7505,
+    "classes": [
+      "Alternaria",
+      "Apple_Mosaic",
+      "Healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110165",
+    "citation": "Yatoo, Arshad; Sharma, Amit (2024), “Indigenous Dataset for Apple Leaf Disease Detection and Classification”, Mendeley Data, V3, doi: 10.17632/9m2dcb5mmr.3",
+    "zip_size_bytes": 89837258,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/apple_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "lemongrass_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Lemongrass"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 10042,
+    "classes": [
+      "Dried",
+      "Healthy",
+      "Unhealthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110104",
+    "citation": "Patrawala, Alimurtuza; Suryawanshi, Yogesh; PATIL, Kailas (2023), “Lemongrass Leaf Image Dataset: Mobile-Photographed Image Compilation”, Mendeley Data, V1, doi: 10.17632/9tnbjsj6kn.1",
+    "zip_size_bytes": 2060496841,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/lemongrass_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/lemongrass_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "groundnut_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "groundnut"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1720,
+    "classes": [
+      "ALTERNARIA LEAF SPOT",
+      "HEALTHY",
+      "LEAF SPOT",
+      "ROSETTE",
+      "RUST"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110763",
+    "citation": "Sasmal, Buddhadev ; Das, Arunita; Dhal, Krishna Gopal; Saheb, Belal; Abu Khurma, Ruba ; Castillo-Valdivieso, Pedro A.  (2024), “A novel groundnut leaf dataset for detection and classification of groundnut leaf diseases”, Mendeley Data, V2, doi: 10.17632/x6x5jkk873.2",
+    "zip_size_bytes": 521066875,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/groundnut_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/groundnut_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "cabbage_instance_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": "Japan",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cabbage"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 458,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110699",
+    "citation": "Yokoyama, Yui; Matsui, Tsutomu; Tanaka, S.T. Takashi (2024), “An annotated image dataset of cabbages for instance segmentation”, Mendeley Data, V2, doi: 10.17632/5cp2dyjczk.2",
+    "zip_size_bytes": 726694145,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cabbage_instance_segmentation",
+    "examples_image_url": "/img/agml/sample_images/cabbage_instance_segmentation_sample.webp"
+  },
+  {
+    "name": "banana_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1166,
+    "augmented_num_images": 6000,
+    "augmented_zip_size_bytes": 5082701672,
+    "classes": [
+      "Anaji",
+      "Bichi",
+      "Champa",
+      "Deshi",
+      "Shagor",
+      "Shobri"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Islam, Md Masudul; Sheikh, Ripon; Hossain, Md. Anwar; Hossain, Moazzem ; Himel, Galib Muhammad Shahriar (2024), “BananaSet: A Dataset of Banana Varieties in Bangladesh”, Mendeley Data, V4, doi: 10.17632/35gb4v72dr.4",
+    "zip_size_bytes": 4389752066,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/banana_variety_classification_sample.webp"
   }
 ]
