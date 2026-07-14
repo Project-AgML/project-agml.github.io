@@ -10,7 +10,38 @@ export interface PerformanceEntry {
   link: string | null;
   notes: string | null;
   variant: 'zero-shot' | 'fine-tuned' | null;
+  optimized: boolean;
+  splitBreakdown: string | null;
+  trainPercentage: number | null;
+  datasetConfig: string | null;
+  trainTimePerImage: number | null;
+  infTimePerImage: number | null;
+  platform: string | null;
+  metrics: MetricValue[];
+  metricCategories: MetricCategory[];
 }
+
+export type MetricCategory = 'f1' | 'map' | 'precision_recall' | 'other';
+
+export interface MetricValue {
+  key: string;
+  label: string;
+  value: number;
+}
+
+export function classifyMetricLabel(label: string): MetricCategory {
+  if (label === 'F1') return 'f1';
+  if (label.startsWith('mAP')) return 'map';
+  if (label === 'Precision' || label === 'Recall') return 'precision_recall';
+  return 'other';
+}
+
+export const METRIC_CATEGORY_LABELS: Record<MetricCategory, string> = {
+  f1: 'F1',
+  map: 'mAP',
+  precision_recall: 'Precision / Recall',
+  other: 'Other',
+};
 
 export interface DatasetPerformance {
   metric: string | null;
@@ -50,6 +81,15 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
     link: toText(raw.link ?? raw.url ?? raw.source_link),
     notes: toText(raw.notes),
     variant: null,
+    optimized: Boolean(raw.optimized),
+    splitBreakdown: toText(raw.split_breakdown),
+    trainPercentage: toNumber(raw.train_percentage),
+    datasetConfig: toText(raw.dataset_config ?? raw.config),
+    trainTimePerImage: toNumber(raw.train_time_per_image),
+    infTimePerImage: toNumber(raw.inference_time_per_image),
+    platform: toText(raw.platform ?? raw.device),
+    metrics: [],
+    metricCategories: [],
   };
 }
 
@@ -74,20 +114,99 @@ function resolveMetricKey(task: unknown, metrics: Record<string, unknown>): stri
   return Object.keys(metrics).find((key) => isFiniteNumber(metrics[key])) ?? null;
 }
 
+// Every dataset can report F1, mAP, and precision/recall side by side, regardless of the
+// dataset's primary task — resolveMetricKey above still picks one metric to rank/sort by, but
+// this collects every recognized metric present on a run for display purposes. Detection runs in
+// particular may report mAP at several IoU thresholds (map_50, map_75, map_50_95, ...); each is
+// surfaced as its own labeled value rather than collapsed into one number.
+const NAMED_METRIC_LABELS: Record<string, string> = {
+  f1: 'F1',
+  accuracy: 'Accuracy',
+  top1_accuracy: 'Top-1 Accuracy',
+  precision: 'Precision',
+  prec: 'Precision',
+  recall: 'Recall',
+  rec: 'Recall',
+  miou: 'mIoU',
+  iou: 'IoU',
+  mean_iou: 'mIoU',
+};
+
+function isMapMetricKey(key: string): boolean {
+  return /^m?ap([_@-]|$)/i.test(key);
+}
+
+function formatMapMetricLabel(key: string): string {
+  const normalized = key.toLowerCase();
+  if (normalized === 'map' || normalized === 'map50' || normalized === 'map_50' || normalized === 'mAP@0.5'.toLowerCase()) {
+    return 'mAP@0.50';
+  }
+  const match = normalized.match(/(\d{2,3})(?:[_-](\d{2,3}))?\s*$/);
+  if (!match) return 'mAP';
+  const lo = (Number(match[1]) / 100).toFixed(2);
+  if (match[2]) {
+    const hi = (Number(match[2]) / 100).toFixed(2);
+    return `mAP@[${lo}:${hi}]`;
+  }
+  return `mAP@${lo}`;
+}
+
+function labelForMetricKey(key: string): string | null {
+  const normalized = key.toLowerCase();
+  if (isMapMetricKey(normalized)) return formatMapMetricLabel(normalized);
+  return NAMED_METRIC_LABELS[normalized] ?? null;
+}
+
+function collectMetrics(metrics: Record<string, unknown>): MetricValue[] {
+  const results: MetricValue[] = [];
+  for (const [key, value] of Object.entries(metrics)) {
+    if (!isFiniteNumber(value)) continue;
+    const label = labelForMetricKey(key);
+    if (!label) continue;
+    results.push({ key, label, value });
+  }
+  return results;
+}
+
 function buildRunNote(entry: Record<string, unknown>): string | null {
-  const parts: string[] = [];
-  if (isFiniteNumber(entry.num_samples)) parts.push(`${entry.num_samples} samples`);
-  const device = toText(entry.device);
-  if (device) parts.push(device);
-  return parts.length ? parts.join(' · ') : null;
+  const parts: string[] = ['Zero-shot'];
+  if (isFiniteNumber(entry.num_samples)) parts.push(`evaluated on ${entry.num_samples} images`);
+  return parts.join(' · ');
 }
 
 function buildFinetuneNote(finetune: unknown): string | null {
   if (!isRecord(finetune)) return null;
-  const parts: string[] = [];
+  const parts: string[] = ['Fine-tuned'];
+  if (isFiniteNumber(finetune.train_samples)) parts.push(`trained on ${finetune.train_samples} images from this dataset`);
+  if (isFiniteNumber(finetune.val_samples)) parts.push(`validated on ${finetune.val_samples} images`);
   if (isFiniteNumber(finetune.epochs)) parts.push(`${finetune.epochs} epochs`);
-  if (isFiniteNumber(finetune.train_samples)) parts.push(`${finetune.train_samples} train samples`);
-  return parts.length ? parts.join(' · ') : null;
+  if (isFiniteNumber(finetune.lr)) parts.push(`lr=${finetune.lr}`);
+  if (isFiniteNumber(finetune.weight_decay)) parts.push(`weight decay=${finetune.weight_decay}`);
+  if (isFiniteNumber(finetune.split_seed)) parts.push(`seed=${finetune.split_seed}`);
+  if (isFiniteNumber(finetune.train_ratio)) parts.push(`train ratio=${finetune.train_ratio}`);
+  return parts.join(' · ');
+}
+
+function computeTrainPercentage(entry: Record<string, unknown>, finetune: unknown): number | null {
+  const testSamples = isFiniteNumber(entry.num_samples) ? entry.num_samples : null;
+  const trainSamples = isRecord(finetune) && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
+  const valSamples = isRecord(finetune) && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
+  const total = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
+  if (!total || trainSamples == null) return null;
+  return (trainSamples / total) * 100;
+}
+
+// Rendered as train/test/val percentages in that fixed order, e.g. "10/80/10" or "-/100/-" when
+// a split is absent — compact enough to fit the leaderboard's narrow split column.
+function buildSplitBreakdown(entry: Record<string, unknown>, finetune: unknown): string | null {
+  const testSamples = isFiniteNumber(entry.num_samples) ? entry.num_samples : null;
+  const trainSamples = isRecord(finetune) && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
+  const valSamples = isRecord(finetune) && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
+  const total = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
+  if (!total) return null;
+
+  const toShare = (value: number | null) => (value != null ? ((value / total) * 100).toFixed(0) : '-');
+  return `${toShare(trainSamples)}/${toShare(testSamples)}/${toShare(valSamples)}`;
 }
 
 function makeLeaderboardRow(
@@ -96,6 +215,11 @@ function makeLeaderboardRow(
   variant: 'zero-shot' | 'fine-tuned'
 ): Omit<PerformanceEntry, 'rank'> & { score: number } {
   const metrics = entry.metrics as Record<string, unknown>;
+  const finetune = entry.finetune;
+  const trainSamples = isRecord(finetune) && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
+  const trainingTimeSeconds = isRecord(finetune) && isFiniteNumber(finetune.training_time_seconds) ? finetune.training_time_seconds : null;
+  const metricValues = collectMetrics(metrics);
+
   return {
     model: (entry.model as string).trim(),
     score: metrics[metricKey] as number,
@@ -103,7 +227,18 @@ function makeLeaderboardRow(
     date: toText(entry.timestamp)?.slice(0, 10) ?? null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned' ? buildFinetuneNote(entry.finetune) : buildRunNote(entry),
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
+    optimized: Boolean(entry.optimized) || (isRecord(finetune) && Boolean(finetune.optimized)),
+    splitBreakdown: buildSplitBreakdown(entry, finetune),
+    trainPercentage: computeTrainPercentage(entry, finetune),
+    datasetConfig: toText(entry.dataset_config) ?? toText(entry.split),
+    trainTimePerImage: trainingTimeSeconds != null && trainSamples ? trainingTimeSeconds / trainSamples : null,
+    infTimePerImage: isFiniteNumber(entry.inference_time_seconds) && isFiniteNumber(entry.num_samples) && entry.num_samples > 0
+      ? entry.inference_time_seconds / entry.num_samples
+      : null,
+    platform: toText(entry.device),
+    metrics: metricValues,
+    metricCategories: Array.from(new Set(metricValues.map((metric) => classifyMetricLabel(metric.label)))),
   };
 }
 
@@ -175,14 +310,40 @@ export interface GlobalPerformanceRecord {
   crop_types: string[] | null;
   machine_learning_task: string | null;
   variant: 'zero-shot' | 'fine-tuned' | null;
+  optimized: boolean;
+  platform: string | null;
+}
+
+export interface GlobalLeaderboardDatasetDetail {
+  dataset: string;
+  percentile: number;
+  variant: 'zero-shot' | 'fine-tuned' | null;
+  optimized: boolean;
+  platform: string | null;
+}
+
+export function globalResultTypeKey(record: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }): string | null {
+  if (!record.variant) return null;
+  return record.optimized ? `${record.variant}-optimized` : record.variant;
+}
+
+export function formatGlobalResultTypeKey(key: string) {
+  const optimized = key.endsWith('-optimized');
+  const base = optimized ? key.slice(0, -'-optimized'.length) : key;
+  const label = base === 'fine-tuned' ? 'Fine-tuned' : 'Zero-shot';
+  return optimized ? `${label} (optimized)` : label;
 }
 
 export interface GlobalLeaderboardEntry {
   model: string;
+  machineLearningTask: string | null;
   averagePercentile: number;
   appearances: number;
   datasets: string[];
   fineTunedDatasets: string[];
+  resultType: string;
+  optimized: boolean;
+  datasetDetails: GlobalLeaderboardDatasetDetail[];
 }
 
 function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord | null {
@@ -205,40 +366,98 @@ function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord
     crop_types: cropTypes?.length ? cropTypes : null,
     machine_learning_task: toText(raw.machine_learning_task),
     variant,
+    optimized: Boolean(raw.optimized),
+    platform: toText(raw.platform),
   };
+}
+
+function formatResultTypeLabel(variants: Set<'zero-shot' | 'fine-tuned'>, optimized: boolean) {
+  let base: string;
+  if (variants.size === 0) base = '—';
+  else if (variants.size > 1) base = 'Mixed';
+  else base = variants.has('fine-tuned') ? 'Fine-tuned' : 'Zero-shot';
+
+  if (base === '—') return base;
+  return optimized ? `${base} (optimized)` : base;
 }
 
 export function computeGlobalLeaderboard(
   records: GlobalPerformanceRecord[],
-  options: { cropTypes?: string[]; mlTasks?: string[]; minAppearances?: number } = {}
+  options: {
+    cropTypes?: string[];
+    mlTasks?: string[];
+    resultTypes?: string[];
+    platforms?: string[];
+    minAppearances?: number;
+  } = {}
 ): GlobalLeaderboardEntry[] {
-  const { cropTypes = [], mlTasks = [], minAppearances = 3 } = options;
+  const { cropTypes = [], mlTasks = [], resultTypes = [], platforms = [], minAppearances = 3 } = options;
   const stats = new Map<
     string,
-    { totalPercentile: number; appearances: number; datasets: Set<string>; fineTunedDatasets: Set<string> }
+    {
+      model: string;
+      machineLearningTask: string | null;
+      totalPercentile: number;
+      appearances: number;
+      datasets: Set<string>;
+      fineTunedDatasets: Set<string>;
+      variants: Set<'zero-shot' | 'fine-tuned'>;
+      optimized: boolean;
+      datasetDetails: GlobalLeaderboardDatasetDetail[];
+    }
   >();
 
   for (const record of records) {
     if (cropTypes.length && !record.crop_types?.some((crop) => cropTypes.includes(crop))) continue;
     if (mlTasks.length && !(record.machine_learning_task && mlTasks.includes(record.machine_learning_task))) continue;
+    if (resultTypes.length) {
+      const resultTypeKey = globalResultTypeKey(record);
+      if (!resultTypeKey || !resultTypes.includes(resultTypeKey)) continue;
+    }
+    if (platforms.length && !(record.platform && platforms.includes(record.platform))) continue;
 
+    const key = `${record.model}|||${record.machine_learning_task ?? ''}`;
     const entryStats =
-      stats.get(record.model) ?? { totalPercentile: 0, appearances: 0, datasets: new Set(), fineTunedDatasets: new Set() };
+      stats.get(key) ??
+      {
+        model: record.model,
+        machineLearningTask: record.machine_learning_task,
+        totalPercentile: 0,
+        appearances: 0,
+        datasets: new Set<string>(),
+        fineTunedDatasets: new Set<string>(),
+        variants: new Set<'zero-shot' | 'fine-tuned'>(),
+        optimized: false,
+        datasetDetails: [] as GlobalLeaderboardDatasetDetail[],
+      };
     entryStats.totalPercentile += record.percentile;
     entryStats.appearances += 1;
     entryStats.datasets.add(record.dataset);
     if (record.variant === 'fine-tuned') entryStats.fineTunedDatasets.add(record.dataset);
-    stats.set(record.model, entryStats);
+    if (record.variant) entryStats.variants.add(record.variant);
+    if (record.optimized) entryStats.optimized = true;
+    entryStats.datasetDetails.push({
+      dataset: record.dataset,
+      percentile: record.percentile,
+      variant: record.variant,
+      optimized: record.optimized,
+      platform: record.platform,
+    });
+    stats.set(key, entryStats);
   }
 
-  return Array.from(stats.entries())
-    .filter(([, entryStats]) => entryStats.appearances >= minAppearances)
-    .map(([model, entryStats]) => ({
-      model,
+  return Array.from(stats.values())
+    .filter((entryStats) => entryStats.appearances >= minAppearances)
+    .map((entryStats) => ({
+      model: entryStats.model,
+      machineLearningTask: entryStats.machineLearningTask,
       averagePercentile: entryStats.totalPercentile / entryStats.appearances,
       appearances: entryStats.appearances,
       datasets: Array.from(entryStats.datasets).sort(),
       fineTunedDatasets: Array.from(entryStats.fineTunedDatasets).sort(),
+      resultType: formatResultTypeLabel(entryStats.variants, entryStats.optimized),
+      optimized: entryStats.optimized,
+      datasetDetails: entryStats.datasetDetails.sort((a, b) => a.dataset.localeCompare(b.dataset)),
     }))
     .sort((a, b) => b.averagePercentile - a.averagePercentile);
 }

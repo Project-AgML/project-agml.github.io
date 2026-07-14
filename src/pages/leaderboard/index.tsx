@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
-import { computeGlobalLeaderboard, useGlobalPerformance } from '../../lib/performance';
+import { computeGlobalLeaderboard, formatGlobalResultTypeKey, globalResultTypeKey, useGlobalPerformance } from '../../lib/performance';
+import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
 
 const MIN_APPEARANCES = 3;
@@ -10,82 +11,31 @@ function toLabel(value: string) {
   return value.replace(/_/g, ' ');
 }
 
-function MultiSelectDropdown({
-  label,
-  options,
-  selected,
-  onToggle,
-}: {
-  label: string;
-  options: string[];
-  selected: string[];
-  onToggle: (value: string) => void;
-}) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className={styles.dropdown} data-dropdown={label}>
-      <label className={styles.dropdownLabel}>{label}</label>
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
-        aria-expanded={open}
-        className={styles.dropdownTrigger}
-      >
-        <span>
-          {selected.length === 0
-            ? 'All'
-            : selected.length === 1
-              ? toLabel(selected[0])
-              : `${selected.length} selected`}
-        </span>
-        <span className={styles.dropdownChevron} aria-hidden>
-          ▾
-        </span>
-      </button>
-      {open && (
-        <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
-          {options.length === 0 && <div className={styles.dropdownEmpty}>No options</div>}
-          {options.map((option) => {
-            const isSelected = selected.includes(option);
-            return (
-              <button
-                key={option}
-                type="button"
-                className={`${styles.dropdownOption} ${isSelected ? styles.dropdownOptionSelected : ''}`}
-                onMouseDown={(event) => event.preventDefault()}
-                onClick={() => onToggle(option)}
-              >
-                <span className={styles.dropdownCheckbox} aria-hidden>
-                  {isSelected ? '✓' : ''}
-                </span>
-                {toLabel(option)}
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function GlobalLeaderboardPage() {
   const { data: records, loading, error } = useGlobalPerformance();
 
   const [cropTypes, setCropTypes] = useState<string[]>([]);
   const [mlTasks, setMlTasks] = useState<string[]>([]);
+  const [resultTypes, setResultTypes] = useState<string[]>([]);
+  const [platforms, setPlatforms] = useState<string[]>([]);
 
-  const { cropTypeOptions, mlTaskOptions } = useMemo(() => {
+  const { cropTypeOptions, mlTaskOptions, resultTypeOptions, platformOptions } = useMemo(() => {
     const cropSet = new Set<string>();
     const taskSet = new Set<string>();
+    const resultTypeSet = new Set<string>();
+    const platformSet = new Set<string>();
     for (const record of records) {
       record.crop_types?.forEach((crop) => cropSet.add(crop));
       if (record.machine_learning_task) taskSet.add(record.machine_learning_task);
+      const resultTypeKey = globalResultTypeKey(record);
+      if (resultTypeKey) resultTypeSet.add(resultTypeKey);
+      if (record.platform) platformSet.add(record.platform);
     }
     return {
       cropTypeOptions: Array.from(cropSet).sort((a, b) => a.localeCompare(b)),
       mlTaskOptions: Array.from(taskSet).sort((a, b) => a.localeCompare(b)),
+      resultTypeOptions: Array.from(resultTypeSet).sort(),
+      platformOptions: Array.from(platformSet).sort((a, b) => a.localeCompare(b)),
     };
   }, [records]);
 
@@ -97,19 +47,29 @@ export default function GlobalLeaderboardPage() {
     setMlTasks((current) => (current.includes(value) ? current.filter((v) => v !== value) : [...current, value]));
   };
 
-  const hasActiveFilters = cropTypes.length > 0 || mlTasks.length > 0;
+  const toggleResultType = (value: string) => {
+    setResultTypes((current) => (current.includes(value) ? current.filter((v) => v !== value) : [...current, value]));
+  };
+
+  const togglePlatform = (value: string) => {
+    setPlatforms((current) => (current.includes(value) ? current.filter((v) => v !== value) : [...current, value]));
+  };
+
+  const hasActiveFilters = cropTypes.length > 0 || mlTasks.length > 0 || resultTypes.length > 0 || platforms.length > 0;
   const clearFilters = () => {
     setCropTypes([]);
     setMlTasks([]);
+    setResultTypes([]);
+    setPlatforms([]);
   };
 
   const leaderboard = useMemo(
-    () => computeGlobalLeaderboard(records, { cropTypes, mlTasks, minAppearances: MIN_APPEARANCES }),
-    [records, cropTypes, mlTasks]
+    () => computeGlobalLeaderboard(records, { cropTypes, mlTasks, resultTypes, platforms, minAppearances: MIN_APPEARANCES }),
+    [records, cropTypes, mlTasks, resultTypes, platforms]
   );
 
   const [page, setPage] = useState(1);
-  useEffect(() => setPage(1), [cropTypes, mlTasks]);
+  useEffect(() => setPage(1), [cropTypes, mlTasks, resultTypes, platforms]);
 
   const pageCount = Math.max(1, Math.ceil(leaderboard.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
@@ -117,6 +77,17 @@ export default function GlobalLeaderboardPage() {
     () => leaderboard.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
     [leaderboard, currentPage]
   );
+
+  const [expandedKeys, setExpandedKeys] = useState<Set<string>>(new Set());
+  const toggleExpanded = (key: string) => {
+    setExpandedKeys((current) => {
+      const next = new Set(current);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+  useEffect(() => setExpandedKeys(new Set()), [cropTypes, mlTasks, resultTypes, platforms, page]);
 
   return (
     <Layout title="Model Leaderboard" description="Global model leaderboard aggregated across AgML dataset benchmarks.">
@@ -134,8 +105,16 @@ export default function GlobalLeaderboardPage() {
 
         <section className={styles.controls}>
           <div className={styles.dropdownRow}>
-            <MultiSelectDropdown label="Crop type" options={cropTypeOptions} selected={cropTypes} onToggle={toggleCropType} />
-            <MultiSelectDropdown label="Model task" options={mlTaskOptions} selected={mlTasks} onToggle={toggleMlTask} />
+            <MultiSelectDropdown label="Task type" options={mlTaskOptions} selected={mlTasks} onToggle={toggleMlTask} formatOption={toLabel} />
+            <MultiSelectDropdown
+              label="Tuned vs not tuned"
+              options={resultTypeOptions}
+              selected={resultTypes}
+              onToggle={toggleResultType}
+              formatOption={formatGlobalResultTypeKey}
+            />
+            <MultiSelectDropdown label="Crop type" options={cropTypeOptions} selected={cropTypes} onToggle={toggleCropType} formatOption={toLabel} />
+            <MultiSelectDropdown label="Platform" options={platformOptions} selected={platforms} onToggle={togglePlatform} formatOption={toLabel} />
           </div>
           {hasActiveFilters && (
             <button type="button" className={styles.clearButton} onClick={clearFilters}>
@@ -157,29 +136,71 @@ export default function GlobalLeaderboardPage() {
               <table className={styles.leaderboardTable}>
                 <thead>
                   <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Avg. percentile</th>
-                    <th>Appearances</th>
-                    <th>Fine-tuned</th>
-                    <th>Datasets</th>
+                    <th>CV-task</th>
+                    <th>Model name</th>
+                    <th>Avg. percentile (mAP@.5)</th>
+                    <th>Result type</th>
+                    <th>Number of results</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {pagedLeaderboard.map((entry, index) => (
-                    <tr key={entry.model}>
-                      <td>{(currentPage - 1) * PAGE_SIZE + index + 1}</td>
-                      <td>{entry.model}</td>
-                      <td>{entry.averagePercentile.toFixed(1)}</td>
-                      <td>{entry.appearances}</td>
-                      <td>
-                        {entry.fineTunedDatasets.length > 0
-                          ? `${entry.fineTunedDatasets.length} of ${entry.datasets.length}`
-                          : '—'}
-                      </td>
-                      <td className={styles.datasetsCell}>{entry.datasets.map((name) => toLabel(name)).join(', ')}</td>
-                    </tr>
-                  ))}
+                  {pagedLeaderboard.map((entry) => {
+                    const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
+                    const isExpanded = expandedKeys.has(key);
+                    return (
+                      <Fragment key={key}>
+                        <tr
+                          className={styles.clickableRow}
+                          onClick={() => toggleExpanded(key)}
+                          aria-expanded={isExpanded}
+                        >
+                          <td>{entry.machineLearningTask ? toLabel(entry.machineLearningTask) : '—'}</td>
+                          <td>
+                            <span className={styles.modelName}>{entry.model}</span>
+                            <span className={styles.expandChevron} aria-hidden>
+                              {isExpanded ? '▾' : '▸'}
+                            </span>
+                          </td>
+                          <td>{entry.averagePercentile.toFixed(1)}</td>
+                          <td>{entry.resultType}</td>
+                          <td>{entry.appearances}</td>
+                        </tr>
+                        {isExpanded && (
+                          <tr>
+                            <td colSpan={5} className={styles.detailsCell}>
+                              <table className={styles.detailsTable}>
+                                <thead>
+                                  <tr>
+                                    <th>Dataset</th>
+                                    <th>Percentile</th>
+                                    <th>Result type</th>
+                                    <th>Platform</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {entry.datasetDetails.map((detail) => (
+                                    <tr key={detail.dataset}>
+                                      <td>{toLabel(detail.dataset)}</td>
+                                      <td>{detail.percentile.toFixed(1)}</td>
+                                      <td>
+                                        {detail.variant === 'fine-tuned'
+                                          ? 'Fine-tuned'
+                                          : detail.variant === 'zero-shot'
+                                            ? 'Zero-shot'
+                                            : '—'}
+                                        {detail.optimized ? ' (optimized)' : ''}
+                                      </td>
+                                      <td>{detail.platform ?? '—'}</td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        )}
+                      </Fragment>
+                    );
+                  })}
                 </tbody>
               </table>
               {pageCount > 1 && (

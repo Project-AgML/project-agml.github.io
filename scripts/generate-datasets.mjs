@@ -90,6 +90,7 @@ function buildFinetuneNote(finetune) {
 }
 
 function makeLeaderboardRow(entry, metricKey, variant) {
+  const finetune = entry.finetune;
   return {
     model: entry.model.trim(),
     score: entry.metrics[metricKey],
@@ -97,7 +98,9 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned' ? buildFinetuneNote(entry.finetune) : buildRunNote(entry),
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
+    optimized: Boolean(entry.optimized) || (finetune != null && typeof finetune === 'object' && Boolean(finetune.optimized)),
+    platform: typeof entry.device === 'string' && entry.device.trim() ? entry.device.trim() : null,
   };
 }
 
@@ -179,6 +182,8 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
         crop_types: meta.crop_types,
         machine_learning_task: meta.machine_learning_task,
         variant: entry.variant === 'zero-shot' || entry.variant === 'fine-tuned' ? entry.variant : null,
+        optimized: Boolean(entry.optimized),
+        platform: typeof entry.platform === 'string' && entry.platform.trim() ? entry.platform.trim() : null,
       });
     });
   }

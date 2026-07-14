@@ -161,7 +161,8 @@
 .exampleImage {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 65vh;
+	object-fit: contain;
 	border-radius: 18px;
 	border: 1px solid var(--agml-border);
 	background: var(--agml-surface-strong);
@@ -215,8 +216,65 @@
 	overflow-x: auto;
 }
 
+.filterBar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 1rem;
+	margin: 0.75rem 0 1rem;
+	padding: 0.9rem 1rem;
+	border-radius: 16px;
+	border: 1px solid var(--agml-border);
+	background: var(--agml-surface);
+}
+
+.filterRange {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	min-width: 160px;
+}
+
+.filterRangeLabel {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	color: var(--agml-muted);
+}
+
+.filterRangeInputs {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: var(--agml-muted);
+}
+
+.filterRangeInput {
+	width: 100%;
+	min-width: 0;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border-strong);
+	padding: 0.5rem 0.6rem;
+	background: var(--agml-surface-strong);
+	color: var(--agml-text);
+	font-size: 0.88rem;
+}
+
+.clearFiltersButton {
+	border: 1px solid var(--agml-border-strong);
+	background: transparent;
+	border-radius: 999px;
+	padding: 0.5rem 1rem;
+	font-size: 0.85rem;
+	color: var(--agml-text);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
 .leaderboardTable {
 	width: 100%;
+	max-width: 100%;
+	table-layout: fixed;
 	margin-top: 0.6rem;
 	border-collapse: collapse;
 	font-size: 0.88rem;
@@ -227,7 +285,63 @@
 	padding: 0.55rem 0.7rem;
 	text-align: left;
 	border-bottom: 1px solid var(--agml-border);
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+.colModel {
+	width: 18%;
+}
+
+.colResultType {
+	width: 12%;
+}
+
+.colSplit {
+	width: 13%;
+}
+
+.colConfig {
+	width: 12%;
+}
+
+.colMetric {
+	width: 22%;
+}
+
+.colTime {
+	width: 15%;
+}
+
+.colPlatform {
+	width: 8%;
+}
+
+.clickableRow {
+	cursor: pointer;
+}
+
+.clickableRow:hover {
+	background: var(--agml-surface);
+}
+
+.expandChevron {
+	display: inline-block;
+	width: 1em;
+	margin-right: 0.35rem;
+	color: var(--agml-muted);
+	font-size: 0.8rem;
+}
+
+.notesCell {
+	background: var(--agml-surface);
+}
+
+.notesText {
+	margin: 0;
+	color: var(--agml-text);
+	line-height: 1.5;
+	overflow-wrap: anywhere;
 }
 
 .leaderboardTable th {
