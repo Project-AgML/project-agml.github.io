@@ -6053,7 +6053,9 @@
     "location": "Bangladesh",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Rose"],
+    "crop_types": [
+      "Rose"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6071,7 +6073,7 @@
     "zip_size_bytes": 530421831,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/RoseNet_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/RoseNet_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/RoseNet_leaf_disease_classification_sample.webp"
   },
   {
     "name": "VegNet_cauliflower_disease_classification",
@@ -6080,7 +6082,9 @@
     "location": "Bangladesh",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Cauliflower"],
+    "crop_types": [
+      "Cauliflower"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6099,7 +6103,7 @@
     "zip_size_bytes": 1561282541,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/VegNet_cauliflower_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/VegNet_cauliflower_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/VegNet_cauliflower_disease_classification_sample.webp"
   },
   {
     "name": "pomegranate_growth_detection",
@@ -6108,7 +6112,9 @@
     "location": "China",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["pomegranate"],
+    "crop_types": [
+      "pomegranate"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "boundingBox",
@@ -6126,7 +6132,7 @@
     "zip_size_bytes": 833075657,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pomegranate_growth_detection",
-    "examples_image_url": "/img/agml/sample_images/pomegranate_growth_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/pomegranate_growth_detection_sample.webp"
   },
   {
     "name": "banana_leaf_nutrient_classification",
@@ -6161,7 +6167,7 @@
     "zip_size_bytes": 96154814,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_leaf_nutrient_classification",
-    "examples_image_url": "/img/agml/sample_images/banana_leaf_nutrient_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/banana_leaf_nutrient_classification_sample.webp"
   },
   {
     "name": "CoLeaf_nutritional_deficiency_classification",
@@ -6170,7 +6176,9 @@
     "location": "Peru",
     "environment": "lab",
     "real_or_synthetic": "real",
-    "crop_types": ["coffee"],
+    "crop_types": [
+      "coffee"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6192,7 +6200,7 @@
     "zip_size_bytes": 1829513049,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CoLeaf_nutritional_deficiency_classification",
-    "examples_image_url": "/img/agml/sample_images/CoLeaf_nutritional_deficiency_classificiation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/CoLeaf_nutritional_deficiency_classificiation_sample.webp"
   },
   {
     "name": "MangoLeafBD_disease_classification",
@@ -6201,7 +6209,9 @@
     "location": "Bangladesh",
     "environment": "lab",
     "real_or_synthetic": "real",
-    "crop_types": ["mango"],
+    "crop_types": [
+      "mango"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6222,7 +6232,7 @@
     "zip_size_bytes": 140989882,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MangoLeafBD_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/MangoLeafBD_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/MangoLeafBD_disease_classification_sample.webp"
   },
   {
     "name": "BPLD_leaf_disease_classification",
@@ -6231,7 +6241,9 @@
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Black Gram"],
+    "crop_types": [
+      "Black Gram"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6249,7 +6261,7 @@
     "zip_size_bytes": 121563416,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/BPLD_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/BPLD_leaf_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/BPLD_leaf_disease_classification_sample.webp"
   },
   {
     "name": "VegNet_quality_classification",
@@ -6281,7 +6293,7 @@
     "zip_size_bytes": 132216004,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/VegNet_quality_classification",
-    "examples_image_url": "/img/agml/sample_images/VegNet_quality_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/VegNet_quality_classification_sample.webp"
   },
   {
     "name": "PFSD_Musa_banana_variety_classification",
@@ -6290,7 +6302,9 @@
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["banana"],
+    "crop_types": [
+      "banana"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6310,7 +6324,7 @@
     "zip_size_bytes": 32542704,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PFSD_Musa_banana_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/PFSD_Musa_banana_variety_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/PFSD_Musa_banana_variety_classification_sample.webp"
   },
   {
     "name": "PFSD_Musa_banana_disease_classification",
@@ -6319,7 +6333,9 @@
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["banana"],
+    "crop_types": [
+      "banana"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6340,7 +6356,7 @@
     "zip_size_bytes": 93335064,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PFSD_Musa_banana_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/PFSD_Musa_banana_disease_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/PFSD_Musa_banana_disease_classification_sample.webp"
   },
   {
     "name": "CoFly-Weed-DB_weed_segmentation",
@@ -6349,7 +6365,9 @@
     "location": "Greece",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["cotton"],
+    "crop_types": [
+      "cotton"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "segmentationMask",
@@ -6361,7 +6379,7 @@
     "zip_size_bytes": 456720241,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CoFly-Weed-DB_weed_segmentation",
-    "examples_image_url": "/img/agml/sample_images/CoFly-Weed-DB_weed_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/CoFly-Weed-DB_weed_segmentation_sample.webp"
   },
   {
     "name": "guava_disease_classification_bangladesh",
@@ -6370,7 +6388,9 @@
     "location": "Bangladesh",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["guava"],
+    "crop_types": [
+      "guava"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6390,7 +6410,7 @@
     "zip_size_bytes": 163393900,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_disease_classification_bangladesh",
-    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_bangladesh_sample.png"
+    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_bangladesh_sample.webp"
   },
   {
     "name": "soybean_leaf_disease_classification_brazil",
@@ -6399,7 +6419,9 @@
     "location": "Brazil",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["soybean"],
+    "crop_types": [
+      "soybean"
+    ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
     "annotation_format": "classLabel",
@@ -6415,15 +6437,65 @@
     "zip_size_bytes": 865452555,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_leaf_disease_classification_brazil",
-    "examples_image_url": "/img/agml/sample_images/soybean_leaf_disease_classification_brazil_sample.png"
+    "examples_image_url": "/img/agml/sample_images/soybean_leaf_disease_classification_brazil_sample.webp"
+  },
+  {
+    "name": "vegetable_crop_early_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "France",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize",
+      "bean",
+      "Leek"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 2801,
+    "classes": [
+      "bean",
+      "leek",
+      "maize",
+      "stem_bean",
+      "stem_leek",
+      "stem_maize"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108035",
+    "citation": "Lac, Louis (2022), “Vegetable Crops Dataset for Proximal Sensing (VCD)”, Mendeley Data, V1, doi: 10.17632/d7kbzjr83k.1",
+    "zip_size_bytes": 2738687393,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vegetable_crop_early_detection",
+    "examples_image_url": "/img/agml/sample_images/vegetable_crop_early_detection_sample.webp"
+  },
+  {
+    "name": "guava_maturity_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": "Pakistan",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "guava"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 2309,
+    "classes": [
+      "green",
+      "mature-green",
+      "ripe"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109462",
+    "citation": "Maitlo, Abdul Khalique; Aziz, Abdul; Raza, Hassnain ; Abbas, Neelam (2023), “Guava Fruit  Dataset for Classification ”, Mendeley Data, V1, doi: 10.17632/w3fg8jjmzr.1",
+    "zip_size_bytes": 393147847,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_maturity_classification",
+    "examples_image_url": "/img/agml/sample_images/guava_maturity_classification_sample.webp"
   }
-
-
-
-
-
-
-
-
-
 ]
