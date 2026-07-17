@@ -6683,5 +6683,147 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PaddyVarietyBD_variety_classification",
     "examples_image_url": "/img/agml/sample_images/PaddyVarietyBD_variety_classification_sample.webp"
+  },
+  {
+    "name": "soybean_damage_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "damage_classification",
+    "location": "China",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 5513,
+    "classes": [
+      "Broken",
+      "Immature",
+      "Intact",
+      "Skin-damaged",
+      "Spotted"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109300",
+    "citation": "Lin, Wei; Fu, Youhao; Xu, Peiquan; Liu, Shuo; Ma, Daoyi; Jiang, Zitian; zang, siyang; Yao, Heyang; Su, Qin (2023), “Soybean Seeds”, Mendeley Data, V6, doi: 10.17632/v6vzvfszj6.6",
+    "zip_size_bytes": 90530273,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_damage_classification",
+    "examples_image_url": "/img/agml/sample_images/soybean_damage_classification_sample.webp"
+  },
+  {
+    "name": "grapevine_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "France",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grapevine"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 611,
+    "classes": [
+      "conf",
+      "conf+",
+      "esca",
+      "fd"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109230",
+    "citation": "Tardif, Malo (2023), “An expertized grapevine disease image database focused on Flavescence dorée and its confounding diseases”, Mendeley Data, V2, doi: 10.17632/3dr9r3w3jn.2",
+    "zip_size_bytes": 792677414,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/grapevine_disease_classification_sample.webp"
+  },
+  {
+    "name": "tomato_factory_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 520,
+    "classes": [
+      "green",
+      "red"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109291",
+    "citation": "Wu, Zhenwei; Wang, Xinfa; Liu, Minghao; Sun, Chengxiu (2026), “TomatoPlantfactoryDataset”, Mendeley Data, V3, doi: 10.17632/8h3s6jkyff.3",
+    "zip_size_bytes": 3522858454,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_factory_detection",
+    "examples_image_url": "/img/agml/sample_images/tomato_factory_detection_sample.webp"
+  },
+  {
+    "name": "fresh_rotten_fruit_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "quality_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape",
+      "guava",
+      "jujube",
+      "pomegranate",
+      "apple",
+      "banana",
+      "orange",
+      "strawberry"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3200,
+    "augmented_num_images": 12335,
+    "augmented_zip_size_bytes": 840831756,
+    "classes": [
+      "Fresh",
+      "Rotten"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108552",
+    "citation": "Sultana, Nusrat; Jahan, Musfika; Uddin, Mohammad Shorif (2022), “Fresh and Rotten Fruits Dataset for Machine-Based Evaluation of Fruit Quality”, Mendeley Data, V1, doi: 10.17632/bdd69gyhv8.1",
+    "zip_size_bytes": 2856487356,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fresh_rotten_fruit_classification",
+    "examples_image_url": "/img/agml/sample_images/fresh_rotten_fruit_classification_sample.webp"
+  },
+  {
+    "name": "vineyard_grape_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grapes"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "segmentationMask",
+    "num_images": 646,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108848",
+    "citation": "Mar Ariza Sentís, Sergio Vélez& João Valente. (2021). Dataset on UAV RGB videos acquired over a vineyard property of Bodegas Terras Gauda at an early stage of Botrytis cinerea infection in 2021 (Version 2.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.7330951",
+    "zip_size_bytes": 13517813180,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vineyard_grape_segmentation",
+    "examples_image_url": "/img/agml/sample_images/vineyard_grape_segmentation_sample.webp"
   }
 ]
