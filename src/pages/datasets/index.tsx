@@ -2,12 +2,11 @@ import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } f
 import Layout from '@theme/Layout';
 import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
+import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { filterDatasets, formatDisplayLocation, useDatasets } from '../../lib/datasets';
+import { computeDatasetStats, filterDatasets, formatDisplayLocation, useDatasets } from '../../lib/datasets';
 
-const CHIP_CLASSES = `${styles.chip} ${styles.chipBase}`;
-
-type FilterKind = 'dropdown' | 'chips';
+type FilterKind = 'checkbox' | 'dropdown';
 
 type DatasetFilterConfig = {
   key: string;
@@ -15,46 +14,27 @@ type DatasetFilterConfig = {
   field: keyof import('../../lib/datasets').Dataset;
   kind: FilterKind;
   formatOption?: (value: string) => string;
-  chipLabel?: string;
   mode?: 'exact' | 'containsAny';
 };
 
 const DATASET_FILTERS: DatasetFilterConfig[] = [
   {
     key: 'ml_task',
-    label: 'Task',
-    chipLabel: 'Task',
+    label: 'Task Type',
     field: 'machine_learning_task',
-    kind: 'chips',
+    kind: 'checkbox',
     formatOption: (value) => value.replace(/_/g, ' '),
   },
   {
     key: 'ag_task',
-    label: 'Ag task',
+    label: 'Agricultural Task',
     field: 'agricultural_task',
     kind: 'dropdown',
     formatOption: (value) => value.replace(/_/g, ' '),
   },
   {
-    key: 'environment',
-    label: 'Environment',
-    chipLabel: 'Environment',
-    field: 'environment',
-    kind: 'chips',
-    formatOption: (value) => value.charAt(0).toUpperCase() + value.slice(1),
-  },
-  {
-    key: 'augmented_counterpart',
-    label: 'Augmented counterpart',
-    chipLabel: 'Augmented',
-    field: 'augmented_counterpart',
-    kind: 'chips',
-    formatOption: (value) => (value === 'yes' ? 'Yes' : 'No'),
-  },
-  {
     key: 'crop_types',
-    label: 'Crop type',
-    chipLabel: 'Crop type',
+    label: 'Crop',
     field: 'crop_types',
     kind: 'dropdown',
     mode: 'containsAny',
@@ -63,11 +43,17 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
   {
     key: 'location',
     label: 'Location',
-    chipLabel: 'Location',
     field: 'location',
     kind: 'dropdown',
     mode: 'containsAny',
     formatOption: (value) => value,
+  },
+  {
+    key: 'environment',
+    label: 'Environment',
+    field: 'environment',
+    kind: 'checkbox',
+    formatOption: (value) => value.charAt(0).toUpperCase() + value.slice(1),
   },
   {
     key: 'platform',
@@ -78,21 +64,21 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
   },
   {
     key: 'real',
-    label: 'Data',
-    chipLabel: 'Data',
+    label: 'Data Type',
     field: 'real_or_synthetic',
-    kind: 'chips',
+    kind: 'checkbox',
     formatOption: (value) => value,
+  },
+  {
+    key: 'augmented_counterpart',
+    label: 'Augmented',
+    field: 'augmented_counterpart',
+    kind: 'checkbox',
+    formatOption: (value) => (value === 'yes' ? 'Yes' : 'No'),
   },
 ];
 
 type FilterKey = (typeof DATASET_FILTERS)[number]['key'];
-
-type ActiveFilterChip = {
-  key: FilterKey;
-  value: string;
-  label: string;
-};
 
 function toLabel(value: string) {
   return value.replace(/_/g, ' ');
@@ -115,6 +101,28 @@ function formatImageCount(count: number | null) {
   return count.toLocaleString();
 }
 
+function formatBytesDecimal(bytes: number | null | undefined) {
+  if (bytes == null || !Number.isFinite(bytes) || bytes < 0) return null;
+  const units = ['B', 'kB', 'MB', 'GB', 'TB'];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1000 && unitIndex < units.length - 1) {
+    value /= 1000;
+    unitIndex += 1;
+  }
+  const formatted = value >= 100 ? Math.round(value).toString() : value.toFixed(1);
+  const trimmed = formatted.endsWith('.0') ? formatted.slice(0, -2) : formatted;
+  return `${trimmed} ${units[unitIndex]}`;
+}
+
+function taskBadgeClass(task: string | null): string {
+  if (!task) return styles.badgeOther;
+  if (task.includes('classif')) return styles.badgeClassification;
+  if (task.includes('detect')) return styles.badgeDetection;
+  if (task.includes('segment')) return styles.badgeSegmentation;
+  return styles.badgeOther;
+}
+
 function getFilterValues(
   datasets: import('../../lib/datasets').Dataset[],
   field: keyof import('../../lib/datasets').Dataset
@@ -128,106 +136,40 @@ function getFilterValues(
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
 }
 
-function MultiSelectDropdown({
+function CheckboxFilterGroup({
   label,
   options,
   selected,
   onToggle,
   formatOption = (value: string) => value.replace(/_/g, ' '),
+  counts,
 }: {
   label: string;
   options: string[];
   selected: string[];
   onToggle: (value: string) => void;
   formatOption?: (value: string) => string;
+  counts: Record<string, number>;
 }) {
-  const [open, setOpen] = useState(false);
-  const [focusedIndex, setFocusedIndex] = useState(0);
-
-  useEffect(() => {
-    const handler = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest(`[data-dropdown=\"${label}\"]`)) setOpen(false);
-    };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
-  }, [label]);
-
-  const onKeyDown = (event: React.KeyboardEvent) => {
-    if (!open) {
-      if (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowDown') {
-        event.preventDefault();
-        setOpen(true);
-      }
-      return;
-    }
-
-    switch (event.key) {
-      case 'Escape':
-        event.preventDefault();
-        setOpen(false);
-        break;
-      case 'ArrowDown':
-        event.preventDefault();
-        setFocusedIndex((index) => (index + 1) % options.length);
-        break;
-      case 'ArrowUp':
-        event.preventDefault();
-        setFocusedIndex((index) => (index - 1 + options.length) % options.length);
-        break;
-      case 'Enter':
-      case ' ':
-        event.preventDefault();
-        if (options[focusedIndex] != null) onToggle(options[focusedIndex]);
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
-    <div className={styles.dropdown} data-dropdown={label}>
-      <label className={styles.dropdownLabel}>{label}</label>
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        onKeyDown={onKeyDown}
-        aria-expanded={open}
-        className={styles.dropdownTrigger}
-      >
-        <span>
-          {selected.length === 0
-            ? 'All'
-            : selected.length === 1
-              ? formatOption(selected[0])
-              : `${selected.length} selected`}
-        </span>
-        <span className={styles.dropdownChevron} aria-hidden>
-          ▾
-        </span>
-      </button>
-      {open && (
-        <div className={styles.dropdownMenu} role="listbox" aria-multiselectable="true">
-          {options.map((option, index) => {
-            const isSelected = selected.includes(option);
-            return (
-              <button
-                key={option}
-                type="button"
-                className={`${styles.dropdownOption} ${isSelected ? styles.dropdownOptionSelected : ''}`}
-                onClick={() => onToggle(option)}
-                onKeyDown={onKeyDown}
-                onFocus={() => setFocusedIndex(index)}
-              >
-                <span className={styles.dropdownCheckbox} aria-hidden>
-                  {isSelected ? '✓' : ''}
-                </span>
-                {formatOption(option)}
-              </button>
-            );
-          })}
-        </div>
-      )}
+    <div className={styles.filterGroup}>
+      <p className={styles.filterGroupLabel}>{label}</p>
+      <div className={styles.filterGroupOptions}>
+        {options.map((option) => (
+          <label key={option} className={styles.checkboxRow}>
+            <span className={styles.checkboxRowLeft}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                checked={selected.includes(option)}
+                onChange={() => onToggle(option)}
+              />
+              <span>{formatOption(option)}</span>
+            </span>
+            <span className={styles.checkboxCount}>{counts[option] ?? 0}</span>
+          </label>
+        ))}
+      </div>
     </div>
   );
 }
@@ -239,8 +181,20 @@ function DatasetCard({
   dataset: import('../../lib/datasets').Dataset;
   onOpen: (trigger: HTMLButtonElement) => void;
 }) {
-  const { name, machine_learning_task, agricultural_task, num_images, location } = dataset;
-  const mainTask = machine_learning_task || agricultural_task;
+  const {
+    name,
+    machine_learning_task,
+    agricultural_task,
+    num_images,
+    zip_size_bytes,
+    augmented_num_images,
+    augmented_zip_size_bytes,
+    location,
+  } = dataset;
+  const fileSize = formatBytesDecimal(zip_size_bytes);
+  const augmentedFileSize = formatBytesDecimal(augmented_zip_size_bytes);
+  const hasAugmented = augmented_num_images != null;
+
   return (
     <button
       type="button"
@@ -252,21 +206,26 @@ function DatasetCard({
         <h2 className={styles.cardTitle}>
           <span className={styles.cardTitleLink}>{toTitle(name)}</span>
         </h2>
-        <div className={styles.cardDetails}>
-          <div className={styles.cardDetail}>
-            <span className={styles.cardDetailLabel}>Main task</span>
-            <span className={styles.cardDetailValue}>
-              {mainTask ? toLabel(mainTask) : 'Unknown'}
+        <div className={styles.cardTags}>
+          {machine_learning_task && (
+            <span className={`${styles.taskBadge} ${taskBadgeClass(machine_learning_task)}`}>
+              {toLabel(machine_learning_task)}
             </span>
+          )}
+          {agricultural_task && <span className={styles.tag}>{toLabel(agricultural_task)}</span>}
+          {location && <span className={styles.tag}>{formatDisplayLocation(location)}</span>}
+        </div>
+        <div className={styles.cardFooter}>
+          <div className={styles.cardFooterRow}>
+            <span>{formatImageCount(num_images)} images</span>
+            {fileSize && <span>{fileSize}</span>}
           </div>
-          <div className={styles.cardDetail}>
-            <span className={styles.cardDetailLabel}>Images</span>
-            <span className={styles.cardDetailValue}>{formatImageCount(num_images)}</span>
-          </div>
-          <div className={styles.cardDetail}>
-            <span className={styles.cardDetailLabel}>Location</span>
-            <span className={styles.cardDetailValue}>{formatDisplayLocation(location)}</span>
-          </div>
+          {hasAugmented && (
+            <div className={`${styles.cardFooterRow} ${styles.cardFooterAugmented}`}>
+              <span>augmented: {formatImageCount(augmented_num_images)} images</span>
+              {augmentedFileSize && <span>{augmentedFileSize}</span>}
+            </div>
+          )}
         </div>
       </div>
     </button>
@@ -294,8 +253,6 @@ export default function DatasetBrowserPage() {
     }
     return next;
   }, [searchParams]);
-
-  const activeFilterCount = DATASET_FILTERS.reduce((count, filter) => count + selections[filter.key].length, 0);
 
   const setSearchParams = useCallback(
     (updater: (params: URLSearchParams) => URLSearchParams, replace = true) => {
@@ -339,17 +296,7 @@ export default function DatasetBrowserPage() {
     });
   };
 
-  const removeFilterValue = (key: string, value: string) => {
-    setSearchParams((prev) => {
-      const current = prev.getAll(key);
-      const rest = current.filter((v) => v !== value);
-      const nextParams = new URLSearchParams(prev);
-      nextParams.delete(key);
-      rest.forEach((v) => nextParams.append(key, v));
-      return nextParams;
-    });
-  };
-
+  const activeFilterCount = DATASET_FILTERS.reduce((count, filter) => count + selections[filter.key].length, 0);
   const hasActiveFilters = Boolean(qDeferred || activeFilterCount);
 
   const clearFilters = () => {
@@ -358,10 +305,29 @@ export default function DatasetBrowserPage() {
   };
 
   const safeData = Array.isArray(data) ? data : [];
+  const stats = useMemo(() => computeDatasetStats(safeData), [safeData]);
   const filterOptions = useMemo(
     () =>
       Object.fromEntries(DATASET_FILTERS.map((filter) => [filter.key, getFilterValues(safeData, filter.field)])) as Record<FilterKey, string[]>,
     [safeData]
+  );
+  const filterCounts = useMemo(
+    () =>
+      Object.fromEntries(
+        DATASET_FILTERS.map((filter) => [
+          filter.key,
+          Object.fromEntries(
+            filterOptions[filter.key].map((value) => [
+              value,
+              safeData.filter((dataset) => {
+                const fieldValue = dataset[filter.field] as string | string[] | null | undefined;
+                return Array.isArray(fieldValue) ? fieldValue.includes(value) : fieldValue === value;
+              }).length,
+            ])
+          ),
+        ])
+      ) as Record<FilterKey, Record<string, number>>,
+    [safeData, filterOptions]
   );
 
   const filtered = useMemo(
@@ -377,27 +343,22 @@ export default function DatasetBrowserPage() {
     [safeData, qDeferred, selections]
   );
 
-  const taskTypes = filterOptions.ml_task.length;
-
   const INITIAL_SHOW = 60;
   const [showCount, setShowCount] = useState(INITIAL_SHOW);
   const [selectedDatasetName, setSelectedDatasetName] = useState<string | null>(null);
+
+  // Supports deep links like /datasets?dataset=<name> (e.g. from the leaderboard's
+  // "view dataset" link) by opening that dataset's modal once its data has loaded.
+  const datasetParam = searchParams.get('dataset');
+  useEffect(() => {
+    if (datasetParam) setSelectedDatasetName(datasetParam);
+  }, [datasetParam]);
+
   const displayed = useMemo(() => filtered.slice(0, showCount), [filtered, showCount]);
   const hasMore = filtered.length > showCount;
   const selectedDataset = useMemo(
     () => safeData.find((dataset) => dataset.name === selectedDatasetName) ?? null,
     [safeData, selectedDatasetName]
-  );
-  const topLevelDatasetCount = useMemo(
-    () => safeData.filter((dataset) => !dataset.parent_dataset).length,
-    [safeData]
-  );
-  const totalImageCount = useMemo(
-    () =>
-      safeData
-        .filter((dataset) => !dataset.parent_dataset && !dataset.name.startsWith('iNatAg-mini'))
-        .reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0),
-    [safeData]
   );
 
   const openDataset = useCallback((datasetName: string, trigger: HTMLButtonElement) => {
@@ -418,20 +379,6 @@ export default function DatasetBrowserPage() {
     setShowCount(INITIAL_SHOW);
   }, [qDeferred, activeFilterCount]);
 
-  const activeFilterChips = useMemo(() => {
-    const list: ActiveFilterChip[] = [];
-    DATASET_FILTERS.forEach((filter) => {
-      selections[filter.key].forEach((value) => {
-        list.push({
-          key: filter.key,
-          value,
-          label: filter.formatOption ? filter.formatOption(value) : value,
-        });
-      });
-    });
-    return list;
-  }, [selections]);
-
   return (
     <Layout title="Dataset Search" description="Browse AgML datasets by task, platform, and modality.">
       <div className={styles.page}>
@@ -440,125 +387,85 @@ export default function DatasetBrowserPage() {
           open={selectedDataset != null}
           onClose={closeDataset}
         />
-        <section className={styles.hero}>
-          <div className={styles.heroContent}>
-            <p className={styles.heroTag}>AgML Dataset Hub</p>
-            <h1 className={styles.heroTitle}>Search agricultural datasets fast.</h1>
-            <p className={styles.heroSubtitle}>
-              Filter by task, crop type, environment, location, and platform. Browse the
-              AgML datasets and the new Hugging Face-backed entries in one place.
-            </p>
-            <div className={styles.heroStats}>
-              <div className={styles.heroStat}>
-                <span>{topLevelDatasetCount.toLocaleString()}</span>
-                <span>datasets</span>
-              </div>
-              <div className={styles.heroStat}>
-                <span>{totalImageCount.toLocaleString()}</span>
-                <span>images</span>
-              </div>
-              <div className={styles.heroStat}>
-                <span>{taskTypes}</span>
-                <span>task types</span>
-              </div>
-            </div>
+
+        <div className={styles.toolbar}>
+          <input
+            id="dataset-search"
+            type="search"
+            placeholder="search datasets, tasks, crops..."
+            value={qLocal}
+            onChange={(event) => setQLocal(event.target.value)}
+            className={styles.searchInput}
+          />
+          <div className={styles.toolbarRight}>
+            <span className={styles.resultCount}>{filtered.length.toLocaleString()} datasets</span>
+            <span className={styles.resultCount}>
+              {stats.imageCount.toLocaleString()} images · {stats.taskTypeCount} task types
+            </span>
+            {hasActiveFilters && (
+              <button type="button" className={styles.clearButton} onClick={clearFilters}>
+                Clear filters
+              </button>
+            )}
           </div>
-        </section>
+        </div>
 
-        <section className={styles.controls}>
-          <div className={styles.searchBlock}>
-            <label className={styles.searchLabel} htmlFor="dataset-search">
-              Search
-            </label>
-            <input
-              id="dataset-search"
-              type="search"
-              placeholder="Name, task, platform, location…"
-              value={qLocal}
-              onChange={(event) => setQLocal(event.target.value)}
-              className={styles.searchInput}
-            />
-          </div>
-          <div className={styles.dropdownRow}>
-            {DATASET_FILTERS.filter((filter) => filter.kind === 'dropdown').map((filter) => (
-              <MultiSelectDropdown
-                key={filter.key}
-                label={filter.label}
-                options={filterOptions[filter.key]}
-                selected={selections[filter.key]}
-                onToggle={(value) => toggleMultiFilter(filter.key, value)}
-                formatOption={filter.formatOption}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.chipsSection}>
-          {DATASET_FILTERS.filter((filter) => filter.kind === 'chips').map((filter) => (
-            <div key={filter.key} className={styles.chipGroup}>
-              <span className={styles.chipLabel}>{filter.chipLabel ?? filter.label}</span>
-              {filterOptions[filter.key].map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => toggleMultiFilter(filter.key, value)}
-                  className={`${CHIP_CLASSES} ${selections[filter.key].includes(value) ? styles.chipActive : styles.chipInactive}`}
-                >
-                  {filter.formatOption ? filter.formatOption(value) : value}
-                </button>
-              ))}
-            </div>
-          ))}
-        </section>
-
-        {hasActiveFilters && (
-          <section className={styles.activeFilters}>
-            <div className={styles.activeList}>
-              {activeFilterChips.map((chip) => (
-                <button
-                  key={`${chip.key}-${chip.value}`}
-                  type="button"
-                  className={styles.activeChip}
-                  onClick={() => removeFilterValue(chip.key, chip.value)}
-                >
-                  {chip.label} ×
-                </button>
-              ))}
-            </div>
-            <button type="button" className={styles.clearButton} onClick={clearFilters}>
-              Clear filters
-            </button>
-          </section>
-        )}
-
-        <section className={styles.results}>
-          {loading && <p className={styles.status}>Loading datasets…</p>}
-          {error && <p className={styles.status}>Error: {error.message}</p>}
-          {!loading && !error && (
-            <>
-              {filtered.length === 0 ? (
-                <p className={styles.status}>No datasets match the current filters.</p>
+        <div className={styles.body}>
+          <aside className={styles.sidebar}>
+            {DATASET_FILTERS.map((filter) =>
+              filter.kind === 'checkbox' ? (
+                <CheckboxFilterGroup
+                  key={filter.key}
+                  label={filter.label}
+                  options={filterOptions[filter.key]}
+                  selected={selections[filter.key]}
+                  onToggle={(value) => toggleMultiFilter(filter.key, value)}
+                  formatOption={filter.formatOption}
+                  counts={filterCounts[filter.key]}
+                />
               ) : (
-                <div className={styles.cardGrid}>
-                  {displayed.map((dataset) => (
-                    <DatasetCard key={dataset.name} dataset={dataset} onOpen={(trigger) => openDataset(dataset.name, trigger)} />
-                  ))}
+                <div key={filter.key} className={styles.filterGroup}>
+                  <MultiSelectDropdown
+                    label={filter.label}
+                    options={filterOptions[filter.key]}
+                    selected={selections[filter.key]}
+                    onToggle={(value) => toggleMultiFilter(filter.key, value)}
+                    formatOption={filter.formatOption}
+                  />
                 </div>
-              )}
-              {hasMore && (
-                <div className={styles.loadMore}>
-                  <button
-                    type="button"
-                    className={styles.loadMoreButton}
-                    onClick={() => setShowCount((count) => count + INITIAL_SHOW)}
-                  >
-                    Load more results
-                  </button>
-                </div>
-              )}
-            </>
-          )}
-        </section>
+              )
+            )}
+          </aside>
+
+          <section className={styles.results}>
+            {loading && <p className={styles.status}>Loading datasets…</p>}
+            {error && <p className={styles.status}>Error: {error.message}</p>}
+            {!loading && !error && (
+              <>
+                {filtered.length === 0 ? (
+                  <p className={styles.status}>No datasets match the current filters.</p>
+                ) : (
+                  <div className={styles.cardGrid}>
+                    {displayed.map((dataset) => (
+                      <DatasetCard key={dataset.name} dataset={dataset} onOpen={(trigger) => openDataset(dataset.name, trigger)} />
+                    ))}
+                  </div>
+                )}
+                {hasMore && (
+                  <div className={styles.loadMore}>
+                    <button
+                      type="button"
+                      className={styles.loadMoreButton}
+                      onClick={() => setShowCount((count) => count + INITIAL_SHOW)}
+                    >
+                      Load more results
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+          </section>
+        </div>
       </div>
     </Layout>
   );

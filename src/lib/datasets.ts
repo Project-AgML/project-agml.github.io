@@ -340,3 +340,27 @@ export function formatDisplayLocation(value: string | string[] | null | undefine
   if (value == null) return '—';
   return Array.isArray(value) ? value.join(', ') : value;
 }
+
+export interface DatasetStats {
+  datasetCount: number;
+  imageCount: number;
+  taskTypeCount: number;
+}
+
+// Shared by the homepage stats row and the dataset search page's hero stats, so both
+// report the same real numbers instead of two slightly different ad-hoc counts.
+export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
+  const topLevel = datasets.filter((dataset) => !dataset.parent_dataset);
+  const imageCount = topLevel
+    .filter((dataset) => !dataset.name.startsWith('iNatAg-mini'))
+    .reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0);
+  const taskTypeCount = new Set(
+    datasets.map((dataset) => dataset.machine_learning_task).filter((task): task is string => Boolean(task))
+  ).size;
+
+  return {
+    datasetCount: topLevel.length,
+    imageCount,
+    taskTypeCount,
+  };
+}

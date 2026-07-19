@@ -1,0 +1,77 @@
+[
+  {
+    "timestamp": "2026-07-18T23:00:41.273137+00:00",
+    "dataset": "Project-AgML/groundnut_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "openai/clip-vit-base-patch32",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 1720,
+    "device": "cuda",
+    "inference_time_seconds": 364.31,
+    "inference_time_seconds_per_image": 0.21181,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.082803,
+      "precision": 0.05224,
+      "recall": 0.199556
+    },
+    "notes": ""
+  },
+  {
+    "timestamp": "2026-07-18T23:05:56.625342+00:00",
+    "dataset": "Project-AgML/groundnut_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/siglip-base-patch16-224",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 1720,
+    "device": "cuda",
+    "inference_time_seconds": 312.06,
+    "inference_time_seconds_per_image": 0.181432,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.145332,
+      "precision": 0.127236,
+      "recall": 0.219556
+    },
+    "notes": ""
+  },
+  {
+    "timestamp": "2026-07-18T23:11:18.750341+00:00",
+    "dataset": "Project-AgML/groundnut_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "kakaobrain/align-base",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 1720,
+    "device": "cuda",
+    "inference_time_seconds": 318.51,
+    "inference_time_seconds_per_image": 0.185183,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.157617,
+      "precision": 0.120098,
+      "recall": 0.229333
+    },
+    "notes": ""
+  }
+]

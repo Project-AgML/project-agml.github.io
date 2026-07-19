@@ -19,6 +19,7 @@ export interface PerformanceEntry {
   platform: string | null;
   metrics: MetricValue[];
   metricCategories: MetricCategory[];
+  categoryScores: CategoryScores;
 }
 
 export type MetricCategory = 'f1' | 'map' | 'precision_recall' | 'other';
@@ -90,6 +91,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
     platform: toText(raw.platform ?? raw.device),
     metrics: [],
     metricCategories: [],
+    categoryScores: { f1: null, map: null, precision: null, recall: null },
   };
 }
 
@@ -134,6 +136,31 @@ const NAMED_METRIC_LABELS: Record<string, string> = {
 
 function isMapMetricKey(key: string): boolean {
   return /^m?ap([_@-]|$)/i.test(key);
+}
+
+export interface CategoryScores {
+  f1: number | null;
+  map: number | null;
+  precision: number | null;
+  recall: number | null;
+}
+
+// Every run can report several metric families at once (F1, mAP, precision, recall),
+// independent of the single metric resolveMetricKey picks for the legacy per-dataset rank.
+// These four category scores back the leaderboard's four sortable global columns — precision
+// and recall are ranked/percentiled independently, not averaged into one blended score.
+// Mirrored in scripts/generate-datasets.mjs — keep in sync.
+function computeCategoryScores(metrics: Record<string, unknown>): CategoryScores {
+  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
+  let map: number | null = null;
+  for (const [key, value] of Object.entries(metrics)) {
+    if (isMapMetricKey(key) && isFiniteNumber(value)) {
+      map = map == null ? value : Math.max(map, value);
+    }
+  }
+  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
+  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
+  return { f1, map, precision, recall };
 }
 
 function formatMapMetricLabel(key: string): string {
@@ -239,6 +266,7 @@ function makeLeaderboardRow(
     platform: toText(entry.device),
     metrics: metricValues,
     metricCategories: Array.from(new Set(metricValues.map((metric) => classifyMetricLabel(metric.label)))),
+    categoryScores: computeCategoryScores(metrics),
   };
 }
 
@@ -303,23 +331,36 @@ function normalizePerformance(json: unknown): DatasetPerformance {
   return { metric: null, entries: [] };
 }
 
+export interface CategoryPercentiles {
+  f1: number | null;
+  map: number | null;
+  precision: number | null;
+  recall: number | null;
+}
+
 export interface GlobalPerformanceRecord {
   model: string;
   dataset: string;
-  percentile: number;
+  percentiles: CategoryPercentiles;
+  scores: CategoryScores;
   crop_types: string[] | null;
   machine_learning_task: string | null;
   variant: 'zero-shot' | 'fine-tuned' | null;
   optimized: boolean;
   platform: string | null;
+  splitBreakdown: string | null;
+  datasetConfig: string | null;
 }
 
 export interface GlobalLeaderboardDatasetDetail {
   dataset: string;
-  percentile: number;
+  percentiles: CategoryPercentiles;
+  scores: CategoryScores;
   variant: 'zero-shot' | 'fine-tuned' | null;
   optimized: boolean;
   platform: string | null;
+  splitBreakdown: string | null;
+  datasetConfig: string | null;
 }
 
 export function globalResultTypeKey(record: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }): string | null {
@@ -337,7 +378,10 @@ export function formatGlobalResultTypeKey(key: string) {
 export interface GlobalLeaderboardEntry {
   model: string;
   machineLearningTask: string | null;
-  averagePercentile: number;
+  avgF1Percentile: number | null;
+  avgMapPercentile: number | null;
+  avgPrecisionPercentile: number | null;
+  avgRecallPercentile: number | null;
   appearances: number;
   datasets: string[];
   fineTunedDatasets: string[];
@@ -346,12 +390,33 @@ export interface GlobalLeaderboardEntry {
   datasetDetails: GlobalLeaderboardDatasetDetail[];
 }
 
+function normalizeCategoryPercentiles(raw: unknown): CategoryPercentiles {
+  const record = isRecord(raw) ? raw : {};
+  return {
+    f1: toNumber(record.f1),
+    map: toNumber(record.map),
+    precision: toNumber(record.precision),
+    recall: toNumber(record.recall),
+  };
+}
+
+function normalizeCategoryScores(raw: unknown): CategoryScores {
+  const record = isRecord(raw) ? raw : {};
+  return {
+    f1: toNumber(record.f1),
+    map: toNumber(record.map),
+    precision: toNumber(record.precision),
+    recall: toNumber(record.recall),
+  };
+}
+
 function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord | null {
   if (!isRecord(raw)) return null;
   const model = toText(raw.model);
   const dataset = toText(raw.dataset);
-  const percentile = toNumber(raw.percentile);
-  if (!model || !dataset || percentile == null) return null;
+  const percentiles = normalizeCategoryPercentiles(raw.percentiles);
+  if (!model || !dataset) return null;
+  if (percentiles.f1 == null && percentiles.map == null && percentiles.precision == null && percentiles.recall == null) return null;
 
   const cropTypes = Array.isArray(raw.crop_types)
     ? raw.crop_types.filter((entry): entry is string => typeof entry === 'string' && entry.trim().length > 0)
@@ -362,12 +427,15 @@ function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord
   return {
     model,
     dataset,
-    percentile,
+    percentiles,
+    scores: normalizeCategoryScores(raw.scores),
     crop_types: cropTypes?.length ? cropTypes : null,
     machine_learning_task: toText(raw.machine_learning_task),
     variant,
     optimized: Boolean(raw.optimized),
     platform: toText(raw.platform),
+    splitBreakdown: toText(raw.splitBreakdown),
+    datasetConfig: toText(raw.datasetConfig),
   };
 }
 
@@ -387,17 +455,20 @@ export function computeGlobalLeaderboard(
     cropTypes?: string[];
     mlTasks?: string[];
     resultTypes?: string[];
+    tuned?: ('tuned' | 'not-tuned')[];
+    optimizedValues?: ('optimized' | 'not-optimized')[];
     platforms?: string[];
     minAppearances?: number;
   } = {}
 ): GlobalLeaderboardEntry[] {
-  const { cropTypes = [], mlTasks = [], resultTypes = [], platforms = [], minAppearances = 3 } = options;
+  const { cropTypes = [], mlTasks = [], resultTypes = [], tuned = [], optimizedValues = [], platforms = [], minAppearances = 3 } = options;
   const stats = new Map<
     string,
     {
       model: string;
       machineLearningTask: string | null;
-      totalPercentile: number;
+      categoryTotals: Record<keyof CategoryPercentiles, number>;
+      categoryCounts: Record<keyof CategoryPercentiles, number>;
       appearances: number;
       datasets: Set<string>;
       fineTunedDatasets: Set<string>;
@@ -414,6 +485,14 @@ export function computeGlobalLeaderboard(
       const resultTypeKey = globalResultTypeKey(record);
       if (!resultTypeKey || !resultTypes.includes(resultTypeKey)) continue;
     }
+    if (tuned.length) {
+      const tunedKey = record.variant === 'fine-tuned' ? 'tuned' : 'not-tuned';
+      if (!tuned.includes(tunedKey)) continue;
+    }
+    if (optimizedValues.length) {
+      const optimizedKey = record.optimized ? 'optimized' : 'not-optimized';
+      if (!optimizedValues.includes(optimizedKey)) continue;
+    }
     if (platforms.length && !(record.platform && platforms.includes(record.platform))) continue;
 
     const key = `${record.model}|||${record.machine_learning_task ?? ''}`;
@@ -422,7 +501,8 @@ export function computeGlobalLeaderboard(
       {
         model: record.model,
         machineLearningTask: record.machine_learning_task,
-        totalPercentile: 0,
+        categoryTotals: { f1: 0, map: 0, precision: 0, recall: 0 },
+        categoryCounts: { f1: 0, map: 0, precision: 0, recall: 0 },
         appearances: 0,
         datasets: new Set<string>(),
         fineTunedDatasets: new Set<string>(),
@@ -430,7 +510,12 @@ export function computeGlobalLeaderboard(
         optimized: false,
         datasetDetails: [] as GlobalLeaderboardDatasetDetail[],
       };
-    entryStats.totalPercentile += record.percentile;
+    (Object.keys(record.percentiles) as (keyof CategoryPercentiles)[]).forEach((categoryKey) => {
+      const value = record.percentiles[categoryKey];
+      if (value == null) return;
+      entryStats.categoryTotals[categoryKey] += value;
+      entryStats.categoryCounts[categoryKey] += 1;
+    });
     entryStats.appearances += 1;
     entryStats.datasets.add(record.dataset);
     if (record.variant === 'fine-tuned') entryStats.fineTunedDatasets.add(record.dataset);
@@ -438,20 +523,28 @@ export function computeGlobalLeaderboard(
     if (record.optimized) entryStats.optimized = true;
     entryStats.datasetDetails.push({
       dataset: record.dataset,
-      percentile: record.percentile,
+      percentiles: record.percentiles,
+      scores: record.scores,
       variant: record.variant,
       optimized: record.optimized,
       platform: record.platform,
+      splitBreakdown: record.splitBreakdown,
+      datasetConfig: record.datasetConfig,
     });
     stats.set(key, entryStats);
   }
+
+  const average = (total: number, count: number) => (count > 0 ? total / count : null);
 
   return Array.from(stats.values())
     .filter((entryStats) => entryStats.appearances >= minAppearances)
     .map((entryStats) => ({
       model: entryStats.model,
       machineLearningTask: entryStats.machineLearningTask,
-      averagePercentile: entryStats.totalPercentile / entryStats.appearances,
+      avgF1Percentile: average(entryStats.categoryTotals.f1, entryStats.categoryCounts.f1),
+      avgMapPercentile: average(entryStats.categoryTotals.map, entryStats.categoryCounts.map),
+      avgPrecisionPercentile: average(entryStats.categoryTotals.precision, entryStats.categoryCounts.precision),
+      avgRecallPercentile: average(entryStats.categoryTotals.recall, entryStats.categoryCounts.recall),
       appearances: entryStats.appearances,
       datasets: Array.from(entryStats.datasets).sort(),
       fineTunedDatasets: Array.from(entryStats.fineTunedDatasets).sort(),
@@ -459,7 +552,7 @@ export function computeGlobalLeaderboard(
       optimized: entryStats.optimized,
       datasetDetails: entryStats.datasetDetails.sort((a, b) => a.dataset.localeCompare(b.dataset)),
     }))
-    .sort((a, b) => b.averagePercentile - a.averagePercentile);
+    .sort((a, b) => (b.avgMapPercentile ?? b.avgF1Percentile ?? 0) - (a.avgMapPercentile ?? a.avgF1Percentile ?? 0));
 }
 
 export function useGlobalPerformance(): {

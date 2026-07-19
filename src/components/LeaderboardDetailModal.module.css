@@ -1,0 +1,236 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--agml-modal-overlay);
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  width: min(880px, 92vw);
+  max-height: min(88vh, 900px);
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  box-shadow: var(--agml-shadow-strong);
+  color: var(--agml-text);
+  padding: 1.75rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.taskBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.badgeClassification {
+  background: var(--agml-badge-classification-bg);
+  color: var(--agml-badge-classification-fg);
+}
+
+.badgeDetection {
+  background: var(--agml-badge-detection-bg);
+  color: var(--agml-badge-detection-fg);
+}
+
+.badgeSegmentation {
+  background: var(--agml-badge-segmentation-bg);
+  color: var(--agml-badge-segmentation-fg);
+}
+
+.badgeOther {
+  background: var(--agml-badge-other-bg);
+  color: var(--agml-badge-other-fg);
+}
+
+.resultTypeBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--agml-surface-soft);
+  color: var(--agml-muted);
+  display: inline-block;
+}
+
+.title {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+}
+
+.summaryLine {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+  margin: 0;
+}
+
+.closeButton {
+  flex: 0 0 auto;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-soft);
+  color: var(--agml-text);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: var(--agml-accent-soft);
+}
+
+.sectionTitle {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--agml-muted);
+  margin: 0 0 0.65rem;
+}
+
+.tableWrap {
+  border: 1px solid var(--agml-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.table thead,
+.table tbody tr {
+  background: transparent;
+}
+
+.table thead tr {
+  border-bottom: none;
+}
+
+.table tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid var(--agml-border);
+  vertical-align: top;
+}
+
+.table th {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--agml-muted);
+  background: var(--agml-surface-soft);
+}
+
+.table tbody tr:last-child > td {
+  border-bottom: none;
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+.clickableRow:hover {
+  background: var(--agml-accent-soft);
+}
+
+.datasetCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.datasetName {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--ifm-code-font-family);
+  color: var(--agml-text);
+  text-decoration: underline dashed var(--agml-muted);
+  text-decoration-thickness: 1px;
+}
+
+.expandChevron {
+  color: var(--agml-muted);
+  font-size: 0.7rem;
+}
+
+.viewDatasetLink {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--agml-surface-soft);
+  color: var(--agml-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.viewDatasetLink:hover {
+  background: var(--ifm-color-primary);
+  color: var(--agml-page-bg);
+  text-decoration: none;
+}
+
+.scoresCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-family: var(--ifm-code-font-family);
+  color: var(--ifm-color-primary);
+  font-size: 0.75rem;
+}
+
+.scoresCell span span {
+  color: var(--agml-muted);
+}
+
+.notesRow td {
+  background: var(--agml-surface-soft);
+  border-top: 1px dashed var(--agml-border);
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+}

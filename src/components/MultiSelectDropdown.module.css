@@ -8,10 +8,14 @@
 }
 
 .dropdownLabel {
-	font-size: 0.7rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	font-weight: 600;
 	text-transform: uppercase;
-	letter-spacing: 0.14em;
+	letter-spacing: 0.06em;
 	color: var(--agml-muted);
+	margin: 0 0 0.7rem;
+	display: block;
 }
 
 .dropdownTrigger {

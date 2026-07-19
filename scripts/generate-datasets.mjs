@@ -74,6 +74,27 @@ function resolveMetricKey(task, metrics) {
   return Object.keys(metrics).find((key) => isFiniteNumber(metrics[key])) ?? null;
 }
 
+// Every run can report several metric families at once (F1, mAP, precision, recall),
+// independent of the single metric resolveMetricKey picks for the legacy per-dataset rank.
+// These four category scores back the leaderboard's four sortable global columns — precision
+// and recall are ranked/percentiled independently, not averaged into one blended score.
+function isMapMetricKey(key) {
+  return /^m?ap([_@-]|$)/i.test(key);
+}
+
+function computeCategoryScores(metrics) {
+  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
+  let map = null;
+  for (const [key, value] of Object.entries(metrics)) {
+    if (isMapMetricKey(key) && isFiniteNumber(value)) {
+      map = map == null ? value : Math.max(map, value);
+    }
+  }
+  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
+  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
+  return { f1, map, precision, recall };
+}
+
 function buildRunNote(entry) {
   const parts = [];
   if (isFiniteNumber(entry.num_samples)) parts.push(`${entry.num_samples} samples`);
@@ -89,11 +110,24 @@ function buildFinetuneNote(finetune) {
   return parts.length ? parts.join(' · ') : null;
 }
 
+// Rendered as train/test/val percentages in that fixed order, e.g. "10/80/10" — mirrors
+// buildSplitBreakdown in src/lib/performance.ts, kept in sync for the same reason as above.
+function buildSplitBreakdown(entry, finetune) {
+  const testSamples = isFiniteNumber(entry.num_samples) ? entry.num_samples : null;
+  const trainSamples = finetune != null && typeof finetune === 'object' && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
+  const valSamples = finetune != null && typeof finetune === 'object' && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
+  const total = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
+  if (!total) return null;
+  const toShare = (value) => (value != null ? ((value / total) * 100).toFixed(0) : '-');
+  return `${toShare(trainSamples)}/${toShare(testSamples)}/${toShare(valSamples)}`;
+}
+
 function makeLeaderboardRow(entry, metricKey, variant) {
   const finetune = entry.finetune;
   return {
     model: entry.model.trim(),
     score: entry.metrics[metricKey],
+    categoryScores: computeCategoryScores(entry.metrics),
     variant,
     date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
     submitted_by: null,
@@ -101,6 +135,8 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
     optimized: Boolean(entry.optimized) || (finetune != null && typeof finetune === 'object' && Boolean(finetune.optimized)),
     platform: typeof entry.device === 'string' && entry.device.trim() ? entry.device.trim() : null,
+    splitBreakdown: buildSplitBreakdown(entry, finetune),
+    datasetConfig: (typeof entry.dataset_config === 'string' && entry.dataset_config.trim()) || (typeof entry.split === 'string' && entry.split.trim()) || null,
   };
 }
 
@@ -158,6 +194,25 @@ function sortLeaderboardEntries(entries) {
   });
 }
 
+const CATEGORY_KEYS = ['f1', 'map', 'precision', 'recall'];
+
+// Ranks entries by a single category's score, independently of the other categories and of
+// the legacy single-metric rank — an entry that doesn't report this category gets a null
+// percentile for it rather than being penalized or excluded from the others.
+function computeCategoryPercentiles(entries, categoryKey) {
+  const withScore = entries
+    .map((entry, index) => ({ index, score: entry.categoryScores?.[categoryKey] }))
+    .filter((item) => isFiniteNumber(item.score))
+    .sort((a, b) => b.score - a.score);
+  const total = withScore.length;
+  const percentileByIndex = new Map();
+  withScore.forEach((item, rankIndex) => {
+    const rank = rankIndex + 1;
+    percentileByIndex.set(item.index, total > 1 ? ((total - rank) / (total - 1)) * 100 : 100);
+  });
+  return percentileByIndex;
+}
+
 function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
   const records = [];
   for (const datasetName of performanceDatasets) {
@@ -171,19 +226,27 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
     const total = entries.length;
     if (total === 0) continue;
 
+    const percentilesByCategory = Object.fromEntries(
+      CATEGORY_KEYS.map((key) => [key, computeCategoryPercentiles(entries, key)])
+    );
+
     const meta = metadataLookup.get(datasetName) ?? { crop_types: null, machine_learning_task: null };
     entries.forEach((entry, index) => {
-      const rank = index + 1;
-      const percentile = total > 1 ? ((total - rank) / (total - 1)) * 100 : 100;
+      const percentiles = Object.fromEntries(
+        CATEGORY_KEYS.map((key) => [key, percentilesByCategory[key].get(index) ?? null])
+      );
       records.push({
         model: entry.model.trim(),
         dataset: datasetName,
-        percentile,
+        percentiles,
+        scores: entry.categoryScores,
         crop_types: meta.crop_types,
         machine_learning_task: meta.machine_learning_task,
         variant: entry.variant === 'zero-shot' || entry.variant === 'fine-tuned' ? entry.variant : null,
         optimized: Boolean(entry.optimized),
         platform: typeof entry.platform === 'string' && entry.platform.trim() ? entry.platform.trim() : null,
+        splitBreakdown: entry.splitBreakdown ?? null,
+        datasetConfig: entry.datasetConfig ?? null,
       });
     });
   }

@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation } from '../lib/datasets';
-import { classifyMetricLabel, METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
+import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import { MultiSelectDropdown } from './MultiSelectDropdown';
 import styles from './DatasetMetadataModal.module.css';
@@ -45,6 +45,8 @@ function formatBytesDecimal(bytes: number | null | undefined) {
 	return `${trimmed} ${units[unitIndex]}`;
 }
 
+const EMPTY_ENTRIES: PerformanceEntry[] = [];
+
 function hasExampleImage(url: string | null): url is string {
 	return Boolean(url);
 }
@@ -55,16 +57,20 @@ function formatResultType(entry: { variant: 'zero-shot' | 'fine-tuned' | null; o
 	return entry.optimized ? `${base} (optimized)` : base;
 }
 
-function resultTypeKey(entry: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }): string | null {
-	if (!entry.variant) return null;
-	return entry.optimized ? `${entry.variant}-optimized` : entry.variant;
+function taskBadgeClass(task: string | null): string {
+	if (!task) return styles.badgeOther;
+	if (task.includes('classif')) return styles.badgeClassification;
+	if (task.includes('detect')) return styles.badgeDetection;
+	if (task.includes('segment')) return styles.badgeSegmentation;
+	return styles.badgeOther;
 }
 
-function formatResultTypeKey(key: string) {
-	const optimized = key.endsWith('-optimized');
-	const base = optimized ? key.slice(0, -'-optimized'.length) : key;
-	const label = base === 'fine-tuned' ? 'Fine-tuned' : 'Zero-shot';
-	return optimized ? `${label} (optimized)` : label;
+function formatTunedKey(key: string) {
+	return key === 'fine-tuned' ? 'Fine-tuned' : 'Zero-shot';
+}
+
+function formatOptimizedKey(key: string) {
+	return key === 'optimized' ? 'Optimized' : 'Not optimized';
 }
 
 function parseFilterNumber(value: string): number | null {
@@ -85,26 +91,19 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 	return entry.score != null ? entry.score.toLocaleString() : '—';
 }
 
-function formatTrainInfTime(entry: { trainTimePerImage: number | null; infTimePerImage: number | null }) {
-	const train = entry.trainTimePerImage != null ? `train ${formatTimePerImage(entry.trainTimePerImage)}` : null;
-	const inf = entry.infTimePerImage != null ? `inf ${formatTimePerImage(entry.infTimePerImage)}` : null;
-	const parts = [train, inf].filter((value): value is string => value != null);
-	return parts.length ? parts.join(' / ') : '—';
-}
-
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
 		return {
 			title: 'Load from Hugging Face',
 			body: `Use agml.data.hf_loader.HuggingFaceDataLoader("Project-AgML/${dataset.name}") to load this dataset from Hugging Face.`,
-			code: `from agml.data.hf_loader import HuggingFaceDataLoader\n\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
+			code: `from agml.data.hf_loader import HuggingFaceDataLoader; loader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
 		};
 	}
 
 	return {
 		title: 'Load with AgML',
 		body: `Use agml.data.AgMLDataLoader("${dataset.name}") to load this dataset locally through AgML.`,
-		code: `import agml\n\nloader = agml.data.AgMLDataLoader("${dataset.name}")`,
+		code: `import agml; loader = agml.data.AgMLDataLoader("${dataset.name}")`,
 	};
 }
 
@@ -137,28 +136,29 @@ export function DatasetMetadataModal({
 	const datasetPerformance = useDatasetPerformance(open ? (dataset?.name ?? null) : null);
 
 	const [metricTypeFilter, setMetricTypeFilter] = useState<string[]>([]);
-	const [resultTypeFilter, setResultTypeFilter] = useState<string[]>([]);
+	const [tunedFilter, setTunedFilter] = useState<string[]>([]);
+	const [optimizedFilter, setOptimizedFilter] = useState<string[]>([]);
 	const [platformFilter, setPlatformFilter] = useState<string[]>([]);
-	const [trainingTimeMin, setTrainingTimeMin] = useState('');
 	const [trainingTimeMax, setTrainingTimeMax] = useState('');
 	const [trainingSizeMin, setTrainingSizeMin] = useState('');
-	const [trainingSizeMax, setTrainingSizeMax] = useState('');
 
-	const allEntries = datasetPerformance.data?.entries ?? [];
+	const allEntries = datasetPerformance.data?.entries ?? EMPTY_ENTRIES;
 
-	const { metricTypeOptions, resultTypeOptions, platformOptions } = useMemo(() => {
+	const { metricTypeOptions, tunedOptions, optimizedOptions, platformOptions } = useMemo(() => {
 		const metricTypes = new Set<MetricCategory>();
-		const resultTypes = new Set<string>();
+		const tuned = new Set<string>();
+		const optimized = new Set<string>();
 		const platforms = new Set<string>();
 		for (const entry of allEntries) {
 			entry.metricCategories.forEach((category) => metricTypes.add(category));
-			const key = resultTypeKey(entry);
-			if (key) resultTypes.add(key);
+			if (entry.variant) tuned.add(entry.variant);
+			optimized.add(entry.optimized ? 'optimized' : 'not-optimized');
 			if (entry.platform) platforms.add(entry.platform);
 		}
 		return {
 			metricTypeOptions: Array.from(metricTypes),
-			resultTypeOptions: Array.from(resultTypes).sort(),
+			tunedOptions: Array.from(tuned).sort(),
+			optimizedOptions: Array.from(optimized).sort(),
 			platformOptions: Array.from(platforms).sort(),
 		};
 	}, [allEntries]);
@@ -168,46 +168,42 @@ export function DatasetMetadataModal({
 	};
 
 	const filteredEntries = useMemo(() => {
-		const timeMin = parseFilterNumber(trainingTimeMin);
 		const timeMax = parseFilterNumber(trainingTimeMax);
 		const sizeMin = parseFilterNumber(trainingSizeMin);
-		const sizeMax = parseFilterNumber(trainingSizeMax);
 
 		return allEntries.filter((entry: PerformanceEntry) => {
 			if (metricTypeFilter.length && !entry.metricCategories.some((category) => metricTypeFilter.includes(category))) {
 				return false;
 			}
-			if (resultTypeFilter.length) {
-				const key = resultTypeKey(entry);
-				if (!key || !resultTypeFilter.includes(key)) return false;
-			}
+			if (tunedFilter.length && !(entry.variant && tunedFilter.includes(entry.variant))) return false;
+			if (optimizedFilter.length && !optimizedFilter.includes(entry.optimized ? 'optimized' : 'not-optimized')) return false;
 			if (platformFilter.length && !(entry.platform && platformFilter.includes(entry.platform))) return false;
-			if (timeMin != null && (entry.trainTimePerImage == null || entry.trainTimePerImage < timeMin)) return false;
 			if (timeMax != null && (entry.trainTimePerImage == null || entry.trainTimePerImage > timeMax)) return false;
 			if (sizeMin != null && (entry.trainPercentage == null || entry.trainPercentage < sizeMin)) return false;
-			if (sizeMax != null && (entry.trainPercentage == null || entry.trainPercentage > sizeMax)) return false;
 			return true;
 		});
-	}, [allEntries, metricTypeFilter, resultTypeFilter, platformFilter, trainingTimeMin, trainingTimeMax, trainingSizeMin, trainingSizeMax]);
+	}, [allEntries, metricTypeFilter, tunedFilter, optimizedFilter, platformFilter, trainingTimeMax, trainingSizeMin]);
 
 	const hasActiveLeaderboardFilters =
 		metricTypeFilter.length > 0 ||
-		resultTypeFilter.length > 0 ||
+		tunedFilter.length > 0 ||
+		optimizedFilter.length > 0 ||
 		platformFilter.length > 0 ||
-		trainingTimeMin !== '' ||
 		trainingTimeMax !== '' ||
-		trainingSizeMin !== '' ||
-		trainingSizeMax !== '';
+		trainingSizeMin !== '';
 
 	const clearLeaderboardFilters = () => {
 		setMetricTypeFilter([]);
-		setResultTypeFilter([]);
+		setTunedFilter([]);
+		setOptimizedFilter([]);
 		setPlatformFilter([]);
-		setTrainingTimeMin('');
 		setTrainingTimeMax('');
 		setTrainingSizeMin('');
-		setTrainingSizeMax('');
 	};
+
+	const [cropsExpanded, setCropsExpanded] = useState(false);
+	const [classesExpanded, setClassesExpanded] = useState(false);
+	const [copied, setCopied] = useState(false);
 
 	const [expandedRowKeys, setExpandedRowKeys] = useState<Set<string>>(new Set());
 	const toggleExpandedRow = (key: string) => {
@@ -223,11 +219,8 @@ export function DatasetMetadataModal({
 	if (!open || dataset == null) return null;
 
 	const detailRows = [
-		['Machine learning task', formatValue(dataset.machine_learning_task)],
-		['Agricultural task', formatValue(dataset.agricultural_task)],
 		['Location', formatDisplayLocation(dataset.location)],
 		['Sensor modality', formatValue(dataset.sensor_modality)],
-		['Real or synthetic', formatValue(dataset.real_or_synthetic)],
 		['Platform', formatValue(dataset.platform)],
 		['Input format', formatValue(dataset.input_data_format)],
 		['Annotation format', formatValue(dataset.annotation_format)],
@@ -241,6 +234,8 @@ export function DatasetMetadataModal({
 			: []),
 	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
+	const cropList = dataset.crop_types ?? [];
+	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
 
 	return (
 		<div className={styles.backdrop} role="presentation" onClick={onClose}>
@@ -257,9 +252,18 @@ export function DatasetMetadataModal({
 						<h2 id="dataset-metadata-title" className={styles.title}>
 							{dataset.name}
 						</h2>
+						<div className={styles.headerBadges}>
+							{dataset.machine_learning_task && (
+								<span className={`${styles.taskBadge} ${taskBadgeClass(dataset.machine_learning_task)}`}>
+									{formatValue(dataset.machine_learning_task)}
+								</span>
+							)}
+							{dataset.agricultural_task && <span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>}
+							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
+						</div>
 					</div>
 					<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
-						Close
+						×
 					</button>
 				</div>
 
@@ -272,13 +276,36 @@ export function DatasetMetadataModal({
 					))}
 				</dl>
 
-				{(dataset.classes || dataset.stats_mean || dataset.stats_std) && (
+				{(cropList.length > 0 || classList.length > 0 || dataset.stats_mean || dataset.stats_std) && (
 					<div className={styles.secondaryGrid}>
-						{dataset.classes && (
+						{cropList.length > 0 && (
+							<section className={styles.secondarySection}>
+								<h3 className={styles.sectionTitle}>Crops</h3>
+								<div className={styles.badgeWrap}>
+									{(cropsExpanded ? cropList : cropList.slice(0, 8)).map((crop) => (
+										<span key={crop} className={styles.tag}>{crop}</span>
+									))}
+									{!cropsExpanded && cropList.length > 8 && (
+										<button type="button" className={styles.expandButton} onClick={() => setCropsExpanded(true)}>
+											+{cropList.length - 8} more
+										</button>
+									)}
+								</div>
+							</section>
+						)}
+						{classList.length > 0 && (
 							<section className={styles.secondarySection}>
 								<h3 className={styles.sectionTitle}>Classes</h3>
-								<p className={styles.bodyText}>{dataset.classes}</p>
-
+								<div className={styles.badgeWrap}>
+									{(classesExpanded ? classList : classList.slice(0, 8)).map((cls) => (
+										<span key={cls} className={styles.tag}>{cls}</span>
+									))}
+									{!classesExpanded && classList.length > 8 && (
+										<button type="button" className={styles.expandButton} onClick={() => setClassesExpanded(true)}>
+											+{classList.length - 8} more
+										</button>
+									)}
+								</div>
 							</section>
 						)}
 						{(dataset.stats_mean || dataset.stats_std) && (
@@ -296,18 +323,34 @@ export function DatasetMetadataModal({
 				)}
 
 				<div className={styles.footer}>
-					{hasExampleImage(dataset.examples_image_url) ? (
-						<figure className={styles.figure}>
-							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
-						</figure>
-					) : (
-						<p className={styles.bodyText}>No example image is available for this dataset.</p>
-					)}
+					<section className={styles.secondarySection}>
+						<h3 className={styles.sectionTitle}>Sample image</h3>
+						{hasExampleImage(dataset.examples_image_url) ? (
+							<figure className={styles.figure}>
+								<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
+							</figure>
+						) : (
+							<p className={styles.bodyText}>No example image is available for this dataset.</p>
+						)}
+					</section>
 
 					<section className={styles.secondarySection}>
 						<h3 className={styles.sectionTitle}>{loader.title}</h3>
 						<p className={styles.bodyText}>{loader.body}</p>
-						<pre className={styles.codeBlock}>{loader.code}</pre>
+						<div className={styles.snippetRow}>
+							<span className={styles.snippetCode}>{loader.code}</span>
+							<button
+								type="button"
+								className={styles.snippetCopyButton}
+								onClick={() => {
+									navigator.clipboard.writeText(loader.code);
+									setCopied(true);
+									setTimeout(() => setCopied(false), 1500);
+								}}
+							>
+								{copied ? 'Copied!' : 'Copy'}
+							</button>
+						</div>
 					</section>
 
 					{(dataset.documentation || dataset.hf_link) && (
@@ -346,11 +389,18 @@ export function DatasetMetadataModal({
 										formatOption={(value) => METRIC_CATEGORY_LABELS[value as MetricCategory]}
 									/>
 									<MultiSelectDropdown
-										label="Tuned vs not tuned"
-										options={resultTypeOptions}
-										selected={resultTypeFilter}
-										onToggle={(value) => toggleFilter(setResultTypeFilter, value)}
-										formatOption={formatResultTypeKey}
+										label="Tuned"
+										options={tunedOptions}
+										selected={tunedFilter}
+										onToggle={(value) => toggleFilter(setTunedFilter, value)}
+										formatOption={formatTunedKey}
+									/>
+									<MultiSelectDropdown
+										label="Optimized"
+										options={optimizedOptions}
+										selected={optimizedFilter}
+										onToggle={(value) => toggleFilter(setOptimizedFilter, value)}
+										formatOption={formatOptimizedKey}
 									/>
 									<MultiSelectDropdown
 										label="Platform"
@@ -359,16 +409,8 @@ export function DatasetMetadataModal({
 										onToggle={(value) => toggleFilter(setPlatformFilter, value)}
 									/>
 									<div className={styles.filterRange}>
-										<label className={styles.filterRangeLabel}>Training time (s/img)</label>
+										<label className={styles.filterRangeLabel}>Max train time (s/img)</label>
 										<div className={styles.filterRangeInputs}>
-											<input
-												type="number"
-												placeholder="Min"
-												value={trainingTimeMin}
-												onChange={(event) => setTrainingTimeMin(event.target.value)}
-												className={styles.filterRangeInput}
-											/>
-											<span aria-hidden>–</span>
 											<input
 												type="number"
 												placeholder="Max"
@@ -379,21 +421,13 @@ export function DatasetMetadataModal({
 										</div>
 									</div>
 									<div className={styles.filterRange}>
-										<label className={styles.filterRangeLabel}>Training set size (%)</label>
+										<label className={styles.filterRangeLabel}>Min train split (%)</label>
 										<div className={styles.filterRangeInputs}>
 											<input
 												type="number"
 												placeholder="Min"
 												value={trainingSizeMin}
 												onChange={(event) => setTrainingSizeMin(event.target.value)}
-												className={styles.filterRangeInput}
-											/>
-											<span aria-hidden>–</span>
-											<input
-												type="number"
-												placeholder="Max"
-												value={trainingSizeMax}
-												onChange={(event) => setTrainingSizeMax(event.target.value)}
 												className={styles.filterRangeInput}
 											/>
 										</div>
@@ -410,6 +444,7 @@ export function DatasetMetadataModal({
 								) : (
 									<table className={styles.leaderboardTable}>
 										<colgroup>
+											<col className={styles.colRank} />
 											<col className={styles.colModel} />
 											<col className={styles.colResultType} />
 											<col className={styles.colSplit} />
@@ -420,13 +455,14 @@ export function DatasetMetadataModal({
 										</colgroup>
 										<thead>
 											<tr>
-												<th>Model name</th>
-												<th>Result type</th>
-												<th>Train / test / val images (%)</th>
-												<th>Train / test config</th>
-												<th>Metric score</th>
-												<th>Normalized train / inf time (s/img)</th>
-												<th>Platform</th>
+												<th>Rank</th>
+												<th>Model</th>
+												<th>Result</th>
+												<th>Split %</th>
+												<th>Data</th>
+												<th>Scores</th>
+												<th>Norm s/img</th>
+												<th>Plat.</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -435,38 +471,50 @@ export function DatasetMetadataModal({
 												const isExpanded = expandedRowKeys.has(rowKey);
 												return (
 													<Fragment key={rowKey}>
-														<tr
-															className={styles.clickableRow}
-															onClick={() => toggleExpandedRow(rowKey)}
-															aria-expanded={isExpanded}
-														>
+														<tr aria-expanded={isExpanded}>
+															<td className={styles.rankCell}>#{entry.rank ?? index + 1}</td>
 															<td>
-																<span className={styles.expandChevron} aria-hidden>
+																<button type="button" className={styles.modelButton} onClick={() => toggleExpandedRow(rowKey)}>
+																	{entry.link ? (
+																		<a
+																			href={entry.link}
+																			target="_blank"
+																			rel="noreferrer"
+																			onClick={(event) => event.stopPropagation()}
+																		>
+																			{entry.model}
+																		</a>
+																	) : (
+																		entry.model
+																	)}{' '}
 																	{isExpanded ? '▾' : '▸'}
-																</span>
-																{entry.link ? (
-																	<a
-																		href={entry.link}
-																		target="_blank"
-																		rel="noreferrer"
-																		onClick={(event) => event.stopPropagation()}
-																	>
-																		{entry.model}
-																	</a>
-																) : (
-																	entry.model
-																)}
+																</button>
 															</td>
 															<td>{formatResultType(entry)}</td>
 															<td>{entry.splitBreakdown ?? '—'}</td>
 															<td>{entry.datasetConfig ?? '—'}</td>
-															<td>{formatMetricScore(entry)}</td>
-															<td>{formatTrainInfTime(entry)}</td>
+															<td>
+																{entry.metrics.length > 0 ? (
+																	<div className={styles.stackCell}>
+																		{entry.metrics.map((metric) => (
+																			<span key={metric.key}>{metric.label}: {metric.value.toFixed(3)}</span>
+																		))}
+																	</div>
+																) : (
+																	<span>{formatMetricScore(entry)}</span>
+																)}
+															</td>
+															<td>
+																<div className={styles.stackCell}>
+																	<span>train {formatTimePerImage(entry.trainTimePerImage)}</span>
+																	<span>inf {formatTimePerImage(entry.infTimePerImage)}</span>
+																</div>
+															</td>
 															<td>{entry.platform ?? '—'}</td>
 														</tr>
 														{isExpanded && (
 															<tr>
-																<td colSpan={7} className={styles.notesCell}>
+																<td colSpan={8} className={styles.notesCell}>
 																	<p className={styles.detailLabel}>Necessary notes</p>
 																	<p className={styles.notesText}>{entry.notes ?? 'No additional notes for this result.'}</p>
 																</td>
