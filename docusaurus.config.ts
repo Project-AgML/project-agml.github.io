@@ -61,19 +61,15 @@ const config: Config = {
     },
     navbar: {
       title: 'AgML',
-      logo: {
-        alt: 'AgML Logo',
-        src: 'img/agml/agml-logo-wide.png',
-      },
       items: [
+        {to: '/datasets', label: 'Datasets', position: 'left'},
+        {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'agmlSidebar',
           position: 'left',
           label: 'Docs',
         },
-        {to: '/datasets', label: 'Dataset Search', position: 'left'},
-        {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
         {
           href: 'https://github.com/Project-AgML/AgML',
           label: 'GitHub',

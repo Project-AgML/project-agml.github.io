@@ -79,15 +79,15 @@ export function LeaderboardDetailModal({
       >
         <div className={styles.header}>
           <div>
+            <h2 id="leaderboard-detail-title" className={styles.title}>
+              {entry.model}
+            </h2>
             <div className={styles.badgeRow}>
               <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
                 {entry.machineLearningTask ? toLabel(entry.machineLearningTask) : 'Unknown task'}
               </span>
               <span className={styles.resultTypeBadge}>{entry.resultType}</span>
             </div>
-            <h2 id="leaderboard-detail-title" className={styles.title}>
-              {entry.model}
-            </h2>
             <p className={styles.summaryLine}>
               {entry.appearances} result{entry.appearances === 1 ? '' : 's'} across {entry.datasets.length} dataset
               {entry.datasets.length === 1 ? '' : 's'}
@@ -100,83 +100,93 @@ export function LeaderboardDetailModal({
 
         <p className={styles.sectionTitle}>Datasets included ({entry.datasetDetails.length})</p>
         <div className={styles.tableWrap}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Dataset</th>
-                <th>Split %</th>
-                <th>Config</th>
-                <th>Scores (percentile)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {entry.datasetDetails.map((detail, index) => {
-                const rowKey = `${detail.dataset}-${index}`;
-                const isExpanded = expandedKeys.has(rowKey);
-                const scoreLines = (
-                  [
-                    ['F1', 'f1'],
-                    ['mAP', 'map'],
-                    ['Precision', 'precision'],
-                    ['Recall', 'recall'],
-                  ] as [string, 'f1' | 'map' | 'precision' | 'recall'][]
-                )
-                  .map(([label, category]) => {
-                    const score = detail.scores[category];
-                    const pctl = detail.percentiles[category];
-                    if (score == null || pctl == null) return null;
-                    return [label, formatScore(score), formatPercentile(pctl)] as [string, string, string];
-                  })
-                  .filter((line): line is [string, string, string] => line != null);
+          <div className={styles.table} role="table">
+            <div className={styles.tableRow} role="row">
+              <span role="columnheader">Dataset</span>
+              <span role="columnheader">Split %</span>
+              <span role="columnheader">Config</span>
+              <span role="columnheader">Scores (percentile)</span>
+            </div>
+            {entry.datasetDetails.map((detail, index) => {
+              const rowKey = `${detail.dataset}-${index}`;
+              const isExpanded = expandedKeys.has(rowKey);
+              const scoreLines = (
+                [
+                  ['F1', 'f1'],
+                  ['mAP', 'map'],
+                  ['Precision', 'precision'],
+                  ['Recall', 'recall'],
+                ] as [string, 'f1' | 'map' | 'precision' | 'recall'][]
+              )
+                .map(([label, category]) => {
+                  const score = detail.scores[category];
+                  const pctl = detail.percentiles[category];
+                  if (score == null || pctl == null) return null;
+                  return [label, formatScore(score), formatPercentile(pctl)] as [string, string, string];
+                })
+                .filter((line): line is [string, string, string] => line != null);
 
-                return (
-                  <Fragment key={rowKey}>
-                    <tr className={styles.clickableRow} onClick={() => toggleExpanded(rowKey)} aria-expanded={isExpanded}>
-                      <td>
-                        <div className={styles.datasetCell}>
-                          <button type="button" className={styles.datasetName}>
-                            {toLabel(detail.dataset)}
-                            <span className={styles.expandChevron} aria-hidden>
-                              {isExpanded ? '▲' : '▾'}
+              return (
+                <Fragment key={rowKey}>
+                  <div
+                    role="row"
+                    tabIndex={0}
+                    className={`${styles.tableRow} ${styles.clickableRow}`}
+                    onClick={() => toggleExpanded(rowKey)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleExpanded(rowKey);
+                      }
+                    }}
+                    aria-expanded={isExpanded}
+                  >
+                    <span role="cell">
+                      <div className={styles.datasetCell}>
+                        <button type="button" className={styles.datasetName}>
+                          {toLabel(detail.dataset)}
+                          <span className={styles.expandChevron} aria-hidden>
+                            {isExpanded ? '▲' : '▾'}
+                          </span>
+                        </button>
+                        <Link
+                          className={styles.viewDatasetLink}
+                          to={`/datasets?dataset=${encodeURIComponent(detail.dataset)}`}
+                          onClick={(event) => event.stopPropagation()}
+                        >
+                          view dataset
+                        </Link>
+                      </div>
+                    </span>
+                    <span role="cell" className={styles.simpleCell}>
+                      {detail.splitBreakdown ?? '—'}
+                    </span>
+                    <span role="cell" className={styles.simpleCell}>
+                      {detail.datasetConfig ?? '—'}
+                    </span>
+                    <span role="cell">
+                      {scoreLines.length === 0 ? (
+                        '—'
+                      ) : (
+                        <div className={styles.scoresCell}>
+                          {scoreLines.map(([label, score, pctl]) => (
+                            <span key={label}>
+                              {label} {score} <span>({pctl})</span>
                             </span>
-                          </button>
-                          <Link
-                            className={styles.viewDatasetLink}
-                            to={`/datasets?dataset=${encodeURIComponent(detail.dataset)}`}
-                            onClick={(event) => event.stopPropagation()}
-                          >
-                            view dataset
-                          </Link>
+                          ))}
                         </div>
-                      </td>
-                      <td>{detail.splitBreakdown ?? '—'}</td>
-                      <td>{detail.datasetConfig ?? '—'}</td>
-                      <td>
-                        {scoreLines.length === 0 ? (
-                          '—'
-                        ) : (
-                          <div className={styles.scoresCell}>
-                            {scoreLines.map(([label, score, pctl]) => (
-                              <span key={label}>
-                                {label} {score} <span>({pctl})</span>
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                      </td>
-                    </tr>
-                    {isExpanded && (
-                      <tr className={styles.notesRow}>
-                        <td colSpan={4}>
-                          {formatResultType(detail)} · {detail.platform ?? 'unknown platform'}
-                        </td>
-                      </tr>
-                    )}
-                  </Fragment>
-                );
-              })}
-            </tbody>
-          </table>
+                      )}
+                    </span>
+                  </div>
+                  {isExpanded && (
+                    <div className={styles.notesRow}>
+                      {formatResultType(detail)} · {detail.platform ?? 'unknown platform'}
+                    </div>
+                  )}
+                </Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

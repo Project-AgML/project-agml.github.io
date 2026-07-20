@@ -122,6 +122,13 @@ function buildSplitBreakdown(entry, finetune) {
   return `${toShare(trainSamples)}/${toShare(testSamples)}/${toShare(valSamples)}`;
 }
 
+// The result set encodes optimized as the string "yes" / "no" (not a boolean) — a finetune
+// object's own optimized field, if present, may already be boolean, so both forms are accepted.
+function isOptimized(value) {
+  if (typeof value === 'string') return value.trim().toLowerCase() === 'yes';
+  return Boolean(value);
+}
+
 function makeLeaderboardRow(entry, metricKey, variant) {
   const finetune = entry.finetune;
   return {
@@ -133,10 +140,13 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     submitted_by: null,
     link: null,
     notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
-    optimized: Boolean(entry.optimized) || (finetune != null && typeof finetune === 'object' && Boolean(finetune.optimized)),
+    optimized: isOptimized(entry.optimized) || (finetune != null && typeof finetune === 'object' && isOptimized(finetune.optimized)),
     platform: typeof entry.device === 'string' && entry.device.trim() ? entry.device.trim() : null,
     splitBreakdown: buildSplitBreakdown(entry, finetune),
-    datasetConfig: (typeof entry.dataset_config === 'string' && entry.dataset_config.trim()) || (typeof entry.split === 'string' && entry.split.trim()) || null,
+    // dataset_config is the result set's own config field (raw / augmented) — no fallback to
+    // `split`, which is a different concept (the run's data split, e.g. "train"). Absent config
+    // means the run used the dataset's raw (unaugmented) form.
+    datasetConfig: typeof entry.dataset_config === 'string' && entry.dataset_config.trim() ? entry.dataset_config.trim() : 'raw',
   };
 }
 

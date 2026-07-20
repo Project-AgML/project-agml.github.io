@@ -233,67 +233,79 @@ export default function GlobalLeaderboardPage() {
             {!loading && !error && sorted.length > 0 && (
               <>
                 <div className={styles.tableWrap}>
-                  <table className={styles.leaderboardTable}>
-                    <thead>
-                      <tr>
-                        <th>CV Task</th>
-                        <th>Model</th>
-                        <th>
-                          <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
-                            Avg F1 pctl
-                          </button>
-                        </th>
-                        <th>
-                          <button type="button" className={sortHeaderClass('map')} onClick={() => setSortBy('map')}>
-                            Avg mAP pctl
-                          </button>
-                        </th>
-                        <th>
-                          <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
-                            Avg Precision pctl
-                          </button>
-                        </th>
-                        <th>
-                          <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
-                            Avg Recall pctl
-                          </button>
-                        </th>
-                        <th>Result type</th>
-                        <th># Results</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {pagedLeaderboard.map((entry) => {
-                        const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
-                        return (
-                          <tr key={key} className={styles.clickableRow} onClick={() => setSelectedKey(key)}>
-                            <td>
-                              <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
-                                {entry.machineLearningTask ? toLabel(entry.machineLearningTask) : 'Unknown'}
-                              </span>
-                            </td>
-                            <td>
-                              <span className={styles.modelName}>{entry.model}</span>
-                            </td>
-                            <td>
-                              <PercentileCell value={entry.avgF1Percentile} />
-                            </td>
-                            <td>
-                              <PercentileCell value={entry.avgMapPercentile} />
-                            </td>
-                            <td>
-                              <PercentileCell value={entry.avgPrecisionPercentile} />
-                            </td>
-                            <td>
-                              <PercentileCell value={entry.avgRecallPercentile} />
-                            </td>
-                            <td>{entry.resultType}</td>
-                            <td>{entry.appearances}</td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                  <div className={styles.leaderboardTable} role="table">
+                    <div className={styles.tableRow} role="row">
+                      <span role="columnheader">CV Task</span>
+                      <span role="columnheader">Model</span>
+                      <span role="columnheader">
+                        <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
+                          <span>Avg F1 pctl</span>
+                          <span>{sortBy === 'f1' ? '▼' : '▾'}</span>
+                        </button>
+                      </span>
+                      <span role="columnheader">
+                        <button type="button" className={sortHeaderClass('map')} onClick={() => setSortBy('map')}>
+                          <span>Avg mAP pctl</span>
+                          <span>{sortBy === 'map' ? '▼' : '▾'}</span>
+                        </button>
+                      </span>
+                      <span role="columnheader">
+                        <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
+                          <span>Avg Precision pctl</span>
+                          <span>{sortBy === 'precision' ? '▼' : '▾'}</span>
+                        </button>
+                      </span>
+                      <span role="columnheader">
+                        <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
+                          <span>Avg Recall pctl</span>
+                          <span>{sortBy === 'recall' ? '▼' : '▾'}</span>
+                        </button>
+                      </span>
+                      <span role="columnheader">Result type</span>
+                      <span role="columnheader"># Results</span>
+                    </div>
+                    {pagedLeaderboard.map((entry) => {
+                      const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
+                      return (
+                        <div
+                          key={key}
+                          role="row"
+                          tabIndex={0}
+                          className={`${styles.tableRow} ${styles.clickableRow}`}
+                          onClick={() => setSelectedKey(key)}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              setSelectedKey(key);
+                            }
+                          }}
+                        >
+                          <span role="cell">
+                            <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
+                              {entry.machineLearningTask ? toLabel(entry.machineLearningTask) : 'Unknown'}
+                            </span>
+                          </span>
+                          <span role="cell">
+                            <span className={styles.modelName}>{entry.model}</span>
+                          </span>
+                          <span role="cell">
+                            <PercentileCell value={entry.avgF1Percentile} />
+                          </span>
+                          <span role="cell">
+                            <PercentileCell value={entry.avgMapPercentile} />
+                          </span>
+                          <span role="cell">
+                            <PercentileCell value={entry.avgPrecisionPercentile} />
+                          </span>
+                          <span role="cell">
+                            <PercentileCell value={entry.avgRecallPercentile} />
+                          </span>
+                          <span role="cell">{entry.resultType}</span>
+                          <span role="cell">{entry.appearances}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
                 {pageCount > 1 && (
                   <div className={styles.pagination}>

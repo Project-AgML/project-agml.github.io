@@ -14,11 +14,20 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  */
 const sidebars: SidebarsConfig = {
   agmlSidebar: [
-    'index',
-    'development',
-    'credits',
-    'code-of-conduct',
-    'license',
+    {
+      type: 'category',
+      label: 'Guide',
+      collapsible: false,
+      className: 'sidebarCategoryLabel',
+      items: ['index', 'development'],
+    },
+    {
+      type: 'category',
+      label: 'Project',
+      collapsible: false,
+      className: 'sidebarCategoryLabel',
+      items: ['credits', 'code-of-conduct', 'license'],
+    },
   ],
 };
 

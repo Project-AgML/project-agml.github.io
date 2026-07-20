@@ -22,12 +22,14 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-radius: 14px;
+	border-radius: 6px;
 	border: 1px solid var(--agml-border-strong);
 	padding: 0.6rem 0.9rem;
 	background: var(--agml-surface-strong);
-	font-size: 0.92rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.82rem;
 	color: var(--agml-text);
+	width: 100%;
 }
 
 .dropdownChevron {
@@ -39,13 +41,13 @@
 	top: calc(100% + 0.4rem);
 	left: 0;
 	right: 0;
-	border-radius: 16px;
-	border: 1px solid var(--agml-border);
+	border-radius: 6px;
+	border: 1px solid var(--agml-border-strong);
 	background: var(--agml-surface-strong);
-	padding: 0.4rem 0;
+	padding: 0.35rem;
 	max-height: 240px;
 	overflow: auto;
-	box-shadow: var(--agml-shadow);
+	box-shadow: var(--agml-shadow-strong);
 	z-index: 40;
 }
 
@@ -59,32 +61,42 @@
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	padding: 0.55rem 0.9rem;
+	padding: 0.4rem 0.5rem;
 	width: 100%;
 	text-align: left;
 	border: none;
+	border-radius: 4px;
 	background: transparent;
 	cursor: pointer;
-	font-size: 0.9rem;
+	font-size: 0.82rem;
+	color: var(--agml-text);
+}
+
+.dropdownOption:hover {
+	background: var(--agml-tag-bg);
 }
 
 .dropdownOptionSelected {
-	background: var(--agml-accent-soft);
-	color: var(--ifm-color-primary);
+	color: var(--agml-text);
 }
 
 .dropdownCheckbox {
-	width: 1.2rem;
-	height: 1.2rem;
-	border-radius: 6px;
-	border: 1px solid var(--agml-border-strong);
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	border: 1.5px solid var(--agml-border-strong);
+	background: var(--agml-page-bg);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 0.8rem;
-	color: var(--ifm-color-primary);
+	font-size: 0.65rem;
+	color: transparent;
+	transition: background 0.12s, border-color 0.12s;
 }
 
-:global(html[data-theme='dark']) .dropdownOptionSelected {
-	color: var(--ifm-color-primary-lightest);
+.dropdownOptionSelected .dropdownCheckbox {
+	background: var(--ifm-color-primary);
+	border-color: var(--ifm-color-primary);
+	color: var(--agml-page-bg);
 }

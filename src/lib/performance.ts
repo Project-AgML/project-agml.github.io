@@ -85,7 +85,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
     optimized: Boolean(raw.optimized),
     splitBreakdown: toText(raw.split_breakdown),
     trainPercentage: toNumber(raw.train_percentage),
-    datasetConfig: toText(raw.dataset_config ?? raw.config),
+    datasetConfig: toText(raw.dataset_config ?? raw.config) ?? 'raw',
     trainTimePerImage: toNumber(raw.train_time_per_image),
     infTimePerImage: toNumber(raw.inference_time_per_image),
     platform: toText(raw.platform ?? raw.device),
@@ -236,6 +236,13 @@ function buildSplitBreakdown(entry: Record<string, unknown>, finetune: unknown):
   return `${toShare(trainSamples)}/${toShare(testSamples)}/${toShare(valSamples)}`;
 }
 
+// The result set encodes optimized as the string "yes" / "no" (not a boolean) — a finetune
+// object's own optimized field, if present, may already be boolean, so both forms are accepted.
+function isOptimized(value: unknown): boolean {
+  if (typeof value === 'string') return value.trim().toLowerCase() === 'yes';
+  return Boolean(value);
+}
+
 function makeLeaderboardRow(
   entry: Record<string, unknown>,
   metricKey: string,
@@ -255,10 +262,13 @@ function makeLeaderboardRow(
     submitted_by: null,
     link: null,
     notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
-    optimized: Boolean(entry.optimized) || (isRecord(finetune) && Boolean(finetune.optimized)),
+    optimized: isOptimized(entry.optimized) || (isRecord(finetune) && isOptimized(finetune.optimized)),
     splitBreakdown: buildSplitBreakdown(entry, finetune),
     trainPercentage: computeTrainPercentage(entry, finetune),
-    datasetConfig: toText(entry.dataset_config) ?? toText(entry.split),
+    // dataset_config is the result set's own config field (raw / augmented) — no fallback to
+    // `split`, which is a different concept (the run's data split, e.g. "train"). Absent config
+    // means the run used the dataset's raw (unaugmented) form.
+    datasetConfig: toText(entry.dataset_config) ?? 'raw',
     trainTimePerImage: trainingTimeSeconds != null && trainSamples ? trainingTimeSeconds / trainSamples : null,
     infTimePerImage: isFiniteNumber(entry.inference_time_seconds) && isFiniteNumber(entry.num_samples) && entry.num_samples > 0
       ? entry.inference_time_seconds / entry.num_samples

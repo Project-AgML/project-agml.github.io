@@ -10,7 +10,7 @@
 }
 
 .modal {
-  width: min(880px, 92vw);
+  width: min(1040px, 95vw);
   max-height: min(88vh, 900px);
   overflow-y: auto;
   border-radius: 12px;
@@ -18,7 +18,7 @@
   background: var(--agml-surface-strong);
   box-shadow: var(--agml-shadow-strong);
   color: var(--agml-text);
-  padding: 1.75rem;
+  padding: 2rem;
 }
 
 .header {
@@ -71,8 +71,8 @@
   font-size: 0.65rem;
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
-  background: var(--agml-surface-soft);
-  color: var(--agml-muted);
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
   display: inline-block;
 }
 
@@ -104,7 +104,7 @@
 }
 
 .closeButton:hover {
-  background: var(--agml-accent-soft);
+  background: var(--agml-border);
 }
 
 .sectionTitle {
@@ -125,43 +125,42 @@
 
 .table {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
 }
 
-.table thead,
-.table tbody tr {
-  background: transparent;
+.tableRow {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.4fr) 70px 100px minmax(280px, 1.6fr);
+  gap: 0.75rem;
+  align-items: start;
 }
 
-.table thead tr {
-  border-bottom: none;
-}
-
-.table tr:nth-child(2n) {
-  background-color: transparent;
-}
-
-.table th,
-.table td {
-  text-align: left;
-  padding: 0.55rem 0.75rem;
-  border: none;
-  border-bottom: 1px solid var(--agml-border);
-  vertical-align: top;
-}
-
-.table th {
+.tableRow[role='row']:first-child {
   font-family: var(--ifm-code-font-family);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--agml-muted);
-  background: var(--agml-surface-soft);
+  background: var(--agml-tag-bg);
+  padding: 0.5rem 0.75rem;
+  align-items: center;
 }
 
-.table tbody tr:last-child > td {
-  border-bottom: none;
+.tableRow:not(:first-child) {
+  padding: 0.55rem 0.75rem;
+  border-top: 1px solid var(--agml-border);
+}
+
+.tableRow > [role='columnheader'] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.simpleCell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .clickableRow {
@@ -183,6 +182,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  max-width: 100%;
   background: none;
   border: none;
   padding: 0;
@@ -191,6 +191,9 @@
   color: var(--agml-text);
   text-decoration: underline dashed var(--agml-muted);
   text-decoration-thickness: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .expandChevron {
@@ -200,11 +203,11 @@
 
 .viewDatasetLink {
   font-family: var(--ifm-code-font-family);
-  font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
+  font-size: 0.625rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 4px;
-  background: var(--agml-surface-soft);
-  color: var(--agml-muted);
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -221,16 +224,22 @@
   gap: 0.2rem;
   font-family: var(--ifm-code-font-family);
   color: var(--ifm-color-primary);
-  font-size: 0.75rem;
+  font-size: 0.66rem;
+}
+
+.scoresCell span {
+  white-space: nowrap;
 }
 
 .scoresCell span span {
   color: var(--agml-muted);
 }
 
-.notesRow td {
+.notesRow {
+  padding: 0.5rem 0.75rem 0.75rem;
   background: var(--agml-surface-soft);
   border-top: 1px dashed var(--agml-border);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
   color: var(--agml-muted);
 }

@@ -3,7 +3,6 @@ import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation } from '../lib/datasets';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
-import { MultiSelectDropdown } from './MultiSelectDropdown';
 import styles from './DatasetMetadataModal.module.css';
 
 function formatImageCount(count: number | null) {
@@ -95,16 +94,47 @@ function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
 		return {
 			title: 'Load from Hugging Face',
-			body: `Use agml.data.hf_loader.HuggingFaceDataLoader("Project-AgML/${dataset.name}") to load this dataset from Hugging Face.`,
-			code: `from agml.data.hf_loader import HuggingFaceDataLoader; loader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
+			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
 		};
 	}
 
 	return {
 		title: 'Load with AgML',
-		body: `Use agml.data.AgMLDataLoader("${dataset.name}") to load this dataset locally through AgML.`,
-		code: `import agml; loader = agml.data.AgMLDataLoader("${dataset.name}")`,
+		code: `import agml\nloader = agml.data.AgMLDataLoader("${dataset.name}")`,
 	};
+}
+
+function InlineFilterGroup({
+	label,
+	options,
+	selected,
+	onToggle,
+	formatOption = (value: string) => value,
+}: {
+	label: string;
+	options: string[];
+	selected: string[];
+	onToggle: (value: string) => void;
+	formatOption?: (value: string) => string;
+}) {
+	return (
+		<div className={styles.filterGroup}>
+			<p className={styles.filterGroupLabel}>{label}</p>
+			<div className={styles.filterGroupOptions}>
+				{options.map((option) => (
+					<label key={option} className={styles.filterCheckboxRow}>
+						<input
+							type="checkbox"
+							className={styles.checkbox}
+							checked={selected.includes(option)}
+							onChange={() => onToggle(option)}
+						/>
+						<span>{formatOption(option)}</span>
+					</label>
+				))}
+			</div>
+		</div>
+	);
 }
 
 export function DatasetMetadataModal({
@@ -218,12 +248,10 @@ export function DatasetMetadataModal({
 
 	if (!open || dataset == null) return null;
 
-	const detailRows = [
+	const metadataRows = [
 		['Location', formatDisplayLocation(dataset.location)],
 		['Sensor modality', formatValue(dataset.sensor_modality)],
 		['Platform', formatValue(dataset.platform)],
-		['Input format', formatValue(dataset.input_data_format)],
-		['Annotation format', formatValue(dataset.annotation_format)],
 		['Number of images', formatImageCount(dataset.num_images)],
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
 		...(dataset.augmented_num_images != null
@@ -248,7 +276,6 @@ export function DatasetMetadataModal({
 			>
 				<div className={styles.header}>
 					<div>
-						<p className={styles.kicker}>Dataset metadata</p>
 						<h2 id="dataset-metadata-title" className={styles.title}>
 							{dataset.name}
 						</h2>
@@ -267,8 +294,8 @@ export function DatasetMetadataModal({
 					</button>
 				</div>
 
-				<dl className={styles.detailGrid}>
-					{detailRows.map(([label, value]) => (
+				<dl className={styles.detailGrid} style={{ gridTemplateColumns: `repeat(${metadataRows.length}, 1fr)` }}>
+					{metadataRows.map(([label, value]) => (
 						<div key={label} className={styles.detailItem}>
 							<dt className={styles.detailLabel}>{label}</dt>
 							<dd className={styles.detailValue}>{value}</dd>
@@ -276,262 +303,235 @@ export function DatasetMetadataModal({
 					))}
 				</dl>
 
-				{(cropList.length > 0 || classList.length > 0 || dataset.stats_mean || dataset.stats_std) && (
-					<div className={styles.secondaryGrid}>
-						{cropList.length > 0 && (
-							<section className={styles.secondarySection}>
-								<h3 className={styles.sectionTitle}>Crops</h3>
-								<div className={styles.badgeWrap}>
-									{(cropsExpanded ? cropList : cropList.slice(0, 8)).map((crop) => (
-										<span key={crop} className={styles.tag}>{crop}</span>
-									))}
-									{!cropsExpanded && cropList.length > 8 && (
-										<button type="button" className={styles.expandButton} onClick={() => setCropsExpanded(true)}>
-											+{cropList.length - 8} more
-										</button>
-									)}
-								</div>
-							</section>
+				{cropList.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Crops</h3>
+						<div className={styles.badgeWrap}>
+							{(cropsExpanded ? cropList : cropList.slice(0, 10)).map((crop) => (
+								<span key={crop} className={styles.tag}>{crop}</span>
+							))}
+							{!cropsExpanded && cropList.length > 10 && (
+								<button type="button" className={styles.expandButton} onClick={() => setCropsExpanded(true)}>
+									+{cropList.length - 10} more
+								</button>
+							)}
+						</div>
+					</section>
+				)}
+
+				{classList.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Classes</h3>
+						<div className={styles.badgeWrap}>
+							{(classesExpanded ? classList : classList.slice(0, 10)).map((cls) => (
+								<span key={cls} className={styles.tag}>{cls}</span>
+							))}
+							{!classesExpanded && classList.length > 10 && (
+								<button type="button" className={styles.expandButton} onClick={() => setClassesExpanded(true)}>
+									+{classList.length - 10} more
+								</button>
+							)}
+						</div>
+					</section>
+				)}
+
+				{(dataset.stats_mean || dataset.stats_std) && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Stats</h3>
+						<p className={styles.bodyText}>
+							<span className={styles.inlineLabel}>Mean:</span> {formatArray(dataset.stats_mean)}
+						</p>
+						<p className={styles.bodyText}>
+							<span className={styles.inlineLabel}>Std:</span> {formatArray(dataset.stats_std)}
+						</p>
+					</section>
+				)}
+
+				<section className={styles.section}>
+					<h3 className={styles.sectionTitle}>Sample image</h3>
+					{hasExampleImage(dataset.examples_image_url) ? (
+						<figure className={styles.figure}>
+							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
+						</figure>
+					) : (
+						<p className={styles.bodyText}>No example image is available for this dataset.</p>
+					)}
+				</section>
+
+				<section className={styles.section}>
+					<h3 className={styles.sectionTitle}>{loader.title}</h3>
+					<div className={styles.snippetRow}>
+						<span className={styles.snippetCode}>{loader.code}</span>
+						<button
+							type="button"
+							className={styles.snippetCopyButton}
+							onClick={() => {
+								navigator.clipboard.writeText(loader.code);
+								setCopied(true);
+								setTimeout(() => setCopied(false), 1500);
+							}}
+						>
+							{copied ? 'Copied!' : 'Copy'}
+						</button>
+					</div>
+				</section>
+
+				{(dataset.documentation || dataset.hf_link) && (
+					<div className={styles.linkRow}>
+						{dataset.documentation && (
+							<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
+								Open source documentation
+							</a>
 						)}
-						{classList.length > 0 && (
-							<section className={styles.secondarySection}>
-								<h3 className={styles.sectionTitle}>Classes</h3>
-								<div className={styles.badgeWrap}>
-									{(classesExpanded ? classList : classList.slice(0, 8)).map((cls) => (
-										<span key={cls} className={styles.tag}>{cls}</span>
-									))}
-									{!classesExpanded && classList.length > 8 && (
-										<button type="button" className={styles.expandButton} onClick={() => setClassesExpanded(true)}>
-											+{classList.length - 8} more
-										</button>
-									)}
-								</div>
-							</section>
-						)}
-						{(dataset.stats_mean || dataset.stats_std) && (
-							<section className={styles.secondarySection}>
-								<h3 className={styles.sectionTitle}>Stats</h3>
-								<p className={styles.bodyText}>
-									<span className={styles.inlineLabel}>Mean:</span> {formatArray(dataset.stats_mean)}
-								</p>
-								<p className={styles.bodyText}>
-									<span className={styles.inlineLabel}>Std:</span> {formatArray(dataset.stats_std)}
-								</p>
-							</section>
+						{dataset.hf_link && (
+							<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
+								View on Hugging Face
+							</a>
 						)}
 					</div>
 				)}
 
-				<div className={styles.footer}>
-					<section className={styles.secondarySection}>
-						<h3 className={styles.sectionTitle}>Sample image</h3>
-						{hasExampleImage(dataset.examples_image_url) ? (
-							<figure className={styles.figure}>
-								<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
-							</figure>
-						) : (
-							<p className={styles.bodyText}>No example image is available for this dataset.</p>
-						)}
-					</section>
-
-					<section className={styles.secondarySection}>
-						<h3 className={styles.sectionTitle}>{loader.title}</h3>
-						<p className={styles.bodyText}>{loader.body}</p>
-						<div className={styles.snippetRow}>
-							<span className={styles.snippetCode}>{loader.code}</span>
-							<button
-								type="button"
-								className={styles.snippetCopyButton}
-								onClick={() => {
-									navigator.clipboard.writeText(loader.code);
-									setCopied(true);
-									setTimeout(() => setCopied(false), 1500);
-								}}
-							>
-								{copied ? 'Copied!' : 'Copy'}
-							</button>
-						</div>
-					</section>
-
-					{(dataset.documentation || dataset.hf_link) && (
-						<div className={styles.linkRow}>
-							{dataset.documentation && (
-								<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
-									Open source documentation
-								</a>
-							)}
-							{dataset.hf_link && (
-								<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
-									View on Hugging Face
-								</a>
-							)}
-						</div>
-					)}
-
-					<section className={styles.secondarySection}>
-						<h3 className={styles.sectionTitle}>Model performance leaderboard</h3>
-						{datasetPerformance.loading ? (
-							<p className={styles.bodyText}>Loading leaderboard…</p>
-						) : datasetPerformance.data && datasetPerformance.data.entries.length > 0 ? (
-							<div className={styles.leaderboardWrap}>
-								{datasetPerformance.data.metric && (
-									<p className={styles.bodyText}>
-										<span className={styles.inlineLabel}>Metric:</span> {datasetPerformance.data.metric}
-									</p>
-								)}
-
-								<div className={styles.filterBar}>
-									<MultiSelectDropdown
-										label="Metric type"
-										options={metricTypeOptions}
-										selected={metricTypeFilter}
-										onToggle={(value) => toggleFilter(setMetricTypeFilter, value)}
-										formatOption={(value) => METRIC_CATEGORY_LABELS[value as MetricCategory]}
+				<section className={styles.section}>
+					<h3 className={styles.sectionTitle}>
+						Leaderboard{datasetPerformance.data?.metric ? ` — ${datasetPerformance.data.metric}` : ''}
+					</h3>
+					{datasetPerformance.loading ? (
+						<p className={styles.bodyText}>Loading leaderboard…</p>
+					) : datasetPerformance.data && datasetPerformance.data.entries.length > 0 ? (
+						<div className={styles.leaderboardWrap}>
+							<div className={styles.filterBar}>
+								<InlineFilterGroup
+									label="Metric type"
+									options={metricTypeOptions}
+									selected={metricTypeFilter}
+									onToggle={(value) => toggleFilter(setMetricTypeFilter, value)}
+									formatOption={(value) => METRIC_CATEGORY_LABELS[value as MetricCategory]}
+								/>
+								<InlineFilterGroup
+									label="Tuned"
+									options={tunedOptions}
+									selected={tunedFilter}
+									onToggle={(value) => toggleFilter(setTunedFilter, value)}
+									formatOption={formatTunedKey}
+								/>
+								<InlineFilterGroup
+									label="Optimized"
+									options={optimizedOptions}
+									selected={optimizedFilter}
+									onToggle={(value) => toggleFilter(setOptimizedFilter, value)}
+									formatOption={formatOptimizedKey}
+								/>
+								<InlineFilterGroup
+									label="Platform"
+									options={platformOptions}
+									selected={platformFilter}
+									onToggle={(value) => toggleFilter(setPlatformFilter, value)}
+								/>
+								<div className={styles.filterRange}>
+									<label className={styles.filterRangeLabel}>Max train time (s/img)</label>
+									<input
+										type="number"
+										placeholder="Max"
+										value={trainingTimeMax}
+										onChange={(event) => setTrainingTimeMax(event.target.value)}
+										className={styles.filterRangeInput}
 									/>
-									<MultiSelectDropdown
-										label="Tuned"
-										options={tunedOptions}
-										selected={tunedFilter}
-										onToggle={(value) => toggleFilter(setTunedFilter, value)}
-										formatOption={formatTunedKey}
-									/>
-									<MultiSelectDropdown
-										label="Optimized"
-										options={optimizedOptions}
-										selected={optimizedFilter}
-										onToggle={(value) => toggleFilter(setOptimizedFilter, value)}
-										formatOption={formatOptimizedKey}
-									/>
-									<MultiSelectDropdown
-										label="Platform"
-										options={platformOptions}
-										selected={platformFilter}
-										onToggle={(value) => toggleFilter(setPlatformFilter, value)}
-									/>
-									<div className={styles.filterRange}>
-										<label className={styles.filterRangeLabel}>Max train time (s/img)</label>
-										<div className={styles.filterRangeInputs}>
-											<input
-												type="number"
-												placeholder="Max"
-												value={trainingTimeMax}
-												onChange={(event) => setTrainingTimeMax(event.target.value)}
-												className={styles.filterRangeInput}
-											/>
-										</div>
-									</div>
-									<div className={styles.filterRange}>
-										<label className={styles.filterRangeLabel}>Min train split (%)</label>
-										<div className={styles.filterRangeInputs}>
-											<input
-												type="number"
-												placeholder="Min"
-												value={trainingSizeMin}
-												onChange={(event) => setTrainingSizeMin(event.target.value)}
-												className={styles.filterRangeInput}
-											/>
-										</div>
-									</div>
-									{hasActiveLeaderboardFilters && (
-										<button type="button" className={styles.clearFiltersButton} onClick={clearLeaderboardFilters}>
-											Clear filters
-										</button>
-									)}
 								</div>
-
-								{filteredEntries.length === 0 ? (
-									<p className={styles.bodyText}>No results match the selected filters.</p>
-								) : (
-									<table className={styles.leaderboardTable}>
-										<colgroup>
-											<col className={styles.colRank} />
-											<col className={styles.colModel} />
-											<col className={styles.colResultType} />
-											<col className={styles.colSplit} />
-											<col className={styles.colConfig} />
-											<col className={styles.colMetric} />
-											<col className={styles.colTime} />
-											<col className={styles.colPlatform} />
-										</colgroup>
-										<thead>
-											<tr>
-												<th>Rank</th>
-												<th>Model</th>
-												<th>Result</th>
-												<th>Split %</th>
-												<th>Data</th>
-												<th>Scores</th>
-												<th>Norm s/img</th>
-												<th>Plat.</th>
-											</tr>
-										</thead>
-										<tbody>
-											{filteredEntries.map((entry, index) => {
-												const rowKey = `${entry.model}-${entry.variant ?? 'default'}-${index}`;
-												const isExpanded = expandedRowKeys.has(rowKey);
-												return (
-													<Fragment key={rowKey}>
-														<tr aria-expanded={isExpanded}>
-															<td className={styles.rankCell}>#{entry.rank ?? index + 1}</td>
-															<td>
-																<button type="button" className={styles.modelButton} onClick={() => toggleExpandedRow(rowKey)}>
-																	{entry.link ? (
-																		<a
-																			href={entry.link}
-																			target="_blank"
-																			rel="noreferrer"
-																			onClick={(event) => event.stopPropagation()}
-																		>
-																			{entry.model}
-																		</a>
-																	) : (
-																		entry.model
-																	)}{' '}
-																	{isExpanded ? '▾' : '▸'}
-																</button>
-															</td>
-															<td>{formatResultType(entry)}</td>
-															<td>{entry.splitBreakdown ?? '—'}</td>
-															<td>{entry.datasetConfig ?? '—'}</td>
-															<td>
-																{entry.metrics.length > 0 ? (
-																	<div className={styles.stackCell}>
-																		{entry.metrics.map((metric) => (
-																			<span key={metric.key}>{metric.label}: {metric.value.toFixed(3)}</span>
-																		))}
-																	</div>
-																) : (
-																	<span>{formatMetricScore(entry)}</span>
-																)}
-															</td>
-															<td>
-																<div className={styles.stackCell}>
-																	<span>train {formatTimePerImage(entry.trainTimePerImage)}</span>
-																	<span>inf {formatTimePerImage(entry.infTimePerImage)}</span>
-																</div>
-															</td>
-															<td>{entry.platform ?? '—'}</td>
-														</tr>
-														{isExpanded && (
-															<tr>
-																<td colSpan={8} className={styles.notesCell}>
-																	<p className={styles.detailLabel}>Necessary notes</p>
-																	<p className={styles.notesText}>{entry.notes ?? 'No additional notes for this result.'}</p>
-																</td>
-															</tr>
-														)}
-													</Fragment>
-												);
-											})}
-										</tbody>
-									</table>
+								<div className={styles.filterRange}>
+									<label className={styles.filterRangeLabel}>Min train split (%)</label>
+									<input
+										type="number"
+										placeholder="Min"
+										value={trainingSizeMin}
+										onChange={(event) => setTrainingSizeMin(event.target.value)}
+										className={styles.filterRangeInput}
+									/>
+								</div>
+								{hasActiveLeaderboardFilters && (
+									<button type="button" className={styles.clearFiltersButton} onClick={clearLeaderboardFilters}>
+										Clear filters
+									</button>
 								)}
 							</div>
-						) : (
-							<p className={styles.bodyText}>No leaderboard results have been submitted for this dataset yet.</p>
-						)}
-					</section>
-				</div>
+
+							{filteredEntries.length === 0 ? (
+								<p className={styles.bodyText}>No results match the selected filters.</p>
+							) : (
+								<div className={styles.tableWrap}>
+									<div className={styles.leaderboardTable} role="table">
+										<div className={styles.tableRow} role="row">
+											<span role="columnheader">Rank</span>
+											<span role="columnheader">Model</span>
+											<span role="columnheader">Result</span>
+											<span role="columnheader">Split%</span>
+											<span role="columnheader">Config</span>
+											<span role="columnheader">Scores</span>
+											<span role="columnheader">Norm s/img</span>
+											<span role="columnheader">Plat.</span>
+										</div>
+										{filteredEntries.map((entry, index) => {
+											const rowKey = `${entry.model}-${entry.variant ?? 'default'}-${index}`;
+											const isExpanded = expandedRowKeys.has(rowKey);
+											return (
+												<Fragment key={rowKey}>
+													<div role="row" aria-expanded={isExpanded} className={styles.tableRow}>
+														<span role="cell" className={styles.rankCell}>#{entry.rank ?? index + 1}</span>
+														<span role="cell">
+															<button type="button" className={styles.modelButton} onClick={() => toggleExpandedRow(rowKey)}>
+																{entry.link ? (
+																	<a
+																		href={entry.link}
+																		target="_blank"
+																		rel="noreferrer"
+																		onClick={(event) => event.stopPropagation()}
+																	>
+																		{entry.model}
+																	</a>
+																) : (
+																	entry.model
+																)}{' '}
+																{isExpanded ? '▾' : '▸'}
+															</button>
+														</span>
+														<span role="cell" className={styles.simpleCell}>{formatResultType(entry)}</span>
+														<span role="cell" className={styles.simpleCell}>{entry.splitBreakdown ?? '—'}</span>
+														<span role="cell" className={styles.simpleCell}>{entry.datasetConfig ?? '—'}</span>
+														<span role="cell">
+															{entry.metrics.length > 0 ? (
+																<div className={styles.scoresCell}>
+																	{entry.metrics.map((metric) => (
+																		<span key={metric.key}>{metric.label}: {metric.value.toFixed(3)}</span>
+																	))}
+																</div>
+															) : (
+																<span className={styles.simpleCell}>{formatMetricScore(entry)}</span>
+															)}
+														</span>
+														<span role="cell">
+															<div className={styles.stackCell}>
+																<span>train {formatTimePerImage(entry.trainTimePerImage)}</span>
+																<span>inf {formatTimePerImage(entry.infTimePerImage)}</span>
+															</div>
+														</span>
+														<span role="cell" className={styles.simpleCell}>{entry.platform ?? '—'}</span>
+													</div>
+													{isExpanded && (
+														<div className={styles.notesRow}>
+															<p className={styles.notesLabel}>Notes</p>
+															<p className={styles.notesText}>{entry.notes ?? 'No additional notes for this result.'}</p>
+														</div>
+													)}
+												</Fragment>
+											);
+										})}
+									</div>
+								</div>
+							)}
+						</div>
+					) : (
+						<p className={styles.bodyText}>No leaderboard results have been submitted for this dataset yet.</p>
+					)}
+				</section>
 			</div>
 		</div>
 	);
