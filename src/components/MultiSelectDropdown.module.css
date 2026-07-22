@@ -7,6 +7,10 @@
 	z-index: 31;
 }
 
+.dropdownOpen {
+	z-index: 50;
+}
+
 .dropdownLabel {
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.68rem;

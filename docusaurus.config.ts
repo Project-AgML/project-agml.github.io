@@ -62,65 +62,21 @@ const config: Config = {
     navbar: {
       title: 'AgML',
       items: [
-        {to: '/datasets', label: 'Datasets', position: 'left'},
-        {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'agmlSidebar',
           position: 'left',
           label: 'Docs',
         },
+        {to: '/datasets', label: 'Datasets', position: 'left'},
+        {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
         {
           href: 'https://github.com/Project-AgML/AgML',
-          label: 'GitHub',
+          label: 'View on GitHub',
           position: 'right',
+          className: 'navbar__github-button',
         },
       ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Overview',
-              to: '/docs',
-            },
-          ],
-        },
-        {
-          title: 'Explore',
-          items: [
-            {
-              label: 'Dataset Search',
-              to: '/datasets',
-            },
-            {
-              label: 'Leaderboard',
-              to: '/leaderboard',
-            },
-            {
-              label: 'AgML Library',
-              href: 'https://github.com/Project-AgML/AgML',
-            },
-          ],
-        },
-        {
-          title: 'Project',
-          items: [
-            {
-              label: 'Code of Conduct',
-              to: '/docs/code-of-conduct',
-            },
-            {
-              label: 'License',
-              to: '/docs/license',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} AgML. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

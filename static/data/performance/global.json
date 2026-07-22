@@ -314,8 +314,10 @@
       "precision": 0.120098,
       "recall": 0.229333
     },
-    "crop_types": null,
-    "machine_learning_task": null,
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
     "variant": "zero-shot",
     "optimized": false,
     "platform": "cuda",
@@ -337,8 +339,10 @@
       "precision": 0.127236,
       "recall": 0.219556
     },
-    "crop_types": null,
-    "machine_learning_task": null,
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
     "variant": "zero-shot",
     "optimized": false,
     "platform": "cuda",
@@ -360,8 +364,10 @@
       "precision": 0.05224,
       "recall": 0.199556
     },
-    "crop_types": null,
-    "machine_learning_task": null,
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
     "variant": "zero-shot",
     "optimized": false,
     "platform": "cuda",

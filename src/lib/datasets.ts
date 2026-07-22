@@ -215,7 +215,11 @@ export function useDatasets(): { data: Dataset[]; loading: boolean; error: Error
   const [data, setData] = useState<Dataset[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const manifestUrls = DATASET_MANIFESTS.map((manifest) => useBaseUrl(manifest));
+  const resolvedManifestUrls = DATASET_MANIFESTS.map((manifest) => useBaseUrl(manifest));
+  // Memoized off the individual (stable) resolved URLs rather than reusing the array
+  // from .map() above, which is a new reference every render and would otherwise
+  // retrigger the effect below on every single render — an infinite fetch loop.
+  const manifestUrls = useMemo(() => resolvedManifestUrls, resolvedManifestUrls);
 
   useEffect(() => {
     let active = true;

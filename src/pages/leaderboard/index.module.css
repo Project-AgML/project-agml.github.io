@@ -161,15 +161,15 @@
 
 .leaderboardTable {
   width: 100%;
-  min-width: 1080px;
+  min-width: 980px;
   font-size: 0.85rem;
 }
 
 .tableRow {
   display: grid;
   grid-template-columns:
-    minmax(110px, 0.9fr) minmax(200px, 2fr) minmax(120px, 1.1fr) minmax(120px, 1.1fr)
-    minmax(120px, 1.1fr) minmax(120px, 1.1fr) minmax(140px, 1.3fr) minmax(80px, 0.7fr);
+    minmax(100px, 1.1fr) minmax(200px, 2.4fr) minmax(120px, 1.1fr) minmax(120px, 1.1fr)
+    minmax(120px, 1.1fr) minmax(120px, 1.1fr) minmax(90px, 0.8fr) minmax(78px, 0.4fr);
   gap: 0.6rem;
   align-items: center;
 }

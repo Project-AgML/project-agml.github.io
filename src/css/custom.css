@@ -101,6 +101,7 @@ body,
 #__docusaurus {
   background: var(--agml-page-bg);
   color: var(--agml-text);
+  overflow-x: hidden;
 }
 
 body {
@@ -191,8 +192,15 @@ body {
   color: var(--agml-text);
 }
 
-.footer {
-  border-top: 1px solid var(--agml-border);
+.navbar__github-button .navbar__link {
+  color: var(--ifm-navbar-background-color);
+  background: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.navbar__github-button .navbar__link:hover {
+  background: var(--ifm-color-primary-dark);
+  color: var(--ifm-navbar-background-color);
 }
 
 .theme-doc-markdown {

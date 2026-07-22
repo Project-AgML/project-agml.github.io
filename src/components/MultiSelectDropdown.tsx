@@ -18,7 +18,7 @@ export function MultiSelectDropdown({
 	const format = formatOption ?? ((value: string) => value);
 
 	return (
-		<div className={styles.dropdown} data-dropdown={label}>
+		<div className={`${styles.dropdown} ${open ? styles.dropdownOpen : ''}`} data-dropdown={label}>
 			<label className={styles.dropdownLabel}>{label}</label>
 			<button
 				type="button"

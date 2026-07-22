@@ -18,6 +18,14 @@ function toLabel(value: string) {
   return value.replace(/_/g, ' ');
 }
 
+function shortTaskLabel(value: string) {
+  const lower = value.toLowerCase();
+  if (lower.includes('classif')) return 'Classification';
+  if (lower.includes('detect')) return 'Detection';
+  if (lower.includes('segment')) return 'Segmentation';
+  return toLabel(value);
+}
+
 function percentileValue(entry: GlobalLeaderboardEntry, field: SortField) {
   switch (field) {
     case 'f1':
@@ -201,7 +209,7 @@ export default function GlobalLeaderboardPage() {
 
         <div className={styles.body}>
           <aside className={styles.sidebar}>
-            <CheckboxFilterGroup label="CV Task" options={mlTaskOptions} selected={mlTasks} onToggle={(value) => toggleValue(setMlTasks, value)} formatOption={toLabel} />
+            <CheckboxFilterGroup label="CV Task" options={mlTaskOptions} selected={mlTasks} onToggle={(value) => toggleValue(setMlTasks, value)} formatOption={shortTaskLabel} />
             <div className={styles.filterGroup}>
               <MultiSelectDropdown label="Crop" options={cropTypeOptions} selected={cropTypes} onToggle={(value) => toggleValue(setCropTypes, value)} formatOption={toLabel} />
             </div>
@@ -282,7 +290,7 @@ export default function GlobalLeaderboardPage() {
                         >
                           <span role="cell">
                             <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
-                              {entry.machineLearningTask ? toLabel(entry.machineLearningTask) : 'Unknown'}
+                              {entry.machineLearningTask ? shortTaskLabel(entry.machineLearningTask) : 'Unknown'}
                             </span>
                           </span>
                           <span role="cell">

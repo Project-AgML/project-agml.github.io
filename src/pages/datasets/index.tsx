@@ -319,10 +319,14 @@ export default function DatasetBrowserPage() {
           Object.fromEntries(
             filterOptions[filter.key].map((value) => [
               value,
-              safeData.filter((dataset) => {
-                const fieldValue = dataset[filter.field] as string | string[] | null | undefined;
-                return Array.isArray(fieldValue) ? fieldValue.includes(value) : fieldValue === value;
-              }).length,
+              new Set(
+                safeData
+                  .filter((dataset) => {
+                    const fieldValue = dataset[filter.field] as string | string[] | null | undefined;
+                    return Array.isArray(fieldValue) ? fieldValue.includes(value) : fieldValue === value;
+                  })
+                  .map((dataset) => dataset.parent_dataset ?? dataset.name)
+              ).size,
             ])
           ),
         ])
@@ -356,6 +360,10 @@ export default function DatasetBrowserPage() {
 
   const displayed = useMemo(() => filtered.slice(0, showCount), [filtered, showCount]);
   const hasMore = filtered.length > showCount;
+  const distinctDatasetCount = useMemo(
+    () => new Set(filtered.map((dataset) => dataset.parent_dataset ?? dataset.name)).size,
+    [filtered]
+  );
   const selectedDataset = useMemo(
     () => safeData.find((dataset) => dataset.name === selectedDatasetName) ?? null,
     [safeData, selectedDatasetName]
@@ -398,7 +406,7 @@ export default function DatasetBrowserPage() {
             className={styles.searchInput}
           />
           <div className={styles.toolbarRight}>
-            <span className={styles.resultCount}>{filtered.length.toLocaleString()} datasets</span>
+            <span className={styles.resultCount}>{distinctDatasetCount.toLocaleString()} datasets</span>
             <span className={styles.resultCount}>
               {stats.imageCount.toLocaleString()} images · {stats.taskTypeCount} task types
             </span>
