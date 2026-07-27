@@ -18,14 +18,13 @@ through the Hugging Face Hub, which is how all new datasets are distributed.
 Currently, we have image classification, object detection, and semantic segmentation datasets available
 in AgML. Every dataset is published as a [Hugging Face `datasets`](https://huggingface.co/docs/datasets) repository
 under the `Project-AgML` organization, backed by Parquet, with a `dataset_info` config describing its columns and
-splits — not raw folders of images uploaded as-is. The column layout depends on the task:
+splits. The column layout depends on the task:
 
-- **Image Classification**: an `image` column plus a `label` `ClassLabel` column.
+- **Image Classification**: an `image` column plus a `label` column of type `ClassLabel`.
 - **Object Detection**: an `image` column plus an `objects` column holding COCO-style bounding boxes and category IDs.
 - **Semantic Segmentation**: an `image` column plus a `mask` column (single-channel `L`-mode image).
 
-`HuggingFaceDataLoader` (in `agml/data/hf_loader.py`) relies on these exact column names to cast `image`/`mask` to
-the Hugging Face `Image` feature and to detect image-typed `label` columns, so new datasets must follow this schema
+`HuggingFaceDataLoader` (in `agml/data/hf_loader.py`) relies on these names to verify that columns were cast correctly correctly upon loading, so new datasets must follow this schema
 for the loader to work.
 
 #### Image Classification
@@ -94,13 +93,13 @@ own zip storage.
 
 - Make sure each image is in the range of 0-255 in integers as opposed to 0-1 as floats. This will prevent any loss of data that
   could adversely affect training.
-- For a semantic segmentation dataset, put the masks in a `png` format as opposed to `jpg` or other.
+- For a semantic segmentation dataset, ensure the masks are in a `png` format as opposed to `jpg` or other.
 
 ### Structuring the Hugging Face Repository
 
 Once the dataset is built into a `datasets.Dataset`/`DatasetDict` with the columns described above, push it to a new
-dataset repository on the Hub named `Project-AgML/<dataset name>` (for example,
-`Project-AgML/apple_flower_segmentation`) with `ds.push_to_hub("Project-AgML/<dataset name>")`. This uploads the data
+dataset repository on the Hub (for example,
+`Project-AgML/apple_flower_segmentation`) with `ds.push_to_hub("<org-name>/<dataset name>")`. This uploads the data
 as Parquet shards and writes the `dataset_info` config (features, splits, sizes) into the repository's `README.md`
 front matter automatically — you don't need to hand-write that config. Add to the generated `README.md`:
 
