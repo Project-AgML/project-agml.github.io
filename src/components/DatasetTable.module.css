@@ -51,8 +51,8 @@
 
 .searchInput:focus {
   outline: none;
-  border-color: #2f8a5b;
-  box-shadow: 0 0 0 3px rgba(47, 138, 91, 0.15);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--agml-accent-soft);
 }
 
 .tableWrap {
@@ -79,7 +79,7 @@
   appearance: none;
   border: none;
   background: transparent;
-  color: #2f8a5b;
+  color: var(--ifm-color-primary);
   padding: 0;
   font: inherit;
   cursor: pointer;
@@ -92,7 +92,7 @@
 }
 
 .datasetButton:focus-visible {
-  outline: 2px solid #2f8a5b;
+  outline: 2px solid var(--ifm-color-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }

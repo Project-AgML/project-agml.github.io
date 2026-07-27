@@ -215,7 +215,11 @@ export function useDatasets(): { data: Dataset[]; loading: boolean; error: Error
   const [data, setData] = useState<Dataset[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const manifestUrls = DATASET_MANIFESTS.map((manifest) => useBaseUrl(manifest));
+  const resolvedManifestUrls = DATASET_MANIFESTS.map((manifest) => useBaseUrl(manifest));
+  // Memoized off the individual (stable) resolved URLs rather than reusing the array
+  // from .map() above, which is a new reference every render and would otherwise
+  // retrigger the effect below on every single render — an infinite fetch loop.
+  const manifestUrls = useMemo(() => resolvedManifestUrls, resolvedManifestUrls);
 
   useEffect(() => {
     let active = true;
@@ -339,4 +343,28 @@ export function useDatasetOptions(data: Dataset[]) {
 export function formatDisplayLocation(value: string | string[] | null | undefined): string {
   if (value == null) return '—';
   return Array.isArray(value) ? value.join(', ') : value;
+}
+
+export interface DatasetStats {
+  datasetCount: number;
+  imageCount: number;
+  taskTypeCount: number;
+}
+
+// Shared by the homepage stats row and the dataset search page's hero stats, so both
+// report the same real numbers instead of two slightly different ad-hoc counts.
+export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
+  const topLevel = datasets.filter((dataset) => !dataset.parent_dataset);
+  const imageCount = topLevel
+    .filter((dataset) => !dataset.name.startsWith('iNatAg-mini'))
+    .reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0);
+  const taskTypeCount = new Set(
+    datasets.map((dataset) => dataset.machine_learning_task).filter((task): task is string => Boolean(task))
+  ).size;
+
+  return {
+    datasetCount: topLevel.length,
+    imageCount,
+    taskTypeCount,
+  };
 }

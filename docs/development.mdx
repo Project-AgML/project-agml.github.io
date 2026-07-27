@@ -10,211 +10,216 @@ Thank you for choosing to contribute to AgML!
 ## Contributing Data
 
 If you've found (or already have) a new dataset and you want to contribute the dataset to AgML,
-then the instructions below will help you format and the data to the AgML standard.
+then the instructions below will help you format the data to the AgML standard and publish it
+through the Hugging Face Hub, which is how all new datasets are distributed.
 
 ### Dataset Formats
 
 Currently, we have image classification, object detection, and semantic segmentation datasets available
-in AgML. These sources are synthesized to standard annotation formats, namely the following:
+in AgML. Every dataset is published as a [Hugging Face `datasets`](https://huggingface.co/docs/datasets) repository
+under the `Project-AgML` organization, backed by Parquet, with a `dataset_info` config describing its columns and
+splits. The column layout depends on the task:
 
-- **Image Classification**: Image-To-Label-Number
-- **Object Detection**: [COCO JSON](https://cocodataset.org/#format-data)
-- **Semantic Segmentation**: Dense Pixel-Wise
+- **Image Classification**: an `image` column plus a `label` column of type `ClassLabel`.
+- **Object Detection**: an `image` column plus an `objects` column holding COCO-style bounding boxes and category IDs.
+- **Semantic Segmentation**: an `image` column plus a `mask` column (single-channel `L`-mode image).
+
+`HuggingFaceDataLoader` (in `agml/data/hf_loader.py`) relies on these names to verify that columns were cast correctly correctly upon loading, so new datasets must follow this schema
+for the loader to work.
 
 #### Image Classification
 
-Image classification datasets are organized in the following directory tree:
+Build a `datasets.Dataset` (or `DatasetDict`, if you have predefined splits) with two columns:
 
-```
-<dataset name>
-    ├── <label 1>
-    │   ├── image1.png
-    │   ├── image2.png
-    │   └── image3.png
-    └── <label 2>
-        ├── image1.png
-        ├── image2.png
-        └── image3.png
+- `image`: the image, as a Hugging Face `Image` feature.
+- `label`: a `ClassLabel` feature naming each class (e.g. `"Healthy Leaf"`, `"Bacterial Blight"`).
+
+```python
+from datasets import Dataset, Features, Image, ClassLabel
+
+features = Features({
+    "image": Image(),
+    "label": ClassLabel(names=["label_1", "label_2"]),
+})
+ds = Dataset.from_dict({"image": image_paths, "label": labels}, features=features)
 ```
 
-The `AgMLDataLoader` generates a mapping between each of the label names "label 1", "label 2", etc.,
-and a numerical value.
+`HuggingFaceDataLoader` reads the `ClassLabel` names as the mapping between each label and its numerical value —
+you don't need to build that mapping yourself.
 
 #### Object Detection
 
-Object detection datasets are constructed using COCO JSON formatting. For a general overview, see
-[https://cocodataset.org/#format-data](https://cocodataset.org/#format-data).
-Another good resource is [https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/cd-transform-coco.html](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/cd-transform-coco.html).
-Once you have the images and the bounding box annotations, this involves generating a dictionary with four keys:
+Store bounding boxes as an `objects` column: a dictionary (per row) with parallel arrays for the boxes and their
+category IDs, alongside an `image` column. For example:
 
-1. `images`: A list of dictionaries with the following items:
-    - The image file name (without the parent directory!) in `file_name`
-    - The ID (a unique number, usually from 1 to num_images) in `id`,
-    - The height/width of the image in `height` and `width`, respectively.
-2. `annotations`: A list of dictionaries with each dictionary representing a _unique_ bounding box (do not stack multiple bounding boxes into a single dictionary, even if they are for the same image!), and containing:
-    - The area of the bounding box in `area`.
-    - The bounding box itself in `bbox`. **Note**: The bounding box should have four coordinates. The first two are the x, y of the top-left corner of the bounding box, the other two are its height and width.
-    - The class label (numerical) of the image in `category_id`.
-    - The **ID** (NOT the filename) of the image it corresponds to in `image_id`.
-    - The ID of the bounding box in `id`. For instance, if a unique image has six corresponding bounding boxes, then each of them would be given an `id` from 1-6.
-    - `iscrowd` should be set to 0 by default, unless the dataset explicitly comes with `iscrowd` as 1.
-    - `ignore` should be 0 by default.
-    - `segmentation` only applies for instance segmentation datasets. If converting an instance segmentation dataset to object detection, you can leave the polygonal segmentation as is. Otherwise, put this as an empty list.
-3. `category`: A list of dictionaries with each category, where each of these dictionaries contains:
-    - The human-readable name of the class (e.g., "strawberry") in `name`.
-    - The supercategory of the class, if there are nested classes, in `supercategory`. Otherwise, just leave this as the string `"none"`.
-    - The numerical ID of the class in `id`.
-4. `info`: A single dictionary with metadata and information about the dataset:
-    - `description`: A basic description of the dataset.
-    - `url`: The URL from which the dataset was acquired.
-    - `version`: The dataset version. Set to `1.0` if unknown.
-    - `year`: The year in which the dataset was released.
-    - `contributor`: The author(s) of the dataset.
-    - `date_created`: The date when the dataset was published. Give an approximate year if unknown.
-
-The dictionary containing this information should be written to a file called `annotations.json`, and the file structure will be:
-
+```python
+{
+    "image": <PIL.Image>,
+    "objects": {
+        "bbox": [[x_center, y_center, width, height], ...],
+        "category": [0, 0, 1, ...],
+    },
+}
 ```
-<dataset name>
-    ├── annotations.json
-    └── images
-        ├── image1.png
-        ├── image2.png
-        └── image3.png
-```
+
+The categories should map back to human-readable names — either via a `ClassLabel` feature on `objects.category`,
+or documented in the dataset card's `README.md`. If you're starting from a COCO-formatted `annotations.json`, use
+`datasets`' built-in COCO conversion utilities (or `imagefolder` with a `metadata.jsonl`) to build the `objects`
+column rather than uploading the raw COCO file directly.
 
 #### Semantic Segmentation
 
-Semantic segmentation datasets are constructed using pixel-wise annotation masks. Each image in the dataset has a corresponding
-annotation mask. These masks have the following properties:
+Use an `image` column alongside a `mask` column, where the mask is a single-channel (`mode: L`) image of the same
+size as its corresponding image:
 
-1. Two-dimensional, so no channel shape. Their complete shape will be `(image_height, image_width)`.
-2. Each of the pixels will be a numerical class label or `0` for background.
+```python
+from datasets import Dataset, Features, Image
 
-The directory tree should look like follows:
-
+features = Features({
+    "image": Image(),
+    "mask": Image(),  # mode "L": each pixel is a numerical class label, or 0 for background
+})
+ds = Dataset.from_dict({"image": image_paths, "mask": mask_paths}, features=features)
 ```
-<dataset name>
-    ├── annotations
-    │   ├── mask1.png
-    │   ├── mask2.png
-    │   └── mask3.png
-    └── images
-        ├── image1.png
-        ├── image2.png
-        └── image3.png
-```
-
 
 ## Contributing a Dataset
 
 If you've found a new dataset that *isn't already being used* in AgML and you want to add it, there's a few things you
-need to do.
-
-Any preprocessing code being used for the dataset can be kept in `agml/_internal/preprocess.py`, by adding an `elif` statement
-to the `preprocess()` method with the dataset name. If there is no preprocessing code, then just put a `pass` statement in the block.
+need to do. New datasets are hosted as their own repositories on the [Hugging Face Hub](https://huggingface.co/Project-AgML)
+under the `Project-AgML` organization, and loaded through `HuggingFaceDataLoader` rather than being bundled into AgML's
+own zip storage.
 
 ### Some Things to Check
 
 - Make sure each image is in the range of 0-255 in integers as opposed to 0-1 as floats. This will prevent any loss of data that
   could adversely affect training.
-- For a semantic segmentation dataset, put the masks in a `png` format as opposed to `jpg` or other.
+- For a semantic segmentation dataset, ensure the masks are in a `png` format as opposed to `jpg` or other.
 
-### Compiling the Dataset
+### Structuring the Hugging Face Repository
 
-After processing and standardizing the dataset, make sure that the dataset is organized in one of the formats above, and then go to the parent directory
-of the directory of the dataset (for example, if the dataset is in `/root/my_new_dataset`, go to `/root`). Then run the following command:
+Once the dataset is built into a `datasets.Dataset`/`DatasetDict` with the columns described above, push it to a new
+dataset repository on the Hub (for example,
+`Project-AgML/apple_flower_segmentation`) with `ds.push_to_hub("<org-name>/<dataset name>")`. This uploads the data
+as Parquet shards and writes the `dataset_info` config (features, splits, sizes) into the repository's `README.md`
+front matter automatically — you don't need to hand-write that config. Add to the generated `README.md`:
 
-```shell
-zip -r my_new_dataset.zip my_new_dataset -x ".*"
+- A description of the dataset, its original source, and its license. Hugging Face renders this on the dataset's page.
+- A `LICENSE` file, if the source dataset ships with one.
+
+If the dataset has an augmented counterpart (e.g. extra synthetic samples), upload it as a separate config within the
+same repository rather than a separate repository, since `HuggingFaceDataLoader` selects configs by name:
+
+```python
+ds.push_to_hub("Project-AgML/my_new_dataset", config_name="augmented")
+
+# ... which is later loaded with:
+loader = HuggingFaceDataLoader("Project-AgML/my_new_dataset", "augmented")
 ```
 
-**If running on MacOS**, use the following command:
+### Registering the Dataset
 
-```shell
-zip -r my_new_dataset.zip my_new_dataset -x ".*"  -x "__MACOSX"
-```
-
-### Updating the Source Files
-
-Next, you need to update the `public_datasources.json` and `source_citations.json` files. These two can be found
-in the `agml/_assets` folder. You will need to update the `public_datasources.json` file in the following way:
+Once the dataset is live on the Hub, it needs to be registered in this website's catalog so it shows up in the
+dataset search and leaderboard pages. This repository (`project-agml.github.io`) stores that catalog as a JSON array
+at [`static/data/hf_datasets.json`](https://github.com/Project-AgML/project-agml.github.io/blob/main/static/data/hf_datasets.json).
+Add a new object to that array for your dataset:
 
 ```json
-    "my_new_dataset": {
-        "classes": {
-            "1": "class_1",
-            "2": "class_2",
-            "3": "class_3"
-        },
-        "ml_task": "See the table for the different dataset types.",
-        "ag_task": "The agricultural task that is associated with the dataset.",
-        "location": {
-            "continent": "The continent the dataset was collected on.",
-            "country": "The country the dataset was collected in."
-        },
-        "sensor_modality": "Usually rgb, but can include other image modalities.",
-        "real_synthetic": "Are the images real or synthetically generated?",
-        "platform": "handheld or ground",
-        "input_data_format": "See the table for the different dataset types.",
-        "annotation_format": "See the table for the different dataset types.",
-        "n_images": "The total number of images in the dataset.",
-        "docs_url": "Where can the user find the most clear information about the dataset?"
-    }
+{
+    "name": "my_new_dataset",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/my_new_dataset",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": ["United States"],
+    "environment": "field",
+    "crop_types": ["apple"],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "ground",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 1200,
+    "documentation": "my_new_dataset",
+    "examples_image_url": "/img/agml/sample_images/my_new_dataset_sample.webp",
+    "license": "cc-by-4.0",
+    "citation": null,
+    "parent_dataset": null,
+    "zip_size_bytes": 214000000,
+    "stats_mean": null,
+    "stats_std": null
+}
 ```
 
-**Note**: If the dataset is captured in multiple countries or you don't know where it is from,
-then put "worldwide" for both "continent" and "country".
+The table below describes every field the catalog reads (see the `Dataset` type in
+[`src/lib/datasets.ts`](https://github.com/Project-AgML/project-agml.github.io/blob/main/src/lib/datasets.ts)).
+`name` is the only field that is strictly required for an entry to load at all, but the search, filter, and detail
+views depend on the rest — leave a field `null` rather than omitting it if the value is genuinely unknown.
 
-**Note**: If there is no explicit documentation for the dataset, then reach out to the AgML team
-regarding what you should put. It is important that we have references to as many datasets as possible,
-to allow users to acquire raw data as they desire.
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `name` | **Yes** | The dataset's identifier. Must match the Hugging Face repo name after `Project-AgML/`. |
+| `source` | **Yes** | Set to `"huggingface"` for datasets hosted on the Hub. |
+| `hf_link` | **Yes** | Full URL to the dataset's page on the Hugging Face Hub. |
+| `machine_learning_task` | **Yes** | One of `image_classification`, `object_detection`, `semantic_segmentation` (see table below). |
+| `agricultural_task` | Recommended | The agricultural task the dataset supports (e.g. `disease_classification`, `fruit_detection`). Keep it broad but agriculture-specific — see the guidance below. |
+| `location` | Recommended | Array of countries the data was collected in, e.g. `["Italy"]`. Use `["worldwide"]` if collected across many countries or unknown. |
+| `environment` | Recommended | `field`, `greenhouse`, `lab`, or similar. |
+| `crop_types` | Recommended | Array of crop names covered by the dataset, lowercase (e.g. `["grapes"]`). |
+| `sensor_modality` | Recommended | Usually `rgb`, but can include others such as `lidar`, `multispectral`. |
+| `real_or_synthetic` | Recommended | `real` or `synthetic`. |
+| `platform` | Recommended | How the images were captured, e.g. `handheld`, `ground`, `drone`. |
+| `input_data_format` | **Yes** | See the table below. |
+| `annotation_format` | **Yes** | See the table below. |
+| `num_images` | **Yes** | Total number of images in the dataset. Drives the "Labeled images" stat on the homepage. |
+| `documentation` | Recommended | A short doc slug/description, or a URL if the clearest documentation lives elsewhere. |
+| `examples_image_url` | Recommended | Path to a sample-image thumbnail under `static/img/agml/sample_images/`, used in dataset cards and the homepage marquee. |
+| `license` | **Yes** | The dataset's license identifier (e.g. `cc-by-4.0`). Leave `null` only if truly unlicensed. |
+| `citation` | Recommended | The paper or library to cite. `null` if none exists. |
+| `parent_dataset` | Only for variants | Set to the parent's `name` if this entry is an augmented/derived variant of another catalog entry. |
+| `zip_size_bytes` | Optional | Approximate size of the dataset, used for download-size display. |
+| `stats_mean` / `stats_std` | Optional | Per-channel normalization statistics, if precomputed. |
+| `augmented_num_images` / `augmented_zip_size_bytes` | Only for variants | Image count / size of the augmented counterpart, if applicable. |
 
+#### `machine_learning_task`, `input_data_format`, and `annotation_format`
 
-#### `ml_task` and `ag_task`
+These three fields are coupled and should be taken from the same row:
 
-The ML task can be quickly defined from the following table:
+| Dataset Format | `machine_learning_task` | `input_data_format` | `annotation_format` | HF column |
+| :------------: | :----------------------: | :------------------: | :-----------------: | :-------: |
+| Image Classification | `image_classification` | `image_folder` | `classLabel` | `label` |
+| Object Detection | `object_detection` | `image_folder` | `boundingBox` | `objects` |
+| Semantic Segmentation | `semantic_segmentation` | `image_folder` | `segmentationMask` | `mask` |
 
-| Dataset Format | `ml_task` | `annotation_format` |
-| :------------: | :-------: | :-----------------: |
-| Image Classification | `image_classification` | `directory_names` |
-| Object Detection | `object_detection` | `coco_json` |
-| Semantic Segmentation | `semantic_segmentation` | `image` |
+`input_data_format` is `image_folder` for all Hugging Face-hosted datasets — it refers to how the loader accesses the
+images (via the Hub, regardless of the underlying Parquet storage), not a literal local folder.
 
+#### `agricultural_task`
 
-The `ag_task` field is more broadly defined - it should be the main task that the dataset is associated with.
-For instance, any of the `*_leaf_disease_classification` datasets, alongside `bean_disease_uganda`, are all 
-associated with the `disease_classification` task. The `apple_segmentation_minnesota` dataset has the label
-`fruit_segmentation`. See `agml/_assets/public_datasources.json` for various examples of valid `ag_tasks`.
-Generally, you should keep this field broad enough that it encompasses the dataset (e.g., instead of a specific
-fruit, just put 'fruit' in general), but not as broad as the `ml_task`: it should have an agricultural component.
+This field is more broadly defined than `machine_learning_task` — it should describe the main agricultural task the
+dataset supports. For instance, any of the `*_leaf_disease_classification` datasets are associated with the
+`disease_classification` task, while a fruit-segmentation dataset would use `fruit_segmentation`. Browse
+`static/data/hf_datasets.json` for existing examples of valid `agricultural_task` values before inventing a new one.
+Keep it broad enough to describe the dataset in general (e.g. `fruit` rather than a specific cultivar), but not as
+broad as `machine_learning_task` — it should always carry an agricultural component.
 
-The `source_citations.json` file should be updated this way:
+**Note**: If there is no explicit documentation for the dataset, then reach out to the AgML team regarding what you
+should put. It is important that we have references to as many datasets as possible, to allow users to acquire raw
+data as they desire.
 
-```json
-    "my_new_dataset": {
-        "license": "The license being used by the dataset.",
-        "citation": "The paper/library to cite for the dataset."
-    }
-```
+### Opening the Pull Request
 
-If the dataset has no license or has no citation, leave the corresponding lines blank.
-
-### Uploading the Dataset
-
-Once you've readied the dataset, create a new pull request on the AgML repository.
-We will then review the changes and review next steps for adding the dataset into AgML's public data storage.
-
-
+Once the dataset is uploaded to the Hub and its entry is added to `static/data/hf_datasets.json`, open a pull request
+against the `project-agml.github.io` repository with the JSON change (and the sample-image asset, if you added one).
+We'll review the entry and confirm the Hugging Face repository is publicly accessible before merging.
 
 ## Quality Checks
 
 When contributing a dataset, you should abide by the following guidelines to ensure compatibility with AgML and ensure that there are no problems for users who are working with the datasets:
 
-- Check that the dataset can be properly downloaded and loaded. It is best to instantiate an `AgMLDataLoader` and call `loader.show_sample()` in order to validate that the images and annotations are in the right format.
-- Make sure you have run `python3 scripts/generate_normalization_info.py --dataset <name>` and `python3 scripts/generate_shape_info.py --dataset <name>` to generate the dataset normalization and shape information.
-- Make sure that there is an entry in `agml/_internal/preprocess.py` for the dataset. Specifically, you should have a method in the class that makes up the file with the name of the method being the dataset, and the preprocessing code being that of the dataset.
-  
+- Check that the dataset can be properly downloaded and loaded. It is best to instantiate a `HuggingFaceDataLoader` for the dataset and inspect a few samples to validate that the images and annotations are in the right format.
+- Confirm the entry you added to `static/data/hf_datasets.json` is valid JSON and that `num_images`, `machine_learning_task`, `input_data_format`, and `annotation_format` all match the uploaded data.
+- Confirm the dataset appears correctly in the dataset search page (`/datasets`) after building the site locally, including its sample image and metadata modal.
+
 
 ## Development Guidelines
 

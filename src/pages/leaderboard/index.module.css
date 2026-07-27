@@ -1,0 +1,336 @@
+.page {
+  background: var(--agml-page-bg);
+  color: var(--agml-text);
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--agml-border);
+  background: var(--agml-surface);
+}
+
+.searchInput {
+  flex: 1;
+  max-width: 480px;
+  border-radius: 6px;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  padding: 0.55rem 0.8rem;
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.85rem;
+  color: var(--agml-text);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--agml-accent-soft);
+}
+
+.toolbarRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resultCount {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+  white-space: nowrap;
+}
+
+.clearButton {
+  border: 1px solid var(--agml-border-strong);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--agml-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--agml-border);
+  background: var(--agml-surface-soft);
+  padding: 1.25rem 1.1rem;
+  overflow-y: auto;
+}
+
+.filterGroup {
+  margin-bottom: 1.6rem;
+}
+
+.filterGroupLabel {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--agml-muted);
+  margin: 0 0 0.7rem;
+}
+
+.filterGroupOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--agml-text);
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1.5px solid var(--agml-border-strong);
+  background: var(--agml-page-bg);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.checkbox:hover {
+  border-color: var(--agml-muted);
+}
+
+.checkbox:checked {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.checkbox::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-color: var(--agml-page-bg);
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox:checked::after {
+  opacity: 1;
+}
+
+.results {
+  flex: 1;
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.status {
+  color: var(--agml-muted);
+}
+
+.tableWrap {
+  border: 1px solid var(--agml-border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.leaderboardTable {
+  width: 100%;
+  min-width: 980px;
+  font-size: 0.85rem;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns:
+    minmax(100px, 1.1fr) minmax(200px, 2.4fr) minmax(120px, 1.1fr) minmax(120px, 1.1fr)
+    minmax(120px, 1.1fr) minmax(120px, 1.1fr) minmax(90px, 0.8fr) minmax(78px, 0.4fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.tableRow[role='row']:first-child {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--agml-muted);
+  background: var(--agml-tag-bg);
+  padding: 0.5rem 0.85rem;
+}
+
+.tableRow:not(:first-child) {
+  padding: 0.65rem 0.85rem;
+  border-top: 1px solid var(--agml-border);
+}
+
+.tableRow [role='cell'],
+.tableRow [role='columnheader'] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sortHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.sortHeaderActive {
+  color: var(--ifm-color-primary);
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+.clickableRow:hover {
+  background: var(--agml-accent-soft);
+}
+
+.modelName {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 500;
+  color: var(--agml-text);
+  text-decoration: underline dashed var(--agml-muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.taskBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.badgeClassification {
+  background: var(--agml-badge-classification-bg);
+  color: var(--agml-badge-classification-fg);
+}
+
+.badgeDetection {
+  background: var(--agml-badge-detection-bg);
+  color: var(--agml-badge-detection-fg);
+}
+
+.badgeSegmentation {
+  background: var(--agml-badge-segmentation-bg);
+  color: var(--agml-badge-segmentation-fg);
+}
+
+.badgeOther {
+  background: var(--agml-badge-other-bg);
+  color: var(--agml-badge-other-fg);
+}
+
+.metricCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 110px;
+}
+
+.metricBarTrack {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--agml-surface-soft);
+  overflow: hidden;
+}
+
+.metricBarFill {
+  height: 100%;
+  background: var(--ifm-color-primary);
+}
+
+.metricLabel {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.72rem;
+  color: var(--agml-muted);
+  flex-shrink: 0;
+}
+
+.metricEmpty {
+  color: var(--agml-muted);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.paginationButton {
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--agml-text);
+  cursor: pointer;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationStatus {
+  font-size: 0.82rem;
+  color: var(--agml-muted);
+}
+
+@media (max-width: 996px) {
+  .body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--agml-border);
+  }
+}

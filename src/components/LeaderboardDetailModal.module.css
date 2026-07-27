@@ -1,0 +1,245 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--agml-modal-overlay);
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  width: min(1040px, 95vw);
+  max-height: min(88vh, 900px);
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  box-shadow: var(--agml-shadow-strong);
+  color: var(--agml-text);
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.taskBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.badgeClassification {
+  background: var(--agml-badge-classification-bg);
+  color: var(--agml-badge-classification-fg);
+}
+
+.badgeDetection {
+  background: var(--agml-badge-detection-bg);
+  color: var(--agml-badge-detection-fg);
+}
+
+.badgeSegmentation {
+  background: var(--agml-badge-segmentation-bg);
+  color: var(--agml-badge-segmentation-fg);
+}
+
+.badgeOther {
+  background: var(--agml-badge-other-bg);
+  color: var(--agml-badge-other-fg);
+}
+
+.resultTypeBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
+  display: inline-block;
+}
+
+.title {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+}
+
+.summaryLine {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+  margin: 0;
+}
+
+.closeButton {
+  flex: 0 0 auto;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-soft);
+  color: var(--agml-text);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: var(--agml-border);
+}
+
+.sectionTitle {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--agml-muted);
+  margin: 0 0 0.65rem;
+}
+
+.tableWrap {
+  border: 1px solid var(--agml-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  font-size: 0.72rem;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.4fr) 70px 100px minmax(280px, 1.6fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.tableRow[role='row']:first-child {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--agml-muted);
+  background: var(--agml-tag-bg);
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+}
+
+.tableRow:not(:first-child) {
+  padding: 0.55rem 0.75rem;
+  border-top: 1px solid var(--agml-border);
+}
+
+.tableRow > [role='columnheader'] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.simpleCell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+.clickableRow:hover {
+  background: var(--agml-accent-soft);
+}
+
+.datasetCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.datasetName {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--ifm-code-font-family);
+  color: var(--agml-text);
+  text-decoration: underline dashed var(--agml-muted);
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expandChevron {
+  color: var(--agml-muted);
+  font-size: 0.7rem;
+}
+
+.viewDatasetLink {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.625rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.viewDatasetLink:hover {
+  background: var(--ifm-color-primary);
+  color: var(--agml-page-bg);
+  text-decoration: none;
+}
+
+.scoresCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-family: var(--ifm-code-font-family);
+  color: var(--ifm-color-primary);
+  font-size: 0.66rem;
+}
+
+.scoresCell span {
+  white-space: nowrap;
+}
+
+.scoresCell span span {
+  color: var(--agml-muted);
+}
+
+.notesRow {
+  padding: 0.5rem 0.75rem 0.75rem;
+  background: var(--agml-surface-soft);
+  border-top: 1px dashed var(--agml-border);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--agml-muted);
+}

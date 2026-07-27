@@ -2720,7 +2720,7 @@
       0.186
     ],
     "examples_image_url": "/img/agml/sample_images/banana_leaf_disease_classification_examples.webp",
-    "source": "agml",
+    "source": "huggingface",
     "license": "CC BY 4.0",
     "citation": "hailu, yordanos (2021), “Banana Leaf Disease Images”, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1",
     "crop_types": [
@@ -2753,7 +2753,7 @@
       0.169
     ],
     "examples_image_url": "/img/agml/sample_images/bean_disease_uganda_examples.webp",
-    "source": "agml",
+    "source": "huggingface",
     "license": "MIT",
     "citation": "",
     "crop_types": [
@@ -2780,7 +2780,7 @@
     "stats_mean": null,
     "stats_std": null,
     "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.webp",
-    "source": "agml",
+    "source": "huggingface",
     "license": "CC BY 4.0",
     "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
     "crop_types": [

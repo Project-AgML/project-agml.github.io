@@ -1,0 +1,377 @@
+[
+  {
+    "model": "google/siglip-base-patch16-224",
+    "dataset": "MoringaLeafNet_disease_classification",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 50
+    },
+    "scores": {
+      "f1": 0.320317,
+      "map": null,
+      "precision": 0.505885,
+      "recall": 0.399747
+    },
+    "crop_types": [
+      "moringa"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "openai/clip-vit-base-patch32",
+    "dataset": "MoringaLeafNet_disease_classification",
+    "percentiles": {
+      "f1": 50,
+      "map": null,
+      "precision": 50,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.297072,
+      "map": null,
+      "precision": 0.46061,
+      "recall": 0.423695
+    },
+    "crop_types": [
+      "moringa"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "kakaobrain/align-base",
+    "dataset": "MoringaLeafNet_disease_classification",
+    "percentiles": {
+      "f1": 0,
+      "map": null,
+      "precision": 0,
+      "recall": 0
+    },
+    "scores": {
+      "f1": 0.130136,
+      "map": null,
+      "precision": 0.407792,
+      "recall": 0.254646
+    },
+    "crop_types": [
+      "moringa"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/siglip-base-patch16-224",
+    "dataset": "ash_gourd_disease_classification",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 50,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.215341,
+      "map": null,
+      "precision": 0.175789,
+      "recall": 0.283302
+    },
+    "crop_types": [
+      "ash gourd"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "openai/clip-vit-base-patch32",
+    "dataset": "ash_gourd_disease_classification",
+    "percentiles": {
+      "f1": 50,
+      "map": null,
+      "precision": 0,
+      "recall": 0
+    },
+    "scores": {
+      "f1": 0.152805,
+      "map": null,
+      "precision": 0.139378,
+      "recall": 0.199623
+    },
+    "crop_types": [
+      "ash gourd"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "kakaobrain/align-base",
+    "dataset": "ash_gourd_disease_classification",
+    "percentiles": {
+      "f1": 0,
+      "map": null,
+      "precision": 100,
+      "recall": 50
+    },
+    "scores": {
+      "f1": 0.086037,
+      "map": null,
+      "precision": 0.207444,
+      "recall": 0.22084
+    },
+    "crop_types": [
+      "ash gourd"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/siglip-base-patch16-224",
+    "dataset": "cotton_leaf_disease_classification",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.313517,
+      "map": null,
+      "precision": 0.679998,
+      "recall": 0.410273
+    },
+    "crop_types": [
+      "cotton"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "openai/clip-vit-base-patch32",
+    "dataset": "cotton_leaf_disease_classification",
+    "percentiles": {
+      "f1": 50,
+      "map": null,
+      "precision": 50,
+      "recall": 50
+    },
+    "scores": {
+      "f1": 0.110828,
+      "map": null,
+      "precision": 0.109944,
+      "recall": 0.241157
+    },
+    "crop_types": [
+      "cotton"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "kakaobrain/align-base",
+    "dataset": "cotton_leaf_disease_classification",
+    "percentiles": {
+      "f1": 0,
+      "map": null,
+      "precision": 0,
+      "recall": 0
+    },
+    "scores": {
+      "f1": 0.100794,
+      "map": null,
+      "precision": 0.108849,
+      "recall": 0.224622
+    },
+    "crop_types": [
+      "cotton"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/siglip-base-patch16-224",
+    "dataset": "eggplant_leaf_disease_classification",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.299814,
+      "map": null,
+      "precision": 0.388911,
+      "recall": 0.362106
+    },
+    "crop_types": [
+      "eggplant"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "openai/clip-vit-base-patch32",
+    "dataset": "eggplant_leaf_disease_classification",
+    "percentiles": {
+      "f1": 50,
+      "map": null,
+      "precision": 50,
+      "recall": 0
+    },
+    "scores": {
+      "f1": 0.252379,
+      "map": null,
+      "precision": 0.318532,
+      "recall": 0.301476
+    },
+    "crop_types": [
+      "eggplant"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "kakaobrain/align-base",
+    "dataset": "eggplant_leaf_disease_classification",
+    "percentiles": {
+      "f1": 0,
+      "map": null,
+      "precision": 0,
+      "recall": 50
+    },
+    "scores": {
+      "f1": 0.239863,
+      "map": null,
+      "precision": 0.290847,
+      "recall": 0.307375
+    },
+    "crop_types": [
+      "eggplant"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "kakaobrain/align-base",
+    "dataset": "groundnut_leaf_disease_classification",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 50,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.157617,
+      "map": null,
+      "precision": 0.120098,
+      "recall": 0.229333
+    },
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/siglip-base-patch16-224",
+    "dataset": "groundnut_leaf_disease_classification",
+    "percentiles": {
+      "f1": 50,
+      "map": null,
+      "precision": 100,
+      "recall": 50
+    },
+    "scores": {
+      "f1": 0.145332,
+      "map": null,
+      "precision": 0.127236,
+      "recall": 0.219556
+    },
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "openai/clip-vit-base-patch32",
+    "dataset": "groundnut_leaf_disease_classification",
+    "percentiles": {
+      "f1": 0,
+      "map": null,
+      "precision": 0,
+      "recall": 0
+    },
+    "scores": {
+      "f1": 0.082803,
+      "map": null,
+      "precision": 0.05224,
+      "recall": 0.199556
+    },
+    "crop_types": [
+      "groundnut"
+    ],
+    "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  }
+]
