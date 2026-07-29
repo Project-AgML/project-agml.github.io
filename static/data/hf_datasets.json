@@ -5297,7 +5297,7 @@
   {
     "name": "MH_Weed16_weed_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "weed_detectuib",
+    "agricultural_task": "weed_detection",
     "location": "India",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -7646,7 +7646,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Cameroon",
-    "environment": "fie",
+    "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "corn"
@@ -7756,5 +7756,289 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/SapBark_64_variety_classification",
     "examples_image_url": "/img/agml/sample_images/SapBark_64_variety_classification_sample.webp"
+  },
+  {
+    "name": "soybean_harvest_damage_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "damage_segmentation",
+    "location": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Soybean"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "segmentationMask",
+    "num_images": 800,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109833",
+    "citation": "Chen, Man (2023), “Mechanical-harvest Soybean Images Dataset”, Mendeley Data, V2, doi: 10.17632/hwdtghttp7.2",
+    "zip_size_bytes": 330169353,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_harvest_damage_segmentation",
+    "examples_image_url": "/img/agml/sample_images/soybean_harvest_damage_segmentation_sample.webp"
+  },
+  {
+    "name": "RoCoLe_disease_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": "Ecuador",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Coffee"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 1560,
+    "classes": [
+      "healthy",
+      "red_spider_mite",
+      "rust_level_1",
+      "rust_level_2",
+      "rust_level_3",
+      "rust_level_4"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Parraga-Alava, Jorge; Cusme, Kevin; Loor, Angélica; Santander, Esneider (2019), “RoCoLe: A robusta coffee leaf images dataset ”, Mendeley Data, V2, doi: 10.17632/c5yvn32dzg.2",
+    "zip_size_bytes": 1580483988,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/RoCoLe_disease_detection",
+    "examples_image_url": "/img/agml/sample_images/RoCoLe_disease_detection_sample.webp"
+  },
+  {
+    "name": "coffee_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "Uganda",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "coffee"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 3254,
+    "classes": [
+      "unripe",
+      "ripening",
+      "ripe",
+      "spoiled",
+      "coffee_tree"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109952",
+    "citation": "Nakatumba-Nabende, Joyce; Katumba, Andrew; Sanya, Rahman; Tusubira, Jeremy; Murindanyi, Sudi; Namanya, Gloria; Nabiryo, Ann (2023), “Coffee and Cashew Nut Dataset”, Mendeley Data, V1, doi: 10.17632/r46c6bpfpf.1",
+    "zip_size_bytes": 1635292687,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/coffee_detection",
+    "examples_image_url": "/img/agml/sample_images/coffee_detection_sample.webp"
+  },
+  {
+    "name": "cashew_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": "Uganda",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cashew"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 3098,
+    "classes": [
+      "tree",
+      "flower",
+      "premature",
+      "unripe",
+      "ripe",
+      "spoiled"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109952",
+    "citation": "Nakatumba-Nabende, Joyce; Katumba, Andrew; Sanya, Rahman; Tusubira, Jeremy; Murindanyi, Sudi; Namanya, Gloria; Nabiryo, Ann (2023), “Coffee and Cashew Nut Dataset”, Mendeley Data, V1, doi: 10.17632/r46c6bpfpf.1",
+    "zip_size_bytes": 448838695,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cashew_detection",
+    "examples_image_url": "/img/agml/sample_images/cashew_detection_sample.webp"
+  },
+  {
+    "name": "chitrak_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Chitrak"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 10660,
+    "classes": [
+      "dried",
+      "healthy",
+      "unhealthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109929",
+    "citation": "Dhoka, Amit; Suryawanshi, Yogesh; PATIL, Kailas (2023), “Plumbago Zeylanica (Chitrak) Leaf Image Dataset”, Mendeley Data, V2, doi: 10.17632/twpv7hhmgb.2",
+    "zip_size_bytes": 2126067709,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/chitrak_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/chitrak_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "tomato_quality_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "quality_classification",
+    "location": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1986,
+    "augmented_num_images": 6000,
+    "augmented_zip_size_bytes": 3014398248,
+    "classes": [
+      "Fresh",
+      "Rotten"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109688",
+    "citation": "Khatun, Tania; Razzak, Abdur ; Islam, Md. Shofiul ; Uddin, Prof. Dr. Mohammad Shorif  (2023), “Tomato Maturity Detection and Quality Grading Dataset”, Mendeley Data, V1, doi: 10.17632/s42kpg8h37.1",
+    "zip_size_bytes": 150004778,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_quality_classification",
+    "examples_image_url": "/img/agml/sample_images/tomato_quality_classification_sample.webp"
+  },
+  {
+    "name": "tomato_maturity_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1000,
+    "augmented_num_images": 4000,
+    "augmented_zip_size_bytes": 2260302477,
+    "classes": [
+      "Immature",
+      "Mature"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109688",
+    "citation": "Khatun, Tania; Razzak, Abdur ; Islam, Md. Shofiul ; Uddin, Prof. Dr. Mohammad Shorif  (2023), “Tomato Maturity Detection and Quality Grading Dataset”, Mendeley Data, V1, doi: 10.17632/s42kpg8h37.1",
+    "zip_size_bytes": 144610642,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_maturity_classification",
+    "examples_image_url": "/img/agml/sample_images/tomato_maturity_classification_sample.webp"
+  },
+  {
+    "name": "ImageWeeds_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "horseweed",
+      "kochia",
+      "corn",
+      "ragweed",
+      "redrootpigweed"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 3208,
+    "classes": [
+      "horseweed",
+      "kochia",
+      "corn",
+      "ragweed",
+      "redrootpigweed"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109691",
+    "citation": "Rai, Nitin; Villamil Mahecha, Maria; Christensen, Annika; Quanbeck, Jamison; Howatt, Kirk; Ostlie, Michael; Zhang, Yu; Sun, Xin (2023), “ImageWeeds: An Image dataset consisting of weeds in multiple formats to advance computer vision algorithms for real-time weed identification and spot spraying application”, Mendeley Data, V2, doi: 10.17632/8kjcztbjz2.2",
+    "zip_size_bytes": 1334733132,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ImageWeeds_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/ImageWeeds_weed_detection_sample.webp"
+  },
+  {
+    "name": "ImageWeeds_aerial_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "ragweed",
+      "waterhemp",
+      "horseweed",
+      "redrootpigweed",
+      "kochia"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 551,
+    "classes": [
+      "ragweed",
+      "waterhemp",
+      "horseweed",
+      "redrootpigweed",
+      "kochia"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109691",
+    "citation": "Rai, Nitin; Villamil Mahecha, Maria; Christensen, Annika; Quanbeck, Jamison; Howatt, Kirk; Ostlie, Michael; Zhang, Yu; Sun, Xin (2023), “ImageWeeds: An Image dataset consisting of weeds in multiple formats to advance computer vision algorithms for real-time weed identification and spot spraying application”, Mendeley Data, V2, doi: 10.17632/8kjcztbjz2.2",
+    "zip_size_bytes": 4554916653,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ImageWeeds_aerial_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/ImageWeeds_aerial_weed_detection_sample.webp"
+  },
+  {
+    "name": "date_fruit_maturity_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_detection",
+    "location": "Morocco",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Date"
+    ],
+    "sensor_modality": "rgb",
+    "input_data_format": "image_folder",
+    "annotation_format": "boundingBox",
+    "num_images": 9010,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109876",
+    "citation": "ZAROUIT, Y., ZEKKOURI, H., OUHDA, M.& AKSASSE, B. (2023). Date Fruit Detection Dataset for Computer Vision-Based Automatic Harvesting. [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.10143465",
+    "zip_size_bytes": 38362407393,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/date_fruit_maturity_detection",
+    "examples_image_url": "/img/agml/sample_images/date_fruit_maturity_detection_sample.webp"
   }
 ]
