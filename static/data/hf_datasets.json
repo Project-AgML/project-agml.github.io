@@ -7803,7 +7803,7 @@
       "rust_level_4"
     ],
     "license": "cc-by-4.0",
-    "documentation": "",
+    "documentation": "https://doi.org/10.1016/j.dib.2019.104414",
     "citation": "Parraga-Alava, Jorge; Cusme, Kevin; Loor, Angélica; Santander, Esneider (2019), “RoCoLe: A robusta coffee leaf images dataset ”, Mendeley Data, V2, doi: 10.17632/c5yvn32dzg.2",
     "zip_size_bytes": 1580483988,
     "source": "huggingface",
