@@ -47,6 +47,16 @@
   white-space: nowrap;
 }
 
+.semanticBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.72rem;
+  color: var(--ifm-color-primary);
+  background: var(--agml-accent-soft);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  white-space: nowrap;
+}
+
 .clearButton {
   border: 1px solid var(--agml-border-strong);
   background: transparent;
