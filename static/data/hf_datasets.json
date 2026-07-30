@@ -775,7 +775,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111515",
-    "citation": "Hnida, Youness; Mahraz, Mohamed Adnane; Achebour, Ali; Yahyaouy, Ali; Riffi, Jamal; Tairi, Hamid (2024), “OliveTreeCrownsDb: A High-Resolution UAV Dataset for Detection and Segmentation in Agricultural Computer Vision”, Mendeley Data, V3, doi: 10.17632/xym8rd2srf.3",
+    "citation": "Hnida, Youness; Mahraz, Mohamed Adnane; Achebour, Ali; Yahyaouy, Ali; Riffi, Jamal; Tairi, Hamid (2024), “OliveTreeCrownsDb: A High-Resolution uav Dataset for Detection and Segmentation in Agricultural Computer Vision”, Mendeley Data, V3, doi: 10.17632/xym8rd2srf.3",
     "zip_size_bytes": 2045083876,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/olive_tree_crown_detection",
@@ -1556,7 +1556,7 @@
     "examples_image_url": "/img/agml/sample_images/cotton_leaf_disease_classification_bangladesh_2_sample.webp"
   },
   {
-    "name": "banana_guava_quality_classification",
+    "name": "banana_gUAVa_quality_classification",
     "machine_learning_task": "image_classification",
     "agricultural_task": "quality_classification",
     "location": "India",
@@ -1564,7 +1564,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "banana",
-      "guava"
+      "gUAVa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1577,11 +1577,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2024.111025",
-    "citation": "KUMARI, ABIBAN; Singh, Jaswinder (2024), “Fruits (Banana and Guava) datasets for non-destructive quality classifications”, Mendeley Data, V2, doi: 10.17632/56td5w4wz2.2",
+    "citation": "KUMARI, ABIBAN; Singh, Jaswinder (2024), “Fruits (Banana and GUAVa) datasets for non-destructive quality classifications”, Mendeley Data, V2, doi: 10.17632/56td5w4wz2.2",
     "zip_size_bytes": 477412221,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_guava_quality_classification",
-    "examples_image_url": "/img/agml/sample_images/banana_guava_quality_classification_sample.webp"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_gUAVa_quality_classification",
+    "examples_image_url": "/img/agml/sample_images/banana_gUAVa_quality_classification_sample.webp"
   },
   {
     "name": "BDMANGO_variety_classification",
@@ -1873,14 +1873,14 @@
     "examples_image_url": "/img/agml/sample_images/oyster_mushroom_maturity_detection_sample.webp"
   },
   {
-    "name": "guava_disease_classification",
+    "name": "gUAVa_disease_classification",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh",
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Guava"
+      "GUAVa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1899,11 +1899,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111378",
-    "citation": "Shihab, Md Montsir Rahman; Saim, Nafiu Islam; Mojumdar, Mayen Uddin  (2024), “Image Dataset for Detection and classification of Diseases of Guava Fruits and Leaves ”, Mendeley Data, V1, doi: 10.17632/fspx44mwfp.1",
+    "citation": "Shihab, Md Montsir Rahman; Saim, Nafiu Islam; Mojumdar, Mayen Uddin  (2024), “Image Dataset for Detection and classification of Diseases of GUAVa Fruits and Leaves ”, Mendeley Data, V1, doi: 10.17632/fspx44mwfp.1",
     "zip_size_bytes": 2156708924,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_sample.webp"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gUAVa_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/gUAVa_disease_classification_sample.webp"
   },
   {
     "name": "COLD_chili_leaf_disease_classification",
@@ -2127,7 +2127,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2026.112483",
-    "citation": "Das, Anindita; Subburaj, Vinitha; Yang, Yong; Bednarz, Craig (2025), “A UAV Image Dataset for Object Detection with Annotations Generated Using LabelImg and Roboflow ”, Mendeley Data, V1, doi: 10.17632/sx2tphzvcw.1",
+    "citation": "Das, Anindita; Subburaj, Vinitha; Yang, Yong; Bednarz, Craig (2025), “A uav Image Dataset for Object Detection with Annotations Generated Using LabelImg and Roboflow ”, Mendeley Data, V1, doi: 10.17632/sx2tphzvcw.1",
     "zip_size_bytes": 2193177286,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cotton_weed_detection",
@@ -2591,7 +2591,7 @@
       "Aegle marmelos",
       "Black plum",
       "Custard Apple",
-      "Guava",
+      "GUAVa",
       "Jackfruit",
       "Lotkon",
       "Lychee",
@@ -2607,7 +2607,7 @@
       "Aegle marmelos",
       "Black plum",
       "Custard Apple",
-      "Guava",
+      "GUAVa",
       "Jackfruit",
       "Lotkon",
       "Lychee",
@@ -2665,7 +2665,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Kenya, Africa",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "environment": "field",
@@ -2700,7 +2700,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Ethiopia, Africa",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "environment": "field",
@@ -2733,7 +2733,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Uganda, Africa",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "handheld",
     "environment": "Field",
@@ -2766,7 +2766,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "environment": "Field",
@@ -2910,7 +2910,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -2943,7 +2943,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "handheld",
@@ -2977,7 +2977,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "cucumber_disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -3010,7 +3010,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "uav",
@@ -3044,7 +3044,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "handheld",
@@ -3077,7 +3077,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "uav",
@@ -3110,7 +3110,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "paddy_disease_classification",
     "location": "India, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "uav",
@@ -3143,7 +3143,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "flower_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3176,7 +3176,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3209,7 +3209,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "Brazil, South America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3242,7 +3242,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "Spain, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3265,7 +3265,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_detection_spain",
     "license": "",
-    "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, RGB-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle “Multi-modal Deep Learning for Fruit Detection Using RGB-D Cameras and their Radiometric Capabilities” [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. RGB-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji RGB-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (RGB), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}",
+    "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji rgb-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, rgb-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle “Multi-modal Deep Learning for Fruit Detection Using rgb-D Cameras and their Radiometric Capabilities” [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. rgb-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji rgb-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (rgb), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}",
     "crop_types": [
       "apple"
     ]
@@ -3275,7 +3275,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3308,7 +3308,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "grape_bunch_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
@@ -3339,7 +3339,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "mixed",
     "input_data_format": "JPG",
@@ -3361,7 +3361,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/fruit_detection_worldwide",
     "license": "",
-    "citation": "@Article{s16081222,\n  AUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\n  TITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\n  JOURNAL = {Sensors},\n  VOLUME = {16},\n  YEAR = {2016},\n  NUMBER = {8},\n  ARTICLE-NUMBER = {1222},\n  URL = {https://www.mdpi.com/1424-8220/16/8/1222},\n  ISSN = {1424-8220},\n  ABSTRACT = {This paper presents a novel approach to fruit detection using deep convolutional neural networks. The aim is to build an accurate, fast and reliable fruit detection system, which is a vital element of an autonomous agricultural robotic platform; it is a key element for fruit yield estimation and automated harvesting. Recent work in deep neural networks has led to the development of a state-of-the-art object detector termed Faster Region-based CNN (Faster R-CNN). We adapt this model, through transfer learning, for the task of fruit detection using imagery obtained from two modalities: colour (RGB) and Near-Infrared (NIR). Early and late fusion methods are explored for combining the multi-modal (RGB and NIR) information. This leads to a novel multi-modal Faster R-CNN model, which achieves state-of-the-art results compared to prior work with the F1 score, which takes into account both precision and recall performances improving from     0 . 807     to     0 . 838     for the detection of sweet pepper. In addition to improved accuracy, this approach is also much quicker to deploy for new fruits, as it requires bounding box annotation rather than pixel-level annotation (annotating bounding boxes is approximately an order of magnitude quicker to perform). The model is retrained to perform the detection of seven fruits, with the entire process taking four hours to annotate and train the new model per fruit.},\n  DOI = {10.3390/s16081222}\n}",
+    "citation": "@Article{s16081222,\n  AUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\n  TITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\n  JOURNAL = {Sensors},\n  VOLUME = {16},\n  YEAR = {2016},\n  NUMBER = {8},\n  ARTICLE-NUMBER = {1222},\n  URL = {https://www.mdpi.com/1424-8220/16/8/1222},\n  ISSN = {1424-8220},\n  ABSTRACT = {This paper presents a novel approach to fruit detection using deep convolutional neural networks. The aim is to build an accurate, fast and reliable fruit detection system, which is a vital element of an autonomous agricultural robotic platform; it is a key element for fruit yield estimation and automated harvesting. Recent work in deep neural networks has led to the development of a state-of-the-art object detector termed Faster Region-based CNN (Faster R-CNN). We adapt this model, through transfer learning, for the task of fruit detection using imagery obtained from two modalities: colour (rgb) and Near-Infrared (nir). Early and late fusion methods are explored for combining the multi-modal (rgb and nir) information. This leads to a novel multi-modal Faster R-CNN model, which achieves state-of-the-art results compared to prior work with the F1 score, which takes into account both precision and recall performances improving from     0 . 807     to     0 . 838     for the detection of sweet pepper. In addition to improved accuracy, this approach is also much quicker to deploy for new fruits, as it requires bounding box annotation rather than pixel-level annotation (annotating bounding boxes is approximately an order of magnitude quicker to perform). The model is retrained to perform the detection of seven fruits, with the entire process taking four hours to annotate and train the new model per fruit.},\n  DOI = {10.3390/s16081222}\n}",
     "crop_types": [
       "avocado",
       "rockmelon",
@@ -3377,7 +3377,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "flower_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3410,7 +3410,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "leaf_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3443,7 +3443,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "plant_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3476,7 +3476,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "pod_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3644,7 +3644,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3677,7 +3677,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3710,7 +3710,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "synthetic",
     "environment": "field",
     "platform": "ground",
@@ -3743,7 +3743,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_detection",
     "location": "Australia, Oceania",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld",
@@ -3776,7 +3776,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3807,7 +3807,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld/ground",
@@ -3840,7 +3840,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld/ground",
@@ -3873,7 +3873,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "fruit_ripeness_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3906,7 +3906,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -3929,7 +3929,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_head_counting",
     "license": "CC BY-SA 4.0",
-    "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }",
+    "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution rgb-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }",
     "crop_types": [
       "wheat"
     ]
@@ -3939,7 +3939,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Greece, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld",
@@ -3962,7 +3962,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/crop_weeds_greece",
     "license": "MIT",
-    "citation": "@article{ESPEJOGARCIA2020105306,\n  title = {Towards weeds identification assistance through transfer learning},\n  journal = {Computers and Electronics in Agriculture},\n  volume = {171},\n  pages = {105306},\n  year = {2020},\n  issn = {0168-1699},\n  doi = {https://doi.org/10.1016/j.compag.2020.105306},\n  url = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\n  author = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou},\n  keywords = {Weed identification, Deep learning, Transfer learning, Open data, Precision agriculture},\n  abstract = {Reducing the use of pesticides through selective spraying is an important component towards a more sustainable computer-assisted agriculture. Weed identification at early growth stage contributes to reduced herbicide rates. However, while computer vision alongside deep learning have overcome the performance of approaches that use hand-crafted features, there are still some open challenges in the development of a reliable automatic plant identification system. These type of systems have to take into account different sources of variability, such as growth stages and soil conditions, with the added constraint of the limited size of usual datasets. This study proposes a novel crop/weed identification system that relies on a combination of fine-tuning pre-trained convolutional networks (Xception, Inception-Resnet, VGNets, Mobilenet and Densenet) with the “traditional” machine learning classifiers (Support Vector Machines, XGBoost and Logistic Regression) trained with the previously deep extracted features. The aim of this approach was to avoid overfitting and to obtain a robust and consistent performance. To evaluate this approach, an open access dataset of two crop [tomato (Solanum lycopersicum L.) and cotton (Gossypium hirsutum L.)] and two weed species [black nightshade (Solanum nigrum L.) and velvetleaf (Abutilon theophrasti Medik.)] was generated. The pictures were taken by different production sites across Greece under natural variable light conditions from RGB cameras. The results revealed that a combination of fine-tuned Densenet and Support Vector Machine achieved a micro F1 score of 99.29% with a very low performance difference between train and test sets. Other evaluated approaches also obtained repeatedly more than 95% F1 score. Additionally, our results analysis provides some heuristics for designing transfer-learning based systems to avoid overfitting without decreasing performance.}\n}",
+    "citation": "@article{ESPEJOGARCIA2020105306,\n  title = {Towards weeds identification assistance through transfer learning},\n  journal = {Computers and Electronics in Agriculture},\n  volume = {171},\n  pages = {105306},\n  year = {2020},\n  issn = {0168-1699},\n  doi = {https://doi.org/10.1016/j.compag.2020.105306},\n  url = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\n  author = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou},\n  keywords = {Weed identification, Deep learning, Transfer learning, Open data, Precision agriculture},\n  abstract = {Reducing the use of pesticides through selective spraying is an important component towards a more sustainable computer-assisted agriculture. Weed identification at early growth stage contributes to reduced herbicide rates. However, while computer vision alongside deep learning have overcome the performance of approaches that use hand-crafted features, there are still some open challenges in the development of a reliable automatic plant identification system. These type of systems have to take into account different sources of variability, such as growth stages and soil conditions, with the added constraint of the limited size of usual datasets. This study proposes a novel crop/weed identification system that relies on a combination of fine-tuning pre-trained convolutional networks (Xception, Inception-Resnet, VGNets, Mobilenet and Densenet) with the “traditional” machine learning classifiers (Support Vector Machines, XGBoost and Logistic Regression) trained with the previously deep extracted features. The aim of this approach was to avoid overfitting and to obtain a robust and consistent performance. To evaluate this approach, an open access dataset of two crop [tomato (Solanum lycopersicum L.) and cotton (Gossypium hirsutum L.)] and two weed species [black nightshade (Solanum nigrum L.) and velvetleaf (Abutilon theophrasti Medik.)] was generated. The pictures were taken by different production sites across Greece under natural variable light conditions from rgb cameras. The results revealed that a combination of fine-tuned Densenet and Support Vector Machine achieved a micro F1 score of 99.29% with a very low performance difference between train and test sets. Other evaluated approaches also obtained repeatedly more than 95% F1 score. Additionally, our results analysis provides some heuristics for designing transfer-learning based systems to avoid overfitting without decreasing performance.}\n}",
     "crop_types": [
       "cotton",
       "tomato"
@@ -3973,7 +3973,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Denmark, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground_fixed",
@@ -4003,11 +4003,11 @@
     ]
   },
   {
-    "name": "soybean_weed_uav_brazil",
+    "name": "soybean_weed_UAV_brazil",
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Brazil, South America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Lab",
     "platform": "uav",
@@ -4026,9 +4026,9 @@
       0.249,
       0.157
     ],
-    "examples_image_url": "/img/agml/sample_images/soybean_weed_uav_brazil_sample.webp",
+    "examples_image_url": "/img/agml/sample_images/soybean_weed_UAV_brazil_sample.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_weed_uav_brazil",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_weed_UAV_brazil",
     "license": "CC BY-NC 3.0",
     "citation": "dos Santos Ferreira, Alessandro; Pistori, Hemerson; Matte Freitas, Daniel; Gonçalves da Silva, Gercina (2017), “Data for: Weed Detection in Soybean Crops Using ConvNets”, Mendeley Data, V2, doi: 10.17632/3fmjm7ncc6.2",
     "crop_types": [
@@ -4040,7 +4040,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "damage_classification",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Lab",
     "platform": "ground_fixed",
@@ -4069,11 +4069,11 @@
     ]
   },
   {
-    "name": "guava_disease_pakistan",
+    "name": "gUAVa_disease_pakistan",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Pakistan, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4092,13 +4092,13 @@
       0.184,
       0.187
     ],
-    "examples_image_url": "/img/agml/sample_images/guava_disease_pakistan_sample.webp",
+    "examples_image_url": "/img/agml/sample_images/gUAVa_disease_pakistan_sample.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_disease_pakistan",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gUAVa_disease_pakistan",
     "license": "",
-    "citation": "@article{Rauf_Lali_2021, \n    title={A Guava Fruits and Leaves Dataset for Detection and Classification of Guava Diseases through Machine Learning}, \n    volume={1}, \n    url={https://data.mendeley.com/datasets/s8x6jn5cvr/1}, \n    DOI={10.17632/s8x6jn5cvr.1}, \n    abstractNote={(1) Plant diseases are the primary cause of reduced productivity in agriculture, which results in economic losses. Guava is a big source of nutrients for humans all over the world. Guava diseases, on the other hand, harm the yield and quality of the crop. (2) For the identification and classification of plant diseases, computer vision and image processing methods have been commonly used. (3) The dataset includes an image gallery of healthy and unhealthy Guava fruits and leaves that could be used by researchers to adopt advanced computer vision techniques to protect plants from disease. Dot, Canker, Mummification, and Rust are the diseases targeted in the data sets. (4) The dataset contains 306 images of healthy and unhealthy images for both Guava fruits and leaves collectively. Each image contains 6000 * 4000 dimensions with 300 dpi resolution. (5) All images were acquired from the tropical areas of Pakistan under the supervision of Prof. Dr. Ikramullah Lali. (6) All images were annotated manually by the domain expert such as For Guava fruits and leaves; Dot (76), Canker (77), Mummification (83), and Rust (70) Note: The data labeling was manual and can be updated by automatic labeling through machine learning. In the meantime, the authors can also use the data set for the clustering problem.}, \n    author={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah}, \n    year={2021}, month={Apr} \n}\n",
+    "citation": "@article{Rauf_Lali_2021, \n    title={A GUAVa Fruits and Leaves Dataset for Detection and Classification of GUAVa Diseases through Machine Learning}, \n    volume={1}, \n    url={https://data.mendeley.com/datasets/s8x6jn5cvr/1}, \n    DOI={10.17632/s8x6jn5cvr.1}, \n    abstractNote={(1) Plant diseases are the primary cause of reduced productivity in agriculture, which results in economic losses. GUAVa is a big source of nutrients for humans all over the world. GUAVa diseases, on the other hand, harm the yield and quality of the crop. (2) For the identification and classification of plant diseases, computer vision and image processing methods have been commonly used. (3) The dataset includes an image gallery of healthy and unhealthy GUAVa fruits and leaves that could be used by researchers to adopt advanced computer vision techniques to protect plants from disease. Dot, Canker, Mummification, and Rust are the diseases targeted in the data sets. (4) The dataset contains 306 images of healthy and unhealthy images for both GUAVa fruits and leaves collectively. Each image contains 6000 * 4000 dimensions with 300 dpi resolution. (5) All images were acquired from the tropical areas of Pakistan under the supervision of Prof. Dr. Ikramullah Lali. (6) All images were annotated manually by the domain expert such as For GUAVa fruits and leaves; Dot (76), Canker (77), Mummification (83), and Rust (70) Note: The data labeling was manual and can be updated by automatic labeling through machine learning. In the meantime, the authors can also use the data set for the clustering problem.}, \n    author={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah}, \n    year={2021}, month={Apr} \n}\n",
     "crop_types": [
-      "guava"
+      "gUAVa"
     ]
   },
   {
@@ -4106,7 +4106,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4150,7 +4150,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Lab",
     "platform": "ground",
@@ -4196,7 +4196,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Australia, Oceania",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4227,7 +4227,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "uav",
@@ -4260,7 +4260,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4293,7 +4293,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Lab",
     "platform": "handheld",
@@ -4326,7 +4326,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld/ground",
@@ -4391,7 +4391,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -4424,7 +4424,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "input_data_format": "JPG",
@@ -4456,7 +4456,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "pest_classification",
     "location": "Brazil, South America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "input_data_format": "JPG",
@@ -4488,7 +4488,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "input_data_format": "JPG",
@@ -4520,7 +4520,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": "Germany, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground_mobile",
@@ -4553,7 +4553,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "flower_segmentation",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4586,7 +4586,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "fruit_segmentation",
     "location": "United States, North America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4619,7 +4619,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": "China, Asia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld",
@@ -4652,7 +4652,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": "None, None",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "ground",
@@ -4675,7 +4675,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/sugarbeet_weed_segmentation",
     "license": "GPL-3.0",
-    "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
+    "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
     "crop_types": [
       "sugarbeet"
     ]
@@ -4685,7 +4685,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "plant_segmentation",
     "location": "Digital, Digital",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "synthetic",
     "environment": "Field",
     "platform": "aerial",
@@ -4710,7 +4710,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld/ground",
@@ -4769,7 +4769,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "vineyard_scene_segmentation",
     "location": "Greece, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "Field",
     "platform": "handheld/ground",
@@ -4802,7 +4802,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "vegetation_segmentation",
     "location": "Worldwide",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "aerial",
     "input_data_format": "PNG",
@@ -4824,7 +4824,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/vegann_multicrop_presence_segmentation",
     "license": "CC BY-SA 4.0",
-    "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop RGB images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of RGB images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop RGB images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n",
+    "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop rgb images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of rgb images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop rgb images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n",
     "crop_types": null
   },
   {
@@ -4832,7 +4832,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "vineyard_scene_segmentation",
     "location": "Greece, Europe",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
@@ -4972,14 +4972,14 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111517",
-    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian UAV and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
+    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian uav and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
     "zip_size_bytes": 6127121748,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MH_SoyaHealthVision_disease_classification_leaf",
     "examples_image_url": "/img/agml/sample_images/MH_SoyaHealthVision_disease_classification_leaf_sample.webp"
   },
   {
-    "name": "MH_SoyaHealthVision_disease_classification_uav",
+    "name": "MH_SoyaHealthVision_disease_classification_UAV",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India",
@@ -5001,11 +5001,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111517",
-    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian UAV and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
+    "citation": "Shinde, Sayali; Attar, Dr.Vahida; Technological University,Pune, COEP ; Technology Innovation Hub, Indian Statistical Institute Kolkata, IDEAS (2024), “MH-SoyaHealthVision: An Indian uav and Leaf Image Dataset for Integrated Crop Health Assessment”, Mendeley Data, V1, doi: 10.17632/hkbgh5s3b7.1",
     "zip_size_bytes": 4442239686,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/MH_SoyaHealthVision_disease_classification_uav",
-    "examples_image_url": "/img/agml/sample_images/MH_SoyaHealthVision_disease_classification_uav_sample.webp"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MH_SoyaHealthVision_disease_classification_UAV",
+    "examples_image_url": "/img/agml/sample_images/MH_SoyaHealthVision_disease_classification_UAV_sample.webp"
   },
   {
     "name": "citrusuat_disease_classification",
@@ -5962,7 +5962,7 @@
       "Gasagase",
       "Ginger",
       "Globe Amarnath",
-      "Guava",
+      "GUAVa",
       "Henna",
       "Hibiscus",
       "Honge",
@@ -6375,21 +6375,21 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2022.108575",
-    "citation": "Marios Krestenitis, Emmanuel K. Raptis, Athanasios Ch. Kapoutsis, Konstantinos Ioannidis, Elias B. Kosmatopoulos, Stefanos Vrochidis& Ioannis Kompatsiaris. (2022). CoFly-WeedDB: A UAV image dataset for weed detection and species identification (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.6697343",
+    "citation": "Marios Krestenitis, Emmanuel K. Raptis, Athanasios Ch. Kapoutsis, Konstantinos Ioannidis, Elias B. Kosmatopoulos, Stefanos Vrochidis& Ioannis Kompatsiaris. (2022). CoFly-WeedDB: A uav image dataset for weed detection and species identification (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.6697343",
     "zip_size_bytes": 456720241,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CoFly-Weed-DB_weed_segmentation",
     "examples_image_url": "/img/agml/sample_images/CoFly-Weed-DB_weed_segmentation_sample.webp"
   },
   {
-    "name": "guava_disease_classification_bangladesh",
+    "name": "gUAVa_disease_classification_bangladesh",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "guava"
+      "gUAVa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6406,11 +6406,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2022.108174",
-    "citation": "Rajbongshi, Aditya; Sazzad, Sadia ; Shakil, Rashiduzzaman; Akter, Bonna ; Sara, Umme (2022), “Guava Leaves and Fruits Dataset for Guava Disease Recognition through Machine Learning and Deep Learning”, Mendeley Data, V1, doi: 10.17632/x84p2g3k6z.1",
+    "citation": "Rajbongshi, Aditya; Sazzad, Sadia ; Shakil, Rashiduzzaman; Akter, Bonna ; Sara, Umme (2022), “GUAVa Leaves and Fruits Dataset for GUAVa Disease Recognition through Machine Learning and Deep Learning”, Mendeley Data, V1, doi: 10.17632/x84p2g3k6z.1",
     "zip_size_bytes": 163393900,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_disease_classification_bangladesh",
-    "examples_image_url": "/img/agml/sample_images/guava_disease_classification_bangladesh_sample.webp"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gUAVa_disease_classification_bangladesh",
+    "examples_image_url": "/img/agml/sample_images/gUAVa_disease_classification_bangladesh_sample.webp"
   },
   {
     "name": "soybean_leaf_disease_classification_brazil",
@@ -6472,14 +6472,14 @@
     "examples_image_url": "/img/agml/sample_images/vegetable_crop_early_detection_sample.webp"
   },
   {
-    "name": "guava_maturity_classification",
+    "name": "gUAVa_maturity_classification",
     "machine_learning_task": "image_classification",
     "agricultural_task": "maturity_classification",
     "location": "Pakistan",
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "guava"
+      "gUAVa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6492,11 +6492,11 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2023.109462",
-    "citation": "Maitlo, Abdul Khalique; Aziz, Abdul; Raza, Hassnain ; Abbas, Neelam (2023), “Guava Fruit  Dataset for Classification ”, Mendeley Data, V1, doi: 10.17632/w3fg8jjmzr.1",
+    "citation": "Maitlo, Abdul Khalique; Aziz, Abdul; Raza, Hassnain ; Abbas, Neelam (2023), “GUAVa Fruit  Dataset for Classification ”, Mendeley Data, V1, doi: 10.17632/w3fg8jjmzr.1",
     "zip_size_bytes": 393147847,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_maturity_classification",
-    "examples_image_url": "/img/agml/sample_images/guava_maturity_classification_sample.webp"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gUAVa_maturity_classification",
+    "examples_image_url": "/img/agml/sample_images/gUAVa_maturity_classification_sample.webp"
   },
   {
     "name": "BDMediLeaves_variety_classification",
@@ -6776,7 +6776,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "grape",
-      "guava",
+      "gUAVa",
       "jujube",
       "pomegranate",
       "apple",
@@ -6820,7 +6820,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2022.108848",
-    "citation": "Mar Ariza Sentís, Sergio Vélez& João Valente. (2021). Dataset on UAV RGB videos acquired over a vineyard property of Bodegas Terras Gauda at an early stage of Botrytis cinerea infection in 2021 (Version 2.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.7330951",
+    "citation": "Mar Ariza Sentís, Sergio Vélez& João Valente. (2021). Dataset on uav rgb videos acquired over a vineyard property of Bodegas Terras Gauda at an early stage of Botrytis cinerea infection in 2021 (Version 2.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.7330951",
     "zip_size_bytes": 13517813180,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/vineyard_grape_segmentation",
@@ -7143,6 +7143,437 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/TealeafAgeQuality_detection",
     "examples_image_url": "/img/agml/sample_images/TealeafAgeQuality_detection_sample.webp"
+  },
+  {
+    "name": "AgroMind",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "judgement",
+      "counting",
+      "multiple_choice_text",
+      "multiple_choice_image",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Spatial Perception",
+      "Object Understanding",
+      "Scene Understanding",
+      "Scene Reasoning"
+    ],
+    "num_task_types": 13,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "maize",
+      "oil palm",
+      "apple",
+      "almond",
+      "mango",
+      "rice",
+      "citrus",
+      "+multiple other crops"
+    ],
+    "sensor_modality": [
+      "rgb",
+      "nir multispectral"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "uav",
+      "satellite",
+      "ground camera"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 19615,
+    "augmented_num_images": null,
+    "num_rows": 27247,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2505.12207",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Li, Qingmei; Zhang, Yang; Mai, Zurong; Chen, Yuhang; Lou, Shuohong; Huang, Henglian; Zhang, Jiarui; Zhang, Zhiwei; Wen, Yibin; Li, Weijia; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind\", arXiv, arXiv:2505.12207",
+    "parent_dataset": "AgroMind/AgroMind",
+    "zip_size_bytes": 8220000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroMind",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 9,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "ACFR Orchard Fruit Dataset",
+        "2018 AI Challenge Dataset",
+        "IP102 Dataset",
+        "Agriculture Vision Challenge",
+        "OilPalmUAV Dataset",
+        "PhenoBench Dataset",
+        "OAM-TCD Dataset",
+        "Maize Tassel Identification",
+        "7-Provinces Ground Dataset"
+      ]
+    }
+  },
+  {
+    "name": "AgroBench",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Disease Identification",
+      "Disease Management",
+      "Pest Identification",
+      "Weed Identification",
+      "Crop Management",
+      "Machine Usage QA",
+      "Traditional Management"
+    ],
+    "num_task_types": 7,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "apple",
+      "maize",
+      "potato",
+      "rice",
+      "banana",
+      "grape",
+      "pepper",
+      "onion",
+      "wheat",
+      "+193 more"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 3745,
+    "augmented_num_images": null,
+    "num_rows": 4342,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2507.20519",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Shinoda, Risa; Inoue, Nakamasa; Kataoka, Hirokatsu; Onishi, Masaki; Ushiku, Yoshitaka (2025), \"AgroBench: Vision-Language Model Benchmark in Agriculture\", arXiv, arXiv:2507.20519",
+    "parent_dataset": "risashinoda/AgroBench",
+    "zip_size_bytes": 2118998617,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroBench",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 4,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "Perennial Plants Detection",
+        "CottonWeedDet3",
+        "Open Plant Phenotype Database of Common Weeds in Denmark",
+        "CropAndWeed Dataset"
+      ]
+    }
+  },
+  {
+    "name": "AgroCoT",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "judgement",
+      "counting",
+      "multiple_choice_text",
+      "multiple_choice_image",
+      "open_ended",
+      "long_form_QA"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Object Detection",
+      "Quantitative Analysis",
+      "Disease Monitoring",
+      "Spatial Understanding",
+      "Environmental Management"
+    ],
+    "num_task_types": 15,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "mixed_multiple_sources"
+    ],
+    "sensor_modality": [
+      "rgb",
+      "multispectral"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "uav",
+      "satellite",
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 4628,
+    "augmented_num_images": null,
+    "num_rows": 4759,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2511.23253",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Wen, Yibin; Li, Qingmei; Ye, Zi; Zhang, Jiarui; Fan, Xiaoya; Mai, Zurong; Wu, Jing; Lou, Shuohong; Chen, Yuhang; Huang, Henglian; Zhang, Yang; Gu, Defeng; Zhao, Lingyuan; Lu, Yutong; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture\", arXiv, arXiv:2511.23253",
+    "parent_dataset": "AgroCoT/AgroCoT",
+    "zip_size_bytes": 5420000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroCoT",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 9,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "OilPalmUAV",
+        "PhenoBench",
+        "Agriculture-Vision Challenge (AVC)",
+        "IP102",
+        "CropHarvest",
+        "CDDM",
+        "AGMMU",
+        "AgroBench",
+        "Proprietary VQA dataset"
+      ]
+    }
+  },
+  {
+    "name": "WisWheat",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text",
+      "counting",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Weed Detection",
+      "Yellow Rust",
+      "Stem Rust",
+      "Leaf Rust",
+      "Mildew",
+      "Septoria",
+      "Srought Abiotic Stress",
+      "Healthy Wheat",
+      "Growth Stage Diagnosis",
+      "Growth Stage Classification VQA",
+      "Organ Percentage Estimation",
+      "Rust Percentage Estimation",
+      "Spike Counting"
+    ],
+    "num_task_types": 13,
+    "location": "Australia",
+    "environment": "field",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": null,
+    "augmented_num_images": null,
+    "num_rows": 11265,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2506.06084",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Yuan, Bowen; Song, Selena; Fernandez, Javier; Luo, Yadan; Baktashmotlagh, Mahsa; Wang, Zijian (2025), \"WisWheat: A Three-Tiered Vision-Language Dataset for Wheat Management\", arXiv, arXiv:2506.06084",
+    "parent_dataset": null,
+    "zip_size_bytes": 13300000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WisWheat",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 7,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "WFD",
+        "Minimal Dataset [Drought]",
+        "GWHD 2021",
+        "GWFSS",
+        "Radish Weed Dataset",
+        "Cobbity Wheat",
+        "Rust Segmentation Dataset"
+      ]
+    }
+  },
+  {
+    "name": "Agri-LLaVA",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Feature Description",
+      "Category Identification",
+      "Symptom Identification"
+    ],
+    "num_task_types": 2,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "orange",
+      "grape",
+      "apple",
+      "corn",
+      "vitis",
+      "rice",
+      "soybean",
+      "pepper",
+      "mango",
+      "+24 more"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": 391785,
+    "augmented_num_images": null,
+    "num_rows": 391785,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2412.02158",
+    "examples_image_url": null,
+    "license": "other",
+    "citation": "Wang, Liqiong; Jin, Teng; Yang, Jinyu; Leonardis, Ales; Wang, Fangyi; Zheng, Feng (2024), \"Agri-LLaVA: Knowledge-Infused Large Multimodal Assistant on Agricultural Pests and Diseases\", arXiv, arXiv:2412.02158",
+    "parent_dataset": "Agri-LLaVA-Anonymous/Agricultural_pests_and_diseases_feature_alignment_data",
+    "zip_size_bytes": 66500000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Agri-LLaVA_Agricultural_Pests_And_Diseases_Feature_Alignment_Dataset",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 16,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "AppleLeaf9",
+        "LWDCD",
+        "PlantVillage-Dataset-master",
+        "Rice Leaf Disease Image samples",
+        "Chinese Academy of Sciences Disease Sample Data",
+        "IP102",
+        "Images of Apple Diseases and Pests",
+        "Crop Pest and Disease Detection",
+        "IDADP-grape Disease Identification",
+        "OLID I",
+        "Plant Disease Expert",
+        "RiceLeafs",
+        "Cabbage",
+        "Pepper Pests and Diseases",
+        "Wheat Disease Classification",
+        "Wheat Leaf Dataset"
+      ]
+    }
+  },
+  {
+    "name": "CDDM",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Disease Diagnosis",
+      "Disease Knowledge QA"
+    ],
+    "num_task_types": 2,
+    "location": "unspecified",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "grape",
+      "potato",
+      "apple",
+      "wheat",
+      "bell pepper",
+      "rice",
+      "corn",
+      "soybean",
+      "orange",
+      "cherry",
+      "blueberry",
+      "strawberry",
+      "pumpkin",
+      "peach"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": null,
+    "augmented_num_images": null,
+    "num_rows": 145261,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2503.06973",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Liu, Xiang; Liu, Zhaoxiang; Hu, Huan; Chen, Zezhou; Wang, Kohou; Wang, Kai; Lian, Shiguo (2025), \"A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis\", arXiv, arXiv:2503.06973",
+    "parent_dataset": "https://github.com/UnicomAI/UnicomBenchmark/tree/main/CDDMBench",
+    "zip_size_bytes": 3070000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CDDM",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 2,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "Web Data (Kaggle + web-crawled)",
+        "Private Data (field surveys)"
+      ]
+    }
   },
   {
     "name": "ACHENY_variety_classification",

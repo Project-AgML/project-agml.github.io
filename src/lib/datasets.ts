@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { toDisplayLabel } from './labelOverrides';
 
 export interface Dataset {
   name: string;
@@ -12,7 +13,7 @@ export interface Dataset {
   crop_types: string[] | null;
   sensor_modality: string | null;
   real_or_synthetic: string | null;
-  platform: string | null;
+  platform: string[] | null;
   input_data_format: string | null;
   annotation_format: string | null;
   num_images: number | null;
@@ -28,6 +29,14 @@ export interface Dataset {
   parent_dataset?: string | null;
   zip_size_bytes?: number | null;
   hf_link?: string | null;
+  // VLM (vision-language) dataset fields — absent/null on plain vision datasets.
+  dataset_type: 'vision' | 'vlm';
+  qa_type: string[] | null;
+  task_dimensions: string[] | null;
+  num_task_types: number | null;
+  conversation_format: string | null;
+  num_rows: number | null;
+  source_datasets: string[] | null;
 }
 
 type DatasetRecord = Record<string, unknown>;
@@ -115,18 +124,25 @@ function normalizeDataset(raw: unknown): Dataset | null {
   const augmentedCounterpart =
     firstString(raw.augmented_counterpart) ?? (augmentedNumImages != null ? 'yes' : 'no');
 
+  const mlTask = firstString(raw.machine_learning_task, raw.ml_task, raw.task);
+  const qaType = toStringArray(raw.qa_type);
+  const taskDimensions = toStringArray(raw.task_dimensions);
+  const isVlm = mlTask === 'image-text-to-text' || Boolean(qaType?.length) || Boolean(taskDimensions?.length);
+
   return {
     name,
-    machine_learning_task: firstString(raw.machine_learning_task, raw.ml_task, raw.task),
+    machine_learning_task: mlTask,
     source: firstString(raw.source),
     agricultural_task: firstString(raw.agricultural_task, raw.ag_task),
     location: normalizeLocation(raw.location),
     environment: firstString(raw.environment, raw.env, raw.image_environment)?.toLowerCase() ?? null,
     augmented_counterpart: augmentedCounterpart,
-    crop_types: toStringArray(raw.crop_types ?? raw.cropType ?? raw.crop_type)?.map((c) => c.toLowerCase()) ?? null,
-    sensor_modality: firstString(raw.sensor_modality, raw.sensor, raw.modality),
+    crop_types: toStringArray(raw.crop_types ?? raw.cropType ?? raw.crop_type)
+      ?.map((c) => c.trim())
+      .filter((c) => c && !/^\+.*\b(more|others?)\b/i.test(c)) ?? null,
+    sensor_modality: firstString(raw.sensor_modality, raw.sensor, raw.modality) ?? toStringArray(raw.sensor_modality)?.join(', ') ?? null,
     real_or_synthetic: firstString(raw.real_or_synthetic, raw.real_synthetic),
-    platform: firstString(raw.platform),
+    platform: parsePlatform(raw.platform),
     input_data_format: firstString(raw.input_data_format, raw.input_format),
     annotation_format: firstString(raw.annotation_format),
     num_images: toNumber(raw.num_images ?? raw.n_images ?? raw.image_count),
@@ -142,6 +158,13 @@ function normalizeDataset(raw: unknown): Dataset | null {
     parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
     zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
     hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
+    dataset_type: isVlm ? 'vlm' : 'vision',
+    qa_type: qaType,
+    task_dimensions: taskDimensions,
+    num_task_types: toNumber(raw.num_task_types),
+    conversation_format: firstString(raw.conversation_format),
+    num_rows: toNumber(raw.num_rows),
+    source_datasets: toStringArray((raw.composition as Record<string, unknown> | undefined)?.source_datasets),
   };
 }
 
@@ -157,7 +180,9 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
     crop_types: current.crop_types ?? incoming.crop_types,
     sensor_modality: current.sensor_modality ?? incoming.sensor_modality,
     real_or_synthetic: current.real_or_synthetic ?? incoming.real_or_synthetic,
-    platform: current.platform ?? incoming.platform,
+    platform: (current.platform || incoming.platform)
+      ? Array.from(new Set([...(current.platform ?? []), ...(incoming.platform ?? [])]))
+      : null,
     input_data_format: current.input_data_format ?? incoming.input_data_format,
     annotation_format: current.annotation_format ?? incoming.annotation_format,
     num_images: current.num_images ?? incoming.num_images,
@@ -173,6 +198,13 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
     parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
     zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
     hf_link: current.hf_link ?? incoming.hf_link,
+    dataset_type: current.dataset_type === 'vlm' || incoming.dataset_type === 'vlm' ? 'vlm' : 'vision',
+    qa_type: current.qa_type ?? incoming.qa_type,
+    task_dimensions: current.task_dimensions ?? incoming.task_dimensions,
+    num_task_types: current.num_task_types ?? incoming.num_task_types,
+    conversation_format: current.conversation_format ?? incoming.conversation_format,
+    num_rows: current.num_rows ?? incoming.num_rows,
+    source_datasets: current.source_datasets ?? incoming.source_datasets,
   };
 }
 
@@ -289,7 +321,7 @@ export function filterDatasets(
         d.machine_learning_task?.toLowerCase().includes(q) ||
         d.environment?.toLowerCase().includes(q) ||
         d.augmented_counterpart?.toLowerCase().includes(q) ||
-        d.platform?.toLowerCase().includes(q) ||
+        d.platform?.some((p) => p.toLowerCase().includes(q)) ||
         locationMatches ||
         cropMatches
       );
@@ -308,7 +340,7 @@ export function filterDatasets(
     out = out.filter((d) => d.agricultural_task != null && opts.agTasks!.includes(d.agricultural_task));
   }
   if (opts.platforms?.length) {
-    out = out.filter((d) => d.platform != null && opts.platforms!.includes(d.platform));
+    out = out.filter((d) => d.platform != null && d.platform.some((p) => opts.platforms!.includes(p)));
   }
   if (opts.realOrSynthetic?.length) {
     out = out.filter((d) => d.real_or_synthetic != null && opts.realOrSynthetic!.includes(d.real_or_synthetic));
@@ -334,15 +366,39 @@ export function useDatasetOptions(data: Dataset[]) {
       augmentedCounterparts: unique(data.map((d) => d.augmented_counterpart)),
       cropTypes: unique(data.flatMap((d) => d.crop_types ?? [])),
       locations: unique(data.map((d) => d.location)),
-      platforms: unique(data.map((d) => d.platform)),
+      platforms: unique(data.flatMap((d) => d.platform ?? [])),
       realOptions: unique(data.map((d) => d.real_or_synthetic)),
+      datasetTypes: unique(data.map((d) => d.dataset_type)),
+      qaTypes: unique(data.flatMap((d) => d.qa_type ?? [])),
+      taskDimensions: unique(data.flatMap((d) => d.task_dimensions ?? [])),
     };
   }, [data]);
 }
 
+export function toTitleCase(value: string): string {
+  return toDisplayLabel(value);
+}
+
+function parsePlatform(raw: unknown): string[] | null {
+  const tokens: string[] = [];
+  const pushSplit = (s: string) => s.split(',').forEach((part) => { const t = part.trim(); if (t) tokens.push(t); });
+  if (Array.isArray(raw)) {
+    raw.forEach((entry) => { if (typeof entry === 'string') pushSplit(entry); });
+  } else if (typeof raw === 'string') {
+    pushSplit(raw);
+  }
+  if (!tokens.length) return null;
+  const seen = new Map<string, string>();
+  for (const t of tokens) {
+    const key = t.toLowerCase();
+    if (!seen.has(key)) seen.set(key, toTitleCase(t));
+  }
+  return Array.from(seen.values());
+}
+
 export function formatDisplayLocation(value: string | string[] | null | undefined): string {
   if (value == null) return '—';
-  return Array.isArray(value) ? value.join(', ') : value;
+  return Array.isArray(value) ? value.map(toTitleCase).join(', ') : toTitleCase(value);
 }
 
 export interface DatasetStats {

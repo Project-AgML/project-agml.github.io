@@ -221,6 +221,11 @@
   color: var(--agml-badge-other-fg);
 }
 
+.badgeVlm {
+  background: var(--agml-badge-vlm-bg);
+  color: var(--agml-badge-vlm-fg);
+}
+
 .tag {
   font-family: var(--ifm-code-font-family);
   font-size: 0.68rem;

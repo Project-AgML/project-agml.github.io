@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import type { Dataset } from '../lib/datasets';
-import { formatDisplayLocation } from '../lib/datasets';
+import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import styles from './DatasetMetadataModal.module.css';
@@ -17,8 +17,8 @@ function formatImageCount(count: number | null) {
 
 function formatValue(value: string | string[] | null | undefined) {
 	if (value == null) return 'Unknown';
-	if (Array.isArray(value)) return value.length ? value.join(', ') : 'Unknown';
-	return value;
+	if (Array.isArray(value)) return value.length ? value.map(toTitleCase).join(', ') : 'Unknown';
+	return toTitleCase(value);
 }
 
 function formatArray(value: number[] | null) {
@@ -92,6 +92,13 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
+		if(dataset.dataset_type === 'vlm') {
+			return {
+				title: 'Load from Hugging Face',
+				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
+			};
+		}
+
 		return {
 			title: 'Load from Hugging Face',
 			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
@@ -248,11 +255,18 @@ export function DatasetMetadataModal({
 
 	if (!open || dataset == null) return null;
 
+	const isVlm = dataset.dataset_type === 'vlm';
+
 	const metadataRows = [
 		['Location', formatDisplayLocation(dataset.location)],
-		['Sensor modality', formatValue(dataset.sensor_modality)],
+		['Sensor modality', dataset.sensor_modality == null || dataset.sensor_modality === '' ? 'Unknown' : dataset.sensor_modality],
 		['Platform', formatValue(dataset.platform)],
-		['Number of images', formatImageCount(dataset.num_images)],
+		...(isVlm
+			? ([
+					['Conversation format', formatValue(dataset.conversation_format)],
+					['Num of samples', formatImageCount(dataset.num_rows)],
+				] as const)
+			: ([['Number of images', formatImageCount(dataset.num_images)]] as const)),
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
 		...(dataset.augmented_num_images != null
 			? ([['Augmented images', formatImageCount(dataset.augmented_num_images)]] as const)
@@ -302,6 +316,39 @@ export function DatasetMetadataModal({
 						</div>
 					))}
 				</dl>
+
+				{isVlm && dataset.qa_type && dataset.qa_type.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>QA Types</h3>
+						<div className={styles.badgeWrap}>
+							{dataset.qa_type.map((value) => (
+								<span key={value} className={styles.tag}>{toTitleCase(value)}</span>
+							))}
+						</div>
+					</section>
+				)}
+
+				{isVlm && dataset.task_dimensions && dataset.task_dimensions.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Task Dimensions</h3>
+						<div className={styles.badgeWrap}>
+							{dataset.task_dimensions.map((value) => (
+								<span key={value} className={styles.tag}>{toTitleCase(value)}</span>
+							))}
+						</div>
+					</section>
+				)}
+
+				{isVlm && dataset.source_datasets && dataset.source_datasets.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Source Datasets</h3>
+						<div className={styles.badgeWrap}>
+							{dataset.source_datasets.map((sourceDataset) => (
+								<span key={sourceDataset} className={styles.tag}>{sourceDataset}</span>
+							))}
+						</div>
+					</section>
+				)}
 
 				{cropList.length > 0 && (
 					<section className={styles.section}>
@@ -386,6 +433,11 @@ export function DatasetMetadataModal({
 						{dataset.hf_link && (
 							<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
 								View on Hugging Face
+							</a>
+						)}
+						{isVlm && dataset.parent_dataset && (
+							<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
+								View Raw Dataset
 							</a>
 						)}
 					</div>
