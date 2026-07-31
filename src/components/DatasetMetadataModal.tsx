@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
+import { toDisplayLabel } from '../lib/labelOverrides';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import styles from './DatasetMetadataModal.module.css';
@@ -19,6 +20,7 @@ function formatValue(value: string | string[] | null | undefined) {
 	if (value == null) return 'Unknown';
 	if (Array.isArray(value)) return value.length ? value.map(toTitleCase).join(', ') : 'Unknown';
 	return toTitleCase(value);
+	return value;
 }
 
 function formatArray(value: number[] | null) {
@@ -98,7 +100,6 @@ function formatLoaderInstructions(dataset: Dataset) {
 				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
 			};
 		}
-
 		return {
 			title: 'Load from Hugging Face',
 			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
@@ -259,7 +260,7 @@ export function DatasetMetadataModal({
 
 	const metadataRows = [
 		['Location', formatDisplayLocation(dataset.location)],
-		['Sensor modality', dataset.sensor_modality == null || dataset.sensor_modality === '' ? 'Unknown' : dataset.sensor_modality],
+		['Sensor modality', dataset.sensor_modality == null || dataset.sensor_modality === '' ? 'Unknown' : toDisplayLabel(dataset.sensor_modality)],
 		['Platform', formatValue(dataset.platform)],
 		...(isVlm
 			? ([
@@ -437,7 +438,7 @@ export function DatasetMetadataModal({
 						)}
 						{isVlm && dataset.parent_dataset && (
 							<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
-								View Raw Dataset
+								View Original Dataset
 							</a>
 						)}
 					</div>
