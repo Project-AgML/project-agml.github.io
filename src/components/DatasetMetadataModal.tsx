@@ -96,6 +96,12 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
+		if(dataset.dataset_type === 'vlm') {
+			return {
+				title: 'Load from Hugging Face',
+				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
+			};
+		}
 		return {
 			title: 'Load from Hugging Face',
 			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
@@ -748,14 +754,6 @@ export function DatasetMetadataModal({
 					))}
 				</dl>
 
-				{isVlm && dataset.parent_dataset && (
-					<div className={styles.linkRow}>
-						<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
-							{dataset.name} (Original)
-						</a>
-					</div>
-				)}
-
 				{isVlm && dataset.qa_type && dataset.qa_type.length > 0 && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>QA Types</h3>
@@ -872,6 +870,11 @@ export function DatasetMetadataModal({
 						{dataset.hf_link && (
 							<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
 								View on Hugging Face
+							</a>
+						)}
+						{isVlm && dataset.parent_dataset && (
+							<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
+								View Original Dataset
 							</a>
 						)}
 					</div>
