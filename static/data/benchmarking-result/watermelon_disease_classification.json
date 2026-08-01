@@ -1,0 +1,86 @@
+{
+    "dataset": "Project-AgML/watermelon_disease_classification",
+    "run_id": "20260720_185749",
+    "phases_completed": [1, 2],
+    "metrics": {
+        "class_imbalance": {
+            "counts": {
+                "Anthracnose": 109,
+                "Downy_Mildew": 266,
+                "Healthy": 143,
+                "Mosaic_Virus": 290
+            },
+            "imbalance_ratio": 2.6606,
+            "normalized_entropy": 0.9452,
+            "most_frequent_class": "Mosaic_Virus",
+            "least_frequent_class": "Anthracnose",
+            "total_train_examples": 808
+        },
+        "exact_duplicate": {
+            "total_images": 1155,
+            "exact_duplicate_count": 0,
+            "exact_duplicate_rate": 0.0,
+            "duplicate_groups": 0,
+            "cross_split_duplicates": 0
+        },
+        "resolution_consistency": {
+            "total_images": 1155,
+            "width": { "mean": 3024, "std": 0.0, "min": 3024, "max": 3024 },
+            "height": {
+                "mean": 3091.2,
+                "std": 251.55,
+                "min": 3024,
+                "max": 4032
+            },
+            "aspect_ratio": {
+                "mean": 0.98,
+                "std": 0.06,
+                "min": 0.75,
+                "max": 1.0
+            },
+            "area_cv": 0.0814,
+            "mode_distribution": { "RGB": 1155 }
+        },
+        "metadata_coverage": {
+            "skipped": true,
+            "reason": "No metadata columns detected in dataset schema."
+        },
+        "near_duplicate": {
+            "total_images": 1155,
+            "embed_model": "facebook/dinov2-base",
+            "threshold": 0.98,
+            "near_duplicate_count": 46,
+            "near_duplicate_rate": 0.0398,
+            "near_duplicate_groups": 22,
+            "cross_split_near_duplicates": 27,
+            "faiss_index_type": "IndexFlatIP"
+        },
+        "feature_separability": {
+            "embed_model": "facebook/dinov2-base",
+            "n_total": 1155,
+            "n_silhouette_samples": 1155,
+            "silhouette_score": 0.2629,
+            "silhouette_interpretation": "moderate separation",
+            "davies_bouldin_index": 1.9661,
+            "davies_bouldin_interpretation": "some overlap between clusters",
+            "per_class_silhouette": {
+                "Anthracnose": 0.6231,
+                "Downy_Mildew": 0.4447,
+                "Healthy": 0.6217,
+                "Mosaic_Virus": -0.2152
+            }
+        },
+        "intra_class_diversity": {
+            "embed_model": "facebook/dinov2-base",
+            "per_class_diversity": {
+                "Anthracnose": 0.5802,
+                "Downy_Mildew": 0.3971,
+                "Healthy": 0.3354,
+                "Mosaic_Virus": 0.5747
+            },
+            "mean_diversity": 0.4718,
+            "min_diversity_class": "Healthy",
+            "max_diversity_class": "Anthracnose"
+        }
+    }
+}

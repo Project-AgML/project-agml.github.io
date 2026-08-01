@@ -1,7 +1,9 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import type { MouseEvent as ReactMouseEvent } from 'react';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
 import { toDisplayLabel } from '../lib/labelOverrides';
+import { useBenchmark, type BenchmarkData, type EmbedPoint as RawEmbedPoint } from '../lib/benchmarks';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import styles from './DatasetMetadataModal.module.css';
@@ -94,12 +96,6 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
-		if(dataset.dataset_type === 'vlm') {
-			return {
-				title: 'Load from Hugging Face',
-				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
-			};
-		}
 		return {
 			title: 'Load from Hugging Face',
 			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
@@ -110,6 +106,425 @@ function formatLoaderInstructions(dataset: Dataset) {
 		title: 'Load with AgML',
 		code: `import agml\nloader = agml.data.AgMLDataLoader("${dataset.name}")`,
 	};
+}
+
+function StatTile({ label, value }: { label: string; value: string }) {
+	return (
+		<div className={styles.statTile}>
+			<p className={styles.statTileLabel}>{label}</p>
+			<p className={styles.statTileValue}>{value}</p>
+		</div>
+	);
+}
+
+type MetricBar = { label: string; value: string; pct: number; positive?: boolean };
+type MetricStat = { label: string; value: string };
+type MetricCardVM =
+	| { kind: 'bars'; title: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
+	| { kind: 'signed'; title: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
+	| { kind: 'stats'; title: string; badge?: string; stats: MetricStat[] }
+	| { kind: 'skipped'; title: string; message: string };
+
+function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
+	const m = benchmark.metrics;
+	const cards: MetricCardVM[] = [];
+
+	if (m.class_imbalance) {
+		const d = m.class_imbalance;
+		const max = Math.max(...Object.values(d.counts));
+		cards.push({
+			kind: 'bars',
+			title: 'Class Imbalance',
+			badge: `${d.total_train_examples} train examples`,
+			bars: Object.entries(d.counts).map(([label, value]) => ({ label: toTitleCase(label), value: value.toLocaleString(), pct: (value / max) * 100 })),
+			footerStats: [
+				{ label: 'Imbalance ratio', value: d.imbalance_ratio.toFixed(2) },
+				{ label: 'Norm. entropy', value: d.normalized_entropy.toFixed(2) },
+				{ label: 'Most frequent', value: toTitleCase(d.most_frequent_class) },
+				{ label: 'Least frequent', value: toTitleCase(d.least_frequent_class) },
+			],
+		});
+	}
+
+	if (m.exact_duplicate) {
+		const d = m.exact_duplicate;
+		cards.push({
+			kind: 'stats',
+			title: 'Exact Duplicates',
+			badge: `${d.total_images} images`,
+			stats: [
+				{ label: 'Duplicate count', value: String(d.exact_duplicate_count) },
+				{ label: 'Duplicate rate', value: `${(d.exact_duplicate_rate * 100).toFixed(1)}%` },
+				{ label: 'Groups', value: String(d.duplicate_groups) },
+				{ label: 'Cross-split', value: String(d.cross_split_duplicates) },
+			],
+		});
+	}
+
+	if (m.near_duplicate) {
+		const d = m.near_duplicate;
+		cards.push({
+			kind: 'stats',
+			title: 'Near Duplicates',
+			badge: d.embed_model,
+			stats: [
+				{ label: 'Near-dup count', value: String(d.near_duplicate_count) },
+				{ label: 'Near-dup rate', value: `${(d.near_duplicate_rate * 100).toFixed(1)}%` },
+				{ label: 'Groups', value: String(d.near_duplicate_groups) },
+				{ label: 'Cross-split', value: String(d.cross_split_near_duplicates) },
+				{ label: 'Threshold', value: String(d.threshold) },
+				{ label: 'Index type', value: d.faiss_index_type },
+			],
+		});
+	}
+
+	if (m.resolution_consistency) {
+		const d = m.resolution_consistency;
+		cards.push({
+			kind: 'stats',
+			title: 'Resolution Consistency',
+			badge: `${d.total_images} images`,
+			stats: [
+				{ label: 'Width (mean)', value: `${d.width.mean}px` },
+				{ label: 'Height (mean±std)', value: `${d.height.mean.toFixed(0)}±${d.height.std.toFixed(1)}` },
+				{ label: 'Aspect ratio', value: `${d.aspect_ratio.mean.toFixed(2)} (${d.aspect_ratio.min.toFixed(2)}–${d.aspect_ratio.max.toFixed(2)})` },
+				{ label: 'Area CV', value: d.area_cv.toFixed(3) },
+				{ label: 'Color mode', value: Object.keys(d.mode_distribution).join(', ') },
+			],
+		});
+	}
+
+	if (m.feature_separability) {
+		const d = m.feature_separability;
+		cards.push({
+			kind: 'signed',
+			title: 'Feature Separability',
+			badge: d.embed_model,
+			bars: Object.entries(d.per_class_silhouette).map(([label, value]) => ({
+				label: toTitleCase(label),
+				value: value.toFixed(2),
+				pct: Math.abs(value) * 50,
+				positive: value >= 0,
+			})),
+			footerStats: [
+				{ label: 'Silhouette', value: `${d.silhouette_score.toFixed(2)} — ${d.silhouette_interpretation}` },
+				{ label: 'Davies-Bouldin', value: `${d.davies_bouldin_index.toFixed(2)} — ${d.davies_bouldin_interpretation}` },
+			],
+		});
+	}
+
+	if (m.intra_class_diversity) {
+		const d = m.intra_class_diversity;
+		const max = Math.max(...Object.values(d.per_class_diversity));
+		cards.push({
+			kind: 'bars',
+			title: 'Intra-class Diversity',
+			badge: d.embed_model,
+			bars: Object.entries(d.per_class_diversity).map(([label, value]) => ({ label: toTitleCase(label), value: value.toFixed(2), pct: (value / max) * 100 })),
+			footerStats: [
+				{ label: 'Mean diversity', value: d.mean_diversity.toFixed(2) },
+				{ label: 'Min class', value: toTitleCase(d.min_diversity_class) },
+				{ label: 'Max class', value: toTitleCase(d.max_diversity_class) },
+			],
+		});
+	}
+
+	if (m.metadata_coverage?.skipped) {
+		cards.push({ kind: 'skipped', title: 'Metadata Coverage', message: m.metadata_coverage.reason || 'Skipped for this run.' });
+	}
+
+	return cards;
+}
+
+function MetricCard({ card }: { card: MetricCardVM }) {
+	const badge = card.kind !== 'skipped' ? card.badge : undefined;
+	return (
+		<div className={styles.metricCard}>
+			<div className={styles.metricCardHeader}>
+				<h4 className={styles.metricCardTitle}>{card.title}</h4>
+				{badge && <span className={styles.metricCardBadge}>{badge}</span>}
+			</div>
+
+			{card.kind === 'skipped' && <p className={styles.metricSkipped}>Skipped — {card.message}</p>}
+
+			{(card.kind === 'bars' || card.kind === 'signed') && (
+				<div className={styles.metricBars}>
+					{card.bars.map((bar) => (
+						<div key={bar.label} className={styles.metricBarRow}>
+							<span className={styles.metricBarLabel}>{bar.label}</span>
+							{card.kind === 'signed' ? (
+								<div className={styles.metricSignedTrack}>
+									<div className={styles.metricSignedMidline} />
+									<div
+										className={`${styles.metricSignedFill} ${bar.positive ? styles.metricSignedPositive : styles.metricSignedNegative}`}
+										style={{
+											width: `${bar.pct}%`,
+											left: bar.positive ? '50%' : undefined,
+											right: bar.positive ? undefined : '50%',
+										}}
+									/>
+								</div>
+							) : (
+								<div className={styles.metricBarTrack}>
+									<div className={styles.metricBarFill} style={{ width: `${Math.max(2, bar.pct)}%` }} />
+								</div>
+							)}
+							<span className={styles.metricBarValue}>{bar.value}</span>
+						</div>
+					))}
+				</div>
+			)}
+
+			{card.kind === 'stats' && (
+				<div className={styles.statTileGrid}>
+					{card.stats.map((stat) => (
+						<StatTile key={stat.label} label={stat.label} value={stat.value} />
+					))}
+				</div>
+			)}
+
+			{(card.kind === 'bars' || card.kind === 'signed') && card.footerStats && card.footerStats.length > 0 && (
+				<div className={styles.metricFooterStats}>
+					{card.footerStats.map((stat) => (
+						<StatTile key={stat.label} label={stat.label} value={stat.value} />
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
+
+const EMBED_CLASS_COLORS = ['var(--ifm-color-primary)', 'oklch(0.66 0.15 60)', 'oklch(0.58 0.14 250)', 'oklch(0.62 0.16 340)'];
+const AXIS_TICKS = [-1, -0.5, 0, 0.5, 1];
+const EMBED_CLUSTER_CENTERS: [number, number, number][] = [
+	[-0.6, 0.5, 0.3],
+	[0.55, 0.55, -0.4],
+	[-0.5, -0.55, -0.2],
+	[0.6, -0.5, 0.45],
+];
+
+function mulberry32(seed: number) {
+	return function random() {
+		seed |= 0;
+		seed = (seed + 0x6d2b79f5) | 0;
+		let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+		t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+		return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+	};
+}
+
+type EmbedPoint = { id: string; cls: string; color: string; x: number; y: number; z: number };
+
+function colorForClass(cls: string, classOrder: string[]): string {
+	const index = classOrder.indexOf(cls);
+	return EMBED_CLASS_COLORS[(index < 0 ? 0 : index) % EMBED_CLASS_COLORS.length];
+}
+
+function embedPointsFromReal(embeddings: RawEmbedPoint[], classOrder: string[]): EmbedPoint[] {
+	return embeddings.map((p, i) => ({
+		id: `${p.class}-${i}`,
+		cls: p.class,
+		color: colorForClass(p.class, classOrder),
+		x: p.x,
+		y: p.y,
+		z: p.z,
+	}));
+}
+
+function buildEmbeddingPoints(benchmark: BenchmarkData): EmbedPoint[] {
+	const counts = benchmark.metrics.class_imbalance?.counts ?? {};
+	const sep = benchmark.metrics.feature_separability?.per_class_silhouette ?? {};
+	const classes = Object.keys(counts);
+	const rand = mulberry32(42);
+	const points: EmbedPoint[] = [];
+	classes.forEach((cls, i) => {
+		const center = EMBED_CLUSTER_CENTERS[i % EMBED_CLUSTER_CENTERS.length];
+		const color = EMBED_CLASS_COLORS[i % EMBED_CLASS_COLORS.length];
+		const sil = sep[cls] ?? 0.3;
+		const spread = 0.22 + Math.max(0, 0.65 - sil) * 0.55;
+		const n = Math.max(6, Math.round((counts[cls] || 30) / 8));
+		for (let k = 0; k < n; k += 1) {
+			const jitter = () => (((rand() + rand() + rand()) - 1.5) / 1.5) * spread;
+			points.push({ id: `${cls}-${k}`, cls, color, x: center[0] + jitter(), y: center[1] + jitter(), z: center[2] + jitter() });
+		}
+	});
+	return points;
+}
+
+function projectEmbeddingPoints(points: EmbedPoint[], theta: number, phi: number, mode: '2d' | '3d') {
+	const focal = 2.6;
+	const projected = points.map((p) => {
+		if (mode === '2d') return { ...p, sx: p.x, sy: p.y, depth: 0, scale: 1 };
+		const cosT = Math.cos(theta);
+		const sinT = Math.sin(theta);
+		const x1 = p.x * cosT + p.z * sinT;
+		const z1 = -p.x * sinT + p.z * cosT;
+		const cosP = Math.cos(phi);
+		const sinP = Math.sin(phi);
+		const y2 = p.y * cosP - z1 * sinP;
+		const z2 = p.y * sinP + z1 * cosP;
+		const scale = focal / (focal + z2);
+		return { ...p, sx: x1 * scale, sy: y2 * scale, depth: z2, scale };
+	});
+	if (mode !== '2d') projected.sort((a, b) => a.depth - b.depth);
+	return projected;
+}
+
+function EmbeddingScatter({ benchmark, embeddings }: { benchmark: BenchmarkData; embeddings: RawEmbedPoint[] | null }) {
+	const [view, setView] = useState<'2d' | '3d'>('2d');
+	const [theta, setTheta] = useState(0.6);
+	const [phi, setPhi] = useState(0.32);
+	const draggingRef = useRef(false);
+	const lastPointerRef = useRef<{ x: number; y: number } | null>(null);
+
+	const hasRealEmbeddings = Boolean(embeddings && embeddings.length > 0);
+	const points = useMemo(() => {
+		if (embeddings && embeddings.length > 0) {
+			const classOrder = Object.keys(benchmark.metrics.class_imbalance?.counts ?? {});
+			return embedPointsFromReal(embeddings, classOrder);
+		}
+		return buildEmbeddingPoints(benchmark);
+	}, [embeddings, benchmark]);
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			if (draggingRef.current) return;
+			setTheta((t) => t + 0.006);
+		}, 40);
+		return () => clearInterval(timer);
+	}, []);
+
+	useEffect(() => {
+		const onMove = (event: MouseEvent) => {
+			if (!lastPointerRef.current) return;
+			const dx = event.clientX - lastPointerRef.current.x;
+			const dy = event.clientY - lastPointerRef.current.y;
+			lastPointerRef.current = { x: event.clientX, y: event.clientY };
+			setTheta((t) => t + dx * 0.008);
+			setPhi((p) => Math.max(-1.2, Math.min(1.2, p - dy * 0.008)));
+		};
+		const onUp = () => {
+			draggingRef.current = false;
+			lastPointerRef.current = null;
+		};
+		window.addEventListener('mousemove', onMove);
+		window.addEventListener('mouseup', onUp);
+		return () => {
+			window.removeEventListener('mousemove', onMove);
+			window.removeEventListener('mouseup', onUp);
+		};
+	}, []);
+
+	const onDown = (event: ReactMouseEvent) => {
+		draggingRef.current = true;
+		lastPointerRef.current = { x: event.clientX, y: event.clientY };
+	};
+
+	const projected = useMemo(() => projectEmbeddingPoints(points, theta, phi, view), [points, theta, phi, view]);
+	const legend = useMemo(() => {
+		const seen = new Map<string, string>();
+		points.forEach((p) => seen.set(p.cls, p.color));
+		return Array.from(seen.entries());
+	}, [points]);
+
+	const embedModel = benchmark.metrics.feature_separability?.embed_model ?? 'dinov2-base';
+
+	return (
+		<section className={styles.section}>
+			<div className={styles.embedHeader}>
+				<div>
+					<h3 className={styles.sectionTitle}>Embedding Space — UMAP</h3>
+					<p className={styles.embedSubtitle}>{embedModel}</p>
+				</div>
+				<div className={styles.embedToggle}>
+					<button
+						type="button"
+						className={`${styles.embedToggleButton} ${view === '2d' ? styles.embedToggleActive : ''}`}
+						onClick={() => setView('2d')}
+					>
+						2D
+					</button>
+					<button
+						type="button"
+						className={`${styles.embedToggleButton} ${view === '3d' ? styles.embedToggleActive : ''}`}
+						onClick={() => setView('3d')}
+					>
+						3D
+					</button>
+				</div>
+			</div>
+
+			<div className={styles.embedViewport} onMouseDown={onDown} style={{ cursor: view === '2d' ? 'default' : 'grab' }}>
+				{AXIS_TICKS.map((value) => (
+					<span key={`x-${value}`} className={styles.embedAxisTickX} style={{ left: `${50 + value * 38}%` }}>
+						{value}
+					</span>
+				))}
+				{AXIS_TICKS.map((value) => (
+					<span key={`y-${value}`} className={styles.embedAxisTickY} style={{ top: `${50 - value * 38}%` }}>
+						{value}
+					</span>
+				))}
+				{projected.map((p) => (
+					<div
+						key={p.id}
+						title={toTitleCase(p.cls)}
+						style={{
+							position: 'absolute',
+							left: `${50 + p.sx * 38}%`,
+							top: `${50 - p.sy * 38}%`,
+							width: `${view === '2d' ? 8 : Math.max(4, 7 * p.scale)}px`,
+							height: `${view === '2d' ? 8 : Math.max(4, 7 * p.scale)}px`,
+							borderRadius: '50%',
+							background: p.color,
+							opacity: view === '2d' ? 0.85 : Math.max(0.35, Math.min(1, 0.55 + p.scale * 0.4)),
+							transform: 'translate(-50%,-50%)',
+							boxShadow: '0 1px 3px rgba(0,0,0,0.25)',
+							pointerEvents: 'none',
+						}}
+					/>
+				))}
+				{view === '3d' && <p className={styles.embedDragHint}>drag to orbit</p>}
+			</div>
+
+			<div className={styles.embedLegend}>
+				{legend.map(([cls, color]) => (
+					<span key={cls} className={styles.embedLegendItem}>
+						<span className={styles.embedLegendDot} style={{ background: color }} />
+						{toTitleCase(cls)}
+					</span>
+				))}
+			</div>
+			<p className={styles.embedNote}>
+				{hasRealEmbeddings
+					? 'projected from embeddings.json'
+					: `no embeddings.json found for this dataset · showing a seeded demo scatter around class clusters`}
+			</p>
+		</section>
+	);
+}
+
+function formatRunDate(runId: string): string {
+	const match = /^(\d{4})(\d{2})(\d{2})/.exec(runId);
+	if (!match) return runId;
+	const [, year, month, day] = match;
+	return `${month}/${day}/${year}`;
+}
+
+function BenchmarkView({ benchmark, embeddings }: { benchmark: BenchmarkData; embeddings: RawEmbedPoint[] | null }) {
+	const cards = useMemo(() => buildMetricCards(benchmark), [benchmark]);
+	return (
+		<div>
+			<p className={styles.benchmarkRunNote}>Last benchmarking check run: {formatRunDate(benchmark.run_id)}</p>
+			<hr className={styles.benchmarkDivider} />
+			<div className={styles.metricCardGrid}>
+				{cards.map((card) => (
+					<MetricCard key={card.title} card={card} />
+				))}
+			</div>
+			<EmbeddingScatter benchmark={benchmark} embeddings={embeddings} />
+		</div>
+	);
 }
 
 function InlineFilterGroup({
@@ -172,6 +587,9 @@ export function DatasetMetadataModal({
 	}, [open, onClose]);
 
 	const datasetPerformance = useDatasetPerformance(open ? (dataset?.name ?? null) : null);
+	const { data: benchmark, embeddings } = useBenchmark(open ? (dataset?.name ?? null) : null);
+	const [showBenchmarks, setShowBenchmarks] = useState(false);
+	useEffect(() => setShowBenchmarks(false), [dataset?.name, open]);
 
 	const [metricTypeFilter, setMetricTypeFilter] = useState<string[]>([]);
 	const [tunedFilter, setTunedFilter] = useState<string[]>([]);
@@ -304,11 +722,23 @@ export function DatasetMetadataModal({
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
 						</div>
 					</div>
-					<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
-						×
-					</button>
+					<div className={styles.headerActions}>
+						{benchmark && (
+							<button type="button" className={styles.benchmarkToggle} onClick={() => setShowBenchmarks((value) => !value)}>
+								{showBenchmarks ? '← Back to Details' : '📊 View Benchmarks'}
+							</button>
+						)}
+						<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
+							×
+						</button>
+					</div>
 				</div>
 
+				<div className={`${styles.flipper} ${showBenchmarks ? styles.flipperFlipped : ''}`}>
+				<div
+					className={`${styles.face} ${showBenchmarks ? styles.faceHidden : ''}`}
+					style={{ visibility: showBenchmarks ? 'hidden' : 'visible', pointerEvents: showBenchmarks ? 'none' : 'auto' }}
+				>
 				<dl className={styles.detailGrid} style={{ gridTemplateColumns: `repeat(${metadataRows.length}, 1fr)` }}>
 					{metadataRows.map(([label, value]) => (
 						<div key={label} className={styles.detailItem}>
@@ -317,6 +747,14 @@ export function DatasetMetadataModal({
 						</div>
 					))}
 				</dl>
+
+				{isVlm && dataset.parent_dataset && (
+					<div className={styles.linkRow}>
+						<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
+							{dataset.name} (Original)
+						</a>
+					</div>
+				)}
 
 				{isVlm && dataset.qa_type && dataset.qa_type.length > 0 && (
 					<section className={styles.section}>
@@ -434,11 +872,6 @@ export function DatasetMetadataModal({
 						{dataset.hf_link && (
 							<a className={styles.hfLink} href={dataset.hf_link} target="_blank" rel="noreferrer">
 								View on Hugging Face
-							</a>
-						)}
-						{isVlm && dataset.parent_dataset && (
-							<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
-								View Original Dataset
 							</a>
 						)}
 					</div>
@@ -585,6 +1018,17 @@ export function DatasetMetadataModal({
 						<p className={styles.bodyText}>No leaderboard results have been submitted for this dataset yet.</p>
 					)}
 				</section>
+				</div>
+
+				{benchmark && (
+					<div
+						className={`${styles.face} ${styles.faceBack} ${showBenchmarks ? '' : styles.faceHidden}`}
+						style={{ visibility: showBenchmarks ? 'visible' : 'hidden', pointerEvents: showBenchmarks ? 'auto' : 'none' }}
+					>
+						<BenchmarkView benchmark={benchmark} embeddings={embeddings} />
+					</div>
+				)}
+				</div>
 			</div>
 		</div>
 	);
