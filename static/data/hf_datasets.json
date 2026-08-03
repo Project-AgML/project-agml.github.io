@@ -7427,5 +7427,104 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Medjool_date_ripeness_detection",
     "examples_image_url": "/img/agml/sample_images/Medjool_date_ripeness_classification_sample.webp"
+  },
+  {
+    "name": "ICPTC_pistachio_tree_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Iran",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pistachio"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "phone",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 526,
+    "classes": [
+      "J",
+      "L",
+      "R",
+      "S"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2021.107348",
+    "citation": "Heidary-Sharifabad, Ahmad; Sardari Zarchi, Mohsen; Zarei, Gholamreza (2021), “ICPTC : Iranian Commercial Pistachios Tree Cultivars ”, Mendeley Data, V1, doi: 10.17632/6mmjjkpd5m.1",
+    "zip_size_bytes": 3292932394,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ICPTC_pistachio_tree_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/ICPTC_pistachio_tree_variety_classification_sample.webp"
+  },
+  {
+    "name": "citrus_fruit_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "Taiwan",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "murcott",
+      "ponkan",
+      "tangerine",
+      "tankan"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "DSLR",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 1379,
+    "augmented_num_images": 7584,
+    "augmented_zip_size_bytes": 6759805052,
+    "classes": [
+      "murcott",
+      "ponkan",
+      "tangerine",
+      "tankan"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109628",
+    "citation": "Huang, Mei-Ling; Chen, You-An (2023), “A Dataset of Citrus Fruit Images”, Mendeley Data, V6, doi: 10.17632/bxfgvsn9kw.6",
+    "zip_size_bytes": 3421314797,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/citrus_fruit_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/citrus_fruit_variety_classification_sample.webp"
+  },
+  {
+    "name": "Basmati_rice_seed_varitey_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": "India",
+    "environment": "Lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Rice"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "fixed",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 3210,
+    "classes": [
+      "1121",
+      "1509",
+      "1637",
+      "1718",
+      "1728",
+      "BAS_370",
+      "CSR_30",
+      "DHBT_3",
+      "PB1",
+      "PB_6",
+      "Unknown"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2020.106460",
+    "citation": "Sharma, Arun; Satish, Deepshikha; Sharma, Sushmita; Gupta, Dinesh (2020), “Indian Major Basmati Paddy Seed Varieties Images Dataset”, Mendeley Data, V2, doi: 10.17632/byms2fjzpw.2",
+    "zip_size_bytes": 4682395321,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Basmati_rice_seed_varitey_classification",
+    "examples_image_url": "/img/agml/sample_images/Basmati_rice_seed_varitey_classification_sample.webp"
   }
 ]
