@@ -1,11 +1,12 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
-import type { MouseEvent as ReactMouseEvent } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
 import { toDisplayLabel } from '../lib/labelOverrides';
 import { useBenchmark, type BenchmarkData, type EmbedPoint as RawEmbedPoint } from '../lib/benchmarks';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
+import { EmbeddingPlot2D } from './EmbeddingPlot2D';
+import { EmbeddingPlot3D } from './EmbeddingPlot3D';
 import styles from './DatasetMetadataModal.module.css';
 
 function formatImageCount(count: number | null) {
@@ -126,9 +127,9 @@ function StatTile({ label, value }: { label: string; value: string }) {
 type MetricBar = { label: string; value: string; pct: number; positive?: boolean };
 type MetricStat = { label: string; value: string };
 type MetricCardVM =
-	| { kind: 'bars'; title: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
-	| { kind: 'signed'; title: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
-	| { kind: 'stats'; title: string; badge?: string; stats: MetricStat[] }
+	| { kind: 'bars'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
+	| { kind: 'signed'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
+	| { kind: 'stats'; title: string; description: string; badge?: string; stats: MetricStat[] }
 	| { kind: 'skipped'; title: string; message: string };
 
 function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
@@ -141,6 +142,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'bars',
 			title: 'Class Imbalance',
+			description:
+				'How evenly the classes are represented. Imbalance ratio is the most-frequent class’s count divided by the least-frequent’s (1.0 = perfectly balanced, higher = more skewed). Normalized entropy ranges 0–1, where 1 means every class has an equal share.',
 			badge: `${d.total_train_examples} train examples`,
 			bars: Object.entries(d.counts).map(([label, value]) => ({ label: toTitleCase(label), value: value.toLocaleString(), pct: (value / max) * 100 })),
 			footerStats: [
@@ -157,6 +160,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'stats',
 			title: 'Exact Duplicates',
+			description:
+				'Images that are byte-for-byte identical to another image in the dataset. A high duplicate rate inflates the apparent dataset size and can leak the same example across train/test splits, making evaluation look better than it is.',
 			badge: `${d.total_images} images`,
 			stats: [
 				{ label: 'Duplicate count', value: String(d.exact_duplicate_count) },
@@ -172,6 +177,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'stats',
 			title: 'Near Duplicates',
+			description:
+				'Images that are nearly identical (crops, recompressions, small edits) based on embedding similarity above a threshold — not exact byte matches. High near-duplicate rates risk train/test leakage even when the exact-duplicate count is zero.',
 			badge: d.embed_model,
 			stats: [
 				{ label: 'Near-dup count', value: String(d.near_duplicate_count) },
@@ -189,6 +196,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'stats',
 			title: 'Resolution Consistency',
+			description:
+				'How uniform image dimensions and aspect ratios are across the dataset. Area CV (coefficient of variation) near 0 means sizes barely vary; higher values mean preprocessing has to handle a wide range of source resolutions.',
 			badge: `${d.total_images} images`,
 			stats: [
 				{ label: 'Width (mean)', value: `${d.width.mean}px` },
@@ -205,6 +214,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'signed',
 			title: 'Feature Separability',
+			description:
+				'How distinctly the classes cluster in embedding space. Silhouette score ranges −1 to 1 (higher = better-separated clusters, near 0 = overlapping, negative = points closer to another class than their own — often mislabeled or genuinely ambiguous). Davies-Bouldin index is ≥0 and unbounded, where lower means better separation.',
 			badge: d.embed_model,
 			bars: Object.entries(d.per_class_silhouette).map(([label, value]) => ({
 				label: toTitleCase(label),
@@ -225,6 +236,8 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'bars',
 			title: 'Intra-class Diversity',
+			description:
+				'How visually varied the images within each class are, based on average embedding distance between same-class examples. Higher values mean more diverse, less redundant examples per class; a very low value can mean that class is dominated by near-duplicates.',
 			badge: d.embed_model,
 			bars: Object.entries(d.per_class_diversity).map(([label, value]) => ({ label: toTitleCase(label), value: value.toFixed(2), pct: (value / max) * 100 })),
 			footerStats: [
@@ -242,12 +255,26 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 	return cards;
 }
 
+function InfoTooltip({ text }: { text: string }) {
+	return (
+		<span className={styles.infoTooltip} tabIndex={0} aria-label={text}>
+			<span className={styles.infoTooltipIcon} aria-hidden="true">
+				i
+			</span>
+			<span className={styles.infoTooltipBubble}>{text}</span>
+		</span>
+	);
+}
+
 function MetricCard({ card }: { card: MetricCardVM }) {
 	const badge = card.kind !== 'skipped' ? card.badge : undefined;
 	return (
 		<div className={styles.metricCard}>
 			<div className={styles.metricCardHeader}>
-				<h4 className={styles.metricCardTitle}>{card.title}</h4>
+				<div className={styles.metricCardTitleRow}>
+					<h4 className={styles.metricCardTitle}>{card.title}</h4>
+					{card.kind !== 'skipped' && <InfoTooltip text={card.description} />}
+				</div>
 				{badge && <span className={styles.metricCardBadge}>{badge}</span>}
 			</div>
 
@@ -300,8 +327,7 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 	);
 }
 
-const EMBED_CLASS_COLORS = ['var(--ifm-color-primary)', 'oklch(0.66 0.15 60)', 'oklch(0.58 0.14 250)', 'oklch(0.62 0.16 340)'];
-const AXIS_TICKS = [-1, -0.5, 0, 0.5, 1];
+const PALETTE = ['#4C9BE8', '#F4A261', '#2EC4B6', '#E63946', '#A8DADC', '#8ECAE6', '#FFB4A2', '#B5838D'];
 const EMBED_CLUSTER_CENTERS: [number, number, number][] = [
 	[-0.6, 0.5, 0.3],
 	[0.55, 0.55, -0.4],
@@ -319,21 +345,25 @@ function mulberry32(seed: number) {
 	};
 }
 
-type EmbedPoint = { id: string; cls: string; color: string; x: number; y: number; z: number };
-
-function colorForClass(cls: string, classOrder: string[]): string {
-	const index = classOrder.indexOf(cls);
-	return EMBED_CLASS_COLORS[(index < 0 ? 0 : index) % EMBED_CLASS_COLORS.length];
+export interface EmbedPoint {
+	id: string;
+	cls: string;
+	split: string;
+	index: number;
+	x: number;
+	y: number;
+	z: number;
 }
 
-function embedPointsFromReal(embeddings: RawEmbedPoint[], classOrder: string[]): EmbedPoint[] {
+function embedPointsFromReal(embeddings: RawEmbedPoint[]): EmbedPoint[] {
 	return embeddings.map((p, i) => ({
-		id: `${p.class}-${i}`,
-		cls: p.class,
-		color: colorForClass(p.class, classOrder),
+		id: `${p.label}-${p.index ?? i}`,
+		cls: p.label,
+		split: p.split ?? 'train',
+		index: p.index ?? i,
 		x: p.x,
 		y: p.y,
-		z: p.z,
+		z: p.z ?? 0,
 	}));
 }
 
@@ -342,96 +372,57 @@ function buildEmbeddingPoints(benchmark: BenchmarkData): EmbedPoint[] {
 	const sep = benchmark.metrics.feature_separability?.per_class_silhouette ?? {};
 	const classes = Object.keys(counts);
 	const rand = mulberry32(42);
+	const splits = ['train', 'val', 'test'];
 	const points: EmbedPoint[] = [];
+	let globalIndex = 0;
 	classes.forEach((cls, i) => {
 		const center = EMBED_CLUSTER_CENTERS[i % EMBED_CLUSTER_CENTERS.length];
-		const color = EMBED_CLASS_COLORS[i % EMBED_CLASS_COLORS.length];
 		const sil = sep[cls] ?? 0.3;
 		const spread = 0.22 + Math.max(0, 0.65 - sil) * 0.55;
 		const n = Math.max(6, Math.round((counts[cls] || 30) / 8));
 		for (let k = 0; k < n; k += 1) {
 			const jitter = () => (((rand() + rand() + rand()) - 1.5) / 1.5) * spread;
-			points.push({ id: `${cls}-${k}`, cls, color, x: center[0] + jitter(), y: center[1] + jitter(), z: center[2] + jitter() });
+			points.push({
+				id: `${cls}-${k}`,
+				cls,
+				split: splits[globalIndex % splits.length],
+				index: globalIndex,
+				x: center[0] + jitter(),
+				y: center[1] + jitter(),
+				z: center[2] + jitter(),
+			});
+			globalIndex += 1;
 		}
 	});
 	return points;
 }
 
-function projectEmbeddingPoints(points: EmbedPoint[], theta: number, phi: number, mode: '2d' | '3d') {
-	const focal = 2.6;
-	const projected = points.map((p) => {
-		if (mode === '2d') return { ...p, sx: p.x, sy: p.y, depth: 0, scale: 1 };
-		const cosT = Math.cos(theta);
-		const sinT = Math.sin(theta);
-		const x1 = p.x * cosT + p.z * sinT;
-		const z1 = -p.x * sinT + p.z * cosT;
-		const cosP = Math.cos(phi);
-		const sinP = Math.sin(phi);
-		const y2 = p.y * cosP - z1 * sinP;
-		const z2 = p.y * sinP + z1 * cosP;
-		const scale = focal / (focal + z2);
-		return { ...p, sx: x1 * scale, sy: y2 * scale, depth: z2, scale };
-	});
-	if (mode !== '2d') projected.sort((a, b) => a.depth - b.depth);
-	return projected;
+function buildClassColorMap(points: EmbedPoint[]): Record<string, string> {
+	const labels = Array.from(new Set(points.map((p) => p.cls))).sort();
+	return Object.fromEntries(labels.map((label, i) => [label, PALETTE[i % PALETTE.length]]));
 }
 
-function EmbeddingScatter({ benchmark, embeddings }: { benchmark: BenchmarkData; embeddings: RawEmbedPoint[] | null }) {
+function EmbeddingScatter({
+	benchmark,
+	embeddings2d,
+	embeddings3d,
+}: {
+	benchmark: BenchmarkData;
+	embeddings2d: RawEmbedPoint[] | null;
+	embeddings3d: RawEmbedPoint[] | null;
+}) {
 	const [view, setView] = useState<'2d' | '3d'>('2d');
-	const [theta, setTheta] = useState(0.6);
-	const [phi, setPhi] = useState(0.32);
-	const draggingRef = useRef(false);
-	const lastPointerRef = useRef<{ x: number; y: number } | null>(null);
 
-	const hasRealEmbeddings = Boolean(embeddings && embeddings.length > 0);
+	// 2D and 3D UMAP projections are independently fit, so they're separate point sets —
+	// not the same points with one axis dropped.
+	const activeRaw = view === '2d' ? embeddings2d : embeddings3d;
+	const hasRealEmbeddings = Boolean(activeRaw && activeRaw.length > 0);
 	const points = useMemo(() => {
-		if (embeddings && embeddings.length > 0) {
-			const classOrder = Object.keys(benchmark.metrics.class_imbalance?.counts ?? {});
-			return embedPointsFromReal(embeddings, classOrder);
-		}
+		if (activeRaw && activeRaw.length > 0) return embedPointsFromReal(activeRaw);
 		return buildEmbeddingPoints(benchmark);
-	}, [embeddings, benchmark]);
+	}, [activeRaw, benchmark]);
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			if (draggingRef.current) return;
-			setTheta((t) => t + 0.006);
-		}, 40);
-		return () => clearInterval(timer);
-	}, []);
-
-	useEffect(() => {
-		const onMove = (event: MouseEvent) => {
-			if (!lastPointerRef.current) return;
-			const dx = event.clientX - lastPointerRef.current.x;
-			const dy = event.clientY - lastPointerRef.current.y;
-			lastPointerRef.current = { x: event.clientX, y: event.clientY };
-			setTheta((t) => t + dx * 0.008);
-			setPhi((p) => Math.max(-1.2, Math.min(1.2, p - dy * 0.008)));
-		};
-		const onUp = () => {
-			draggingRef.current = false;
-			lastPointerRef.current = null;
-		};
-		window.addEventListener('mousemove', onMove);
-		window.addEventListener('mouseup', onUp);
-		return () => {
-			window.removeEventListener('mousemove', onMove);
-			window.removeEventListener('mouseup', onUp);
-		};
-	}, []);
-
-	const onDown = (event: ReactMouseEvent) => {
-		draggingRef.current = true;
-		lastPointerRef.current = { x: event.clientX, y: event.clientY };
-	};
-
-	const projected = useMemo(() => projectEmbeddingPoints(points, theta, phi, view), [points, theta, phi, view]);
-	const legend = useMemo(() => {
-		const seen = new Map<string, string>();
-		points.forEach((p) => seen.set(p.cls, p.color));
-		return Array.from(seen.entries());
-	}, [points]);
+	const colorMap = useMemo(() => buildClassColorMap(points), [points]);
 
 	const embedModel = benchmark.metrics.feature_separability?.embed_model ?? 'dinov2-base';
 
@@ -460,75 +451,56 @@ function EmbeddingScatter({ benchmark, embeddings }: { benchmark: BenchmarkData;
 				</div>
 			</div>
 
-			<div className={styles.embedViewport} onMouseDown={onDown} style={{ cursor: view === '2d' ? 'default' : 'grab' }}>
-				{AXIS_TICKS.map((value) => (
-					<span key={`x-${value}`} className={styles.embedAxisTickX} style={{ left: `${50 + value * 38}%` }}>
-						{value}
-					</span>
-				))}
-				{AXIS_TICKS.map((value) => (
-					<span key={`y-${value}`} className={styles.embedAxisTickY} style={{ top: `${50 - value * 38}%` }}>
-						{value}
-					</span>
-				))}
-				{projected.map((p) => (
-					<div
-						key={p.id}
-						title={toTitleCase(p.cls)}
-						style={{
-							position: 'absolute',
-							left: `${50 + p.sx * 38}%`,
-							top: `${50 - p.sy * 38}%`,
-							width: `${view === '2d' ? 8 : Math.max(4, 7 * p.scale)}px`,
-							height: `${view === '2d' ? 8 : Math.max(4, 7 * p.scale)}px`,
-							borderRadius: '50%',
-							background: p.color,
-							opacity: view === '2d' ? 0.85 : Math.max(0.35, Math.min(1, 0.55 + p.scale * 0.4)),
-							transform: 'translate(-50%,-50%)',
-							boxShadow: '0 1px 3px rgba(0,0,0,0.25)',
-							pointerEvents: 'none',
-						}}
-					/>
-				))}
-				{view === '3d' && <p className={styles.embedDragHint}>drag to orbit</p>}
-			</div>
+			{view === '2d' ? (
+				<EmbeddingPlot2D points={points} colorMap={colorMap} />
+			) : (
+				<EmbeddingPlot3D points={points} colorMap={colorMap} />
+			)}
 
 			<div className={styles.embedLegend}>
-				{legend.map(([cls, color]) => (
-					<span key={cls} className={styles.embedLegendItem}>
+				{Object.entries(colorMap).map(([key, color]) => (
+					<span key={key} className={styles.embedLegendItem}>
 						<span className={styles.embedLegendDot} style={{ background: color }} />
-						{toTitleCase(cls)}
+						{toTitleCase(key)}
 					</span>
 				))}
 			</div>
 			<p className={styles.embedNote}>
 				{hasRealEmbeddings
-					? 'projected from embeddings.json'
-					: `no embeddings.json found for this dataset · showing a seeded demo scatter around class clusters`}
+					? `projected from real ${view.toUpperCase()} UMAP embeddings`
+					: `no ${view.toUpperCase()} UMAP embeddings found for this dataset · showing a seeded demo scatter around class clusters`}
 			</p>
 		</section>
 	);
 }
 
-function formatRunDate(runId: string): string {
-	const match = /^(\d{4})(\d{2})(\d{2})/.exec(runId);
-	if (!match) return runId;
+function formatBenchmarkDate(dateStr: string): string {
+	const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
+	if (!match) return dateStr;
 	const [, year, month, day] = match;
 	return `${month}/${day}/${year}`;
 }
 
-function BenchmarkView({ benchmark, embeddings }: { benchmark: BenchmarkData; embeddings: RawEmbedPoint[] | null }) {
+function BenchmarkView({
+	benchmark,
+	embeddings2d,
+	embeddings3d,
+}: {
+	benchmark: BenchmarkData;
+	embeddings2d: RawEmbedPoint[] | null;
+	embeddings3d: RawEmbedPoint[] | null;
+}) {
 	const cards = useMemo(() => buildMetricCards(benchmark), [benchmark]);
 	return (
 		<div>
-			<p className={styles.benchmarkRunNote}>Last benchmarking check run: {formatRunDate(benchmark.run_id)}</p>
+			<p className={styles.benchmarkRunNote}>Last benchmarking check run: {formatBenchmarkDate(benchmark.date)}</p>
 			<hr className={styles.benchmarkDivider} />
 			<div className={styles.metricCardGrid}>
 				{cards.map((card) => (
 					<MetricCard key={card.title} card={card} />
 				))}
 			</div>
-			<EmbeddingScatter benchmark={benchmark} embeddings={embeddings} />
+			<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
 		</div>
 	);
 }
@@ -593,7 +565,7 @@ export function DatasetMetadataModal({
 	}, [open, onClose]);
 
 	const datasetPerformance = useDatasetPerformance(open ? (dataset?.name ?? null) : null);
-	const { data: benchmark, embeddings } = useBenchmark(open ? (dataset?.name ?? null) : null);
+	const { data: benchmark, embeddings2d, embeddings3d } = useBenchmark(open ? (dataset?.name ?? null) : null);
 	const [showBenchmarks, setShowBenchmarks] = useState(false);
 	useEffect(() => setShowBenchmarks(false), [dataset?.name, open]);
 
@@ -1028,7 +1000,7 @@ export function DatasetMetadataModal({
 						className={`${styles.face} ${styles.faceBack} ${showBenchmarks ? '' : styles.faceHidden}`}
 						style={{ visibility: showBenchmarks ? 'visible' : 'hidden', pointerEvents: showBenchmarks ? 'auto' : 'none' }}
 					>
-						<BenchmarkView benchmark={benchmark} embeddings={embeddings} />
+						<BenchmarkView benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
 					</div>
 				)}
 				</div>

@@ -1,6 +1,8 @@
-// Dataset benchmarking metrics, loaded on demand from static/data/benchmarking-result/<dataset>.json
-// (+ an optional <dataset>.embeddings.json for the UMAP scatter). One task type's metric shape is
-// defined below; other task types will get their own shape as their benchmarking pipelines ship.
+// Dataset benchmarking metrics, loaded on demand from the shared
+// static/data/dataset-benchmarking/results.json (keyed by dataset name), plus optional
+// per-dataset UMAP embedding files under static/data/dataset-benchmarking/embeddings/
+// (<dataset>_umap_2d.json / <dataset>_umap_3d.json). One task type's metric shape is defined
+// below; other task types will get their own shape as their benchmarking pipelines ship.
 import { useEffect, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -69,8 +71,7 @@ export interface IntraClassDiversityMetrics {
 
 export interface ImageClassificationBenchmark {
 	dataset: string;
-	run_id: string;
-	phases_completed: number[];
+	date: string;
 	metrics: {
 		class_imbalance?: ClassImbalanceMetrics;
 		exact_duplicate?: ExactDuplicateMetrics;
@@ -86,22 +87,29 @@ export interface ImageClassificationBenchmark {
 // metric shapes later.
 export type BenchmarkData = ImageClassificationBenchmark;
 
+type BenchmarkResults = Record<string, BenchmarkData>;
+
+// One row per sample from a UMAP projection. 2D files omit `z`.
 export interface EmbedPoint {
 	x: number;
 	y: number;
-	z: number;
-	class: string;
+	z?: number;
+	label: string;
+	split?: string;
+	index?: number;
 }
 
 interface BenchmarkState {
 	data: BenchmarkData | null;
-	embeddings: EmbedPoint[] | null;
+	embeddings2d: EmbedPoint[] | null;
+	embeddings3d: EmbedPoint[] | null;
 	loading: boolean;
 }
 
 const EMPTY_STATE: BenchmarkState = {
 	data: null,
-	embeddings: null,
+	embeddings2d: null,
+	embeddings3d: null,
 	loading: false,
 };
 
@@ -115,15 +123,26 @@ async function fetchJson<T>(url: string): Promise<T | null> {
 	}
 }
 
-// Fetches static/data/benchmarking-result/<dataset>.json (metrics) and, if present,
-// <dataset>.embeddings.json (UMAP points). Returns null data when no benchmark file exists
-// for this dataset (a plain 404, not an error state).
+// results.json is one shared file covering every dataset, so it only needs to be
+// fetched once per page load rather than once per dataset looked up.
+let resultsPromise: Promise<BenchmarkResults> | null = null;
+function loadResults(url: string): Promise<BenchmarkResults> {
+	if (!resultsPromise) {
+		resultsPromise = fetchJson<BenchmarkResults>(url).then((data) => data ?? {});
+	}
+	return resultsPromise;
+}
+
+// Looks up `datasetName` in the shared results.json and, if found, fetches that dataset's
+// 2D and 3D UMAP embedding files. Returns null data when the dataset has no benchmark entry
+// (a missing key, not an error state) or when the fetch itself fails.
 export function useBenchmark(datasetName: string | null): BenchmarkState {
-	const metricsUrl = useBaseUrl(
-		`/data/benchmarking-result/${datasetName ?? "_none"}.json`,
+	const resultsUrl = useBaseUrl("/data/dataset-benchmarking/results.json");
+	const embeddings2dUrl = useBaseUrl(
+		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_2d.json`,
 	);
-	const embeddingsUrl = useBaseUrl(
-		`/data/benchmarking-result/${datasetName ?? "_none"}.embeddings.json`,
+	const embeddings3dUrl = useBaseUrl(
+		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_3d.json`,
 	);
 	const [state, setState] = useState<BenchmarkState>(EMPTY_STATE);
 
@@ -133,19 +152,24 @@ export function useBenchmark(datasetName: string | null): BenchmarkState {
 			return;
 		}
 		let cancelled = false;
-		setState({ data: null, embeddings: null, loading: true });
+		setState({ data: null, embeddings2d: null, embeddings3d: null, loading: true });
 
-		fetchJson<BenchmarkData>(metricsUrl).then((data) => {
+		loadResults(resultsUrl).then((results) => {
 			if (cancelled) return;
+			const data = results[datasetName] ?? null;
 			if (!data) {
-				setState({ data: null, embeddings: null, loading: false });
+				setState({ data: null, embeddings2d: null, embeddings3d: null, loading: false });
 				return;
 			}
-			fetchJson<EmbedPoint[]>(embeddingsUrl).then((embeddings) => {
+			Promise.all([
+				fetchJson<EmbedPoint[]>(embeddings2dUrl),
+				fetchJson<EmbedPoint[]>(embeddings3dUrl),
+			]).then(([embeddings2d, embeddings3d]) => {
 				if (cancelled) return;
 				setState({
 					data,
-					embeddings: embeddings ?? null,
+					embeddings2d: embeddings2d ?? null,
+					embeddings3d: embeddings3d ?? null,
 					loading: false,
 				});
 			});
@@ -154,7 +178,7 @@ export function useBenchmark(datasetName: string | null): BenchmarkState {
 		return () => {
 			cancelled = true;
 		};
-	}, [datasetName, metricsUrl, embeddingsUrl]);
+	}, [datasetName, resultsUrl, embeddings2dUrl, embeddings3dUrl]);
 
 	return state;
 }

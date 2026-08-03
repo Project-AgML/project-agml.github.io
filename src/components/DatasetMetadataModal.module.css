@@ -635,6 +635,72 @@
 	color: var(--agml-muted);
 }
 
+.metricCardTitleRow {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	min-width: 0;
+}
+
+.infoTooltip {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	border: 1px solid var(--agml-border-strong);
+	color: var(--agml-muted);
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.58rem;
+	font-weight: 700;
+	cursor: help;
+}
+
+.infoTooltip:hover,
+.infoTooltip:focus-visible {
+	border-color: var(--ifm-color-primary);
+	color: var(--ifm-color-primary);
+	outline: none;
+}
+
+.infoTooltipIcon {
+	pointer-events: none;
+}
+
+.infoTooltipBubble {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 0;
+	width: max-content;
+	max-width: 240px;
+	padding: 0.5rem 0.65rem;
+	border-radius: 6px;
+	border: 1px solid var(--agml-border-strong);
+	background: var(--agml-tag-bg);
+	color: var(--agml-text);
+	font-size: 0.72rem;
+	font-weight: 400;
+	line-height: 1.45;
+	text-transform: none;
+	letter-spacing: normal;
+	white-space: normal;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.12s ease;
+	box-shadow: var(--agml-shadow-strong);
+	z-index: 20;
+}
+
+.infoTooltip:hover .infoTooltipBubble,
+.infoTooltip:focus-visible .infoTooltipBubble {
+	opacity: 1;
+	visibility: visible;
+}
+
 .metricCardBadge {
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.68rem;
@@ -809,46 +875,42 @@
 .embedViewport {
 	position: relative;
 	margin-top: 0.9rem;
-	height: 340px;
+	height: 440px;
 	border-radius: 10px;
 	border: 1px solid var(--agml-border);
 	background-color: var(--agml-surface-soft);
-	background-image: linear-gradient(var(--agml-border) 1px, transparent 1px),
-		linear-gradient(90deg, var(--agml-border) 1px, transparent 1px);
-	background-size: 34px 34px;
-	background-position: center;
 	overflow: hidden;
 }
 
-.embedAxisTickX {
-	position: absolute;
-	bottom: 4px;
-	transform: translateX(-50%);
-	font-family: var(--ifm-code-font-family);
-	font-size: 0.62rem;
+.embedPlotFallback {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 	color: var(--agml-muted);
-	pointer-events: none;
+	font-size: 0.78rem;
 }
 
-.embedAxisTickY {
+.embedResetButton {
 	position: absolute;
-	left: 4px;
-	transform: translateY(-50%);
-	font-family: var(--ifm-code-font-family);
-	font-size: 0.62rem;
+	top: 10px;
+	right: 10px;
+	z-index: 5;
+	border: 1px solid var(--agml-border-strong);
+	border-radius: 999px;
+	background: var(--agml-tag-bg);
 	color: var(--agml-muted);
-	pointer-events: none;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	padding: 0.3rem 0.65rem;
+	cursor: pointer;
 }
 
-.embedDragHint {
-	position: absolute;
-	left: 14px;
-	bottom: 12px;
-	margin: 0;
-	font-size: 0.7rem;
-	color: var(--agml-muted);
-	font-family: var(--ifm-code-font-family);
-	pointer-events: none;
+.embedResetButton:hover,
+.embedResetButton:focus-visible {
+	border-color: var(--ifm-color-primary);
+	color: var(--ifm-color-primary);
+	outline: none;
 }
 
 .embedLegend {
