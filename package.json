@@ -15,7 +15,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "generate-datasets": "node scripts/generate-datasets.mjs"
+    "generate-datasets": "node scripts/generate-datasets.mjs",
+    "apply-performance-staging": "node scripts/apply-performance-staging.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",
