@@ -196,13 +196,25 @@ export function useSemanticDatasetSearch(datasets: Dataset[]) {
   // without this, focusing before that fetch resolves would silently drop the request forever
   // (activate() below bails while datasetsByName is still empty, and nothing would ever retry).
   const wantsActivationRef = useRef(false);
+  // Per-mount guard: whether *this* hook instance has attached its engineRef/status to
+  // enginePromise yet. Needed because enginePromise is a module-scoped singleton shared across
+  // mounts (see its declaration above) — on a remount (e.g. Docusaurus SPA nav away and back),
+  // engineRef/wantsActivationRef/attachedRef all reset to their initial values, but a prior
+  // mount may have already resolved enginePromise. Without this, activate() would bail on
+  // `enginePromise` already being truthy and never call .then() for the new instance, leaving
+  // its engineRef/status stuck at null/'idle' forever.
+  const attachedRef = useRef(false);
 
   const activate = useCallback(() => {
     wantsActivationRef.current = true;
-    if (enginePromise || datasetsByName.size === 0) return;
+    if (attachedRef.current || datasetsByName.size === 0) return;
+    if (!enginePromise) {
+      enginePromise = buildEngine(vectorsUrl, metaUrl, datasetsByName);
+    }
+    attachedRef.current = true;
     setStatus('loading');
-    enginePromise = buildEngine(vectorsUrl, metaUrl, datasetsByName);
-    enginePromise.then(
+    const thisPromise = enginePromise;
+    thisPromise.then(
       (engine) => {
         engineRef.current = engine;
         setStatus('ready');
@@ -211,7 +223,10 @@ export function useSemanticDatasetSearch(datasets: Dataset[]) {
         // Progressive enhancement only — substring search remains fully functional without
         // this engine, so failures (e.g. CDN unreachable) are logged, not surfaced to the user.
         console.warn('[semanticSearch] initialization failed, falling back to substring search', err);
-        enginePromise = null; // allow a retry on the next activate() call
+        // Only the mount whose build actually failed clears the singleton (a concurrent mount
+        // may have already started a fresh one via retry) — and allow this mount to retry too.
+        if (enginePromise === thisPromise) enginePromise = null;
+        attachedRef.current = false;
         setStatus('error');
       }
     );
