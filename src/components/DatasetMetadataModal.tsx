@@ -1,10 +1,12 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
 import { toDisplayLabel } from '../lib/labelOverrides';
 import { useBenchmark, type BenchmarkData, type EmbedPoint as RawEmbedPoint } from '../lib/benchmarks';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
+import { oklchToRgb } from '../lib/plotlyChrome';
 import { EmbeddingPlot2D } from './EmbeddingPlot2D';
 import { EmbeddingPlot3D } from './EmbeddingPlot3D';
 import styles from './DatasetMetadataModal.module.css';
@@ -115,21 +117,27 @@ function formatLoaderInstructions(dataset: Dataset) {
 	};
 }
 
-function StatTile({ label, value }: { label: string; value: string }) {
+function StatTile({ label, value, hint, info }: { label: string; value: string; hint?: string; info?: string }) {
 	return (
 		<div className={styles.statTile}>
-			<p className={styles.statTileLabel}>{label}</p>
+			<p className={styles.statTileLabel}>
+				{label}
+				{info && <InfoTooltip text={info} />}
+			</p>
 			<p className={styles.statTileValue}>{value}</p>
+			{hint && <p className={styles.statTileHint}>{hint}</p>}
 		</div>
 	);
 }
 
 type MetricBar = { label: string; value: string; pct: number; positive?: boolean };
-type MetricStat = { label: string; value: string };
+type MetricStat = { label: string; value: string; hint?: string; info?: string };
+type MetricStatSection = { title: string; description: string; badge?: string; stats: MetricStat[] };
 type MetricCardVM =
 	| { kind: 'bars'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
 	| { kind: 'signed'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
 	| { kind: 'stats'; title: string; description: string; badge?: string; stats: MetricStat[] }
+	| { kind: 'stat-sections'; title: string; sections: MetricStatSection[] }
 	| { kind: 'skipped'; title: string; message: string };
 
 function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
@@ -145,50 +153,80 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 			description:
 				'How evenly the classes are represented. Imbalance ratio is the most-frequent class’s count divided by the least-frequent’s (1.0 = perfectly balanced, higher = more skewed). Normalized entropy ranges 0–1, where 1 means every class has an equal share.',
 			badge: `${d.total_train_examples} train examples`,
-			bars: Object.entries(d.counts).map(([label, value]) => ({ label: toTitleCase(label), value: value.toLocaleString(), pct: (value / max) * 100 })),
+			bars: Object.entries(d.counts)
+				.map(([label, value]) => ({ label: toTitleCase(label), value: value.toLocaleString(), pct: (value / max) * 100 }))
+				.sort((a, b) => b.pct - a.pct),
 			footerStats: [
-				{ label: 'Imbalance ratio', value: d.imbalance_ratio.toFixed(2) },
-				{ label: 'Norm. entropy', value: d.normalized_entropy.toFixed(2) },
-				{ label: 'Most frequent', value: toTitleCase(d.most_frequent_class) },
-				{ label: 'Least frequent', value: toTitleCase(d.least_frequent_class) },
+				{
+					label: 'Imbalance ratio',
+					value: d.imbalance_ratio.toFixed(2),
+					info: 'Most-frequent class count ÷ least-frequent. 1.0 = perfectly balanced; higher = more skewed.',
+				},
+				{
+					label: 'Norm. entropy',
+					value: d.normalized_entropy.toFixed(2),
+					info: 'Normalized entropy, 0–1. 1 = every class has an equal share; lower = more concentrated.',
+				},
+				{ label: 'Most frequent', value: toTitleCase(d.most_frequent_class), info: 'Class with the most training examples.' },
+				{ label: 'Least frequent', value: toTitleCase(d.least_frequent_class), info: 'Class with the fewest training examples.' },
 			],
 		});
 	}
 
-	if (m.exact_duplicate) {
-		const d = m.exact_duplicate;
-		cards.push({
-			kind: 'stats',
-			title: 'Exact Duplicates',
-			description:
-				'Images that are byte-for-byte identical to another image in the dataset. A high duplicate rate inflates the apparent dataset size and can leak the same example across train/test splits, making evaluation look better than it is.',
-			badge: `${d.total_images} images`,
-			stats: [
-				{ label: 'Duplicate count', value: String(d.exact_duplicate_count) },
-				{ label: 'Duplicate rate', value: `${(d.exact_duplicate_rate * 100).toFixed(1)}%` },
-				{ label: 'Groups', value: String(d.duplicate_groups) },
-				{ label: 'Cross-split', value: String(d.cross_split_duplicates) },
-			],
-		});
-	}
+	if (m.exact_duplicate || m.near_duplicate) {
+		const sections: MetricStatSection[] = [];
 
-	if (m.near_duplicate) {
-		const d = m.near_duplicate;
-		cards.push({
-			kind: 'stats',
-			title: 'Near Duplicates',
-			description:
-				'Images that are nearly identical (crops, recompressions, small edits) based on embedding similarity above a threshold — not exact byte matches. High near-duplicate rates risk train/test leakage even when the exact-duplicate count is zero.',
-			badge: d.embed_model,
-			stats: [
-				{ label: 'Near-dup count', value: String(d.near_duplicate_count) },
-				{ label: 'Near-dup rate', value: `${(d.near_duplicate_rate * 100).toFixed(1)}%` },
-				{ label: 'Groups', value: String(d.near_duplicate_groups) },
-				{ label: 'Cross-split', value: String(d.cross_split_near_duplicates) },
-				{ label: 'Threshold', value: String(d.threshold) },
-				{ label: 'Index type', value: d.faiss_index_type },
-			],
-		});
+		if (m.exact_duplicate) {
+			const d = m.exact_duplicate;
+			sections.push({
+				title: 'Exact',
+				description:
+					'Images that are byte-for-byte identical to another image in the dataset. A high duplicate rate inflates the apparent dataset size and can leak the same example across train/test splits, making evaluation look better than it is.',
+				badge: `${d.total_images} images`,
+				stats: [
+					{ label: 'Duplicate count', value: String(d.exact_duplicate_count), info: 'Images that are byte-for-byte identical to another image in the dataset.' },
+					{
+						label: 'Duplicate rate',
+						value: `${(d.exact_duplicate_rate * 100).toFixed(1)}%`,
+						info: 'Share of images that are exact duplicates. A higher rate inflates the apparent dataset size.',
+					},
+					{ label: 'Groups', value: String(d.duplicate_groups), info: 'Number of distinct sets of identical images.' },
+					{
+						label: 'Cross-split',
+						value: String(d.cross_split_duplicates),
+						info: 'Duplicates that appear across train/test splits — a direct source of evaluation leakage.',
+					},
+				],
+			});
+		}
+
+		if (m.near_duplicate) {
+			const d = m.near_duplicate;
+			sections.push({
+				title: 'Near',
+				description:
+					'Images that are nearly identical (crops, recompressions, small edits) based on embedding similarity above a threshold — not exact byte matches. High near-duplicate rates risk train/test leakage even when the exact-duplicate count is zero.',
+				badge: d.embed_model,
+				stats: [
+					{
+						label: 'Near-dup count',
+						value: String(d.near_duplicate_count),
+						info: 'Images that are nearly identical (crops, recompressions, small edits) by embedding similarity — not exact byte matches.',
+					},
+					{ label: 'Near-dup rate', value: `${(d.near_duplicate_rate * 100).toFixed(1)}%`, info: 'Share of images that are near-duplicates.' },
+					{ label: 'Groups', value: String(d.near_duplicate_groups), info: 'Number of distinct near-duplicate clusters.' },
+					{
+						label: 'Cross-split',
+						value: String(d.cross_split_near_duplicates),
+						info: 'Near-duplicates spanning train/test splits — risks leakage even when the exact-duplicate count is zero.',
+					},
+					{ label: 'Threshold', value: String(d.threshold), info: 'Cosine-similarity cutoff above which two images count as near-duplicates.' },
+					{ label: 'Index type', value: d.faiss_index_type, info: 'FAISS index type used for the similarity search.' },
+				],
+			});
+		}
+
+		cards.push({ kind: 'stat-sections', title: 'Duplicate Detection', sections });
 	}
 
 	if (m.resolution_consistency) {
@@ -200,11 +238,19 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 				'How uniform image dimensions and aspect ratios are across the dataset. Area CV (coefficient of variation) near 0 means sizes barely vary; higher values mean preprocessing has to handle a wide range of source resolutions.',
 			badge: `${d.total_images} images`,
 			stats: [
-				{ label: 'Width (mean)', value: `${d.width.mean}px` },
-				{ label: 'Height (mean±std)', value: `${d.height.mean.toFixed(0)}±${d.height.std.toFixed(1)}` },
-				{ label: 'Aspect ratio', value: `${d.aspect_ratio.mean.toFixed(2)} (${d.aspect_ratio.min.toFixed(2)}–${d.aspect_ratio.max.toFixed(2)})` },
-				{ label: 'Area CV', value: d.area_cv.toFixed(3) },
-				{ label: 'Color mode', value: Object.keys(d.mode_distribution).join(', ') },
+				{ label: 'Width (mean)', value: `${d.width.mean}px`, info: 'Average image width in pixels.' },
+				{ label: 'Height (mean±std)', value: `${d.height.mean.toFixed(0)}±${d.height.std.toFixed(1)}`, info: 'Average image height ± standard deviation, in pixels.' },
+				{
+					label: 'Aspect ratio',
+					value: `${d.aspect_ratio.mean.toFixed(2)} (${d.aspect_ratio.min.toFixed(2)}–${d.aspect_ratio.max.toFixed(2)})`,
+					info: 'Mean aspect ratio, with the min–max range across the dataset in parentheses.',
+				},
+				{
+					label: 'Area CV',
+					value: d.area_cv.toFixed(3),
+					info: 'Coefficient of variation of image area. Near 0 = uniform sizes; higher = a wide range of source resolutions.',
+				},
+				{ label: 'Color mode', value: Object.keys(d.mode_distribution).join(', '), info: 'Image color modes present in the dataset (e.g. RGB, L).' },
 			],
 		});
 	}
@@ -217,15 +263,27 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 			description:
 				'How distinctly the classes cluster in embedding space. Silhouette score ranges −1 to 1 (higher = better-separated clusters, near 0 = overlapping, negative = points closer to another class than their own — often mislabeled or genuinely ambiguous). Davies-Bouldin index is ≥0 and unbounded, where lower means better separation.',
 			badge: d.embed_model,
-			bars: Object.entries(d.per_class_silhouette).map(([label, value]) => ({
-				label: toTitleCase(label),
-				value: value.toFixed(2),
-				pct: Math.abs(value) * 50,
-				positive: value >= 0,
-			})),
+			bars: Object.entries(d.per_class_silhouette)
+				.map(([label, value]) => ({
+					label: toTitleCase(label),
+					value: value.toFixed(2),
+					pct: Math.abs(value) * 50,
+					positive: value >= 0,
+				}))
+				.sort((a, b) => b.pct - a.pct),
 			footerStats: [
-				{ label: 'Silhouette', value: `${d.silhouette_score.toFixed(2)} — ${d.silhouette_interpretation}` },
-				{ label: 'Davies-Bouldin', value: `${d.davies_bouldin_index.toFixed(2)} — ${d.davies_bouldin_interpretation}` },
+				{
+					label: 'Silhouette',
+					value: d.silhouette_score.toFixed(2),
+					hint: d.silhouette_interpretation,
+					info: 'Ranges −1 to 1. Higher = better-separated clusters; near 0 = overlapping; negative = points closer to another class than their own.',
+				},
+				{
+					label: 'Davies-Bouldin',
+					value: d.davies_bouldin_index.toFixed(2),
+					hint: d.davies_bouldin_interpretation,
+					info: 'Index ≥ 0 and unbounded. Lower means better separation between classes.',
+				},
 			],
 		});
 	}
@@ -239,11 +297,17 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 			description:
 				'How visually varied the images within each class are, based on average embedding distance between same-class examples. Higher values mean more diverse, less redundant examples per class; a very low value can mean that class is dominated by near-duplicates.',
 			badge: d.embed_model,
-			bars: Object.entries(d.per_class_diversity).map(([label, value]) => ({ label: toTitleCase(label), value: value.toFixed(2), pct: (value / max) * 100 })),
+			bars: Object.entries(d.per_class_diversity)
+				.map(([label, value]) => ({ label: toTitleCase(label), value: value.toFixed(2), pct: (value / max) * 100 }))
+				.sort((a, b) => b.pct - a.pct),
 			footerStats: [
-				{ label: 'Mean diversity', value: d.mean_diversity.toFixed(2) },
-				{ label: 'Min class', value: toTitleCase(d.min_diversity_class) },
-				{ label: 'Max class', value: toTitleCase(d.max_diversity_class) },
+				{
+					label: 'Mean diversity',
+					value: d.mean_diversity.toFixed(2),
+					info: 'Average embedding distance between same-class images, averaged over classes. Higher = more varied, less redundant.',
+				},
+				{ label: 'Min class', value: toTitleCase(d.min_diversity_class), info: 'Class with the least visual variety — possibly dominated by near-duplicates.' },
+				{ label: 'Max class', value: toTitleCase(d.max_diversity_class), info: 'Class with the most visual variety.' },
 			],
 		});
 	}
@@ -266,23 +330,60 @@ function InfoTooltip({ text }: { text: string }) {
 	);
 }
 
+// Above this many bars, a card shows only the top BAR_CAP (already sorted descending in
+// buildMetricCards) with a "Show all N →" link instead of every class at once.
+const BAR_CAP = 8;
+
+// The three bar-chart-style cards read better wider (long class lists, signed diverging bars),
+// so they span 2 grid columns while the stat-only cards stay at 1 — paired with
+// grid-auto-flow: dense on .metricCardGrid so 1-column cards backfill the gaps.
+function isBarCard(card: MetricCardVM): boolean {
+	return card.kind === 'bars' || card.kind === 'signed';
+}
+
 function MetricCard({ card }: { card: MetricCardVM }) {
-	const badge = card.kind !== 'skipped' ? card.badge : undefined;
+	const [expanded, setExpanded] = useState(false);
+	const badge = card.kind !== 'skipped' && card.kind !== 'stat-sections' ? card.badge : undefined;
+	const allBars = card.kind === 'bars' || card.kind === 'signed' ? card.bars : undefined;
+	const hasMoreBars = Boolean(allBars && allBars.length > BAR_CAP);
+	const visibleBars = allBars ? (expanded || !hasMoreBars ? allBars : allBars.slice(0, BAR_CAP)) : undefined;
+
 	return (
-		<div className={styles.metricCard}>
+		<div className={`${styles.metricCard} ${isBarCard(card) ? styles.metricCardSpan2 : ''}`}>
 			<div className={styles.metricCardHeader}>
 				<div className={styles.metricCardTitleRow}>
 					<h4 className={styles.metricCardTitle}>{card.title}</h4>
-					{card.kind !== 'skipped' && <InfoTooltip text={card.description} />}
+					{card.kind !== 'skipped' && card.kind !== 'stat-sections' && <InfoTooltip text={card.description} />}
 				</div>
 				{badge && <span className={styles.metricCardBadge}>{badge}</span>}
 			</div>
 
 			{card.kind === 'skipped' && <p className={styles.metricSkipped}>Skipped — {card.message}</p>}
 
-			{(card.kind === 'bars' || card.kind === 'signed') && (
-				<div className={styles.metricBars}>
-					{card.bars.map((bar) => (
+			{card.kind === 'stat-sections' && (
+				<div className={styles.metricStatSections}>
+					{card.sections.map((section) => (
+						<div key={section.title} className={styles.metricStatSection}>
+							<div className={styles.metricCardHeader}>
+								<div className={styles.metricCardTitleRow}>
+									<h5 className={styles.metricStatSectionTitle}>{section.title}</h5>
+									<InfoTooltip text={section.description} />
+								</div>
+								{section.badge && <span className={styles.metricCardBadge}>{section.badge}</span>}
+							</div>
+							<div className={styles.statTileGrid}>
+								{section.stats.map((stat) => (
+									<StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} info={stat.info} />
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			)}
+
+			{visibleBars && (
+				<div className={`${styles.metricBars} ${expanded ? styles.metricBarsExpanded : ''}`}>
+					{visibleBars.map((bar) => (
 						<div key={bar.label} className={styles.metricBarRow}>
 							<span className={styles.metricBarLabel}>{bar.label}</span>
 							{card.kind === 'signed' ? (
@@ -308,10 +409,16 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 				</div>
 			)}
 
+			{hasMoreBars && allBars && (
+				<button type="button" className={styles.metricExpandLink} onClick={() => setExpanded((value) => !value)}>
+					{expanded ? '← Show fewer' : `Show all ${allBars.length} →`}
+				</button>
+			)}
+
 			{card.kind === 'stats' && (
 				<div className={styles.statTileGrid}>
 					{card.stats.map((stat) => (
-						<StatTile key={stat.label} label={stat.label} value={stat.value} />
+						<StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} info={stat.info} />
 					))}
 				</div>
 			)}
@@ -319,7 +426,7 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 			{(card.kind === 'bars' || card.kind === 'signed') && card.footerStats && card.footerStats.length > 0 && (
 				<div className={styles.metricFooterStats}>
 					{card.footerStats.map((stat) => (
-						<StatTile key={stat.label} label={stat.label} value={stat.value} />
+						<StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} info={stat.info} />
 					))}
 				</div>
 			)}
@@ -327,7 +434,16 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 	);
 }
 
-const PALETTE = ['#4C9BE8', '#F4A261', '#2EC4B6', '#E63946', '#A8DADC', '#8ECAE6', '#FFB4A2', '#B5838D'];
+// A fixed palette repeats (or blurs together) past a handful of classes, so class colors are
+// generated procedurally instead: step the hue by 47° per class (coprime-ish with 360, so
+// hues don't cluster or repeat for a long time) at a lightness/chroma tuned per theme.
+function classColor(index: number, isDark: boolean): string {
+	const hue = (index * 47) % 360;
+	const lightness = isDark ? 0.72 : 0.5;
+	const chroma = isDark ? 0.13 : 0.12;
+	return oklchToRgb(lightness, chroma, hue);
+}
+
 const EMBED_CLUSTER_CENTERS: [number, number, number][] = [
 	[-0.6, 0.5, 0.3],
 	[0.55, 0.55, -0.4],
@@ -397,10 +513,14 @@ function buildEmbeddingPoints(benchmark: BenchmarkData): EmbedPoint[] {
 	return points;
 }
 
-function buildClassColorMap(points: EmbedPoint[]): Record<string, string> {
+function buildClassColorMap(points: EmbedPoint[], isDark: boolean): Record<string, string> {
 	const labels = Array.from(new Set(points.map((p) => p.cls))).sort();
-	return Object.fromEntries(labels.map((label, i) => [label, PALETTE[i % PALETTE.length]]));
+	return Object.fromEntries(labels.map((label, i) => [label, classColor(i, isDark)]));
 }
+
+// Beyond this many classes, the legend switches from listing every one to a "+N more" note —
+// past ~10 swatches a legend stops being scannable anyway.
+const LEGEND_CAP = 10;
 
 function EmbeddingScatter({
 	benchmark,
@@ -412,6 +532,7 @@ function EmbeddingScatter({
 	embeddings3d: RawEmbedPoint[] | null;
 }) {
 	const [view, setView] = useState<'2d' | '3d'>('2d');
+	const { colorMode } = useColorMode();
 
 	// 2D and 3D UMAP projections are independently fit, so they're separate point sets —
 	// not the same points with one axis dropped.
@@ -422,7 +543,7 @@ function EmbeddingScatter({
 		return buildEmbeddingPoints(benchmark);
 	}, [activeRaw, benchmark]);
 
-	const colorMap = useMemo(() => buildClassColorMap(points), [points]);
+	const colorMap = useMemo(() => buildClassColorMap(points, colorMode === 'dark'), [points, colorMode]);
 
 	const embedModel = benchmark.metrics.feature_separability?.embed_model ?? 'dinov2-base';
 
@@ -458,12 +579,19 @@ function EmbeddingScatter({
 			)}
 
 			<div className={styles.embedLegend}>
-				{Object.entries(colorMap).map(([key, color]) => (
-					<span key={key} className={styles.embedLegendItem}>
-						<span className={styles.embedLegendDot} style={{ background: color }} />
-						{toTitleCase(key)}
+				{Object.entries(colorMap)
+					.slice(0, LEGEND_CAP)
+					.map(([key, color]) => (
+						<span key={key} className={styles.embedLegendItem}>
+							<span className={styles.embedLegendDot} style={{ background: color }} />
+							{toTitleCase(key)}
+						</span>
+					))}
+				{Object.keys(colorMap).length > LEGEND_CAP && (
+					<span className={styles.embedLegendOverflow}>
+						+{Object.keys(colorMap).length - LEGEND_CAP} more (hover points for class)
 					</span>
-				))}
+				)}
 			</div>
 			<p className={styles.embedNote}>
 				{hasRealEmbeddings

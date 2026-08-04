@@ -6,7 +6,9 @@ import { useColorMode } from '@docusaurus/theme-common';
 // oklch() string verbatim. Plotly's WebGL/SVG color parsing doesn't understand that syntax,
 // so it silently ignores the color and falls back to its own default. Convert explicitly.
 // (OKLCH -> OKLab -> linear sRGB -> sRGB, per the CSS Color 4 reference algorithm.)
-function oklchToRgb(l: number, c: number, hDeg: number): string {
+// Exported for reuse by anything that needs to hand Plotly a procedurally generated OKLCH
+// color (e.g. per-class hues) rather than one resolved from a CSS variable.
+export function oklchToRgb(l: number, c: number, hDeg: number): string {
 	const hRad = (hDeg * Math.PI) / 180;
 	const a = c * Math.cos(hRad);
 	const b = c * Math.sin(hRad);

@@ -165,6 +165,12 @@
 .faceHidden {
 	visibility: hidden;
 	pointer-events: none;
+	/* Absolutely positioned grid items don't contribute to track sizing, so taking the hidden
+	   face out of flow here means the flipper's height always matches whichever face is
+	   actually showing — not the max of both, which left a dead gap under short front-face
+	   content (e.g. an empty leaderboard) whenever the other face was taller. */
+	position: absolute;
+	inset: 0;
 }
 
 .detailGrid {
@@ -604,8 +610,14 @@
 .metricCardGrid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	/* Cards size to their own content instead of stretching to the tallest card in the row,
+	   so short cards (e.g. a 4-stat metric) don't carry a block of empty space below. */
+	align-items: start;
 	gap: 1rem;
 	margin: 0 0 1.75rem;
+	/* 1-column stat cards backfill the gaps left by 2-column bar cards instead of leaving a
+	   hole and pushing everything after it down to the next row. */
+	grid-auto-flow: dense;
 }
 
 .metricCard {
@@ -616,6 +628,10 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
+}
+
+.metricCardSpan2 {
+	grid-column: span 2;
 }
 
 .metricCardHeader {
@@ -656,6 +672,9 @@
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.58rem;
 	font-weight: 700;
+	/* Keep the "i" glyph lowercase even when the icon sits inside an uppercased label. */
+	text-transform: none;
+	letter-spacing: normal;
 	cursor: help;
 }
 
@@ -722,7 +741,11 @@
 .metricBars {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: var(--metric-bar-gap);
+	/* Single source of truth for row height and gap — referenced by .metricBarRow's flex-basis
+	   and by .metricBarsExpanded's cap height below, so the two can't drift out of sync. */
+	--metric-bar-row-height: 24px;
+	--metric-bar-gap: 0.3rem;
 }
 
 .metricBarRow {
@@ -730,6 +753,36 @@
 	grid-template-columns: 112px 1fr 56px;
 	align-items: center;
 	gap: 0.6rem;
+	flex: 0 0 var(--metric-bar-row-height);
+	height: var(--metric-bar-row-height);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* Exactly 10 rows visible before scrolling — derived from the same row-height variable the
+   rows themselves use, so this can't drift from the actual rendered row height. */
+.metricBarsExpanded {
+	max-height: calc(10 * var(--metric-bar-row-height) + 9 * var(--metric-bar-gap));
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.metricExpandLink {
+	align-self: flex-start;
+	border: none;
+	background: none;
+	padding: 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: var(--ifm-color-primary);
+	cursor: pointer;
+}
+
+.metricExpandLink:hover,
+.metricExpandLink:focus-visible {
+	text-decoration: underline;
+	outline: none;
 }
 
 .metricBarLabel {
@@ -806,6 +859,9 @@
 }
 
 .statTileLabel {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
 	margin: 0 0 0.3rem;
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.62rem;
@@ -823,12 +879,50 @@
 	overflow-wrap: anywhere;
 }
 
+/* Interpretation line under a stat's value — smaller and muted so it reads as an explanation
+   of the number above it, not another value. */
+.statTileHint {
+	margin: 0.2rem 0 0;
+	font-size: 0.7rem;
+	font-weight: 400;
+	line-height: 1.35;
+	color: var(--agml-muted);
+	overflow-wrap: anywhere;
+}
+
 .metricFooterStats {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
 	gap: 0.6rem;
 	padding-top: 0.6rem;
 	border-top: 1px solid var(--agml-border);
+}
+
+.metricStatSections {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.metricStatSection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.metricStatSection + .metricStatSection {
+	padding-top: 0.85rem;
+	border-top: 1px solid var(--agml-border);
+}
+
+.metricStatSectionTitle {
+	margin: 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-text);
 }
 
 .embedHeader {
@@ -936,6 +1030,12 @@
 	flex-shrink: 0;
 }
 
+.embedLegendOverflow {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.74rem;
+	color: var(--agml-muted);
+}
+
 .embedNote {
 	margin: 0.7rem 0 0;
 	font-size: 0.72rem;
@@ -959,6 +1059,10 @@
 
 	.metricCardGrid {
 		grid-template-columns: 1fr;
+	}
+
+	.metricCardSpan2 {
+		grid-column: span 1;
 	}
 
 	.metricBarRow {
