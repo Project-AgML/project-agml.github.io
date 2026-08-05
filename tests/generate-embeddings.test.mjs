@@ -26,6 +26,12 @@ describe('mergeForEmbedding', () => {
       ['apple', 'zebra']
     );
   });
+
+  test('falls back to dataset/slug/id/key when name is absent, matching normalizeDataset() in datasets.ts', () => {
+    const merged = mergeForEmbedding([{ slug: 'from-slug', machine_learning_task: 'classification' }], []);
+    assert.equal(merged.length, 1);
+    assert.equal(merged[0].name, 'from-slug');
+  });
 });
 
 describe('buildNameText', () => {
@@ -77,6 +83,16 @@ describe('buildEmbeddingText', () => {
     const text = buildEmbeddingText({ name: 'x', classes: 'c'.repeat(500) });
     const classesPart = text.split('Classes: ')[1];
     assert.equal(classesPart.length, 300);
+  });
+
+  test('omits Classes label when classes is an empty array', () => {
+    const text = buildEmbeddingText({ name: 'x', classes: [] });
+    assert.equal(text, 'x');
+  });
+
+  test('joins array-valued classes with ", ", matching datasets.ts toText() rather than Array.prototype.toString', () => {
+    const text = buildEmbeddingText({ name: 'x', classes: ['healthy', 'blight', 'rust'] });
+    assert.equal(text, 'x. Classes: healthy, blight, rust');
   });
 });
 

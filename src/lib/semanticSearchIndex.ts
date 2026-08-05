@@ -64,7 +64,10 @@ export function buildIndexRow(name: string, dataset: Dataset | undefined) {
     sensor_modality: dataset?.sensor_modality ? humanize(dataset.sensor_modality) : '',
     platform: dataset?.platform ? humanize(dataset.platform) : '',
     // Truncated to match scripts/generate-embeddings.mjs's buildEmbeddingText(), which truncates
-    // `classes` to the same length for the corpus-side embedding text.
+    // `classes` to the same length for the corpus-side embedding text. This only lines up because
+    // both sides join array-valued `classes` with ', ' before truncating — `dataset.classes` here
+    // already went through datasets.ts's toText() (comma+space join), and generate-embeddings.mjs
+    // matches that explicitly rather than relying on Array.prototype.toString's bare comma join.
     classes: dataset?.classes ? dataset.classes.slice(0, 300) : '',
   };
 }

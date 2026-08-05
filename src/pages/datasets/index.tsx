@@ -378,9 +378,16 @@ export default function DatasetBrowserPage() {
     };
   }, [qDeferred, semanticStatus, semanticSearch]);
 
-  const filtered = useMemo(() => {
+  // `semanticRankApplied` is true only if at least one semantically-ranked result actually
+  // survived the active field filters into `ordered` — otherwise (e.g. field filters exclude
+  // every dataset the semantic engine ranked highly) `ordered` falls through entirely to
+  // `substringFiltered`'s plain substring-match order, and the "Ranked by relevance" badge
+  // (below) must not claim credit for an ordering it didn't produce.
+  const { filtered, semanticRankApplied } = useMemo(() => {
     const query = qDeferred.trim();
-    if (!query || semanticOrder?.query !== query) return substringFiltered;
+    if (!query || semanticOrder?.query !== query) {
+      return { filtered: substringFiltered, semanticRankApplied: false };
+    }
 
     // Re-rank by semantic order, but still respect the active structured field filters (already
     // computed above, without `q`, as `fieldFilteredOnly`).
@@ -394,13 +401,14 @@ export default function DatasetBrowserPage() {
         seen.add(name);
       }
     }
+    const semanticRankApplied = ordered.length > 0;
     for (const dataset of substringFiltered) {
       if (!seen.has(dataset.name)) {
         ordered.push(dataset); // safety net: never regress vs. today's substring results
         seen.add(dataset.name);
       }
     }
-    return ordered;
+    return { filtered: ordered, semanticRankApplied };
   }, [qDeferred, semanticOrder, substringFiltered, fieldFilteredOnly]);
 
   const INITIAL_SHOW = 60;
@@ -468,7 +476,7 @@ export default function DatasetBrowserPage() {
                 Enabling smart search…
               </span>
             )}
-            {semanticStatus === 'ready' && qDeferred.trim() && semanticOrder?.query === qDeferred.trim() && (
+            {semanticStatus === 'ready' && qDeferred.trim() && semanticOrder?.query === qDeferred.trim() && semanticRankApplied && (
               <span className={styles.semanticBadge}>Ranked by relevance</span>
             )}
             <span className={styles.resultCount}>{distinctDatasetCount.toLocaleString()} datasets</span>

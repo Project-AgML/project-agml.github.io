@@ -29,6 +29,17 @@ function pickFirstDefined(a, b, field) {
   return hasValue(a?.[field]) ? a[field] : (b?.[field] ?? null);
 }
 
+// Mirrors firstString() in src/lib/datasets.ts.
+function firstString(...values) {
+  for (const value of values) {
+    if (typeof value === 'string') {
+      const trimmed = value.trim();
+      if (trimmed) return trimmed;
+    }
+  }
+  return null;
+}
+
 // Fields the embedding text template reads (see buildEmbeddingText below). Mirrors the subset
 // of the `Dataset` interface in src/lib/datasets.ts that carries semantic meaning — keep the
 // two in sync if either changes. This is a narrower, name-keyed coalesce merge than
@@ -49,11 +60,14 @@ const TEMPLATE_FIELDS = [
 function mergeForEmbedding(datasetsRaw, hfDatasetsRaw) {
   const byName = new Map();
   for (const raw of [...datasetsRaw, ...hfDatasetsRaw]) {
-    const name = typeof raw?.name === 'string' ? raw.name.trim() : null;
+    // Mirrors normalizeDataset()'s name fallback chain in src/lib/datasets.ts, so a record keyed
+    // by e.g. `slug` instead of `name` still gets a corpus entry instead of being silently
+    // dropped by the `if (!name) continue` below.
+    const name = firstString(raw?.name, raw?.dataset, raw?.slug, raw?.id, raw?.key);
     if (!name) continue;
     const existing = byName.get(name);
     if (!existing) {
-      byName.set(name, raw);
+      byName.set(name, { ...raw, name });
       continue;
     }
     const merged = { name };
@@ -94,7 +108,12 @@ function buildEmbeddingText(record) {
   if (record.sensor_modality) parts.push(`Sensor: ${humanize(record.sensor_modality)}`);
   if (record.platform) parts.push(`Platform: ${humanize(record.platform)}`);
   if (record.real_or_synthetic) parts.push(`Data: ${humanize(record.real_or_synthetic)}`);
-  if (record.classes) parts.push(`Classes: ${String(record.classes).slice(0, 300)}`);
+  // Joined with ', ' (not the bare `String()` of an array, which uses Array.prototype.toString's
+  // comma-with-no-space) so this matches src/lib/datasets.ts's toText()/mergeDataset() output
+  // that src/lib/semanticSearchIndex.ts's buildIndexRow() truncates on the client side — otherwise
+  // the two 300-char cutoffs land at different content offsets for the same dataset.
+  const classesText = Array.isArray(record.classes) ? record.classes.join(', ') : record.classes;
+  if (hasValue(classesText)) parts.push(`Classes: ${String(classesText).slice(0, 300)}`);
   return parts.join('. ');
 }
 
