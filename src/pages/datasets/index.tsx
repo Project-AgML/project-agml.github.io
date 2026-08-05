@@ -348,12 +348,20 @@ export default function DatasetBrowserPage() {
   const { status: semanticStatus, activate: activateSemanticSearch, search: semanticSearch } =
     useSemanticDatasetSearch(safeData);
 
+  // Field filters alone, over the full corpus — computed once and shared by both
+  // `substringFiltered` (below) and the semantic re-ranking path, instead of each running its own
+  // full-corpus field-filter pass.
+  const fieldFilteredOnly = useMemo(
+    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs }),
+    [safeData, fieldFilterConfigs]
+  );
+
   // Instant baseline — exact substring-match behavior. Always computed so results never blank
   // out while the semantic engine (model + index, ~46MB on first activation) is loading, or if
   // it errors.
   const substringFiltered = useMemo(
-    () => filterDatasets(safeData, { q: qDeferred || undefined, fieldFilters: fieldFilterConfigs }),
-    [safeData, qDeferred, fieldFilterConfigs]
+    () => filterDatasets(fieldFilteredOnly, { q: qDeferred || undefined }),
+    [fieldFilteredOnly, qDeferred]
   );
 
   const [semanticOrder, setSemanticOrder] = useState<{ query: string; names: string[] } | null>(null);
@@ -374,9 +382,8 @@ export default function DatasetBrowserPage() {
     const query = qDeferred.trim();
     if (!query || semanticOrder?.query !== query) return substringFiltered;
 
-    // Re-rank by semantic order, but still respect the active structured field filters —
-    // filterDatasets()'s field-filter logic is untouched, just re-applied without `q`.
-    const fieldFilteredOnly = filterDatasets(safeData, { fieldFilters: fieldFilterConfigs });
+    // Re-rank by semantic order, but still respect the active structured field filters (already
+    // computed above, without `q`, as `fieldFilteredOnly`).
     const byName = new Map(fieldFilteredOnly.map((d) => [d.name, d]));
     const seen = new Set<string>();
     const ordered: typeof substringFiltered = [];
@@ -394,7 +401,7 @@ export default function DatasetBrowserPage() {
       }
     }
     return ordered;
-  }, [qDeferred, semanticOrder, substringFiltered, safeData, fieldFilterConfigs]);
+  }, [qDeferred, semanticOrder, substringFiltered, fieldFilteredOnly]);
 
   const INITIAL_SHOW = 60;
   const [showCount, setShowCount] = useState(INITIAL_SHOW);

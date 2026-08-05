@@ -3,6 +3,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { pipeline } from '@huggingface/transformers';
+import { MODEL_ID, DIM, DTYPE } from '../src/lib/embeddingModel.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -13,8 +14,6 @@ const embeddingsDir = path.join(staticDataDir, 'embeddings');
 const vectorsPath = path.join(embeddingsDir, 'vectors.bin');
 const metaPath = path.join(embeddingsDir, 'meta.json');
 
-const MODEL_ID = 'Xenova/all-MiniLM-L6-v2';
-const DIM = 384;
 const BATCH_SIZE = 64;
 
 function readJson(filePath) {
@@ -99,8 +98,12 @@ function buildEmbeddingText(record) {
   return parts.join('. ');
 }
 
+// Includes MODEL_ID/DTYPE so a future model or quantization change is treated as a cache miss
+// even if no dataset record changed — otherwise generateEmbeddings()'s skip-if-unchanged check
+// below would silently keep stale vectors embedded with the old model/dtype.
 function hashTexts(texts) {
   const hash = crypto.createHash('sha256');
+  hash.update(MODEL_ID).update('\n').update(DTYPE).update('\n');
   for (const text of texts) hash.update(text).update('\n');
   return hash.digest('hex');
 }
@@ -110,7 +113,7 @@ async function embedAll(texts) {
   // the same quantized weights so build-time corpus vectors and client-time query vectors live
   // in the same space. device: 'cpu' uses onnxruntime-node here; that's a build-time-only
   // native dependency and never ships to the browser bundle.
-  const extractor = await pipeline('feature-extraction', MODEL_ID, { dtype: 'q8', device: 'cpu' });
+  const extractor = await pipeline('feature-extraction', MODEL_ID, { dtype: DTYPE, device: 'cpu' });
   const vectors = new Float32Array(texts.length * DIM);
   for (let i = 0; i < texts.length; i += BATCH_SIZE) {
     const batch = texts.slice(i, i + BATCH_SIZE);
@@ -145,7 +148,7 @@ async function generateEmbeddings() {
     metaPath,
     JSON.stringify({
       model: MODEL_ID,
-      dtype: 'q8',
+      dtype: DTYPE,
       dim: DIM,
       count: merged.length,
       generatedAt: new Date().toISOString(),
@@ -156,7 +159,14 @@ async function generateEmbeddings() {
   console.log('Wrote', vectorsPath, `(${vectors.byteLength} bytes)`, 'and', metaPath, `(${merged.length} records)`);
 }
 
-generateEmbeddings().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// Guarded so tests can import this module's pure functions (mergeForEmbedding,
+// buildEmbeddingText, hashTexts, embedAll, ...) without triggering a full run against the
+// real static/data files as a side effect of the import.
+if (import.meta.url === `file://${process.argv[1]}`) {
+  generateEmbeddings().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
+
+export { mergeForEmbedding, buildEmbeddingText, buildNameText, hashTexts, embedAll, generateEmbeddings, MODEL_ID, DIM };
