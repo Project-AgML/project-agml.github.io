@@ -5,6 +5,7 @@ import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
 import { computeDatasetStats, filterDatasets, formatDisplayLocation, useDatasets } from '../../lib/datasets';
+import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
 type FilterKind = 'checkbox' | 'dropdown';
 
@@ -334,18 +335,81 @@ export default function DatasetBrowserPage() {
     [safeData, filterOptions]
   );
 
-  const filtered = useMemo(
+  const fieldFilterConfigs = useMemo(
     () =>
-      filterDatasets(safeData, {
-        q: qDeferred || undefined,
-        fieldFilters: DATASET_FILTERS.map((filter) => ({
-          field: filter.field,
-          values: selections[filter.key],
-          mode: filter.mode,
-        })),
-      }),
-    [safeData, qDeferred, selections]
+      DATASET_FILTERS.map((filter) => ({
+        field: filter.field,
+        values: selections[filter.key],
+        mode: filter.mode,
+      })),
+    [selections]
   );
+
+  const { status: semanticStatus, activate: activateSemanticSearch, search: semanticSearch } =
+    useSemanticDatasetSearch(safeData);
+
+  // Field filters alone, over the full corpus — computed once and shared by both
+  // `substringFiltered` (below) and the semantic re-ranking path, instead of each running its own
+  // full-corpus field-filter pass.
+  const fieldFilteredOnly = useMemo(
+    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs }),
+    [safeData, fieldFilterConfigs]
+  );
+
+  // Instant baseline — exact substring-match behavior. Always computed so results never blank
+  // out while the semantic engine (model + index, ~46MB on first activation) is loading, or if
+  // it errors.
+  const substringFiltered = useMemo(
+    () => filterDatasets(fieldFilteredOnly, { q: qDeferred || undefined }),
+    [fieldFilteredOnly, qDeferred]
+  );
+
+  const [semanticOrder, setSemanticOrder] = useState<{ query: string; names: string[] } | null>(null);
+
+  useEffect(() => {
+    const query = qDeferred.trim();
+    if (!query || semanticStatus !== 'ready') return;
+    let cancelled = false;
+    semanticSearch(query).then((names) => {
+      if (!cancelled && names) setSemanticOrder({ query, names });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [qDeferred, semanticStatus, semanticSearch]);
+
+  // `semanticRankApplied` is true only if at least one semantically-ranked result actually
+  // survived the active field filters into `ordered` — otherwise (e.g. field filters exclude
+  // every dataset the semantic engine ranked highly) `ordered` falls through entirely to
+  // `substringFiltered`'s plain substring-match order, and the "Ranked by relevance" badge
+  // (below) must not claim credit for an ordering it didn't produce.
+  const { filtered, semanticRankApplied } = useMemo(() => {
+    const query = qDeferred.trim();
+    if (!query || semanticOrder?.query !== query) {
+      return { filtered: substringFiltered, semanticRankApplied: false };
+    }
+
+    // Re-rank by semantic order, but still respect the active structured field filters (already
+    // computed above, without `q`, as `fieldFilteredOnly`).
+    const byName = new Map(fieldFilteredOnly.map((d) => [d.name, d]));
+    const seen = new Set<string>();
+    const ordered: typeof substringFiltered = [];
+    for (const name of semanticOrder.names) {
+      const dataset = byName.get(name);
+      if (dataset && !seen.has(name)) {
+        ordered.push(dataset);
+        seen.add(name);
+      }
+    }
+    const semanticRankApplied = ordered.length > 0;
+    for (const dataset of substringFiltered) {
+      if (!seen.has(dataset.name)) {
+        ordered.push(dataset); // safety net: never regress vs. today's substring results
+        seen.add(dataset.name);
+      }
+    }
+    return { filtered: ordered, semanticRankApplied };
+  }, [qDeferred, semanticOrder, substringFiltered, fieldFilteredOnly]);
 
   const INITIAL_SHOW = 60;
   const [showCount, setShowCount] = useState(INITIAL_SHOW);
@@ -403,9 +467,18 @@ export default function DatasetBrowserPage() {
             placeholder="search datasets, tasks, crops..."
             value={qLocal}
             onChange={(event) => setQLocal(event.target.value)}
+            onFocus={activateSemanticSearch}
             className={styles.searchInput}
           />
           <div className={styles.toolbarRight}>
+            {semanticStatus === 'loading' && (
+              <span className={styles.semanticBadge} aria-live="polite">
+                Enabling smart search…
+              </span>
+            )}
+            {semanticStatus === 'ready' && qDeferred.trim() && semanticOrder?.query === qDeferred.trim() && semanticRankApplied && (
+              <span className={styles.semanticBadge}>Ranked by relevance</span>
+            )}
             <span className={styles.resultCount}>{distinctDatasetCount.toLocaleString()} datasets</span>
             <span className={styles.resultCount}>
               {stats.imageCount.toLocaleString()} images · {stats.taskTypeCount} task types
