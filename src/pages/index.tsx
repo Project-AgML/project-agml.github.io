@@ -8,6 +8,7 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 import { computeDatasetStats, useDatasets } from '../lib/datasets';
+import DatasetWorldMap from '../components/DatasetWorldMap';
 
 // The ~30 most recently added sample images (by commit date) — hardcoded rather than
 // picked live from useDatasets() so the homepage doesn't depend on the full dataset fetch.
@@ -145,6 +146,9 @@ export default function Home(): ReactNode {
         <HomepageHero />
         <SampleImagery />
         <StatsRow />
+        <section className={styles.mapSection}>
+          <DatasetWorldMap />
+        </section>
 
         <section className={styles.featuresSection}>
           <p className={styles.sectionLabel}>What AgML offers</p>
