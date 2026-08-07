@@ -178,11 +178,13 @@
   {
     "name": "cotton_leaf_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Sher-e-Bangla Agricultural University cotton plant garden, Dhaka, Bangladesh"
     ],
-    "lat_lon": ["23 46 17.652, 90 22 30.2514"],
+    "lat_lon": [
+      "23 46 17.652, 90 22 30.2514"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -220,7 +222,7 @@
   {
     "name": "eggplant_leaf_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Dattapara, Ashulia, Dhaka, Bangladesh",
       "Gazaria, Munshigonj, Dhaka, Bangladesh",
@@ -305,7 +307,10 @@
       "iQOO Z9 Turbo",
       "OnePlus 8T"
     ],
-    "collection_period": ["10 March 2025 to 18 April 2025", "30 August 2025 to 2 September 2025"],
+    "collection_period": [
+      "10 March 2025 to 18 April 2025",
+      "30 August 2025 to 2 September 2025"
+    ],
     "platform": "handheld"
   },
   {
@@ -455,7 +460,9 @@
     "location": [
       "Vellore Institute of Technology, Chennai, India"
     ],
-    "lat_lon": ["12.8406, 80.1534"],
+    "lat_lon": [
+      "12.8406, 80.1534"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -570,7 +577,7 @@
   {
     "name": "RoseLeafInsight_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Zailla, Singair, Manikganj, Bangladesh",
       "Golap Gram, Sadullapur-Komolapur, Road Birulia Bridge, Dhaka, Bangladesh"
@@ -644,7 +651,10 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/taro_blight_stage_classification",
     "examples_image_url": "/img/agml/sample_images/taro_blight_stage_classification_sample.webp",
-    "country": ["Nigeria", "Ghana"],
+    "country": [
+      "Nigeria",
+      "Ghana"
+    ],
     "imaging_equipment": [
       "Xiaomi Redmi 10A smartphone"
     ],
@@ -701,7 +711,9 @@
     "location": [
       "Niphad Grapes farms, Nashik District, Maharashtra, India"
     ],
-    "lat_lon": ["20.0771,74.1094"],
+    "lat_lon": [
+      "20.0771,74.1094"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -774,7 +786,7 @@
   {
     "name": "teaLeafBD_disease_classification_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Malnicherra Tea Estate, Sylhet, Bangladesh",
       "Lakkatura Tea Garden, Sylhet, Bangladesh",
@@ -837,7 +849,9 @@
     "location": [
       "East West University, Aftabnagar, Dhaka, Bangladesh"
     ],
-    "lat_lon": ["23.768820183974263, 90.42552373253056"],
+    "lat_lon": [
+      "23.768820183974263, 90.42552373253056"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1007,7 +1021,9 @@
     "location": [
       "Meknas farm site, Meknas, Morocco"
     ],
-    "lat_lon": ["33 53 17, 5 25 22"],
+    "lat_lon": [
+      "33 53 17, 5 25 22"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1637,7 +1653,9 @@
     "location": [
       "Fiber Plus Agro, Ashulia, Savar, Dhaka Division, Bangladesh"
     ],
-    "lat_lon": ["23 54 26.0, 90 16 00.7"],
+    "lat_lon": [
+      "23 54 26.0, 90 16 00.7"
+    ],
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1773,7 +1791,9 @@
     "location": [
       "Vishwakarma University campus, Kondhwa Budruk, Pune, Maharashtra, India"
     ],
-    "lat_lon": ["18.4605, 73.8837"],
+    "lat_lon": [
+      "18.4605, 73.8837"
+    ],
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1842,7 +1862,9 @@
     "location": [
       "Thu Thua, Long An, Vietnam"
     ],
-    "lat_lon": ["10 37 13.3, 106 20 06.1"],
+    "lat_lon": [
+      "10 37 13.3, 106 20 06.1"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1878,7 +1900,9 @@
     "location": [
       "Donje Village, Taluka Haveli, District Pune, Maharashtra, India"
     ],
-    "lat_lon": ["18.3999, 73.7860"],
+    "lat_lon": [
+      "18.3999, 73.7860"
+    ],
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -1954,7 +1978,9 @@
     "location": [
       "Changao, Ashulia, Dhaka, Bangladesh"
     ],
-    "lat_lon": ["23 53 2, 90 19 28"],
+    "lat_lon": [
+      "23 53 2, 90 19 28"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -2063,7 +2089,7 @@
       "National Cotton Research Institute field, Gazipur, Dhaka, Bangladesh"
     ],
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "cotton"
     ],
@@ -2324,7 +2350,7 @@
       "25.75371, 89.25349"
     ],
     "environment": "lab",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "banana"
     ],
@@ -2370,7 +2396,7 @@
       "25.75371, 89.25349"
     ],
     "environment": "lab",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "banana"
     ],
@@ -3233,7 +3259,7 @@
       "23.8769, 90.3113"
     ],
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "Bottle Gourd",
       "Zucchini",
@@ -6611,7 +6637,10 @@
       "Canon R50 with RF 35 mm lens"
     ],
     "collection_period": "July 2023 to November 2023, July 2024 to November 2024",
-    "platform": ["ground", "handheld"]
+    "platform": [
+      "ground",
+      "handheld"
+    ]
   },
   {
     "name": "MH_Weed16_weed_variety_classification",
@@ -6668,7 +6697,10 @@
       "Canon R50 with RF 35 mm lens"
     ],
     "collection_period": "July 2023 to November 2023, July 2024 to November 2024",
-    "platform": ["ground", "handheld"]
+    "platform": [
+      "ground",
+      "handheld"
+    ]
   },
   {
     "name": "agarwood_leaf_disease_classification",
@@ -7284,7 +7316,10 @@
       "Mavic Air 2"
     ],
     "collection_period": "about 6 months",
-    "platform": ["uav", "handheld"]
+    "platform": [
+      "uav",
+      "handheld"
+    ]
   },
   {
     "name": "BananaLSD_leaf_disease_classification",
@@ -7297,7 +7332,7 @@
       "24.036016, 90.401085"
     ],
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "banana"
     ],
@@ -8166,7 +8201,7 @@
       "Kileler, 415 00, Thessalian Plain, Larissa, Greece [39.54164,22.64298 39.54032,22.64436 39.54183,22.64687 39.54305,22.64542]"
     ],
     "lat_lon": [
-      "39.54164, 22.64298", 
+      "39.54164, 22.64298",
       "39.54032, 22.64436",
       "39.54183, 22.64687",
       "39.54305, 22.64542"

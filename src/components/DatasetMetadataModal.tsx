@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import type { Dataset } from '../lib/datasets';
-import { formatDisplayLocation } from '../lib/datasets';
+import { formatCoordinateList, formatDisplayLocation, formatLocationList } from '../lib/datasets';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import styles from './DatasetMetadataModal.module.css';
@@ -249,7 +249,6 @@ export function DatasetMetadataModal({
 	if (!open || dataset == null) return null;
 
 	const metadataRows = [
-		['Location', formatDisplayLocation(dataset.location)],
 		['Sensor modality', formatValue(dataset.sensor_modality)],
 		['Platform', formatValue(dataset.platform)],
 		['Number of images', formatImageCount(dataset.num_images)],
@@ -264,6 +263,14 @@ export function DatasetMetadataModal({
 	const loader = formatLoaderInstructions(dataset);
 	const cropList = dataset.crop_types ?? [];
 	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
+	const locationList = formatLocationList(dataset);
+	const coordinateList = formatCoordinateList(dataset.lat_lon);
+	// Pairs each location with the coordinate at the same index (same shape the source data uses
+	// for both fields) into single compact rows, instead of two separate full lists.
+	const siteRows = Array.from({ length: Math.max(locationList?.length ?? 0, coordinateList?.length ?? 0) }, (_, index) => ({
+		location: locationList?.[index] ?? null,
+		coordinate: coordinateList?.[index] ?? null,
+	}));
 
 	return (
 		<div className={styles.backdrop} role="presentation" onClick={onClose}>
@@ -302,6 +309,55 @@ export function DatasetMetadataModal({
 						</div>
 					))}
 				</dl>
+
+				{(dataset.country || dataset.location || dataset.lat_lon || dataset.imaging_equipment || dataset.collection_period) && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Location &amp; collection</h3>
+						<div className={styles.locationColumns}>
+							<div className={styles.locationColumn}>
+								{dataset.country && (
+									<dl className={styles.detailGrid} style={{ gridTemplateColumns: '1fr', margin: 0 }}>
+										<div className={styles.detailItem}>
+											<dt className={styles.detailLabel}>Country</dt>
+											<dd className={styles.detailValue}>{formatDisplayLocation(dataset.country)}</dd>
+										</div>
+									</dl>
+								)}
+								{siteRows.length > 0 && (
+									<div>
+										<p className={styles.detailLabel}>Locations</p>
+										<ul className={styles.siteList}>
+											{siteRows.map((site, index) => (
+												<li key={index} className={styles.siteRow}>
+													{site.location && <span>{site.location}</span>}
+													{site.coordinate && <span className={styles.coordinate}>{site.coordinate}</span>}
+												</li>
+											))}
+										</ul>
+									</div>
+								)}
+							</div>
+							{(dataset.imaging_equipment || dataset.collection_period) && (
+								<div className={styles.locationColumn}>
+									<dl className={styles.detailGrid} style={{ gridTemplateColumns: '1fr', margin: 0 }}>
+										{dataset.imaging_equipment && (
+											<div className={styles.detailItem}>
+												<dt className={styles.detailLabel}>Imaging equipment</dt>
+												<dd className={styles.detailValue}>{formatDisplayLocation(dataset.imaging_equipment)}</dd>
+											</div>
+										)}
+										{dataset.collection_period && (
+											<div className={styles.detailItem}>
+												<dt className={styles.detailLabel}>Collection period</dt>
+												<dd className={styles.detailValue}>{formatDisplayLocation(dataset.collection_period)}</dd>
+											</div>
+										)}
+									</dl>
+								</div>
+							)}
+						</div>
+					</section>
+				)}
 
 				{cropList.length > 0 && (
 					<section className={styles.section}>
