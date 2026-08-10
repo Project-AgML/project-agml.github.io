@@ -234,6 +234,7 @@ export function DatasetMetadataModal({
 	const [cropsExpanded, setCropsExpanded] = useState(false);
 	const [classesExpanded, setClassesExpanded] = useState(false);
 	const [copied, setCopied] = useState(false);
+	const [citationCopied, setCitationCopied] = useState(false);
 
 	const [expandedRowKeys, setExpandedRowKeys] = useState<Set<string>>(new Set());
 	const toggleExpandedRow = (key: string) => {
@@ -294,6 +295,7 @@ export function DatasetMetadataModal({
 							)}
 							{dataset.agricultural_task && <span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>}
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
+							{dataset.license && <span className={styles.tag}>{formatValue(dataset.license)}</span>}
 						</div>
 					</div>
 					<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
@@ -588,6 +590,26 @@ export function DatasetMetadataModal({
 						<p className={styles.bodyText}>No leaderboard results have been submitted for this dataset yet.</p>
 					)}
 				</section>
+
+				{dataset.citation && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Citation</h3>
+						<div className={styles.snippetRow}>
+							<pre className={styles.citationCode}>{dataset.citation}</pre>
+							<button
+								type="button"
+								className={styles.snippetCopyButton}
+								onClick={() => {
+									navigator.clipboard.writeText(dataset.citation ?? '');
+									setCitationCopied(true);
+									setTimeout(() => setCitationCopied(false), 1500);
+								}}
+							>
+								{citationCopied ? 'Copied!' : 'Copy'}
+							</button>
+						</div>
+					</section>
+				)}
 			</div>
 		</div>
 	);

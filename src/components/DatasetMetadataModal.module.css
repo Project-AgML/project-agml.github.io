@@ -269,6 +269,17 @@
 	white-space: pre;
 }
 
+.citationCode {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.78rem;
+	line-height: 1.6;
+	color: var(--agml-text);
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	margin: 0;
+}
+
 .snippetCopyButton {
 	flex-shrink: 0;
 	align-self: center;
