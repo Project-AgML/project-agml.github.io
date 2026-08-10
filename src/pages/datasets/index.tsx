@@ -4,7 +4,7 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { computeDatasetStats, filterDatasets, formatDisplayLocation, useDatasets } from '../../lib/datasets';
+import { computeDatasetStats, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
 import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
 type FilterKind = 'checkbox' | 'dropdown';
@@ -44,7 +44,7 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
   {
     key: 'location',
     label: 'Location',
-    field: 'location',
+    field: 'display_location',
     kind: 'dropdown',
     mode: 'containsAny',
     formatOption: (value) => value,
@@ -190,11 +190,11 @@ function DatasetCard({
     zip_size_bytes,
     augmented_num_images,
     augmented_zip_size_bytes,
-    location,
   } = dataset;
   const fileSize = formatBytesDecimal(zip_size_bytes);
   const augmentedFileSize = formatBytesDecimal(augmented_zip_size_bytes);
   const hasAugmented = augmented_num_images != null;
+  const primaryLocation = formatPrimaryLocation(dataset);
 
   return (
     <button
@@ -214,7 +214,7 @@ function DatasetCard({
             </span>
           )}
           {agricultural_task && <span className={styles.tag}>{toLabel(agricultural_task)}</span>}
-          {location && <span className={styles.tag}>{formatDisplayLocation(location)}</span>}
+          {primaryLocation && <span className={styles.tag}>{primaryLocation}</span>}
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.cardFooterRow}>
