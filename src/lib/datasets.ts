@@ -209,6 +209,38 @@ async function fetchManifest(manifestUrl: string): Promise<Dataset[]> {
   return normalizeManifest(await response.json());
 }
 
+// iNatAg / iNatAg-mini ship one child dataset entry per species (2900+ each) named
+// "<parent>/<species>" — the species isn't in a `crop_types` field, it's the name suffix.
+// That would otherwise swamp the search results grid with per-species cards, so the species
+// names are folded onto the parent entry's `crop_types` here (surfaced in DatasetMetadataModal's
+// "Crops" section) and the children themselves are dropped from results via `includeChildren: false`.
+function speciesNameFromChild(childName: string, parentName: string): string | null {
+  if (!childName.startsWith(`${parentName}/`)) return null;
+  const suffix = childName.slice(parentName.length + 1).trim();
+  return suffix ? suffix.replace(/_/g, ' ') : null;
+}
+
+function attachAggregatedCropTypes(datasets: Dataset[]): Dataset[] {
+  const cropsByParent = new Map<string, Set<string>>();
+  for (const dataset of datasets) {
+    if (!dataset.parent_dataset) continue;
+    const set = cropsByParent.get(dataset.parent_dataset) ?? new Set<string>();
+    for (const crop of dataset.crop_types ?? []) set.add(crop);
+    const species = speciesNameFromChild(dataset.name, dataset.parent_dataset);
+    if (species) set.add(species);
+    cropsByParent.set(dataset.parent_dataset, set);
+  }
+  if (cropsByParent.size === 0) return datasets;
+
+  return datasets.map((dataset) => {
+    if (dataset.parent_dataset) return dataset;
+    const childCrops = cropsByParent.get(dataset.name);
+    if (!childCrops) return dataset;
+    const merged = new Set([...(dataset.crop_types ?? []), ...childCrops]);
+    return { ...dataset, crop_types: Array.from(merged).sort((a, b) => a.localeCompare(b)) };
+  });
+}
+
 export async function loadDatasets(manifestUrls: string[]): Promise<Dataset[]> {
   const results = await Promise.allSettled(manifestUrls.map((manifestUrl) => fetchManifest(manifestUrl)));
   const merged = new Map<string, Dataset>();
@@ -224,7 +256,8 @@ export async function loadDatasets(manifestUrls: string[]): Promise<Dataset[]> {
   }
 
   if (loadedAny) {
-    return Array.from(merged.values()).sort((a, b) => a.name.localeCompare(b.name));
+    const sorted = Array.from(merged.values()).sort((a, b) => a.name.localeCompare(b.name));
+    return attachAggregatedCropTypes(sorted);
   }
 
   const firstError = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');

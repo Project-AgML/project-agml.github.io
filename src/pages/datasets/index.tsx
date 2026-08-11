@@ -352,7 +352,7 @@ export default function DatasetBrowserPage() {
   // `substringFiltered` (below) and the semantic re-ranking path, instead of each running its own
   // full-corpus field-filter pass.
   const fieldFilteredOnly = useMemo(
-    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs }),
+    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs, includeChildren: false }),
     [safeData, fieldFilterConfigs]
   );
 

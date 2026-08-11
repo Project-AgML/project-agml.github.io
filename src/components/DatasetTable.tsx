@@ -43,7 +43,7 @@ export function DatasetTable() {
             {filtered.length} top-level datasets
             {hasMore ? ` (showing ${DISPLAY_LIMIT})` : ''}
           </p>
-          <p className={styles.helper}>Use Dataset Search to explore iNatAg sub-datasets.</p>
+          <p className={styles.helper}>iNatAg and iNatAg-mini crop species are listed on their dataset cards.</p>
         </div>
         <label className={styles.searchLabel}>
           <span>Filter</span>
