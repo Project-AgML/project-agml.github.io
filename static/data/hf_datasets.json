@@ -2125,7 +2125,7 @@
   {
     "name": "banana_guava_quality_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "quality_classification",
     "location": [
       "Hisar, Haryana, India"
     ],
@@ -2471,7 +2471,7 @@
   {
     "name": "lentil_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Farm A, Barisal, Bangladesh",
       "Farm B, Barisal, Bangladesh",
@@ -2750,7 +2750,7 @@
   {
     "name": "rice_grain_variety_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "variety_classification",
     "location": [
       "Dinajpur, Bangladesh",
       "Dhaka, Bangladesh"
@@ -3174,7 +3174,7 @@
   {
     "name": "sorghum_weed_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "weed segmentation",
+    "agricultural_task": "weed_classification",
     "location": [
       "SRM Care Farm, Chengalpattu district, Tamil Nadu, India"
     ],
@@ -4124,7 +4124,7 @@
   {
     "name": "mango_leaf_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Sher-e-Bangla Agricultural University mango garden, Dhaka, Bangladesh",
       "Jahangir Nagar University garden, Savar, Bangladesh",
@@ -6118,7 +6118,7 @@
   {
     "name": "MH_SoyaHealthVision_disease_classification_leaf",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease detection",
+    "agricultural_task": "disease_classification",
     "location": [
       "Chikhali, Sangli, Maharashtra, India",
       "Upavale, Sangli, Maharashtra, India",
@@ -7076,7 +7076,7 @@
   {
     "name": "okra_thermal_maturity_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "maturity_classification",
     "location": [
       "Chennai, Chennai, India"
     ],
@@ -7934,7 +7934,7 @@
   {
     "name": "CoLeaf_nutritional_deficiency_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "San Miguel de las Naranjas, Jaén province, Cajamarca, Perú",
       "La Palma Central, Jaén province, Cajamarca, Perú"
@@ -7980,7 +7980,7 @@
   {
     "name": "MangoLeafBD_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "Sher-e-Bangla Agricultural University mango garden, Dhaka, Bangladesh",
       "Jahangir Nagar University garden, Savar, Bangladesh",
@@ -8115,7 +8115,7 @@
   {
     "name": "PFSD_Musa_banana_variety_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease classification",
+    "agricultural_task": "disease_classification",
     "location": [
       "BORTARI VILLAGE, Chaygaon, Kukurmara, District - Kamrup (Rural), Assam, India",
       "HAJO VILLAGE, District - Kamrup (Rural), Assam, India"
@@ -8526,7 +8526,7 @@
   {
     "name": "grape_variety_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "variety_classification",
     "location": [
       "al_dujail, Salahaddin, Iraq",
       "balad, Salahaddin, Iraq",
@@ -8643,7 +8643,7 @@
   {
     "name": "soybean_damage_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "damage_classification",
     "location": [
       "Nanjing, Nanjing, China"
     ],
@@ -8785,7 +8785,7 @@
   {
     "name": "vineyard_grape_segmentation",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "crop detection",
+    "agricultural_task": "crop_segmentation",
     "location": [
       "Tomiño, Pontevedra, Galicia, Spain"
     ],
@@ -9212,7 +9212,7 @@
   {
     "name": "sunflower_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "crop detection",
+    "agricultural_task": "crop_detection",
     "location": [
       "Nagoriakandi, Narsingdi District, Bangladesh",
       "Amjhupi, Meherpur district, Bangladesh"
@@ -9963,7 +9963,7 @@
   {
     "name": "corn_leaf_pest_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "disease segmentation",
+    "agricultural_task": "disease_classification",
     "location": [
       "Keleng, Western Region, Cameroon",
       "Dom'meni, Western Region, Cameroon",
@@ -10587,7 +10587,7 @@
   {
     "name": "ICPTC_pistachio_tree_variety_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "variety_classification",
     "location": [
       "Chah-Afzal region, Ardakan County, Yazd, Iran"
     ],
@@ -10626,7 +10626,7 @@
   {
     "name": "citrus_fruit_variety_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop classification",
+    "agricultural_task": "variety_classification",
     "location": [
       "Fengyuan District, Taichung, Taiwan",
       "Taiping District, Taichung, Taiwan",
@@ -10709,5 +10709,425 @@
     "imaging_equipment": [
       "Micromax Canvas TAB P802"
     ]
+  },
+  {
+    "name": "crop_pest_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "University of Energy and Natural Resources, Sunyani, Ghana",
+      "African Technology Policy Society Network, Nairobi, Kenya"
+    ],
+    "country": [
+      "Ghana",
+      "Kenya"
+    ],
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cashew",
+      "cassava",
+      "maize",
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "platform": "handheld",
+    "imaging_equipment": "Canon EOS Rebel T7",
+    "collection_period": "October to December 2022",
+    "input_data_format": "image_folder",
+    "annotation_format": "classLabel",
+    "num_images": 25170,
+    "augmented_num_images": 105252,
+    "augmented_zip_size_bytes": 7101568095,
+    "classes": [
+      "anthracnose",
+      "bacterial blight",
+      "brown spot",
+      "fall armyworm",
+      "grasshoper",
+      "green mite",
+      "gumosis",
+      "healthy",
+      "leaf beetle",
+      "leaf blight",
+      "leaf curl",
+      "leaf miner",
+      "leaf spot",
+      "mosaic",
+      "red rust",
+      "septoria leaf spot",
+      "streak virus",
+      "verticulium wilt"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109306",
+    "citation": "Mensah Kwabena, Patrick; Akoto-Adjepong, Vivian; Adu, Kwabena; Abra Ayidzoe, Mighty; Asare Bediako, Elvis; Nyarko-Boateng, Owusu; Boateng, Samuel; Fobi Donkor, Esther; Umar Bawah, Faiza; Songose Awarayi, Nicodemus; Nimbe, Peter; Kofi Nti, Isaac; Abdulai, Muntala; Roger Adjei, Remember; Opoku, Michael (2023), “Dataset for Crop Pest and Disease Detection”, Mendeley Data, V1, doi: 10.17632/bwh3zbpkpv.1",
+    "zip_size_bytes": 1336382819,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/crop_pest_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/crop_pest_disease_classification_sample.webp"
+  },
+  {
+    "name": "FruitNet_quality_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "quality_classification",
+    "location": [
+      "VISHWAKARMA UNIVERSITY, Survey No. 2, 3, 4 Laxmi Nagar, Kondhwa Budruk, Pune - 411 048. Maharashtra, India",
+      "HUBTOWN COUNTRYWOODS SOCIETY, Tilekar Nagar, Kondhwa Budruk, Pune - 411 048, Maharashtra, India"
+    ],
+    "lat_lon": [
+      "18.4603, 73.8836",
+      "18.442866, 73.884894"
+    ],
+    "country": "India",
+    "environment": "Mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana",
+      "apple",
+      "guava",
+      "lime",
+      "orange",
+      "pomegranate"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 6",
+      "Zuk Z2 Plus",
+      "Realme 5 Pro"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 19526,
+    "classes": [
+      "Bad",
+      "Good",
+      "Mixed"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2021.107686",
+    "citation": "PATIL, Kailas; MESHRAM, Vishal (2022), “FruitNet: Indian Fruits Dataset with quality (Good, Bad & Mixed quality)”, Mendeley Data, V3, doi: 10.17632/b6fftwbr2v.3",
+    "zip_size_bytes": 3292469625,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/FruitNet_quality_classification",
+    "examples_image_url": "/img/agml/sample_images/FruitNet_quality_classification_sample.webp"
+  },
+  {
+    "name": "grapevine_development_stage_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "maturity_classification",
+    "location": [
+      "Meissen, Saxony, Germany"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grapes"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Blink Outdoor"
+    ],
+    "collection_period": "June to August 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3993,
+    "classes": [
+      "71_73",
+      "75",
+      "77",
+      "79"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2023.107944",
+    "citation": "Schieck, M. (2022, October 31). Grapevine development stages (BBCH 71-79). Kaggle. https://www.kaggle.com/datasets/schieckmartin/grapesdevelopmentstages",
+    "zip_size_bytes": 18186712,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_development_stage_classification",
+    "examples_image_url": "/img/agml/sample_images/grapevine_development_stage_classification_sample.webp"
+  },
+  {
+    "name": "grapevine_growth_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Meissen, Saxony, Germany"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grapevine"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Blink Outdoor"
+    ],
+    "collection_period": "June to August 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1212,
+    "classes": [
+      "0"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2023.107944",
+    "citation": "Schieck, M. (2022, October 31). Grapevine development stages (BBCH 71-79). Kaggle. https://www.kaggle.com/datasets/schieckmartin/grapesdevelopmentstages",
+    "zip_size_bytes": 120873756,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_growth_detection",
+    "examples_image_url": "/img/agml/sample_images/grapevine_growth_detection_sample.webp"
+  },
+  {
+    "name": "strawberry_growth_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "maturity_detection",
+    "location": [
+      "Plant Growth Facility, University of Minnesota Twin Cities, Minneapolis, Minnesota, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "strawberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "June to October 2022 and 2023",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1477,
+    "classes": [
+      "flower",
+      "green",
+      "overripe",
+      "red",
+      "small g",
+      "turning red",
+      "white"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2024.108911",
+    "citation": "Yang, Q.& Jin, Z. (2024). Dataset for 'Predicting the growth trajectory and yield of greenhouse strawberries based on knowledge-guided computer vision' [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.10957909",
+    "zip_size_bytes": 6749132402,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_growth_detection",
+    "examples_image_url": "/img/agml/sample_images/strawberry_growth_detection_sample.webp"
+  },
+  {
+    "name": "greenhouse_crop_weed_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Waldron Greenhouse, North Dakota State University, Fargo, North Dakota, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Blackbean",
+      "Canola",
+      "Corn",
+      "Field Pea",
+      "Flax",
+      "Horseweed",
+      "Kochia",
+      "Lentil",
+      "Palmer Amaranth",
+      "Ragweed",
+      "Redroot Pigweed",
+      "Soybean",
+      "Sugar beet",
+      "Waterhemp"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS T7",
+      "Canon EOS 90D"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 28000,
+    "classes": [
+      "Blackbean",
+      "Canola",
+      "Corn",
+      "Field Pea",
+      "Flax",
+      "Horseweed",
+      "Kochia",
+      "Lentil",
+      "Palmer Amaranth",
+      "Ragweed",
+      "Redroot Pigweed",
+      "Soybean",
+      "Sugar beet",
+      "Waterhemp"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.111097",
+    "citation": "G C, Sunil; Koparan, Cengiz; Upadhyay, Arjun; Ahmed,   Mohammed Raju ; Zhang, Yu ; Howatt, Kirk; Sun, Xin (2024), “A Novel Automated Cloud-Based Image Datasets for High Throughput Phenotyping in Weed Identification.”, Mendeley Data, V3, doi: 10.17632/hs7d7kpd3z.3",
+    "zip_size_bytes": 1421843930,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_crop_weed_classification",
+    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_classification_sample.webp"
+  },
+  {
+    "name": "greenhouse_crop_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Waldron Greenhouse, North Dakota State University, Fargo, North Dakota, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Blackbean",
+      "Canola",
+      "Corn",
+      "Field Pea",
+      "Flax",
+      "Horseweed",
+      "Kochia",
+      "Lentil",
+      "Palmer Amaranth",
+      "Ragweed",
+      "Redroot Pigweed",
+      "Soybean",
+      "Sugar beet",
+      "Waterhemp"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS T7",
+      "Canon EOS 90D"
+    ],
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 200,
+    "classes": [
+      "Blackbean",
+      "Canola",
+      "Corn",
+      "Field Pea",
+      "Flax",
+      "Horseweed",
+      "Kochia",
+      "Lentil",
+      "Palmer Amaranth",
+      "Ragweed",
+      "Redroot Pigweed",
+      "Soybean",
+      "Sugar beet",
+      "Waterhemp"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.111097",
+    "citation": "G C, Sunil; Koparan, Cengiz; Upadhyay, Arjun; Ahmed,   Mohammed Raju ; Zhang, Yu ; Howatt, Kirk; Sun, Xin (2024), “A Novel Automated Cloud-Based Image Datasets for High Throughput Phenotyping in Weed Identification.”, Mendeley Data, V3, doi: 10.17632/hs7d7kpd3z.3",
+    "zip_size_bytes": 2802663140,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_crop_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_detection_sample.webp"
+  },
+  {
+    "name": "rice_leaf_disease_classification_india",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Sambalpur University, Odisha, India"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Nikon DSLR-D5600"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 5932,
+    "classes": [
+      "Bacterialblight",
+      "Blast",
+      "Brownspot",
+      "Tungro"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2020.105527",
+    "citation": "sethy, prabira Kumar (2024), “Rice Leaf Disease Image Samples”, Mendeley Data, V2, doi: 10.17632/fwcj7stb8r.2",
+    "zip_size_bytes": 208012992,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_india",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_india_sample.webp"
+  },
+  {
+    "name": "three_season_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": [
+      "R. R. Foil Plant Science Research Center,Starkville, Mississppi, United States of America",
+      "W.B. Andrews Agricultural Systems Research Farm, Starkville, Mississippi, United States of America",
+      "Black Belt Experiment Station, Brooksville, Mississippi, United States of America",
+      "Horticultural Research and Extension Center, University of Michigan, Holt, Michigan, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Carpetweed",
+      "Eclipta",
+      "Goosegrass",
+      "Lambsquarters",
+      "MorningGlory",
+      "PalmerAmaranth",
+      "Purslane",
+      "Ragweed",
+      "SpottedSpurge",
+      "Waterhemp"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Smartphones",
+      "Allied Vision Camera"
+    ],
+    "collection_period": "2021, 2022, June to August 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 8436,
+    "classes": [
+      "Carpetweed",
+      "Eclipta",
+      "Goosegrass",
+      "Lambsquarters",
+      "MorningGlory",
+      "PalmerAmaranth",
+      "Purslane",
+      "Ragweed",
+      "SpottedSpurge",
+      "Waterhemp"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2025.110123",
+    "citation": "Lu, Y. (2025). 3SeasonWeedDet10: a three-season, 10-class dataset for benchmarking AI models for robust weed detection [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14861516",
+    "zip_size_bytes": 48636045406,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/three_season_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/three_season_weed_detection_sample.webp"
   }
 ]
