@@ -458,6 +458,20 @@ function BenchmarkIcon() {
 	);
 }
 
+function BackIcon() {
+	return (
+		<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path
+				d="M14 8H2M2 8L7 3M2 8L7 13"
+				stroke="currentColor"
+				strokeWidth="1.6"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+}
+
 function InfoTooltip({ text }: { text: string }) {
 	return (
 		<span className={styles.infoTooltip} tabIndex={0} aria-label={text}>
@@ -1170,20 +1184,22 @@ export function DatasetMetadataModal({
 						</div>
 					</div>
 					<div className={styles.headerActions}>
+						{benchmark && showBenchmarks && (
+							<button type="button" className={styles.methodologyLink} onClick={() => setShowMethodology(true)}>
+								ⓘ How scores are calculated
+							</button>
+						)}
 						{benchmark && (
 							<button type="button" className={styles.benchmarkToggle} onClick={() => setShowBenchmarks((value) => !value)}>
 								{showBenchmarks ? (
-									'Dataset Details'
+									<>
+										<BackIcon /> Dataset Details
+									</>
 								) : (
 									<>
 										<BenchmarkIcon /> View Benchmarks
 									</>
 								)}
-							</button>
-						)}
-						{benchmark && showBenchmarks && (
-							<button type="button" className={styles.methodologyLink} onClick={() => setShowMethodology(true)}>
-								ⓘ How scores are calculated
 							</button>
 						)}
 						<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
