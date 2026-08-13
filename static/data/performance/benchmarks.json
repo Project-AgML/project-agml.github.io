@@ -1,0 +1,7 @@
+[
+  {
+    "id": 1,
+    "name": "Zero-shot naive baseline",
+    "description": "Benchmark 1 represents a zero-shot naive baseline with open-vocabulary models, prompted with only the class labels."
+  }
+]

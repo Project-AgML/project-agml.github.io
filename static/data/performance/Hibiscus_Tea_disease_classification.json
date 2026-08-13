@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-08-12T22:03:51.839405+00:00",
+    "dataset": "Project-AgML/Hibiscus_Tea_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 1411,
+    "device": "cuda",
+    "inference_time_seconds": 201.48,
+    "inference_time_seconds_per_image": 0.142789,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.202932,
+      "precision": 0.263637,
+      "recall": 0.247628,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Tea Algal Spot, Tea Brown Blight, Citruspot, Early_Mild_Spotting, Fungal_Infected, Tea Grey Blight, Healthy, Mild_Edge_Damage, Tea Red Spot, Senescent, Slightly_Diseased, Wrinkled_Leaf. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Tea Algal Spot, Tea Brown Blight, Citruspot, Early_Mild_Spotting, Fungal_Infected, Tea Grey Blight, Healthy, Mild_Edge_Damage, Tea Red Spot, Senescent, Slightly_Diseased, Wrinkled_Leaf), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]

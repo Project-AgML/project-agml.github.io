@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-08-12T22:30:31.774110+00:00",
+    "dataset": "Project-AgML/SIMPDV1_plant_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 2513,
+    "device": "cuda",
+    "inference_time_seconds": 507.87,
+    "inference_time_seconds_per_image": 0.202096,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.652294,
+      "precision": 0.722179,
+      "recall": 0.691979,
+      "skipped_samples": 6
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Abutilon Indicum, Aloe barbadensis miller, Calotropis gigantea, Canna indica, Cissus quadrangularis, Curcuma longa, Eclipta prostrate, Eichhornia Crassipes, Hibiscus Rosasinensis, Ixora coccinea, Justica adhatoda, Murraya koenigii, Ocimum tenuiflorum, Ouretlanata, Phyllanthus amarus, Ricinus communis, Senna Atriculata, Sesbania grandiflora, Trifolium Repens, Ziziphus mauritiana. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Abutilon Indicum, Aloe barbadensis miller, Calotropis gigantea, Canna indica, Cissus quadrangularis, Curcuma longa, Eclipta prostrate, Eichhornia Crassipes, Hibiscus Rosasinensis, Ixora coccinea, Justica adhatoda, Murraya koenigii, Ocimum tenuiflorum, Ouretlanata, Phyllanthus amarus, Ricinus communis, Senna Atriculata, Sesbania grandiflora, Trifolium Repens, Ziziphus mauritiana), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-08-12T22:07:55.999189+00:00",
+    "dataset": "Project-AgML/DIMPSAR_medicinal_leaf_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 6900,
+    "device": "cuda",
+    "inference_time_seconds": 1665.21,
+    "inference_time_seconds_per_image": 0.241335,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.084834,
+      "precision": 0.15484,
+      "recall": 0.111838,
+      "skipped_samples": 5
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Aloevera, Amla, Amruthaballi, Arali, Astma_weed, Badipala, Balloon_Vine, Bamboo, Beans, Betel, Bhrami, Bringaraja, Caricature, Castor, Catharanthus, Chakte, Chilly, Citron lime (herelikai), Coffee, Common rue(naagdalli), Coriender, Curry, Doddpathre, Drumstick, Ekka, Eucalyptus, Ganigale, Ganike, Gasagase, Ginger, Globe Amarnath, Guava, Henna, Hibiscus, Honge, Insulin, Jackfruit, Jasmine, Kambajala, Kasambruga, Kohlrabi, Lantana, Lemon, Lemongrass, Malabar_Nut, Malabar_Spinach, Mango, Marigold, Mint, Neem, Nelavembu, Nerale, Nooni, Onion, Padri, Palak(Spinach), Papaya, Parijatha, Pea, Pepper, Pomoegranate, Pumpkin, Raddish, Rose, Sampige, Sapota, Seethaashoka, Seethapala, Spinach1, Tamarind, Taro, Tecoma, Thumbe, Tomato, Tulsi, Turmeric, ashoka, camphor, kamakasturi, kepala. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Aloevera, Amla, Amruthaballi, Arali, Astma_weed, Badipala, Balloon_Vine, Bamboo, Beans, Betel, Bhrami, Bringaraja, Caricature, Castor, Catharanthus, Chakte, Chilly, Citron lime (herelikai), Coffee, Common rue(naagdalli), Coriender, Curry, Doddpathre, Drumstick, Ekka, Eucalyptus, Ganigale, Ganike, Gasagase, Ginger, Globe Amarnath, Guava, Henna, Hibiscus, Honge, Insulin, Jackfruit, Jasmine, Kambajala, Kasambruga, Kohlrabi, Lantana, Lemon, Lemongrass, Malabar_Nut, Malabar_Spinach, Mango, Marigold, Mint, Neem, Nelavembu, Nerale, Nooni, Onion, Padri, Palak(Spinach), Papaya, Parijatha, Pea, Pepper, Pomoegranate, Pumpkin, Raddish, Rose, Sampige, Sapota, Seethaashoka, Seethapala, Spinach1, Tamarind, Taro, Tecoma, Thumbe, Tomato, Tulsi, Turmeric, ashoka, camphor, kamakasturi, kepala), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]

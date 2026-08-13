@@ -20,6 +20,7 @@ export interface PerformanceEntry {
   metrics: MetricValue[];
   metricCategories: MetricCategory[];
   categoryScores: CategoryScores;
+  benchmarkId: number | null;
 }
 
 export type MetricCategory = 'f1' | 'map' | 'precision_recall' | 'other';
@@ -92,6 +93,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
     metrics: [],
     metricCategories: [],
     categoryScores: { f1: null, map: null, precision: null, recall: null },
+    benchmarkId: toNumber(raw.benchmark_id),
   };
 }
 
@@ -258,6 +260,7 @@ function makeLeaderboardRow(
     model: (entry.model as string).trim(),
     score: metrics[metricKey] as number,
     variant,
+    benchmarkId: isFiniteNumber(entry.benchmark_id) ? entry.benchmark_id : null,
     date: toText(entry.timestamp)?.slice(0, 10) ?? null,
     submitted_by: null,
     link: null,
@@ -360,6 +363,7 @@ export interface GlobalPerformanceRecord {
   platform: string | null;
   splitBreakdown: string | null;
   datasetConfig: string | null;
+  benchmarkId: number | null;
 }
 
 export interface GlobalLeaderboardDatasetDetail {
@@ -371,6 +375,7 @@ export interface GlobalLeaderboardDatasetDetail {
   platform: string | null;
   splitBreakdown: string | null;
   datasetConfig: string | null;
+  benchmarkId: number | null;
 }
 
 export function globalResultTypeKey(record: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }): string | null {
@@ -446,6 +451,7 @@ function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord
     platform: toText(raw.platform),
     splitBreakdown: toText(raw.splitBreakdown),
     datasetConfig: toText(raw.datasetConfig),
+    benchmarkId: toNumber(raw.benchmarkId),
   };
 }
 
@@ -540,6 +546,7 @@ export function computeGlobalLeaderboard(
       platform: record.platform,
       splitBreakdown: record.splitBreakdown,
       datasetConfig: record.datasetConfig,
+      benchmarkId: record.benchmarkId,
     });
     stats.set(key, entryStats);
   }
@@ -593,6 +600,63 @@ export function useGlobalPerformance(): {
       .catch((err) => {
         if (!active) return;
         setError(err instanceof Error ? err : new Error('Failed to load global performance data'));
+      })
+      .finally(() => {
+        if (!active) return;
+        setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [url]);
+
+  return { data, loading, error };
+}
+
+export interface Benchmark {
+  id: number;
+  name: string;
+  description: string;
+}
+
+function normalizeBenchmark(raw: unknown): Benchmark | null {
+  if (!isRecord(raw)) return null;
+  const id = toNumber(raw.id);
+  const name = toText(raw.name);
+  const description = toText(raw.description);
+  if (id == null || !name || !description) return null;
+  return { id, name, description };
+}
+
+export function useBenchmarks(): {
+  data: Benchmark[];
+  loading: boolean;
+  error: Error | null;
+} {
+  const url = useBaseUrl('/data/performance/benchmarks.json');
+  const [data, setData] = useState<Benchmark[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    setError(null);
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error('Failed to load benchmark data');
+        return response.json();
+      })
+      .then((json: unknown) => {
+        if (!active) return;
+        const benchmarks = Array.isArray(json) ? json.map(normalizeBenchmark).filter((entry): entry is Benchmark => entry != null) : [];
+        setData(benchmarks);
+      })
+      .catch((err) => {
+        if (!active) return;
+        setError(err instanceof Error ? err : new Error('Failed to load benchmark data'));
       })
       .finally(() => {
         if (!active) return;

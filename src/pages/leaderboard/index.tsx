@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
 import {
   computeGlobalLeaderboard,
+  useBenchmarks,
   useGlobalPerformance,
 } from '../../lib/performance';
 import type { GlobalLeaderboardEntry } from '../../lib/performance';
@@ -96,6 +97,7 @@ function PercentileCell({ value }: { value: number | null }) {
 
 export default function GlobalLeaderboardPage() {
   const { data: records, loading, error } = useGlobalPerformance();
+  const { data: benchmarks } = useBenchmarks();
 
   const [search, setSearch] = useState('');
   const searchDeferred = useDeferredValue(search);
@@ -105,6 +107,7 @@ export default function GlobalLeaderboardPage() {
   const [optimizedValues, setOptimizedValues] = useState<('optimized' | 'not-optimized')[]>([]);
   const [platforms, setPlatforms] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<SortField>('map');
+  const [resultsCollapsed, setResultsCollapsed] = useState(false);
 
   const { cropTypeOptions, mlTaskOptions, platformOptions } = useMemo(() => {
     const cropSet = new Set<string>();
@@ -241,81 +244,100 @@ export default function GlobalLeaderboardPage() {
             {!loading && !error && sorted.length > 0 && (
               <>
                 <div className={styles.tableWrap}>
-                  <div className={styles.leaderboardTable} role="table">
-                    <div className={styles.tableRow} role="row">
-                      <span role="columnheader">CV Task</span>
-                      <span role="columnheader">Model</span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
-                          <span>Avg F1 pctl</span>
-                          <span>{sortBy === 'f1' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('map')} onClick={() => setSortBy('map')}>
-                          <span>Avg mAP pctl</span>
-                          <span>{sortBy === 'map' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
-                          <span>Avg Precision pctl</span>
-                          <span>{sortBy === 'precision' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
-                          <span>Avg Recall pctl</span>
-                          <span>{sortBy === 'recall' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">Result type</span>
-                      <span role="columnheader"># Results</span>
-                    </div>
-                    {pagedLeaderboard.map((entry) => {
-                      const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
-                      return (
-                        <div
-                          key={key}
-                          role="row"
-                          tabIndex={0}
-                          className={`${styles.tableRow} ${styles.clickableRow}`}
-                          onClick={() => setSelectedKey(key)}
-                          onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              setSelectedKey(key);
-                            }
-                          }}
-                        >
-                          <span role="cell">
-                            <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
-                              {entry.machineLearningTask ? shortTaskLabel(entry.machineLearningTask) : 'Unknown'}
-                            </span>
-                          </span>
-                          <span role="cell">
-                            <span className={styles.modelName}>{entry.model}</span>
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgF1Percentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgMapPercentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgPrecisionPercentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgRecallPercentile} />
-                          </span>
-                          <span role="cell">{entry.resultType}</span>
-                          <span role="cell">{entry.appearances}</span>
+                  <div className={styles.resultsHeader}>
+                    <div className={styles.benchmarkInfo}>
+                      {benchmarks.map((benchmark) => (
+                        <div key={benchmark.id} className={styles.benchmarkBanner}>
+                          <strong>Benchmark {benchmark.id}: {benchmark.name}.</strong> {benchmark.description}
                         </div>
-                      );
-                    })}
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.collapseToggle}
+                      onClick={() => setResultsCollapsed((current) => !current)}
+                      aria-expanded={!resultsCollapsed}
+                    >
+                      {resultsCollapsed ? 'Show results ▾' : 'Hide results ▴'}
+                    </button>
                   </div>
+                  {!resultsCollapsed && (
+                    <div className={styles.leaderboardTable} role="table">
+                      <div className={styles.tableRow} role="row">
+                        <span role="columnheader">CV Task</span>
+                        <span role="columnheader">Model</span>
+                        <span role="columnheader">
+                          <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
+                            <span>Avg F1 pctl</span>
+                            <span>{sortBy === 'f1' ? '▼' : '▾'}</span>
+                          </button>
+                        </span>
+                        <span role="columnheader">
+                          <button type="button" className={sortHeaderClass('map')} onClick={() => setSortBy('map')}>
+                            <span>Avg mAP pctl</span>
+                            <span>{sortBy === 'map' ? '▼' : '▾'}</span>
+                          </button>
+                        </span>
+                        <span role="columnheader">
+                          <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
+                            <span>Avg Precision pctl</span>
+                            <span>{sortBy === 'precision' ? '▼' : '▾'}</span>
+                          </button>
+                        </span>
+                        <span role="columnheader">
+                          <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
+                            <span>Avg Recall pctl</span>
+                            <span>{sortBy === 'recall' ? '▼' : '▾'}</span>
+                          </button>
+                        </span>
+                        <span role="columnheader">Result type</span>
+                        <span role="columnheader"># Results</span>
+                      </div>
+                      {pagedLeaderboard.map((entry) => {
+                        const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
+                        return (
+                          <div
+                            key={key}
+                            role="row"
+                            tabIndex={0}
+                            className={`${styles.tableRow} ${styles.clickableRow}`}
+                            onClick={() => setSelectedKey(key)}
+                            onKeyDown={(event) => {
+                              if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                setSelectedKey(key);
+                              }
+                            }}
+                          >
+                            <span role="cell">
+                              <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
+                                {entry.machineLearningTask ? shortTaskLabel(entry.machineLearningTask) : 'Unknown'}
+                              </span>
+                            </span>
+                            <span role="cell">
+                              <span className={styles.modelName}>{entry.model}</span>
+                            </span>
+                            <span role="cell">
+                              <PercentileCell value={entry.avgF1Percentile} />
+                            </span>
+                            <span role="cell">
+                              <PercentileCell value={entry.avgMapPercentile} />
+                            </span>
+                            <span role="cell">
+                              <PercentileCell value={entry.avgPrecisionPercentile} />
+                            </span>
+                            <span role="cell">
+                              <PercentileCell value={entry.avgRecallPercentile} />
+                            </span>
+                            <span role="cell">{entry.resultType}</span>
+                            <span role="cell">{entry.appearances}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
-                {pageCount > 1 && (
+                {!resultsCollapsed && pageCount > 1 && (
                   <div className={styles.pagination}>
                     <button
                       type="button"

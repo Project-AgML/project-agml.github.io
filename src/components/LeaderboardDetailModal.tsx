@@ -181,6 +181,7 @@ export function LeaderboardDetailModal({
                   {isExpanded && (
                     <div className={styles.notesRow}>
                       {formatResultType(detail)} · {detail.platform ?? 'unknown platform'}
+                      {detail.benchmarkId != null ? ` · Benchmark ${detail.benchmarkId}` : ''}
                     </div>
                   )}
                 </Fragment>

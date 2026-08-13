@@ -212,6 +212,70 @@ Once the dataset is uploaded to the Hub and its entry is added to `static/data/h
 against the `project-agml.github.io` repository with the JSON change (and the sample-image asset, if you added one).
 We'll review the entry and confirm the Hugging Face repository is publicly accessible before merging.
 
+## Contributing Model Results (Leaderboard)
+
+The leaderboard pages are driven entirely by files under
+[`static/data/performance/`](https://github.com/Project-AgML/project-agml.github.io/tree/main/static/data/performance).
+Each dataset has its own `<dataset_name>.json` file — the `<dataset_name>` must match the dataset's `name` in the
+catalog (e.g. results for `cotton_leaf_disease_classification` live in `static/data/performance/cotton_leaf_disease_classification.json`).
+`static/data/performance/index.json` and `global.json` are generated files — do not hand-edit them; they're rebuilt
+from the per-dataset files by `scripts/generate-datasets.mjs` as part of the site build.
+
+Each `<dataset_name>.json` file is a JSON array of run records, one object per model evaluation. To add a result,
+append a new object to the array for the relevant dataset (creating the file if the dataset has no results yet):
+
+```json
+{
+  "timestamp": "2026-08-11T00:00:00.000000+00:00",
+  "dataset": "Project-AgML/cotton_leaf_disease_classification",
+  "dataset_config": null,
+  "split": "train",
+  "model": "openai/clip-vit-base-patch32",
+  "task": "classification",
+  "result_type": "zero-shot",
+  "optimized": "no",
+  "train_pct": 0.0,
+  "test_pct": 100.0,
+  "val_pct": 0.0,
+  "num_samples": 1373,
+  "device": "cuda",
+  "inference_time_seconds": 6.36,
+  "inference_time_seconds_per_image": 0.004634,
+  "train_time_seconds": 0.0,
+  "train_time_seconds_per_image": 0.0,
+  "metrics": {
+    "f1": 0.110828,
+    "precision": 0.109944,
+    "recall": 0.241157
+  },
+  "notes": ""
+}
+```
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `timestamp` | **Yes** | ISO 8601 UTC timestamp of when the evaluation was run. |
+| `dataset` | **Yes** | The dataset's Hugging Face repo id (`Project-AgML/<name>`). |
+| `dataset_config` | Optional | The HF config used (e.g. `"augmented"`), or `null` for the dataset's raw config. |
+| `model` | **Yes** | The model identifier, ideally its Hugging Face repo id. |
+| `task` | **Yes** | One of `classification`, `detection`, `segmentation` — used to pick the default ranking metric. |
+| `metrics` | **Yes** | Object of metric name → numeric value. Recognized keys (`f1`, `accuracy`, `top1_accuracy`, `precision`, `recall`, `miou`/`iou`/`mean_iou`, and any `map`/`mAP@...`-style key) are surfaced on the leaderboard; unrecognized keys are ignored for display. |
+| `num_samples` | Recommended | Number of images the model was evaluated on (the test split). |
+| `train_pct` / `test_pct` / `val_pct` | Optional | Split percentages, shown as the leaderboard's split-breakdown column. |
+| `optimized` | Optional | `"yes"` / `"no"` (or boolean) — whether the model was quantized/optimized for inference. |
+| `device` | Optional | The hardware the run was evaluated on (e.g. `cuda`, `cpu`), shown as the platform column. |
+| `inference_time_seconds` / `inference_time_seconds_per_image` | Optional | Wall-clock inference time. |
+| `notes` | Optional | Free-text note shown in the leaderboard row's detail view. |
+
+For a fine-tuned (rather than zero-shot) result, set `"result_type": "fine-tuned"` and add a `finetune` object
+alongside the fields above, with any of `train_samples`, `val_samples`, `epochs`, `lr`, `weight_decay`, `split_seed`,
+`train_ratio`, `training_time_seconds`, and `optimized`. The leaderboard shows the best zero-shot and best fine-tuned
+result per model side by side, so a model can have both a plain entry and a `finetune`-augmented entry in the same
+file.
+
+Open a pull request with the new/updated `<dataset_name>.json` file(s) — do not edit `index.json` or `global.json`
+by hand, they're regenerated automatically at build time.
+
 ## Quality Checks
 
 When contributing a dataset, you should abide by the following guidelines to ensure compatibility with AgML and ensure that there are no problems for users who are working with the datasets:

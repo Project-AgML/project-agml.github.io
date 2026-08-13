@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-08-13T00:32:42.934382+00:00",
+    "dataset": "Project-AgML/plant_doc_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 2569,
+    "device": "cuda",
+    "inference_time_seconds": 433.73,
+    "inference_time_seconds_per_image": 0.168832,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.47148,
+      "precision": 0.580974,
+      "recall": 0.503718,
+      "skipped_samples": 2
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Apple Scab Leaf, Apple leaf, Apple rust leaf, Bell_pepper leaf, Bell_pepper leaf spot, Blueberry leaf, Cherry leaf, Corn Gray leaf spot, Corn leaf blight, Corn rust leaf, Peach leaf, Potato leaf early blight, Potato leaf late blight, Raspberry leaf, Soyabean leaf, Squash Powdery mildew leaf, Strawberry leaf, Tomato Early blight leaf, Tomato Septoria leaf spot, Tomato leaf, Tomato leaf bacterial spot, Tomato leaf late blight, Tomato leaf mosaic virus, Tomato leaf yellow virus, Tomato mold leaf, Tomato two spotted spider mites leaf, grape leaf, grape leaf black rot. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Apple Scab Leaf, Apple leaf, Apple rust leaf, Bell_pepper leaf, Bell_pepper leaf spot, Blueberry leaf, Cherry leaf, Corn Gray leaf spot, Corn leaf blight, Corn rust leaf, Peach leaf, Potato leaf early blight, Potato leaf late blight, Raspberry leaf, Soyabean leaf, Squash Powdery mildew leaf, Strawberry leaf, Tomato Early blight leaf, Tomato Septoria leaf spot, Tomato leaf, Tomato leaf bacterial spot, Tomato leaf late blight, Tomato leaf mosaic virus, Tomato leaf yellow virus, Tomato mold leaf, Tomato two spotted spider mites leaf, grape leaf, grape leaf black rot), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]

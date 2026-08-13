@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp": "2026-08-13T00:57:20.641043+00:00",
+    "dataset": "Project-AgML/plant_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 12786,
+    "device": "cuda",
+    "inference_time_seconds": 1560.78,
+    "inference_time_seconds_per_image": 0.12207,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.048176,
+      "precision": 0.072858,
+      "recall": 0.08231,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Anthracnose, Anthracnose lesions, Black Rot, Downey mildew, Downy mildew, Eggplant Cercopora leaf spot, Eggplant begomovirus, Eggplant fresh leaf, Eggplant verticillium wilt, Fresh leaf, Fusarium wilt, Mosaic virus, Tomato Bacterial spot, Tomato Fresh leaf, Tomato leaf curl virus, Tomato spotted wilt. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Anthracnose, Anthracnose lesions, Black Rot, Downey mildew, Downy mildew, Eggplant Cercopora leaf spot, Eggplant begomovirus, Eggplant fresh leaf, Eggplant verticillium wilt, Fresh leaf, Fusarium wilt, Mosaic virus, Tomato Bacterial spot, Tomato Fresh leaf, Tomato leaf curl virus, Tomato spotted wilt), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  },
+  {
+    "timestamp": "2026-08-13T13:04:41.807204+00:00",
+    "dataset": "Project-AgML/plant_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 12786,
+    "device": "cuda",
+    "inference_time_seconds": 5099.4,
+    "inference_time_seconds_per_image": 0.398827,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.160103,
+      "precision": 0.176572,
+      "recall": 0.195897,
+      "skipped_samples": 153
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Anthracnose, Anthracnose lesions, Black Rot, Downey mildew, Downy mildew, Eggplant Cercopora leaf spot, Eggplant begomovirus, Eggplant fresh leaf, Eggplant verticillium wilt, Fresh leaf, Fusarium wilt, Mosaic virus, Tomato Bacterial spot, Tomato Fresh leaf, Tomato leaf curl virus, Tomato spotted wilt. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Anthracnose, Anthracnose lesions, Black Rot, Downey mildew, Downy mildew, Eggplant Cercopora leaf spot, Eggplant begomovirus, Eggplant fresh leaf, Eggplant verticillium wilt, Fresh leaf, Fusarium wilt, Mosaic virus, Tomato Bacterial spot, Tomato Fresh leaf, Tomato leaf curl virus, Tomato spotted wilt), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=78400000, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]

@@ -10,7 +10,7 @@ const hfDatasetsPath = path.join(staticDataDir, 'hf_datasets.json');
 const performanceDir = path.join(staticDataDir, 'performance');
 const performanceIndexPath = path.join(performanceDir, 'index.json');
 const performanceGlobalPath = path.join(performanceDir, 'global.json');
-const PERFORMANCE_MANIFEST_FILES = new Set(['index.json', 'global.json']);
+const PERFORMANCE_MANIFEST_FILES = new Set(['index.json', 'global.json', 'benchmarks.json']);
 
 function readJson(filePath) {
   if (!fs.existsSync(filePath)) return null;
@@ -136,6 +136,7 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     score: entry.metrics[metricKey],
     categoryScores: computeCategoryScores(entry.metrics),
     variant,
+    benchmarkId: isFiniteNumber(entry.benchmark_id) ? entry.benchmark_id : null,
     date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
     submitted_by: null,
     link: null,
@@ -257,6 +258,7 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
         platform: typeof entry.platform === 'string' && entry.platform.trim() ? entry.platform.trim() : null,
         splitBreakdown: entry.splitBreakdown ?? null,
         datasetConfig: entry.datasetConfig ?? null,
+        benchmarkId: isFiniteNumber(entry.benchmarkId) ? entry.benchmarkId : null,
       });
     });
   }

@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-08-13T01:07:02.829052+00:00",
+    "dataset": "Project-AgML/rice_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 3829,
+    "device": "cuda",
+    "inference_time_seconds": 453.11,
+    "inference_time_seconds_per_image": 0.118337,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.346111,
+      "precision": 0.396139,
+      "recall": 0.405884,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Bacterial_Leaf_Blight, Brown_Spot, Healthy_Rice_Leaf, Leaf_Blast, Leaf_Scald, Sheath_Blight. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Bacterial_Leaf_Blight, Brown_Spot, Healthy_Rice_Leaf, Leaf_Blast, Leaf_Scald, Sheath_Blight), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "benchmark_id": 1
+  }
+]
