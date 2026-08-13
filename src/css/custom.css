@@ -38,6 +38,7 @@
     );
     --agml-warning-soft: rgba(189, 139, 76, 0.12);
     --agml-warning-text: #7a4e2a;
+    --agml-caution-text: oklch(0.58 0.15 75);
     --agml-modal-overlay: oklch(0 0 0 / 0.3);
     --agml-badge-classification-bg: oklch(0.89 0.1 145);
     --agml-badge-classification-fg: oklch(0.34 0.13 145);
@@ -87,6 +88,7 @@ html[data-theme="dark"] {
     );
     --agml-warning-soft: rgba(189, 139, 76, 0.18);
     --agml-warning-text: #d9b084;
+    --agml-caution-text: oklch(0.78 0.14 80);
     --agml-modal-overlay: oklch(0 0 0 / 0.62);
     --agml-badge-classification-bg: oklch(0.3 0.1 145);
     --agml-badge-classification-fg: oklch(0.88 0.15 145);

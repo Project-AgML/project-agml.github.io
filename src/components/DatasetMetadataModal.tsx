@@ -3,7 +3,13 @@ import { useColorMode } from '@docusaurus/theme-common';
 import type { Dataset } from '../lib/datasets';
 import { formatDisplayLocation, toTitleCase } from '../lib/datasets';
 import { toDisplayLabel } from '../lib/labelOverrides';
-import { useBenchmark, type BenchmarkData, type EmbedPoint as RawEmbedPoint } from '../lib/benchmarks';
+import {
+	useBenchmark,
+	type BenchmarkData,
+	type EmbedPoint as RawEmbedPoint,
+	type ReproducibilityInfo,
+} from '../lib/benchmarks';
+import { computeScores, type AxisScores } from '../lib/scoring';
 import { METRIC_CATEGORY_LABELS, useDatasetPerformance } from '../lib/performance';
 import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import { oklchToRgb } from '../lib/plotlyChrome';
@@ -133,12 +139,32 @@ function StatTile({ label, value, hint, info }: { label: string; value: string; 
 type MetricBar = { label: string; value: string; pct: number; positive?: boolean };
 type MetricStat = { label: string; value: string; hint?: string; info?: string };
 type MetricStatSection = { title: string; description: string; badge?: string; stats: MetricStat[] };
+// 'good' / 'mid' / 'poor' key into the same three-tier color scale used by the score boxes
+// (--ifm-color-primary / --agml-caution-text / --agml-warning-text) so a cartography split and
+// an axis score read as the same kind of judgment.
+type ScoreTier = 'good' | 'mid' | 'poor';
+type MetricSegment = { label: string; value: string; pct: number; tier: ScoreTier };
+type ConfusionCell = { value: string; title: string; intensity: number; diagonal: boolean };
+type ConfusionRow = { name: string; cells: ConfusionCell[] };
+type MetricPair = { label: string; value: string };
 type MetricCardVM =
 	| { kind: 'bars'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
 	| { kind: 'signed'; title: string; description: string; badge?: string; bars: MetricBar[]; footerStats?: MetricStat[] }
-	| { kind: 'stats'; title: string; description: string; badge?: string; stats: MetricStat[] }
+	| { kind: 'stats'; title: string; description: string; badge?: string; wide?: boolean; stats: MetricStat[] }
 	| { kind: 'stat-sections'; title: string; sections: MetricStatSection[] }
-	| { kind: 'skipped'; title: string; message: string };
+	| { kind: 'skipped'; title: string; message: string }
+	| { kind: 'proportion'; title: string; description: string; badge?: string; segments: MetricSegment[]; footerStats?: MetricStat[] }
+	| {
+			kind: 'confusion';
+			title: string;
+			description: string;
+			badge?: string;
+			classNames: string[];
+			rows: ConfusionRow[];
+			overflowNote?: string;
+			pairs: MetricPair[];
+			footerStats?: MetricStat[];
+	  };
 
 function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 	const m = benchmark.metrics;
@@ -234,6 +260,7 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({
 			kind: 'stats',
 			title: 'Resolution Consistency',
+			wide: true,
 			description:
 				'How uniform image dimensions and aspect ratios are across the dataset. Area CV (coefficient of variation) near 0 means sizes barely vary; higher values mean preprocessing has to handle a wide range of source resolutions.',
 			badge: `${d.total_images} images`,
@@ -316,6 +343,105 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		cards.push({ kind: 'skipped', title: 'Metadata Coverage', message: m.metadata_coverage.reason || 'Skipped for this run.' });
 	}
 
+	const backbone = benchmark.reproducibility?.backbone;
+
+	if (m.dataset_cartography) {
+		const d = m.dataset_cartography;
+		cards.push({
+			kind: 'proportion',
+			title: 'Dataset Cartography',
+			description:
+				'Prediction confidence and variability across training epochs from a reference model, sorting examples into easy, ambiguous, or hard-to-learn based on how consistently the model got them right.',
+			badge: backbone ? `${backbone} · ${d.n_epochs} epochs` : `${d.n_epochs} epochs`,
+			segments: [
+				{ label: 'Easy', pct: d.pct_easy, value: `${d.n_easy.toLocaleString()} (${d.pct_easy.toFixed(1)}%)`, tier: 'good' },
+				{ label: 'Ambiguous', pct: d.pct_ambiguous, value: `${d.n_ambiguous.toLocaleString()} (${d.pct_ambiguous.toFixed(1)}%)`, tier: 'mid' },
+				{ label: 'Hard', pct: d.pct_hard, value: `${d.n_hard.toLocaleString()} (${d.pct_hard.toFixed(1)}%)`, tier: 'poor' },
+			],
+			footerStats: [
+				{
+					label: 'Mean confidence',
+					value: d.mean_confidence.toFixed(2),
+					info: 'Average model confidence on its predicted class across training epochs.',
+				},
+				{
+					label: 'Mean variability',
+					value: d.mean_variability.toFixed(2),
+					info: 'Average variance of that confidence across epochs — high variability means the model flip-flops on that example.',
+				},
+			],
+		});
+	}
+
+	if (m.class_confusability) {
+		const d = m.class_confusability;
+		const allNames = Object.keys(d.per_class_accuracy);
+		let keepIdx = allNames.map((_, i) => i);
+		if (allNames.length > CONFUSION_CAP) {
+			keepIdx = allNames
+				.map((name, i): [number, number] => [i, d.per_class_accuracy[name]])
+				.sort((a, b) => a[1] - b[1])
+				.slice(0, CONFUSION_CAP)
+				.map(([i]) => i)
+				.sort((a, b) => a - b);
+		}
+		const classNames = keepIdx.map((i) => toTitleCase(allNames[i]));
+		const rows: ConfusionRow[] = keepIdx.map((ri, rowPos) => ({
+			name: classNames[rowPos],
+			cells: keepIdx.map((ci) => {
+				const value = d.confusion_matrix[ri][ci];
+				return {
+					value: (value * 100).toFixed(0),
+					title: `${toTitleCase(allNames[ri])} → ${toTitleCase(allNames[ci])}: ${(value * 100).toFixed(1)}%`,
+					intensity: Math.max(0.06, value),
+					diagonal: ri === ci,
+				};
+			}),
+		}));
+		const overflowNote =
+			allNames.length > CONFUSION_CAP
+				? `Showing ${CONFUSION_CAP} of ${allNames.length} classes (lowest accuracy) — hover cells for exact values`
+				: undefined;
+		cards.push({
+			kind: 'confusion',
+			title: 'Class Confusability',
+			description: 'Confusion matrix from a reference model on held-out data, highlighting class pairs that are visually hard to tell apart.',
+			badge: backbone ? `${backbone} · ${(d.accuracy * 100).toFixed(1)}% acc.` : `${(d.accuracy * 100).toFixed(1)}% acc.`,
+			classNames,
+			rows,
+			overflowNote,
+			pairs: d.top_confused_pairs.map((p) => ({
+				label: `${toTitleCase(p.true_class)} → ${toTitleCase(p.predicted_as)}`,
+				value: `${(p.confusion_rate * 100).toFixed(1)}%`,
+			})),
+			footerStats: [
+				{ label: 'Overall accuracy', value: `${(d.accuracy * 100).toFixed(1)}%`, info: 'Accuracy of the reference model on held-out test data.' },
+				{ label: 'Test samples', value: String(d.n_test_samples), info: 'Number of held-out samples used to compute this confusion matrix.' },
+			],
+		});
+	}
+
+	if (m.label_noise) {
+		const d = m.label_noise;
+		const max = Math.max(...Object.values(d.per_class_noise_counts));
+		cards.push({
+			kind: 'bars',
+			title: 'Label Noise',
+			description:
+				'Out-of-fold predictions from k-fold cross-validation, flagged via confident-learning (cleanlab-style) methods to estimate the mislabeled rate per class.',
+			badge: backbone
+				? `${backbone} · ${(d.estimated_noise_rate * 100).toFixed(1)}% est. rate`
+				: `${(d.estimated_noise_rate * 100).toFixed(1)}% est. rate`,
+			bars: Object.entries(d.per_class_noise_counts)
+				.map(([label, value]) => ({ label: toTitleCase(label), value: String(value), pct: max ? (value / max) * 100 : 0 }))
+				.sort((a, b) => b.pct - a.pct),
+			footerStats: [
+				{ label: 'Noisy samples', value: `${d.n_noisy_samples} / ${d.n_total_samples}`, info: 'Samples flagged as likely mislabeled, out of the total evaluated.' },
+				{ label: 'CV folds', value: String(d.cv_folds), info: 'Number of cross-validation folds used to generate out-of-fold predictions.' },
+			],
+		});
+	}
+
 	return cards;
 }
 
@@ -334,22 +460,45 @@ function InfoTooltip({ text }: { text: string }) {
 // buildMetricCards) with a "Show all N →" link instead of every class at once.
 const BAR_CAP = 8;
 
-// The three bar-chart-style cards read better wider (long class lists, signed diverging bars),
-// so they span 2 grid columns while the stat-only cards stay at 1 — paired with
+// Above this many classes, the confusion matrix shows only the CONFUSION_CAP lowest-accuracy
+// classes (the ones most worth looking at) instead of a matrix too wide to read.
+const CONFUSION_CAP = 12;
+
+// Above this many confused pairs, only the top 3 show before a "Show all N →" link.
+const PAIR_CAP = 3;
+
+// Bar-chart, signed-diverging, and confusion-matrix cards read better wider (long class lists,
+// wide grids), so they span 2 grid columns while stat-only cards stay at 1 — paired with
 // grid-auto-flow: dense on .metricCardGrid so 1-column cards backfill the gaps.
-function isBarCard(card: MetricCardVM): boolean {
-	return card.kind === 'bars' || card.kind === 'signed';
+function isWideCard(card: MetricCardVM): boolean {
+	return card.kind === 'bars' || card.kind === 'signed' || card.kind === 'confusion' || (card.kind === 'stats' && !!card.wide);
 }
+
+const METRIC_AXES = ['Structural Quality', 'Content Difficulty', 'Diversity & Coverage', 'Annotation Reliability'] as const;
+const METRIC_AXIS_MAP: Record<string, (typeof METRIC_AXES)[number]> = {
+	'Class Imbalance': 'Structural Quality',
+	'Duplicate Detection': 'Structural Quality',
+	'Resolution Consistency': 'Structural Quality',
+	'Dataset Cartography': 'Content Difficulty',
+	'Class Confusability': 'Content Difficulty',
+	'Feature Separability': 'Content Difficulty',
+	'Intra-class Diversity': 'Diversity & Coverage',
+	'Metadata Coverage': 'Diversity & Coverage',
+	'Label Noise': 'Annotation Reliability',
+};
 
 function MetricCard({ card }: { card: MetricCardVM }) {
 	const [expanded, setExpanded] = useState(false);
+	const [pairsExpanded, setPairsExpanded] = useState(false);
 	const badge = card.kind !== 'skipped' && card.kind !== 'stat-sections' ? card.badge : undefined;
 	const allBars = card.kind === 'bars' || card.kind === 'signed' ? card.bars : undefined;
 	const hasMoreBars = Boolean(allBars && allBars.length > BAR_CAP);
 	const visibleBars = allBars ? (expanded || !hasMoreBars ? allBars : allBars.slice(0, BAR_CAP)) : undefined;
+	const hasMorePairs = card.kind === 'confusion' && card.pairs.length > PAIR_CAP;
+	const visiblePairs = card.kind === 'confusion' ? (pairsExpanded || !hasMorePairs ? card.pairs : card.pairs.slice(0, PAIR_CAP)) : undefined;
 
 	return (
-		<div className={`${styles.metricCard} ${isBarCard(card) ? styles.metricCardSpan2 : ''}`}>
+		<div className={`${styles.metricCard} ${isWideCard(card) ? styles.metricCardSpan2 : ''}`}>
 			<div className={styles.metricCardHeader}>
 				<div className={styles.metricCardTitleRow}>
 					<h4 className={styles.metricCardTitle}>{card.title}</h4>
@@ -423,7 +572,83 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 				</div>
 			)}
 
-			{(card.kind === 'bars' || card.kind === 'signed') && card.footerStats && card.footerStats.length > 0 && (
+			{card.kind === 'proportion' && (
+				<>
+					<div className={styles.proportionBar}>
+						{card.segments.map((seg) => (
+							<div
+								key={seg.label}
+								className={styles.proportionSegment}
+								data-tier={seg.tier}
+								style={{ width: `${seg.pct}%` }}
+								title={`${seg.label}: ${seg.value}`}
+							/>
+						))}
+					</div>
+					<div className={styles.proportionTileGrid}>
+						{card.segments.map((seg) => (
+							<div key={seg.label} className={styles.proportionTile} data-tier={seg.tier}>
+								<p className={styles.statTileLabel}>
+									<span className={styles.proportionDot} data-tier={seg.tier} aria-hidden="true" />
+									{seg.label}
+								</p>
+								<p className={styles.statTileValue}>{seg.value}</p>
+							</div>
+						))}
+					</div>
+				</>
+			)}
+
+			{card.kind === 'confusion' && (
+				<>
+					<div className={styles.confusionWrap}>
+						<div className={styles.confusionGrid} style={{ gridTemplateColumns: `84px repeat(${card.classNames.length}, 34px)` }}>
+							<span className={styles.confusionCorner} aria-hidden="true" />
+							{card.classNames.map((name) => (
+								<span key={`col-${name}`} className={styles.confusionColHeader} title={name}>
+									{name}
+								</span>
+							))}
+							{card.rows.map((row) => (
+								<Fragment key={row.name}>
+									<span className={styles.confusionRowHeader} title={row.name}>
+										{row.name}
+									</span>
+									{row.cells.map((cell, cellIndex) => (
+										<span
+											key={cellIndex}
+											className={styles.confusionCell}
+											title={cell.title}
+											style={{ background: `oklch(0.55 0.14 ${cell.diagonal ? 150 : 40} / ${cell.intensity})` }}
+										>
+											{cell.value}
+										</span>
+									))}
+								</Fragment>
+							))}
+						</div>
+					</div>
+					{card.overflowNote && <p className={styles.metricOverflowNote}>{card.overflowNote}</p>}
+					<div className={styles.confusionPairs}>
+						<p className={styles.confusionPairsHeader}>Top confused pairs</p>
+						<div className={hasMorePairs && pairsExpanded ? styles.confusionPairsListExpanded : styles.confusionPairsList}>
+							{visiblePairs?.map((pair) => (
+								<div key={pair.label} className={styles.confusionPairRow}>
+									<span>{pair.label}</span>
+									<span>{pair.value}</span>
+								</div>
+							))}
+						</div>
+						{hasMorePairs && (
+							<button type="button" className={styles.metricExpandLink} onClick={() => setPairsExpanded((value) => !value)}>
+								{pairsExpanded ? '← Show fewer' : `Show all ${card.pairs.length} →`}
+							</button>
+						)}
+					</div>
+				</>
+			)}
+
+			{'footerStats' in card && card.footerStats && card.footerStats.length > 0 && (
 				<div className={styles.metricFooterStats}>
 					{card.footerStats.map((stat) => (
 						<StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} info={stat.info} />
@@ -609,6 +834,53 @@ function formatBenchmarkDate(dateStr: string): string {
 	return `${month}/${day}/${year}`;
 }
 
+// Same three-tier thresholds as the axis-score gauge below, on the doc's 0–10 scale.
+function scoreTier(value: number): ScoreTier {
+	if (value >= 7.5) return 'good';
+	if (value >= 5) return 'mid';
+	return 'poor';
+}
+
+type ScoreBoxVM = { label: string; value: string; tier: ScoreTier };
+
+function buildScoreBoxes(scores: AxisScores): ScoreBoxVM[] {
+	const entries: { label: string; value: number | null }[] = [
+		{ label: 'Overall', value: scores.overall },
+		{ label: 'Structural Quality', value: scores.structural },
+		{ label: 'Content Difficulty', value: scores.difficulty },
+		{ label: 'Diversity & Coverage', value: scores.diversity },
+		{ label: 'Annotation Reliability', value: scores.annotation },
+	];
+	return entries
+		.filter((entry): entry is { label: string; value: number } => entry.value != null)
+		.map((entry) => ({ label: entry.label, value: entry.value.toFixed(1), tier: scoreTier(entry.value) }));
+}
+
+type ReproRowVM = { label: string; value: string };
+
+function buildReproRows(info: ReproducibilityInfo | undefined): ReproRowVM[] {
+	if (!info) return [];
+	const rows: ReproRowVM[] = [];
+	if (info.split_seed != null) rows.push({ label: 'Split seed', value: String(info.split_seed) });
+	if (info.train_ratio != null && info.val_ratio != null && info.test_ratio != null) {
+		rows.push({
+			label: 'Train / val / test',
+			value: `${Math.round(info.train_ratio * 100)} / ${Math.round(info.val_ratio * 100)} / ${Math.round(info.test_ratio * 100)}`,
+		});
+	}
+	if (info.embed_model) rows.push({ label: 'Embed model', value: info.embed_model });
+	if (info.near_dup_threshold != null) rows.push({ label: 'Near-dup threshold', value: String(info.near_dup_threshold) });
+	if (info.backbone) rows.push({ label: 'Reference backbone', value: info.backbone });
+	if (info.cartography_epochs != null) {
+		rows.push({
+			label: 'Cartography epochs',
+			value: info.cartography_lr != null ? `${info.cartography_epochs} (lr ${info.cartography_lr})` : String(info.cartography_epochs),
+		});
+	}
+	if (info.cv_folds != null) rows.push({ label: 'CV folds', value: String(info.cv_folds) });
+	return rows;
+}
+
 function BenchmarkView({
 	benchmark,
 	embeddings2d,
@@ -619,15 +891,63 @@ function BenchmarkView({
 	embeddings3d: RawEmbedPoint[] | null;
 }) {
 	const cards = useMemo(() => buildMetricCards(benchmark), [benchmark]);
+	const scores = useMemo(() => computeScores(benchmark), [benchmark]);
+	const scoreBoxes = useMemo(() => buildScoreBoxes(scores), [scores]);
+	const reproRows = useMemo(() => buildReproRows(benchmark.reproducibility), [benchmark.reproducibility]);
+	const axisGroups = useMemo(
+		() =>
+			METRIC_AXES.map((axis) => ({ axis, cards: cards.filter((card) => METRIC_AXIS_MAP[card.title] === axis) })).filter(
+				(group) => group.cards.length > 0,
+			),
+		[cards],
+	);
+
 	return (
 		<div>
 			<p className={styles.benchmarkRunNote}>Last benchmarking check run: {formatBenchmarkDate(benchmark.date)}</p>
+
+			{reproRows.length > 0 && (
+				<details className={styles.reproDetails}>
+					<summary className={styles.reproSummary}>Reproducibility details</summary>
+					<div className={styles.reproGrid}>
+						{reproRows.map((row) => (
+							<span key={row.label} className={styles.reproTag}>
+								<span className={styles.reproTagKey}>{row.label}</span>
+								<span className={styles.reproTagValue} title={row.value}>
+									{row.value}
+								</span>
+							</span>
+						))}
+					</div>
+				</details>
+			)}
+
+			{scoreBoxes.length > 0 && (
+				<div className={styles.scoreRow}>
+					{scoreBoxes.map((box) => (
+						<div key={box.label} className={styles.scoreBox} data-tier={box.tier}>
+							<p className={styles.scoreBoxLabel} title={box.label}>
+								{box.label}
+							</p>
+							<p className={styles.scoreBoxValue}>{box.value}</p>
+						</div>
+					))}
+				</div>
+			)}
+
 			<hr className={styles.benchmarkDivider} />
-			<div className={styles.metricCardGrid}>
-				{cards.map((card) => (
-					<MetricCard key={card.title} card={card} />
-				))}
-			</div>
+
+			{axisGroups.map((group) => (
+				<section key={group.axis} className={styles.axisSection}>
+					<h3 className={styles.axisTitle}>{group.axis}</h3>
+					<div className={styles.metricCardGrid}>
+						{group.cards.map((card) => (
+							<MetricCard key={card.title} card={card} />
+						))}
+					</div>
+				</section>
+			))}
+
 			<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
 		</div>
 	);

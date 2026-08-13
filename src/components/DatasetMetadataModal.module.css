@@ -607,6 +607,292 @@
 	margin: 0.85rem 0 1.25rem;
 }
 
+.reproDetails {
+	margin: 0.6rem 0 0;
+}
+
+.reproSummary {
+	cursor: pointer;
+	width: fit-content;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--agml-muted);
+}
+
+.reproSummary:hover,
+.reproSummary:focus-visible {
+	color: var(--agml-text);
+	outline: none;
+}
+
+.reproGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.55rem;
+}
+
+.reproTag {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	font-family: var(--ifm-code-font-family);
+	padding: 0.3rem 0.55rem;
+	border-radius: 5px;
+	background: var(--agml-tag-bg);
+}
+
+.reproTagKey {
+	font-size: 0.58rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--agml-muted);
+	white-space: nowrap;
+}
+
+.reproTagValue {
+	font-size: 0.72rem;
+	color: var(--agml-text);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+/* Overall + per-axis score gauge — the tier color comes from a --tier-color custom property
+   set per data-tier so the box border, value, and (reused below) proportion-bar segments and
+   confusion-cell heat all read off the same three-tier scale. */
+.scoreRow {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.6rem;
+	margin: 0.75rem 0 0;
+}
+
+.scoreBox {
+	flex: 1 1 0;
+	min-width: 0;
+	border: 1px solid var(--agml-border);
+	border-top: 3px solid var(--tier-color);
+	border-radius: 8px;
+	padding: 0.65rem 0.8rem;
+	background: var(--agml-surface-soft);
+}
+
+.scoreBox[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.scoreBox[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.scoreBox[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.scoreBoxLabel {
+	margin: 0 0 0.3rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.58rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	line-height: 1.3;
+	color: var(--agml-muted);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.scoreBoxValue {
+	margin: 0;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: var(--tier-color);
+}
+
+.axisSection {
+	margin-bottom: 1.75rem;
+}
+
+.axisTitle {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--ifm-color-primary);
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--agml-border);
+}
+
+.proportionBar {
+	display: flex;
+	height: 14px;
+	border-radius: 999px;
+	overflow: hidden;
+	background: var(--agml-tag-bg);
+}
+
+.proportionSegment {
+	height: 100%;
+}
+
+.proportionSegment[data-tier='good'] {
+	background: var(--ifm-color-primary);
+}
+
+.proportionSegment[data-tier='mid'] {
+	background: var(--agml-caution-text);
+}
+
+.proportionSegment[data-tier='poor'] {
+	background: var(--agml-warning-text);
+}
+
+.proportionTileGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+	gap: 0.6rem;
+	margin-top: 0.6rem;
+}
+
+.proportionTile {
+	border: 1px solid var(--agml-border);
+	border-top: 3px solid var(--tier-color);
+	border-radius: 8px;
+	padding: 0.65rem 0.8rem;
+	background: var(--agml-surface-soft);
+}
+
+.proportionTile[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.proportionTile[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.proportionTile[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.proportionDot {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	margin-right: 0.35rem;
+	background: var(--tier-color);
+}
+
+.proportionDot[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.proportionDot[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.proportionDot[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.confusionWrap {
+	overflow-x: auto;
+	padding-bottom: 4px;
+}
+
+.confusionGrid {
+	display: grid;
+	gap: 3px;
+	align-items: center;
+}
+
+.confusionCorner {
+	visibility: hidden;
+}
+
+.confusionColHeader {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.6rem;
+	color: var(--agml-muted);
+	text-align: center;
+	padding-bottom: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.confusionRowHeader {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.6rem;
+	color: var(--agml-muted);
+	padding-right: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.confusionCell {
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	font-size: 0.62rem;
+	font-weight: 600;
+	color: var(--agml-text);
+}
+
+.metricOverflowNote {
+	margin: 0.5rem 0 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	color: var(--agml-muted);
+}
+
+.confusionPairs {
+	margin-top: 0.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.confusionPairsHeader {
+	margin: 0 0 0.2rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-muted);
+}
+
+.confusionPairsList,
+.confusionPairsListExpanded {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.confusionPairsListExpanded {
+	max-height: 168px;
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.confusionPairRow {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.6rem;
+	font-size: 0.78rem;
+	color: var(--agml-text);
+}
+
 .metricCardGrid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1071,5 +1357,19 @@
 
 	.embedViewport {
 		height: 260px;
+	}
+
+	/* Five boxes side by side is too cramped under ~720px — wrap into rows of two instead of
+	   forcing a horizontal scroll on what's meant to be a quick-glance score summary. */
+	.scoreRow {
+		flex-wrap: wrap;
+	}
+
+	.scoreBox {
+		flex: 1 1 calc(50% - 0.3rem);
+	}
+
+	.reproGrid {
+		gap: 0.35rem;
 	}
 }
