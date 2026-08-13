@@ -36,8 +36,8 @@
         var(--ifm-color-primary) 35%,
         var(--agml-border)
     );
-    --agml-warning-soft: rgba(196, 148, 58, 0.14);
-    --agml-warning-text: oklch(0.5 0.14 70);
+    --agml-warning-soft: rgba(199, 60, 41, 0.12);
+    --agml-warning-text: oklch(0.55 0.19 27);
     --agml-caution-text: oklch(0.65 0.18 97);
     /* Per-axis accent hues for the scoring methodology reference (Structural Quality reuses
        --ifm-color-primary and Annotation Reliability reuses --agml-caution-text — both already
