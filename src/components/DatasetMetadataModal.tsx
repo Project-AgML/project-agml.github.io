@@ -446,6 +446,18 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 	return cards;
 }
 
+// A plain ascending-bars glyph in currentColor — matches the rest of the header's monochrome
+// icon language (×, ←) instead of a colorful emoji that clashes with it.
+function BenchmarkIcon() {
+	return (
+		<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<rect x="1.5" y="9" width="3" height="5.5" rx="0.5" fill="currentColor" />
+			<rect x="6.5" y="5" width="3" height="9.5" rx="0.5" fill="currentColor" />
+			<rect x="11.5" y="1.5" width="3" height="13" rx="0.5" fill="currentColor" />
+		</svg>
+	);
+}
+
 function InfoTooltip({ text }: { text: string }) {
 	return (
 		<span className={styles.infoTooltip} tabIndex={0} aria-label={text}>
@@ -899,7 +911,6 @@ function BenchmarkView({
 	const scores = useMemo(() => computeScores(benchmark), [benchmark]);
 	const scoreBoxes = useMemo(() => buildScoreBoxes(scores), [scores]);
 	const reproRows = useMemo(() => buildReproRows(benchmark.reproducibility), [benchmark.reproducibility]);
-	const [showMethodology, setShowMethodology] = useState(false);
 	const axisGroups = useMemo(
 		() =>
 			METRIC_AXES.map((axis) => ({ axis, cards: cards.filter((card) => METRIC_AXIS_MAP[card.title] === axis) })).filter(
@@ -941,10 +952,6 @@ function BenchmarkView({
 				</div>
 			)}
 
-			<button type="button" className={styles.methodologyLink} onClick={() => setShowMethodology(true)}>
-				ⓘ How scores are calculated
-			</button>
-
 			<br/>
 
 			{axisGroups.map((group) => (
@@ -962,12 +969,6 @@ function BenchmarkView({
 				<h3 className={styles.axisTitle}>Visualization</h3>
 				<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
 			</section>
-
-			<ScoringMethodologyModal
-				open={showMethodology}
-				taskType="Image Classification"
-				onClose={() => setShowMethodology(false)}
-			/>
 		</div>
 	);
 }
@@ -1035,6 +1036,7 @@ export function DatasetMetadataModal({
 	const { data: benchmark, embeddings2d, embeddings3d } = useBenchmark(open ? (dataset?.name ?? null) : null);
 	const [showBenchmarks, setShowBenchmarks] = useState(false);
 	useEffect(() => setShowBenchmarks(false), [dataset?.name, open]);
+	const [showMethodology, setShowMethodology] = useState(false);
 
 	const [metricTypeFilter, setMetricTypeFilter] = useState<string[]>([]);
 	const [tunedFilter, setTunedFilter] = useState<string[]>([]);
@@ -1170,7 +1172,18 @@ export function DatasetMetadataModal({
 					<div className={styles.headerActions}>
 						{benchmark && (
 							<button type="button" className={styles.benchmarkToggle} onClick={() => setShowBenchmarks((value) => !value)}>
-								{showBenchmarks ? '← Back to Details' : '📊 View Benchmarks'}
+								{showBenchmarks ? (
+									'Dataset Details'
+								) : (
+									<>
+										<BenchmarkIcon /> View Benchmarks
+									</>
+								)}
+							</button>
+						)}
+						{benchmark && showBenchmarks && (
+							<button type="button" className={styles.methodologyLink} onClick={() => setShowMethodology(true)}>
+								ⓘ How scores are calculated
 							</button>
 						)}
 						<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close dataset details">
@@ -1472,6 +1485,12 @@ export function DatasetMetadataModal({
 				)}
 				</div>
 			</div>
+
+			<ScoringMethodologyModal
+				open={showMethodology}
+				taskType="Image Classification"
+				onClose={() => setShowMethodology(false)}
+			/>
 		</div>
 	);
 }

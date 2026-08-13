@@ -112,11 +112,16 @@
 	flex: 0 0 auto;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 	gap: 0.6rem;
 }
 
 .benchmarkToggle {
 	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
 	border: 1px solid var(--ifm-color-primary);
 	border-radius: 999px;
 	background: var(--agml-accent-soft);
@@ -671,8 +676,7 @@
 }
 
 .methodologyLink {
-	display: block;
-	margin: 0.6rem 0 0;
+	flex: 0 0 auto;
 	border: none;
 	background: none;
 	padding: 0;
@@ -680,6 +684,7 @@
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.72rem;
 	color: var(--agml-muted);
+	white-space: nowrap;
 }
 
 .methodologyLink:hover,
