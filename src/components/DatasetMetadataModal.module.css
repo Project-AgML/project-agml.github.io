@@ -896,9 +896,10 @@
 .metricCardGrid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	/* Cards size to their own content instead of stretching to the tallest card in the row,
-	   so short cards (e.g. a 4-stat metric) don't carry a block of empty space below. */
-	align-items: start;
+	/* Cards stretch to match the tallest card in their row (grid's default), so a row of
+	   mixed content (e.g. a 4-stat card next to a bar-chart card) reads as one aligned row
+	   instead of a ragged bottom edge. */
+	align-items: stretch;
 	gap: 1rem;
 	margin: 0 0 1.75rem;
 	/* 1-column stat cards backfill the gaps left by 2-column bar cards instead of leaving a

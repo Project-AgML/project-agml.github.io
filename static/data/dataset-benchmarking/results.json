@@ -14,7 +14,11 @@
             "cartography_lr": 0.001,
             "cv_folds": 5
         },
-        "phases_completed": [1, 2, 3],
+        "phases_completed": [
+            1,
+            2,
+            3
+        ],
         "metrics": {
             "class_imbalance": {
                 "counts": {

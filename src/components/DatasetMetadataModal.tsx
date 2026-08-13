@@ -952,7 +952,10 @@ function BenchmarkView({
 				</section>
 			))}
 
-			<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
+			<section className={styles.axisSection}>
+				<h3 className={styles.axisTitle}>Visualization</h3>
+				<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
+			</section>
 		</div>
 	);
 }
