@@ -20,6 +20,3 @@ yarn-debug.log*
 yarn-error.log*
 
 .external
-
-# Dev
-performance_staging/

@@ -58,7 +58,7 @@ function buildDatasetMetadataLookup(...manifests) {
 // rendering of the same files — keep the two in sync if the run schema changes.
 const TASK_METRIC_KEYS = {
   classification: ['f1', 'accuracy', 'top1_accuracy'],
-  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5', 'f1_at_iou50', 'f1'],
+  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5'],
   segmentation: ['miou', 'iou', 'mean_iou'],
 };
 
@@ -82,36 +82,16 @@ function isMapMetricKey(key) {
   return /^m?ap([_@-]|$)/i.test(key);
 }
 
-// Detection runs may report F1/precision/recall at a specific IoU match threshold rather than
-// (or alongside) the aggregate keys above, e.g. "f1_at_iou50", "precision_at_iou50" — mirrored
-// in src/lib/performance.ts, keep in sync.
-const IOU_SUFFIXED_METRIC_RE = /^(f1|precision|prec|recall|rec)(?:_at_iou(\d{2,3}))?$/i;
-
-function matchIouSuffixedMetricKey(key) {
-  const match = IOU_SUFFIXED_METRIC_RE.exec(key);
-  if (!match) return null;
-  const base = match[1].toLowerCase();
-  const normalizedBase = base === 'f1' ? 'f1' : base === 'precision' || base === 'prec' ? 'precision' : 'recall';
-  return { base: normalizedBase, iou: match[2] ?? null };
-}
-
 function computeCategoryScores(metrics) {
-  let f1 = null;
+  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
   let map = null;
-  let precision = null;
-  let recall = null;
   for (const [key, value] of Object.entries(metrics)) {
-    if (!isFiniteNumber(value)) continue;
-    if (isMapMetricKey(key)) {
+    if (isMapMetricKey(key) && isFiniteNumber(value)) {
       map = map == null ? value : Math.max(map, value);
-      continue;
     }
-    const iouMatch = matchIouSuffixedMetricKey(key);
-    if (!iouMatch) continue;
-    if (iouMatch.base === 'f1') f1 = f1 == null ? value : Math.max(f1, value);
-    else if (iouMatch.base === 'precision') precision = precision == null ? value : Math.max(precision, value);
-    else recall = recall == null ? value : Math.max(recall, value);
   }
+  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
+  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
   return { f1, map, precision, recall };
 }
 
@@ -119,16 +99,14 @@ function buildRunNote(entry) {
   const parts = [];
   if (isFiniteNumber(entry.num_samples)) parts.push(`${entry.num_samples} samples`);
   if (typeof entry.device === 'string' && entry.device.trim()) parts.push(entry.device.trim());
-  if (typeof entry.notes === 'string' && entry.notes.trim()) parts.push(entry.notes.trim());
   return parts.length ? parts.join(' · ') : null;
 }
 
-function buildFinetuneNote(finetune, rawNotes) {
+function buildFinetuneNote(finetune) {
   if (!finetune || typeof finetune !== 'object') return null;
   const parts = [];
   if (isFiniteNumber(finetune.epochs)) parts.push(`${finetune.epochs} epochs`);
   if (isFiniteNumber(finetune.train_samples)) parts.push(`${finetune.train_samples} train samples`);
-  if (rawNotes) parts.push(rawNotes);
   return parts.length ? parts.join(' · ') : null;
 }
 
@@ -161,9 +139,7 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned'
-      ? buildFinetuneNote(finetune, typeof entry.notes === 'string' && entry.notes.trim() ? entry.notes.trim() : null)
-      : buildRunNote(entry),
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
     optimized: isOptimized(entry.optimized) || (finetune != null && typeof finetune === 'object' && isOptimized(finetune.optimized)),
     platform: typeof entry.device === 'string' && entry.device.trim() ? entry.device.trim() : null,
     splitBreakdown: buildSplitBreakdown(entry, finetune),

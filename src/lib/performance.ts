@@ -31,9 +31,9 @@ export interface MetricValue {
 }
 
 export function classifyMetricLabel(label: string): MetricCategory {
-  if (label === 'F1' || label.startsWith('F1@')) return 'f1';
+  if (label === 'F1') return 'f1';
   if (label.startsWith('mAP')) return 'map';
-  if (label === 'Precision' || label === 'Recall' || label.startsWith('P@') || label.startsWith('R@')) return 'precision_recall';
+  if (label === 'Precision' || label === 'Recall') return 'precision_recall';
   return 'other';
 }
 
@@ -100,7 +100,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
 // global.json from the same files at build time — keep the two in sync if the run schema changes.
 const TASK_METRIC_KEYS: Record<string, string[]> = {
   classification: ['f1', 'accuracy', 'top1_accuracy'],
-  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5', 'f1_at_iou50', 'f1'],
+  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5'],
   segmentation: ['miou', 'iou', 'mean_iou'],
 };
 
@@ -122,8 +122,13 @@ function resolveMetricKey(task: unknown, metrics: Record<string, unknown>): stri
 // particular may report mAP at several IoU thresholds (map_50, map_75, map_50_95, ...); each is
 // surfaced as its own labeled value rather than collapsed into one number.
 const NAMED_METRIC_LABELS: Record<string, string> = {
+  f1: 'F1',
   accuracy: 'Accuracy',
   top1_accuracy: 'Top-1 Accuracy',
+  precision: 'Precision',
+  prec: 'Precision',
+  recall: 'Recall',
+  rec: 'Recall',
   miou: 'mIoU',
   iou: 'IoU',
   mean_iou: 'mIoU',
@@ -131,21 +136,6 @@ const NAMED_METRIC_LABELS: Record<string, string> = {
 
 function isMapMetricKey(key: string): boolean {
   return /^m?ap([_@-]|$)/i.test(key);
-}
-
-// Detection runs may report F1/precision/recall at a specific IoU match threshold rather than
-// (or alongside) the aggregate keys above, e.g. "f1_at_iou50", "precision_at_iou50" — Gemma's
-// zero-shot detection results are matched greedily per-class at IoU>=0.5 and report exactly this
-// shape (see static/data/performance/pomegranate_growth_detection.json). Mirrored in
-// scripts/generate-datasets.mjs — keep in sync.
-const IOU_SUFFIXED_METRIC_RE = /^(f1|precision|prec|recall|rec)(?:_at_iou(\d{2,3}))?$/i;
-
-function matchIouSuffixedMetricKey(key: string): { base: 'f1' | 'precision' | 'recall'; iou: string | null } | null {
-  const match = IOU_SUFFIXED_METRIC_RE.exec(key);
-  if (!match) return null;
-  const base = match[1].toLowerCase();
-  const normalizedBase = base === 'f1' ? 'f1' : base === 'precision' || base === 'prec' ? 'precision' : 'recall';
-  return { base: normalizedBase, iou: match[2] ?? null };
 }
 
 export interface CategoryScores {
@@ -161,22 +151,15 @@ export interface CategoryScores {
 // and recall are ranked/percentiled independently, not averaged into one blended score.
 // Mirrored in scripts/generate-datasets.mjs — keep in sync.
 function computeCategoryScores(metrics: Record<string, unknown>): CategoryScores {
-  let f1: number | null = null;
+  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
   let map: number | null = null;
-  let precision: number | null = null;
-  let recall: number | null = null;
   for (const [key, value] of Object.entries(metrics)) {
-    if (!isFiniteNumber(value)) continue;
-    if (isMapMetricKey(key)) {
+    if (isMapMetricKey(key) && isFiniteNumber(value)) {
       map = map == null ? value : Math.max(map, value);
-      continue;
     }
-    const iouMatch = matchIouSuffixedMetricKey(key);
-    if (!iouMatch) continue;
-    if (iouMatch.base === 'f1') f1 = f1 == null ? value : Math.max(f1, value);
-    else if (iouMatch.base === 'precision') precision = precision == null ? value : Math.max(precision, value);
-    else recall = recall == null ? value : Math.max(recall, value);
   }
+  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
+  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
   return { f1, map, precision, recall };
 }
 
@@ -195,25 +178,9 @@ function formatMapMetricLabel(key: string): string {
   return `mAP@${lo}`;
 }
 
-// Trims a two-digit IoU suffix ("50", "75", "95") down to its bare fraction (".5", ".75", ".95")
-// for the compact P@.5 / R@.5 / F1@.5 metric labels below.
-function formatIouFraction(iou: string): string {
-  return (Number(iou) / 100)
-    .toFixed(2)
-    .replace(/^0/, '')
-    .replace(/0$/, '');
-}
-
 function labelForMetricKey(key: string): string | null {
   const normalized = key.toLowerCase();
   if (isMapMetricKey(normalized)) return formatMapMetricLabel(normalized);
-  const iouMatch = matchIouSuffixedMetricKey(normalized);
-  if (iouMatch) {
-    const baseLabel = iouMatch.base === 'f1' ? 'F1' : iouMatch.base === 'precision' ? 'Precision' : 'Recall';
-    if (!iouMatch.iou) return baseLabel;
-    const baseAbbrev = iouMatch.base === 'f1' ? 'F1' : iouMatch.base === 'precision' ? 'P' : 'R';
-    return `${baseAbbrev}@${formatIouFraction(iouMatch.iou)}`;
-  }
   return NAMED_METRIC_LABELS[normalized] ?? null;
 }
 
@@ -231,12 +198,10 @@ function collectMetrics(metrics: Record<string, unknown>): MetricValue[] {
 function buildRunNote(entry: Record<string, unknown>): string | null {
   const parts: string[] = ['Zero-shot'];
   if (isFiniteNumber(entry.num_samples)) parts.push(`evaluated on ${entry.num_samples} images`);
-  const rawNotes = toText(entry.notes);
-  if (rawNotes) parts.push(rawNotes);
   return parts.join(' · ');
 }
 
-function buildFinetuneNote(finetune: unknown, rawNotes: string | null): string | null {
+function buildFinetuneNote(finetune: unknown): string | null {
   if (!isRecord(finetune)) return null;
   const parts: string[] = ['Fine-tuned'];
   if (isFiniteNumber(finetune.train_samples)) parts.push(`trained on ${finetune.train_samples} images from this dataset`);
@@ -246,7 +211,6 @@ function buildFinetuneNote(finetune: unknown, rawNotes: string | null): string |
   if (isFiniteNumber(finetune.weight_decay)) parts.push(`weight decay=${finetune.weight_decay}`);
   if (isFiniteNumber(finetune.split_seed)) parts.push(`seed=${finetune.split_seed}`);
   if (isFiniteNumber(finetune.train_ratio)) parts.push(`train ratio=${finetune.train_ratio}`);
-  if (rawNotes) parts.push(rawNotes);
   return parts.join(' · ');
 }
 
@@ -297,7 +261,7 @@ function makeLeaderboardRow(
     date: toText(entry.timestamp)?.slice(0, 10) ?? null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune, toText(entry.notes)) : buildRunNote(entry),
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
     optimized: isOptimized(entry.optimized) || (isRecord(finetune) && isOptimized(finetune.optimized)),
     splitBreakdown: buildSplitBreakdown(entry, finetune),
     trainPercentage: computeTrainPercentage(entry, finetune),
