@@ -1,5 +1,6 @@
 [
   {
+    "benchmark_id": 1,
     "timestamp": "2026-07-18T23:27:54.133075+00:00",
     "dataset": "Project-AgML/ash_gourd_disease_classification",
     "dataset_config": null,
@@ -25,6 +26,7 @@
     "notes": ""
   },
   {
+    "benchmark_id": 1,
     "timestamp": "2026-07-18T23:29:08.172946+00:00",
     "dataset": "Project-AgML/ash_gourd_disease_classification",
     "dataset_config": null,
@@ -50,6 +52,7 @@
     "notes": ""
   },
   {
+    "benchmark_id": 1,
     "timestamp": "2026-07-18T23:30:31.504295+00:00",
     "dataset": "Project-AgML/ash_gourd_disease_classification",
     "dataset_config": null,
@@ -73,5 +76,59 @@
       "recall": 0.22084
     },
     "notes": ""
+  },
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-12T22:28:50.699948+00:00",
+    "dataset": "Project-AgML/ash_gourd_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 2676,
+    "device": "cuda",
+    "inference_time_seconds": 298.26,
+    "inference_time_seconds_per_image": 0.111456,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.255753,
+      "precision": 0.398418,
+      "recall": 0.283375,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Aphid, Downy mildew, Healthy, Leaf curl, Leaf miner. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Aphid, Downy mildew, Healthy, Leaf curl, Leaf miner), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  },
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T07:46:14.478353+00:00",
+    "dataset": "Project-AgML/ash_gourd_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 2676,
+    "device": "cuda",
+    "inference_time_seconds": 4704.74,
+    "inference_time_seconds_per_image": 1.758126,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.332716,
+      "precision": 0.384828,
+      "recall": 0.414198,
+      "skipped_samples": 0
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Aphid, Downy mildew, Healthy, Leaf curl, Leaf miner. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Aphid, Downy mildew, Healthy, Leaf curl, Leaf miner), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=78400000, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
   }
 ]

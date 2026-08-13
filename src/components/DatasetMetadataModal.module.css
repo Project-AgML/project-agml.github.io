@@ -574,6 +574,9 @@
 	color: var(--agml-text);
 	line-height: 1.5;
 	overflow-wrap: anywhere;
+	white-space: pre-wrap;
+	max-height: 220px;
+	overflow-y: auto;
 }
 
 .leaderboardTable a {

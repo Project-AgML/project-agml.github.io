@@ -21,7 +21,7 @@ type DatasetFilterConfig = {
 const DATASET_FILTERS: DatasetFilterConfig[] = [
   {
     key: 'ml_task',
-    label: 'Task Type',
+    label: 'CV Task',
     field: 'machine_learning_task',
     kind: 'checkbox',
     formatOption: (value) => value.replace(/_/g, ' '),

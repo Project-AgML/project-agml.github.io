@@ -2,7 +2,7 @@
   {
     "name": "wGrapeUNIPD-DL_white_grape_bunch_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "",
+    "agricultural_task": "fruit_detection",
     "location": [
       "Italy"
     ],
@@ -30,7 +30,7 @@
   {
     "name": "Strawberry-DS_strawberry_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "crop_maturity_monitoring",
+    "agricultural_task": "crop_detection",
     "real_or_synthetic": "real",
     "location": "Egypt",
     "environment": "field",
@@ -4217,7 +4217,7 @@
   {
     "name": "paddy_disease_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "paddy_disease_classification",
+    "agricultural_task": "disease_classification",
     "location": "India, Asia",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -4415,7 +4415,7 @@
   {
     "name": "embrapa_wgisd_grape_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "grape_bunch_detection",
+    "agricultural_task": "fruit_detection",
     "location": "Worldwide",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -4517,7 +4517,7 @@
   {
     "name": "gemini_leaf_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "leaf_detection",
+    "agricultural_task": "crop_detection",
     "location": "United States, North America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -4550,7 +4550,7 @@
   {
     "name": "gemini_plant_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "plant_detection",
+    "agricultural_task": "crop_detection",
     "location": "United States, North America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -4583,7 +4583,7 @@
   {
     "name": "gemini_pod_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "pod_detection",
+    "agricultural_task": "crop_detection",
     "location": "United States, North America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -4980,7 +4980,7 @@
   {
     "name": "tomato_ripeness_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "fruit_ripeness_detection",
+    "agricultural_task": "maturity_detection",
     "location": "Worldwide",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -5710,7 +5710,7 @@
   {
     "name": "apple_segmentation_minnesota",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "fruit_segmentation",
+    "agricultural_task": "crop_segmentation",
     "location": "United States, North America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
@@ -5809,7 +5809,7 @@
   {
     "name": "bean_synthetic_earlygrowth_aerial",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "plant_segmentation",
+    "agricultural_task": "crop_segmentation",
     "location": "Digital, Digital",
     "sensor_modality": "RGB",
     "real_or_synthetic": "synthetic",
@@ -5926,7 +5926,7 @@
   {
     "name": "vegann_multicrop_presence_segmentation",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "vegetation_segmentation",
+    "agricultural_task": "crop_segmentation",
     "location": "Worldwide",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
