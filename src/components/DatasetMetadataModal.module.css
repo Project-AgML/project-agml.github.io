@@ -69,6 +69,11 @@
 	color: var(--agml-badge-segmentation-fg);
 }
 
+.badgeVlm {
+	background: var(--agml-badge-vlm-bg);
+	color: var(--agml-badge-vlm-fg);
+}
+
 .badgeOther {
 	background: var(--agml-badge-other-bg);
 	color: var(--agml-badge-other-fg);

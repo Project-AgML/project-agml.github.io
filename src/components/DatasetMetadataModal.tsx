@@ -72,6 +72,7 @@ function formatResultType(entry: { variant: 'zero-shot' | 'fine-tuned' | null; o
 
 function taskBadgeClass(task: string | null): string {
 	if (!task) return styles.badgeOther;
+	if (task.includes('image-text') || task.includes('text-to-text')) return styles.badgeVlm;
 	if (task.includes('classif')) return styles.badgeClassification;
 	if (task.includes('detect')) return styles.badgeDetection;
 	if (task.includes('segment')) return styles.badgeSegmentation;
