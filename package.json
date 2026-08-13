@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "npm run generate-datasets",
-    "prestart": "npm run generate-datasets",
+    "prebuild": "npm run generate-datasets && npm run generate-embeddings",
+    "prestart": "npm run generate-datasets && npm run generate-embeddings",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -17,12 +17,17 @@
     "typecheck": "tsc",
     "generate-datasets": "node scripts/generate-datasets.mjs",
     "apply-performance-staging": "node scripts/apply-performance-staging.mjs"
+    "generate-embeddings": "node scripts/generate-embeddings.mjs",
+    "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
+    "test:unit": "node --import tsx --test tests/generate-embeddings.test.mjs tests/semantic-search-index.test.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",
     "@docusaurus/faster": "3.10.1",
     "@docusaurus/preset-classic": "3.10.1",
+    "@huggingface/transformers": "4.2.0",
     "@mdx-js/react": "^3.0.0",
+    "@orama/orama": "^3.1.18",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
@@ -33,6 +38,7 @@
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
     "@types/react": "^19.0.0",
+    "tsx": "^4.23.5",
     "typescript": "~6.0.2"
   },
   "browserslist": {
@@ -48,6 +54,6 @@
     ]
   },
   "engines": {
-    "node": ">=20.0"
+    "node": ">=24.0"
   }
 }
