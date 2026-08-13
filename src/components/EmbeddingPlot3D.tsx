@@ -10,6 +10,16 @@ import styles from './DatasetMetadataModal.module.css';
 // so "Reset view" restores exactly this framing, not Plotly's own (more zoomed-out) default.
 const DEFAULT_CAMERA_EYE = { x: 0.85, y: 0.85, z: 0.85 };
 
+// chrome.markerRing is a solid "rgb(r, g, b)" string (no alpha channel) — wrapping it as a
+// translucent rgba() lets the 3D ring fade in gradually as points stack, instead of a solid
+// stroke that saturates to a flat black smear after only a few overlaps.
+function withAlpha(rgb: string, alpha: number): string {
+	const match = /rgb\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)\s*\)/.exec(rgb);
+	if (!match) return rgb;
+	const [, r, g, b] = match;
+	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 // plotly.js touches `window` at import time, which breaks Docusaurus's build-time SSR pass —
 // the require() calls for it must stay inside a <BrowserOnly> children function so they're
 // never evaluated outside the browser. This uses the full plotly.js-dist-min bundle (shared
@@ -19,6 +29,7 @@ function buildTraces(
 	points: EmbedPoint[],
 	colorMap: Record<string, string>,
 	hoverlabel: { bgcolor: string; bordercolor: string; font: { color: string } },
+	markerRing: string,
 ) {
 	return Object.keys(colorMap).map((group) => {
 		const subset = points.filter((p) => p.cls === group);
@@ -29,11 +40,12 @@ function buildTraces(
 			x: subset.map((p) => p.x),
 			y: subset.map((p) => p.y),
 			z: subset.map((p) => p.z),
-			// Unlike the 2D view, scatter3d has no outline here — WebGL renders each marker's ring
-			// as its own translucent circle, and in a dense cluster hundreds of overlapping rings
-			// compound into a solid dark smear instead of separating anything. Depth-based
-			// shading/opacity already does the job of reading overlapping points in 3D.
-			marker: { size: 4, color: colorMap[group], opacity: 0.85 },
+			// A full-opacity fill would flatten a dense cluster into one hard-edged silhouette —
+			// dropping opacity lets overlapping points layer into a soft density gradient instead,
+			// which reads as a point cloud rather than a sticker. The ring is real but very faint
+			// (low alpha), so a couple of overlapping points still get a crisp edge without
+			// hundreds of them compounding back into the solid dark smear this replaced.
+			marker: { size: 4, color: colorMap[group], opacity: 0.72, line: { width: 0.5, color: withAlpha(markerRing, 0.22) } },
 			text: subset.map((p) => `${toTitleCase(p.cls)} · ${p.split} · #${p.index}`),
 			hovertemplate: '%{text}<extra></extra>',
 			// Set per-trace, not just at the layout level — Plotly's hoverlabel.bgcolor
@@ -60,8 +72,8 @@ export function EmbeddingPlot3D({
 		[chrome],
 	);
 	const traces = useMemo(
-		() => buildTraces(points, colorMap, hoverlabel),
-		[points, colorMap, hoverlabel],
+		() => buildTraces(points, colorMap, hoverlabel, chrome.markerRing),
+		[points, colorMap, hoverlabel, chrome.markerRing],
 	);
 
 	// Captured once the plot mounts, so the "Reset view" button can relayout it directly.
