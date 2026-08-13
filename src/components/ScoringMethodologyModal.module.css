@@ -247,14 +247,18 @@
 	border-left: 4px solid var(--axis-accent);
 }
 
+/* 4 tracks with every card spanning 2 (so 2 cards per row) instead of auto-fit — matches the
+   wide-card pattern already used for the bar-chart cards on the main benchmark view, and gives
+   each card enough width that its paragraphs stop wrapping into a narrow ladder. */
 .metricGrid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	grid-template-columns: repeat(4, 1fr);
 	gap: 1rem;
 	margin-top: 0.9rem;
 }
 
 .metricCard {
+	grid-column: span 2;
 	padding: 1rem 1.1rem;
 	border-radius: 10px;
 	border: 1px solid var(--agml-border);
@@ -269,6 +273,7 @@
 }
 
 .metricCardPenalty {
+	grid-column: span 2;
 	padding: 1rem 1.1rem;
 	border-radius: 10px;
 	border: 1px solid var(--agml-border);
@@ -496,6 +501,22 @@
 	text-align: right;
 }
 
+/* Between mobile and the panel's own max width, 2-cards-per-row (each half of a ~980px panel)
+   gets tight enough that the formula boxes start cramping — drop to one full-width card per row
+   a bit before the general mobile breakpoint below. This block must come before the 720px block
+   so that, once both conditions are true on a narrow phone, the more specific 720px rules below
+   (later in source order, equal selector specificity) are the ones that win. */
+@media (max-width: 900px) {
+	.metricGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.metricCard,
+	.metricCardPenalty {
+		grid-column: span 2;
+	}
+}
+
 @media (max-width: 720px) {
 	.panel {
 		padding: 1.25rem;
@@ -512,5 +533,14 @@
 
 	.header {
 		flex-direction: column;
+	}
+
+	.metricGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.metricCard,
+	.metricCardPenalty {
+		grid-column: span 1;
 	}
 }
