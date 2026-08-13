@@ -15,7 +15,7 @@
       "recall": 0.399747
     },
     "crop_types": [
-      "moringa"
+      "moringa oleifera"
     ],
     "machine_learning_task": "image_classification",
     "variant": "zero-shot",
@@ -40,7 +40,7 @@
       "recall": 0.423695
     },
     "crop_types": [
-      "moringa"
+      "moringa oleifera"
     ],
     "machine_learning_task": "image_classification",
     "variant": "zero-shot",
@@ -65,7 +65,7 @@
       "recall": 0.254646
     },
     "crop_types": [
-      "moringa"
+      "moringa oleifera"
     ],
     "machine_learning_task": "image_classification",
     "variant": "zero-shot",
