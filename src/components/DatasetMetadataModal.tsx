@@ -15,6 +15,7 @@ import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import { oklchToRgb } from '../lib/plotlyChrome';
 import { EmbeddingPlot2D } from './EmbeddingPlot2D';
 import { EmbeddingPlot3D } from './EmbeddingPlot3D';
+import { ScoringMethodologyModal } from './ScoringMethodologyModal';
 import styles from './DatasetMetadataModal.module.css';
 
 function formatImageCount(count: number | null) {
@@ -898,6 +899,7 @@ function BenchmarkView({
 	const scores = useMemo(() => computeScores(benchmark), [benchmark]);
 	const scoreBoxes = useMemo(() => buildScoreBoxes(scores), [scores]);
 	const reproRows = useMemo(() => buildReproRows(benchmark.reproducibility), [benchmark.reproducibility]);
+	const [showMethodology, setShowMethodology] = useState(false);
 	const axisGroups = useMemo(
 		() =>
 			METRIC_AXES.map((axis) => ({ axis, cards: cards.filter((card) => METRIC_AXIS_MAP[card.title] === axis) })).filter(
@@ -939,7 +941,11 @@ function BenchmarkView({
 				</div>
 			)}
 
-			<hr className={styles.benchmarkDivider} />
+			<button type="button" className={styles.methodologyLink} onClick={() => setShowMethodology(true)}>
+				ⓘ How scores are calculated
+			</button>
+
+			<br/>
 
 			{axisGroups.map((group) => (
 				<section key={group.axis} className={styles.axisSection}>
@@ -956,6 +962,12 @@ function BenchmarkView({
 				<h3 className={styles.axisTitle}>Visualization</h3>
 				<EmbeddingScatter benchmark={benchmark} embeddings2d={embeddings2d} embeddings3d={embeddings3d} />
 			</section>
+
+			<ScoringMethodologyModal
+				open={showMethodology}
+				taskType="Image Classification"
+				onClose={() => setShowMethodology(false)}
+			/>
 		</div>
 	);
 }
