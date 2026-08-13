@@ -75,6 +75,31 @@
     "datasetConfig": "raw"
   },
   {
+    "model": "google/gemma-4-12b-it",
+    "dataset": "Strawberry-DS_strawberry_detection",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.331745,
+      "map": null,
+      "precision": 0.312398,
+      "recall": 0.353647
+    },
+    "crop_types": [
+      "strawberry"
+    ],
+    "machine_learning_task": "object_detection",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
     "model": "google/siglip-base-patch16-224",
     "dataset": "ash_gourd_disease_classification",
     "percentiles": {
@@ -368,6 +393,56 @@
       "groundnut"
     ],
     "machine_learning_task": "image_classification",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/gemma-4-12b-it",
+    "dataset": "mango_growth_detection",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.301615,
+      "map": null,
+      "precision": 0.278044,
+      "recall": 0.329553
+    },
+    "crop_types": [
+      "mango"
+    ],
+    "machine_learning_task": "object_detection",
+    "variant": "zero-shot",
+    "optimized": false,
+    "platform": "cuda",
+    "splitBreakdown": "-/100/-",
+    "datasetConfig": "raw"
+  },
+  {
+    "model": "google/gemma-4-12b-it",
+    "dataset": "pomegranate_growth_detection",
+    "percentiles": {
+      "f1": 100,
+      "map": null,
+      "precision": 100,
+      "recall": 100
+    },
+    "scores": {
+      "f1": 0.478479,
+      "map": null,
+      "precision": 0.506368,
+      "recall": 0.453501
+    },
+    "crop_types": [
+      "pomegranate"
+    ],
+    "machine_learning_task": "object_detection",
     "variant": "zero-shot",
     "optimized": false,
     "platform": "cuda",
