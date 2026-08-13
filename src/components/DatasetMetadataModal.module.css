@@ -1146,12 +1146,10 @@
 }
 
 .statTileLabel {
-	display: flex;
-	/* flex-start, not center — a label long enough to wrap onto two lines (e.g. "Height
-	   (mean±std)" in a narrow column) would otherwise center the info icon between the two
-	   lines, leaving it floating in the gap instead of sitting next to either one. */
-	align-items: flex-start;
-	gap: 0.3rem;
+	/* Deliberately not flex: a flex row lays the icon out beside the *whole* (possibly
+	   two-line) text box, wherever that box's edge lands — which is what put the icon in the
+	   dead space toward the next column. Plain inline flow instead treats the icon as another
+	   inline element and wraps it right after the label's own last word, like normal text. */
 	margin: 0 0 0.3rem;
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.62rem;
@@ -1167,9 +1165,8 @@
 }
 
 .statTileLabel .infoTooltip {
-	/* Nudge the icon down a touch so it optically centers on the first line of text instead of
-	   sitting flush with the cap-height at flex-start. */
-	margin-top: 0.1em;
+	margin-left: 0.3rem;
+	vertical-align: middle;
 }
 
 .statTileValue {

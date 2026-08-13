@@ -266,7 +266,7 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 			badge: `${d.total_images} images`,
 			stats: [
 				{ label: 'Width (mean)', value: `${d.width.mean}px`, info: 'Average image width in pixels.' },
-				{ label: 'Height (mean±std)', value: `${d.height.mean.toFixed(0)}±${d.height.std.toFixed(1)}`, info: 'Average image height ± standard deviation, in pixels.' },
+				{ label: 'Height (μ±σ)', value: `${d.height.mean.toFixed(0)}±${d.height.std.toFixed(1)}`, info: 'Average image height ± standard deviation, in pixels.' },
 				{
 					label: 'Aspect ratio',
 					value: `${d.aspect_ratio.mean.toFixed(2)} (${d.aspect_ratio.min.toFixed(2)}–${d.aspect_ratio.max.toFixed(2)})`,
