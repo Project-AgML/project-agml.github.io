@@ -69,17 +69,73 @@ export interface IntraClassDiversityMetrics {
 	max_diversity_class: string;
 }
 
+export interface DatasetCartographyMetrics {
+	n_easy: number;
+	n_ambiguous: number;
+	n_hard: number;
+	pct_easy: number;
+	pct_ambiguous: number;
+	pct_hard: number;
+	mean_confidence: number;
+	mean_variability: number;
+	easy_threshold: number;
+	hard_threshold: number;
+	variability_threshold: number;
+	n_epochs: number;
+}
+
+export interface ConfusedPair {
+	true_class: string;
+	predicted_as: string;
+	confusion_rate: number;
+}
+
+export interface ClassConfusabilityMetrics {
+	accuracy: number;
+	per_class_accuracy: Record<string, number>;
+	confusion_matrix: number[][];
+	top_confused_pairs: ConfusedPair[];
+	n_top_pairs: number;
+	n_test_samples: number;
+}
+
+export interface LabelNoiseMetrics {
+	estimated_noise_rate: number;
+	n_noisy_samples: number;
+	n_total_samples: number;
+	per_class_noise_counts: Record<string, number>;
+	cv_folds: number;
+}
+
+export interface ReproducibilityInfo {
+	split_seed?: number;
+	train_ratio?: number;
+	val_ratio?: number;
+	test_ratio?: number;
+	embed_model?: string;
+	near_dup_threshold?: number;
+	backbone?: string;
+	cartography_epochs?: number;
+	cartography_lr?: number;
+	cv_folds?: number;
+}
+
 export interface ImageClassificationBenchmark {
 	dataset: string;
 	date: string;
+	reproducibility?: ReproducibilityInfo;
+	phases_completed?: number[];
 	metrics: {
 		class_imbalance?: ClassImbalanceMetrics;
 		exact_duplicate?: ExactDuplicateMetrics;
 		resolution_consistency?: ResolutionConsistencyMetrics;
-		metadata_coverage?: { skipped: boolean; reason?: string };
+		metadata_coverage?: { skipped: boolean; reason?: string; metadata_columns?: string[]; normalized_entropy?: Record<string, Record<string, number>> };
 		near_duplicate?: NearDuplicateMetrics;
 		feature_separability?: FeatureSeparabilityMetrics;
 		intra_class_diversity?: IntraClassDiversityMetrics;
+		dataset_cartography?: DatasetCartographyMetrics;
+		class_confusability?: ClassConfusabilityMetrics;
+		label_noise?: LabelNoiseMetrics;
 	};
 }
 

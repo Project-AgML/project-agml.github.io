@@ -1,7 +1,23 @@
 {
     "watermelon_disease_classification": {
         "dataset": "Project-AgML/watermelon_disease_classification",
-        "date": "2026-08-03",
+        "date": "2026-08-12",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98,
+            "backbone": "resnet18",
+            "cartography_epochs": 30,
+            "cartography_lr": 0.001,
+            "cv_folds": 5
+        },
+        "phases_completed": [
+            1,
+            2
+        ],
         "metrics": {
             "class_imbalance": {
                 "counts": {
@@ -88,12 +104,92 @@
                 "mean_diversity": 0.4718,
                 "min_diversity_class": "Healthy",
                 "max_diversity_class": "Anthracnose"
+            },
+            "dataset_cartography": {
+                "n_easy": 733,
+                "n_ambiguous": 75,
+                "n_hard": 0,
+                "pct_easy": 90.72,
+                "pct_ambiguous": 9.28,
+                "pct_hard": 0.0,
+                "mean_confidence": 0.9917,
+                "mean_variability": 0.031,
+                "easy_threshold": 0.7,
+                "hard_threshold": 0.3,
+                "variability_threshold": 0.1,
+                "n_epochs": 30
+            },
+            "class_confusability": {
+                "accuracy": 0.7471,
+                "per_class_accuracy": {
+                    "Anthracnose": 0.9565,
+                    "Downy_Mildew": 1.0,
+                    "Healthy": 1.0,
+                    "Mosaic_Virus": 0.3175
+                },
+                "confusion_matrix": [
+                    [
+                        0.9565,
+                        0.0,
+                        0.0,
+                        0.0435
+                    ],
+                    [
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.4921,
+                        0.1905,
+                        0.3175
+                    ]
+                ],
+                "top_confused_pairs": [
+                    {
+                        "true_class": "Mosaic_Virus",
+                        "predicted_as": "Downy_Mildew",
+                        "confusion_rate": 0.4921
+                    },
+                    {
+                        "true_class": "Mosaic_Virus",
+                        "predicted_as": "Healthy",
+                        "confusion_rate": 0.1905
+                    },
+                    {
+                        "true_class": "Anthracnose",
+                        "predicted_as": "Mosaic_Virus",
+                        "confusion_rate": 0.0435
+                    }
+                ],
+                "n_top_pairs": 3,
+                "n_test_samples": 174
             }
         }
     },
     "rice_variety_classification_bangladesh": {
         "dataset": "Project-AgML/rice_variety_classification_bangladesh",
         "date": "2026-08-03",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98
+        },
+        "phases_completed": [
+            1,
+            2
+        ],
         "metrics": {
             "class_imbalance": {
                 "counts": {
@@ -196,7 +292,7 @@
                 "silhouette_score": -0.0172,
                 "silhouette_interpretation": "overlapping or no separation",
                 "davies_bouldin_index": 6.277,
-                "davies_bouldin_interpretation": "high overlap \u2014 classes not well-separated",
+                "davies_bouldin_interpretation": "high overlap — classes not well-separated",
                 "per_class_silhouette": {
                     "BD30": -0.0048,
                     "BD33": -0.0348,
@@ -289,6 +385,18 @@
     "ACHENY_variety_classification": {
         "dataset": "Project-AgML/ACHENY_variety_classification",
         "date": "2026-08-03",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98
+        },
+        "phases_completed": [
+            1,
+            2
+        ],
         "metrics": {
             "class_imbalance": {
                 "counts": {
@@ -382,7 +490,7 @@
                 "silhouette_score": 0.0851,
                 "silhouette_interpretation": "weak separation",
                 "davies_bouldin_index": 2.9768,
-                "davies_bouldin_interpretation": "high overlap \u2014 classes not well-separated",
+                "davies_bouldin_interpretation": "high overlap — classes not well-separated",
                 "per_class_silhouette": {
                     "AnaHau": 0.1234,
                     "AnaSet": 0.2493,
