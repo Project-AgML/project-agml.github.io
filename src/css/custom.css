@@ -91,8 +91,8 @@ html[data-theme="dark"] {
         var(--ifm-color-primary) 30%,
         var(--agml-border)
     );
-    --agml-warning-soft: rgba(189, 139, 76, 0.18);
-    --agml-warning-text: #d9b084;
+    --agml-warning-soft: rgba(224, 90, 70, 0.18);
+    --agml-warning-text: oklch(0.7 0.18 27);
     --agml-caution-text: oklch(0.78 0.14 80);
     --agml-axis-difficulty: oklch(0.72 0.15 250);
     --agml-axis-diversity: oklch(0.74 0.15 340);

@@ -1251,7 +1251,7 @@ export function DatasetMetadataModal({
 										<ul className={styles.siteList}>
 											{siteRows.map((site, index) => (
 												<li key={index} className={styles.siteRow}>
-													{site.location && <span>{site.location}</span>}
+													{site.location && <span>{toTitleCase(site.location)}</span>}
 													{site.coordinate && <span className={styles.coordinate}>{site.coordinate}</span>}
 												</li>
 											))}

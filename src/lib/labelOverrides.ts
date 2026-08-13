@@ -52,6 +52,9 @@ export const LABEL_OVERRIDES: Record<string, string> = {
     lidar: "LIDAR",
     uv: "UV",
     ir: "IR",
+
+    /* country */
+    usa: "USA",
 };
 
 function autoTitleCase(value: string): string {
