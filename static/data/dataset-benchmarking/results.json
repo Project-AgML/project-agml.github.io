@@ -1,7 +1,7 @@
 {
     "watermelon_disease_classification": {
         "dataset": "Project-AgML/watermelon_disease_classification",
-        "date": "2026-08-12",
+        "date": "2026-08-13",
         "reproducibility": {
             "split_seed": 42,
             "train_ratio": 0.7,
@@ -14,10 +14,7 @@
             "cartography_lr": 0.001,
             "cv_folds": 5
         },
-        "phases_completed": [
-            1,
-            2
-        ],
+        "phases_completed": [1, 2, 3],
         "metrics": {
             "class_imbalance": {
                 "counts": {
@@ -106,72 +103,49 @@
                 "max_diversity_class": "Anthracnose"
             },
             "dataset_cartography": {
-                "n_easy": 733,
-                "n_ambiguous": 75,
+                "n_easy": 750,
+                "n_ambiguous": 58,
                 "n_hard": 0,
-                "pct_easy": 90.72,
-                "pct_ambiguous": 9.28,
+                "pct_easy": 92.82,
+                "pct_ambiguous": 7.18,
                 "pct_hard": 0.0,
-                "mean_confidence": 0.9917,
-                "mean_variability": 0.031,
+                "mean_confidence": 0.9938,
+                "mean_variability": 0.0243,
                 "easy_threshold": 0.7,
                 "hard_threshold": 0.3,
                 "variability_threshold": 0.1,
                 "n_epochs": 30
             },
             "class_confusability": {
-                "accuracy": 0.7471,
+                "accuracy": 1.0,
                 "per_class_accuracy": {
-                    "Anthracnose": 0.9565,
+                    "Anthracnose": 1.0,
                     "Downy_Mildew": 1.0,
                     "Healthy": 1.0,
-                    "Mosaic_Virus": 0.3175
+                    "Mosaic_Virus": 1.0
                 },
                 "confusion_matrix": [
-                    [
-                        0.9565,
-                        0.0,
-                        0.0,
-                        0.0435
-                    ],
-                    [
-                        0.0,
-                        1.0,
-                        0.0,
-                        0.0
-                    ],
-                    [
-                        0.0,
-                        0.0,
-                        1.0,
-                        0.0
-                    ],
-                    [
-                        0.0,
-                        0.4921,
-                        0.1905,
-                        0.3175
-                    ]
+                    [1.0, 0.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 1.0]
                 ],
-                "top_confused_pairs": [
-                    {
-                        "true_class": "Mosaic_Virus",
-                        "predicted_as": "Downy_Mildew",
-                        "confusion_rate": 0.4921
-                    },
-                    {
-                        "true_class": "Mosaic_Virus",
-                        "predicted_as": "Healthy",
-                        "confusion_rate": 0.1905
-                    },
-                    {
-                        "true_class": "Anthracnose",
-                        "predicted_as": "Mosaic_Virus",
-                        "confusion_rate": 0.0435
-                    }
-                ],
-                "n_top_pairs": 3,
+                "top_confused_pairs": [],
+                "n_top_pairs": 0,
                 "n_test_samples": 174
+            },
+            "label_noise": {
+                "estimated_noise_rate": 0.0,
+                "n_noisy_samples": 0,
+                "n_total_samples": 1155,
+                "flagged_orig_indices": [],
+                "per_class_noise_counts": {
+                    "Anthracnose": 0,
+                    "Downy_Mildew": 0,
+                    "Healthy": 0,
+                    "Mosaic_Virus": 0
+                },
+                "cv_folds": 5
             }
         }
     },
@@ -186,10 +160,7 @@
             "embed_model": "facebook/dinov2-base",
             "near_dup_threshold": 0.98
         },
-        "phases_completed": [
-            1,
-            2
-        ],
+        "phases_completed": [1, 2],
         "metrics": {
             "class_imbalance": {
                 "counts": {
@@ -393,10 +364,7 @@
             "embed_model": "facebook/dinov2-base",
             "near_dup_threshold": 0.98
         },
-        "phases_completed": [
-            1,
-            2
-        ],
+        "phases_completed": [1, 2],
         "metrics": {
             "class_imbalance": {
                 "counts": {

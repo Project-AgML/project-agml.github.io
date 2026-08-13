@@ -103,6 +103,7 @@ export interface LabelNoiseMetrics {
 	estimated_noise_rate: number;
 	n_noisy_samples: number;
 	n_total_samples: number;
+	flagged_orig_indices?: number[];
 	per_class_noise_counts: Record<string, number>;
 	cv_folds: number;
 }

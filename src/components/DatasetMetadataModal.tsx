@@ -629,22 +629,26 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 						</div>
 					</div>
 					{card.overflowNote && <p className={styles.metricOverflowNote}>{card.overflowNote}</p>}
-					<div className={styles.confusionPairs}>
-						<p className={styles.confusionPairsHeader}>Top confused pairs</p>
-						<div className={hasMorePairs && pairsExpanded ? styles.confusionPairsListExpanded : styles.confusionPairsList}>
-							{visiblePairs?.map((pair) => (
-								<div key={pair.label} className={styles.confusionPairRow}>
-									<span>{pair.label}</span>
-									<span>{pair.value}</span>
-								</div>
-							))}
+					{card.pairs.length > 0 ? (
+						<div className={styles.confusionPairs}>
+							<p className={styles.confusionPairsHeader}>Top confused pairs</p>
+							<div className={hasMorePairs && pairsExpanded ? styles.confusionPairsListExpanded : styles.confusionPairsList}>
+								{visiblePairs?.map((pair) => (
+									<div key={pair.label} className={styles.confusionPairRow}>
+										<span>{pair.label}</span>
+										<span>{pair.value}</span>
+									</div>
+								))}
+							</div>
+							{hasMorePairs && (
+								<button type="button" className={styles.metricExpandLink} onClick={() => setPairsExpanded((value) => !value)}>
+									{pairsExpanded ? '← Show fewer' : `Show all ${card.pairs.length} →`}
+								</button>
+							)}
 						</div>
-						{hasMorePairs && (
-							<button type="button" className={styles.metricExpandLink} onClick={() => setPairsExpanded((value) => !value)}>
-								{pairsExpanded ? '← Show fewer' : `Show all ${card.pairs.length} →`}
-							</button>
-						)}
-					</div>
+					) : (
+						<p className={styles.metricSkipped}>No confused pairs — every class was classified perfectly.</p>
+					)}
 				</>
 			)}
 
