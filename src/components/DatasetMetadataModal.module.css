@@ -1147,15 +1147,29 @@
 
 .statTileLabel {
 	display: flex;
-	align-items: center;
+	/* flex-start, not center — a label long enough to wrap onto two lines (e.g. "Height
+	   (mean±std)" in a narrow column) would otherwise center the info icon between the two
+	   lines, leaving it floating in the gap instead of sitting next to either one. */
+	align-items: flex-start;
 	gap: 0.3rem;
 	margin: 0 0 0.3rem;
 	font-family: var(--ifm-code-font-family);
 	font-size: 0.62rem;
 	font-weight: 600;
+	line-height: 1.3;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--agml-muted);
+	/* Reserves space for two lines even when a label only needs one, so neighboring stat tiles
+	   in the same grid row keep their values aligned instead of the value's baseline shifting
+	   down only under whichever label happens to wrap. */
+	min-height: 2.6em;
+}
+
+.statTileLabel .infoTooltip {
+	/* Nudge the icon down a touch so it optically centers on the first line of text instead of
+	   sitting flush with the cap-height at flex-start. */
+	margin-top: 0.1em;
 }
 
 .statTileValue {
