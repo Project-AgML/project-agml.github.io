@@ -1221,12 +1221,6 @@
 	margin-bottom: 0;
 }
 
-.embedSubtitle {
-	margin: 0.15rem 0 0;
-	font-size: 0.82rem;
-	color: var(--agml-muted);
-}
-
 .embedToggle {
 	display: inline-flex;
 	border-radius: 999px;

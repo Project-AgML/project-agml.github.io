@@ -781,7 +781,7 @@ function EmbeddingScatter({
 			<div className={styles.embedHeader}>
 				<div>
 					<h3 className={styles.sectionTitle}>Embedding Space — UMAP</h3>
-					<p className={styles.embedSubtitle}>{embedModel}</p>
+					<span className={styles.tag}>{embedModel}</span>
 				</div>
 				<div className={styles.embedToggle}>
 					<button

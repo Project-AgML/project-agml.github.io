@@ -19,7 +19,6 @@ function buildTraces(
 	points: EmbedPoint[],
 	colorMap: Record<string, string>,
 	hoverlabel: { bgcolor: string; bordercolor: string; font: { color: string } },
-	markerRing: string,
 ) {
 	return Object.keys(colorMap).map((group) => {
 		const subset = points.filter((p) => p.cls === group);
@@ -30,9 +29,11 @@ function buildTraces(
 			x: subset.map((p) => p.x),
 			y: subset.map((p) => p.y),
 			z: subset.map((p) => p.z),
-			// A thin ring in the panel's own surface color separates overlapping points instead
-			// of them just fusing into a blob at the edges.
-			marker: { size: 4, color: colorMap[group], opacity: 0.85, line: { width: 0.5, color: markerRing } },
+			// Unlike the 2D view, scatter3d has no outline here — WebGL renders each marker's ring
+			// as its own translucent circle, and in a dense cluster hundreds of overlapping rings
+			// compound into a solid dark smear instead of separating anything. Depth-based
+			// shading/opacity already does the job of reading overlapping points in 3D.
+			marker: { size: 4, color: colorMap[group], opacity: 0.85 },
 			text: subset.map((p) => `${toTitleCase(p.cls)} · ${p.split} · #${p.index}`),
 			hovertemplate: '%{text}<extra></extra>',
 			// Set per-trace, not just at the layout level — Plotly's hoverlabel.bgcolor
@@ -59,8 +60,8 @@ export function EmbeddingPlot3D({
 		[chrome],
 	);
 	const traces = useMemo(
-		() => buildTraces(points, colorMap, hoverlabel, chrome.markerRing),
-		[points, colorMap, hoverlabel, chrome.markerRing],
+		() => buildTraces(points, colorMap, hoverlabel),
+		[points, colorMap, hoverlabel],
 	);
 
 	// Captured once the plot mounts, so the "Reset view" button can relayout it directly.
