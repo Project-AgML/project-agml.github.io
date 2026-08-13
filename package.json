@@ -16,7 +16,6 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "generate-datasets": "node scripts/generate-datasets.mjs",
-    "apply-performance-staging": "node scripts/apply-performance-staging.mjs"
     "generate-embeddings": "node scripts/generate-embeddings.mjs",
     "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
     "test:unit": "node --import tsx --test tests/generate-embeddings.test.mjs tests/semantic-search-index.test.ts"
