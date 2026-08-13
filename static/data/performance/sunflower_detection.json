@@ -1,0 +1,31 @@
+[
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-12T04:51:48.674686+00:00",
+    "dataset": "Project-AgML/sunflower_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 1649,
+    "device": "cuda",
+    "inference_time_seconds": 2975.22,
+    "inference_time_seconds_per_image": 1.804255,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "precision_at_iou50": 0.573092,
+      "recall_at_iou50": 0.15133,
+      "f1_at_iou50": 0.239435,
+      "true_positives": 20617,
+      "false_positives": 15358,
+      "false_negatives": 115622
+    },
+    "notes": "gemma detection prompt: 'Detect the 2d bounding boxes of the Sunflower, Backside-Sunflower. Output a JSON list where each entry contains the 2D bounding box in \"box_2d\" and a text label in \"label\" (one of: Sunflower, Backside-Sunflower). The box_2d coordinates are [y_min, x_min, y_max, x_max], normalized to 0-1000.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=2048, batch_size=32. Box predictions are normalized to a 0-1000 grid (BOX_SCALE=1000) relative to the original image and rescaled to pixel coordinates before matching (see detections_to_prediction). precision_at_iou50/recall_at_iou50/f1_at_iou50 come from greedy same-class box matching at IoU>=0.5 (see match_detections); no mAP is computed since neither model emits a per-box confidence score to rank predictions by."
+  }
+]

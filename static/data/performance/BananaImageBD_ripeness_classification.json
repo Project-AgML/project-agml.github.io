@@ -1,0 +1,83 @@
+[
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-12T21:32:59.617347+00:00",
+    "dataset": "Project-AgML/BananaImageBD_ripeness_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 820,
+    "device": "cuda",
+    "inference_time_seconds": 77.47,
+    "inference_time_seconds_per_image": 0.094473,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.59418,
+      "precision": 0.623257,
+      "recall": 0.614123,
+      "skipped_samples": 1
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Green, Overripe, Ripe, Semi-ripe. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Green, Overripe, Ripe, Semi-ripe), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  },
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T05:28:41.555979+00:00",
+    "dataset": "Project-AgML/BananaImageBD_ripeness_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 820,
+    "device": "cuda",
+    "inference_time_seconds": 92.83,
+    "inference_time_seconds_per_image": 0.11321,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.629103,
+      "precision": 0.643159,
+      "recall": 0.635175,
+      "skipped_samples": 7
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Green, Overripe, Ripe, Semi-ripe. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Green, Overripe, Ripe, Semi-ripe), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=78400000, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  },
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T19:37:15.901910+00:00",
+    "dataset": "Project-AgML/BananaImageBD_ripeness_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "moonshotai/Kimi-VL-A3B-Thinking-2506",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 820,
+    "device": "cuda",
+    "inference_time_seconds": 148.38,
+    "inference_time_seconds_per_image": 0.180951,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.642589,
+      "precision": 0.66665,
+      "recall": 0.678506,
+      "skipped_samples": 119
+    },
+    "notes": "kimi classification prompt: 'Classify the image into exactly one of the following categories: Green, Overripe, Ripe, Semi-ripe. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Green, Overripe, Ripe, Semi-ripe), and nothing else.'. Generation sampling params (vLLM): {'temperature': 0.6}, max_tokens=10000, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  }
+]

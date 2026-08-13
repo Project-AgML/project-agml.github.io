@@ -1,0 +1,146 @@
+---
+title: Contributing Leaderboard Results
+sidebar_position: 5
+---
+
+## Contributing Leaderboard Results
+
+The [leaderboard](/leaderboard) is built from per-dataset JSON files under
+[`static/data/performance/`](https://github.com/Project-AgML/project-agml.github.io/tree/main/static/data/performance)
+— one file per dataset, named after the dataset (e.g. `ash_gourd_disease_classification.json`), each holding a
+JSON array of raw benchmark run records. `index.json` and `global.json` in that same directory are generated
+manifests, not something you edit by hand — see [Regenerating the manifests](#regenerating-the-manifests) below.
+
+### The Run Record Format
+
+Each element of a dataset's JSON array describes a single model evaluated on that dataset. For example:
+
+```json
+{
+  "benchmark_id": 1,
+  "timestamp": "2026-07-18T23:27:54.133075+00:00",
+  "dataset": "Project-AgML/ash_gourd_disease_classification",
+  "dataset_config": null,
+  "split": "train",
+  "model": "openai/clip-vit-base-patch32",
+  "task": "classification",
+  "result_type": "zero-shot",
+  "optimized": "no",
+  "train_pct": 0.0,
+  "test_pct": 100.0,
+  "val_pct": 0.0,
+  "num_samples": 2676,
+  "device": "cuda",
+  "inference_time_seconds": 70.37,
+  "inference_time_seconds_per_image": 0.026298,
+  "train_time_seconds": 0.0,
+  "train_time_seconds_per_image": 0.0,
+  "metrics": {
+    "f1": 0.152805,
+    "precision": 0.139378,
+    "recall": 0.199623
+  },
+  "notes": ""
+}
+```
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `benchmark_id` | Recommended | Numeric ID grouping runs from the same benchmark sweep. |
+| `timestamp` | Recommended | ISO-8601 timestamp of when the run was produced. Its first 10 characters (`YYYY-MM-DD`) are shown as the result's date. |
+| `dataset` | Recommended | The Hugging Face dataset path (e.g. `Project-AgML/<dataset_name>`). |
+| `dataset_config` | Optional | The dataset config the model was evaluated on (e.g. `"augmented"`). Omit or `null` for the raw config. |
+| `split` | Optional | The data split evaluated, e.g. `"train"` or `"test"`. |
+| `model` | **Yes** | The model identifier, e.g. `"openai/clip-vit-base-patch32"`. Rows are grouped by this value. |
+| `task` | **Yes** | One of `classification`, `detection`, `segmentation` — determines which `metrics` key is used as the row's primary score (see below). |
+| `result_type` | Optional | Free-text label such as `"zero-shot"`; informational only — whether a run is treated as zero-shot or fine-tuned is actually determined by the presence of a `finetune` object (see [Fine-tuned runs](#fine-tuned-runs)). |
+| `optimized` | Optional | `"yes"` or `"no"` (string, not boolean) — whether the model was run with inference optimizations. |
+| `train_pct` / `test_pct` / `val_pct` | Optional | Informational split percentages; not used to compute `splitBreakdown` (that's derived from sample counts instead — see `num_samples` and `finetune.train_samples`/`val_samples`). |
+| `num_samples` | Recommended | Number of samples the model was evaluated on. Shown in the row's notes and used as the "test" share of the split breakdown. |
+| `device` | Recommended | The hardware platform the run used, e.g. `"cuda"`. Shown as the row's platform. |
+| `inference_time_seconds` / `inference_time_seconds_per_image` | Optional | Timing info. |
+| `train_time_seconds` / `train_time_seconds_per_image` | Optional | Timing info for fine-tuning runs. |
+| `metrics` | **Yes** | Object of metric name → numeric value (see below). |
+| `notes` | Optional | Free-text notes, e.g. the prompt used for a zero-shot classification run. |
+| `finetune` | Only for fine-tuned runs | See [Fine-tuned runs](#fine-tuned-runs). |
+
+#### `task` and `metrics`
+
+`task` determines which key in `metrics` is picked as the row's primary sortable score, in priority order:
+
+| `task` | Metric keys tried, in order |
+| :--- | :--- |
+| `classification` | `f1`, `accuracy`, `top1_accuracy` |
+| `detection` | `map`, `map_50`, `map50`, `mAP`, `mAP@0.5`, `f1_at_iou50` |
+| `segmentation` | `miou`, `iou`, `mean_iou` |
+
+If none of those keys are present, the first metric with a finite numeric value is used instead.
+
+Separately from the primary score, the leaderboard's four sortable global columns (F1, mAP, Precision, Recall) are
+computed from `metrics` directly by matching key name patterns — a `metrics.f1` key becomes the row's F1 score, an
+`mAP@0.5`-style key becomes its mAP score, and so on. You don't need to add extra keys for this; reporting whichever
+metrics you actually computed (`f1`, `precision`, `recall`, `map`, ...) is enough to populate the columns that apply.
+Metrics you didn't compute are left blank rather than penalized.
+
+#### Fine-tuned runs
+
+A run is treated as fine-tuned (rather than zero-shot) when it includes a `finetune` object:
+
+```json
+"finetune": {
+  "train_samples": 2000,
+  "val_samples": 300,
+  "epochs": 10,
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "split_seed": 42,
+  "train_ratio": 0.8,
+  "training_time_seconds": 812.4,
+  "optimized": "no"
+}
+```
+
+All fields are optional and used only to render notes and the split breakdown. If a model has both a zero-shot and a
+fine-tuned run in the same file, the leaderboard shows the best result of each side by side rather than picking one.
+
+A model can appear multiple times per dataset (e.g. repeated runs). Only the single best zero-shot run and the
+single best fine-tuned run per model are kept — you don't need to prune older/worse runs from the file yourself,
+though doing so keeps the file smaller.
+
+### Adding Results
+
+1. Find (or create) the dataset's file at `static/data/performance/<dataset_name>.json` — `<dataset_name>` must
+   match the dataset's `name` in the catalog (`static/data/datasets.json` or `static/data/hf_datasets.json`).
+2. Append your run record(s) to the JSON array, following the format above.
+3. If you're adding results for a brand-new dataset (no existing file), just create the file with a JSON array
+   containing your record(s) — it will be picked up automatically the next time the manifests are regenerated.
+
+If you have a batch of new runs and don't want to hand-merge them into existing files, drop per-dataset JSON arrays
+into a `performance_staging/` directory at the project root (same filenames as their target dataset files) and run:
+
+```bash
+python3 scripts/apply_performance_staging.py
+```
+
+This appends each staging file's records onto the matching file in `static/data/performance/` (staging files are
+left in place afterward). Pass `--dry-run` to preview the merge without writing anything.
+
+### Regenerating the Manifests
+
+`index.json` (the list of datasets with performance data) and `global.json` (the aggregated, percentile-ranked
+leaderboard used by the site-wide leaderboard view) are both generated from the per-dataset files — never edit them
+directly. Regenerate them with:
+
+```bash
+npm run generate-datasets
+```
+
+This also runs automatically before `npm start` and `npm run build`. After regenerating, build or run the site
+locally and check the [leaderboard page](/leaderboard) and the affected dataset's leaderboard tab to confirm your
+results appear with the expected score, platform, and split breakdown.
+
+### Opening the Pull Request
+
+Once your run records are added and the manifests are regenerated, open a pull request against the
+`project-agml.github.io` repository with the JSON changes (per-dataset files plus the regenerated `index.json` and
+`global.json`). Include where the results came from (benchmark script, paper, etc.) in the PR description.

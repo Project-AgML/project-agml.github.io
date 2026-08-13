@@ -7,15 +7,36 @@ import {
 import type { GlobalLeaderboardEntry } from '../../lib/performance';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import { LeaderboardDetailModal } from '../../components/LeaderboardDetailModal';
+import { useDatasets } from '../../lib/datasets';
 import styles from './index.module.css';
 
 const MIN_APPEARANCES = 3;
 const PAGE_SIZE = 25;
 
-type SortField = 'f1' | 'map' | 'precision' | 'recall';
+// The global leaderboard only ever sorts/displays F1, precision, and recall — mAP stays fully
+// computed (GlobalLeaderboardEntry.avgMapPercentile, computeGlobalLeaderboard, etc.) since
+// per-dataset detail views and future benchmarks still use it, it's just not a table column here.
+type SortField = 'f1' | 'precision' | 'recall';
 
 function toLabel(value: string) {
   return value.replace(/_/g, ' ');
+}
+
+// 1st, 2nd, 3rd, 4th, ..., 11th-13th stay "th" (the exception the mod-10 rule alone gets wrong).
+function ordinal(value: number): string {
+  const rounded = Math.round(value);
+  const mod100 = rounded % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${rounded}th`;
+  switch (rounded % 10) {
+    case 1:
+      return `${rounded}st`;
+    case 2:
+      return `${rounded}nd`;
+    case 3:
+      return `${rounded}rd`;
+    default:
+      return `${rounded}th`;
+  }
 }
 
 function shortTaskLabel(value: string) {
@@ -30,21 +51,11 @@ function percentileValue(entry: GlobalLeaderboardEntry, field: SortField) {
   switch (field) {
     case 'f1':
       return entry.avgF1Percentile;
-    case 'map':
-      return entry.avgMapPercentile;
     case 'precision':
       return entry.avgPrecisionPercentile;
     case 'recall':
       return entry.avgRecallPercentile;
   }
-}
-
-function taskBadgeClass(task: string | null): string {
-  if (!task) return styles.badgeOther;
-  if (task.includes('classif')) return styles.badgeClassification;
-  if (task.includes('detect')) return styles.badgeDetection;
-  if (task.includes('segment')) return styles.badgeSegmentation;
-  return styles.badgeOther;
 }
 
 function CheckboxFilterGroup({
@@ -89,22 +100,145 @@ function PercentileCell({ value }: { value: number | null }) {
       <div className={styles.metricBarTrack}>
         <div className={styles.metricBarFill} style={{ width: `${value}%` }} />
       </div>
-      <span className={styles.metricLabel}>{value.toFixed(0)}th</span>
+      <span className={styles.metricLabel}>{ordinal(value)}</span>
+    </div>
+  );
+}
+
+function LeaderboardSection({
+  title,
+  entries,
+  sortBy,
+  setSortBy,
+  page,
+  setPage,
+  onSelect,
+  description,
+}: {
+  title: string;
+  entries: GlobalLeaderboardEntry[];
+  sortBy: SortField;
+  setSortBy: (field: SortField) => void;
+  page: number;
+  setPage: (updater: (current: number) => number) => void;
+  onSelect: (key: string) => void;
+  description?: string;
+}) {
+  const pageCount = Math.max(1, Math.ceil(entries.length / PAGE_SIZE));
+  const currentPage = Math.min(page, pageCount);
+  const paged = entries.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const sortHeaderClass = (field: SortField) => `${styles.sortHeader} ${sortBy === field ? styles.sortHeaderActive : ''}`;
+
+  return (
+    <div className={styles.tableSection}>
+      <div className={styles.tableWrap}>
+        <div className={styles.tableCaption}>
+          <h3 className={styles.sectionHeading}>{title}</h3>
+          {description && <p className={styles.sectionDescription}>{description}</p>}
+        </div>
+        {entries.length === 0 ? (
+          <p className={styles.status}>No models have at least {MIN_APPEARANCES} dataset appearances for the current filters.</p>
+        ) : (
+          <div className={styles.leaderboardTable} role="table">
+            <div className={styles.tableRow} role="row">
+              <span role="columnheader">Model</span>
+              <span role="columnheader">
+                <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
+                  <span>Avg F1 pctl</span>
+                  <span>{sortBy === 'f1' ? '▼' : '▾'}</span>
+                </button>
+              </span>
+              <span role="columnheader">
+                <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
+                  <span>Avg Precision pctl</span>
+                  <span>{sortBy === 'precision' ? '▼' : '▾'}</span>
+                </button>
+              </span>
+              <span role="columnheader">
+                <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
+                  <span>Avg Recall pctl</span>
+                  <span>{sortBy === 'recall' ? '▼' : '▾'}</span>
+                </button>
+              </span>
+              <span role="columnheader">Result type</span>
+              <span role="columnheader"># Results</span>
+            </div>
+            {paged.map((entry) => {
+              const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
+              return (
+                <div
+                  key={key}
+                  role="row"
+                  tabIndex={0}
+                  className={`${styles.tableRow} ${styles.clickableRow}`}
+                  onClick={() => onSelect(key)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      onSelect(key);
+                    }
+                  }}
+                >
+                  <span role="cell">
+                    <span className={styles.modelName}>{entry.model}</span>
+                  </span>
+                  <span role="cell">
+                    <PercentileCell value={entry.avgF1Percentile} />
+                  </span>
+                  <span role="cell">
+                    <PercentileCell value={entry.avgPrecisionPercentile} />
+                  </span>
+                  <span role="cell">
+                    <PercentileCell value={entry.avgRecallPercentile} />
+                  </span>
+                  <span role="cell">{entry.resultType}</span>
+                  <span role="cell">{entry.appearances}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+      {entries.length > 0 && pageCount > 1 && (
+        <div className={styles.pagination}>
+          <button
+            type="button"
+            className={styles.paginationButton}
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span className={styles.paginationStatus}>
+            Page {currentPage} of {pageCount}
+          </span>
+          <button
+            type="button"
+            className={styles.paginationButton}
+            onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+            disabled={currentPage === pageCount}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 }
 
 export default function GlobalLeaderboardPage() {
   const { data: records, loading, error } = useGlobalPerformance();
+  const { data: datasets } = useDatasets();
 
   const [search, setSearch] = useState('');
   const searchDeferred = useDeferredValue(search);
   const [cropTypes, setCropTypes] = useState<string[]>([]);
   const [mlTasks, setMlTasks] = useState<string[]>([]);
+  const [agTasks, setAgTasks] = useState<string[]>([]);
   const [tuned, setTuned] = useState<('tuned' | 'not-tuned')[]>([]);
   const [optimizedValues, setOptimizedValues] = useState<('optimized' | 'not-optimized')[]>([]);
   const [platforms, setPlatforms] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<SortField>('map');
+  const [sortBy, setSortBy] = useState<SortField>('f1');
 
   const { cropTypeOptions, mlTaskOptions, platformOptions } = useMemo(() => {
     const cropSet = new Set<string>();
@@ -122,15 +256,42 @@ export default function GlobalLeaderboardPage() {
     };
   }, [records]);
 
+  const { agTaskOptions, datasetsByAgTask } = useMemo(() => {
+    const agTaskSet = new Set<string>();
+    const byAgTask = new Map<string, string[]>();
+    for (const dataset of datasets) {
+      if (!dataset.agricultural_task) continue;
+      agTaskSet.add(dataset.agricultural_task);
+      const list = byAgTask.get(dataset.agricultural_task) ?? [];
+      list.push(dataset.name);
+      byAgTask.set(dataset.agricultural_task, list);
+    }
+    return {
+      agTaskOptions: Array.from(agTaskSet).sort((a, b) => a.localeCompare(b)),
+      datasetsByAgTask: byAgTask,
+    };
+  }, [datasets]);
+
+  const agTaskDatasets = useMemo(() => {
+    if (!agTasks.length) return [];
+    return agTasks.flatMap((task) => datasetsByAgTask.get(task) ?? []);
+  }, [agTasks, datasetsByAgTask]);
+
   const toggleValue = <T,>(setter: (updater: (current: T[]) => T[]) => void, value: T) => {
     setter((current) => (current.includes(value) ? current.filter((v) => v !== value) : [...current, value]));
   };
 
   const hasActiveFilters =
-    cropTypes.length > 0 || mlTasks.length > 0 || tuned.length > 0 || optimizedValues.length > 0 || platforms.length > 0;
+    cropTypes.length > 0 ||
+    mlTasks.length > 0 ||
+    agTasks.length > 0 ||
+    tuned.length > 0 ||
+    optimizedValues.length > 0 ||
+    platforms.length > 0;
   const clearFilters = () => {
     setCropTypes([]);
     setMlTasks([]);
+    setAgTasks([]);
     setTuned([]);
     setOptimizedValues([]);
     setPlatforms([]);
@@ -144,9 +305,10 @@ export default function GlobalLeaderboardPage() {
         tuned,
         optimizedValues,
         platforms,
+        datasets: agTaskDatasets,
         minAppearances: MIN_APPEARANCES,
       }),
-    [records, cropTypes, mlTasks, tuned, optimizedValues, platforms]
+    [records, cropTypes, mlTasks, tuned, optimizedValues, platforms, agTaskDatasets]
   );
 
   const searched = useMemo(() => {
@@ -166,23 +328,27 @@ export default function GlobalLeaderboardPage() {
     [searched, sortBy]
   );
 
-  const [page, setPage] = useState(1);
-  useEffect(() => setPage(1), [cropTypes, mlTasks, tuned, optimizedValues, platforms, searchDeferred]);
-
-  const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
-  const currentPage = Math.min(page, pageCount);
-  const pagedLeaderboard = useMemo(
-    () => sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
-    [sorted, currentPage]
+  const classificationEntries = useMemo(
+    () => sorted.filter((entry) => shortTaskLabel(entry.machineLearningTask ?? '') === 'Classification'),
+    [sorted]
   );
+  const detectionEntries = useMemo(
+    () => sorted.filter((entry) => shortTaskLabel(entry.machineLearningTask ?? '') === 'Detection'),
+    [sorted]
+  );
+
+  const [classificationPage, setClassificationPage] = useState(1);
+  const [detectionPage, setDetectionPage] = useState(1);
+  useEffect(() => {
+    setClassificationPage(1);
+    setDetectionPage(1);
+  }, [cropTypes, mlTasks, agTasks, tuned, optimizedValues, platforms, searchDeferred]);
 
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
   const selectedEntry = useMemo(
     () => sorted.find((entry) => `${entry.model}|||${entry.machineLearningTask ?? ''}` === selectedKey) ?? null,
     [sorted, selectedKey]
   );
-
-  const sortHeaderClass = (field: SortField) => `${styles.sortHeader} ${sortBy === field ? styles.sortHeaderActive : ''}`;
 
   return (
     <Layout title="Model Leaderboard" description="Global model leaderboard aggregated across AgML dataset benchmarks.">
@@ -210,6 +376,9 @@ export default function GlobalLeaderboardPage() {
         <div className={styles.body}>
           <aside className={styles.sidebar}>
             <CheckboxFilterGroup label="CV Task" options={mlTaskOptions} selected={mlTasks} onToggle={(value) => toggleValue(setMlTasks, value)} formatOption={shortTaskLabel} />
+            <div className={styles.filterGroup}>
+              <MultiSelectDropdown label="Agricultural Task" options={agTaskOptions} selected={agTasks} onToggle={(value) => toggleValue(setAgTasks, value)} formatOption={toLabel} />
+            </div>
             <div className={styles.filterGroup}>
               <MultiSelectDropdown label="Crop" options={cropTypeOptions} selected={cropTypes} onToggle={(value) => toggleValue(setCropTypes, value)} formatOption={toLabel} />
             </div>
@@ -240,104 +409,31 @@ export default function GlobalLeaderboardPage() {
             )}
             {!loading && !error && sorted.length > 0 && (
               <>
-                <div className={styles.tableWrap}>
-                  <div className={styles.leaderboardTable} role="table">
-                    <div className={styles.tableRow} role="row">
-                      <span role="columnheader">CV Task</span>
-                      <span role="columnheader">Model</span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('f1')} onClick={() => setSortBy('f1')}>
-                          <span>Avg F1 pctl</span>
-                          <span>{sortBy === 'f1' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('map')} onClick={() => setSortBy('map')}>
-                          <span>Avg mAP pctl</span>
-                          <span>{sortBy === 'map' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('precision')} onClick={() => setSortBy('precision')}>
-                          <span>Avg Precision pctl</span>
-                          <span>{sortBy === 'precision' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">
-                        <button type="button" className={sortHeaderClass('recall')} onClick={() => setSortBy('recall')}>
-                          <span>Avg Recall pctl</span>
-                          <span>{sortBy === 'recall' ? '▼' : '▾'}</span>
-                        </button>
-                      </span>
-                      <span role="columnheader">Result type</span>
-                      <span role="columnheader"># Results</span>
-                    </div>
-                    {pagedLeaderboard.map((entry) => {
-                      const key = `${entry.model}|||${entry.machineLearningTask ?? ''}`;
-                      return (
-                        <div
-                          key={key}
-                          role="row"
-                          tabIndex={0}
-                          className={`${styles.tableRow} ${styles.clickableRow}`}
-                          onClick={() => setSelectedKey(key)}
-                          onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              setSelectedKey(key);
-                            }
-                          }}
-                        >
-                          <span role="cell">
-                            <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
-                              {entry.machineLearningTask ? shortTaskLabel(entry.machineLearningTask) : 'Unknown'}
-                            </span>
-                          </span>
-                          <span role="cell">
-                            <span className={styles.modelName}>{entry.model}</span>
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgF1Percentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgMapPercentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgPrecisionPercentile} />
-                          </span>
-                          <span role="cell">
-                            <PercentileCell value={entry.avgRecallPercentile} />
-                          </span>
-                          <span role="cell">{entry.resultType}</span>
-                          <span role="cell">{entry.appearances}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className={styles.benchmarkHeader}>
+                  <h2 className={styles.tableHeading}>Benchmark 1: Naive approach</h2>
                 </div>
-                {pageCount > 1 && (
-                  <div className={styles.pagination}>
-                    <button
-                      type="button"
-                      className={styles.paginationButton}
-                      onClick={() => setPage((p) => Math.max(1, p - 1))}
-                      disabled={currentPage === 1}
-                    >
-                      Previous
-                    </button>
-                    <span className={styles.paginationStatus}>
-                      Page {currentPage} of {pageCount}
-                    </span>
-                    <button
-                      type="button"
-                      className={styles.paginationButton}
-                      onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-                      disabled={currentPage === pageCount}
-                    >
-                      Next
-                    </button>
-                  </div>
-                )}
+
+                <LeaderboardSection
+                  title="Classification"
+                  description="Models are prompted with the class names and asked to return the best-matching label as JSON."
+                  entries={classificationEntries}
+                  sortBy={sortBy}
+                  setSortBy={setSortBy}
+                  page={classificationPage}
+                  setPage={setClassificationPage}
+                  onSelect={setSelectedKey}
+                />
+
+                <LeaderboardSection
+                  title="Detection"
+                  description="Models return bounding boxes as JSON, matched to ground truth at IoU ≥ 0.5; F1/Precision/Recall are reported at that threshold since no model gives a confidence score to rank by."
+                  entries={detectionEntries}
+                  sortBy={sortBy}
+                  setSortBy={setSortBy}
+                  page={detectionPage}
+                  setPage={setDetectionPage}
+                  onSelect={setSelectedKey}
+                />
               </>
             )}
           </section>
