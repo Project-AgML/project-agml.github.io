@@ -1,0 +1,56 @@
+[
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T01:25:00.376977+00:00",
+    "dataset": "Project-AgML/sapota_fruit_size_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 6010,
+    "device": "cuda",
+    "inference_time_seconds": 561.08,
+    "inference_time_seconds_per_image": 0.093358,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.128268,
+      "precision": 0.3325,
+      "recall": 0.260814,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Large, Medium, Small, Spoiled. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Large, Medium, Small, Spoiled), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  },
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T13:43:53.566348+00:00",
+    "dataset": "Project-AgML/sapota_fruit_size_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 6010,
+    "device": "cuda",
+    "inference_time_seconds": 554.39,
+    "inference_time_seconds_per_image": 0.092244,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.243102,
+      "precision": 0.39301,
+      "recall": 0.296332,
+      "skipped_samples": 24
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Large, Medium, Small, Spoiled. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Large, Medium, Small, Spoiled), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=78400000, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  }
+]

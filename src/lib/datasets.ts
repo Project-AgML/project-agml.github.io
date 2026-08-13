@@ -8,6 +8,13 @@ export interface Dataset {
     machine_learning_task: string | null;
     agricultural_task: string | null;
     location: string | string[] | null;
+    country: string | string[] | null;
+    // Derived: `country`, falling back to `location` when country wasn't extracted. Used for the
+    // search page's location filter/display so it groups by country instead of full addresses.
+    display_location: string | string[] | null;
+    lat_lon: string | string[] | null;
+    imaging_equipment: string | string[] | null;
+    collection_period: string | string[] | null;
     environment: string | null;
     augmented_counterpart: string | null;
     crop_types: string[] | null;
@@ -137,6 +144,9 @@ function normalizeDataset(raw: unknown): Dataset | null {
         firstString(raw.augmented_counterpart) ??
         (augmentedNumImages != null ? "yes" : "no");
 
+    const location = normalizeLocation(raw.location);
+    const country = normalizeLocation(raw.country);
+
     const mlTask = firstString(
         raw.machine_learning_task,
         raw.ml_task,
@@ -154,7 +164,12 @@ function normalizeDataset(raw: unknown): Dataset | null {
         machine_learning_task: mlTask,
         source: firstString(raw.source),
         agricultural_task: firstString(raw.agricultural_task, raw.ag_task),
-        location: normalizeLocation(raw.location),
+        location,
+        country,
+        display_location: country ?? location,
+        lat_lon: normalizeLocation(raw.lat_lon),
+        imaging_equipment: normalizeLocation(raw.imaging_equipment),
+        collection_period: normalizeLocation(raw.collection_period),
         environment:
             firstString(
                 raw.environment,
@@ -164,7 +179,7 @@ function normalizeDataset(raw: unknown): Dataset | null {
         augmented_counterpart: augmentedCounterpart,
         crop_types:
             toStringArray(raw.crop_types ?? raw.cropType ?? raw.crop_type)
-                ?.map((c) => c.trim())
+                ?.map((c) => c.trim().toLowerCase())
                 .filter((c) => c && !/^\+.*\b(more|others?)\b/i.test(c)) ??
             null,
         sensor_modality:
@@ -225,6 +240,11 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         agricultural_task:
             current.agricultural_task ?? incoming.agricultural_task,
         location: current.location ?? incoming.location,
+        country: current.country ?? incoming.country,
+        display_location: current.display_location ?? incoming.display_location,
+        lat_lon: current.lat_lon ?? incoming.lat_lon,
+        imaging_equipment: current.imaging_equipment ?? incoming.imaging_equipment,
+        collection_period: current.collection_period ?? incoming.collection_period,
         environment: current.environment ?? incoming.environment,
         augmented_counterpart:
             current.augmented_counterpart ?? incoming.augmented_counterpart,
@@ -419,6 +439,9 @@ export function filterDatasets(
             const locationMatches = Array.isArray(d.location)
                 ? d.location.some((entry) => entry.toLowerCase().includes(q))
                 : (d.location?.toLowerCase().includes(q) ?? false);
+            const countryMatches = Array.isArray(d.country)
+                ? d.country.some((entry) => entry.toLowerCase().includes(q))
+                : (d.country?.toLowerCase().includes(q) ?? false);
             const cropMatches =
                 d.crop_types?.some((entry) =>
                     entry.toLowerCase().includes(q),
@@ -430,6 +453,7 @@ export function filterDatasets(
                 d.environment?.toLowerCase().includes(q) ||
                 d.augmented_counterpart?.toLowerCase().includes(q) ||
                 d.platform?.some((p) => p.toLowerCase().includes(q)) ||
+                countryMatches ||
                 locationMatches ||
                 cropMatches
             );
@@ -506,7 +530,7 @@ export function useDatasetOptions(data: Dataset[]) {
                 data.map((d) => d.augmented_counterpart),
             ),
             cropTypes: unique(data.flatMap((d) => d.crop_types ?? [])),
-            locations: unique(data.map((d) => d.location)),
+            locations: unique(data.map((d) => d.display_location)),
             platforms: unique(data.flatMap((d) => d.platform ?? [])),
             realOptions: unique(data.map((d) => d.real_or_synthetic)),
             datasetTypes: unique(data.map((d) => d.dataset_type)),
@@ -552,6 +576,106 @@ export function formatDisplayLocation(
     return Array.isArray(value)
         ? value.map(toTitleCase).join(", ")
         : toTitleCase(value);
+}
+
+// Primary location label used on cards/badges: prefer the structured `country` field,
+// falling back to the free-text `location` field when country wasn't extracted.
+export function formatPrimaryLocation(dataset: Pick<Dataset, 'display_location'>): string | null {
+  if (dataset.display_location == null) return null;
+  const formatted = formatDisplayLocation(dataset.display_location);
+  return formatted === '—' ? null : formatted;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Collapses `country` down to a single name when every entry agrees (handles both the plain
+// string case and an array like ["Bangladesh", "Bangladesh"]); returns null when the dataset
+// spans more than one country, since there's then no single name to drop from the location text.
+function getSingleCountry(country: string | string[] | null): string | null {
+  if (country == null) return null;
+  const list = Array.isArray(country) ? country : [country];
+  const unique = Array.from(new Set(list.map((entry) => entry.trim()).filter(Boolean)));
+  return unique.length === 1 ? unique[0] : null;
+}
+
+function stripTrailingCountry(location: string, country: string): string {
+  const suffix = new RegExp(`\\s*,?\\s*${escapeRegExp(country)}\\s*$`, 'i');
+  const stripped = location.replace(suffix, '').trim();
+  return stripped || location;
+}
+
+// One entry per `location` string, each with the trailing ", <country>" removed when the whole
+// dataset is confined to a single country (redundant once that country is already shown elsewhere).
+export function formatLocationList(dataset: Pick<Dataset, 'location' | 'country'>): string[] | null {
+  const locations = Array.isArray(dataset.location) ? dataset.location : dataset.location ? [dataset.location] : [];
+  if (locations.length === 0) return null;
+
+  const singleCountry = getSingleCountry(dataset.country);
+  if (!singleCountry) return locations;
+
+  return locations.map((entry) => stripTrailingCountry(entry, singleCountry));
+}
+
+// `lat_lon` entries come from source metadata in either decimal ("23.7654, 90.4449") or
+// DMS ("23 46 17.652, 90 22 30.2514") form, optionally with a trailing hemisphere letter.
+function parseCoordPart(part: string): number | null {
+  const trimmed = part.trim();
+
+  const dms = trimmed.match(/^(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s*([NSEW])?$/i);
+  if (dms) {
+    const [, degStr, minStr, secStr, dir] = dms;
+    const deg = Math.abs(Number(degStr));
+    const value = deg + Number(minStr) / 60 + Number(secStr) / 3600;
+    // Compare the raw text rather than the parsed number: Number("-0") < 0 is false in JS,
+    // which would silently drop the sign on values like "-0 28 59" (just south of the equator).
+    const negative = degStr.trim().startsWith('-') || (dir != null && /[SW]/i.test(dir));
+    return Number.isFinite(value) ? (negative ? -value : value) : null;
+  }
+
+  const decimal = trimmed.match(/^(-?\d+(?:\.\d+)?)\s*([NSEW])?$/i);
+  if (decimal) {
+    const [, numStr, dir] = decimal;
+    const value = Number(numStr);
+    if (!Number.isFinite(value)) return null;
+    return dir != null && /[SW]/i.test(dir) ? -Math.abs(value) : value;
+  }
+
+  return null;
+}
+
+function parseLatLon(raw: string): { lat: number; lon: number } | null {
+  const parts = raw.split(',');
+  if (parts.length !== 2) return null;
+  const lat = parseCoordPart(parts[0]);
+  const lon = parseCoordPart(parts[1]);
+  if (lat == null || lon == null) return null;
+  if (Math.abs(lat) > 90 || Math.abs(lon) > 180) return null;
+  return { lat, lon };
+}
+
+function toDMS(value: number, positiveLetter: string, negativeLetter: string): string {
+  const dir = value < 0 ? negativeLetter : positiveLetter;
+  const abs = Math.abs(value);
+  const deg = Math.floor(abs);
+  const minFloat = (abs - deg) * 60;
+  const min = Math.floor(minFloat);
+  const sec = (minFloat - min) * 60;
+  return `${deg}°${min}'${sec.toFixed(1)}"${dir}`;
+}
+
+// Renders each `lat_lon` entry as a readable "12°50'26.2"N, 80°09'12.2"E" string. Entries that
+// don't parse fall back to the raw source text rather than being dropped.
+export function formatCoordinateList(value: string | string[] | null): string[] | null {
+  const entries = Array.isArray(value) ? value : value ? [value] : [];
+  if (entries.length === 0) return null;
+
+  return entries.map((entry) => {
+    const parsed = parseLatLon(entry);
+    if (!parsed) return entry;
+    return `${toDMS(parsed.lat, 'N', 'S')}, ${toDMS(parsed.lon, 'E', 'W')}`;
+  });
 }
 
 export interface DatasetStats {

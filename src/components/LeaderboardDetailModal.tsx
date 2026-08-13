@@ -7,8 +7,25 @@ function toLabel(value: string) {
   return value.replace(/_/g, ' ');
 }
 
+// 1st, 2nd, 3rd, 4th, ..., 11th-13th stay "th" (the exception the mod-10 rule alone gets wrong).
+function ordinal(value: number): string {
+  const rounded = Math.round(value);
+  const mod100 = rounded % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${rounded}th`;
+  switch (rounded % 10) {
+    case 1:
+      return `${rounded}st`;
+    case 2:
+      return `${rounded}nd`;
+    case 3:
+      return `${rounded}rd`;
+    default:
+      return `${rounded}th`;
+  }
+}
+
 function formatPercentile(value: number | null) {
-  return value == null ? null : `${value.toFixed(0)}th pctl`;
+  return value == null ? null : `${ordinal(value)} pctl`;
 }
 
 function formatScore(value: number) {

@@ -58,7 +58,7 @@ function buildDatasetMetadataLookup(...manifests) {
 // rendering of the same files — keep the two in sync if the run schema changes.
 const TASK_METRIC_KEYS = {
   classification: ['f1', 'accuracy', 'top1_accuracy'],
-  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5'],
+  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5', 'f1_at_iou50'],
   segmentation: ['miou', 'iou', 'mean_iou'],
 };
 
@@ -82,16 +82,40 @@ function isMapMetricKey(key) {
   return /^m?ap([_@-]|$)/i.test(key);
 }
 
+// Detection runs that can't produce a confidence-ranked mAP instead report f1/precision/recall
+// "at IoU" (e.g. f1_at_iou50) — same metric families as classification, just suffixed. Matches
+// the bare key too (e.g. "f1") so this subsumes the plain-key case.
+function baseMetricKind(key) {
+  const normalized = key.toLowerCase();
+  if (/^f1([_@-]|$)/.test(normalized)) return 'f1';
+  if (/^(precision|prec)([_@-]|$)/.test(normalized)) return 'precision';
+  if (/^(recall|rec)([_@-]|$)/.test(normalized)) return 'recall';
+  return null;
+}
+
 function computeCategoryScores(metrics) {
-  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
+  let f1 = null;
   let map = null;
+  let precision = null;
+  let recall = null;
   for (const [key, value] of Object.entries(metrics)) {
-    if (isMapMetricKey(key) && isFiniteNumber(value)) {
+    if (!isFiniteNumber(value)) continue;
+    if (isMapMetricKey(key)) {
       map = map == null ? value : Math.max(map, value);
+      continue;
+    }
+    switch (baseMetricKind(key)) {
+      case 'f1':
+        f1 = f1 == null ? value : Math.max(f1, value);
+        break;
+      case 'precision':
+        precision = precision == null ? value : Math.max(precision, value);
+        break;
+      case 'recall':
+        recall = recall == null ? value : Math.max(recall, value);
+        break;
     }
   }
-  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
-  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
   return { f1, map, precision, recall };
 }
 
@@ -135,6 +159,7 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     model: entry.model.trim(),
     score: entry.metrics[metricKey],
     categoryScores: computeCategoryScores(entry.metrics),
+    benchmarkId: isFiniteNumber(entry.benchmark_id) ? entry.benchmark_id : null,
     variant,
     date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
     submitted_by: null,
@@ -252,6 +277,7 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
         scores: entry.categoryScores,
         crop_types: meta.crop_types,
         machine_learning_task: meta.machine_learning_task,
+        benchmarkId: entry.benchmarkId ?? null,
         variant: entry.variant === 'zero-shot' || entry.variant === 'fine-tuned' ? entry.variant : null,
         optimized: Boolean(entry.optimized),
         platform: typeof entry.platform === 'string' && entry.platform.trim() ? entry.platform.trim() : null,

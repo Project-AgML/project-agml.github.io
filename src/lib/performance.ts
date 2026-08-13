@@ -3,6 +3,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export interface PerformanceEntry {
   rank: number | null;
+  benchmarkId: number | null;
   model: string;
   score: number | null;
   submitted_by: string | null;
@@ -75,6 +76,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
 
   return {
     rank: toNumber(raw.rank),
+    benchmarkId: toNumber(raw.benchmark_id),
     model,
     score: toNumber(raw.score ?? raw.value ?? raw.metric_value),
     submitted_by: toText(raw.submitted_by ?? raw.submittedBy ?? raw.author),
@@ -100,7 +102,7 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
 // global.json from the same files at build time — keep the two in sync if the run schema changes.
 const TASK_METRIC_KEYS: Record<string, string[]> = {
   classification: ['f1', 'accuracy', 'top1_accuracy'],
-  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5'],
+  detection: ['map', 'map_50', 'map50', 'mAP', 'mAP@0.5', 'f1_at_iou50'],
   segmentation: ['miou', 'iou', 'mean_iou'],
 };
 
@@ -138,6 +140,17 @@ function isMapMetricKey(key: string): boolean {
   return /^m?ap([_@-]|$)/i.test(key);
 }
 
+// Detection runs that can't produce a confidence-ranked mAP instead report f1/precision/recall
+// "at IoU" (e.g. f1_at_iou50) — same metric families as classification, just suffixed. Matches
+// the bare key too (e.g. "f1") so this subsumes the plain-key case.
+function baseMetricKind(key: string): 'f1' | 'precision' | 'recall' | null {
+  const normalized = key.toLowerCase();
+  if (/^f1([_@-]|$)/.test(normalized)) return 'f1';
+  if (/^(precision|prec)([_@-]|$)/.test(normalized)) return 'precision';
+  if (/^(recall|rec)([_@-]|$)/.test(normalized)) return 'recall';
+  return null;
+}
+
 export interface CategoryScores {
   f1: number | null;
   map: number | null;
@@ -151,15 +164,28 @@ export interface CategoryScores {
 // and recall are ranked/percentiled independently, not averaged into one blended score.
 // Mirrored in scripts/generate-datasets.mjs — keep in sync.
 function computeCategoryScores(metrics: Record<string, unknown>): CategoryScores {
-  const f1 = isFiniteNumber(metrics.f1) ? metrics.f1 : null;
+  let f1: number | null = null;
   let map: number | null = null;
+  let precision: number | null = null;
+  let recall: number | null = null;
   for (const [key, value] of Object.entries(metrics)) {
-    if (isMapMetricKey(key) && isFiniteNumber(value)) {
+    if (!isFiniteNumber(value)) continue;
+    if (isMapMetricKey(key)) {
       map = map == null ? value : Math.max(map, value);
+      continue;
+    }
+    switch (baseMetricKind(key)) {
+      case 'f1':
+        f1 = f1 == null ? value : Math.max(f1, value);
+        break;
+      case 'precision':
+        precision = precision == null ? value : Math.max(precision, value);
+        break;
+      case 'recall':
+        recall = recall == null ? value : Math.max(recall, value);
+        break;
     }
   }
-  const precision = isFiniteNumber(metrics.precision) ? metrics.precision : null;
-  const recall = isFiniteNumber(metrics.recall) ? metrics.recall : null;
   return { f1, map, precision, recall };
 }
 
@@ -178,10 +204,27 @@ function formatMapMetricLabel(key: string): string {
   return `mAP@${lo}`;
 }
 
+const BASE_METRIC_LABELS: Record<'f1' | 'precision' | 'recall', string> = {
+  f1: 'F1',
+  precision: 'Precision',
+  recall: 'Recall',
+};
+
+// "iou50" -> ".5", "iou75" -> ".75" — a bare fraction (no "IoU" text, no leading 0), e.g.
+// "Precision@.5", matching how mAP thresholds are conventionally written in short form.
+function formatIouFraction(rawValue: number): string {
+  return (rawValue / 100).toFixed(2).replace(/0$/, '').replace(/^0/, '');
+}
+
 function labelForMetricKey(key: string): string | null {
   const normalized = key.toLowerCase();
   if (isMapMetricKey(normalized)) return formatMapMetricLabel(normalized);
-  return NAMED_METRIC_LABELS[normalized] ?? null;
+  if (NAMED_METRIC_LABELS[normalized]) return NAMED_METRIC_LABELS[normalized];
+  const kind = baseMetricKind(normalized);
+  if (!kind) return null;
+  const iouMatch = normalized.match(/iou[_@]?(\d{2,3})/);
+  if (iouMatch) return `${BASE_METRIC_LABELS[kind]}@${formatIouFraction(Number(iouMatch[1]))}`;
+  return BASE_METRIC_LABELS[kind];
 }
 
 function collectMetrics(metrics: Record<string, unknown>): MetricValue[] {
@@ -195,13 +238,18 @@ function collectMetrics(metrics: Record<string, unknown>): MetricValue[] {
   return results;
 }
 
+// entry.notes carries the run's full methodology text (prompt used, parsing rules, metric
+// definitions, etc.) straight from the benchmark script — surfaced in full below the generated
+// summary line rather than discarded, since it's the only record of how the run was actually done.
 function buildRunNote(entry: Record<string, unknown>): string | null {
   const parts: string[] = ['Zero-shot'];
   if (isFiniteNumber(entry.num_samples)) parts.push(`evaluated on ${entry.num_samples} images`);
-  return parts.join(' · ');
+  const summary = parts.join(' · ');
+  const detail = toText(entry.notes);
+  return detail ? `${summary}\n\n${detail}` : summary;
 }
 
-function buildFinetuneNote(finetune: unknown): string | null {
+function buildFinetuneNote(finetune: unknown, entryNotes?: unknown): string | null {
   if (!isRecord(finetune)) return null;
   const parts: string[] = ['Fine-tuned'];
   if (isFiniteNumber(finetune.train_samples)) parts.push(`trained on ${finetune.train_samples} images from this dataset`);
@@ -211,7 +259,9 @@ function buildFinetuneNote(finetune: unknown): string | null {
   if (isFiniteNumber(finetune.weight_decay)) parts.push(`weight decay=${finetune.weight_decay}`);
   if (isFiniteNumber(finetune.split_seed)) parts.push(`seed=${finetune.split_seed}`);
   if (isFiniteNumber(finetune.train_ratio)) parts.push(`train ratio=${finetune.train_ratio}`);
-  return parts.join(' · ');
+  const summary = parts.join(' · ');
+  const detail = toText(entryNotes);
+  return detail ? `${summary}\n\n${detail}` : summary;
 }
 
 function computeTrainPercentage(entry: Record<string, unknown>, finetune: unknown): number | null {
@@ -257,11 +307,12 @@ function makeLeaderboardRow(
   return {
     model: (entry.model as string).trim(),
     score: metrics[metricKey] as number,
+    benchmarkId: isFiniteNumber(entry.benchmark_id) ? entry.benchmark_id : null,
     variant,
     date: toText(entry.timestamp)?.slice(0, 10) ?? null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune, entry.notes) : buildRunNote(entry),
     optimized: isOptimized(entry.optimized) || (isRecord(finetune) && isOptimized(finetune.optimized)),
     splitBreakdown: buildSplitBreakdown(entry, finetune),
     trainPercentage: computeTrainPercentage(entry, finetune),
@@ -355,6 +406,7 @@ export interface GlobalPerformanceRecord {
   scores: CategoryScores;
   crop_types: string[] | null;
   machine_learning_task: string | null;
+  benchmarkId: number | null;
   variant: 'zero-shot' | 'fine-tuned' | null;
   optimized: boolean;
   platform: string | null;
@@ -441,6 +493,7 @@ function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord
     scores: normalizeCategoryScores(raw.scores),
     crop_types: cropTypes?.length ? cropTypes : null,
     machine_learning_task: toText(raw.machine_learning_task),
+    benchmarkId: toNumber(raw.benchmarkId),
     variant,
     optimized: Boolean(raw.optimized),
     platform: toText(raw.platform),
@@ -468,10 +521,20 @@ export function computeGlobalLeaderboard(
     tuned?: ('tuned' | 'not-tuned')[];
     optimizedValues?: ('optimized' | 'not-optimized')[];
     platforms?: string[];
+    datasets?: string[];
     minAppearances?: number;
   } = {}
 ): GlobalLeaderboardEntry[] {
-  const { cropTypes = [], mlTasks = [], resultTypes = [], tuned = [], optimizedValues = [], platforms = [], minAppearances = 3 } = options;
+  const {
+    cropTypes = [],
+    mlTasks = [],
+    resultTypes = [],
+    tuned = [],
+    optimizedValues = [],
+    platforms = [],
+    datasets = [],
+    minAppearances = 3,
+  } = options;
   const stats = new Map<
     string,
     {
@@ -504,6 +567,7 @@ export function computeGlobalLeaderboard(
       if (!optimizedValues.includes(optimizedKey)) continue;
     }
     if (platforms.length && !(record.platform && platforms.includes(record.platform))) continue;
+    if (datasets.length && !datasets.includes(record.dataset)) continue;
 
     const key = `${record.model}|||${record.machine_learning_task ?? ''}`;
     const entryStats =

@@ -153,23 +153,64 @@
   color: var(--agml-muted);
 }
 
+.benchmarkHeader {
+  margin-bottom: 1.5rem;
+}
+
+.tableHeading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--agml-text);
+  margin: 0;
+}
+
+.tableSection {
+  margin-bottom: 2rem;
+}
+
+.tableSection:last-child {
+  margin-bottom: 0;
+}
+
 .tableWrap {
   border: 1px solid var(--agml-border);
   border-radius: 8px;
   overflow-x: auto;
 }
 
+.tableCaption {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--agml-border);
+  background: var(--agml-surface-soft);
+  border-radius: 8px 8px 0 0;
+}
+
+.sectionHeading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--agml-text);
+  margin: 0;
+}
+
+.sectionDescription {
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+  margin: 0.35rem 0 0;
+}
+
 .leaderboardTable {
   width: 100%;
-  min-width: 980px;
+  min-width: 760px;
   font-size: 0.85rem;
 }
 
 .tableRow {
   display: grid;
   grid-template-columns:
-    minmax(100px, 1.1fr) minmax(200px, 2.4fr) minmax(120px, 1.1fr) minmax(120px, 1.1fr)
-    minmax(120px, 1.1fr) minmax(120px, 1.1fr) minmax(90px, 0.8fr) minmax(78px, 0.4fr);
+    minmax(200px, 2.4fr) minmax(120px, 1.1fr) minmax(120px, 1.1fr)
+    minmax(120px, 1.1fr) minmax(90px, 0.8fr) minmax(78px, 0.4fr);
   gap: 0.6rem;
   align-items: center;
 }
@@ -233,35 +274,6 @@
   text-decoration: underline dashed var(--agml-muted);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-}
-
-.taskBadge {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.68rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.badgeClassification {
-  background: var(--agml-badge-classification-bg);
-  color: var(--agml-badge-classification-fg);
-}
-
-.badgeDetection {
-  background: var(--agml-badge-detection-bg);
-  color: var(--agml-badge-detection-fg);
-}
-
-.badgeSegmentation {
-  background: var(--agml-badge-segmentation-bg);
-  color: var(--agml-badge-segmentation-fg);
-}
-
-.badgeOther {
-  background: var(--agml-badge-other-bg);
-  color: var(--agml-badge-other-fg);
 }
 
 .metricCell {

@@ -1,0 +1,29 @@
+[
+  {
+    "benchmark_id": 1,
+    "timestamp": "2026-08-13T01:29:09.792568+00:00",
+    "dataset": "Project-AgML/soybean_damage_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 5513,
+    "device": "cuda",
+    "inference_time_seconds": 554.27,
+    "inference_time_seconds_per_image": 0.100538,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.352257,
+      "precision": 0.357903,
+      "recall": 0.418616,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Broken, Immature, Intact, Skin-damaged, Spotted. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Broken, Immature, Intact, Skin-damaged, Spotted), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics)."
+  }
+]
