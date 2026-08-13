@@ -27,7 +27,7 @@ type AxisDoc = {
 	axisFormula: string;
 };
 
-const TASK_TYPES = ['Image Classification', 'Object Detection', 'Image Segmentation'] as const;
+const TASK_TYPES = ['Image Classification', 'Object Detection', 'Image Segmentation', 'Image Text To Text'] as const;
 type TaskType = (typeof TASK_TYPES)[number];
 
 const AXIS_WEIGHTS: { label: string; pct: string; key: AxisKey }[] = [
