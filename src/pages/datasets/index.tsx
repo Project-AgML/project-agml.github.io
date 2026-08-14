@@ -4,7 +4,8 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { computeDatasetStats, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
+import { computeDatasetStats, datasetGroupKey, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
+import { toDisplayLabel } from '../../lib/labelOverrides';
 import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
 type FilterKind = 'checkbox' | 'dropdown';
@@ -24,14 +25,14 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     label: 'CV Task',
     field: 'machine_learning_task',
     kind: 'checkbox',
-    formatOption: (value) => value.replace(/_/g, ' '),
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'ag_task',
     label: 'Agricultural Task',
     field: 'agricultural_task',
     kind: 'dropdown',
-    formatOption: (value) => value.replace(/_/g, ' '),
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'crop_types',
@@ -39,7 +40,7 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     field: 'crop_types',
     kind: 'dropdown',
     mode: 'containsAny',
-    formatOption: (value) => value.replace(/_/g, ' '),
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'location',
@@ -47,28 +48,37 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     field: 'display_location',
     kind: 'dropdown',
     mode: 'containsAny',
-    formatOption: (value) => value,
-  },
-  {
-    key: 'environment',
-    label: 'Environment',
-    field: 'environment',
-    kind: 'checkbox',
-    formatOption: (value) => value.charAt(0).toUpperCase() + value.slice(1),
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'platform',
     label: 'Platform',
     field: 'platform',
     kind: 'dropdown',
-    formatOption: (value) => value,
+    mode: 'containsAny',
+    formatOption: (value) => toDisplayLabel(value),
+  },
+  {
+    key: 'qa_type',
+    label: 'QA Type',
+    field: 'qa_type',
+    kind: 'dropdown',
+    mode: 'containsAny',
+    formatOption: (value) => toDisplayLabel(value),
+  },
+  {
+    key: 'environment',
+    label: 'Environment',
+    field: 'environment',
+    kind: 'checkbox',
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'real',
     label: 'Data Type',
     field: 'real_or_synthetic',
     kind: 'checkbox',
-    formatOption: (value) => value,
+    formatOption: (value) => toDisplayLabel(value),
   },
   {
     key: 'augmented_counterpart',
@@ -76,7 +86,7 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     field: 'augmented_counterpart',
     kind: 'checkbox',
     formatOption: (value) => (value === 'yes' ? 'Yes' : 'No'),
-  },
+  }
 ];
 
 type FilterKey = (typeof DATASET_FILTERS)[number]['key'];
@@ -118,6 +128,7 @@ function formatBytesDecimal(bytes: number | null | undefined) {
 
 function taskBadgeClass(task: string | null): string {
   if (!task) return styles.badgeOther;
+  if (task.includes('image-text') || task.includes('text-to-text')) return styles.badgeVlm;
   if (task.includes('classif')) return styles.badgeClassification;
   if (task.includes('detect')) return styles.badgeDetection;
   if (task.includes('segment')) return styles.badgeSegmentation;
@@ -187,13 +198,19 @@ function DatasetCard({
     machine_learning_task,
     agricultural_task,
     num_images,
+    num_rows,
     zip_size_bytes,
     augmented_num_images,
     augmented_zip_size_bytes,
+    dataset_type,
   } = dataset;
   const fileSize = formatBytesDecimal(zip_size_bytes);
   const augmentedFileSize = formatBytesDecimal(augmented_zip_size_bytes);
   const hasAugmented = augmented_num_images != null;
+  // VLM datasets are row-based (image/text pairs, conversations) rather than image-count based.
+  const isVlm = dataset_type === 'vlm';
+  const countLabel = isVlm ? 'rows' : 'images';
+  const countValue = isVlm ? num_rows : num_images;
   const primaryLocation = formatPrimaryLocation(dataset);
 
   return (
@@ -210,15 +227,15 @@ function DatasetCard({
         <div className={styles.cardTags}>
           {machine_learning_task && (
             <span className={`${styles.taskBadge} ${taskBadgeClass(machine_learning_task)}`}>
-              {toLabel(machine_learning_task)}
+              {toDisplayLabel(machine_learning_task)}
             </span>
           )}
-          {agricultural_task && <span className={styles.tag}>{toLabel(agricultural_task)}</span>}
+          {agricultural_task && <span className={styles.tag}>{toDisplayLabel(agricultural_task)}</span>}
           {primaryLocation && <span className={styles.tag}>{primaryLocation}</span>}
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.cardFooterRow}>
-            <span>{formatImageCount(num_images)} images</span>
+            <span>{formatImageCount(countValue)} {countLabel}</span>
             {fileSize && <span>{fileSize}</span>}
           </div>
           {hasAugmented && (
@@ -326,7 +343,7 @@ export default function DatasetBrowserPage() {
                     const fieldValue = dataset[filter.field] as string | string[] | null | undefined;
                     return Array.isArray(fieldValue) ? fieldValue.includes(value) : fieldValue === value;
                   })
-                  .map((dataset) => dataset.parent_dataset ?? dataset.name)
+                  .map(datasetGroupKey)
               ).size,
             ])
           ),
@@ -425,7 +442,7 @@ export default function DatasetBrowserPage() {
   const displayed = useMemo(() => filtered.slice(0, showCount), [filtered, showCount]);
   const hasMore = filtered.length > showCount;
   const distinctDatasetCount = useMemo(
-    () => new Set(filtered.map((dataset) => dataset.parent_dataset ?? dataset.name)).size,
+    () => new Set(filtered.map(datasetGroupKey)).size,
     [filtered]
   );
   const selectedDataset = useMemo(

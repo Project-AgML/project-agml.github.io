@@ -62,7 +62,7 @@ export function buildIndexRow(name: string, dataset: Dataset | undefined) {
     location: toLocationArray(dataset?.location),
     environment: dataset?.environment ? humanize(dataset.environment) : '',
     sensor_modality: dataset?.sensor_modality ? humanize(dataset.sensor_modality) : '',
-    platform: dataset?.platform ? humanize(dataset.platform) : '',
+    platform: dataset?.platform?.length ? humanize(dataset.platform.join(', ')) : '',
     // Truncated to match scripts/generate-embeddings.mjs's buildEmbeddingText(), which truncates
     // `classes` to the same length for the corpus-side embedding text. This only lines up because
     // both sides join array-valued `classes` with ', ' before truncating — `dataset.classes` here

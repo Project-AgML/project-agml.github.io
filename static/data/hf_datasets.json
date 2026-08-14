@@ -11129,5 +11129,436 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/three_season_weed_detection",
     "examples_image_url": "/img/agml/sample_images/three_season_weed_detection_sample.webp"
+  },
+  {
+    "name": "AgroMind",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "judgement",
+      "counting",
+      "multiple_choice_text",
+      "multiple_choice_image",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Spatial Perception",
+      "Object Understanding",
+      "Scene Understanding",
+      "Scene Reasoning"
+    ],
+    "num_task_types": 13,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "maize",
+      "oil palm",
+      "apple",
+      "almond",
+      "mango",
+      "rice",
+      "citrus",
+      "+multiple other crops"
+    ],
+    "sensor_modality": [
+      "rgb",
+      "nir multispectral"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "uav",
+      "satellite",
+      "ground camera"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 19615,
+    "augmented_num_images": null,
+    "num_rows": 27247,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2505.12207",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Li, Qingmei; Zhang, Yang; Mai, Zurong; Chen, Yuhang; Lou, Shuohong; Huang, Henglian; Zhang, Jiarui; Zhang, Zhiwei; Wen, Yibin; Li, Weijia; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind\", arXiv, arXiv:2505.12207",
+    "parent_dataset": "AgroMind/AgroMind",
+    "zip_size_bytes": 8220000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroMind",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 9,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "ACFR Orchard Fruit Dataset",
+        "2018 AI Challenge Dataset",
+        "IP102 Dataset",
+        "Agriculture Vision Challenge",
+        "OilPalmUAV Dataset",
+        "PhenoBench Dataset",
+        "OAM-TCD Dataset",
+        "Maize Tassel Identification",
+        "7-Provinces Ground Dataset"
+      ]
+    }
+  },
+  {
+    "name": "AgroBench",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Disease Identification",
+      "Disease Management",
+      "Pest Identification",
+      "Weed Identification",
+      "Crop Management",
+      "Machine Usage QA",
+      "Traditional Management"
+    ],
+    "num_task_types": 7,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "apple",
+      "maize",
+      "potato",
+      "rice",
+      "banana",
+      "grape",
+      "pepper",
+      "onion",
+      "wheat",
+      "+193 more"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 3745,
+    "augmented_num_images": null,
+    "num_rows": 4342,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2507.20519",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Shinoda, Risa; Inoue, Nakamasa; Kataoka, Hirokatsu; Onishi, Masaki; Ushiku, Yoshitaka (2025), \"AgroBench: Vision-Language Model Benchmark in Agriculture\", arXiv, arXiv:2507.20519",
+    "parent_dataset": "risashinoda/AgroBench",
+    "zip_size_bytes": 2118998617,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroBench",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 4,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "Perennial Plants Detection",
+        "CottonWeedDet3",
+        "Open Plant Phenotype Database of Common Weeds in Denmark",
+        "CropAndWeed Dataset"
+      ]
+    }
+  },
+  {
+    "name": "AgroCoT",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "judgement",
+      "counting",
+      "multiple_choice_text",
+      "multiple_choice_image",
+      "open_ended",
+      "long_form_QA"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Object Detection",
+      "Quantitative Analysis",
+      "Disease Monitoring",
+      "Spatial Understanding",
+      "Environmental Management"
+    ],
+    "num_task_types": 15,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "mixed_multiple_sources"
+    ],
+    "sensor_modality": [
+      "rgb",
+      "multispectral"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "uav",
+      "satellite",
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 4628,
+    "augmented_num_images": null,
+    "num_rows": 4759,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2511.23253",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Wen, Yibin; Li, Qingmei; Ye, Zi; Zhang, Jiarui; Fan, Xiaoya; Mai, Zurong; Wu, Jing; Lou, Shuohong; Chen, Yuhang; Huang, Henglian; Zhang, Yang; Gu, Defeng; Zhao, Lingyuan; Lu, Yutong; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture\", arXiv, arXiv:2511.23253",
+    "parent_dataset": "AgroCoT/AgroCoT",
+    "zip_size_bytes": 5420000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroCoT",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 9,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "OilPalmUAV",
+        "PhenoBench",
+        "Agriculture-Vision Challenge (AVC)",
+        "IP102",
+        "CropHarvest",
+        "CDDM",
+        "AGMMU",
+        "AgroBench",
+        "Proprietary VQA dataset"
+      ]
+    }
+  },
+  {
+    "name": "WisWheat",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text",
+      "counting",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Weed Detection",
+      "Yellow Rust",
+      "Stem Rust",
+      "Leaf Rust",
+      "Mildew",
+      "Septoria",
+      "Srought Abiotic Stress",
+      "Healthy Wheat",
+      "Growth Stage Diagnosis",
+      "Growth Stage Classification VQA",
+      "Organ Percentage Estimation",
+      "Rust Percentage Estimation",
+      "Spike Counting"
+    ],
+    "num_task_types": 13,
+    "location": "Australia",
+    "environment": "field",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": null,
+    "augmented_num_images": null,
+    "num_rows": 11265,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2506.06084",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Yuan, Bowen; Song, Selena; Fernandez, Javier; Luo, Yadan; Baktashmotlagh, Mahsa; Wang, Zijian (2025), \"WisWheat: A Three-Tiered Vision-Language Dataset for Wheat Management\", arXiv, arXiv:2506.06084",
+    "parent_dataset": null,
+    "zip_size_bytes": 13300000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WisWheat",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 7,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "WFD",
+        "Minimal Dataset [Drought]",
+        "GWHD 2021",
+        "GWFSS",
+        "Radish Weed Dataset",
+        "Cobbity Wheat",
+        "Rust Segmentation Dataset"
+      ]
+    }
+  },
+  {
+    "name": "Agri-LLaVA",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Feature Description",
+      "Category Identification",
+      "Symptom Identification"
+    ],
+    "num_task_types": 2,
+    "location": "multinational",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "orange",
+      "grape",
+      "apple",
+      "corn",
+      "vitis",
+      "rice",
+      "soybean",
+      "pepper",
+      "mango",
+      "+24 more"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": 391785,
+    "augmented_num_images": null,
+    "num_rows": 391785,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2412.02158",
+    "examples_image_url": null,
+    "license": "other",
+    "citation": "Wang, Liqiong; Jin, Teng; Yang, Jinyu; Leonardis, Ales; Wang, Fangyi; Zheng, Feng (2024), \"Agri-LLaVA: Knowledge-Infused Large Multimodal Assistant on Agricultural Pests and Diseases\", arXiv, arXiv:2412.02158",
+    "parent_dataset": "Agri-LLaVA-Anonymous/Agricultural_pests_and_diseases_feature_alignment_data",
+    "zip_size_bytes": 66500000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Agri-LLaVA_Agricultural_Pests_And_Diseases_Feature_Alignment_Dataset",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 16,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "AppleLeaf9",
+        "LWDCD",
+        "PlantVillage-Dataset-master",
+        "Rice Leaf Disease Image samples",
+        "Chinese Academy of Sciences Disease Sample Data",
+        "IP102",
+        "Images of Apple Diseases and Pests",
+        "Crop Pest and Disease Detection",
+        "IDADP-grape Disease Identification",
+        "OLID I",
+        "Plant Disease Expert",
+        "RiceLeafs",
+        "Cabbage",
+        "Pepper Pests and Diseases",
+        "Wheat Disease Classification",
+        "Wheat Leaf Dataset"
+      ]
+    }
+  },
+  {
+    "name": "CDDM",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Disease Diagnosis",
+      "Disease Knowledge QA"
+    ],
+    "num_task_types": 2,
+    "location": "unspecified",
+    "environment": "mixed",
+    "crop_types": [
+      "tomato",
+      "grape",
+      "potato",
+      "apple",
+      "wheat",
+      "bell pepper",
+      "rice",
+      "corn",
+      "soybean",
+      "orange",
+      "cherry",
+      "blueberry",
+      "strawberry",
+      "pumpkin",
+      "peach"
+    ],
+    "sensor_modality": [
+      "rgb"
+    ],
+    "real_or_synthetic": "real",
+    "platform": [
+      "ground"
+    ],
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": null,
+    "augmented_num_images": null,
+    "num_rows": 145261,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2503.06973",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Liu, Xiang; Liu, Zhaoxiang; Hu, Huan; Chen, Zezhou; Wang, Kohou; Wang, Kai; Lian, Shiguo (2025), \"A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis\", arXiv, arXiv:2503.06973",
+    "parent_dataset": "https://github.com/UnicomAI/UnicomBenchmark/tree/main/CDDMBench",
+    "zip_size_bytes": 3070000000,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CDDM",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 2,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "Web Data (Kaggle + web-crawled)",
+        "Private Data (field surveys)"
+      ]
+    }
   }
 ]

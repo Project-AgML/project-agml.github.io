@@ -30,7 +30,7 @@ describe('buildIndexRow', () => {
     crop_types: ['corn', 'soybean'],
     sensor_modality: 'rgb',
     real_or_synthetic: 'real',
-    platform: 'drone',
+    platform: ['drone'],
     input_data_format: null,
     annotation_format: null,
     num_images: 100,
@@ -43,6 +43,13 @@ describe('buildIndexRow', () => {
     examples_image_url: null,
     license: null,
     citation: null,
+    dataset_type: 'vision',
+    qa_type: null,
+    task_dimensions: null,
+    num_task_types: null,
+    conversation_format: null,
+    num_rows: null,
+    source_datasets: null,
   };
 
   test('keeps `name` exact but humanizes `nameText` for BM25 recall', () => {

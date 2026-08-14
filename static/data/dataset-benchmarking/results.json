@@ -1,0 +1,539 @@
+{
+    "watermelon_disease_classification": {
+        "dataset": "Project-AgML/watermelon_disease_classification",
+        "date": "2026-08-13",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98,
+            "backbone": "resnet18",
+            "cartography_epochs": 30,
+            "cartography_lr": 0.001,
+            "cv_folds": 5
+        },
+        "phases_completed": [
+            1,
+            2,
+            3
+        ],
+        "metrics": {
+            "class_imbalance": {
+                "counts": {
+                    "Anthracnose": 109,
+                    "Downy_Mildew": 266,
+                    "Healthy": 143,
+                    "Mosaic_Virus": 290
+                },
+                "imbalance_ratio": 2.6606,
+                "normalized_entropy": 0.9452,
+                "most_frequent_class": "Mosaic_Virus",
+                "least_frequent_class": "Anthracnose",
+                "total_train_examples": 808
+            },
+            "exact_duplicate": {
+                "total_images": 1155,
+                "exact_duplicate_count": 0,
+                "exact_duplicate_rate": 0.0,
+                "duplicate_groups": 0,
+                "cross_split_duplicates": 0
+            },
+            "resolution_consistency": {
+                "total_images": 1155,
+                "width": {
+                    "mean": 3024,
+                    "std": 0.0,
+                    "min": 3024,
+                    "max": 3024
+                },
+                "height": {
+                    "mean": 3091.2,
+                    "std": 251.55,
+                    "min": 3024,
+                    "max": 4032
+                },
+                "aspect_ratio": {
+                    "mean": 0.98,
+                    "std": 0.06,
+                    "min": 0.75,
+                    "max": 1.0
+                },
+                "area_cv": 0.0814,
+                "mode_distribution": {
+                    "RGB": 1155
+                }
+            },
+            "metadata_coverage": {
+                "skipped": true,
+                "reason": "No metadata columns detected in dataset schema."
+            },
+            "near_duplicate": {
+                "total_images": 1155,
+                "embed_model": "facebook/dinov2-base",
+                "threshold": 0.98,
+                "near_duplicate_count": 46,
+                "near_duplicate_rate": 0.0398,
+                "near_duplicate_groups": 22,
+                "cross_split_near_duplicates": 27,
+                "faiss_index_type": "IndexFlatIP"
+            },
+            "feature_separability": {
+                "embed_model": "facebook/dinov2-base",
+                "n_total": 1155,
+                "n_silhouette_samples": 1155,
+                "silhouette_score": 0.2629,
+                "silhouette_interpretation": "moderate separation",
+                "davies_bouldin_index": 1.9661,
+                "davies_bouldin_interpretation": "some overlap between clusters",
+                "per_class_silhouette": {
+                    "Anthracnose": 0.6231,
+                    "Downy_Mildew": 0.4447,
+                    "Healthy": 0.6217,
+                    "Mosaic_Virus": -0.2152
+                }
+            },
+            "intra_class_diversity": {
+                "embed_model": "facebook/dinov2-base",
+                "per_class_diversity": {
+                    "Anthracnose": 0.5802,
+                    "Downy_Mildew": 0.3971,
+                    "Healthy": 0.3354,
+                    "Mosaic_Virus": 0.5747
+                },
+                "mean_diversity": 0.4718,
+                "min_diversity_class": "Healthy",
+                "max_diversity_class": "Anthracnose"
+            },
+            "dataset_cartography": {
+                "n_easy": 750,
+                "n_ambiguous": 58,
+                "n_hard": 0,
+                "pct_easy": 92.82,
+                "pct_ambiguous": 7.18,
+                "pct_hard": 0.0,
+                "mean_confidence": 0.9938,
+                "mean_variability": 0.0243,
+                "easy_threshold": 0.7,
+                "hard_threshold": 0.3,
+                "variability_threshold": 0.1,
+                "n_epochs": 30
+            },
+            "class_confusability": {
+                "accuracy": 1.0,
+                "per_class_accuracy": {
+                    "Anthracnose": 1.0,
+                    "Downy_Mildew": 1.0,
+                    "Healthy": 1.0,
+                    "Mosaic_Virus": 1.0
+                },
+                "confusion_matrix": [
+                    [1.0, 0.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 1.0]
+                ],
+                "top_confused_pairs": [],
+                "n_top_pairs": 0,
+                "n_test_samples": 174
+            },
+            "label_noise": {
+                "estimated_noise_rate": 0.0,
+                "n_noisy_samples": 0,
+                "n_total_samples": 1155,
+                "flagged_orig_indices": [],
+                "per_class_noise_counts": {
+                    "Anthracnose": 0,
+                    "Downy_Mildew": 0,
+                    "Healthy": 0,
+                    "Mosaic_Virus": 0
+                },
+                "cv_folds": 5
+            }
+        }
+    },
+    "rice_variety_classification_bangladesh": {
+        "dataset": "Project-AgML/rice_variety_classification_bangladesh",
+        "date": "2026-08-03",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98
+        },
+        "phases_completed": [1, 2],
+        "metrics": {
+            "class_imbalance": {
+                "counts": {
+                    "BD30": 350,
+                    "BD33": 350,
+                    "BD39": 350,
+                    "BD49": 350,
+                    "BD51": 350,
+                    "BD52": 350,
+                    "BD56": 350,
+                    "BD57": 350,
+                    "BD70": 350,
+                    "BD72": 350,
+                    "BD75": 350,
+                    "BD76": 350,
+                    "BD79": 350,
+                    "BD85": 350,
+                    "BD87": 350,
+                    "BD91": 350,
+                    "BD93": 350,
+                    "BD95": 350,
+                    "BR22": 350,
+                    "BR23": 350,
+                    "BRRI102": 350,
+                    "BRRI67": 350,
+                    "BRRI74": 350,
+                    "Binadhan10": 350,
+                    "Binadhan11": 350,
+                    "Binadhan12": 350,
+                    "Binadhan14": 350,
+                    "Binadhan16": 350,
+                    "Binadhan17": 350,
+                    "Binadhan19": 350,
+                    "Binadhan20": 350,
+                    "Binadhan21": 350,
+                    "Binadhan23": 350,
+                    "Binadhan24": 350,
+                    "Binadhan25": 349,
+                    "Binadhan26": 350,
+                    "Binadhan7": 350,
+                    "Binadhan8": 350
+                },
+                "imbalance_ratio": 1.0029,
+                "normalized_entropy": 1.0,
+                "most_frequent_class": "BD30",
+                "least_frequent_class": "Binadhan25",
+                "total_train_examples": 13299
+            },
+            "exact_duplicate": {
+                "total_images": 19000,
+                "exact_duplicate_count": 0,
+                "exact_duplicate_rate": 0.0,
+                "duplicate_groups": 0,
+                "cross_split_duplicates": 0
+            },
+            "resolution_consistency": {
+                "total_images": 19000,
+                "width": {
+                    "mean": 640,
+                    "std": 0.0,
+                    "min": 640,
+                    "max": 640
+                },
+                "height": {
+                    "mean": 480,
+                    "std": 0.0,
+                    "min": 480,
+                    "max": 480
+                },
+                "aspect_ratio": {
+                    "mean": 1.33,
+                    "std": 0.0,
+                    "min": 1.3333333333333333,
+                    "max": 1.3333333333333333
+                },
+                "area_cv": 0.0,
+                "mode_distribution": {
+                    "RGBA": 7500,
+                    "RGB": 11500
+                }
+            },
+            "metadata_coverage": {
+                "skipped": true,
+                "reason": "No metadata columns detected in dataset schema."
+            },
+            "near_duplicate": {
+                "total_images": 19000,
+                "embed_model": "facebook/dinov2-base",
+                "threshold": 0.98,
+                "near_duplicate_count": 36,
+                "near_duplicate_rate": 0.0019,
+                "near_duplicate_groups": 18,
+                "cross_split_near_duplicates": 20,
+                "faiss_index_type": "IndexFlatIP"
+            },
+            "feature_separability": {
+                "embed_model": "facebook/dinov2-base",
+                "n_total": 19000,
+                "n_silhouette_samples": 9994,
+                "silhouette_score": -0.0172,
+                "silhouette_interpretation": "overlapping or no separation",
+                "davies_bouldin_index": 6.277,
+                "davies_bouldin_interpretation": "high overlap — classes not well-separated",
+                "per_class_silhouette": {
+                    "BD30": -0.0048,
+                    "BD33": -0.0348,
+                    "BD39": 0.0449,
+                    "BD49": -0.0861,
+                    "BD51": -0.0316,
+                    "BD52": -0.0291,
+                    "BD56": -0.0434,
+                    "BD57": -0.0479,
+                    "BD70": -0.0623,
+                    "BD72": 0.0167,
+                    "BD75": -0.0805,
+                    "BD76": 0.0543,
+                    "BD79": -0.0197,
+                    "BD85": -0.1005,
+                    "BD87": 0.0829,
+                    "BD91": -0.0505,
+                    "BD93": -0.0357,
+                    "BD95": -0.1184,
+                    "BR22": 0.0376,
+                    "BR23": 0.0062,
+                    "BRRI102": -0.079,
+                    "BRRI67": -0.0374,
+                    "BRRI74": 0.0222,
+                    "Binadhan10": 0.0131,
+                    "Binadhan11": 0.0264,
+                    "Binadhan12": -0.0271,
+                    "Binadhan14": -0.0819,
+                    "Binadhan16": -0.0121,
+                    "Binadhan17": -0.0136,
+                    "Binadhan19": -0.0176,
+                    "Binadhan20": 0.2056,
+                    "Binadhan21": -0.036,
+                    "Binadhan23": -0.0188,
+                    "Binadhan24": -0.0521,
+                    "Binadhan25": -0.0142,
+                    "Binadhan26": -0.0373,
+                    "Binadhan7": 0.0181,
+                    "Binadhan8": -0.009
+                }
+            },
+            "intra_class_diversity": {
+                "embed_model": "facebook/dinov2-base",
+                "per_class_diversity": {
+                    "BD30": 0.4799,
+                    "BD33": 0.5027,
+                    "BD39": 0.492,
+                    "BD49": 0.516,
+                    "BD51": 0.4809,
+                    "BD52": 0.4774,
+                    "BD56": 0.4863,
+                    "BD57": 0.4993,
+                    "BD70": 0.5314,
+                    "BD72": 0.4583,
+                    "BD75": 0.5077,
+                    "BD76": 0.4541,
+                    "BD79": 0.4732,
+                    "BD85": 0.5212,
+                    "BD87": 0.4587,
+                    "BD91": 0.4851,
+                    "BD93": 0.4751,
+                    "BD95": 0.5115,
+                    "BR22": 0.4446,
+                    "BR23": 0.4636,
+                    "BRRI102": 0.5574,
+                    "BRRI67": 0.5032,
+                    "BRRI74": 0.4858,
+                    "Binadhan10": 0.4951,
+                    "Binadhan11": 0.4708,
+                    "Binadhan12": 0.4991,
+                    "Binadhan14": 0.5032,
+                    "Binadhan16": 0.488,
+                    "Binadhan17": 0.4875,
+                    "Binadhan19": 0.4997,
+                    "Binadhan20": 0.523,
+                    "Binadhan21": 0.4837,
+                    "Binadhan23": 0.4981,
+                    "Binadhan24": 0.507,
+                    "Binadhan25": 0.519,
+                    "Binadhan26": 0.4948,
+                    "Binadhan7": 0.4746,
+                    "Binadhan8": 0.511
+                },
+                "mean_diversity": 0.4926,
+                "min_diversity_class": "BR22",
+                "max_diversity_class": "BRRI102"
+            }
+        }
+    },
+    "ACHENY_variety_classification": {
+        "dataset": "Project-AgML/ACHENY_variety_classification",
+        "date": "2026-08-03",
+        "reproducibility": {
+            "split_seed": 42,
+            "train_ratio": 0.7,
+            "val_ratio": 0.15,
+            "test_ratio": 0.15,
+            "embed_model": "facebook/dinov2-base",
+            "near_dup_threshold": 0.98
+        },
+        "phases_completed": [1, 2],
+        "metrics": {
+            "class_imbalance": {
+                "counts": {
+                    "AnaHau": 538,
+                    "AnaSet": 897,
+                    "AtrCan": 505,
+                    "AtrLen": 936,
+                    "AtrLeu": 440,
+                    "CerAre": 565,
+                    "CheAlb": 456,
+                    "CorMon": 769,
+                    "GirOpp": 217,
+                    "HalAmm": 650,
+                    "HalBel": 440,
+                    "HalPer": 812,
+                    "HalStr": 594,
+                    "HalSub": 677,
+                    "HamSal": 834,
+                    "KocSco": 637,
+                    "KocSte": 596,
+                    "SalAba": 513,
+                    "SalDen": 1023,
+                    "SalInc": 812,
+                    "SalKal": 210,
+                    "SalKer": 633,
+                    "SalPra": 650,
+                    "SalTom": 678,
+                    "SalTur": 685,
+                    "SalYaz": 734,
+                    "SeiCin": 385,
+                    "SeiRos": 700,
+                    "SuaAcu": 820,
+                    "SuaAeg": 514
+                },
+                "imbalance_ratio": 4.8714,
+                "normalized_entropy": 0.9857,
+                "most_frequent_class": "SalDen",
+                "least_frequent_class": "SalKal",
+                "total_train_examples": 18920
+            },
+            "exact_duplicate": {
+                "total_images": 27030,
+                "exact_duplicate_count": 0,
+                "exact_duplicate_rate": 0.0,
+                "duplicate_groups": 0,
+                "cross_split_duplicates": 0
+            },
+            "resolution_consistency": {
+                "total_images": 27030,
+                "width": {
+                    "mean": 224,
+                    "std": 0.0,
+                    "min": 224,
+                    "max": 224
+                },
+                "height": {
+                    "mean": 224,
+                    "std": 0.0,
+                    "min": 224,
+                    "max": 224
+                },
+                "aspect_ratio": {
+                    "mean": 1.0,
+                    "std": 0.0,
+                    "min": 1.0,
+                    "max": 1.0
+                },
+                "area_cv": 0.0,
+                "mode_distribution": {
+                    "RGB": 27030
+                }
+            },
+            "metadata_coverage": {
+                "skipped": true,
+                "reason": "No metadata columns detected in dataset schema."
+            },
+            "near_duplicate": {
+                "total_images": 27030,
+                "embed_model": "facebook/dinov2-base",
+                "threshold": 0.98,
+                "near_duplicate_count": 8,
+                "near_duplicate_rate": 0.0003,
+                "near_duplicate_groups": 4,
+                "cross_split_near_duplicates": 6,
+                "faiss_index_type": "IndexFlatIP"
+            },
+            "feature_separability": {
+                "embed_model": "facebook/dinov2-base",
+                "n_total": 27030,
+                "n_silhouette_samples": 10000,
+                "silhouette_score": 0.0851,
+                "silhouette_interpretation": "weak separation",
+                "davies_bouldin_index": 2.9768,
+                "davies_bouldin_interpretation": "high overlap — classes not well-separated",
+                "per_class_silhouette": {
+                    "AnaHau": 0.1234,
+                    "AnaSet": 0.2493,
+                    "AtrCan": 0.0097,
+                    "AtrLen": 0.0487,
+                    "AtrLeu": 0.0222,
+                    "CerAre": 0.3038,
+                    "CheAlb": 0.1869,
+                    "CorMon": 0.1051,
+                    "GirOpp": 0.221,
+                    "HalAmm": 0.0616,
+                    "HalBel": 0.2117,
+                    "HalPer": 0.0156,
+                    "HalStr": 0.2143,
+                    "HalSub": -0.0415,
+                    "HamSal": 0.1021,
+                    "KocSco": -0.0639,
+                    "KocSte": 0.203,
+                    "SalAba": -0.0611,
+                    "SalDen": -0.0028,
+                    "SalInc": -0.0389,
+                    "SalKal": 0.0784,
+                    "SalKer": 0.0476,
+                    "SalPra": 0.3901,
+                    "SalTom": 0.2113,
+                    "SalTur": -0.0844,
+                    "SalYaz": 0.0653,
+                    "SeiCin": 0.0781,
+                    "SeiRos": 0.0033,
+                    "SuaAcu": 0.0433,
+                    "SuaAeg": 0.0561
+                }
+            },
+            "intra_class_diversity": {
+                "embed_model": "facebook/dinov2-base",
+                "per_class_diversity": {
+                    "AnaHau": 0.5733,
+                    "AnaSet": 0.5439,
+                    "AtrCan": 0.6505,
+                    "AtrLen": 0.631,
+                    "AtrLeu": 0.5972,
+                    "CerAre": 0.5711,
+                    "CheAlb": 0.7238,
+                    "CorMon": 0.5252,
+                    "GirOpp": 0.5125,
+                    "HalAmm": 0.6213,
+                    "HalBel": 0.5918,
+                    "HalPer": 0.5619,
+                    "HalStr": 0.6569,
+                    "HalSub": 0.5981,
+                    "HamSal": 0.5068,
+                    "KocSco": 0.6997,
+                    "KocSte": 0.5007,
+                    "SalAba": 0.624,
+                    "SalDen": 0.5772,
+                    "SalInc": 0.6843,
+                    "SalKal": 0.6593,
+                    "SalKer": 0.5971,
+                    "SalPra": 0.5797,
+                    "SalTom": 0.5858,
+                    "SalTur": 0.7058,
+                    "SalYaz": 0.512,
+                    "SeiCin": 0.6223,
+                    "SeiRos": 0.5881,
+                    "SuaAcu": 0.6384,
+                    "SuaAeg": 0.5694
+                },
+                "mean_diversity": 0.6003,
+                "min_diversity_class": "KocSte",
+                "max_diversity_class": "CheAlb"
+            }
+        }
+    }
+}

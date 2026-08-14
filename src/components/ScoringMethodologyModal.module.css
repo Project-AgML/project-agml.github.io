@@ -1,0 +1,546 @@
+.backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1050;
+	display: grid;
+	place-items: center;
+	padding: 1.25rem;
+	background: var(--agml-modal-overlay);
+	backdrop-filter: blur(10px);
+}
+
+.panel {
+	width: min(980px, 100%);
+	max-height: min(90vh, 960px);
+	overflow-y: auto;
+	border-radius: 14px;
+	border: 1px solid var(--agml-border-strong);
+	background: var(--agml-surface-strong);
+	box-shadow: var(--agml-shadow-strong);
+	color: var(--agml-text);
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	padding-bottom: 1.2rem;
+	margin-bottom: 1.2rem;
+	border-bottom: 1px solid var(--agml-border);
+}
+
+.eyebrow {
+	margin: 0 0 0.3rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--ifm-color-primary);
+}
+
+.title {
+	margin: 0 0 0.4rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--agml-text);
+}
+
+.subtitle {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--agml-muted);
+	max-width: 560px;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.closeButton {
+	flex: 0 0 auto;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--agml-border-strong);
+	border-radius: 8px;
+	background: var(--agml-surface-soft);
+	color: var(--agml-text);
+	padding: 0;
+	font-size: 16px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+	background: var(--agml-border);
+	outline: none;
+}
+
+.tabRow {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.75rem;
+}
+
+.tab {
+	border: 1px solid var(--agml-border);
+	border-radius: 999px;
+	padding: 0.4rem 0.9rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	font-family: var(--ifm-code-font-family);
+	cursor: pointer;
+	background: transparent;
+	color: var(--agml-muted);
+}
+
+.tab:hover,
+.tab:focus-visible {
+	border-color: var(--ifm-color-primary);
+	color: var(--agml-text);
+	outline: none;
+}
+
+.tabActive,
+.tabActive:hover {
+	border-color: var(--ifm-color-primary);
+	background: var(--ifm-color-primary);
+	color: var(--agml-page-bg);
+}
+
+.sectionTitle {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-text);
+	margin: 0 0 0.6rem;
+}
+
+.bodyText {
+	font-size: 0.88rem;
+	color: var(--agml-muted);
+	line-height: 1.55;
+	margin: 0 0 0.7rem;
+	text-align: justify;
+}
+
+.bodyText:last-child {
+	margin-bottom: 0;
+}
+
+.overallSection {
+	margin-bottom: 2rem;
+	padding: 1.2rem 1.3rem;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border);
+	background: var(--agml-surface-soft);
+}
+
+.weightRow {
+	display: flex;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	margin: 0.9rem 0 1rem;
+}
+
+.weightTile {
+	flex: 1 1 0;
+	min-width: 140px;
+	border-radius: 8px;
+	border: 1px solid var(--agml-border);
+	border-top: 6px solid var(--axis-accent);
+	padding: 0.7rem 0.8rem;
+	background: var(--agml-surface-strong);
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.weightPct {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--agml-text);
+}
+
+.weightLabel {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	color: var(--agml-muted);
+	line-height: 1.3;
+}
+
+.formulaBox {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.8rem;
+	color: var(--agml-text);
+	background: var(--agml-tag-bg);
+	border: 1px solid var(--agml-border);
+	border-radius: 8px;
+	padding: 0.65rem 0.85rem;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	margin: 0 0 0.7rem;
+}
+
+.thresholdLegend {
+	display: flex;
+	gap: 1.1rem;
+	flex-wrap: wrap;
+	margin-top: 0.9rem;
+}
+
+.thresholdItem {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.78rem;
+	color: var(--agml-text);
+}
+
+.thresholdDot {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.thresholdGood {
+	background: var(--ifm-color-primary);
+}
+
+.thresholdFair {
+	background: var(--agml-caution-text);
+}
+
+.thresholdPoor {
+	background: var(--agml-warning-text);
+}
+
+.scaleNote {
+	margin: 0.9rem 0 0;
+	font-size: 0.74rem;
+	color: var(--agml-muted);
+	font-style: italic;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.axisSection {
+	margin-bottom: 2rem;
+}
+
+.axisTitle {
+	margin: 0 0 0.4rem;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--agml-text);
+	padding-left: 0.7rem;
+	border-left: 4px solid var(--axis-accent);
+}
+
+/* 4 tracks with every card spanning 2 (so 2 cards per row) instead of auto-fit — matches the
+   wide-card pattern already used for the bar-chart cards on the main benchmark view, and gives
+   each card enough width that its paragraphs stop wrapping into a narrow ladder. */
+.metricGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin-top: 0.9rem;
+}
+
+.metricCard {
+	grid-column: span 2;
+	padding: 1rem 1.1rem;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border);
+	border-top: 5px solid var(--axis-accent);
+	background: var(--agml-surface-soft);
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	/* Grid items default to min-width: auto, which lets long unwrapped content (the weight tag
+	   below) force the card wider than its grid track instead of wrapping inside it. */
+	min-width: 0;
+}
+
+.metricCardPenalty {
+	grid-column: span 2;
+	padding: 1rem 1.1rem;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border);
+	border-top: 5px solid var(--agml-warning-text);
+	background: var(--agml-surface-soft);
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	/* Grid items default to min-width: auto, which lets long unwrapped content (the weight tag
+	   below) force the card wider than its grid track instead of wrapping inside it. */
+	min-width: 0;
+}
+
+.metricCardHeader {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.6rem;
+	/* The badge group can be wider than the title's remaining space (e.g. "Subtracted, up to 2
+	   points" next to "Cross Split Contamination Penalty") — wrapping it to its own line below
+	   the title keeps it inside the card instead of overflowing past the right edge. */
+	flex-wrap: wrap;
+}
+
+.metricName {
+	margin: 0;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--agml-text);
+}
+
+.badgeGroup {
+	display: flex;
+	gap: 0.35rem;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	flex: 0 0 auto;
+	max-width: 100%;
+}
+
+.penaltyBadge {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	padding: 0.18rem 0.5rem;
+	border-radius: 4px;
+	background: var(--agml-warning-soft);
+	color: var(--agml-warning-text);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	white-space: nowrap;
+}
+
+.weightTag {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	padding: 0.18rem 0.5rem;
+	border-radius: 4px;
+	background: var(--agml-tag-bg);
+	color: var(--agml-muted);
+	white-space: nowrap;
+}
+
+.fieldLabel {
+	margin: 0 0 0.2rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--agml-muted);
+}
+
+.fieldText {
+	margin: 0;
+	font-size: 0.83rem;
+	color: var(--agml-text);
+	line-height: 1.55;
+	text-align: justify;
+	overflow-wrap: anywhere;
+}
+
+.pendingNote {
+	margin: 0;
+	font-size: 0.78rem;
+	color: var(--agml-muted);
+	font-style: italic;
+	padding: 0.5rem 0.7rem;
+	background: var(--agml-tag-bg);
+	border-radius: 6px;
+	text-align: justify;
+}
+
+.placeholderCard {
+	margin-top: 0.9rem;
+	padding: 1.4rem;
+	border-radius: 10px;
+	border: 1px dashed var(--agml-border-strong);
+	background: var(--agml-surface-soft);
+	text-align: center;
+}
+
+.placeholderText {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--agml-muted);
+	font-style: italic;
+	text-align: justify;
+}
+
+.axisFormulaFooter {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.axisFormulaFooter .formulaBox {
+	margin: 0;
+}
+
+.axisFormulaBox {
+	border-color: var(--axis-accent);
+	font-weight: 600;
+}
+
+/* Structural Quality reuses the site's primary green (their hues already match) and Annotation
+   Reliability reuses the caution amber — only Content Difficulty and Diversity & Coverage need
+   their own tokens. Defined once here and consumed via var(--axis-accent) by every element that
+   needs this axis's accent color, instead of four near-duplicate rule sets. */
+.axisStructural {
+	--axis-accent: var(--ifm-color-primary);
+}
+
+.axisDifficulty {
+	--axis-accent: var(--agml-axis-difficulty);
+}
+
+.axisDiversity {
+	--axis-accent: var(--agml-axis-diversity);
+}
+
+.axisAnnotation {
+	--axis-accent: var(--agml-caution-text);
+}
+
+.footerSection {
+	margin-top: 0.5rem;
+}
+
+.antiGamingList {
+	margin: 0 0 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.antiGamingItem {
+	display: flex;
+	gap: 0.55rem;
+	align-items: flex-start;
+}
+
+.antiGamingMarker {
+	flex: 0 0 auto;
+	color: var(--ifm-color-primary);
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+
+.antiGamingText {
+	margin: 0;
+	font-size: 0.82rem;
+	color: var(--agml-muted);
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.fieldRefDetails {
+	border: 1px solid var(--agml-border);
+	border-radius: 8px;
+	padding: 0.7rem 0.9rem;
+	background: var(--agml-surface-soft);
+}
+
+.fieldRefSummary {
+	cursor: pointer;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.74rem;
+	font-weight: 600;
+	color: var(--agml-text);
+}
+
+.fieldRefSummary:hover,
+.fieldRefSummary:focus-visible {
+	color: var(--ifm-color-primary);
+	outline: none;
+}
+
+.fieldRefGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 0.4rem;
+	margin-top: 0.7rem;
+}
+
+.fieldRefRow {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.6rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.72rem;
+	padding: 0.25rem 0.1rem;
+	border-bottom: 1px solid var(--agml-border);
+}
+
+.fieldRefSymbol {
+	color: var(--ifm-color-primary);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.fieldRefPath {
+	color: var(--agml-muted);
+	overflow-wrap: anywhere;
+	text-align: right;
+}
+
+/* Between mobile and the panel's own max width, 2-cards-per-row (each half of a ~980px panel)
+   gets tight enough that the formula boxes start cramping — drop to one full-width card per row
+   a bit before the general mobile breakpoint below. This block must come before the 720px block
+   so that, once both conditions are true on a narrow phone, the more specific 720px rules below
+   (later in source order, equal selector specificity) are the ones that win. */
+@media (max-width: 900px) {
+	.metricGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.metricCard,
+	.metricCardPenalty {
+		grid-column: span 2;
+	}
+}
+
+@media (max-width: 720px) {
+	.panel {
+		padding: 1.25rem;
+		border-radius: 10px;
+	}
+
+	.title {
+		font-size: 1.2rem;
+	}
+
+	.weightTile {
+		min-width: 120px;
+	}
+
+	.header {
+		flex-direction: column;
+	}
+
+	.metricGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.metricCard,
+	.metricCardPenalty {
+		grid-column: span 1;
+	}
+}

@@ -19,6 +19,7 @@
 	box-shadow: var(--agml-shadow-strong);
 	color: var(--agml-text);
 	padding: 2rem;
+	perspective: 2400px;
 }
 
 .header {
@@ -68,6 +69,11 @@
 	color: var(--agml-badge-segmentation-fg);
 }
 
+.badgeVlm {
+	background: var(--agml-badge-vlm-bg);
+	color: var(--agml-badge-vlm-fg);
+}
+
 .badgeOther {
 	background: var(--agml-badge-other-bg);
 	color: var(--agml-badge-other-fg);
@@ -105,6 +111,76 @@
 .closeButton:focus-visible {
 	background: var(--agml-border);
 	outline: none;
+}
+
+.headerActions {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.6rem;
+}
+
+.benchmarkToggle {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	border: 1px solid var(--ifm-color-primary);
+	border-radius: 999px;
+	background: var(--agml-accent-soft);
+	color: var(--ifm-color-primary);
+	padding: 0.5rem 1rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	cursor: pointer;
+	white-space: nowrap;
+	font-family: inherit;
+}
+
+.benchmarkToggle:hover,
+.benchmarkToggle:focus-visible {
+	border-color: var(--ifm-color-primary-dark);
+	outline: none;
+}
+
+/* Card-flip mechanism: both faces stack in the same grid cell so the container's height
+   always matches the taller face, regardless of which one is currently shown. */
+.flipper {
+	position: relative;
+	display: grid;
+	transform-style: preserve-3d;
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: rotateY(0deg);
+}
+
+.flipperFlipped {
+	transform: rotateY(180deg);
+}
+
+.face {
+	grid-area: 1 / 1;
+	width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.faceBack {
+	transform: rotateY(180deg);
+}
+
+.faceHidden {
+	visibility: hidden;
+	pointer-events: none;
+	/* Absolutely positioned grid items don't contribute to track sizing, so taking the hidden
+	   face out of flow here means the flipper's height always matches whichever face is
+	   actually showing — not the max of both, which left a dead gap under short front-face
+	   content (e.g. an empty leaderboard) whenever the other face was taller. */
+	position: absolute;
+	inset: 0;
 }
 
 .detailGrid {
@@ -590,6 +666,779 @@
 	text-decoration: underline;
 }
 
+.benchmarkRunNote {
+	margin: 0;
+	font-size: 0.78rem;
+	color: var(--agml-muted);
+}
+
+.benchmarkDivider {
+	border: none;
+	border-top: 1px solid var(--agml-border);
+	margin: 0.85rem 0 1.25rem;
+}
+
+.reproDetails {
+	margin: 0.6rem 0 0;
+}
+
+.reproSummary {
+	cursor: pointer;
+	width: fit-content;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--agml-muted);
+}
+
+.reproSummary:hover,
+.reproSummary:focus-visible {
+	color: var(--agml-text);
+	outline: none;
+}
+
+.reproGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.55rem;
+}
+
+.reproTag {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	font-family: var(--ifm-code-font-family);
+	padding: 0.3rem 0.55rem;
+	border-radius: 5px;
+	background: var(--agml-tag-bg);
+}
+
+.reproTagKey {
+	font-size: 0.58rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--agml-muted);
+	white-space: nowrap;
+}
+
+.reproTagValue {
+	font-size: 0.72rem;
+	color: var(--agml-text);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+/* Overall + per-axis score gauge — the tier color comes from a --tier-color custom property
+   set per data-tier so the box border, value, and (reused below) proportion-bar segments and
+   confusion-cell heat all read off the same three-tier scale. */
+.scoreRow {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.6rem;
+	margin: 0.75rem 0 0;
+}
+
+.methodologyLink {
+	flex: 0 0 auto;
+	border: none;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.72rem;
+	color: var(--agml-muted);
+	white-space: nowrap;
+}
+
+.methodologyLink:hover,
+.methodologyLink:focus-visible {
+	color: var(--ifm-color-primary);
+	outline: none;
+}
+
+.scoreBox {
+	flex: 1 1 0;
+	min-width: 0;
+	border: 1px solid var(--agml-border);
+	border-top: 3px solid var(--tier-color);
+	border-radius: 8px;
+	padding: 0.65rem 0.8rem;
+	background: var(--agml-surface-soft);
+}
+
+.scoreBox[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.scoreBox[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.scoreBox[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.scoreBoxLabel {
+	margin: 0 0 0.3rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.58rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	line-height: 1.3;
+	color: var(--agml-muted);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.scoreBoxValue {
+	margin: 0;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: var(--tier-color);
+}
+
+.axisSection {
+	margin-bottom: 1.75rem;
+}
+
+.axisTitle {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--ifm-color-primary);
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--agml-border);
+}
+
+.proportionBar {
+	display: flex;
+	height: 14px;
+	border-radius: 999px;
+	overflow: hidden;
+	background: var(--agml-tag-bg);
+}
+
+.proportionSegment {
+	height: 100%;
+}
+
+.proportionSegment[data-tier='good'] {
+	background: var(--ifm-color-primary);
+}
+
+.proportionSegment[data-tier='mid'] {
+	background: var(--agml-caution-text);
+}
+
+.proportionSegment[data-tier='poor'] {
+	background: var(--agml-warning-text);
+}
+
+.proportionTileGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+	gap: 0.6rem;
+	margin-top: 0.6rem;
+}
+
+.proportionTile {
+	border: 1px solid var(--agml-border);
+	border-top: 3px solid var(--tier-color);
+	border-radius: 8px;
+	padding: 0.65rem 0.8rem;
+	background: var(--agml-surface-soft);
+}
+
+.proportionTile[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.proportionTile[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.proportionTile[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.proportionDot {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	margin-right: 0.35rem;
+	background: var(--tier-color);
+}
+
+.proportionDot[data-tier='good'] {
+	--tier-color: var(--ifm-color-primary);
+}
+
+.proportionDot[data-tier='mid'] {
+	--tier-color: var(--agml-caution-text);
+}
+
+.proportionDot[data-tier='poor'] {
+	--tier-color: var(--agml-warning-text);
+}
+
+.confusionWrap {
+	overflow-x: auto;
+	padding-bottom: 4px;
+}
+
+.confusionGrid {
+	display: grid;
+	gap: 3px;
+	align-items: center;
+}
+
+.confusionCorner {
+	visibility: hidden;
+}
+
+.confusionColHeader {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.6rem;
+	color: var(--agml-muted);
+	text-align: center;
+	padding-bottom: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.confusionRowHeader {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.6rem;
+	color: var(--agml-muted);
+	padding-right: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.confusionCell {
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	font-size: 0.62rem;
+	font-weight: 600;
+	color: var(--agml-text);
+}
+
+.metricOverflowNote {
+	margin: 0.5rem 0 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	color: var(--agml-muted);
+}
+
+.confusionPairs {
+	margin-top: 0.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.confusionPairsHeader {
+	margin: 0 0 0.2rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-muted);
+}
+
+.confusionPairsList,
+.confusionPairsListExpanded {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.confusionPairsListExpanded {
+	max-height: 168px;
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.confusionPairRow {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.6rem;
+	font-size: 0.78rem;
+	color: var(--agml-text);
+}
+
+.metricCardGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	/* Cards stretch to match the tallest card in their row (grid's default), so a row of
+	   mixed content (e.g. a 4-stat card next to a bar-chart card) reads as one aligned row
+	   instead of a ragged bottom edge. */
+	align-items: stretch;
+	gap: 1rem;
+	margin: 0 0 1.75rem;
+	/* 1-column stat cards backfill the gaps left by 2-column bar cards instead of leaving a
+	   hole and pushing everything after it down to the next row. */
+	grid-auto-flow: dense;
+}
+
+.metricCard {
+	padding: 1rem 1.1rem;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border);
+	background: var(--agml-surface-soft);
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.metricCardSpan2 {
+	grid-column: span 2;
+}
+
+.metricCardHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.6rem;
+}
+
+.metricCardTitle {
+	margin: 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-muted);
+}
+
+.metricCardTitleRow {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	min-width: 0;
+}
+
+.infoTooltip {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	border: 1px solid var(--agml-border-strong);
+	color: var(--agml-muted);
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.58rem;
+	font-weight: 700;
+	/* Keep the "i" glyph lowercase even when the icon sits inside an uppercased label. */
+	text-transform: none;
+	letter-spacing: normal;
+	cursor: help;
+}
+
+.infoTooltip:hover,
+.infoTooltip:focus-visible {
+	border-color: var(--ifm-color-primary);
+	color: var(--ifm-color-primary);
+	outline: none;
+}
+
+.infoTooltipIcon {
+	pointer-events: none;
+}
+
+.infoTooltipBubble {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 0;
+	width: max-content;
+	max-width: 240px;
+	padding: 0.5rem 0.65rem;
+	border-radius: 6px;
+	border: 1px solid var(--agml-border-strong);
+	background: var(--agml-tag-bg);
+	color: var(--agml-text);
+	font-size: 0.72rem;
+	font-weight: 400;
+	line-height: 1.45;
+	text-transform: none;
+	letter-spacing: normal;
+	white-space: normal;
+	/* `display: none` rather than `visibility: hidden`: a visibility-hidden box is still laid
+	   out, and an absolutely positioned one still contributes to the modal's scrollable overflow
+	   region. With a 240px bubble anchored to every stat-tile icon, the tiles near the modal's
+	   right edge pushed that region ~200px wide and gave the benchmark face a permanent
+	   horizontal scrollbar while nothing was even visible. */
+	display: none;
+	opacity: 0;
+	pointer-events: none;
+	/* allow-discrete + @starting-style keep the fade across the display change on browsers that
+	   support them; elsewhere the bubble simply appears instantly. */
+	transition: opacity 0.12s ease;
+	transition-behavior: allow-discrete;
+	box-shadow: var(--agml-shadow-strong);
+	z-index: 20;
+}
+
+.infoTooltip:hover .infoTooltipBubble,
+.infoTooltip:focus-visible .infoTooltipBubble {
+	display: block;
+	opacity: 1;
+}
+
+@starting-style {
+	.infoTooltip:hover .infoTooltipBubble,
+	.infoTooltip:focus-visible .infoTooltipBubble {
+		opacity: 0;
+	}
+}
+
+.metricCardBadge {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	padding: 0.2rem 0.55rem;
+	border-radius: 4px;
+	display: inline-block;
+	white-space: nowrap;
+	background: var(--agml-tag-bg);
+	color: var(--agml-tag-fg);
+}
+
+.metricSkipped {
+	margin: 0;
+	font-size: 0.84rem;
+	font-style: italic;
+	color: var(--agml-muted);
+}
+
+.metricBars {
+	display: flex;
+	flex-direction: column;
+	gap: var(--metric-bar-gap);
+	/* Single source of truth for row height and gap — referenced by .metricBarRow's flex-basis
+	   and by .metricBarsExpanded's cap height below, so the two can't drift out of sync. */
+	--metric-bar-row-height: 24px;
+	--metric-bar-gap: 0.3rem;
+}
+
+.metricBarRow {
+	display: grid;
+	grid-template-columns: 112px 1fr 56px;
+	align-items: center;
+	gap: 0.6rem;
+	flex: 0 0 var(--metric-bar-row-height);
+	height: var(--metric-bar-row-height);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* Exactly 10 rows visible before scrolling — derived from the same row-height variable the
+   rows themselves use, so this can't drift from the actual rendered row height. */
+.metricBarsExpanded {
+	max-height: calc(10 * var(--metric-bar-row-height) + 9 * var(--metric-bar-gap));
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.metricExpandLink {
+	align-self: flex-start;
+	border: none;
+	background: none;
+	padding: 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: var(--ifm-color-primary);
+	cursor: pointer;
+}
+
+.metricExpandLink:hover,
+.metricExpandLink:focus-visible {
+	text-decoration: underline;
+	outline: none;
+}
+
+.metricBarLabel {
+	font-size: 0.8rem;
+	color: var(--agml-text);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.metricBarTrack {
+	height: 8px;
+	border-radius: 999px;
+	background: var(--agml-tag-bg);
+	overflow: hidden;
+}
+
+.metricBarFill {
+	height: 100%;
+	border-radius: 999px;
+	background: var(--ifm-color-primary);
+	transition: width 0.3s ease;
+}
+
+.metricBarValue {
+	font-size: 0.82rem;
+	font-weight: 600;
+	color: var(--agml-text);
+	text-align: right;
+	white-space: nowrap;
+}
+
+.metricSignedTrack {
+	position: relative;
+	height: 8px;
+	border-radius: 999px;
+	background: var(--agml-tag-bg);
+	overflow: hidden;
+}
+
+.metricSignedMidline {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: var(--agml-border-strong);
+}
+
+.metricSignedFill {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	border-radius: 999px;
+	transition: width 0.3s ease;
+}
+
+.metricSignedPositive {
+	background: var(--ifm-color-primary);
+}
+
+.metricSignedNegative {
+	background: var(--agml-warning-text);
+}
+
+.statTileGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+	gap: 0.6rem;
+}
+
+.statTile {
+	min-width: 0;
+}
+
+.statTileLabel {
+	/* Deliberately not flex: a flex row lays the icon out beside the *whole* (possibly
+	   two-line) text box, wherever that box's edge lands — which is what put the icon in the
+	   dead space toward the next column. Plain inline flow instead treats the icon as another
+	   inline element and wraps it right after the label's own last word, like normal text. */
+	margin: 0 0 0.3rem;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.62rem;
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--agml-muted);
+	/* Reserves space for two lines even when a label only needs one, so neighboring stat tiles
+	   in the same grid row keep their values aligned instead of the value's baseline shifting
+	   down only under whichever label happens to wrap. */
+	min-height: 2.6em;
+}
+
+.statTileLabel .infoTooltip {
+	margin-left: 0.3rem;
+	vertical-align: middle;
+}
+
+.statTileValue {
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--agml-text);
+	overflow-wrap: anywhere;
+}
+
+/* Interpretation line under a stat's value — smaller and muted so it reads as an explanation
+   of the number above it, not another value. */
+.statTileHint {
+	margin: 0.2rem 0 0;
+	font-size: 0.7rem;
+	font-weight: 400;
+	line-height: 1.35;
+	color: var(--agml-muted);
+	overflow-wrap: anywhere;
+}
+
+.metricFooterStats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+	gap: 0.6rem;
+	padding-top: 0.6rem;
+	border-top: 1px solid var(--agml-border);
+}
+
+.metricStatSections {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.metricStatSection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.metricStatSection + .metricStatSection {
+	padding-top: 0.85rem;
+	border-top: 1px solid var(--agml-border);
+}
+
+.metricStatSectionTitle {
+	margin: 0;
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.66rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--agml-text);
+}
+
+.embedHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 0;
+}
+
+.embedToggle {
+	display: inline-flex;
+	border-radius: 999px;
+	background: var(--agml-tag-bg);
+	padding: 4px;
+	gap: 4px;
+}
+
+.embedToggleButton {
+	border: none;
+	border-radius: 999px;
+	padding: 0.4rem 0.9rem;
+	font-size: 0.82rem;
+	font-weight: 600;
+	cursor: pointer;
+	font-family: inherit;
+	background: transparent;
+	color: var(--agml-muted);
+	transition: background 0.15s, color 0.15s;
+}
+
+.embedToggleActive {
+	background: var(--ifm-color-primary);
+	color: var(--agml-page-bg);
+}
+
+.embedViewport {
+	position: relative;
+	margin-top: 0.9rem;
+	height: 440px;
+	border-radius: 10px;
+	border: 1px solid var(--agml-border);
+	background-color: var(--agml-surface-soft);
+	overflow: hidden;
+}
+
+.embedPlotFallback {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: var(--agml-muted);
+	font-size: 0.78rem;
+}
+
+.embedResetButton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 5;
+	border: 1px solid var(--agml-border-strong);
+	border-radius: 999px;
+	background: var(--agml-tag-bg);
+	color: var(--agml-muted);
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	padding: 0.3rem 0.65rem;
+	cursor: pointer;
+}
+
+.embedResetButton:hover,
+.embedResetButton:focus-visible {
+	border-color: var(--ifm-color-primary);
+	color: var(--ifm-color-primary);
+	outline: none;
+}
+
+.embedLegend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 0.9rem;
+}
+
+.embedLegendItem {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.8rem;
+	color: var(--agml-text);
+}
+
+.embedLegendDot {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.embedLegendOverflow {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.74rem;
+	color: var(--agml-muted);
+}
+
+.embedNote {
+	margin: 0.7rem 0 0;
+	font-size: 0.72rem;
+	font-style: italic;
+	color: var(--agml-muted);
+}
+
 @media (max-width: 720px) {
 	.modal {
 		padding: 1.25rem;
@@ -602,6 +1451,36 @@
 
 	.detailGrid {
 		grid-template-columns: repeat(2, 1fr) !important;
+	}
+
+	.metricCardGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.metricCardSpan2 {
+		grid-column: span 1;
+	}
+
+	.metricBarRow {
+		grid-template-columns: 88px 1fr 48px;
+	}
+
+	.embedViewport {
+		height: 260px;
+	}
+
+	/* Five boxes side by side is too cramped under ~720px — wrap into rows of two instead of
+	   forcing a horizontal scroll on what's meant to be a quick-glance score summary. */
+	.scoreRow {
+		flex-wrap: wrap;
+	}
+
+	.scoreBox {
+		flex: 1 1 calc(50% - 0.3rem);
+	}
+
+	.reproGrid {
+		gap: 0.35rem;
 	}
 
 	.locationColumns {
