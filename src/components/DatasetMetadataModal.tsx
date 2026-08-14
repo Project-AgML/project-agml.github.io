@@ -32,7 +32,6 @@ function formatValue(value: string | string[] | null | undefined) {
 	if (value == null) return 'Unknown';
 	if (Array.isArray(value)) return value.length ? value.map(toTitleCase).join(', ') : 'Unknown';
 	return toTitleCase(value);
-	return value;
 }
 
 function formatArray(value: number[] | null) {
@@ -921,7 +920,7 @@ function buildScoreBoxes(scores: AxisScores): ScoreBoxVM[] {
 		{ label: 'Annotation Reliability', value: scores.annotation },
 	];
 	return entries
-		.filter((entry): entry is { label: string; value: number } => entry.value != null)
+		.filter((entry): entry is { label: string; value: number } => entry.value != null && !Number.isNaN(entry.value))
 		.map((entry) => ({ label: entry.label, value: entry.value.toFixed(1), tier: scoreTier(entry.value) }));
 }
 
@@ -1233,7 +1232,7 @@ export function DatasetMetadataModal({
 							)}
 							{dataset.agricultural_task && <span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>}
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
-							{dataset.license && <span className={styles.tag}>{formatValue(dataset.license)}</span>}
+							{dataset.license && <span className={styles.tag}>{dataset.license}</span>}
 						</div>
 					</div>
 					<div className={styles.headerActions}>

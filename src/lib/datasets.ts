@@ -405,7 +405,7 @@ function matchesFieldValue(
     if (Array.isArray(value)) {
         return mode === "containsAny"
             ? value.some((entry) => values.includes(entry))
-            : value.some((entry) => values.includes(entry));
+            : values.length === value.length && values.every((entry) => value.includes(entry));
     }
     if (mode === "containsAny") {
         return values.some((entry) =>
