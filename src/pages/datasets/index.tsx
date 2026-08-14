@@ -4,7 +4,7 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { computeDatasetStats, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
+import { computeDatasetStats, datasetGroupKey, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
 import { toDisplayLabel } from '../../lib/labelOverrides';
 import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
@@ -343,7 +343,7 @@ export default function DatasetBrowserPage() {
                     const fieldValue = dataset[filter.field] as string | string[] | null | undefined;
                     return Array.isArray(fieldValue) ? fieldValue.includes(value) : fieldValue === value;
                   })
-                  .map((dataset) => dataset.parent_dataset ?? dataset.name)
+                  .map(datasetGroupKey)
               ).size,
             ])
           ),
@@ -442,7 +442,7 @@ export default function DatasetBrowserPage() {
   const displayed = useMemo(() => filtered.slice(0, showCount), [filtered, showCount]);
   const hasMore = filtered.length > showCount;
   const distinctDatasetCount = useMemo(
-    () => new Set(filtered.map((dataset) => dataset.parent_dataset ?? dataset.name)).size,
+    () => new Set(filtered.map(datasetGroupKey)).size,
     [filtered]
   );
   const selectedDataset = useMemo(

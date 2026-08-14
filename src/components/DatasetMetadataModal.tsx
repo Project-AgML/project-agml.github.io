@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import type { Dataset } from '../lib/datasets';
 import { formatCoordinateList, formatDisplayLocation, formatLocationList, toTitleCase } from '../lib/datasets';
@@ -473,13 +473,50 @@ function BackIcon() {
 	);
 }
 
+// Breathing room between a clamped tooltip and the modal's content edge.
+const TOOLTIP_EDGE_GAP = 4;
+
 function InfoTooltip({ text }: { text: string }) {
+	const bubbleRef = useRef<HTMLSpanElement>(null);
+
+	// The bubble is absolutely positioned against its own 14px icon, so `position: absolute`
+	// alone can't also keep it inside the modal — one containing block resolves both axes, and
+	// re-anchoring it to something wider would detach it vertically from the icon. Measure it
+	// once it's laid out and translate it back inside instead.
+	const clamp = () => {
+		const bubble = bubbleRef.current;
+		if (!bubble) return;
+		// Reset first: measuring an already-shifted bubble would compound the offset on
+		// every subsequent hover.
+		bubble.style.transform = '';
+		const boundary = bubble.closest(`.${styles.modal}`);
+		if (!boundary) return;
+		// The modal's *border-box* right edge sits outside both its vertical scrollbar and its
+		// 2rem padding, so clamping to it still let the bubble overflow. Walk in to the content
+		// edge instead: clientLeft skips the border, clientWidth stops before the scrollbar, and
+		// paddingRight takes off the rest.
+		const bounds = boundary.getBoundingClientRect();
+		const paddingRight = parseFloat(getComputedStyle(boundary).paddingRight) || 0;
+		const contentRight = bounds.left + boundary.clientLeft + boundary.clientWidth - paddingRight;
+		const overflow = bubble.getBoundingClientRect().right - (contentRight - TOOLTIP_EDGE_GAP);
+		if (overflow > 0) bubble.style.transform = `translateX(${-overflow}px)`;
+	};
+
+	// Deferred a frame so the :hover rule has flipped the bubble to `display: block` — a
+	// display:none element measures as a zero-size rect. The fade starts from opacity 0, so
+	// the one-frame delay isn't visible.
+	const scheduleClamp = () => {
+		requestAnimationFrame(clamp);
+	};
+
 	return (
-		<span className={styles.infoTooltip} tabIndex={0} aria-label={text}>
+		<span className={styles.infoTooltip} tabIndex={0} aria-label={text} onMouseEnter={scheduleClamp} onFocus={scheduleClamp}>
 			<span className={styles.infoTooltipIcon} aria-hidden="true">
 				i
 			</span>
-			<span className={styles.infoTooltipBubble}>{text}</span>
+			<span ref={bubbleRef} className={styles.infoTooltipBubble}>
+				{text}
+			</span>
 		</span>
 	);
 }
@@ -1030,14 +1067,21 @@ export function DatasetMetadataModal({
 	open: boolean;
 	onClose: () => void;
 }) {
+	// Declared above the Escape effect below, which has to read it — the methodology sheet
+	// layers on top of this modal and owns Escape while it's open.
+	const [showMethodology, setShowMethodology] = useState(false);
+
 	useEffect(() => {
 		if (!open) return;
 
 		const previousOverflow = document.body.style.overflow;
 		document.body.style.overflow = 'hidden';
 
+		// Both modals listen on `window`, so stopPropagation from the methodology sheet wouldn't
+		// suppress this one (same event target). Skip closing here instead, so one Escape dismisses
+		// only the topmost layer rather than collapsing the whole stack.
 		const onKeyDown = (event: KeyboardEvent) => {
-			if (event.key === 'Escape') onClose();
+			if (event.key === 'Escape' && !showMethodology) onClose();
 		};
 
 		window.addEventListener('keydown', onKeyDown);
@@ -1045,13 +1089,12 @@ export function DatasetMetadataModal({
 			document.body.style.overflow = previousOverflow;
 			window.removeEventListener('keydown', onKeyDown);
 		};
-	}, [open, onClose]);
+	}, [open, onClose, showMethodology]);
 
 	const datasetPerformance = useDatasetPerformance(open ? (dataset?.name ?? null) : null);
 	const { data: benchmark, embeddings2d, embeddings3d } = useBenchmark(open ? (dataset?.name ?? null) : null);
 	const [showBenchmarks, setShowBenchmarks] = useState(false);
 	useEffect(() => setShowBenchmarks(false), [dataset?.name, open]);
-	const [showMethodology, setShowMethodology] = useState(false);
 
 	const [metricTypeFilter, setMetricTypeFilter] = useState<string[]>([]);
 	const [tunedFilter, setTunedFilter] = useState<string[]>([]);
@@ -1399,11 +1442,10 @@ export function DatasetMetadataModal({
 								View on Hugging Face
 							</a>
 						)}
-						{isVlm && dataset.parent_dataset && (
-							<a className={styles.externalLink} href={dataset.parent_dataset} target="_blank" rel="noreferrer">
-								View Original Dataset
-							</a>
-						)}
+						{/* "View Original Dataset" is hidden for now: VLM records carry `parent_dataset`
+						    as a bare Hugging Face repo slug (e.g. "AgroMind/AgroMind"), not a URL, so
+						    linking it directly resolved as a relative site link and 404'd. Restore this
+						    once the field is normalized to an absolute URL upstream. */}
 					</div>
 				)}
 

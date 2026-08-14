@@ -430,7 +430,7 @@ export function filterDatasets(
     let out = datasets;
 
     if (opts.includeChildren === false) {
-        out = out.filter((d) => !d.parent_dataset);
+        out = out.filter((d) => !isChildDataset(d));
     }
 
     if (opts.q?.trim()) {
@@ -684,10 +684,26 @@ export interface DatasetStats {
     taskTypeCount: number;
 }
 
+// `parent_dataset` means two different things depending on the record. On vision datasets it
+// marks a child/augmented variant of another AgML dataset, which shouldn't be counted or listed
+// separately. On VLM records it's a pointer to the upstream source the dataset was built from
+// (a Hugging Face repo slug), and those are standalone top-level datasets — so reading the field
+// as "this is a child" there wrongly hid all six of them from the counts and listings.
+export function isChildDataset(dataset: Dataset): boolean {
+    return Boolean(dataset.parent_dataset) && dataset.dataset_type !== "vlm";
+}
+
+// Key for counting *distinct* datasets: child variants collapse onto their parent so an
+// augmented counterpart isn't counted twice, while VLM records key on their own name rather
+// than the upstream repo slug (which names a Hugging Face repo, not an AgML dataset).
+export function datasetGroupKey(dataset: Dataset): string {
+    return isChildDataset(dataset) ? dataset.parent_dataset! : dataset.name;
+}
+
 // Shared by the homepage stats row and the dataset search page's hero stats, so both
 // report the same real numbers instead of two slightly different ad-hoc counts.
 export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
-    const topLevel = datasets.filter((dataset) => !dataset.parent_dataset);
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
     const imageCount = topLevel
         .filter((dataset) => !dataset.name.startsWith("iNatAg-mini"))
         .reduce((sum, dataset) => sum + (dataset.num_images ?? 0), 0);

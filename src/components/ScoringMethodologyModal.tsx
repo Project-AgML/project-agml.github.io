@@ -105,7 +105,7 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				how: 'We embed images with a frozen, general purpose backbone that was never trained on this data, then score how well the ground truth labels separate into clusters in that embedding space.',
 				meaning:
 					'A model independent read on how separable the classes are. Low separability can mean the classes are genuinely hard to tell apart, or that some labels are wrong.',
-				formula: 'S_separability = clamp((silhouette × 10 + clamp(10 − davies_bouldin × 3, 0, 10)) / 2, 0, 10)',
+				formula: 'S_separability = (clamp(silhouette × 10, 0, 10) + clamp(10 − davies_bouldin × 3, 0, 10)) / 2',
 				interpretation:
 					'A score close to 10 means the classes form tight, well separated clusters even to a model that has never seen this data. A score close to 0 means the classes overlap heavily. Higher is better.',
 			},
@@ -334,30 +334,33 @@ export function ScoringMethodologyModal({
 						Q_overall = 0.30·Q_structural + 0.25·Q_difficulty + 0.25·Q_diversity + 0.20·Q_annotation
 					</div>
 					<p className={styles.bodyText}>
-						If an entire axis can&rsquo;t be computed for a dataset, its weight is split evenly across the axes that
-						are available, so the overall score always adds up to a full weighted average.
+						If an entire axis can&rsquo;t be computed for a dataset, it is dropped and the remaining axes are
+						renormalized against their own weights, so the overall score is always a full weighted average of
+						whatever was available rather than being dragged down by a missing axis.
 					</p>
 					<p className={styles.bodyText}>
-						If just one metric inside an axis is missing rather than the whole axis, that metric&rsquo;s weight is
-						split across the other metrics in the same axis instead.
+						An axis needs every one of its metrics to be scored. If any single metric inside an axis is missing,
+						the whole axis is dropped and its weight is redistributed as above. The one exception is Content
+						Difficulty, which falls back to the separability score on its own when a run hasn&rsquo;t completed
+						the phase 3 cartography and confusability metrics.
 					</p>
 					<div className={styles.thresholdLegend}>
 						<span className={styles.thresholdItem}>
 							<span className={`${styles.thresholdDot} ${styles.thresholdGood}`} />
-							0.75 and up is good
+							7.5 and up is good
 						</span>
 						<span className={styles.thresholdItem}>
 							<span className={`${styles.thresholdDot} ${styles.thresholdFair}`} />
-							0.50 to 0.75 is fair
+							5.0 to 7.5 is fair
 						</span>
 						<span className={styles.thresholdItem}>
 							<span className={`${styles.thresholdDot} ${styles.thresholdPoor}`} />
-							below 0.50 needs attention
+							below 5.0 needs attention
 						</span>
 					</div>
 					<p className={styles.scaleNote}>
-						Formulas below compute on a 0 to 10 internal scale. The dataset card displays each score normalized to 0
-						to 1 by dividing by 10. The thresholds above are in those app units.
+						Every formula below computes on a 0 to 10 scale, and that is the same scale the dataset card displays,
+						rounded to one decimal place. The thresholds above are in those units.
 					</p>
 				</div>
 
