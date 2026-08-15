@@ -66,6 +66,20 @@ function isFiniteNumber(value) {
   return typeof value === 'number' && Number.isFinite(value);
 }
 
+// Mirrors isRecord in src/lib/performance.ts — keep in sync. `typeof x === 'object'` alone is
+// true for arrays too, which previously let a stray `"finetune": []` be misclassified as a
+// fine-tuned run here while the browser-side isRecord() correctly rejected it.
+function isRecord(value) {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+// Mirrors toText in src/lib/performance.ts — keep in sync.
+function toText(value) {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  return trimmed ? trimmed : null;
+}
+
 function resolveMetricKey(task, metrics) {
   const candidates = TASK_METRIC_KEYS[task] ?? [];
   for (const key of candidates) {
@@ -119,27 +133,39 @@ function computeCategoryScores(metrics) {
   return { f1, map, precision, recall };
 }
 
+// Mirrors buildRunNote in src/lib/performance.ts — keep in sync. entry.notes carries the run's
+// full methodology text (prompt used, parsing rules, metric definitions, etc.) straight from the
+// benchmark script, appended after the generated summary line rather than discarded.
 function buildRunNote(entry) {
-  const parts = [];
-  if (isFiniteNumber(entry.num_samples)) parts.push(`${entry.num_samples} samples`);
-  if (typeof entry.device === 'string' && entry.device.trim()) parts.push(entry.device.trim());
-  return parts.length ? parts.join(' · ') : null;
+  const parts = ['Zero-shot'];
+  if (isFiniteNumber(entry.num_samples)) parts.push(`evaluated on ${entry.num_samples} images`);
+  const summary = parts.join(' · ');
+  const detail = toText(entry.notes);
+  return detail ? `${summary}\n\n${detail}` : summary;
 }
 
-function buildFinetuneNote(finetune) {
-  if (!finetune || typeof finetune !== 'object') return null;
-  const parts = [];
+// Mirrors buildFinetuneNote in src/lib/performance.ts — keep in sync.
+function buildFinetuneNote(finetune, entryNotes) {
+  if (!isRecord(finetune)) return null;
+  const parts = ['Fine-tuned'];
+  if (isFiniteNumber(finetune.train_samples)) parts.push(`trained on ${finetune.train_samples} images from this dataset`);
+  if (isFiniteNumber(finetune.val_samples)) parts.push(`validated on ${finetune.val_samples} images`);
   if (isFiniteNumber(finetune.epochs)) parts.push(`${finetune.epochs} epochs`);
-  if (isFiniteNumber(finetune.train_samples)) parts.push(`${finetune.train_samples} train samples`);
-  return parts.length ? parts.join(' · ') : null;
+  if (isFiniteNumber(finetune.lr)) parts.push(`lr=${finetune.lr}`);
+  if (isFiniteNumber(finetune.weight_decay)) parts.push(`weight decay=${finetune.weight_decay}`);
+  if (isFiniteNumber(finetune.split_seed)) parts.push(`seed=${finetune.split_seed}`);
+  if (isFiniteNumber(finetune.train_ratio)) parts.push(`train ratio=${finetune.train_ratio}`);
+  const summary = parts.join(' · ');
+  const detail = toText(entryNotes);
+  return detail ? `${summary}\n\n${detail}` : summary;
 }
 
 // Rendered as train/test/val percentages in that fixed order, e.g. "10/80/10" — mirrors
 // buildSplitBreakdown in src/lib/performance.ts, kept in sync for the same reason as above.
 function buildSplitBreakdown(entry, finetune) {
   const testSamples = isFiniteNumber(entry.num_samples) ? entry.num_samples : null;
-  const trainSamples = finetune != null && typeof finetune === 'object' && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
-  const valSamples = finetune != null && typeof finetune === 'object' && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
+  const trainSamples = isRecord(finetune) && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
+  const valSamples = isRecord(finetune) && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
   const total = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
   if (!total) return null;
   const toShare = (value) => (value != null ? ((value / total) * 100).toFixed(0) : '-');
@@ -161,17 +187,17 @@ function makeLeaderboardRow(entry, metricKey, variant) {
     categoryScores: computeCategoryScores(entry.metrics),
     benchmarkId: isFiniteNumber(entry.benchmark_id) ? entry.benchmark_id : null,
     variant,
-    date: typeof entry.timestamp === 'string' ? entry.timestamp.slice(0, 10) : null,
+    date: toText(entry.timestamp)?.slice(0, 10) ?? null,
     submitted_by: null,
     link: null,
-    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune) : buildRunNote(entry),
-    optimized: isOptimized(entry.optimized) || (finetune != null && typeof finetune === 'object' && isOptimized(finetune.optimized)),
-    platform: typeof entry.device === 'string' && entry.device.trim() ? entry.device.trim() : null,
+    notes: variant === 'fine-tuned' ? buildFinetuneNote(finetune, entry.notes) : buildRunNote(entry),
+    optimized: isOptimized(entry.optimized) || (isRecord(finetune) && isOptimized(finetune.optimized)),
+    platform: toText(entry.device),
     splitBreakdown: buildSplitBreakdown(entry, finetune),
     // dataset_config is the result set's own config field (raw / augmented) — no fallback to
     // `split`, which is a different concept (the run's data split, e.g. "train"). Absent config
     // means the run used the dataset's raw (unaugmented) form.
-    datasetConfig: typeof entry.dataset_config === 'string' && entry.dataset_config.trim() ? entry.dataset_config.trim() : 'raw',
+    datasetConfig: toText(entry.dataset_config) ?? 'raw',
   };
 }
 
@@ -190,7 +216,7 @@ function buildLeaderboardFromRawResults(rawResults) {
       entry,
       metricKey,
       score: entry.metrics[metricKey],
-      isFinetune: entry.finetune != null && typeof entry.finetune === 'object',
+      isFinetune: isRecord(entry.finetune),
     });
   }
 
@@ -279,10 +305,14 @@ function buildGlobalPerformanceRecords(performanceDatasets, metadataLookup) {
         machine_learning_task: meta.machine_learning_task,
         benchmarkId: entry.benchmarkId ?? null,
         variant: entry.variant === 'zero-shot' || entry.variant === 'fine-tuned' ? entry.variant : null,
-        optimized: Boolean(entry.optimized),
-        platform: typeof entry.platform === 'string' && entry.platform.trim() ? entry.platform.trim() : null,
-        splitBreakdown: entry.splitBreakdown ?? null,
-        datasetConfig: entry.datasetConfig ?? null,
+        // isOptimized(), not Boolean() — a pre-built {leaderboard:[...]} entry may still encode
+        // this as the raw "yes"/"no" string convention (see isOptimized above), and Boolean("no")
+        // is true.
+        optimized: isOptimized(entry.optimized),
+        platform: toText(entry.platform),
+        splitBreakdown: toText(entry.splitBreakdown),
+        datasetConfig: toText(entry.datasetConfig),
+        notes: toText(entry.notes),
       });
     });
   }

@@ -153,10 +153,6 @@
   color: var(--agml-muted);
 }
 
-.benchmarkHeader {
-  margin-bottom: 1.5rem;
-}
-
 .tableHeading {
   font-size: 0.95rem;
   font-weight: 600;
@@ -164,40 +160,10 @@
   margin: 0;
 }
 
-.tableSection {
-  margin-bottom: 2rem;
-}
-
-.tableSection:last-child {
-  margin-bottom: 0;
-}
-
 .tableWrap {
   border: 1px solid var(--agml-border);
   border-radius: 8px;
   overflow-x: auto;
-}
-
-.tableCaption {
-  padding: 0.65rem 1rem;
-  border-bottom: 1px solid var(--agml-border);
-  background: var(--agml-surface-soft);
-  border-radius: 8px 8px 0 0;
-}
-
-.sectionHeading {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--agml-text);
-  margin: 0;
-}
-
-.sectionDescription {
-  font-size: 0.78rem;
-  color: var(--agml-muted);
-  margin: 0.35rem 0 0;
 }
 
 .leaderboardTable {
@@ -276,33 +242,6 @@
   text-underline-offset: 3px;
 }
 
-.metricCell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 110px;
-}
-
-.metricBarTrack {
-  flex: 1;
-  height: 6px;
-  border-radius: 3px;
-  background: var(--agml-surface-soft);
-  overflow: hidden;
-}
-
-.metricBarFill {
-  height: 100%;
-  background: var(--ifm-color-primary);
-}
-
-.metricLabel {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.72rem;
-  color: var(--agml-muted);
-  flex-shrink: 0;
-}
-
 .metricEmpty {
   color: var(--agml-muted);
 }
@@ -335,7 +274,180 @@
   color: var(--agml-muted);
 }
 
+.compareLayout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.selectorPanel {
+  width: 320px;
+  flex-shrink: 0;
+  border: 1px solid var(--agml-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.selectorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--agml-border);
+  background: var(--agml-surface-soft);
+}
+
+.selectorHeader .filterGroupLabel {
+  margin: 0;
+}
+
+.selectorHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modelList {
+  max-height: 640px;
+  overflow-y: auto;
+}
+
+.modelSectionHeading {
+  margin: 0;
+  padding: 0.5rem 1rem 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--agml-muted);
+  background: var(--agml-surface-soft);
+  border-top: 1px solid var(--agml-border);
+}
+
+.modelSectionHeading:first-child {
+  border-top: none;
+}
+
+.modelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  border-top: 1px solid var(--agml-border);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.modelRow:first-child {
+  border-top: none;
+}
+
+.modelRow:hover {
+  background: var(--agml-accent-soft);
+}
+
+.modelRowSelected {
+  background: var(--agml-accent-soft);
+}
+
+.modelRowName {
+  flex: 1;
+  font-family: var(--ifm-code-font-family);
+  color: var(--agml-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modelRowMeta {
+  font-size: 0.72rem;
+  color: var(--agml-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.comparePanel {
+  flex: 1;
+  min-width: 0;
+}
+
+.compareHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.compareTable .tableRow {
+  grid-template-columns: minmax(40px, 0.3fr) minmax(180px, 1.8fr) minmax(110px, 1fr) minmax(110px, 1fr) minmax(110px, 1fr);
+}
+
+.rankPosition {
+  font-family: var(--ifm-code-font-family);
+  color: var(--agml-muted);
+}
+
+.avgRankValue {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 600;
+  color: var(--agml-text);
+}
+
+.matrixSection {
+  margin-top: 1.5rem;
+}
+
+.matrixHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.matrixHeader .filterGroupLabel {
+  margin: 0;
+}
+
+.breakdownMetricTabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.breakdownMetricButton {
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.72rem;
+  color: var(--agml-text);
+  cursor: pointer;
+}
+
+.breakdownMetricButtonActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: var(--agml-on-accent, #fff);
+}
+
+.matrixRank {
+  color: var(--agml-muted);
+}
+
 @media (max-width: 996px) {
+  .compareLayout {
+    flex-direction: column;
+  }
+
+  .selectorPanel {
+    width: 100%;
+  }
+
+
   .body {
     flex-direction: column;
   }
