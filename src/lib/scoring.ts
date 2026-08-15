@@ -64,13 +64,18 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 
 	// Axis 4 — Annotation Reliability
 	if (p3 && has(m, 'label_noise')) {
-		axes.annotation = clamp(10 * Math.pow(1 - m.label_noise!.estimated_noise_rate / 0.1, 1.5), 0, 10);
+		// Noise rates above 10% would otherwise send a negative base into a fractional exponent —
+		// Math.pow(-x, 1.5) is NaN, not a large negative number, since it implies a square root of
+		// a negative number. Clamping the base to 0 first keeps those cases at a flat 0 instead.
+		const base = Math.max(0, 1 - m.label_noise!.estimated_noise_rate / 0.1);
+		axes.annotation = clamp(10 * Math.pow(base, 1.5), 0, 10);
 	}
 
 	const weights: Record<string, number> = { structural: 0.3, difficulty: 0.25, diversity: 0.25, annotation: 0.2 };
 	let weightedSum = 0;
 	let totalWeight = 0;
 	for (const [axis, score] of Object.entries(axes)) {
+		if (score == null || Number.isNaN(score)) continue;
 		weightedSum += score * weights[axis];
 		totalWeight += weights[axis];
 	}

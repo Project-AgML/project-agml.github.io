@@ -162,7 +162,7 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				weight: '100% of axis score',
 				how: 'We train with k-fold cross validation to get an out of fold prediction for every example, then use confident learning methods (like cleanlab) to flag examples where the model consistently disagrees with the assigned label.',
 				meaning: 'Gives an estimated share of mislabeled examples, plus a ranked list of the most likely mislabels for someone to review by hand.',
-				formula: 'S_noise = clamp(10 × (1 − noise_rate / 0.10)^1.5, 0, 10)',
+				formula: 'S_noise = clamp(10 × max(0, 1 − noise_rate / 0.10)^1.5, 0, 10)',
 				interpretation:
 					'A score close to 10 means very few labels are likely wrong. A score close to 0 means a large share are. The curve is steep near the bottom, so even a little estimated noise pulls the score down fast, and it hits 0 once estimated noise reaches 10%.',
 			},
