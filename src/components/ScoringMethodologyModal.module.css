@@ -86,6 +86,11 @@
 	outline: none;
 }
 
+.exportButton:disabled {
+	cursor: default;
+	opacity: 0.6;
+}
+
 .closeButton {
 	flex: 0 0 auto;
 	width: 32px;
@@ -574,15 +579,45 @@
 	}
 }
 
-/* Export to PDF goes through the browser's native print pipeline (real, selectable, searchable
-   text — not a rasterized DOM screenshot) rather than a client-side PDF library, so this is the
-   entire "export" implementation: hide the modal chrome, let the panel flow across pages instead
-   of scrolling in a fixed box, and force the light palette regardless of the current on-screen
-   theme. The token overrides below are the exact --agml- and --ifm-color-primary light-mode
-   values from src/css/custom.css :root — redeclared here (not just "swap to light mode") because
-   html[data-theme='dark'] would otherwise still win the cascade for a dark-mode reader printing
-   this page, and a dark background either wastes ink or, worse, gets stripped by the print
-   engine while the light text stays light — invisible text on a white page. */
+/* Applied via JS for the split-second it takes html2canvas to rasterize the panel for "Export to
+   PDF" (see ScoringMethodologyModal.tsx) — forces a fixed desktop-width layout with nothing
+   clipped, regardless of the actual browser window, so the export always looks the same rather
+   than capturing whatever happens to be on screen at whatever size. The light-palette forcing
+   that used to live here is applied alongside this class as inline rgb() custom properties
+   instead (see applyExportColors in the .tsx) — html2canvas can't parse oklch() at all, so the
+   literal oklch() values that were here previously made every capture throw immediately. */
+.exportSnapshot {
+	width: 940px !important;
+	max-height: none !important;
+	overflow: visible !important;
+	box-shadow: none !important;
+}
+
+/* The toggle buttons and tabs are an app affordance, not part of the reference document itself —
+   hidden for the capture the same way the @media print rules hide them for a manual print. */
+.exportSnapshot .headerActions,
+.exportSnapshot .tabRow {
+	display: none !important;
+}
+
+/* html2canvas doesn't replicate a <summary>'s default disclosure-triangle marker faithfully — it
+   renders as a plain "1." list-item number instead. Force-opening the details for the capture
+   (see handleExportClick) already makes the marker meaningless as an affordance, so hide it. */
+.exportSnapshot .fieldRefSummary {
+	list-style: none;
+}
+
+.exportSnapshot .fieldRefSummary::-webkit-details-marker,
+.exportSnapshot .fieldRefSummary::marker {
+	display: none;
+}
+
+/* Manual Ctrl+P / Cmd+P printing is a secondary path — "Export to PDF" above is the primary,
+   one-click way to get this document, generated client-side via html2canvas + jsPDF instead of
+   this native print pipeline so it downloads directly with no dialog. This block is what a
+   reader gets if they print the page themselves regardless: hides the modal chrome, lets the
+   panel flow across pages instead of scrolling in a fixed box, and forces the same light palette
+   as .exportSnapshot above for the same reason. */
 @media print {
 	@page {
 		margin: 16mm 14mm;

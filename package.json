@@ -28,6 +28,8 @@
     "@mdx-js/react": "^3.0.0",
     "@orama/orama": "^3.1.18",
     "clsx": "^2.0.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
     "plotly.js-dist-min": "^3.7.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
