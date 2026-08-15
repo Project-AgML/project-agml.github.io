@@ -1082,18 +1082,33 @@
 	text-transform: none;
 	letter-spacing: normal;
 	white-space: normal;
+	/* `display: none` rather than `visibility: hidden`: a visibility-hidden box is still laid
+	   out, and an absolutely positioned one still contributes to the modal's scrollable overflow
+	   region. With a 240px bubble anchored to every stat-tile icon, the tiles near the modal's
+	   right edge pushed that region ~200px wide and gave the benchmark face a permanent
+	   horizontal scrollbar while nothing was even visible. */
+	display: none;
 	opacity: 0;
-	visibility: hidden;
 	pointer-events: none;
+	/* allow-discrete + @starting-style keep the fade across the display change on browsers that
+	   support them; elsewhere the bubble simply appears instantly. */
 	transition: opacity 0.12s ease;
+	transition-behavior: allow-discrete;
 	box-shadow: var(--agml-shadow-strong);
 	z-index: 20;
 }
 
 .infoTooltip:hover .infoTooltipBubble,
 .infoTooltip:focus-visible .infoTooltipBubble {
+	display: block;
 	opacity: 1;
-	visibility: visible;
+}
+
+@starting-style {
+	.infoTooltip:hover .infoTooltipBubble,
+	.infoTooltip:focus-visible .infoTooltipBubble {
+		opacity: 0;
+	}
 }
 
 .metricCardBadge {

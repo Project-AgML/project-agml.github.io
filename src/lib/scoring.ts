@@ -38,7 +38,8 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 		const redundancy = clamp(10 * (1 - combined / 0.2), 0, 10);
 		const resolution = clamp(10 * (1 - m.resolution_consistency!.area_cv), 0, 10);
 		const crossSplit = m.exact_duplicate!.cross_split_duplicates + m.near_duplicate!.cross_split_near_duplicates;
-		const penalty = clamp((crossSplit * 100) / m.exact_duplicate!.total_images, 0, 2);
+		const totalImages = m.exact_duplicate!.total_images;
+		const penalty = totalImages > 0 ? clamp((crossSplit * 100) / totalImages, 0, 2) : 0;
 		axes.structural = clamp(0.4 * balance + 0.35 * redundancy + 0.25 * resolution - penalty, 0, 10);
 	}
 
@@ -64,10 +65,12 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 
 	// Axis 4 — Annotation Reliability
 	if (p3 && has(m, 'label_noise')) {
-		// Noise rates above 10% would otherwise send a negative base into a fractional exponent —
-		// Math.pow(-x, 1.5) is NaN, not a large negative number, since it implies a square root of
-		// a negative number. Clamping the base to 0 first keeps those cases at a flat 0 instead.
-		const base = Math.max(0, 1 - m.label_noise!.estimated_noise_rate / 0.1);
+		// Base is clamped to [0, 1] before the fractional exponent: a negative base raised to a
+		// fractional power is undefined (NaN in JS, not a large negative number), and the doc's
+		// intent is to floor the score at 0 once noise reaches 10% rather than produce NaN beyond
+		// that point. Clamping the upper bound too guards against a pathological negative
+		// noise_rate sending the base above 1.
+		const base = clamp(1 - m.label_noise!.estimated_noise_rate / 0.1, 0, 1);
 		axes.annotation = clamp(10 * Math.pow(base, 1.5), 0, 10);
 	}
 
