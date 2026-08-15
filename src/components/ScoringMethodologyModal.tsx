@@ -1,7 +1,7 @@
 // Static reference modal explaining how dataset quality scores are computed. Unlike the rest
 // of the benchmarking UI, nothing here is driven by a specific dataset's data — it's the same
 // content for every dataset, documenting the formulas in SCORING_FORMULAS.md in plain language.
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './ScoringMethodologyModal.module.css';
 
@@ -259,6 +259,12 @@ export function ScoringMethodologyModal({
 	onClose: () => void;
 }) {
 	const [activeTab, setActiveTab] = useState<TaskType>(taskType);
+	const fieldRefDetailsEl = useRef<HTMLDetailsElement>(null);
+	// Printing captures whatever's currently in the DOM, but only the active tab's content is
+	// ever rendered — exporting "the entire reference" while e.g. Object Detection is selected
+	// would otherwise print just its placeholder. Flip to Image Classification (the only tab
+	// with published content) first, then print once that re-render has actually painted.
+	const [pendingExport, setPendingExport] = useState(false);
 
 	useEffect(() => {
 		if (open) setActiveTab(taskType);
@@ -273,7 +279,40 @@ export function ScoringMethodologyModal({
 		return () => window.removeEventListener('keydown', onKeyDown);
 	}, [open, onClose]);
 
+	useEffect(() => {
+		if (!pendingExport) return;
+
+		// The JSON field reference is a collapsed <details> by default — force it open so it's
+		// part of the printed document, and put back whatever state the user had it in after.
+		const wasDetailsOpen = fieldRefDetailsEl.current?.open ?? false;
+		if (fieldRefDetailsEl.current) fieldRefDetailsEl.current.open = true;
+
+		// The exported file's suggested name comes from document.title in every major browser's
+		// print dialog — swap it for the print, then restore it once the dialog closes.
+		const previousTitle = document.title;
+		document.title = 'AgML Scoring Methodology';
+
+		const cleanUp = () => {
+			document.title = previousTitle;
+			if (fieldRefDetailsEl.current) fieldRefDetailsEl.current.open = wasDetailsOpen;
+			window.removeEventListener('afterprint', cleanUp);
+			setPendingExport(false);
+		};
+		window.addEventListener('afterprint', cleanUp);
+
+		// Two rAFs to be sure the tab-switch re-render above has actually painted before the
+		// print engine snapshots the DOM — one for React to commit, one for the browser to paint.
+		requestAnimationFrame(() => requestAnimationFrame(() => window.print()));
+
+		return () => window.removeEventListener('afterprint', cleanUp);
+	}, [pendingExport]);
+
 	if (!open) return null;
+
+	const handleExportClick = () => {
+		if (activeTab !== 'Image Classification') setActiveTab('Image Classification');
+		setPendingExport(true);
+	};
 
 	const axisGroups = buildAxisGroups(activeTab);
 
@@ -282,7 +321,11 @@ export function ScoringMethodologyModal({
 	// containing block for any `position: fixed` descendant, which would otherwise center this
 	// backdrop inside that tall transformed box instead of the actual viewport.
 	return createPortal(
-		<div className={styles.backdrop} role="presentation" onClick={onClose}>
+		// The extra, unhashed "print-export-root" class is a stable hook for the global print
+		// stylesheet (src/css/custom.css) — a CSS Modules class name can't be targeted from
+		// outside its own file, and hiding every *other* piece of the page during print (the
+		// Docusaurus site chrome, the dataset modal underneath) has to happen from there.
+		<div className={`${styles.backdrop} print-export-root`} role="presentation" onClick={onClose}>
 			<div
 				className={styles.panel}
 				role="dialog"
@@ -301,9 +344,14 @@ export function ScoringMethodologyModal({
 							reference, not live data.
 						</p>
 					</div>
-					<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close scoring methodology">
-						×
-					</button>
+					<div className={styles.headerActions}>
+						<button type="button" className={styles.exportButton} onClick={handleExportClick}>
+							⬇ Export to PDF
+						</button>
+						<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close scoring methodology">
+							×
+						</button>
+					</div>
 				</div>
 
 				<div className={styles.tabRow}>
@@ -401,7 +449,7 @@ export function ScoringMethodologyModal({
 							</div>
 						))}
 					</div>
-					<details className={styles.fieldRefDetails}>
+					<details ref={fieldRefDetailsEl} className={styles.fieldRefDetails}>
 						<summary className={styles.fieldRefSummary}>JSON field reference</summary>
 						<div className={styles.fieldRefGrid}>
 							{FIELD_REFS.map((f) => (

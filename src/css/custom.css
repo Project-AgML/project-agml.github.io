@@ -325,3 +325,30 @@ body {
 .prism-code {
     background: var(--agml-surface-strong) !important;
 }
+
+/* Any open modal locks body scroll via an inline `overflow: hidden` (and Safari/Chrome can pair
+   that with a constrained height on ancestor layout containers) while it's open. That's a
+   screen-only affordance, but Chromium's print pagination can take a hidden-overflow body as
+   "this document is exactly one viewport tall" and truncate everything below it instead of
+   flowing it onto additional pages. The !important is required to beat the inline style. */
+@media print {
+    html,
+    body {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* The Scoring Methodology modal's "Export to PDF" is the only thing on this site that ever
+       triggers a print — everything else (the Docusaurus site chrome, the dataset modal
+       underneath, both nested inside the site's root div rather than portaled) should be absent
+       from the printed output entirely, not just visually covered, so the export starts on page
+       one instead of several blank/irrelevant pages in. print-export-root is portaled directly
+       onto <body>, so hiding every *other* direct child of body hides all of it in one rule. */
+    body > :not(.print-export-root) {
+        display: none !important;
+    }
+
+    body > .print-export-root {
+        display: block !important;
+    }
+}

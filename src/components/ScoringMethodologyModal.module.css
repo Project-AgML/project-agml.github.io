@@ -57,6 +57,35 @@
 	text-align: justify;
 }
 
+.headerActions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex: 0 0 auto;
+}
+
+.exportButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	border: 1px solid var(--ifm-color-primary);
+	border-radius: 999px;
+	background: var(--agml-accent-soft);
+	color: var(--ifm-color-primary);
+	padding: 0.45rem 0.9rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	font-family: var(--ifm-code-font-family);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.exportButton:hover,
+.exportButton:focus-visible {
+	border-color: var(--ifm-color-primary-dark);
+	outline: none;
+}
+
 .closeButton {
 	flex: 0 0 auto;
 	width: 32px;
@@ -542,5 +571,91 @@
 	.metricCard,
 	.metricCardPenalty {
 		grid-column: span 1;
+	}
+}
+
+/* Export to PDF goes through the browser's native print pipeline (real, selectable, searchable
+   text — not a rasterized DOM screenshot) rather than a client-side PDF library, so this is the
+   entire "export" implementation: hide the modal chrome, let the panel flow across pages instead
+   of scrolling in a fixed box, and force the light palette regardless of the current on-screen
+   theme. The token overrides below are the exact --agml- and --ifm-color-primary light-mode
+   values from src/css/custom.css :root — redeclared here (not just "swap to light mode") because
+   html[data-theme='dark'] would otherwise still win the cascade for a dark-mode reader printing
+   this page, and a dark background either wastes ink or, worse, gets stripped by the print
+   engine while the light text stays light — invisible text on a white page. */
+@media print {
+	@page {
+		margin: 16mm 14mm;
+	}
+
+	.backdrop {
+		position: static;
+		z-index: auto;
+		display: block;
+		padding: 0;
+		background: none;
+		backdrop-filter: none;
+	}
+
+	.panel {
+		--agml-page-bg: oklch(0.985 0.006 145);
+		--agml-surface-strong: oklch(1 0.002 145);
+		--agml-surface-soft: oklch(0.965 0.008 145);
+		--agml-border: oklch(0.85 0.012 145);
+		--agml-border-strong: oklch(0.78 0.014 145);
+		--agml-text: oklch(0.2 0.012 145);
+		--agml-muted: oklch(0.45 0.012 145);
+		--agml-tag-bg: oklch(0.91 0.02 145);
+		--agml-accent-soft: oklch(0.92 0.06 150);
+		--ifm-color-primary: oklch(0.5 0.14 150);
+		--agml-caution-text: oklch(0.65 0.18 97);
+		--agml-warning-text: oklch(0.55 0.19 27);
+		--agml-warning-soft: rgba(199, 60, 41, 0.12);
+		--agml-axis-difficulty: oklch(0.5 0.15 250);
+		--agml-axis-diversity: oklch(0.55 0.17 340);
+
+		width: 100%;
+		max-height: none;
+		overflow: visible;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	.exportButton,
+	.closeButton,
+	.tabRow {
+		display: none !important;
+	}
+
+	/* Keep each card, tile, and pending-note box from splitting across a page boundary — letting
+	   the *sections* break freely between pages (so a long axis isn't forced onto its own page
+	   and left mostly blank) while individual cards stay intact. */
+	.overallSection,
+	.weightTile,
+	.metricCard,
+	.metricCardPenalty,
+	.placeholderCard,
+	.pendingNote,
+	.fieldRefRow {
+		break-inside: avoid;
+	}
+
+	.axisTitle {
+		break-after: avoid;
+	}
+
+	.fieldRefSummary {
+		cursor: default;
+	}
+
+	/* The <details> marker triangle is a screen affordance for an interaction that doesn't exist
+	   on paper — the export logic force-opens it, so the arrow reads as visual noise here. */
+	.fieldRefSummary::-webkit-details-marker,
+	.fieldRefSummary::marker {
+		display: none;
 	}
 }
