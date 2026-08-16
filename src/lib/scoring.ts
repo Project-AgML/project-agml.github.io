@@ -66,8 +66,10 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 	// Axis 4 — Annotation Reliability
 	if (p3 && has(m, 'label_noise')) {
 		// Base is clamped to [0, 1] before the fractional exponent: a negative base raised to a
-		// fractional power is undefined (NaN in JS), and the doc's intent is to floor the score at
-		// 0 once noise reaches 10%, not to produce NaN beyond that point.
+		// fractional power is undefined (NaN in JS, not a large negative number), and the doc's
+		// intent is to floor the score at 0 once noise reaches 10% rather than produce NaN beyond
+		// that point. Clamping the upper bound too guards against a pathological negative
+		// noise_rate sending the base above 1.
 		const base = clamp(1 - m.label_noise!.estimated_noise_rate / 0.1, 0, 1);
 		axes.annotation = clamp(10 * Math.pow(base, 1.5), 0, 10);
 	}
@@ -76,6 +78,7 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 	let weightedSum = 0;
 	let totalWeight = 0;
 	for (const [axis, score] of Object.entries(axes)) {
+		if (score == null || Number.isNaN(score)) continue;
 		weightedSum += score * weights[axis];
 		totalWeight += weights[axis];
 	}

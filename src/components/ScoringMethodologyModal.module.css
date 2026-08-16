@@ -57,6 +57,40 @@
 	text-align: justify;
 }
 
+.headerActions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex: 0 0 auto;
+}
+
+.exportButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	border: 1px solid var(--ifm-color-primary);
+	border-radius: 999px;
+	background: var(--agml-accent-soft);
+	color: var(--ifm-color-primary);
+	padding: 0.45rem 0.9rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	font-family: var(--ifm-code-font-family);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.exportButton:hover,
+.exportButton:focus-visible {
+	border-color: var(--ifm-color-primary-dark);
+	outline: none;
+}
+
+.exportButton:disabled {
+	cursor: default;
+	opacity: 0.6;
+}
+
 .closeButton {
 	flex: 0 0 auto;
 	width: 32px;
@@ -542,5 +576,121 @@
 	.metricCard,
 	.metricCardPenalty {
 		grid-column: span 1;
+	}
+}
+
+/* Applied via JS for the split-second it takes html2canvas to rasterize the panel for "Export to
+   PDF" (see ScoringMethodologyModal.tsx) — forces a fixed desktop-width layout with nothing
+   clipped, regardless of the actual browser window, so the export always looks the same rather
+   than capturing whatever happens to be on screen at whatever size. The light-palette forcing
+   that used to live here is applied alongside this class as inline rgb() custom properties
+   instead (see applyExportColors in the .tsx) — html2canvas can't parse oklch() at all, so the
+   literal oklch() values that were here previously made every capture throw immediately. */
+.exportSnapshot {
+	width: 940px !important;
+	max-height: none !important;
+	overflow: visible !important;
+	box-shadow: none !important;
+}
+
+/* The toggle buttons and tabs are an app affordance, not part of the reference document itself —
+   hidden for the capture the same way the @media print rules hide them for a manual print. */
+.exportSnapshot .headerActions,
+.exportSnapshot .tabRow {
+	display: none !important;
+}
+
+/* html2canvas doesn't replicate a <summary>'s default disclosure-triangle marker faithfully — it
+   renders as a plain "1." list-item number instead. Force-opening the details for the capture
+   (see handleExportClick) already makes the marker meaningless as an affordance, so hide it. */
+.exportSnapshot .fieldRefSummary {
+	list-style: none;
+}
+
+.exportSnapshot .fieldRefSummary::-webkit-details-marker,
+.exportSnapshot .fieldRefSummary::marker {
+	display: none;
+}
+
+/* Manual Ctrl+P / Cmd+P printing is a secondary path — "Export to PDF" above is the primary,
+   one-click way to get this document, generated client-side via html2canvas + jsPDF instead of
+   this native print pipeline so it downloads directly with no dialog. This block is what a
+   reader gets if they print the page themselves regardless: hides the modal chrome, lets the
+   panel flow across pages instead of scrolling in a fixed box, and forces the same light palette
+   as .exportSnapshot above for the same reason. */
+@media print {
+	@page {
+		margin: 16mm 14mm;
+	}
+
+	.backdrop {
+		position: static;
+		z-index: auto;
+		display: block;
+		padding: 0;
+		background: none;
+		backdrop-filter: none;
+	}
+
+	.panel {
+		--agml-page-bg: oklch(0.985 0.006 145);
+		--agml-surface-strong: oklch(1 0.002 145);
+		--agml-surface-soft: oklch(0.965 0.008 145);
+		--agml-border: oklch(0.85 0.012 145);
+		--agml-border-strong: oklch(0.78 0.014 145);
+		--agml-text: oklch(0.2 0.012 145);
+		--agml-muted: oklch(0.45 0.012 145);
+		--agml-tag-bg: oklch(0.91 0.02 145);
+		--agml-accent-soft: oklch(0.92 0.06 150);
+		--ifm-color-primary: oklch(0.5 0.14 150);
+		--agml-caution-text: oklch(0.65 0.18 97);
+		--agml-warning-text: oklch(0.55 0.19 27);
+		--agml-warning-soft: rgba(199, 60, 41, 0.12);
+		--agml-axis-difficulty: oklch(0.5 0.15 250);
+		--agml-axis-diversity: oklch(0.55 0.17 340);
+
+		width: 100%;
+		max-height: none;
+		overflow: visible;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	.exportButton,
+	.closeButton,
+	.tabRow {
+		display: none !important;
+	}
+
+	/* Keep each card, tile, and pending-note box from splitting across a page boundary — letting
+	   the *sections* break freely between pages (so a long axis isn't forced onto its own page
+	   and left mostly blank) while individual cards stay intact. */
+	.overallSection,
+	.weightTile,
+	.metricCard,
+	.metricCardPenalty,
+	.placeholderCard,
+	.pendingNote,
+	.fieldRefRow {
+		break-inside: avoid;
+	}
+
+	.axisTitle {
+		break-after: avoid;
+	}
+
+	.fieldRefSummary {
+		cursor: default;
+	}
+
+	/* The <details> marker triangle is a screen affordance for an interaction that doesn't exist
+	   on paper — the export logic force-opens it, so the arrow reads as visual noise here. */
+	.fieldRefSummary::-webkit-details-marker,
+	.fieldRefSummary::marker {
+		display: none;
 	}
 }

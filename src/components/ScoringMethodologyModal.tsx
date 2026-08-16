@@ -1,7 +1,7 @@
 // Static reference modal explaining how dataset quality scores are computed. Unlike the rest
 // of the benchmarking UI, nothing here is driven by a specific dataset's data — it's the same
 // content for every dataset, documenting the formulas in SCORING_FORMULAS.md in plain language.
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './ScoringMethodologyModal.module.css';
 
@@ -162,7 +162,7 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				weight: '100% of axis score',
 				how: 'We train with k-fold cross validation to get an out of fold prediction for every example, then use confident learning methods (like cleanlab) to flag examples where the model consistently disagrees with the assigned label.',
 				meaning: 'Gives an estimated share of mislabeled examples, plus a ranked list of the most likely mislabels for someone to review by hand.',
-				formula: 'S_noise = clamp(10 × (1 − noise_rate / 0.10)^1.5, 0, 10)',
+				formula: 'S_noise = clamp(10 × max(0, 1 − noise_rate / 0.10)^1.5, 0, 10)',
 				interpretation:
 					'A score close to 10 means very few labels are likely wrong. A score close to 0 means a large share are. The curve is steep near the bottom, so even a little estimated noise pulls the score down fast, and it hits 0 once estimated noise reaches 10%.',
 			},
@@ -197,6 +197,151 @@ const FIELD_REFS: { symbol: string; path: string }[] = [
 	{ symbol: 'accuracy', path: 'metrics.class_confusability.accuracy' },
 	{ symbol: 'noise_rate', path: 'metrics.label_noise.estimated_noise_rate' },
 ];
+
+function nextFrame(): Promise<void> {
+	return new Promise((resolve) => requestAnimationFrame(() => resolve()));
+}
+
+// html2canvas (unlike a real browser paint) can't parse oklch() at all — it throws and aborts the
+// capture the instant it hits one, and CSS custom properties inherit, so setting only the handful
+// this component's own styles reference isn't enough: getComputedStyle(document.body) reflects
+// *every* --ifm-*/--agml-*/--docusaurus-* token defined on :root, oklch() or not, because they're
+// all inherited whether this component uses them or not, and html2canvas's document-clone step
+// touches all of them. This is every :root token that resolves (following var() aliases like
+// --ifm-navbar-background-color: var(--agml-surface)) to an oklch() value — generated from
+// src/css/custom.css's :root block, not hand-picked, so it can't silently drift out of sync — with
+// each one pre-converted to the equivalent rgb()/rgba() string ahead of time (see oklchToRgb for
+// the same conversion done at runtime, used here as a one-off script instead since these values
+// are fixed). Always the light-mode set regardless of the current theme, matching .exportSnapshot.
+const EXPORT_COLOR_TOKENS: [string, string][] = [
+	['--ifm-color-primary', 'rgb(0, 120, 52)'],
+	['--ifm-color-primary-dark', 'rgb(0, 105, 37)'],
+	['--ifm-color-primary-darker', 'rgb(0, 96, 28)'],
+	['--ifm-color-primary-darkest', 'rgb(0, 75, 12)'],
+	['--ifm-color-primary-light', 'rgb(28, 135, 66)'],
+	['--ifm-color-primary-lighter', 'rgb(49, 151, 81)'],
+	['--ifm-color-primary-lightest', 'rgb(92, 181, 114)'],
+	['--docusaurus-highlighted-code-line-bg', 'rgba(11, 14, 11, 0.08)'],
+	['--agml-page-bg', 'rgb(248, 251, 248)'],
+	['--agml-surface', 'rgb(241, 247, 241)'],
+	['--agml-surface-strong', 'rgb(254, 255, 254)'],
+	['--agml-surface-soft', 'rgb(240, 245, 240)'],
+	['--agml-border', 'rgb(201, 208, 201)'],
+	['--agml-border-strong', 'rgb(178, 186, 178)'],
+	['--agml-shadow', '0 16px 32px rgba(0, 0, 0, 0.06)'],
+	['--agml-shadow-strong', '0 24px 48px rgba(0, 0, 0, 0.09)'],
+	['--agml-text', 'rgb(19, 24, 19)'],
+	['--agml-muted', 'rgb(81, 87, 81)'],
+	['--agml-accent-soft', 'rgb(201, 241, 208)'],
+	['--agml-warning-text', 'rgb(201, 48, 45)'],
+	['--agml-caution-text', 'rgb(175, 140, 0)'],
+	['--agml-axis-difficulty', 'rgb(0, 101, 180)'],
+	['--agml-axis-diversity', 'rgb(174, 64, 144)'],
+	['--agml-modal-overlay', 'rgba(0, 0, 0, 0.3)'],
+	['--agml-badge-classification-bg', 'rgb(177, 237, 178)'],
+	['--agml-badge-classification-fg', 'rgb(0, 71, 0)'],
+	['--agml-badge-detection-bg', 'rgb(162, 237, 216)'],
+	['--agml-badge-detection-fg', 'rgb(0, 79, 57)'],
+	['--agml-badge-segmentation-bg', 'rgb(221, 223, 170)'],
+	['--agml-badge-segmentation-fg', 'rgb(66, 65, 0)'],
+	['--agml-badge-other-bg', 'rgb(221, 227, 221)'],
+	['--agml-badge-other-fg', 'rgb(68, 73, 68)'],
+	['--agml-badge-vlm-bg', 'rgb(226, 207, 255)'],
+	['--agml-badge-vlm-fg', 'rgb(73, 38, 118)'],
+	['--agml-tag-bg', 'rgb(217, 229, 217)'],
+	['--agml-tag-fg', 'rgb(51, 65, 51)'],
+	['--ifm-navbar-background-color', 'rgb(241, 247, 241)'],
+	['--ifm-footer-background-color', 'rgb(241, 247, 241)'],
+	['--ifm-card-background-color', 'rgb(254, 255, 254)'],
+	['--ifm-toc-background-color', 'rgb(241, 247, 241)'],
+	['--ifm-toc-border-color', 'rgb(201, 208, 201)'],
+];
+
+function applyExportColors(el: HTMLElement) {
+	for (const [token, value] of EXPORT_COLOR_TOKENS) el.style.setProperty(token, value);
+}
+
+function clearExportColors(el: HTMLElement) {
+	for (const [token] of EXPORT_COLOR_TOKENS) el.style.removeProperty(token);
+}
+
+// html2canvas clones the whole document as part of its own pipeline, and — confirmed by testing,
+// not just cautious guesswork — it does *not* correctly skip descendants of a `display: none`
+// ancestor the way an actual browser paint does: hiding the rest of the page with CSS still left
+// it walking into the Docusaurus site chrome and the dataset modal underneath, both full of this
+// site's oklch() tokens, and throwing on the first one it hit. Actually detaching those nodes
+// from the DOM (not just hiding them) is the only thing that reliably keeps html2canvas out of
+// them. Returns a restore callback that puts everything back in its exact original order.
+function detachOtherBodyChildren(keepEl: Node): () => void {
+	const originalOrder = Array.from(document.body.childNodes);
+	for (const node of originalOrder) {
+		if (node !== keepEl) node.parentNode?.removeChild(node);
+	}
+	return () => {
+		document.body.replaceChildren(...originalOrder);
+	};
+}
+
+// PDF geometry, in points (72pt = 1in) — US Letter with a comfortable half-inch margin.
+const PAGE_WIDTH_PT = 612;
+const PAGE_HEIGHT_PT = 792;
+const MARGIN_PT = 36;
+const USABLE_WIDTH_PT = PAGE_WIDTH_PT - MARGIN_PT * 2;
+const USABLE_HEIGHT_PT = PAGE_HEIGHT_PT - MARGIN_PT * 2;
+
+// Cards, tiles, and formula boxes that should never be sliced in half across a page boundary —
+// the same set the (still-present, Ctrl+P-only) @media print rules mark break-inside: avoid.
+const UNBREAKABLE_SELECTOR = [
+	'overallSection',
+	'weightTile',
+	'metricCard',
+	'metricCardPenalty',
+	'placeholderCard',
+	'axisFormulaFooter',
+	'fieldRefRow',
+]
+	.map((key) => `.${styles[key]}`)
+	.join(',');
+
+// A canvas screenshot has no concept of "don't split this element" the way print CSS does, so
+// this re-derives it manually: read where each unbreakable block sits (in CSS px, relative to
+// the panel's top) before rasterizing, then have the page-break search pull a cut point back to
+// the top of whichever block it would otherwise land inside of.
+function getUnbreakableRanges(panelEl: HTMLElement): { top: number; bottom: number }[] {
+	const panelTop = panelEl.getBoundingClientRect().top;
+	return Array.from(panelEl.querySelectorAll<HTMLElement>(UNBREAKABLE_SELECTOR)).map((el) => {
+		const rect = el.getBoundingClientRect();
+		return { top: rect.top - panelTop, bottom: rect.bottom - panelTop };
+	});
+}
+
+// Greedily walks down the content in ~one-page steps, snapping each cut point back to the start
+// of any unbreakable block it would otherwise fall in the middle of.
+function computePageBreaks(totalHeight: number, pageHeight: number, ranges: { top: number; bottom: number }[]): number[] {
+	const breaks = [0];
+	let cursor = 0;
+	while (cursor < totalHeight) {
+		let candidate = cursor + pageHeight;
+		if (candidate >= totalHeight) {
+			breaks.push(totalHeight);
+			break;
+		}
+		const collision = ranges.find((r) => candidate > r.top && candidate < r.bottom);
+		if (collision) candidate = collision.top;
+		// A single block taller than one page can't be avoided — fall back to a hard cut so the
+		// loop still makes forward progress instead of spinning forever.
+		if (candidate <= cursor) candidate = cursor + pageHeight;
+		breaks.push(candidate);
+		cursor = candidate;
+	}
+	// The panel's own bottom padding/border trails past the last real content by a little, which
+	// can leave a nearly-blank final "page" a few px tall on its own — fold it into the previous
+	// page instead of shipping a page whose only content is some rounded corner.
+	while (breaks.length > 2 && breaks[breaks.length - 1] - breaks[breaks.length - 2] < 24) {
+		breaks.splice(breaks.length - 2, 1);
+	}
+	return breaks;
+}
 
 function buildAxisGroups(taskType: TaskType): AxisDoc[] {
 	const data = taskType === 'Image Classification' ? IMAGE_CLASSIFICATION_AXES : null;
@@ -259,6 +404,9 @@ export function ScoringMethodologyModal({
 	onClose: () => void;
 }) {
 	const [activeTab, setActiveTab] = useState<TaskType>(taskType);
+	const [isExporting, setIsExporting] = useState(false);
+	const fieldRefDetailsEl = useRef<HTMLDetailsElement>(null);
+	const panelEl = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (open) setActiveTab(taskType);
@@ -275,6 +423,114 @@ export function ScoringMethodologyModal({
 
 	if (!open) return null;
 
+	// Downloads a PDF directly — no print dialog, no "choose a destination" step. Built with
+	// html2canvas + jsPDF instead of the browser's native print-to-PDF specifically so the file
+	// lands in Downloads on click; the trade-off is a rasterized page image rather than
+	// selectable text, so the capture width/scale below are tuned to still read crisply.
+	const handleExportClick = async () => {
+		if (isExporting) return;
+		setIsExporting(true);
+		try {
+			// Only the active tab's content is ever in the DOM — exporting "the entire reference"
+			// while e.g. Object Detection is selected would otherwise capture just its placeholder.
+			if (activeTab !== 'Image Classification') {
+				setActiveTab('Image Classification');
+				await nextFrame();
+				await nextFrame();
+			}
+
+			const detailsEl = fieldRefDetailsEl.current;
+			const wasDetailsOpen = detailsEl?.open ?? false;
+			if (detailsEl) detailsEl.open = true;
+
+			const panel = panelEl.current;
+			if (!panel) return;
+
+			const [{ default: html2canvas }, { jsPDF }] = await Promise.all([import('html2canvas'), import('jspdf')]);
+
+			// 1.5 is a compromise: high enough to still look crisp when zoomed in on a screen,
+			// low enough (combined with JPEG below) to keep the file a few MB instead of tens of —
+			// scale 2 with lossless PNG produced a ~55MB download for this document.
+			const scale = 1.5;
+			let canvas: HTMLCanvasElement;
+			let ranges: { top: number; bottom: number }[];
+			let panelWidthPx: number;
+			const restoreBody = detachOtherBodyChildren(panel.parentElement ?? panel);
+			try {
+				// Forces the light palette regardless of the current theme (a dark capture would
+				// either waste ink if someone prints it later or, worse, get its background silently
+				// dropped while the text stays light), removes the on-screen height cap so nothing is
+				// clipped, and fixes the width so the export always uses the wide desktop layout —
+				// otherwise a narrow browser window would export the mobile single-column layout.
+				panel.classList.add(styles.exportSnapshot);
+				// <html>, not <body> or just the panel: custom-property var() substitution resolves
+				// per element, and
+				// Infima's own internal tokens (--ifm-link-color, --docusaurus-progress-bar-color,
+				// pagination/tabs/menu active-colors, etc. — none of them mine to enumerate) are
+				// declared as var(--ifm-color-primary) on the same html[data-theme] rule that sets
+				// --ifm-color-primary itself. Overriding on body would only reach body's own
+				// inherited copy of --ifm-color-primary, too late for those aliases — they'd already
+				// have resolved against html's oklch() value. Overriding on html instead means any
+				// var() reference declared alongside it picks up this override too, transitively.
+				applyExportColors(document.documentElement);
+				await nextFrame();
+				await nextFrame();
+
+				ranges = getUnbreakableRanges(panel);
+				panelWidthPx = panel.getBoundingClientRect().width;
+				canvas = await html2canvas(panel, { backgroundColor: '#ffffff', scale, useCORS: true });
+			} finally {
+				// Runs even if html2canvas throws (it does, on anything it can't parse) — otherwise a
+				// failed export would leave the modal stuck showing the light-forced snapshot state.
+				restoreBody();
+				panel.classList.remove(styles.exportSnapshot);
+				clearExportColors(document.documentElement);
+				if (detailsEl) detailsEl.open = wasDetailsOpen;
+			}
+
+			const ptPerPx = USABLE_WIDTH_PT / panelWidthPx;
+			const pageHeightPx = USABLE_HEIGHT_PT / ptPerPx;
+			const totalHeightPx = canvas.height / scale;
+			const breaks = computePageBreaks(totalHeightPx, pageHeightPx, ranges);
+
+			const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+			const sliceCanvas = document.createElement('canvas');
+			const sliceCtx = sliceCanvas.getContext('2d');
+			sliceCanvas.width = canvas.width;
+
+			for (let i = 0; i < breaks.length - 1; i += 1) {
+				const sliceTopPx = breaks[i];
+				const sliceHeightPx = breaks[i + 1] - sliceTopPx;
+				if (sliceHeightPx <= 0) continue;
+
+				sliceCanvas.height = sliceHeightPx * scale;
+				sliceCtx?.clearRect(0, 0, sliceCanvas.width, sliceCanvas.height);
+				sliceCtx?.drawImage(
+					canvas,
+					0,
+					sliceTopPx * scale,
+					canvas.width,
+					sliceHeightPx * scale,
+					0,
+					0,
+					canvas.width,
+					sliceHeightPx * scale,
+				);
+
+				if (i > 0) doc.addPage();
+				// JPEG over PNG for the same reason as the reduced scale above — this is a rasterized
+				// capture either way, so there's no selectable-text quality to lose, and at 0.92
+				// quality the compression artifacts aren't visible while the file shrinks drastically
+				// compared to lossless PNG at this resolution.
+				doc.addImage(sliceCanvas.toDataURL('image/jpeg', 0.92), 'JPEG', MARGIN_PT, MARGIN_PT, USABLE_WIDTH_PT, sliceHeightPx * ptPerPx);
+			}
+
+			doc.save('AgML-Scoring-Methodology.pdf');
+		} finally {
+			setIsExporting(false);
+		}
+	};
+
 	const axisGroups = buildAxisGroups(activeTab);
 
 	// Portaled to the document body — this modal can be opened from inside the dataset modal's
@@ -282,8 +538,13 @@ export function ScoringMethodologyModal({
 	// containing block for any `position: fixed` descendant, which would otherwise center this
 	// backdrop inside that tall transformed box instead of the actual viewport.
 	return createPortal(
-		<div className={styles.backdrop} role="presentation" onClick={onClose}>
+		// The extra, unhashed "print-export-root" class is a stable hook for the global print
+		// stylesheet (src/css/custom.css) — a CSS Modules class name can't be targeted from
+		// outside its own file, and hiding every *other* piece of the page during print (the
+		// Docusaurus site chrome, the dataset modal underneath) has to happen from there.
+		<div className={`${styles.backdrop} print-export-root`} role="presentation" onClick={onClose}>
 			<div
+				ref={panelEl}
 				className={styles.panel}
 				role="dialog"
 				aria-modal="true"
@@ -301,9 +562,14 @@ export function ScoringMethodologyModal({
 							reference, not live data.
 						</p>
 					</div>
-					<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close scoring methodology">
-						×
-					</button>
+					<div className={styles.headerActions}>
+						<button type="button" className={styles.exportButton} onClick={handleExportClick} disabled={isExporting}>
+							{isExporting ? 'Preparing PDF…' : '⬇ Export to PDF'}
+						</button>
+						<button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close scoring methodology">
+							×
+						</button>
+					</div>
 				</div>
 
 				<div className={styles.tabRow}>
@@ -404,7 +670,7 @@ export function ScoringMethodologyModal({
 							</div>
 						))}
 					</div>
-					<details className={styles.fieldRefDetails}>
+					<details ref={fieldRefDetailsEl} className={styles.fieldRefDetails}>
 						<summary className={styles.fieldRefSummary}>JSON field reference</summary>
 						<div className={styles.fieldRefGrid}>
 							{FIELD_REFS.map((f) => (
