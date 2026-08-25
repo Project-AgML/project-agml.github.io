@@ -34,6 +34,11 @@ export interface Dataset {
     license: string | null;
     citation: string | null;
     parent_dataset?: string | null;
+    // Derived (not present in the source manifests): for a dataset whose child variants are
+    // hidden from search results (see isChildDataset/includeChildren), the crop/species names
+    // rolled up from those children's names — so that info stays visible on the parent's card
+    // even though the children themselves no longer appear as separate results.
+    child_crop_types?: string[] | null;
     zip_size_bytes?: number | null;
     hf_link?: string | null;
     // VLM (vision-language) dataset fields — absent/null on plain vision datasets.
@@ -216,6 +221,7 @@ function normalizeDataset(raw: unknown): Dataset | null {
         license: firstString(raw.license),
         citation: firstString(raw.citation),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
+        child_crop_types: null,
         zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
         hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
         dataset_type: isVlm ? "vlm" : "vision",
@@ -280,6 +286,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         license: current.license ?? incoming.license,
         citation: current.citation ?? incoming.citation,
         parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
+        child_crop_types: current.child_crop_types ?? incoming.child_crop_types,
         zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
         hf_link: current.hf_link ?? incoming.hf_link,
         dataset_type:
@@ -335,7 +342,7 @@ export async function loadDatasets(manifestUrls: string[]): Promise<Dataset[]> {
     }
 
     if (loadedAny) {
-        return Array.from(merged.values()).sort((a, b) =>
+        return attachChildCropTypes(Array.from(merged.values())).sort((a, b) =>
             a.name.localeCompare(b.name),
         );
     }
@@ -691,6 +698,39 @@ export interface DatasetStats {
 // as "this is a child" there wrongly hid all six of them from the counts and listings.
 export function isChildDataset(dataset: Dataset): boolean {
     return Boolean(dataset.parent_dataset) && dataset.dataset_type !== "vlm";
+}
+
+// Child dataset names are "<parent>/<species_slug>", e.g. "iNatAg-mini/abelmoschus_esculentus".
+// Turns the slug into a readable crop/species name for display.
+function speciesNameFromChild(dataset: Dataset): string | null {
+    const slug = dataset.name.split("/").pop();
+    if (!slug) return null;
+    return toTitleCase(slug.replace(/_/g, " "));
+}
+
+// Rolls each parent's children's species names up onto that parent's `child_crop_types`, so the
+// crop/species info stays visible on the parent's card even though the children are filtered out
+// of search results by `isChildDataset`/`includeChildren`. Mutates nothing — returns a new array.
+export function attachChildCropTypes(datasets: Dataset[]): Dataset[] {
+    const byParent = new Map<string, Set<string>>();
+    for (const dataset of datasets) {
+        if (!isChildDataset(dataset)) continue;
+        const species = speciesNameFromChild(dataset);
+        if (!species) continue;
+        const parentName = dataset.parent_dataset!;
+        if (!byParent.has(parentName)) byParent.set(parentName, new Set());
+        byParent.get(parentName)!.add(species);
+    }
+    if (byParent.size === 0) return datasets;
+
+    return datasets.map((dataset) => {
+        const species = byParent.get(dataset.name);
+        if (!species) return dataset;
+        return {
+            ...dataset,
+            child_crop_types: Array.from(species).sort((a, b) => a.localeCompare(b)),
+        };
+    });
 }
 
 // Key for counting *distinct* datasets: child variants collapse onto their parent so an
