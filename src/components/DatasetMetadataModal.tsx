@@ -1199,7 +1199,7 @@ export function DatasetMetadataModal({
 			: []),
 	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
-	const cropList = dataset.crop_types ?? [];
+	const cropList = dataset.crop_types ?? dataset.child_crop_types ?? [];
 	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
 	const locationList = formatLocationList(dataset);
 	const coordinateList = formatCoordinateList(dataset.lat_lon);
