@@ -49,7 +49,13 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 		const sil = clamp(sep.silhouette_score * 10, 0, 10);
 		const db = clamp(10 - sep.davies_bouldin_index * 3, 0, 10);
 		const separability = (sil + db) / 2;
-		if (p3 && has(m, 'dataset_cartography') && has(m, 'class_confusability')) {
+		if (
+			p3 &&
+			has(m, 'dataset_cartography') &&
+			has(m, 'class_confusability') &&
+			!m.dataset_cartography!.skipped &&
+			!m.class_confusability!.skipped
+		) {
 			const cart = clamp(10 * (1 - m.dataset_cartography!.pct_hard / 50), 0, 10);
 			const conf = clamp(m.class_confusability!.accuracy * 10, 0, 10);
 			axes.difficulty = 0.4 * separability + 0.3 * cart + 0.3 * conf;
@@ -64,7 +70,7 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 	}
 
 	// Axis 4 — Annotation Reliability
-	if (p3 && has(m, 'label_noise')) {
+	if (p3 && has(m, 'label_noise') && !m.label_noise!.skipped) {
 		// Base is clamped to [0, 1] before the fractional exponent: a negative base raised to a
 		// fractional power is undefined (NaN in JS, not a large negative number), and the doc's
 		// intent is to floor the score at 0 once noise reaches 10% rather than produce NaN beyond

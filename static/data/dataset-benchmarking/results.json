@@ -16189,37 +16189,6 @@
             }
         }
     },
-    "bean_disease_classification_tanzania": {
-        "dataset": "Project-AgML/bean_disease_classification_tanzania",
-        "date": "2026-08-15",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "anthracnose": 9472,
-                    "healthy": 17480,
-                    "rust": 14397
-                },
-                "imbalance_ratio": 1.8454,
-                "normalized_entropy": 0.973,
-                "most_frequent_class": "healthy",
-                "least_frequent_class": "anthracnose",
-                "total_train_examples": 41349
-            }
-        }
-    },
     "bean_disease_uganda": {
         "dataset": "Project-AgML/bean_disease_uganda",
         "date": "2026-08-15",
@@ -23933,38 +23902,6 @@
             }
         }
     },
-    "corn_leaf_pest_classification": {
-        "dataset": "Project-AgML/corn_leaf_pest_classification",
-        "date": "2026-08-20",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "healthy": 322,
-                    "helminthosporium_leaf_blight": 80,
-                    "spodoptera_frugiperda": 482,
-                    "zonocerus_variegatus": 31
-                },
-                "imbalance_ratio": 15.5484,
-                "normalized_entropy": 0.7451,
-                "most_frequent_class": "spodoptera_frugiperda",
-                "least_frequent_class": "zonocerus_variegatus",
-                "total_train_examples": 915
-            }
-        }
-    },
     "corn_maize_leaf_disease": {
         "dataset": "Project-AgML/corn_maize_leaf_disease",
         "date": "2026-08-20",
@@ -24781,113 +24718,6 @@
                 "cv_folds": 5
             }
         }
-    },
-    "crop_pest_disease_classification": {
-        "dataset": "Project-AgML/crop_pest_disease_classification",
-        "date": "2026-08-20",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "anthracnose, Cashew": 1210,
-                    "bacterial blight, Cassava": 1830,
-                    "brown spot, Cassava": 1037,
-                    "fall armyworm, Maize": 199,
-                    "grasshoper, Maize": 471,
-                    "green mite, Cassava": 710,
-                    "gumosis, Cashew": 274,
-                    "healthy, Cashew": 958,
-                    "healthy, Cassava": 835,
-                    "healthy, Maize": 144,
-                    "healthy, Tomato": 328,
-                    "leaf beetle, Maize": 657,
-                    "leaf blight, Maize": 699,
-                    "leaf blight, Tomato": 906,
-                    "leaf curl, Tomato": 360,
-                    "leaf miner, Cashew": 965,
-                    "leaf spot, Maize": 874,
-                    "mosaic, Cassava": 843,
-                    "red rust, Cashew": 1177,
-                    "septoria leaf spot, Tomato": 1920,
-                    "streak virus, Maize": 680,
-                    "verticulium wilt, Tomato": 541
-                },
-                "imbalance_ratio": 13.3333,
-                "normalized_entropy": 0.9495,
-                "most_frequent_class": "septoria leaf spot, Tomato",
-                "least_frequent_class": "healthy, Maize",
-                "total_train_examples": 17618
-            }
-        }
-    },
-    "crop_weeds_greece": {
-        "dataset": "Project-AgML/crop_weeds_greece",
-        "date": "2026-08-20",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "black_nightshade": 86,
-                    "cotton": 38,
-                    "tomato": 140,
-                    "velvet_leaf": 91
-                },
-                "imbalance_ratio": 3.6842,
-                "normalized_entropy": 0.9367,
-                "most_frequent_class": "tomato",
-                "least_frequent_class": "cotton",
-                "total_train_examples": 355
-            },
-            "exact_duplicate": {
-                "total_images": 508,
-                "exact_duplicate_count": 36,
-                "exact_duplicate_rate": 0.0709,
-                "duplicate_groups": 18,
-                "cross_split_duplicates": 14
-            }
-        }
-    },
-    "CS-D_tea_leaf_disease_classification": {
-        "dataset": "Project-AgML/CS-D_tea_leaf_disease_classification",
-        "date": "2026-08-20",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "cucumber_disease_classification": {
         "dataset": "Project-AgML/cucumber_disease_classification",
@@ -44208,135 +44038,6 @@
             }
         }
     },
-    "grapevine_development_stage_classification": {
-        "dataset": "Project-AgML/grapevine_development_stage_classification",
-        "date": "2026-08-21",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [
-            1
-        ],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "7173": 683,
-                    "75": 508,
-                    "77": 840,
-                    "79": 764
-                },
-                "imbalance_ratio": 1.6535,
-                "normalized_entropy": 0.9883,
-                "most_frequent_class": "77",
-                "least_frequent_class": "75",
-                "total_train_examples": 2795
-            },
-            "exact_duplicate": {
-                "total_images": 3993,
-                "exact_duplicate_count": 0,
-                "exact_duplicate_rate": 0.0,
-                "duplicate_groups": 0,
-                "cross_split_duplicates": 0
-            },
-            "resolution_consistency": {
-                "total_images": 3993,
-                "width": {
-                    "mean": 154.2,
-                    "std": 77.1,
-                    "min": 39,
-                    "max": 555
-                },
-                "height": {
-                    "mean": 143.58,
-                    "std": 73.92,
-                    "min": 42,
-                    "max": 634
-                },
-                "aspect_ratio": {
-                    "mean": 1.18,
-                    "std": 0.53,
-                    "min": 0.2392638036809816,
-                    "max": 3.971014492753623
-                },
-                "area_cv": 1.0295,
-                "mode_distribution": {
-                    "RGB": 3993
-                }
-            },
-            "metadata_coverage": {
-                "skipped": false,
-                "metadata_columns": [
-                    "split"
-                ],
-                "coverage": {
-                    "split": {
-                        "75": {
-                            "test": 128,
-                            "train": 532,
-                            "validation": 66
-                        },
-                        "79": {
-                            "test": 195,
-                            "train": 804,
-                            "validation": 93
-                        },
-                        "77": {
-                            "test": 227,
-                            "train": 876,
-                            "validation": 97
-                        },
-                        "7173": {
-                            "test": 181,
-                            "train": 713,
-                            "validation": 81
-                        }
-                    }
-                },
-                "normalized_entropy": {
-                    "split": {
-                        "75": 0.6843,
-                        "79": 0.6762,
-                        "77": 0.6809,
-                        "7173": 0.681
-                    }
-                }
-            },
-            "near_duplicate": {
-                "total_images": 3993,
-                "embed_model": "facebook/dinov2-base",
-                "threshold": 0.98,
-                "near_duplicate_count": 9,
-                "near_duplicate_rate": 0.0023,
-                "near_duplicate_groups": 4,
-                "cross_split_near_duplicates": 6,
-                "faiss_index_type": "IndexFlatIP"
-            },
-            "feature_separability": {
-                "embed_model": "facebook/dinov2-base",
-                "n_total": 3993,
-                "n_silhouette_samples": 3993,
-                "silhouette_score": 0.0046,
-                "silhouette_interpretation": "weak separation",
-                "davies_bouldin_index": 6.349,
-                "davies_bouldin_interpretation": "high overlap — classes not well-separated",
-                "per_class_silhouette": {
-                    "7173": 0.0025,
-                    "75": -0.06,
-                    "77": -0.0959,
-                    "79": 0.16
-                }
-            }
-        }
-    },
     "grapevine_disease_classification": {
         "dataset": "Project-AgML/grapevine_disease_classification",
         "date": "2026-08-21",
@@ -45891,24 +45592,6 @@
                 "cv_folds": 5
             }
         }
-    },
-    "greenhouse_crop_weed_segmentation": {
-        "dataset": "Project-AgML/greenhouse_crop_weed_segmentation",
-        "date": "2026-08-21",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "groundnut_leaf_disease_classification": {
         "dataset": "Project-AgML/groundnut_leaf_disease_classification",
@@ -49522,7 +49205,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -49534,8 +49217,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -49618,7 +49310,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -49630,8 +49322,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -49714,7 +49415,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -49726,8 +49427,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -49810,7 +49520,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -49822,8 +49532,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -49906,7 +49625,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -49918,8 +49637,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50002,7 +49730,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50014,8 +49742,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50098,7 +49835,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50110,8 +49847,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50194,7 +49940,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50206,8 +49952,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50290,7 +50045,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50302,8 +50057,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50386,7 +50150,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50398,8 +50162,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50482,7 +50255,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50494,8 +50267,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50578,7 +50360,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50590,8 +50372,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50674,7 +50465,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50686,8 +50477,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50770,7 +50570,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50782,8 +50582,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50866,7 +50675,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50878,8 +50687,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -50962,7 +50780,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -50974,8 +50792,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51058,7 +50885,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51070,8 +50897,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51154,7 +50990,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51166,28 +51002,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/acacia_aneura": {
-        "dataset": "iNatAg/acacia_aneura",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/acacia_angustissima": {
         "dataset": "iNatAg/acacia_angustissima",
@@ -51268,7 +51095,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51280,8 +51107,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51364,7 +51200,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51376,8 +51212,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51460,7 +51305,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51472,8 +51317,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51556,7 +51410,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51568,8 +51422,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51652,7 +51515,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51664,8 +51527,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51748,7 +51620,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51760,8 +51632,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51844,7 +51725,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51856,8 +51737,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -51940,7 +51830,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -51952,8 +51842,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52036,7 +51935,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52048,28 +51947,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/acacia_cambagei": {
-        "dataset": "iNatAg/acacia_cambagei",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/acacia_catechu": {
         "dataset": "iNatAg/acacia_catechu",
@@ -52150,7 +52040,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52162,8 +52052,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52246,7 +52145,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52258,8 +52157,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52342,7 +52250,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52354,8 +52262,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52438,7 +52355,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52450,8 +52367,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52534,7 +52460,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52546,8 +52472,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52630,7 +52565,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52642,8 +52577,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52726,7 +52670,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52738,8 +52682,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52822,7 +52775,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52834,8 +52787,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -52918,7 +52880,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -52930,8 +52892,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53014,7 +52985,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53026,8 +52997,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53110,7 +53090,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53122,8 +53102,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53206,7 +53195,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53218,8 +53207,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53302,7 +53300,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53314,8 +53312,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53398,7 +53405,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53410,8 +53417,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53494,7 +53510,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53506,8 +53522,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53590,7 +53615,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53602,8 +53627,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53686,7 +53720,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53698,8 +53732,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53782,7 +53825,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53794,8 +53837,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53878,7 +53930,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53890,8 +53942,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -53974,7 +54035,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -53986,8 +54047,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54070,7 +54140,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54082,8 +54152,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54166,7 +54245,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54178,8 +54257,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54262,7 +54350,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54274,8 +54362,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54358,7 +54455,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54370,8 +54467,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54454,7 +54560,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54466,8 +54572,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54550,7 +54665,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54562,8 +54677,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54646,7 +54770,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54658,8 +54782,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54742,7 +54875,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54754,8 +54887,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54838,7 +54980,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54850,8 +54992,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -54934,7 +55085,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -54946,8 +55097,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55030,7 +55190,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55042,8 +55202,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55126,7 +55295,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55138,8 +55307,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55222,7 +55400,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55234,8 +55412,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55318,7 +55505,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55330,8 +55517,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55414,7 +55610,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55426,8 +55622,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55510,7 +55715,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55522,8 +55727,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55606,7 +55820,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55618,8 +55832,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55702,7 +55925,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55714,8 +55937,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55798,7 +56030,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55810,8 +56042,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55894,7 +56135,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -55906,8 +56147,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -55990,7 +56240,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56002,8 +56252,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56086,7 +56345,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56098,8 +56357,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56182,7 +56450,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56194,8 +56462,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56278,7 +56555,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56290,8 +56567,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56374,7 +56660,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56386,8 +56672,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56470,7 +56765,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56482,8 +56777,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56566,7 +56870,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56578,8 +56882,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56662,7 +56975,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56674,8 +56987,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56758,7 +57080,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56770,28 +57092,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/acacia_paradoxa": {
-        "dataset": "iNatAg/acacia_paradoxa",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/acacia_pendula": {
         "dataset": "iNatAg/acacia_pendula",
@@ -56872,7 +57185,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56884,8 +57197,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -56968,7 +57290,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -56980,8 +57302,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57064,7 +57395,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57076,8 +57407,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57160,7 +57500,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57172,8 +57512,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57256,7 +57605,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57268,8 +57617,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57352,7 +57710,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57364,8 +57722,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57448,7 +57815,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57460,8 +57827,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57544,7 +57920,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57556,8 +57932,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57640,7 +58025,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57652,8 +58037,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57736,7 +58130,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57748,8 +58142,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57832,7 +58235,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57844,8 +58247,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -57928,7 +58340,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -57940,8 +58352,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58024,7 +58445,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58036,8 +58457,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58120,7 +58550,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58132,8 +58562,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58216,7 +58655,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58228,8 +58667,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58312,7 +58760,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58324,28 +58772,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/acacia_stenophylla": {
-        "dataset": "iNatAg/acacia_stenophylla",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/acacia_tetragonophylla": {
         "dataset": "iNatAg/acacia_tetragonophylla",
@@ -58426,7 +58865,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58438,8 +58877,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58522,7 +58970,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58534,8 +58982,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58618,7 +59075,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58630,8 +59087,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58714,7 +59180,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58726,28 +59192,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/acacia_victoriae": {
-        "dataset": "iNatAg/acacia_victoriae",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/acaena_novae-zelandiae": {
         "dataset": "iNatAg/acaena_novae-zelandiae",
@@ -58828,7 +59285,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58840,8 +59297,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -58924,7 +59390,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -58936,8 +59402,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59020,7 +59495,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59032,8 +59507,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59116,7 +59600,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59128,8 +59612,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59212,7 +59705,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59224,8 +59717,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59308,7 +59810,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59320,8 +59822,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59404,7 +59915,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59416,8 +59927,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59500,7 +60020,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59512,8 +60032,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59596,7 +60125,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59608,8 +60137,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59692,7 +60230,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59704,8 +60242,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59788,7 +60335,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59800,8 +60347,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59884,7 +60440,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59896,8 +60452,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -59980,7 +60545,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -59992,8 +60557,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60076,7 +60650,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60088,8 +60662,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60172,7 +60755,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60184,8 +60767,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60268,7 +60860,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60280,28 +60872,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "iNatAg/achillea_ptarmica": {
-        "dataset": "iNatAg/achillea_ptarmica",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "iNatAg/achnatherum_pekinense": {
         "dataset": "iNatAg/achnatherum_pekinense",
@@ -60382,7 +60965,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60394,8 +60977,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60478,7 +61070,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60490,8 +61082,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60574,7 +61175,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60586,8 +61187,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60670,7 +61280,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60682,8 +61292,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60766,7 +61385,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60778,8 +61397,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -60862,7 +61490,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -60874,75 +61502,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
-            }
-        }
-    },
-    "iNatAg/acrocomia_aculeata": {
-        "dataset": "iNatAg/acrocomia_aculeata",
-        "date": "2026-08-25",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [
-            1
-        ],
-        "metrics": {
-            "class_imbalance": {
-                "counts": {
-                    "crop": 1166
-                },
-                "imbalance_ratio": 1.0,
-                "normalized_entropy": 1.0,
-                "most_frequent_class": "crop",
-                "least_frequent_class": "crop",
-                "total_train_examples": 1166
-            },
-            "exact_duplicate": {
-                "total_images": 1667,
-                "exact_duplicate_count": 8,
-                "exact_duplicate_rate": 0.0048,
-                "duplicate_groups": 4,
-                "cross_split_duplicates": 6
-            },
-            "resolution_consistency": {
-                "total_images": 1667,
-                "width": {
-                    "mean": 799.48,
-                    "std": 158.34,
-                    "min": 348,
-                    "max": 1024
-                },
-                "height": {
-                    "mean": 939.28,
-                    "std": 150.16,
-                    "min": 323,
-                    "max": 1024
-                },
-                "aspect_ratio": {
-                    "mean": 0.9,
-                    "std": 0.36,
-                    "min": 0.4365234375,
-                    "max": 2.2212581344902387
-                },
-                "area_cv": 0.1586,
-                "mode_distribution": {
-                    "RGB": 1667
-                }
-            },
-            "metadata_coverage": {
+            "dataset_cartography": {
                 "skipped": true,
-                "reason": "No metadata columns detected in dataset schema."
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61025,7 +61595,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61037,8 +61607,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61121,7 +61700,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61133,8 +61712,17 @@
                 "min_diversity_class": "weed",
                 "max_diversity_class": "weed"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61217,7 +61805,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61229,8 +61817,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61313,7 +61910,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61325,8 +61922,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61409,7 +62015,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61421,8 +62027,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61505,7 +62120,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61517,8 +62132,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61601,7 +62225,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61613,8 +62237,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61697,7 +62330,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61709,8 +62342,17 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
     },
@@ -61793,7 +62435,7 @@
             },
             "feature_separability": {
                 "skipped": true,
-                "reason": "Feature separability requires ≥ 2 classes; dataset has 1.",
+                "reason": "This metric requires ≥ 2 classes per dataset.",
                 "embed_model": "facebook/dinov2-base"
             },
             "intra_class_diversity": {
@@ -61805,28 +62447,19 @@
                 "min_diversity_class": "crop",
                 "max_diversity_class": "crop"
             },
-            "phase_3_skipped": {
-                "reason": "Dataset has only 1 class — Phase 3 metrics require ≥ 2."
+            "dataset_cartography": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "class_confusability": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
+            },
+            "label_noise": {
+                "skipped": true,
+                "reason": "This metric requires ≥ 2 classes per dataset."
             }
         }
-    },
-    "indian_cotton_leaf_disease_classification": {
-        "dataset": "Project-AgML/indian_cotton_leaf_disease_classification",
-        "date": "2026-08-21",
-        "reproducibility": {
-            "split_seed": 42,
-            "train_ratio": 0.7,
-            "val_ratio": 0.15,
-            "test_ratio": 0.15,
-            "embed_model": "facebook/dinov2-base",
-            "near_dup_threshold": 0.98,
-            "backbone": "resnet18",
-            "cartography_epochs": 30,
-            "cartography_lr": 0.001,
-            "cv_folds": 5
-        },
-        "phases_completed": [],
-        "metrics": {}
     },
     "watermelon_disease_classification": {
         "dataset": "Project-AgML/watermelon_disease_classification",

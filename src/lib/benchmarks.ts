@@ -74,20 +74,25 @@ export interface IntraClassDiversityMetrics {
 	max_diversity_class: string;
 }
 
-export interface DatasetCartographyMetrics {
-	n_easy: number;
-	n_ambiguous: number;
-	n_hard: number;
-	pct_easy: number;
-	pct_ambiguous: number;
-	pct_hard: number;
-	mean_confidence: number;
-	mean_variability: number;
-	easy_threshold: number;
-	hard_threshold: number;
-	variability_threshold: number;
-	n_epochs: number;
-}
+// Skipped along with the rest of phase 3 for datasets with fewer than 2 classes — the pipeline
+// reports { skipped: true } for each phase 3 metric instead of running the computation.
+export type DatasetCartographyMetrics =
+	| { skipped: true; reason?: string }
+	| {
+			skipped?: false;
+			n_easy: number;
+			n_ambiguous: number;
+			n_hard: number;
+			pct_easy: number;
+			pct_ambiguous: number;
+			pct_hard: number;
+			mean_confidence: number;
+			mean_variability: number;
+			easy_threshold: number;
+			hard_threshold: number;
+			variability_threshold: number;
+			n_epochs: number;
+	  };
 
 export interface ConfusedPair {
 	true_class: string;
@@ -95,23 +100,29 @@ export interface ConfusedPair {
 	confusion_rate: number;
 }
 
-export interface ClassConfusabilityMetrics {
-	accuracy: number;
-	per_class_accuracy: Record<string, number>;
-	confusion_matrix: number[][];
-	top_confused_pairs: ConfusedPair[];
-	n_top_pairs: number;
-	n_test_samples: number;
-}
+export type ClassConfusabilityMetrics =
+	| { skipped: true; reason?: string }
+	| {
+			skipped?: false;
+			accuracy: number;
+			per_class_accuracy: Record<string, number>;
+			confusion_matrix: number[][];
+			top_confused_pairs: ConfusedPair[];
+			n_top_pairs: number;
+			n_test_samples: number;
+	  };
 
-export interface LabelNoiseMetrics {
-	estimated_noise_rate: number;
-	n_noisy_samples: number;
-	n_total_samples: number;
-	flagged_orig_indices?: number[];
-	per_class_noise_counts: Record<string, number>;
-	cv_folds: number;
-}
+export type LabelNoiseMetrics =
+	| { skipped: true; reason?: string }
+	| {
+			skipped?: false;
+			estimated_noise_rate: number;
+			n_noisy_samples: number;
+			n_total_samples: number;
+			flagged_orig_indices?: number[];
+			per_class_noise_counts: Record<string, number>;
+			cv_folds: number;
+	  };
 
 export interface ReproducibilityInfo {
 	split_seed?: number;
@@ -195,17 +206,27 @@ function loadResults(url: string): Promise<BenchmarkResults> {
 	return resultsPromise;
 }
 
+// iNatAg and iNatAg-mini are "parent/species" dataset families (e.g. "iNatAg/acacia_neriifolia")
+// whose UMAP embedding files live one directory down —
+// embeddings/iNatAg/<species>_umap_2D.json, embeddings/iNatAg-mini/<species>_umap_2D.json —
+// instead of flat like every other dataset. Any other dataset name that happens to contain a
+// "/" (none exist today) is flattened instead of being treated as a path, so it can't probe a
+// directory that isn't one of these two known families.
+const NESTED_EMBEDDING_FAMILIES = ["iNatAg", "iNatAg-mini"];
+
+function embeddingPath(datasetName: string, dimension: "2D" | "3D"): string {
+	const isNestedFamily = NESTED_EMBEDDING_FAMILIES.some((family) => datasetName.startsWith(`${family}/`));
+	const base = isNestedFamily ? datasetName : datasetName.replace(/\//g, "_");
+	return `/data/dataset-benchmarking/embeddings/${base}_umap_${dimension}.json`;
+}
+
 // Looks up `datasetName` in the shared results.json and, if found, fetches that dataset's
 // 2D and 3D UMAP embedding files. Returns null data when the dataset has no benchmark entry
 // (a missing key, not an error state) or when the fetch itself fails.
 export function useBenchmark(datasetName: string | null): BenchmarkState {
 	const resultsUrl = useBaseUrl("/data/dataset-benchmarking/results.json");
-	const embeddings2dUrl = useBaseUrl(
-		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_2D.json`,
-	);
-	const embeddings3dUrl = useBaseUrl(
-		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_3D.json`,
-	);
+	const embeddings2dUrl = useBaseUrl(embeddingPath(datasetName ?? "_none", "2D"));
+	const embeddings3dUrl = useBaseUrl(embeddingPath(datasetName ?? "_none", "3D"));
 	const [state, setState] = useState<BenchmarkState>(EMPTY_STATE);
 
 	useEffect(() => {
