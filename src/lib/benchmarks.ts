@@ -1,7 +1,7 @@
 // Dataset benchmarking metrics, loaded on demand from the shared
 // static/data/dataset-benchmarking/results.json (keyed by dataset name), plus optional
 // per-dataset UMAP embedding files under static/data/dataset-benchmarking/embeddings/
-// (<dataset>_umap_2d.json / <dataset>_umap_3d.json). One task type's metric shape is defined
+// (<dataset>_umap_2D.json / <dataset>_umap_3D.json). One task type's metric shape is defined
 // below; other task types will get their own shape as their benchmarking pipelines ship.
 import { useEffect, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -50,16 +50,21 @@ export interface NearDuplicateMetrics {
 	faiss_index_type: string;
 }
 
-export interface FeatureSeparabilityMetrics {
-	embed_model: string;
-	n_total: number;
-	n_silhouette_samples: number;
-	silhouette_score: number;
-	silhouette_interpretation: string;
-	davies_bouldin_index: number;
-	davies_bouldin_interpretation: string;
-	per_class_silhouette: Record<string, number>;
-}
+// Skipped for datasets with fewer than 2 classes — separability isn't defined for a single
+// class, so the pipeline reports { skipped: true } instead of running the computation.
+export type FeatureSeparabilityMetrics =
+	| { skipped: true; reason?: string; embed_model?: string }
+	| {
+			skipped?: false;
+			embed_model: string;
+			n_total: number;
+			n_silhouette_samples: number;
+			silhouette_score: number;
+			silhouette_interpretation: string;
+			davies_bouldin_index: number;
+			davies_bouldin_interpretation: string;
+			per_class_silhouette: Record<string, number>;
+	  };
 
 export interface IntraClassDiversityMetrics {
 	embed_model: string;
@@ -196,10 +201,10 @@ function loadResults(url: string): Promise<BenchmarkResults> {
 export function useBenchmark(datasetName: string | null): BenchmarkState {
 	const resultsUrl = useBaseUrl("/data/dataset-benchmarking/results.json");
 	const embeddings2dUrl = useBaseUrl(
-		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_2d.json`,
+		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_2D.json`,
 	);
 	const embeddings3dUrl = useBaseUrl(
-		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_3d.json`,
+		`/data/dataset-benchmarking/embeddings/${datasetName ?? "_none"}_umap_3D.json`,
 	);
 	const [state, setState] = useState<BenchmarkState>(EMPTY_STATE);
 

@@ -44,7 +44,7 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 	}
 
 	// Axis 2 — Content Difficulty
-	if (p2 && has(m, 'feature_separability')) {
+	if (p2 && has(m, 'feature_separability') && !m.feature_separability!.skipped) {
 		const sep = m.feature_separability!;
 		const sil = clamp(sep.silhouette_score * 10, 0, 10);
 		const db = clamp(10 - sep.davies_bouldin_index * 3, 0, 10);

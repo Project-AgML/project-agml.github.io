@@ -283,7 +283,13 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		});
 	}
 
-	if (m.feature_separability) {
+	if (m.feature_separability?.skipped) {
+		cards.push({
+			kind: 'skipped',
+			title: 'Feature Separability',
+			message: m.feature_separability.reason || 'Skipped for this run.',
+		});
+	} else if (m.feature_separability) {
 		const d = m.feature_separability;
 		cards.push({
 			kind: 'signed',
@@ -778,7 +784,8 @@ function embedPointsFromReal(embeddings: RawEmbedPoint[]): EmbedPoint[] {
 
 function buildEmbeddingPoints(benchmark: BenchmarkData): EmbedPoint[] {
 	const counts = benchmark.metrics.class_imbalance?.counts ?? {};
-	const sep = benchmark.metrics.feature_separability?.per_class_silhouette ?? {};
+	const separability = benchmark.metrics.feature_separability;
+	const sep = (separability && !separability.skipped ? separability.per_class_silhouette : undefined) ?? {};
 	const classes = Object.keys(counts);
 	const rand = mulberry32(42);
 	const splits = ['train', 'val', 'test'];
