@@ -11564,5 +11564,224 @@
         "Private Data (field surveys)"
       ]
     }
+  },
+  {
+    "name": "maize_nitrogen_deficiency_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Agricultural Institute Osijek, Osijek, Croatia"
+    ],
+    "country": "Croatia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon 80D"
+    ],
+    "collection_period": "July 2023",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1200,
+    "classes": [
+      "0",
+      "75",
+      "136"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109625",
+    "citation": "Galic, Vlatko; Podnar Zarko, Ivana; Novoselnik, Filip; Salaic, Miroslav (2023), “Nitrogen deficiency in maize: annotated image classification dataset”, Mendeley Data, V1, doi: 10.17632/g7xnn2bm4g.1",
+    "zip_size_bytes": 514189935,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_nitrogen_deficiency_classification",
+    "examples_image_url": "/img/agml/sample_images/maize_nitrogen_deficiency_classification_sample.webp"
+  },
+  {
+    "name": "guava_damage_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "damage_classification",
+    "location": [
+      "Velammal Engineering College, Chennai, Tamilnadu, India"
+    ],
+    "lat_lon": [
+      "13 09 04.9, 80 11 29.6"
+    ],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "guava"
+    ],
+    "sensor_modality": "rgb, thermal",
+    "imaging_equipment": [
+      "Samsung M31S mobile camera",
+      "FLIR One Pro"
+    ],
+    "collection_period": "",
+    "platform": "mobile",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3959,
+    "classes": [
+      "15cm_drop",
+      "30cm_drop",
+      "45cm_drop",
+      "chilling_injured",
+      "diseased",
+      "healthy",
+      "mixed_drop"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109486",
+    "citation": "P, PATHMANABAN; B K, GNANAVEL; Anandan, Shanmuga Sundaram (2023), “Guava (Psidium guajava) fruit digital and thermal Images”, Mendeley Data, V1, doi: 10.17632/5kptnn7ycr.1",
+    "zip_size_bytes": 11174264286,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_damage_classification",
+    "examples_image_url": "/img/agml/sample_images/guava_damage_classification_sample.webp"
+  },
+  {
+    "name": "banana_disease_classification_tanzania",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Kagera, Tanzania",
+      "Arusha, Tanzania",
+      "Dar es Salaam, Tanzania",
+      "Kilimanjaro, Tanzania",
+      "Mbeya, Tanzania"
+    ],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Samsung Galaxy 01 smartphone, 13-megapixel"
+    ],
+    "collection_period": "February 2021 to July 2021",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 16092,
+    "classes": [
+      "black_sigatoka",
+      "fusarium_wilt",
+      "healthy"
+    ],
+    "license": "cc0-1.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109322",
+    "citation": "Mduma, N., Laizer, H., Loyani, L., Macheli, M., Msengi, Z., Karama, A., Msaki, I., Sanga, S., Jomanga, K., & Judith, L. (2022). The Nelson Mandela African Institution of Science and Technology Bananas dataset (Version V6) [dataset]. Harvard Dataverse. https://doi.org/10.7910/DVN/LQUWXW",
+    "zip_size_bytes": 4631882825,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_disease_classification_tanzania",
+    "examples_image_url": "/img/agml/sample_images/banana_disease_classification_tanzania_sample.webp"
+  },
+  {
+    "name": "greenhouse_leafy_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "romaine lettuce"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Azure Kinect DK; 12-megapixel sensor",
+      "Raspberry Pi Camera Module v3; 12-megapixel; 120° wide-angle"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 3348,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2024.109711",
+    "citation": "Jonathan Cárdenas. (2024). JSCG95/leafy-segmentation_CEA: Data availability release (Version V1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.11110409",
+    "zip_size_bytes": 86412781,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_leafy_segmentation",
+    "examples_image_url": "/img/agml/sample_images/greenhouse_leafy_segmentation_sample.webp"
+  },
+  {
+    "name": "litchi_fruit_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Litchi Culture Expo Park, Conghua District, Guangzhou, China"
+    ],
+    "lat_lon": [
+      "113.618, 23.583"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "litchi"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Unmanned Aerial Vehicle"
+    ],
+    "collection_period": "May 14, 2024, July 2, 2024, and May 24, 2025",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1880,
+    "classes": [
+      "0"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2026.102159",
+    "citation": "Li, W. (2026). Litchi-UAV: A UAV-based Litchi Fruit Detection Dataset for Precision Agriculture [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.19364014",
+    "zip_size_bytes": 1116377210,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/litchi_fruit_detection",
+    "examples_image_url": "/img/agml/sample_images/litchi_fruit_detection_sample.webp"
+  },
+  {
+    "name": "maize_individual_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "University of Missouri Genetics Farm, Columbia, MO, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic 2 Pro, L1D-20c Hasselblad camera (20-megapixel)"
+    ],
+    "collection_period": "June 16 and June 23, 2021",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 27,
+    "classes": [
+      null,
+      "maize"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2026.102421",
+    "citation": "Sangjan, W., Pandey, P., Best, N., & Washburn, J. (2025). MatchPlant: An Open-Source Pipeline for UAV-Based Single-Plant Detection from Undistorted Images with Orthomosaic Projection [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14856123",
+    "zip_size_bytes": 1231488169,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_individual_detection",
+    "examples_image_url": "/img/agml/sample_images/maize_individual_detection_sample.webp"
   }
 ]
