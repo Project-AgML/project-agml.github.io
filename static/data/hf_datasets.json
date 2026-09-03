@@ -11783,5 +11783,162 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_individual_detection",
     "examples_image_url": "/img/agml/sample_images/maize_individual_detection_sample.webp"
+  },
+  {
+    "name": "strawberry_runner_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Wimauma, Florida, United States"
+    ],
+    "country": "United States",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "strawberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS R8 (24MP, full-frame) on Amiga ground vehicle",
+      "Autel EVO-II UAV (Sony 20MP 1-inch CMOS camera)",
+      "DJI Mavic Pro 3 UAV (Hasselblad 20MP 4/3-inch CMOS camera)"
+    ],
+    "collection_period": "2023-2024, 2024-2025",
+    "platform": [
+      "uav",
+      "ground"
+    ],
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 3345,
+    "classes": [],
+    "license": "cc0-1.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2025.101290",
+    "citation": "Zhou, Xue; Wang, Xu; Whitaker, Vance et al. (2025). Ground and aerial imagery dataset for strawberry breeding trials: Training deep learning models for runner detection and segmentation [Dataset]. Dryad. https://doi.org/10.5061/dryad.bzkh189nw",
+    "zip_size_bytes": 249510494,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_runner_segmentation",
+    "examples_image_url": "/img/agml/sample_images/strawberry_runner_segmentation_sample.webp"
+  },
+  {
+    "name": "papaya_leaf_disease_classification_bd",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Khulna, Bangladesh",
+      "Jessore, Bangladesh",
+      "Pabna, Bangladesh",
+      "Natore, Bangladesh",
+      "Rajshahi, Bangladesh",
+      "Rangpur, Bangladesh",
+      "Panchagarh, Bangladesh",
+      "Narsingdi, Bangladesh"
+    ],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "papaya"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": null,
+    "collection_period": null,
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 11074,
+    "classes": [
+      "Antracnose",
+      "Bacterial Spot",
+      "Healthy Leaf",
+      "Leaf Curl",
+      "Mealybug",
+      "Mite Disease",
+      "Mosaic",
+      "Ring Spot"
+    ],
+    "license": "Apache 2.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2026.101824",
+    "citation": "https://www.kaggle.com/datasets/shourav123/enlarged-data",
+    "zip_size_bytes": 13399856515,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/papaya_leaf_disease_classification_bd",
+    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_classification_bd_sample.webp"
+  },
+  {
+    "name": "plum_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Titas, Cumilla, Bangladesh",
+      "Barura, Cumilla, Bangladesh"
+    ],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Java Plum"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "September, October, and November of 2023",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2400,
+    "classes": [
+      "Bacterial_Spot",
+      "Brown_Blight",
+      "Dry",
+      "Healthy",
+      "Powdery_Mildew",
+      "Sooty_Mold"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2024.100500",
+    "citation": "Bhowmik, Auvick Chandra; Ahad, Taimur (2024), “Java Plum Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/43d75vptz4.3",
+    "zip_size_bytes": 15064133751,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/plum_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/plum_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "blueberry_maturity_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Beaumont, Mississippi, United States of America",
+      "Richton, Mississippi, United States of America",
+      "Holt, Michigan, United States of America"
+    ],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "blueberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone SE, handheld",
+      "iPhone 13 Pro, handheld"
+    ],
+    "collection_period": "May and August 2022",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 140,
+    "classes": [
+      "unblue_visible",
+      "unblue_occluded",
+      "blue_visible",
+      "blue_occluded"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2024.100620",
+    "citation": "Lu, Y. (2024). BlueberryDCM: A Canopy Image Dataset for Detection, Counting, and Maturity Assessment of Blueberries [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14002517",
+    "zip_size_bytes": 112412658,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/blueberry_maturity_detection",
+    "examples_image_url": "/img/agml/sample_images/blueberry_maturity_detection_sample.webp"
   }
 ]
