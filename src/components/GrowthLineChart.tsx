@@ -23,7 +23,7 @@ export interface GrowthAnnotation {
 // Compact axis/label formatting: 5_014_234 -> "5.01M", 157_741 -> "158K". Values under 1,000
 // print as-is — the chart never needs sub-thousand compaction.
 function formatCompact(value: number): string {
-	if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/0$/, '').replace(/\.$/, '')}M`;
+	if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.?0+$/, '')}M`;
 	if (value >= 1_000) return `${Math.round(value / 1_000)}K`;
 	return String(value);
 }

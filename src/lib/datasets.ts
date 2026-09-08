@@ -794,7 +794,10 @@ export function computeCropDistribution(
     const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
     const counts = new Map<string, number>();
     for (const dataset of topLevel) {
-        const crops = new Set(dataset.crop_types ?? []);
+        const crops = new Set([
+            ...(dataset.crop_types ?? []),
+            ...(dataset.child_crop_types ?? []),
+        ]);
         for (const crop of crops) {
             counts.set(crop, (counts.get(crop) ?? 0) + 1);
         }
