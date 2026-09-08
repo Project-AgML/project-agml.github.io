@@ -171,6 +171,7 @@
 }
 
 .statBlock {
+  display: block;
   padding: 2rem 1.5rem;
   text-align: center;
   border-right: 1px solid var(--agml-border);
@@ -178,6 +179,19 @@
 
 .statBlock:last-child {
   border-right: none;
+}
+
+.statBlockLink {
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.statBlockLink:hover,
+.statBlockLink:focus-visible {
+  background: var(--agml-surface-soft);
+  text-decoration: none;
+  color: inherit;
 }
 
 .statValue {
@@ -198,9 +212,45 @@
   margin-top: 0.4rem;
 }
 
+.chartsSection {
+  padding: 3.5rem 1.5rem 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.chartPanel {
+  background: var(--agml-surface-strong);
+  border: 1px solid var(--agml-border);
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+
+.chartPanelTitle {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--agml-text);
+}
+
+.chartLoading {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.8rem;
+  color: var(--agml-muted);
+}
+
 .featuresSection {
   padding: 4rem 1.5rem;
-  max-width: 1080px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -243,7 +293,7 @@
 
 .calloutSection {
   padding: 0 1.5rem 4.5rem;
-  max-width: 1080px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -276,7 +326,8 @@
 }
 
 @media (max-width: 996px) {
-  .featuresGrid {
+  .featuresGrid,
+  .chartsGrid {
     grid-template-columns: 1fr;
   }
 

@@ -1,0 +1,140 @@
+{
+  "_readme": "Hand-maintained going forward — do not regenerate. To add a snapshot, append to `points`: { period: \"<short x-axis label>\", date: \"<YYYY-MM-DD>\", datasetCount: <n>, imageCount: <n> }, counted the same way src/lib/datasets.ts computeDatasetStats does (top-level datasets only; iNatAg-mini's images excluded). See scripts/generate-dataset-history.mjs for how this file's initial history was backfilled.",
+  "generatedAt": "2026-09-08",
+  "annotations": [
+    {
+      "atPeriod": "May 30",
+      "position": "before",
+      "label": "Website + Hugging Face tracking begins",
+      "metric": "datasetCount"
+    },
+    {
+      "atPeriod": "2025",
+      "position": "at",
+      "label": "iNatAg adds 4.72M images",
+      "metric": "imageCount"
+    }
+  ],
+  "points": [
+    {
+      "period": "2021",
+      "date": "2021-12-28",
+      "datasetCount": 19,
+      "imageCount": 118104
+    },
+    {
+      "period": "2022",
+      "date": "2022-12-18",
+      "datasetCount": 29,
+      "imageCount": 125840
+    },
+    {
+      "period": "2023",
+      "date": "2023-11-02",
+      "datasetCount": 36,
+      "imageCount": 134360
+    },
+    {
+      "period": "2024",
+      "date": "2024-12-21",
+      "datasetCount": 41,
+      "imageCount": 157741
+    },
+    {
+      "period": "2025",
+      "date": "2025-04-21",
+      "datasetCount": 69,
+      "imageCount": 5014234
+    },
+    {
+      "period": "May 30",
+      "date": "2026-05-30",
+      "datasetCount": 73,
+      "imageCount": 5021427
+    },
+    {
+      "period": "Jun 6",
+      "date": "2026-06-05",
+      "datasetCount": 80,
+      "imageCount": 5033366
+    },
+    {
+      "period": "Jun 13",
+      "date": "2026-06-10",
+      "datasetCount": 87,
+      "imageCount": 5051748
+    },
+    {
+      "period": "Jun 20",
+      "date": "2026-06-17",
+      "datasetCount": 112,
+      "imageCount": 5226583
+    },
+    {
+      "period": "Jun 27",
+      "date": "2026-06-24",
+      "datasetCount": 147,
+      "imageCount": 5342341
+    },
+    {
+      "period": "Jul 4",
+      "date": "2026-07-01",
+      "datasetCount": 147,
+      "imageCount": 5342341
+    },
+    {
+      "period": "Jul 11",
+      "date": "2026-07-11",
+      "datasetCount": 194,
+      "imageCount": 5613349
+    },
+    {
+      "period": "Jul 18",
+      "date": "2026-07-18",
+      "datasetCount": 194,
+      "imageCount": 5613349
+    },
+    {
+      "period": "Jul 25",
+      "date": "2026-07-22",
+      "datasetCount": 240,
+      "imageCount": 5878617
+    },
+    {
+      "period": "Aug 1",
+      "date": "2026-08-01",
+      "datasetCount": 246,
+      "imageCount": 6298390
+    },
+    {
+      "period": "Aug 8",
+      "date": "2026-08-06",
+      "datasetCount": 261,
+      "imageCount": 6298390
+    },
+    {
+      "period": "Aug 15",
+      "date": "2026-08-15",
+      "datasetCount": 276,
+      "imageCount": 6472735
+    },
+    {
+      "period": "Aug 22",
+      "date": "2026-08-17",
+      "datasetCount": 276,
+      "imageCount": 6472735
+    },
+    {
+      "period": "Aug 29",
+      "date": "2026-08-25",
+      "datasetCount": 276,
+      "imageCount": 6472735
+    },
+    {
+      "period": "Sep 5",
+      "date": "2026-08-31",
+      "datasetCount": 282,
+      "imageCount": 6499241
+    }
+  ]
+}

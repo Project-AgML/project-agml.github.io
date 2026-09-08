@@ -759,3 +759,48 @@ export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
         taskTypeCount,
     };
 }
+
+export interface DistributionEntry {
+    key: string;
+    label: string;
+    count: number;
+}
+
+// Top `limit` agricultural task types by number of (top-level) datasets tagged with them.
+export function computeAgriculturalTaskDistribution(
+    datasets: Dataset[],
+    limit = 10,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const task = dataset.agricultural_task;
+        if (!task) continue;
+        counts.set(task, (counts.get(task) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
+}
+
+// Top `limit` crop types by number of (top-level) datasets that include them — a dataset
+// covering several crops counts once toward each. Child datasets fold their species names up
+// onto `child_crop_types` (see attachChildCropTypes), so those count toward the parent instead.
+export function computeCropDistribution(
+    datasets: Dataset[],
+    limit = 12,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const crops = new Set(dataset.crop_types ?? []);
+        for (const crop of crops) {
+            counts.set(crop, (counts.get(crop) ?? 0) + 1);
+        }
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
+}
