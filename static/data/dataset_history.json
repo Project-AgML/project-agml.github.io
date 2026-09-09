@@ -1,6 +1,6 @@
 {
-  "_readme": "Hand-maintained going forward — do not regenerate. To add a snapshot, append to `points`: { period: \"<short x-axis label>\", date: \"<YYYY-MM-DD>\", datasetCount: <n>, imageCount: <n> }, counted the same way src/lib/datasets.ts computeDatasetStats does (top-level datasets only; iNatAg-mini's images excluded). See scripts/generate-dataset-history.mjs for how this file's initial history was backfilled.",
-  "generatedAt": "2026-09-08",
+  "_readme": "Hand-maintained going forward — do not regenerate. To add a snapshot, run `python3 scripts/append_dataset_snapshot.py` (counts the live static/data/{datasets,hf_datasets}.json the same way src/lib/datasets.ts computeDatasetStats does: top-level datasets only, iNatAg-mini's images excluded) or append to `points` by hand: { period: \"<short x-axis label>\", date: \"<YYYY-MM-DD>\", datasetCount: <n>, imageCount: <n> }.",
+  "generatedAt": "2026-09-09",
   "annotations": [
     {
       "atPeriod": "May 30",
@@ -135,6 +135,12 @@
       "date": "2026-08-31",
       "datasetCount": 282,
       "imageCount": 6499241
+    },
+    {
+      "period": "Sep 9",
+      "date": "2026-09-09",
+      "datasetCount": 277,
+      "imageCount": 6079468
     }
   ]
 }
