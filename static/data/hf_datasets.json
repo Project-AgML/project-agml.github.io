@@ -11790,9 +11790,14 @@
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pheno4d_point_cloud_segmentation",
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "plant_organ_segmentation",
-    "location": ["Germany"],
+    "location": [
+      "Germany"
+    ],
     "environment": "greenhouse",
-    "crop_types": ["maize", "tomato"],
+    "crop_types": [
+      "maize",
+      "tomato"
+    ],
     "sensor_modality": "point_cloud",
     "real_or_synthetic": "real",
     "platform": "fixed",
@@ -11801,6 +11806,7 @@
     "num_images": 126,
     "documentation": "https://doi.org/10.1371/journal.pone.0256340",
     "examples_image_url": "/img/agml/sample_images/pheno4d_point_cloud_segmentation_sample.png",
+    "point_cloud_sample_url": "/data/point_cloud_samples/pheno4d_point_cloud_segmentation_sample.json",
     "license": "cc-by-4.0",
     "citation": "Schunck, D., Magistri, F., Rosu, R.A., et al. (2021). Pheno4D: A spatio-temporal dataset of maize and tomato plant point clouds for phenotyping and advanced plant analysis. PLOS ONE, 16(8).",
     "parent_dataset": null,
