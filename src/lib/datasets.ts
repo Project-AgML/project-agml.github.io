@@ -31,6 +31,7 @@ export interface Dataset {
     stats_mean: number[] | null;
     stats_std: number[] | null;
     examples_image_url: string | null;
+    point_cloud_sample_url: string | null;
     license: string | null;
     citation: string | null;
     parent_dataset?: string | null;
@@ -218,6 +219,10 @@ function normalizeDataset(raw: unknown): Dataset | null {
             raw.examples_url,
             raw.image_url,
         ),
+        point_cloud_sample_url: firstString(
+            raw.point_cloud_sample_url,
+            raw.point_cloud_url,
+        ),
         license: firstString(raw.license),
         citation: firstString(raw.citation),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
@@ -283,6 +288,8 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         stats_std: current.stats_std ?? incoming.stats_std,
         examples_image_url:
             current.examples_image_url ?? incoming.examples_image_url,
+        point_cloud_sample_url:
+            current.point_cloud_sample_url ?? incoming.point_cloud_sample_url,
         license: current.license ?? incoming.license,
         citation: current.citation ?? incoming.citation,
         parent_dataset: current.parent_dataset ?? incoming.parent_dataset,

@@ -15,6 +15,7 @@ import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import { oklchToRgb } from '../lib/plotlyChrome';
 import { EmbeddingPlot2D } from './EmbeddingPlot2D';
 import { EmbeddingPlot3D } from './EmbeddingPlot3D';
+import { PointCloudPlot3D } from './PointCloudPlot3D';
 import { ScoringMethodologyModal } from './ScoringMethodologyModal';
 import styles from './DatasetMetadataModal.module.css';
 
@@ -1401,8 +1402,12 @@ export function DatasetMetadataModal({
 				)}
 
 				<section className={styles.section}>
-					<h3 className={styles.sectionTitle}>Sample image</h3>
-					{hasExampleImage(dataset.examples_image_url) ? (
+					<h3 className={styles.sectionTitle}>
+						{dataset.sensor_modality === 'point_cloud' ? 'Sample point cloud' : 'Sample image'}
+					</h3>
+					{dataset.sensor_modality === 'point_cloud' && dataset.point_cloud_sample_url ? (
+						<PointCloudPlot3D sampleUrl={dataset.point_cloud_sample_url} />
+					) : hasExampleImage(dataset.examples_image_url) ? (
 						<figure className={styles.figure}>
 							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
 						</figure>
@@ -1630,3 +1635,4 @@ export function DatasetMetadataModal({
 		</div>
 	);
 }
+
