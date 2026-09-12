@@ -31,6 +31,7 @@ export interface Dataset {
     stats_mean: number[] | null;
     stats_std: number[] | null;
     examples_image_url: string | null;
+    point_cloud_sample_url: string | null;
     license: string | null;
     citation: string | null;
     parent_dataset?: string | null;
@@ -218,6 +219,10 @@ function normalizeDataset(raw: unknown): Dataset | null {
             raw.examples_url,
             raw.image_url,
         ),
+        point_cloud_sample_url: firstString(
+            raw.point_cloud_sample_url,
+            raw.point_cloud_url,
+        ),
         license: firstString(raw.license),
         citation: firstString(raw.citation),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
@@ -283,6 +288,8 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         stats_std: current.stats_std ?? incoming.stats_std,
         examples_image_url:
             current.examples_image_url ?? incoming.examples_image_url,
+        point_cloud_sample_url:
+            current.point_cloud_sample_url ?? incoming.point_cloud_sample_url,
         license: current.license ?? incoming.license,
         citation: current.citation ?? incoming.citation,
         parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
@@ -758,4 +765,52 @@ export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
         imageCount,
         taskTypeCount,
     };
+}
+
+export interface DistributionEntry {
+    key: string;
+    label: string;
+    count: number;
+}
+
+// Top `limit` agricultural task types by number of (top-level) datasets tagged with them.
+export function computeAgriculturalTaskDistribution(
+    datasets: Dataset[],
+    limit = 10,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const task = dataset.agricultural_task;
+        if (!task) continue;
+        counts.set(task, (counts.get(task) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
+}
+
+// Top `limit` crop types by number of (top-level) datasets that include them — a dataset
+// covering several crops counts once toward each. Child datasets fold their species names up
+// onto `child_crop_types` (see attachChildCropTypes), so those count toward the parent instead.
+export function computeCropDistribution(
+    datasets: Dataset[],
+    limit = 12,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const crops = new Set([
+            ...(dataset.crop_types ?? []),
+            ...(dataset.child_crop_types ?? []),
+        ]);
+        for (const crop of crops) {
+            counts.set(crop, (counts.get(crop) ?? 0) + 1);
+        }
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
 }
