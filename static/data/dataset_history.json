@@ -1,6 +1,6 @@
 {
   "_readme": "Hand-maintained going forward — do not regenerate. To add a snapshot, run `python3 scripts/append_dataset_snapshot.py` (counts the live static/data/{datasets,hf_datasets}.json the same way src/lib/datasets.ts computeDatasetStats does: top-level datasets only, iNatAg-mini's images excluded) or append to `points` by hand: { period: \"<short x-axis label>\", date: \"<YYYY-MM-DD>\", datasetCount: <n>, imageCount: <n> }.",
-  "generatedAt": "2026-09-09",
+  "generatedAt": "2026-09-11",
   "annotations": [
     {
       "atPeriod": "May 30",
@@ -141,6 +141,12 @@
       "date": "2026-09-09",
       "datasetCount": 282,
       "imageCount": 6499241
+    },
+    {
+      "period": "Sep 12",
+      "date": "2026-09-11",
+      "datasetCount": 292,
+      "imageCount": 6519892
     }
   ]
 }
