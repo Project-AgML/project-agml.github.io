@@ -11940,5 +11940,180 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/blueberry_maturity_detection",
     "examples_image_url": "/img/agml/sample_images/blueberry_maturity_detection_sample.webp"
+  },
+  {
+    "name": "coffee_rust_multispec_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Garzón, Huila, Colombia",
+      "Hobo, Huila, Colombia"
+    ],
+    "lat_lon": [
+      "2.205, -75.565",
+      "2.520, -75.400"
+    ],
+    "country": "Colombia",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "coffee"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "multispectral camera (1600x1300 pixels)"
+    ],
+    "collection_period": "April",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1120,
+    "classes": [
+      "NoRust",
+      "Rust"
+    ],
+    "license": "cc-0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111421",
+    "citation": "https://www.kaggle.com/datasets/jorgearoca/coffee-rust",
+    "zip_size_bytes": 336085903,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/coffee_rust_multispec_classification",
+    "examples_image_url": "/img/agml/sample_images/coffee_rust_multispec_classification_sample.webp"
+  },
+  {
+    "name": "cocoa_agroforestry_multispectral",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Divo, Central-West Region, Côte d'Ivoire"
+    ],
+    "lat_lon": [
+      "5.883, -5.217"
+    ],
+    "country": "Côte d'Ivoire",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cocoa"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom 4 Multispectral (P4M) UAV, 1600 x 1300 pixels, 1/2.9-inch CMOS sensor, 5.74 mm focal length, 4.87 mm x 3.96 mm sensor size"
+    ],
+    "collection_period": "May 4-5, 2022",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 1272,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110664",
+    "citation": "Lammoglia, S. K., Danumah, J. H., Akpa, Y. L., Assoua Brou, Y. L., & Kassi, N. J. (2024). Dataset of RGB and multispectral aerial images of cocoa agroforestry plots (Divo, C&ocirc;te d’Ivoire) [dataset]. In Spectral_img_Ble_2202205_raw (Version V1). CIRAD Dataverse. https://doi.org/doi:10.18167/DVN1/MK2ZRG",
+    "zip_size_bytes": 27678268359,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_agroforestry_multispectral",
+    "examples_image_url": "/img/agml/sample_images/cocoa_agroforestry_multispectral_sample.webp"
+  },
+  {
+    "name": "tropical_dry_forest_multispectral",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Reserva Monte Mojino, Álamos, Sonora, Mexico"
+    ],
+    "lat_lon": [
+      "27.005951, -108.779084"
+    ],
+    "country": "Mexico",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom 4 Multispectral UAV with 1/2.9 CMOS RGB and multispectral sensors"
+    ],
+    "collection_period": "June 2023, July 2023",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 196,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109869",
+    "citation": "Vega, Masuly (2023), “RGB and Multispectral images dataset ( Álamos, Sonora)”, Mendeley Data, V2, doi: 10.17632/rrs7ctswft.2",
+    "zip_size_bytes": 4258868520,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_dry_forest_multispectral",
+    "examples_image_url": "/img/agml/sample_images/tropical_dry_forest_multispectral_sample.webp"
+  },
+  {
+    "name": "GobhiSet_cauliflower_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Portici, Italy"
+    ],
+    "lat_lon": [
+      "40.813893, 14.346603"
+    ],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cauliflower"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro-Obsidian (5472x3648 pixels, drone)"
+    ],
+    "collection_period": "8 October 2020 - 25 November 2020",
+    "platform": "drone",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 244,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110506",
+    "citation": "Rana, Shubham; Crimaldi, Mariano; Barretta, Domenico; Carillo, Petronia; Gerbino, Salvatore; Cirillo, Valerio; Maggio, Albino; Sarghini, Fabrizio (2024), “GobhiSet: Dataset of raw, manually and automatically annotated RGB images across phenology of Brassica oleracea var. Botrytis ”, Mendeley Data, V3, doi: 10.17632/dcjjcwc5dh.3",
+    "zip_size_bytes": 266860668,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GobhiSet_cauliflower_segmentation",
+    "examples_image_url": "/img/agml/sample_images/GobhiSet_cauliflower_segmentation_sample.webp"
+  },
+  {
+    "name": "weedy_rice_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Thoaison District, An Giang Province, Vietnam",
+      "Longxuyen City, An Giang Province, Vietnam"
+    ],
+    "lat_lon": [
+      "10.38, 105.43",
+      "10.38, 105.43"
+    ],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Mavic 3 Multispectral (M3M) UAV, 4/3 RGB CMOS sensor, 1/2.8-inch MS CMOS sensor"
+    ],
+    "collection_period": "June 2024 to January 2025",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 734,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112237",
+    "citation": "Nguyen, Van Hoa; Le, Cong-Doan; Truong, Minh-Tuyen; Bui, Mai-Phung; Le, Thanh-Phong (2025), “A Dataset of Aligned RGB and Multispectral UAV Imagery for Semantic Segmentation of Weedy Rice”, Mendeley Data, V1, doi: 10.17632/vt4s83pxx6.1",
+    "zip_size_bytes": 3946789128,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/weedy_rice_segmentation",
+    "examples_image_url": "/img/agml/sample_images/weedy_rice_segmentation_sample.webp"
   }
 ]
