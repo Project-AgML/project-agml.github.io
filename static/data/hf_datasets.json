@@ -12117,6 +12117,325 @@
     "examples_image_url": "/img/agml/sample_images/weedy_rice_segmentation_sample.webp"
   },
   {
+    "name": "cocoa_monilia_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "vereda La Lejia, Barrancabermeja, Santander, Colombia",
+      "Vereda San Pablo, San Luis, Antioquia, Colombia"
+    ],
+    "lat_lon": [],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cocoa"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Samsung Galaxy A24, handheld",
+      "Moto g54 5G, handheld",
+      "iPhone 14, handheld",
+      "Xiaomi-M1908C3JGG, handheld",
+      "Apple-iPhone 14, handheld",
+      "Xiaomi Redmi Note 9 Pro, handheld",
+      "Lenovo Tab M10 Plus 3rd Gen, handheld"
+    ],
+    "collection_period": "September/2024 - February/2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1950,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112447",
+    "citation": "",
+    "zip_size_bytes": 2667926676,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_monilia_detection",
+    "examples_image_url": "/img/agml/sample_images/cocoa_monilia_detection_sample.webp"
+  },
+  {
+    "name": "arecanut_xray_grade_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Surathkal, Karnataka, India"
+    ],
+    "lat_lon": [
+      "13.0118, 74.7921"
+    ],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "arecanut"
+    ],
+    "sensor_modality": "x-ray",
+    "imaging_equipment": [
+      "X-ray machine, CR reader"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 916,
+    "classes": [
+      "0",
+      "1",
+      "2"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111721",
+    "citation": "",
+    "zip_size_bytes": 21484506,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/arecanut_xray_grade_detection",
+    "examples_image_url": "/img/agml/sample_images/arecanut_xray_grade_detection_sample.webp"
+  },
+  {
+    "name": "gran_canaria_vegetation_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Gran Canaria, Canary Islands, Spain"
+    ],
+    "lat_lon": [
+      "27.959, -15.593"
+    ],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2016, 2018, 2021",
+    "platform": "aerial",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 555,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111419",
+    "citation": "",
+    "zip_size_bytes": 1663136992,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gran_canaria_vegetation_segmentation",
+    "examples_image_url": "/img/agml/sample_images/gran_canaria_vegetation_segmentation_sample.webp"
+  },
+  {
+    "name": "Sentinel_SAR_NDVI",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Sentinel-1 (SAR), satellite",
+      "Sentinel-2 (optical), satellite"
+    ],
+    "collection_period": "January 1, 2017, to March 1, 2024",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 8800,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.111160",
+    "citation": "",
+    "zip_size_bytes": 4875963428,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Sentinel_SAR_NDVI",
+    "examples_image_url": "/img/agml/sample_images/Sentinel_SAR_NDVI_sample.webp"
+  },
+  {
+    "name": "Wheat_Coccinellid_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "North Agronomy Farm, Manhattan, Flint Hills, United States"
+    ],
+    "lat_lon": [
+      "39.20464, -96.59731"
+    ],
+    "country": "United States",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 6",
+      "iPhone 10",
+      "iPhone 12 Pro",
+      "iPhone 13",
+      "Samsung S21 FE 5G"
+    ],
+    "collection_period": "summer 2022 and 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2133,
+    "classes": [
+      "0"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110585",
+    "citation": "",
+    "zip_size_bytes": 171037916,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Wheat_Coccinellid_detection",
+    "examples_image_url": "/img/agml/sample_images/Wheat_Coccinellid_detection_sample.webp"
+  },
+  {
+    "name": "alphonos_mango_phenotyping",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Yelachahalli, Yelawala, Mysuru"
+    ],
+    "lat_lon": [
+      "12.379, 76.524"
+    ],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Logitech C270 HD Webcam, 720p/30 fps, fixed focus, 60-degree diagonal field of vision"
+    ],
+    "collection_period": "May/June 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 142,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109778",
+    "citation": "",
+    "zip_size_bytes": 46259000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/alphonos_mango_phenotyping",
+    "examples_image_url": "/img/agml/sample_images/alphonos_mango_phenotyping_sample.webp"
+  },
+  {
+    "name": "Cassava_whitefly_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "Namulonge, Wakiso District, central region, Uganda"
+    ],
+    "lat_lon": [
+      "0.5333, 32.6167"
+    ],
+    "country": "Uganda",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cassava"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Tecno Spark 3 smartphone (13 megapixels, 4000x1920 pixels, handheld)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3000,
+    "classes": [
+      "whitefly"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.107911",
+    "citation": "",
+    "zip_size_bytes": 4117790959,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Cassava_whitefly_detection",
+    "examples_image_url": "/img/agml/sample_images/Cassava_whitefly_detection_sample.webp"
+  },
+  {
+    "name": "sentinel_SAR_NDVI",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Sentinel-1 (SAR), satellite",
+      "Sentinel-2 (optical), satellite"
+    ],
+    "collection_period": "January 1, 2017, to March 1, 2024",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 2200,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.111160",
+    "citation": "",
+    "zip_size_bytes": 4543771770,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sentinel_SAR_NDVI",
+    "examples_image_url": "/img/agml/sample_images/sentinel_SAR_NDVI_sample.webp"
+  },
+  {
+    "name": "PaddyNet_LCC_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Sajiali, Dogachia, Shyamnagar, Jashore sadar, Khulna, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "paddy"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Nokia 3 (8 MP camera), handheld",
+      "Samsung S8 (12 MP camera), handheld"
+    ],
+    "collection_period": "middle of April to end of June",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2785,
+    "classes": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109516",
+    "citation": "",
+    "zip_size_bytes": 75760718,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/PaddyNet_LCC_classification",
+    "examples_image_url": "/img/agml/sample_images/PaddyNet_LCC_classification_sample.webp"
+  },
+  {
     "name": "pheno4d_point_cloud_segmentation",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pheno4d_point_cloud_segmentation",
