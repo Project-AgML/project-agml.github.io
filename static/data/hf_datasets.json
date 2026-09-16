@@ -12393,7 +12393,7 @@
     "annotation_format": "segmentationMask",
     "num_images": 126,
     "documentation": "https://doi.org/10.1371/journal.pone.0256340",
-    "examples_image_url": "/img/agml/sample_images/pheno4d_point_cloud_segmentation_sample.png",
+    "examples_image_url": "/img/agml/sample_images/pheno4d_point_cloud_segmentation_sample.webp",
     "point_cloud_sample_url": "/data/point_cloud_samples/pheno4d_point_cloud_segmentation_sample.json",
     "license": "cc-by-4.0",
     "citation": "Schunck, D., Magistri, F., Rosu, R.A., et al. (2021). Pheno4D: A spatio-temporal dataset of maize and tomato plant point clouds for phenotyping and advanced plant analysis. PLOS ONE, 16(8).",
@@ -12401,5 +12401,225 @@
     "zip_size_bytes": 5293657341,
     "stats_mean": null,
     "stats_std": null
+  },
+  {
+    "name": "Sen2_LULC",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "land_use_segmentation",
+    "location": [
+      "Central Indian region, India"
+    ],
+    "lat_lon": [],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2 (10 m resolution, Level-2A), satellite"
+    ],
+    "collection_period": "February-March 2021",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 213758,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109724",
+    "citation": "Sawant, Suraj; Garg, Rahul Dev; Meshram, Vishal; Mistry, Shrayank (2023), “Sen-2 LULC ”, Mendeley Data, V3, doi: 10.17632/f4ky6ks248.3",
+    "zip_size_bytes": 3099453834,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Sen2_LULC",
+    "examples_image_url": "/img/agml/sample_images/Sen2_LULC_sample.webp"
+  },
+  {
+    "name": "pine_wilt_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Jinju, South Korea"
+    ],
+    "lat_lon": [],
+    "country": "South Korea",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pine"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Korea Aerospace Research Institute (KARI) aerial imagery, 5-cm resolution"
+    ],
+    "collection_period": "January 2023",
+    "platform": "aerial",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 2238,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103421",
+    "citation": "Ha, Uirin; Kim, Hyungho; Kim, Seunguk; Choe, Hyeyeong (2025), “Enhanced pine wilt disease outbreak prediction: integrating deep learning-detected infected trees with species distribution modeling”, Mendeley Data, V3, doi: 10.17632/swpp8jxymv.3",
+    "zip_size_bytes": 1907862607,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/pine_wilt_segmentation",
+    "examples_image_url": "/img/agml/sample_images/pine_wilt_segmentation_sample.webp"
+  },
+  {
+    "name": "tree_crown_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Huayi Agricultural Camellia oleifera Plantation, Chenjiafang Town, Xinshao County, Shaoyang City, Hunan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Camellia oleifera"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Mavic 3 M (RGB: 20 MP, Multispectral: 5 MP per band)"
+    ],
+    "collection_period": "November 4, 2023",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 595,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103868",
+    "citation": "peng, . yongkang . (2026). experimental data [Figure]. Zenodo. https://doi.org/10.5281/zenodo.18505981",
+    "zip_size_bytes": 352006130,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tree_crown_segmentation",
+    "examples_image_url": "/img/agml/sample_images/tree_crown_segmentation_sample.webp"
+  },
+  {
+    "name": "subalpine_forest_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Wanglang National Nature Reserve, Pingwu County, Sichuan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic 2, 1-in. CMOS camera, UAV"
+    ],
+    "collection_period": "June 15, 2020",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 11336,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103111",
+    "citation": "Shi, weibo (2025), “CNN model to map vegetation classification in a subalpine coniferous forest using UAV imagery”, Mendeley Data, V2, doi: 10.17632/d9f4m2735b.2",
+    "zip_size_bytes": 3046798213,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/subalpine_forest_segmentation",
+    "examples_image_url": "/img/agml/sample_images/subalpine_forest_segmentation_sample.webp"
+  },
+  {
+    "name": "Alphonso_Mango_phenotyping",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Yelachahalli, Yelawala, Mysuru"
+    ],
+    "lat_lon": [
+      "12.379, 76.524"
+    ],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Logitech C270 HD Webcam, 720p/30 fps, fixed focus, 60-degree diagonal field of vision"
+    ],
+    "collection_period": "May/June 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "numericMeasurements",
+    "num_images": 100,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109778",
+    "citation": "Prabhu, Akshatha; Rani, N.Shobha (2023), “Alphonso Mangoes Image Dataset”, Mendeley Data, V1, doi: 10.17632/8sjny373pz.1",
+    "zip_size_bytes": 32519190,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Alphonso_Mango_phenotyping",
+    "examples_image_url": "/img/agml/sample_images/Alphonso_Mango_phenotyping_sample.webp"
+  },
+  {
+    "name": "rural_LUCC_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "land_use_segmentation",
+    "location": [
+      "Jiangning District, Nanjing City, Jiangsu Province"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2024",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 2042,
+    "classes": [],
+    "license": "Apache-2.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103078",
+    "citation": "https://www.kaggle.com/datasets/vvghigh/ruraluse",
+    "zip_size_bytes": 18017979,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rural_LUCC_segmentation",
+    "examples_image_url": "/img/agml/sample_images/rural_LUCC_segmentation_sample.webp"
+  },
+  {
+    "name": "horseradish_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": ["Illinois, United States of America"],
+    "lat_lon": [],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "horseradish"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 13 Mini",
+      "Farm-ng Amiga"
+    ],
+    "collection_period": "June 2024",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2697,
+    "classes": [
+      "horseradish",
+      "weed"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3389/fagro.2026.1777087",
+    "citation": "Pagadala, Abhinav; Shajahan, Sunoj (2026), “Horseradish and weed dataset from commercial fields in Southern Illinois”, Mendeley Data, V1, doi: 10.17632/fcf7brsfm6.1",
+    "zip_size_bytes": 506390258,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/horseradish_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/horseradish_weed_detection_sample.webp"
   }
 ]
