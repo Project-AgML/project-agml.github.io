@@ -25,7 +25,8 @@
     "parent_dataset": null,
     "zip_size_bytes": 1410000000,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/wGrapeUNIPD-DL_white_grape_bunch_detection"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/wGrapeUNIPD-DL_white_grape_bunch_detection",
+    "bibtex": "@misc{https://doi.org/10.5281/zenodo.6757555,\n  doi = {10.5281/ZENODO.6757555},\n  url = {https://zenodo.org/record/6757555},\n  author = {Sozzi, Marco and Cantalamessa, Silvia and Cogato, Alessia and Kayad, Ahmed and Marinello, Francesco},\n  keywords = {Object Detection, Early Yield Estimation, Cluster Detection, Digital Agriculture, Crop Load Mapping, Grape Yield, Precision Viticulture},\n  language = {en},\n  title = {wGrapeUNIPD-DL: an open dataset for white grape bunch detection},\n  publisher = {Zenodo},\n  year = {2022},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
   },
   {
     "name": "Strawberry-DS_strawberry_detection",
@@ -59,7 +60,8 @@
     "parent_dataset": null,
     "zip_size_bytes": 293000000,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/Strawberry-DS_strawberry_detection"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Strawberry-DS_strawberry_detection",
+    "bibtex": "@article{elhariri2023strawberry,\n  title={Strawberry-DS: Dataset of annotated strawberry fruits images with various developmental stages},\n  author={Elhariri, Esraa and El-Bendary, Nashwa and Saleh, Samir Mahmoud},\n  journal={Data in Brief},\n  volume={48},\n  pages={109165},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "synthetic_cowpea_flower_detection",
@@ -88,7 +90,8 @@
     "zip_size_bytes": 246700000,
     "augmented_zip_size_bytes": 6020000000,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_flower_detection"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_flower_detection",
+    "bibtex": "@article{lei2024simulation,\n  title={Simulation of automatically annotated visible and multi-/hyperspectral images using the Helios 3D plant and radiative transfer modeling framework},\n  author={Lei, Tong and Graefe, Jan and Mayanja, Ismael K and Earles, Mason and Bailey, Brian N},\n  journal={Plant Phenomics},\n  volume={6},\n  pages={0189},\n  year={2024},\n  publisher={AAAS}\n}"
   },
   {
     "name": "synthetic_cowpea_pod_detection",
@@ -117,7 +120,8 @@
     "zip_size_bytes": 222000000,
     "augmented_zip_size_bytes": 5440000000,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_pod_detection"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/synthetic_cowpea_pod_detection",
+    "bibtex": "@article{lei2024simulation,\n  title={Simulation of automatically annotated visible and multi-/hyperspectral images using the Helios 3D plant and radiative transfer modeling framework},\n  author={Lei, Tong and Graefe, Jan and Mayanja, Ismael K and Earles, Mason and Bailey, Brian N},\n  journal={Plant Phenomics},\n  volume={6},\n  pages={0189},\n  year={2024},\n  publisher={AAAS}\n}"
   },
   {
     "name": "GEMINI_cowpea_pod_detection",
@@ -217,7 +221,8 @@
       "Google Pixel 6",
       "Poco M2 Max Pro"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ripon2025cotton,\n  title={Cotton leaf image dataset for disease classification and health monitoring},\n  author={Ripon, Shamim and Gani, Raiyan and Niha, Nazratan Mazumder and Rahat, Wasimul Bari and Toufiq, Shafaeat Hasan and Maisha, Mushfida Ferdous and Ahmed, Jubaer},\n  journal={Data in Brief},\n  pages={112142},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "eggplant_leaf_disease_classification",
@@ -264,7 +269,8 @@
       "Samsung S21"
     ],
     "collection_period": "March to May 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{nirob2025comprehensive,\n  title={A Comprehensive Annotated Image Dataset for Deep Learning Analysis of Eggplant Leaf Diseases.},\n  author={Nirob, Md Asraful Sharker and Bishshash, Prayma and Ayan, Mariyam Bin and Khatun, Tania and Sharmin, Shayla and Hasan, Md Zahid and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  pages={112140},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MoringaLeafNet_disease_classification",
@@ -311,7 +317,8 @@
       "10 March 2025 to 18 April 2025",
       "30 August 2025 to 2 September 2025"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{preanto2025moringaleafnet,\n  title={MoringaLeafNet: A multi-class leaf disease dataset for precision agriculture and deep learning research},\n  author={Preanto, Sabit Ahamed and Paul, Tapon and Khan, Abid and Bijoy, Md Hasan Imam},\n  journal={Data in Brief},\n  pages={112174},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "ash_gourd_disease_classification",
@@ -349,7 +356,8 @@
       "smartphone camera: 8MP, f/2.0 (telephoto), 1.0µm, PDAF, OIS"
     ],
     "collection_period": "October 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{jahan2025dataset,\n  title={Dataset of Ash gourd plant leaf images for detection and classification},\n  author={Jahan, Nusrat and Hasan, Md Zahid},\n  journal={Data in Brief},\n  pages={111997},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "jujube_bruise_classification",
@@ -385,7 +393,8 @@
       "Samsung Galaxy Note8"
     ],
     "collection_period": "10th March to 20th March 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{tabib2025jujubebruisenet,\n  title={JujubeBruiseNet: A high-resolution image dataset for bruise detection in Ziziphus mauritiana},\n  author={Tabib, Md Arham and Liza, Sumyia Sabrin and Rahman, Md Mizanur},\n  journal={Data in Brief},\n  pages={112031},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MangoImageBD_classification",
@@ -451,7 +460,8 @@
       "Samsung Galaxy A51"
     ],
     "collection_period": "May to September",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ferdaus2025mangoimagebd,\n  title={Mangoimagebd: An extensive mango image dataset for identification and classification of various mango varieties in bangladesh},\n  author={Ferdaus, Md Hasanul and Prito, Rizvee Hassan and Ahmed, Masud and Islam, Mohammad Manzurul and Ali, Md Sawkat and Ibrahim, Muhammad and Rasel, Ahmed Abdal Shafi and Islam, Maheen and Jabid, Taskeed and Rahman, Md Atiqur and others},\n  journal={Data in Brief},\n  pages={111908},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "okra_maturity_classification",
@@ -488,7 +498,8 @@
     "imaging_equipment": [
       "Canon EOS 1500D DSLR camera, 18-55mm lens, tripod-mounted"
     ],
-    "platform": "ground_fixed"
+    "platform": "ground_fixed",
+    "bibtex": "@article{bharathi2025rgb,\n  title={RGB image dataset for okra maturity classification to enhance agricultural quality and market readiness},\n  author={Bharathi, Nikhilesh Kumar and Fj, Ferbin and others},\n  journal={Data in Brief},\n  pages={111982},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pomegranate_disease_classification",
@@ -524,7 +535,8 @@
       "Sony ILCE-7RM4, 31 mm focal length lens"
     ],
     "collection_period": "September 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mohammed2025pomegranate,\n  title={Pomegranate disease detection and classification dataset for deep learning applications: A case study from Halabja city},\n  author={Mohammed, Bashdar Abdalrahman and Abdalla, Peshraw Ahmed and Aziz, Sirwan M and Hassan, Hiwa Omer},\n  journal={Data in Brief},\n  pages={112298},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_disease_classification_bangladesh",
@@ -572,7 +584,8 @@
       "Infinix Note 12 Pro"
     ],
     "collection_period": "October to November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hasan2025comprehensive,\n  title={A comprehensive dataset of rice leaf images for disease detection using machine learning},\n  author={Hasan, Afif and Layes, Tanvir Almas and Afridi, Arafat Sahin and Rifat, Shakhawath Hossain and Nur, Fernaz Narin and Moon, Nazmun Nessa},\n  journal={Data in Brief},\n  pages={111977},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "RoseLeafInsight_disease_classification",
@@ -614,7 +627,8 @@
       "Redmi Note 10 Pro Max"
     ],
     "collection_period": "October 2024 to January 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shacha2025roseleafinsight,\n  title={RoseLeafInsight: A high-resolution image dataset for rose leaf disease recognition},\n  author={Shacha, Arnob Das and Durjoy, Sabbir Hossain and ShikderKamal, Md Emon Mostafa and Shoib, Md Mehedi Hasan and Bijoy, Md Hasan Imam},\n  journal={Data in Brief},\n  pages={111968},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "taro_blight_stage_classification",
@@ -658,7 +672,8 @@
     "imaging_equipment": [
       "Xiaomi Redmi 10A smartphone"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{nwaneto2025image,\n  title={Image dataset of Taro Leaf Blight disease collected from the West African Sub-Region},\n  author={Nwaneto, Chidiebere and Yinka-Banjo, Chika and Ugot, Ogban-Asuquo and Umeugochukwu, Obiageli and Annor, Thompson},\n  journal={Data in Brief},\n  pages={111869},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "jute_disease_classification",
@@ -702,7 +717,8 @@
       "iPhone 11"
     ],
     "collection_period": "May to June",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{islam2025comprehensive,\n  title={A comprehensive image dataset of jute diseases},\n  author={Islam, Md Masudul and Sheikh, Md Ripon},\n  journal={Data in Brief},\n  pages={112334},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grape_leaf_disease_classification",
@@ -742,7 +758,8 @@
       "Samsung S21 FE"
     ],
     "collection_period": "June 2023-January 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{dharrao2025grapes,\n  title={Grapes leaf disease dataset for precision agriculture},\n  author={Dharrao, Madhuri and Zade, Nilima and Kamatchi, R and Sonawane, Rakesh and Henry, Rabinder and Dharrao, Deepak},\n  journal={Data in Brief},\n  volume={61},\n  pages={111716},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "durian_disease_classification_vietnam",
@@ -781,7 +798,8 @@
       "iPhone 14"
     ],
     "collection_period": "January 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{thanh2025durian,\n  title={A durian leaf image dataset of common diseases in Vietnam for agricultural diagnosis},\n  author={Thanh, Truong Nguyen and Nguyen, Linh Xuan and Cap, Thang and Le, Tuong},\n  journal={Data in Brief},\n  volume={61},\n  pages={111845},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "teaLeafBD_disease_classification_classification",
@@ -920,7 +938,8 @@
       "HUAWEI Y7 Pro"
     ],
     "collection_period": "January 2020 to January 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hridoy2025comprehensive,\n  title={A comprehensive image dataset for accurate diagnosis of betel leaf diseases using artificial intelligence in plant pathology},\n  author={Hridoy, Rashidul Hasan and Habib, Md Tarek and Mahmud, Imran and Haque, Aminul and Al Mamun, Md Abdulla},\n  journal={Data in Brief},\n  volume={60},\n  pages={111564},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "coffee_bean_quality_classification",
@@ -960,7 +979,8 @@
     "imaging_equipment": [
       "Samsung S20 FE"
     ],
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{bj2025cbd,\n  title={CBD: Coffee Beans Dataset},\n  author={BJ, Bipin Nair and KM, Abrav Nanda and Raghavendra, V and others},\n  journal={Data in Brief},\n  volume={59},\n  pages={111434},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "eggplant_disease_classification",
@@ -1012,7 +1032,8 @@
       "Realme 7"
     ],
     "collection_period": "September and October 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{howlader2025comprehensive,\n  title={A comprehensive image dataset for the identification of eggplant leaf diseases and computer vision applications},\n  author={Howlader, Shakib and Ahamed, Md Sabbir and Mojumdar, Mayen Uddin and Noori, Sheak Rashed Haider and Siddiquee, Shah Md Tanvir and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111353},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "olive_tree_crown_detection",
@@ -1045,7 +1066,8 @@
     "imaging_equipment": [
       "DJI Phantom 4 RTK, FC6310 camera"
     ],
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{hnida2025olivetreecrownsdb,\n  title={OliveTreeCrownsDb: A high-resolution UAV dataset for detection and segmentation in agricultural computer vision},\n  author={Hnida, Youness and Mahraz, Mohamed Adnane and Achebour, Ali and Yahyaouy, Ali and Riffi, Jamal and Tairi, Hamid},\n  journal={Data in Brief},\n  volume={60},\n  pages={111515},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "CS-D_tea_leaf_disease_classification",
@@ -1092,7 +1114,8 @@
       "iPhone 16"
     ],
     "collection_period": "December 2024 to June 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{gupta2025cs,\n  title={CS-D: A dataset for disease in tea leaf (Camellia sinensis) from Assam},\n  author={Gupta, Megha and Garg, Sunaina and Deb, Nabamita and Pandey, Piyush},\n  journal={Data in Brief},\n  pages={112251},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "turmeric_leaf_disease_classification",
@@ -1138,7 +1161,8 @@
     "imaging_equipment": [
       "Redmi K20"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ahmed2025smartphone,\n  title={Smartphone image dataset for turmeric plant leaf disease from Bangladesh spice fields},\n  author={Ahmed, Jubaer and Hossain, Md Riyad and Gani, Raiyan and Rashid, Mohammad Rifat Ahmmad and Rahman, Md Mahamudur and Jahangir, Tasfia Binte and Hossain, Md Samir},\n  journal={Data in Brief},\n  pages={112184},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_bunch_maturity_classification_classification",
@@ -1228,7 +1252,8 @@
       "Samsung A52"
     ],
     "collection_period": "January to February 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{bitto2026brinjalfruitx,\n  title={BrinjalFruitX: A Field-Collected Image Dataset for Machine Learning and Deep Learning-Based Disease Identification in Brinjal Fruits},\n  author={Bitto, Abu Kowshir and Hasan, Md Zahid and Bijoy, Md Hasan Imam and Biplob, Khalid Been Badruzzaman and Hassan, Mohammad Mahadi and Rana, Mohammad Shohel and Masum, Abdul Kadar Muhammad},\n  journal={Data in Brief},\n  pages={112490},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "SIMPDV1_plant_classification",
@@ -1301,7 +1326,8 @@
     "imaging_equipment": [
       "smartphone"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{arunachalam2025medicinal,\n  title={Medicinal plants of South India: A comprehensive dataset for species identification},\n  author={Arunachalam, Muthukumar and Gopu, T and Uma, K and Nathan, Sabari},\n  journal={Data in Brief},\n  volume={61},\n  pages={111660},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "TOM2024_disease_classification",
@@ -1363,7 +1389,8 @@
       "Samsung Galaxy M11 (SM-M115F/DS)"
     ],
     "collection_period": "July 2022 to July 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{appiah2025tom2024,\n  title={TOM2024: Datasets of tomato, onion, and maize images for developing pests and diseases AI-based classification models},\n  author={Appiah, Obed and Hackman, Kwame Oppong and Diakalia, Son and Codjia, Audrey Kantz Dossou and B{\\^e}b{\\^e}, Momo and Ouedraogo, Valentin and Diallo, Belko Abdoul Aziz and Gandji, Kisito and Abdoul-Karim, Damoue and Ogunjobi, Kehinde Olufunso and others},\n  journal={Data in Brief},\n  volume={59},\n  pages={111357},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "vineyard_pruning_segmentation",
@@ -1407,7 +1434,8 @@
       "Samsung SM-A715F"
     ],
     "collection_period": "2021-2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{pacioni2025vineyard,\n  title={Vineyard dataset for automatic pruning based on main parts localization},\n  author={Pacioni, Elia and Abeng{\\'o}zar, Eugenio and Mac{\\'\\i}as Mac{\\'\\i}as, Miguel and Garc{\\'\\i}a Orellana, Carlos J and Gonz{\\'a}lez Velasco, Horacio M and Garc{\\'\\i}a Manso, Antonio},\n  journal={Data in Brief},\n  volume={59},\n  pages={111335},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "AFruitDB_fruit_grade_classification",
@@ -1458,7 +1486,8 @@
       "Vivo"
     ],
     "collection_period": "July, August, and September 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mojumdar2025afruitdb,\n  title={AFruitDB: A comprehensive dataset of six commonly used Asian fruits for advanced grading and biodiversity insights},\n  author={Mojumdar, Mayen Uddin and Islam, Shahrin and Al Mamun, Md and Hasan, Rifat and Siddiquee, Shah Md Tanvir and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111380},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "turmeric_disease_classification",
@@ -1497,7 +1526,8 @@
       "iPhone 14 Plus"
     ],
     "collection_period": "August 2024 to Janurary 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{siam2025data,\n  title={A data-driven approach to turmeric disease detection: Dataset for plant condition classification},\n  author={Siam, AKM Fazlul Kobir and Nirob, Md Asraful Sharker and Bishshash, Prayma and Assaduzzaman, Md and Ghosh, Apurba and Noori, Sheak Rashed Haider},\n  journal={Data in Brief},\n  volume={59},\n  pages={111435},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "black_gram_disease_classification",
@@ -1546,7 +1576,8 @@
       "Realme 5i"
     ],
     "collection_period": "September 2024 to November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shoib2025idbgl,\n  title={IDBGL: A unique image dataset of black gram (Vigna mungo) leaves for disease detection and classification},\n  author={Shoib, Md Mehedi Hasan and Saeem, Shahnewaz and Tonima, Afia Benta Aziz and Mojumdar, Mayen Uddin},\n  journal={Data in Brief},\n  volume={59},\n  pages={111347},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "african_plum_grading_classification",
@@ -1601,7 +1632,8 @@
       "Tecno Camon 12"
     ],
     "collection_period": "January 2021 to February 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{fadja2025dataset,\n  title={A dataset of annotated African plum images from Cameroon for AI-based quality assessment},\n  author={Fadja, Arnaud Nguembang and Tagni, Armel Gabin Fameni and Che, Sain Rigobert and Atemkeng, Marcellin},\n  journal={Data in Brief},\n  volume={59},\n  pages={111351},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "hog_plum_leaf_disease_classification",
@@ -1644,7 +1676,8 @@
       "Xiaomi Redmi Note 10 Pro Max"
     ],
     "collection_period": "June to October 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{durjoy2025comprehensive,\n  title={A comprehensive hog plum leaf disease dataset for enhanced detection and classification},\n  author={Durjoy, Sabbir Hossain and Shikder, Md Emon and Mojumdar, Mayen Uddin},\n  journal={Data in Brief},\n  volume={59},\n  pages={111311},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "dragonfruit_disease_classification",
@@ -1686,7 +1719,8 @@
       "iPhone 14 Pro"
     ],
     "collection_period": "October and November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sarkar2025udcad,\n  title={UDCAD-DFL-DL: A unique dataset for classifying and detecting agricultural diseases in dragon fruits and leaves},\n  author={Sarkar, Pronob Chandra and Pranta, Gourab Kumar and Mojumdar, Mayen Uddin and Mahmud, Arif and Noori, Sheak Rashed Haider and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111411},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tea_leaf_disease_classification_bangladesh",
@@ -1723,7 +1757,8 @@
       "Redmi Note 11"
     ],
     "collection_period": "October and December 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{bormon2025high,\n  title={High-resolution dataset for tea garden disease management: Precision agriculture insights},\n  author={Bormon, Sajib and Ahmad, MD Hasan and Sohag, Sohanur Rahman and Akhi, Amatul Bushra and others},\n  journal={Data in Brief},\n  volume={59},\n  pages={111379},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "vegetable_classification_bangladesh_classification",
@@ -1782,7 +1817,8 @@
       "Redmi Note 10 Pro"
     ],
     "collection_period": "September 2024 to February 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ahmed2025banglaveg,\n  title={BanglaVeg: A curated vegetable image dataset from Bangladesh for precision agriculture},\n  author={Ahmed, Md Jobayer and Saha, Ratu and Dutta, Arpon Kishore and Mojumdar, Mayen Uddin and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111441},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "centella_asiatica_leaves",
@@ -1820,7 +1856,8 @@
       "Samsung Galaxy M21"
     ],
     "collection_period": "January 2024 and March 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{jadhav2024dataset,\n  title={Dataset of Centella Asiatica leaves for quality assessment and machine learning applications},\n  author={Jadhav, Rohini and Molawade, Mayuri and Bhosle, Amol and Suryawanshi, Yogesh and Patil, Kailas and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={57},\n  pages={111150},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "date_palm_leaf_disease_classification",
@@ -1853,7 +1890,8 @@
     "zip_size_bytes": 208299356,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/date_palm_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/date_palm_leaf_disease_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/date_palm_leaf_disease_classification_sample.webp",
+    "bibtex": "@article{namoun2024dataset,\n  title={Dataset of infected date palm leaves for palm tree disease detection and classification},\n  author={Namoun, Abdallah and Alkhodre, Ahmad B and Abi Sen, Adnan Ahmad and Alsaawy, Yazed and Almoamari, Hani},\n  journal={Data in brief},\n  volume={57},\n  pages={110933},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_seedling_classification",
@@ -1891,7 +1929,8 @@
       "DJI-FC6310S, Phantom Pro 4 UAV"
     ],
     "collection_period": "June 6th, 2023",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{luu2024rigad,\n  title={RiGaD: An aerial dataset of rice seedlings for assessing germination rates and density},\n  author={Luu, Trong Hieu and Cao, Hoang-Long and Ngo, Quang Hieu and Nguyen, Thanh Tam and El Makrini, Ilias and Vanderborght, Bram},\n  journal={Data in Brief},\n  volume={57},\n  pages={111118},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "bay_leaf_disease_classification",
@@ -1930,7 +1969,8 @@
       "Realme 6i"
     ],
     "collection_period": "April-June",
-    "platform": "mobile"
+    "platform": "mobile",
+    "bibtex": "@article{paygude2024dataset,\n  title={A dataset revolutionizing Indian bay leaf analysis},\n  author={Paygude, Priyanka and Thite, Sandip and Kumar, Ajay and Bhosle, Amol and Pawar, Rajendra and Mane, Renuka and Joshi, Rahul and Kasar, Manisha and Chavan, Prashant and Gayakwad, Milind},\n  journal={Data in Brief},\n  volume={57},\n  pages={111024},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "bean_cowpea_leaf_disease_classification",
@@ -1969,7 +2009,8 @@
     "imaging_equipment": [
       "Realme 9 5G"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hasan2024comprehensive,\n  title={Comprehensive smartphone image dataset for bean and cowpea plant leaf disease detection and freshness assessment from Bangladesh vegetable fields},\n  author={Hasan, Mahamudul and Gani, Raiyan and Rashid, Mohammad Rifat Ahmmad and Kamara, Raka and Tarin, Taslima Khan and Rabbi, Sheikh Fajlay},\n  journal={Data in Brief},\n  volume={57},\n  pages={111023},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "papaya_leaf_disease_detection",
@@ -2010,7 +2051,8 @@
       "Redmi Note 11 Pro"
     ],
     "collection_period": "July 12 to August 2, 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mustofa2024bdpapayaleaf,\n  title={BDPapayaLeaf: A dataset of papaya leaf for disease detection, classification, and analysis},\n  author={Mustofa, Sumaya and Ahad, Md Taimur and Emon, Yousuf Rayhan and Sarker, Arpita},\n  journal={Data in Brief},\n  volume={57},\n  pages={110910},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "REMP_plant_classification",
@@ -2079,7 +2121,8 @@
       "Redmi Note 11"
     ],
     "collection_period": "August 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{islam2024remp,\n  title={REMP: A unique dataset of rare and endangered medicinal plants in Bangladesh for sustainable healing and biodiversity conservation},\n  author={Islam, Mohammad Manzurul and Rahman, Sanjida and Hoque, Nahida and Al Mamun, Md and Moheuddin, Md Sultan and Ali, Md Sawkat and Rashid, Mohammad Rifat Ahmmad and Masum, Saleh and Ferdaus, Md Hasanul and Niloy, Nishat Tasnim and others},\n  journal={Data in Brief},\n  volume={57},\n  pages={110895},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cotton_leaf_disease_classification_bangladesh_2",
@@ -2120,7 +2163,8 @@
       "Redmi Note 11S"
     ],
     "collection_period": "October 2023 to January 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{bishshash2024comprehensive,\n  title={A comprehensive cotton leaf disease dataset for enhanced detection and classification},\n  author={Bishshash, Prayma and Nirob, Asraful Sharker and Shikder, Habibur and Sarower, Afjal Hossan and Bhuiyan, Touhid and Noori, Sheak Rashed Haider},\n  journal={Data in Brief},\n  volume={57},\n  pages={110913},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_guava_quality_classification",
@@ -2155,7 +2199,8 @@
     "imaging_equipment": [
       "Redmi Note 10 Pro"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{kumari2024banana,\n  title={Banana and Guava dataset for machine learning and deep learning-based quality classification},\n  author={Kumari, Abiban and Singh, Jaswinder},\n  journal={Data in Brief},\n  volume={57},\n  pages={111025},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "BDMANGO_variety_classification",
@@ -2201,7 +2246,8 @@
       "iPhone XR"
     ],
     "collection_period": "May 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{islam2025bdmango,\n  title={BDMANGO: An image dataset for identifying the variety of mango based on the mango leaves},\n  author={Islam, Mohammad Manzurul and Ahmed, Md Jubayer and Shafi, Mahmud Bin and Das, Aritra and Hasan, Md Rakibul and Al Rafi, Abdullah and Rashid, Mohammad Rifat Ahmmad and Niloy, Nishat Tasnim and Ali, Md Sawkat and Chowdhury, Abdullahi and others},\n  journal={Data in Brief},\n  volume={58},\n  pages={111241},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "money_plant_disease_classification",
@@ -2241,7 +2287,8 @@
       "Samsung S22"
     ],
     "collection_period": "September 2023 and December 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ali2025money,\n  title={Money plant disease atlas: A comprehensive dataset for disease classification in ornamental horticulture},\n  author={ali Biswas, Md Seyam and Ahmad, MD Hasan and Bormon, Sajib and Sohag, Sohanur Rahman and Akhi, Amatul Bushra and others},\n  journal={Data in Brief},\n  volume={58},\n  pages={111216},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "radish_leaf_disease_classification",
@@ -2282,7 +2329,8 @@
     "imaging_equipment": [
       "Realme 9 5G"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hasan2025smartphone,\n  title={Smartphone image dataset for radish plant leaf disease classification from Bangladesh},\n  author={Hasan, Mahamudul and Gani, Raiyan and Rashid, Mohammad Rifat Ahmmad and Isty, Maherun Nessa and Kamara, Raka and Tarin, Taslima Khan},\n  journal={Data in Brief},\n  volume={58},\n  pages={111263},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "IDDMSLD_spinach_leaf_disease_classification",
@@ -2331,7 +2379,8 @@
       "Redmi Note 9"
     ],
     "collection_period": "October and November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sayeem2025iddmsld,\n  title={IDDMSLD: An image dataset for detecting Malabar spinach leaf diseases},\n  author={Sayeem, Adnan Rahman and Omi, Jannatul Ferdous and Hasan, Mehedi and Mojumdar, Mayen Uddin and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={58},\n  pages={111293},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "BananaImageBD_variety_classification",
@@ -2377,7 +2426,8 @@
     "imaging_equipment": [
       "iPhone 13 Pro Max"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ferdaus2025bananaimagebd,\n  title={BananaImageBD: A comprehensive banana image dataset for classification of banana varieties and detection of ripeness stages in Bangladesh},\n  author={Ferdaus, Md Hasanul and Prito, Rizvee Hassan and Rasel, Ahmed Abdal Shafi and Ahmed, Masud and Saykot, Md Jahid Hassan and Shanta, Shanjida Sultan and Akter, Sonali and Das, Ankan Chandra and Islam, Mohammad Manzurul and Hasan, Mahamudul and others},\n  journal={Data in Brief},\n  volume={58},\n  pages={111239},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "BananaImageBD_ripeness_classification",
@@ -2423,7 +2473,8 @@
     "imaging_equipment": [
       "iPhone 13 Pro Max"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ferdaus2025bananaimagebd,\n  title={BananaImageBD: A comprehensive banana image dataset for classification of banana varieties and detection of ripeness stages in Bangladesh},\n  author={Ferdaus, Md Hasanul and Prito, Rizvee Hassan and Rasel, Ahmed Abdal Shafi and Ahmed, Masud and Saykot, Md Jahid Hassan and Shanta, Shanjida Sultan and Akter, Sonali and Das, Ankan Chandra and Islam, Mohammad Manzurul and Hasan, Mahamudul and others},\n  journal={Data in Brief},\n  volume={58},\n  pages={111239},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "lemon_leaf_disease_classification",
@@ -2466,7 +2517,8 @@
       "iPhone 14 Plus"
     ],
     "collection_period": "July to September 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{siam2025comprehensive,\n  title={A comprehensive image dataset for the identification of lemon leaf diseases and computer vision applications},\n  author={Siam, AKM Fazlul Kobir and Bishshash, Prayma and Nirob, Md Asraful Sharker and Mamun, Sajib Bin and Assaduzzaman, Md and Noori, Sheak Rashed Haider},\n  journal={Data in Brief},\n  volume={58},\n  pages={111244},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "lentil_disease_classification",
@@ -2509,7 +2561,8 @@
       "Samsung M31"
     ],
     "collection_period": "May and August 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mahamud2025lentil,\n  title={Lentil plant disease and quality assessment: A detailed dataset of high-resolution images for deep learning research},\n  author={Mahamud, Eram and Assaduzzaman, Md and Sharmin, Shayla},\n  journal={Data in Brief},\n  volume={58},\n  pages={111224},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "GYMNSA_pear_rust_detection",
@@ -2543,7 +2596,8 @@
       "DJI Phantom 4 Pro V2.0 (P4P, v01.08.1719)",
       "DJI Matrice 300 RTK with Zenmuse P1 (v03.00.01.04, v07.00.01.10)"
     ],
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{mass2025annotated,\n  title={Annotated image dataset with different stages of European pear rust for UAV-based automated symptom detection in orchards},\n  author={Ma{\\ss}, Virginia and Alirezazadeh, Pendar and Seidl-Schulz, Johannes and Leipnitz, Matthias and Fritzsche, Eric and Ibraheem, Rasheed Ali Adam and Geyer, Martin and Pflanz, Michael and Reim, Stefanie},\n  journal={Data in Brief},\n  volume={58},\n  pages={111271},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "oyster_mushroom_maturity_detection",
@@ -2569,7 +2623,8 @@
     "zip_size_bytes": 281852598,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/oyster_mushroom_maturity_detection",
-    "examples_image_url": "/img/agml/sample_images/oyster_mushroom_maturity_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/oyster_mushroom_maturity_detection_sample.webp",
+    "bibtex": "@article{duman2024novel,\n  title={A novel dataset of annotated oyster mushroom images with environmental context for machine learning applications},\n  author={Duman, Sonay and Elewi, Abdullah and Hajhamed, Abdulsalam and Khankan, Rasheed and Souag, Amina and Ahmed, Asma},\n  journal={Data in Brief},\n  volume={57},\n  pages={111074},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "guava_disease_classification",
@@ -2619,7 +2674,8 @@
       "redmi note 10"
     ],
     "collection_period": "October and November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shihab2025image,\n  title={Image dataset for classification of diseases in guava fruits and leaves},\n  author={Shihab, Montasir Rahman and Saim, Nafiu Islam and Mojumdar, Mayen Uddin and Raza, Dewan Mamun and Siddiquee, Shah Md Tanvir and Noori, Sheak Rashed Haider and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111378},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "COLD_chili_leaf_disease_classification",
@@ -2662,7 +2718,8 @@
     "imaging_equipment": [
       "APS-C camera with a Canon Mark II D lens"
     ],
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{aishwarya2024dataset,\n  title={Dataset of chilli and onion plant leaf images for classification and detection},\n  author={Aishwarya, MP and Reddy, A Padmanabha},\n  journal={Data in Brief},\n  volume={54},\n  pages={110524},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "EfficientMaize_classification",
@@ -2698,7 +2755,8 @@
       "iPhone 11 Pro Max"
     ],
     "collection_period": "December 2022 to January 2023",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{asante2024efficientmaize,\n  title={EfficientMaize: A lightweight dataset for maize classification on resource-constrained devices},\n  author={Asante, Emmanuel and Appiah, Obed and Appiahene, Peter and Adu, Kwabena},\n  journal={Data in Brief},\n  volume={54},\n  pages={110261},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "mulberry_leaf_variety_classification",
@@ -2745,7 +2803,8 @@
       "phone camera"
     ],
     "collection_period": "2019-2020",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{choompookham2024mulberry,\n  title={Mulberry leaf dataset for image classification task},\n  author={Choompookham, Thipwimon and Okafor, Emmanuel and Surinta, Olarik},\n  journal={Data in Brief},\n  volume={54},\n  pages={110281},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_grain_variety_classification",
@@ -2804,7 +2863,8 @@
       "iPhone 11 camera"
     ],
     "collection_period": "October 18 and November 29, 2023",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{islam2024visual,\n  title={A visual dataset for recognition of rice varieties},\n  author={Islam, Md Masudul and Himel, Galib Muhammad Shahriar and Uddin, Mohammad Shorif and Moazzam, Md Golam},\n  journal={Data in brief},\n  volume={54},\n  pages={110442},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "COLD_onion_leaf_disease_classification",
@@ -2846,7 +2906,8 @@
     "imaging_equipment": [
       "APS-C camera with a Canon Mark II D lens"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{aishwarya2024dataset,\n  title={Dataset of chilli and onion plant leaf images for classification and detection},\n  author={Aishwarya, MP and Reddy, A Padmanabha},\n  journal={Data in Brief},\n  volume={54},\n  pages={110524},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MedLeafX_disease_classification",
@@ -2893,7 +2954,8 @@
       "Vivo V27"
     ],
     "collection_period": "November 01, 2024, to January 05, 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ferdous2025ai,\n  title={AI-MedLeafX: a large-scale computer vision dataset for medicinal plant diagnosis},\n  author={Ferdous, Md Fahim and Nissan, Faysal Bin Khaled and Nibir, Nur Muhammad and Bijoy, Md Hasan Imam},\n  journal={Data in Brief},\n  pages={111945},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cotton_weed_detection",
@@ -2926,7 +2988,8 @@
     "imaging_equipment": [
       "Autel Robotics EVO II Dual 640T V3, 50 MP 0.8″ RYYB CMOS sensor (XL709 camera module)"
     ],
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{das2026uav,\n  title={A UAV Image Dataset for Object Detection with Annotations Generated Using LabelImg and Roboflow},\n  author={Das, Anindita and Subburaj, Vinitha Hannah and Yang, Yong and Bednarz, Craig W},\n  journal={Data in Brief},\n  pages={112483},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Hibiscus_Tea_disease_classification",
@@ -2976,7 +3039,8 @@
       "OnePlus 7T"
     ],
     "collection_period": "April 2024 to October 4, 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{billah2025comprehensive,\n  title={A comprehensive combined dataset on Hibiscus and Tea plant leaf disease images for classifications.},\n  author={Billah, Md Masum and Sagor, Saifuddin and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  pages={112357},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "soybean_variety_classification",
@@ -3010,7 +3074,8 @@
     "imaging_equipment": [
       "Epson L360"
     ],
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{hanafiah2026open,\n  title={An Open Image Dataset of Indonesian Soybean Seed Varieties (Anjasmoro, Grobogan, DEGA-1) for Agricultural Research and Machine Learning Applications},\n  author={Hanafiah, Diana Sofia and Alfi, Rahmatika and Lestami, Anggria and Purnamasari, Fanindia and Nurhasanah, Rossy and Syahraza, Muhammad Ariyo and Saputra, Muhammad Azis and Pane, Usman Ismail and Manurung, Steven and Buntoro, Yunus Tio and others},\n  journal={Data in Brief},\n  pages={112524},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "three_plant_leaf_disease_classification",
@@ -3060,7 +3125,8 @@
       "Xiaomi POCO X3 Pro"
     ],
     "collection_period": "December 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{huq2025comprehensive,\n  title={Comprehensive smartphone image dataset for Aegle Marmelos, Hog plum, and lemon plant leaf disease and freshness assessment},\n  author={Huq, Mohammad Rezwanul and Ahmed, Jubaer and Gani, Raiyan and Isty, Maherun Nessa and Islam, Tasmia},\n  journal={Data in Brief},\n  volume={60},\n  pages={111590},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "dragonfruit_quality_classification",
@@ -3099,7 +3165,8 @@
       "Samsung S22 smartphone"
     ],
     "collection_period": "May 2023 to August 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{khatun2024comprehensive,\n  title={A comprehensive dragon fruit image dataset for detecting the maturity and quality grading of dragon fruit},\n  author={Khatun, Tania and Nirob, Md Asraful Sharker and Bishshash, Prayma and Akter, Morium and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={52},\n  pages={109936},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "dragonfruit_maturity_classification",
@@ -3138,7 +3205,8 @@
       "Samsung S22 smartphone"
     ],
     "collection_period": "May 2023 to August 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{khatun2024comprehensive,\n  title={A comprehensive dragon fruit image dataset for detecting the maturity and quality grading of dragon fruit},\n  author={Khatun, Tania and Nirob, Md Asraful Sharker and Bishshash, Prayma and Akter, Morium and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={52},\n  pages={109936},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "potato_leaf_disease_classification",
@@ -3169,7 +3237,8 @@
     "zip_size_bytes": 754551435,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/potato_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/potato_leaf_disease_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/potato_leaf_disease_classification_sample.webp",
+    "bibtex": "@article{shabrina2024novel,\n  title={A novel dataset of potato leaf disease in uncontrolled environment},\n  author={Shabrina, Nabila Husna and Indarti, Siwi and Maharani, Rina and Kristiyanti, Dinar Ajeng and Prastomo, Niki and others},\n  journal={Data in brief},\n  volume={52},\n  pages={109955},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sorghum_weed_classification",
@@ -3207,7 +3276,8 @@
       "Canon EOS 80D"
     ],
     "collection_period": "April and May 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{justina2024sorghumweeddataset_classification,\n  title={SorghumWeedDataset\\_Classification and SorghumWeedDataset\\_Segmentation datasets for classification, detection, and segmentation in deep learning},\n  author={Justina, Michael J and Thenmozhi, M},\n  journal={Data in brief},\n  volume={52},\n  pages={109935},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sorghum_weed_segmentation",
@@ -3245,7 +3315,8 @@
       "Canon EOS 80D"
     ],
     "collection_period": "April and May 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{justina2024sorghumweeddataset_classification,\n  title={SorghumWeedDataset\\_Classification and SorghumWeedDataset\\_Segmentation datasets for classification, detection, and segmentation in deep learning},\n  author={Justina, Michael J and Thenmozhi, M},\n  journal={Data in brief},\n  volume={52},\n  pages={109935},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "AgriVision4_disease_classification",
@@ -3308,7 +3379,8 @@
       "SONY ALPHA 7 II"
     ],
     "collection_period": "January 13, 2024, and October 22, 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{billah2026agri,\n  title={Agri-Vision Bangladesh: A Multi-Crop Augmented Image Dataset for Automated Disease Diagnosis in Bottle Gourd, Zucchini, Papaya, and Tomato.},\n  author={Billah, Md Masum and Rahman, Md Anisur and Sagor, Saifuddin and Parvin, Sanzida and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  pages={112528},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "FruitVision_quality_classification",
@@ -3356,7 +3428,8 @@
       "Redmi Note 9 Pro"
     ],
     "collection_period": "April 18, 2024, and July 31, 2024",
-    "platform": "mobile"
+    "platform": "mobile",
+    "bibtex": "@article{bijoy2025fruitvision,\n  title={FruitVision: A benchmark dataset for fresh, rotten, and formalin-mixed fruit detection},\n  author={Bijoy, Md Hasan Imam and Tasnim, Syeda Zarin and Awsaf, Syed Ali and Hasan, Md Zahid},\n  journal={Data in Brief},\n  volume={61},\n  pages={111752},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "plum_leaf_fruit_disease_classification",
@@ -3413,7 +3486,8 @@
       "Samsung Galaxy A53 5G (SM-A536E)"
     ],
     "collection_period": "December 2024 to February 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{nayeem2025comprehensive,\n  title={A comprehensive image dataset of Plum leaf and fruit for disease classification},\n  author={Nayeem, Rejowan Arifin and Al Muhib, SM Abdullah and Marjan, Shahriar and Bijoy, Md Hasan Imam and Assaduzzaman, Md},\n  journal={Data in Brief},\n  volume={60},\n  pages={111625},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "mandarin_leaf_variety_classification",
@@ -3454,7 +3528,8 @@
       "64 MP Smartphone"
     ],
     "collection_period": "28 December 2023 - 1 January 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rahman2025comprehensive,\n  title={A comprehensive dataset of mandarin leaf images for classification},\n  author={Rahman, Mushfiqur and Ahmed, Imtiaz and Ahmed, Mahin},\n  journal={Data in Brief},\n  volume={60},\n  pages={111685},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "carambola_disease_classification",
@@ -3503,7 +3578,8 @@
       "Samsung Galaxy A53"
     ],
     "collection_period": "October 2024 and February 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{al2025comprehensive,\n  title={A comprehensive image dataset for carambola leaf and fruit disease classification and quality assessment},\n  author={Al Muhib, SM Abdullah and Nayeem, Rejowan Arifin and Mezi, Noman and Emon, Nafiz Ahmed},\n  journal={Data in Brief},\n  volume={60},\n  pages={111679},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "potato_leaf_blight_classification",
@@ -3547,7 +3623,8 @@
       "Samsung Galaxy A03 Core"
     ],
     "collection_period": "22nd November 2022 to 8th April 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{laizer2025irish,\n  title={Irish potato imagery dataset for detection of early and late blight diseases},\n  author={Laizer, Hudson and Mduma, Neema},\n  journal={Data in Brief},\n  volume={60},\n  pages={111549},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "fruit_leaf_variety_classification",
@@ -3598,7 +3675,8 @@
       "Realme 7 Pro",
       "Realme 8 Pro"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{abedin2025comprehensive,\n  title={Comprehensive data of 10 fruit leaf classes captured for agricultural AI applications},\n  author={Abedin, Minhajul and Islam, Sujon and Sultana, Naznin},\n  journal={Data in Brief},\n  pages={111879},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tropical_flower_variety_classification",
@@ -3650,7 +3728,8 @@
       "Redmi Note 11"
     ],
     "collection_period": "October and November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rahat2025dataset,\n  title={Dataset of seven tropical flower species from Bangladesh: A resource for classification and ecological studies},\n  author={Rahat, Riazul Islam and Hossain, Md Sohag and Mojumdar, Mayen Uddin and Chakraborty, Narayan Ranjan},\n  journal={Data in Brief},\n  volume={59},\n  pages={111374},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "arabica_coffee_leaf_disease_classification",
@@ -3694,7 +3773,8 @@
     "country": "Kenya",
     "imaging_equipment": [
       "Fujifilm X-T4"
-    ]
+    ],
+    "bibtex": "@article{jepkoech2021arabica,\n  title={Arabica coffee leaf images dataset for coffee leaf disease detection and classification},\n  author={Jepkoech, Jennifer and Mugo, David Muchangi and Kenduiywo, Benson K and Too, Edna Chebet},\n  journal={Data in brief},\n  volume={36},\n  pages={107142},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_leaf_disease_classification",
@@ -3727,7 +3807,8 @@
     "crop_types": [
       "banana"
     ],
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_leaf_disease_classification"
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_leaf_disease_classification",
+    "bibtex": "@article{genet2024sigatoka,\n  title={Sigatoka and xanthomonas banana leaf disease detection via transfer learning},\n  author={Genet, Yordanos Hailu and Sinshaw, Natnael Tilahun and Assefa, Beakal Gizachew and Mohapatra, Sudhir Kumar},\n  journal={Scientia Iranica},\n  volume={31},\n  number={21},\n  pages={1939--1947},\n  year={2024},\n  publisher={Sharif University of Technology}\n}"
   },
   {
     "name": "bean_disease_uganda",
@@ -3800,7 +3881,8 @@
       "SONY CYBER SHOT DSC-H300",
       "Samsung Galaxy F41"
     ],
-    "collection_period": "Jan-April 2020 & 2021"
+    "collection_period": "Jan-April 2020 & 2021",
+    "bibtex": "@article{talasila2022black,\n  title={Black gram Plant Leaf Disease (BPLD) dataset for recognition and classification of diseases using computer-vision algorithms},\n  author={Talasila, Srinivas and Rawal, Kirti and Sethi, Gaurav and Mss, Sanjay and others},\n  journal={Data in Brief},\n  volume={45},\n  pages={108725},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pomegranate_disease_classification_india",
@@ -3839,7 +3921,8 @@
       "Redmi 9"
     ],
     "collection_period": "July to October 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{pakruddin2024comprehensive,\n  title={A comprehensive standardized dataset of numerous pomegranate fruit diseases for deep learning},\n  author={Pakruddin, B and Hemavathy, R},\n  journal={Data in Brief},\n  volume={54},\n  pages={110284},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "papaya_leaf_disease_classification_bangladesh",
@@ -3886,7 +3969,8 @@
       "Xiaomi Poco M2 Pro",
       "Xiaomi Poco X3 Pro"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{gani2024smartphone,\n  title={Smartphone image dataset to distinguish healthy and unhealthy leaves in papaya orchards in Bangladesh},\n  author={Gani, Raiyan and Rashid, Mohammad Rifat Ahmmad and Ahmed, Jubaer and Isty, Maherun Nessa and Islam, Maheen and Hasan, Mahamudul and Ferdaus, Md Hasanul and Ali, Md Sawkat},\n  journal={Data in Brief},\n  volume={55},\n  pages={110599},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "malabar_spinach_disease_classification",
@@ -3924,7 +4008,8 @@
       "Redmi Note 8",
       "POCO X2"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rahman2025comprehensive,\n  title={A comprehensive Malabar Spinach dataset for diseases classification},\n  author={Rahman, Mushfiqur and Al Mamun, Md},\n  journal={Data in Brief},\n  volume={60},\n  pages={111532},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cauliflower_leaf_disease_classification",
@@ -3968,7 +4053,8 @@
       "Huawei P30 Lite"
     ],
     "collection_period": "November 2024 and January 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{durjoy2025cauliflower,\n  title={Cauliflower leaf diseases: A computer vision dataset for smart agriculture},\n  author={Durjoy, Sabbir Hossain and Shikder, Md Emon and Shoib, Md Mehedi Hasan and Bijoy, Md Hasan Imam},\n  journal={Data in Brief},\n  volume={60},\n  pages={111594},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "coconut_tree_disease_classification",
@@ -4011,7 +4097,8 @@
     "imaging_equipment": [
       "Samsung Galaxy F 23 5G (SM-E236B)"
     ],
-    "collection_period": "April to July"
+    "collection_period": "April to July",
+    "bibtex": "@article{thite2023coconut,\n  title={Coconut (Cocos nucifera) tree disease dataset: A dataset for disease detection and classification for machine learning applications},\n  author={Thite, Sandip and Suryawanshi, Yogesh and Patil, Kailas and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={51},\n  pages={109690},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "corn_maize_leaf_disease",
@@ -4085,7 +4172,8 @@
     "imaging_equipment": [
       "Nikon D5300"
     ],
-    "collection_period": "6th to 30th May 2022"
+    "collection_period": "6th to 30th May 2022",
+    "bibtex": "@article{sultana2023dataset,\n  title={A dataset for successful recognition of cucumber diseases},\n  author={Sultana, Nusrat and Shorif, Sumaita Binte and Akter, Morium and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={49},\n  pages={109320},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "java_plum_leaf_disease_classification",
@@ -4119,7 +4207,8 @@
     "crop_types": [
       "java plum"
     ],
-    "zip_size_bytes": 114361328
+    "zip_size_bytes": 114361328,
+    "bibtex": "@article{bhowmik2024customised,\n  title={A customised Vision Transformer for accurate detection and classification of Java Plum leaf disease},\n  author={Bhowmik, Auvick Chandra and Ahad, Md Taimur and Emon, Yousuf Rayhan and Ahmed, Faruk and Song, Bo and Li, Yan},\n  journal={Smart Agricultural Technology},\n  volume={8},\n  pages={100500},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "mango_leaf_disease_classification",
@@ -4168,7 +4257,8 @@
     "imaging_equipment": [
       "Samsung Galaxy s7 Edge"
     ],
-    "collection_period": "before the winter of 2021"
+    "collection_period": "before the winter of 2021",
+    "bibtex": "@article{ahmed2023mangoleafbd,\n  title={MangoLeafBD: A comprehensive image dataset to classify diseased and healthy mango leaves},\n  author={Ahmed, Sarder Iftekhar and Ibrahim, Muhammad and Nadim, Md and Rahman, Md Mizanur and Shejunti, Maria Mehjabin and Jabid, Taskeed and Ali, Md Sawkat},\n  journal={Data in Brief},\n  volume={47},\n  pages={108941},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "orange_leaf_disease_classification",
@@ -4212,7 +4302,8 @@
       "iPhone SE 2022",
       "iPhone XS Max"
     ],
-    "collection_period": "August 19 to August 22, 2023"
+    "collection_period": "August 19 to August 22, 2023",
+    "bibtex": "@article{emon2024multi,\n  title={Multi-format open-source sweet orange leaf dataset for disease detection, classification, and analysis},\n  author={Emon, Yousuf Rayhan and Ahad, Md Taimur and Rabbany, Golam},\n  journal={Data in Brief},\n  volume={55},\n  pages={110713},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "paddy_disease_classification",
@@ -4245,7 +4336,8 @@
     "citation": "Petchiammal A, Briskline Kiruba S, Murugan D, Pandarasamy Arjunan. (2022). Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking. IEEE Dataport. https://dx.doi.org/10.21227/hz4v-af08",
     "crop_types": [
       "rice"
-    ]
+    ],
+    "bibtex": "@misc{https://doi.org/10.21227/hz4v-af08,\n  doi = {10.21227/HZ4V-AF08},\n  url = {https://ieee-dataport.org/documents/paddy-doctor-visual-image-dataset-automated-paddy-disease-classification-and-benchmarking},\n  author = {Arjunan, Pandarasamy Arjunan},\n  title = {Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking},\n  publisher = {IEEE DataPort},\n  year = {2022},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
   },
   {
     "name": "almond_bloom_2023",
@@ -4344,7 +4436,8 @@
     "citation": "@article{DBLP:journals/corr/abs-2110-12331,\n  author    = {Thiago T. Santos and\n               Luciano Gebler},\n  title     = {A methodology for detection and localization of fruits in apples orchards\n               from aerial images},\n  journal   = {CoRR},\n  volume    = {abs/2110.12331},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2110.12331},\n  eprinttype = {arXiv},\n  eprint    = {2110.12331},\n  timestamp = {Thu, 28 Oct 2021 15:25:31 +0200},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
     "crop_types": [
       "apple"
-    ]
+    ],
+    "bibtex": "@article{DBLP:journals/corr/abs-2110-12331,\nauthor={Thiago T. Santos and Luciano Gebler},\ntitle={A methodology for detection and localization of fruits in apples orchards from aerial images},\njournal={CoRR},\nvolume={abs/2110.12331},\nyear={2021},\nurl={https://arxiv.org/abs/2110.12331},\neprinttype={arXiv},\neprint={2110.12331},\ntimestamp={Thu, 28 Oct 2021 15:25:31 +0200},\nbiburl={https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\nbibsource={dblp computer science bibliography, https://dblp.org}\n}"
   },
   {
     "name": "apple_detection_spain",
@@ -4377,7 +4470,8 @@
     "citation": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio},\nkeywords = {Multi-modal dataset, Fruit detection, Depth cameras, RGB-D, Fruit reflectance, Fuji apple},\nabstract = {This article contains data related to the research article entitle “Multi-modal Deep Learning for Fruit Detection Using RGB-D Cameras and their Radiometric Capabilities” [1]. The development of reliable fruit detection and localization systems is essential for future sustainable agronomic management of high-value crops. RGB-D sensors have shown potential for fruit detection and localization since they provide 3D information with color data. However, the lack of substantial datasets is a barrier for exploiting the use of these sensors. This article presents the KFuji RGB-DS database which is composed by 967 multi-modal images of Fuji apples on trees captured using Microsoft Kinect v2 (Microsoft, Redmond, WA, USA). Each image contains information from 3 different modalities: color (RGB), depth (D) and range corrected IR intensity (S). Ground truth fruit locations were manually annotated, labeling a total of 12,839 apples in all the dataset. The current dataset is publicly available at http://www.grap.udl.cat/publicacions/datasets.html.}\n}",
     "crop_types": [
       "apple"
-    ]
+    ],
+    "bibtex": "@article{GENEMOLA2019104289,\ntitle = {KFuji RGB-DS database: Fuji apple multi-modal images for fruit detection with color, depth and range-corrected IR data},\njournal = {Data in Brief},\nvolume = {25},\npages = {104289},\nyear = {2019},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2019.104289},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340919306432},\nauthor = {Jordi Gené-Mola and Verónica Vilaplana and Joan R. Rosell-Polo and Josep-Ramon Morros and Javier Ruiz-Hidalgo and Eduard Gregorio}\n}"
   },
   {
     "name": "apple_detection_usa",
@@ -4410,7 +4504,8 @@
     "citation": "@article{karkee2019apple,\n  title={Apple Dataset Benchmark from Orchard Environment in Modern Fruiting Wall},\n  author={Karkee, Manoj and Bhusal, Santosh and Zhang, Qin},\n  year={2019}\n}",
     "crop_types": [
       "apple"
-    ]
+    ],
+    "bibtex": "@article{karkee2019apple,\ntitle={Apple Dataset Benchmark from Orchard Environment in Modern Fruiting Wall},\nauthor={Karkee, Manoj and Bhusal, Santosh and Zhang, Qin},\nyear={2019}\n}"
   },
   {
     "name": "embrapa_wgisd_grape_detection",
@@ -4479,7 +4574,8 @@
       "strawberry",
       "mango",
       "capsicum"
-    ]
+    ],
+    "bibtex": "@Article{s16081222,\nAUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\nTITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\nJOURNAL = {Sensors},\nVOLUME = {16},\nYEAR = {2016},\nNUMBER = {8},\nARTICLE-NUMBER = {1222},\nURL = {https://www.mdpi.com/1424-8220/16/8/1222},\nISSN = {1424-8220},\nDOI = {10.3390/s16081222}\n}"
   },
   {
     "name": "gemini_flower_detection",
@@ -4779,7 +4875,8 @@
     "citation": "@misc{GrapeDay,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2019 Day},\n  year      = {2019},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n ",
     "crop_types": [
       "grape"
-    ]
+    ],
+    "bibtex": "@misc{GrapeDay,\nauthor    = {Plant AI and Biophysics Lab},\ntitle     = {Grape Detection 2019 Day},\nyear      = {2019},\nurl       = {https://github.com/plant-ai-biophysics-lab/AgML}\n}"
   },
   {
     "name": "grape_detection_californianight",
@@ -4812,7 +4909,8 @@
     "citation": "@misc{GrapeNight,\n  author    = {Plant AI and Biophysics Lab},\n  title     = {Grape Detection 2020 Night},\n  year      = {2020},\n  url       = {https://github.com/plant-ai-biophysics-lab/AgML} \n ",
     "crop_types": [
       "grape"
-    ]
+    ],
+    "bibtex": "@misc{GrapeNight,\nauthor    = {Plant AI and Biophysics Lab},\ntitle     = {Grape Detection 2020 Night},\nyear      = {2020},\nurl       = {https://github.com/plant-ai-biophysics-lab/AgML}\n}"
   },
   {
     "name": "grape_detection_syntheticday",
@@ -4845,7 +4943,8 @@
     "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}",
     "crop_types": [
       "grape"
-    ]
+    ],
+    "bibtex": "@ARTICLE{10.3389/fpls.2019.01185,\nAUTHOR={Bailey, Brian N.},\nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},\nJOURNAL={Frontiers in Plant Science},\nVOLUME={10},\nYEAR={2019},\nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},\nDOI={10.3389/fpls.2019.01185},\nISSN={1664-462X}\n}"
   },
   {
     "name": "mango_detection_australia",
@@ -4878,7 +4977,8 @@
     "citation": "@Misc{Koirala2019,\n  author={Koirala, Anand and Walsh, Kerry and Wang, Z. and McCarthy, C.},\n  title={MangoYOLO data set},\n  year={2019},\n  month={2021},\n  day={10-19},\n  publisher={Central Queensland University},\n  keywords={Mango images; Fruit detection; Yield estimation; Mango; Agricultural Land Management; Horticultural Crop Growth and Development},\n  abstract={Datasets and directories are structured similar to the PASCAL VOC dataset, avoiding the need to change scripts already available, with the detection frameworks ready to parse PASCAL VOC annotations into their format. The sub-directory JPEGImages consist of 1730 images (612x512 pixels) used for train, test and validation. Each image has at least one annotated fruit. The sub-directory Annotations consists of all the annotation files (record of bounding box coordinates for each image) in xml format and have the same name as the image name. The sub-directory Main consists of the text file that contains image names (without extension) used for train, test and validation. Training set (train.txt) lists 1300 train images  Validation set (val.txt) lists 130 validation images Test set (test.txt) lists 300 test images Each image has an XML annotation file (filename = image name) and each image set (training validation and test set) has associated text files (train.txt, val.txt and test.txt) containing the list of image names to be used for training and testing.  The XML annotation file contains the image attributes (name, width, height), the object attributes (class name, object bounding box co-ordinates (xmin, ymin, xmax, ymax)). (xmin, ymin) and (xmax, ymax) are the pixel co-ordinates of the bounding box's top-left corner and bottom-right corner respectively.},\n  note={CC-BY-4.0},\n  url={https://figshare.com/articles/dataset/MangoYOLO_data_set/13450661, https://researchdata.edu.au/mangoyolo-set},\n  language={English}\n}",
     "crop_types": [
       "mango"
-    ]
+    ],
+    "bibtex": "@Misc{Koirala2019,\nauthor={Koirala, Anand and Walsh, Kerry and Wang, Z. and McCarthy, C.},\ntitle={MangoYOLO data set},\nyear={2019},\nmonth={2021},\nday={10-19},\npublisher={Central Queensland University},\nurl={https://figshare.com/articles/dataset/MangoYOLO_data_set/13450661, https://researchdata.edu.au/mangoyolo-set}\n}"
   },
   {
     "name": "plant_doc_detection",
@@ -4909,7 +5009,8 @@
     "hf_link": "https://huggingface.co/datasets/Project-AgML/plant_doc_detection",
     "license": "CC BY-SA 4.0",
     "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
-    "crop_types": null
+    "crop_types": null,
+    "bibtex": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196},\ndoi = {10.1145/3371158.3371196},\nbooktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\npages = {249–253},\nseries = {CoDS COMAD 2020}\n}"
   },
   {
     "name": "strawberry_detection_2022",
@@ -5041,7 +5142,8 @@
     "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }",
     "crop_types": [
       "wheat"
-    ]
+    ],
+    "bibtex": "@article{david2020global,\ntitle={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\\\nauthor={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\njournal={Plant Phenomics},\nvolume={2020},\nyear={2020},\npublisher={Science Partner Journal}\n}"
   },
   {
     "name": "crop_weeds_greece",
@@ -5075,7 +5177,8 @@
     "crop_types": [
       "cotton",
       "tomato"
-    ]
+    ],
+    "bibtex": "@article{ESPEJOGARCIA2020105306,\ntitle = {Towards weeds identification assistance through transfer learning},\njournal = {Computers and Electronics in Agriculture},\nvolume = {171},\npages = {105306},\nyear = {2020},\nissn = {0168-1699},\ndoi = {https://doi.org/10.1016/j.compag.2020.105306},\nurl = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\nauthor = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou}\n}"
   },
   {
     "name": "plant_seedlings_aarhus",
@@ -5109,7 +5212,8 @@
     "crop_types": [
       "maize",
       "wheat"
-    ]
+    ],
+    "bibtex": "@article{Giselsson2017,\nauthor = {Giselsson, Thomas Mosgaard and Dyrmann, Mads and J{\\\\o}rgensen, Rasmus Nyholm and Jensen, Peter Kryger and Midtiby, Henrik Skov},\njournal = {arXiv preprint},\ntitle = {{A Public Image Database for Benchmark of Plant Seedling Classification Algorithms}},\nyear = {2017}\n}"
   },
   {
     "name": "soybean_weed_uav_brazil",
@@ -5142,7 +5246,8 @@
     "citation": "dos Santos Ferreira, Alessandro; Pistori, Hemerson; Matte Freitas, Daniel; Gonçalves da Silva, Gercina (2017), “Data for: Weed Detection in Soybean Crops Using ConvNets”, Mendeley Data, V2, doi: 10.17632/3fmjm7ncc6.2",
     "crop_types": [
       "soybean"
-    ]
+    ],
+    "bibtex": "@misc{https://doi.org/10.17632/3fmjm7ncc6.2,\n  doi = {10.17632/3FMJM7NCC6.2},\n  url = {https://data.mendeley.com/datasets/3fmjm7ncc6/2},\n  author = {Dos Santos Ferreira, Alessandro},\n  keywords = {Agronomy, Artificial Intelligence, Computer Vision},\n  title = {Data for: Weed Detection in Soybean Crops Using ConvNets},\n  publisher = {Mendeley},\n  year = {2017}\n}"
   },
   {
     "name": "sugarcane_damage_usa",
@@ -5175,7 +5280,8 @@
     "citation": "@ARTICLE{8412587,\n  author={Alencastre-Miranda, Moises and Davidson, Joseph R. and Johnson, Richard M. and Waguespack, Herman and Krebs, Hermano Igo},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Robotics for Sugarcane Cultivation: Analysis of Billet Quality using Computer Vision}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3828-3835},\n  doi={10.1109/LRA.2018.2856999}}",
     "crop_types": [
       "sugarcane"
-    ]
+    ],
+    "bibtex": "@ARTICLE{8412587,\nauthor={Alencastre-Miranda, Moises and Davidson, Joseph R. and Johnson, Richard M. and Waguespack, Herman and Krebs, Hermano Igo},\njournal={IEEE Robotics and Automation Letters},\ntitle={Robotics for Sugarcane Cultivation: Analysis of Billet Quality using Computer Vision},\nyear={2018},\nvolume={3},\nnumber={4},\npages={3828-3835},\ndoi={10.1109/LRA.2018.2856999}\n}"
   },
   {
     "name": "guava_disease_pakistan",
@@ -5208,7 +5314,8 @@
     "citation": "@article{Rauf_Lali_2021, \n    title={A Guava Fruits and Leaves Dataset for Detection and Classification of Guava Diseases through Machine Learning}, \n    volume={1}, \n    url={https://data.mendeley.com/datasets/s8x6jn5cvr/1}, \n    DOI={10.17632/s8x6jn5cvr.1}, \n    abstractNote={(1) Plant diseases are the primary cause of reduced productivity in agriculture, which results in economic losses. Guava is a big source of nutrients for humans all over the world. Guava diseases, on the other hand, harm the yield and quality of the crop. (2) For the identification and classification of plant diseases, computer vision and image processing methods have been commonly used. (3) The dataset includes an image gallery of healthy and unhealthy Guava fruits and leaves that could be used by researchers to adopt advanced computer vision techniques to protect plants from disease. Dot, Canker, Mummification, and Rust are the diseases targeted in the data sets. (4) The dataset contains 306 images of healthy and unhealthy images for both Guava fruits and leaves collectively. Each image contains 6000 * 4000 dimensions with 300 dpi resolution. (5) All images were acquired from the tropical areas of Pakistan under the supervision of Prof. Dr. Ikramullah Lali. (6) All images were annotated manually by the domain expert such as For Guava fruits and leaves; Dot (76), Canker (77), Mummification (83), and Rust (70) Note: The data labeling was manual and can be updated by automatic labeling through machine learning. In the meantime, the authors can also use the data set for the clustering problem.}, \n    author={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah}, \n    year={2021}, month={Apr} \n}\n",
     "crop_types": [
       "guava"
-    ]
+    ],
+    "bibtex": "@article{Rauf_Lali_2021,\ntitle={A Guava Fruits and Leaves Dataset for Detection and Classification of Guava Diseases through Machine Learning},\nvolume={1},\nurl={https://data.mendeley.com/datasets/s8x6jn5cvr/1},\nDOI={10.17632/s8x6jn5cvr.1},\nauthor={Rauf, Hafiz Tayyab and Lali, Muhammad Ikram Ullah},\nyear={2021},\nmonth={Apr}\n}"
   },
   {
     "name": "plant_doc_classification",
@@ -5252,7 +5359,8 @@
       "Squash",
       "strawberry",
       "Tomato"
-    ]
+    ],
+    "bibtex": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196},\ndoi = {10.1145/3371158.3371196},\nbooktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\npages = {249–253},\nnumpages = {5},\nseries = {CoDS COMAD 2020}\n}"
   },
   {
     "name": "plant_village_classification",
@@ -5298,7 +5406,8 @@
       "Squash",
       "strawberry",
       "tomato"
-    ]
+    ],
+    "bibtex": "@article{DBLP:journals/corr/HughesS15,\nauthor    = {David P. Hughes and Marcel Salath{'{e} } },\ntitle     = {An open access repository of images on plant health to enable the development of mobile disease diagnostics through machine learning and crowdsourcing},\njournal   = {CoRR},\nvolume    = {abs/1511.08060},\nyear      = {2015},\nurl       = {http://arxiv.org/abs/1511.08060},\narchivePrefix = {arXiv},\neprint    = {1511.08060},\ntimestamp = {Mon, 13 Aug 2018 16:48:21 +0200},\nbiburl    = {https://dblp.org/rec/bib/journals/corr/HughesS15},\nbibsource = {dblp computer science bibliography, https://dblp.org}\n}"
   },
   {
     "name": "rangeland_weeds_australia",
@@ -5329,7 +5438,8 @@
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rangeland_weeds_australia",
     "license": "CC BY-SA 4.0",
     "citation": "@Article{Olsen2019,\n  author={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\n  title={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\n  journal={Scientific Reports},\n  year={2019},\n  month={Feb},\n  day={14},\n  volume={9},\n  number={1},\n  pages={2058},\n  abstract={Robotic weed control has seen increased research of late with its potential for boosting productivity in agriculture. Majority of works focus on developing robotics for croplands, ignoring the weed management problems facing rangeland stock farmers. Perhaps the greatest obstacle to widespread uptake of robotic weed control is the robust classification of weed species in their natural environment. The unparalleled successes of deep learning make it an ideal candidate for recognising various weed species in the complex rangeland environment. This work contributes the first large, public, multiclass image dataset of weed species from the Australian rangelands; allowing for the development of robust classification methods to make robotic weed control viable. The DeepWeeds dataset consists of 17,509 labelled images of eight nationally significant weed species native to eight locations across northern Australia. This paper presents a baseline for classification performance on the dataset using the benchmark deep learning models, Inception-v3 and ResNet-50. These models achieved an average classification accuracy of 95.1{\\%} and 95.7{\\%}, respectively. We also demonstrate real time performance of the ResNet-50 architecture, with an average inference time of 53.4 ms per image. These strong results bode well for future field implementation of robotic weed control methods in the Australian rangelands.},\n  issn={2045-2322},\n  doi={10.1038/s41598-018-38343-3},\n  url={https://doi.org/10.1038/s41598-018-38343-3}\n}",
-    "crop_types": null
+    "crop_types": null,
+    "bibtex": "@Article{Olsen2019,\nauthor={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\ntitle={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\njournal={Scientific Reports},\nyear={2019},\nmonth={Feb},\nday={14},\nvolume={9},\nnumber={1},\npages={2058},\nissn={2045-2322},\ndoi={10.1038/s41598-018-38343-3},\nurl={https://doi.org/10.1038/s41598-018-38343-3}\n}"
   },
   {
     "name": "rice_leaf_disease_classification",
@@ -5395,7 +5505,8 @@
     "citation": "@inproceedings{CWSC21,\n  title={Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies},\n  author={Choi, Taeyeong and Would, Owen and Salazar-Gomez, Adrian and Cielniak, Grzegorz},\n  booktitle={2022 International Conference on Robotics and Automation (ICRA)},\n  pages={2266--2272},\n  year={2022},\n  organization={IEEE}\n}",
     "crop_types": [
       "strawberry"
-    ]
+    ],
+    "bibtex": "@inproceedings{CWSC21,\ntitle={Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies},\nauthor={Choi, Taeyeong and Would, Owen and Salazar-Gomez, Adrian and Cielniak, Grzegorz},\nbooktitle={2022 International Conference on Robotics and Automation (ICRA)},\npages={2266--2272},\nyear={2022},\norganization={IEEE}\n}"
   },
   {
     "name": "tomato_leaf_disease",
@@ -5502,7 +5613,8 @@
       "iPhone 14"
     ],
     "collection_period": "April to June 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{nguyen2025image,\n  title={Image dataset of ten durian diseases captured in real-field conditions from a family orchard in Vinh Long, Vietnam},\n  author={Nguyen, Tan},\n  journal={Data in Brief},\n  pages={112244},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "betel_leaf_disease_classification",
@@ -5535,7 +5647,8 @@
     "citation": "Rashid, Mohammad Rifat Ahmmad; Hossain, Md. Miskat ; Biswas,  Joy ; Majumder, Hredoy  (2024), “Betel Leaf Image Dataset from Bangladesh”, Mendeley Data, V2, doi: 10.17632/g7fpgj57wc.2",
     "crop_types": [
       "betel"
-    ]
+    ],
+    "bibtex": "@misc{https://doi.org/10.17632/g7fpgj57wc.2,\n  doi = {10.17632/G7FPGJ57WC.2},\n  url = {https://data.mendeley.com/datasets/g7fpgj57wc/2},\n  author = {Rashid, Mohammad Rifat Ahmmad and Hossain, Md. Miskat  and Biswas,  Joy  and Majumder, Hredoy },\n  keywords = {Agricultural Science, Computer Vision, Image Classification, Plant Diseases},\n  title = {Betel Leaf Image Dataset from Bangladesh},\n  publisher = {Mendeley Data},\n  year = {2024}\n}"
   },
   {
     "name": "tea_leaf_disease_classification",
@@ -5567,7 +5680,8 @@
     "citation": "@article{BALASUNDARAM2025103784, title = {Tea leaf disease detection using segment anything model and deep convolutional neural networks}, journal = {Results in Engineering}, volume = {25}, pages = {103784}, year = {2025}, issn = {2590-1230}, doi = {https://doi.org/10.1016/j.rineng.2024.103784}, url = {https://www.sciencedirect.com/science/article/pii/S2590123024020279}, author = {Ananthakrishnan Balasundaram and Prem Sundaresan and Aryan Bhavsar and Mishti Mattu and Muthu Subash Kavitha and Ayesha Shaik}}",
     "crop_types": [
       "tea"
-    ]
+    ],
+    "bibtex": "@article{BALASUNDARAM2025103784,\ntitle = {Tea leaf disease detection using segment anything model and deep convolutional neural networks},\njournal = {Results in Engineering},\nvolume = {25},\npages = {103784},\nyear = {2025},\nissn = {2590-1230},\ndoi = {https://doi.org/10.1016/j.rineng.2024.103784},\nurl = {https://www.sciencedirect.com/science/article/pii/S2590123024020279},\nauthor = {Ananthakrishnan Balasundaram and Prem Sundaresan and Aryan Bhavsar and Mishti Mattu and Muthu Subash Kavitha and Ayesha Shaik}\n}"
   },
   {
     "name": "soybean_insect_classification",
@@ -5599,7 +5713,8 @@
     "citation": "Mignoni, Maria Eloisa (2021), “Images of Soybean Leaves”, Mendeley Data, V1, doi: 10.17632/bycbh73438.1",
     "crop_types": [
       "soybean"
-    ]
+    ],
+    "bibtex": "@misc{https://doi.org/10.17632/bycbh73438.1,\n  doi = {10.17632/BYCBH73438.1},\n  url = {https://data.mendeley.com/datasets/bycbh73438/1},\n  author = {{Maria Eloisa Mignoni}},\n  title = {Images of Soybean Leaves},\n  publisher = {Mendeley},\n  year = {2021},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
   },
   {
     "name": "sunflower_disease_classification",
@@ -5639,7 +5754,8 @@
     "imaging_equipment": [
       "Canon Powershot Digital Camera (SX540)"
     ],
-    "collection_period": "November (25th to 29th), 2021"
+    "collection_period": "November (25th to 29th), 2021",
+    "bibtex": "@article{sara2022extensive,\n  title={An extensive sunflower dataset representation for successful identification and classification of sunflower diseases},\n  author={Sara, Umme and Rajbongshi, Aditya and Shakil, Rashiduzzaman and Akter, Bonna and Sazzad, Sadia and Uddin, Mohammad Shorif},\n  journal={Data in brief},\n  volume={42},\n  pages={108043},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "carrot_weeds_germany",
@@ -5672,7 +5788,8 @@
     "citation": "@inproceedings{haug15,\n  author={Haug, Sebastian and Ostermann, J{\\\"o}rn},\n  title={A Crop/Weed Field Image Dataset for the Evaluation of Computer Vision Based Precision Agriculture Tasks},\n  year={2015},\n  booktitle={Computer Vision - ECCV 2014 Workshops},\n  doi={10.1007/978-3-319-16220-1_8},\n  url={http://dx.doi.org/10.1007/978-3-319-16220-1_8},\n  pages={105--116}\n}",
     "crop_types": [
       "carrot"
-    ]
+    ],
+    "bibtex": "@article{sara2022extensive,\n  title={An extensive sunflower dataset representation for successful identification and classification of sunflower diseases},\n  author={Sara, Umme and Rajbongshi, Aditya and Shakil, Rashiduzzaman and Akter, Bonna and Sazzad, Sadia and Uddin, Mohammad Shorif},\n  journal={Data in brief},\n  volume={42},\n  pages={108043},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "apple_flower_segmentation",
@@ -5705,7 +5822,8 @@
     "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}",
     "crop_types": [
       "apple"
-    ]
+    ],
+    "bibtex": "@ARTICLE{8392727,\nauthor={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\njournal={IEEE Robotics and Automation Letters},\ntitle={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network},\nyear={2018},\nvolume={3},\nnumber={4},\npages={3003-3010},\ndoi={10.1109/LRA.2018.2849498}\n}"
   },
   {
     "name": "apple_segmentation_minnesota",
@@ -5738,7 +5856,8 @@
     "citation": "@misc{hani2019minneapple,\n    title={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\n    author={Nicolai Häni and Pravakar Roy and Volkan Isler}\n    year={2019},\n    eprint={1909.06441},\n    archivePrefix={arXiv},\n    primaryClass={cs.CV}\n}",
     "crop_types": [
       "apple"
-    ]
+    ],
+    "bibtex": "@misc{hani2019minneapple,\ntitle={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\nauthor={Nicolai Häni and Pravakar Roy and Volkan Isler},\nyear={2019},\neprint={1909.06441},\narchivePrefix={arXiv},\nprimaryClass={cs.CV}\n}"
   },
   {
     "name": "rice_seedling_segmentation",
@@ -5771,7 +5890,8 @@
     "citation": "@Article{electronics9101602,\n  AUTHOR = {Khan, Abbas and Ilyas, Talha and Umraiz, Muhammad and Mannan, Zubaer Ibna and Kim, Hyongsuk},\n  TITLE = {CED-Net: Crops and Weeds Segmentation for Smart Farming Using a Small Cascaded Encoder-Decoder Architecture},\n  JOURNAL = {Electronics},\n  VOLUME = {9},\n  YEAR = {2020},\n  NUMBER = {10},\n  ARTICLE-NUMBER = {1602},\n  URL = {https://www.mdpi.com/2079-9292/9/10/1602},\n  ISSN = {2079-9292},\n  ABSTRACT = {Convolutional neural networks (CNNs) have achieved state-of-the-art performance in numerous aspects of human life and the agricultural sector is no exception. One of the main objectives of deep learning for smart farming is to identify the precise location of weeds and crops on farmland. In this paper, we propose a semantic segmentation method based on a cascaded encoder-decoder network, namely CED-Net, to differentiate weeds from crops. The existing architectures for weeds and crops segmentation are quite deep, with millions of parameters that require longer training time. To overcome such limitations, we propose an idea of training small networks in cascade to obtain coarse-to-fine predictions, which are then combined to produce the final results. Evaluation of the proposed network and comparison with other state-of-the-art networks are conducted using four publicly available datasets: rice seeding and weed dataset, BoniRob dataset, carrot crop vs. weed dataset, and a paddy&ndash;millet dataset. The experimental results and their comparisons proclaim that the proposed network outperforms state-of-the-art architectures, such as U-Net, SegNet, FCN-8s, and DeepLabv3, over intersection over union (IoU), F1-score, sensitivity, true detection rate, and average precision comparison metrics by utilizing only (1/5.74 &times; U-Net), (1/5.77 &times; SegNet), (1/3.04 &times; FCN-8s), and (1/3.24 &times; DeepLabv3) fractions of total parameters.},\n  DOI = {10.3390/electronics9101602}\n}",
     "crop_types": [
       "rice"
-    ]
+    ],
+    "bibtex": "@misc{hani2019minneapple,\ntitle={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\nauthor={Nicolai Häni and Pravakar Roy and Volkan Isler},\nyear={2019},\neprint={1909.06441},\narchivePrefix={arXiv},\nprimaryClass={cs.CV}\n}"
   },
   {
     "name": "sugarbeet_weed_segmentation",
@@ -5804,7 +5924,8 @@
     "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
     "crop_types": [
       "sugarbeet"
-    ]
+    ],
+    "bibtex": "@ARTICLE{8115245,\nauthor={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\njournal={IEEE Robotics and Automation Letters},\ntitle={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\nyear={2018},\nvolume={3},\nnumber={1},\npages={588-595},\ndoi={10.1109/LRA.2017.2774979},\nmonth={Jan}\n}"
   },
   {
     "name": "bean_synthetic_earlygrowth_aerial",
@@ -5829,7 +5950,8 @@
     "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}",
     "crop_types": [
       "bean"
-    ]
+    ],
+    "bibtex": "@ARTICLE{10.3389/fpls.2019.01185,\nAUTHOR={Bailey, Brian N.},\nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},\nJOURNAL={Frontiers in Plant Science},\nVOLUME={10},\nYEAR={2019},\nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},\nDOI={10.3389/fpls.2019.01185},\nISSN={1664-462X}\n}"
   },
   {
     "name": "growliflower_cauliflower_segmentation",
@@ -5888,7 +6010,8 @@
     "crop_types": [
       "peach",
       "pear"
-    ]
+    ],
+    "bibtex": "@ARTICLE{8392727,\nauthor={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\njournal={IEEE Robotics and Automation Letters},\ntitle={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network},\nyear={2018},\nvolume={3},\nnumber={4},\npages={3003-3010},\ndoi={10.1109/LRA.2018.2849498}\n}"
   },
   {
     "name": "red_grapes_and_leaves_segmentation",
@@ -5921,7 +6044,8 @@
     "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}",
     "crop_types": [
       "grape"
-    ]
+    ],
+    "bibtex": "@inproceedings{kalampokas2020semantic,\ntitle={Semantic segmentation of vineyard images using convolutional neural networks},\nauthor={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\nbooktitle={International Conference on Engineering Applications of Neural Networks},\npages={292--303},\nyear={2020},\norganization={Springer}\n}"
   },
   {
     "name": "vegann_multicrop_presence_segmentation",
@@ -5983,7 +6107,8 @@
     "citation": "@inproceedings{kalampokas2020semantic,\n  title={Semantic segmentation of vineyard images using convolutional neural networks},\n  author={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\n  booktitle={International Conference on Engineering Applications of Neural Networks},\n  pages={292--303},\n  year={2020},\n  organization={Springer}}",
     "crop_types": [
       "grape"
-    ]
+    ],
+    "bibtex": "@inproceedings{kalampokas2020semantic,\ntitle={Semantic segmentation of vineyard images using convolutional neural networks},\nauthor={Kalampokas, Theofanis and Tziridis, Konstantinos and Nikolaou, Alexandros and Vrochidou, Eleni and Papakostas, George A and Pachidis, Theodore and Kaburlasos, Vassilis G},\nbooktitle={International Conference on Engineering Applications of Neural Networks},\npages={292--303},\nyear={2020},\norganization={Springer}\n}"
   },
   {
     "name": "BDHerbalPlants_variety_classification",
@@ -6038,7 +6163,8 @@
       "Google Pixel 7"
     ],
     "collection_period": "February and March 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{khandaker2025bdherbalplants,\n  title={BDHerbalPlants: augmented and curated herbal plants image dataset for classification.},\n  author={Khandaker, Sunzil and Rahman, Md Mizanur},\n  journal={Data in Brief},\n  pages={111885},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "PriBel_betel_leaf_disease_classification",
@@ -6074,7 +6200,8 @@
       "Samsung Galaxy S23 Pro"
     ],
     "collection_period": "January",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mane2025pribel,\n  title={PriBeL: A primary betel leaf dataset from field and controlled environment},\n  author={Mane, Gauri and Bhise, Raghav and Kadam, Rutuja and Kaur, Gagandeep and Verma, Devika and Chopade, Rupali and Shinde, Gitanjali and Tejani, Ghanshyam G and Mousavirad, Seyed Jalaleddin},\n  journal={Data in Brief},\n  volume={61},\n  pages={111674},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "OkraDiseaseNet_disease_classification",
@@ -6113,7 +6240,8 @@
       "Canon EOS 3000D"
     ],
     "collection_period": "48 days",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sowmiya2025okra,\n  title={Okra disease dataset for classification and segmentation: Dataset collection, analysis and applications},\n  author={Sowmiya, K and Thenmozhi, M},\n  journal={Data in Brief},\n  volume={61},\n  pages={111662},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MH_SoyaHealthVision_disease_classification_leaf",
@@ -6166,7 +6294,8 @@
       "OPPO A31"
     ],
     "collection_period": "July 2023 to November 2023 and July 2024 to November 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shinde2025indian,\n  title={An Indian UAV and leaf image dataset for integrated crop health assessment of soybean crop},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={60},\n  pages={111517},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MH_SoyaHealthVision_disease_classification_uav",
@@ -6215,7 +6344,8 @@
     "imaging_equipment": [
       "DJI Mini 4 Pro"
     ],
-    "collection_period": "July 2023 to November 2023 and July 2024 to November 2024"
+    "collection_period": "July 2023 to November 2023 and July 2024 to November 2024",
+    "bibtex": "@article{shinde2025indian,\n  title={An Indian UAV and leaf image dataset for integrated crop health assessment of soybean crop},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={60},\n  pages={111517},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "citrusuat_disease_classification",
@@ -6260,7 +6390,8 @@
       "Samsung Galaxy SM-J730 Pro"
     ],
     "collection_period": "August 2016 and March 2019",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{gomez2024citrusuat,\n  title={CitrusUAT: A dataset of orange Citrus sinensis leaves for abnormality detection using image analysis techniques},\n  author={G{\\'o}mez-Flores, Wilfrido and Garza-Salda{\\~n}a, Juan Jos{\\'e} and Varela-Fuentes, S{\\'o}stenes Edmundo},\n  journal={Data in brief},\n  volume={52},\n  pages={109908},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "soybean_leaf_disease_classification",
@@ -6301,7 +6432,8 @@
       "Smartphone"
     ],
     "collection_period": "July 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{kotwal2024india,\n  title={An India soyabean dataset for identification and classification of diseases using computer-vision algorithms},\n  author={Kotwal, Jameer and Kashyap, Ramgopal and Pathan, Mohd Shafi},\n  journal={Data in Brief},\n  volume={53},\n  pages={110216},\n  year={2024}\n}"
   },
   {
     "name": "watermelon_disease_classification",
@@ -6339,7 +6471,8 @@
       "iPhone 13 Pro Max"
     ],
     "collection_period": "June 15 and June 25, 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{nakib2024comprehensive,\n  title={Comprehensive watermelon disease recognition dataset},\n  author={Nakib, Mohammad Imtiaz and Mridha, MF},\n  journal={Data in Brief},\n  volume={53},\n  pages={110182},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "fig_leaf_ficus_worm_classification",
@@ -6381,7 +6514,8 @@
     "imaging_equipment": [
       "Sony DSCH300/BM"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hafi2024image,\n  title={Image dataset of healthy and infected fig leaves with Ficus leaf worm},\n  author={Hafi, Saad Jabir and Mohammed, Mohammed Abdallazez and Abd, Dhafar Hamed and Alaskar, Haya and Alharbe, Nawaf R and Ansari, Sam and Aliesawi, Salah A and Hussain, Abir Jaafar},\n  journal={Data in Brief},\n  volume={53},\n  pages={109958},\n  year={2024}\n}"
   },
   {
     "name": "apple_leaf_disease_classification",
@@ -6412,7 +6546,8 @@
     "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_leaf_disease_classification",
     "examples_image_url": "/img/agml/sample_images/apple_leaf_disease_classification_sample.webp",
     "country": "India",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{yatoo2024indigenous,\n  title={An indigenous dataset for the detection and classification of apple leaf diseases},\n  author={Yatoo, Arshad Ahmad and Sharma, Amit},\n  journal={Data in Brief},\n  volume={53},\n  pages={110165},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "lemongrass_disease_classification",
@@ -6450,7 +6585,8 @@
       "IQOO Z3 5G"
     ],
     "collection_period": "August 2023 to October 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{patil2024comprehensive,\n  title={A comprehensive lemongrass (Cymbopogon citratus) leaf dataset for agricultural research and disease prevention},\n  author={Patil, Kailas and Suryawanshi, Yogesh and Patrawala, Alimurtuza and Chumchu, Prawit},\n  journal={Data in brief},\n  volume={53},\n  pages={110104},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "groundnut_leaf_disease_classification",
@@ -6490,7 +6626,8 @@
       "Redmi Note 8 Pro"
     ],
     "collection_period": "January-April of 2022 and 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sasmal2024novel,\n  title={A novel groundnut leaf dataset for detection and classification of groundnut leaf diseases},\n  author={Sasmal, Buddhadev and Das, Arunita and Dhal, Krishna Gopal and Saheb, Sk Belal and Khurma, Ruba Abu and Castillo, Pedro A},\n  journal={Data in Brief},\n  volume={55},\n  pages={110763},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cabbage_instance_segmentation",
@@ -6529,7 +6666,8 @@
       "Sony Alha 6600 mounted on DJI MATRICE 300 UAV"
     ],
     "collection_period": "2020, 2021, and 2022",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{yokoyama2024instance,\n  title={An instance segmentation dataset of cabbages over the whole growing season for UAV imagery},\n  author={Yokoyama, Yui and Matsui, Tsutomu and Tanaka, Takashi ST},\n  journal={Data in Brief},\n  volume={55},\n  pages={110699},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_variety_classification",
@@ -6561,7 +6699,8 @@
     "zip_size_bytes": 4389752066,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_variety_classification",
-    "examples_image_url": "/img/agml/sample_images/banana_variety_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/banana_variety_classification_sample.webp",
+    "bibtex": "@article{sheikh2024bananaset,\n  title={BananaSet: a dataset of banana varieties in Bangladesh},\n  author={Sheikh, Md Ripon and Hossain, Md Anwar and Hossain, Moazzem and Islam, Md Masudul and Himel, Galib Muhammad Shahriar},\n  journal={Data in Brief},\n  volume={54},\n  pages={110513},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_grade_variety_classification",
@@ -6597,7 +6736,8 @@
       "MI Note7s"
     ],
     "collection_period": "two months",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{guru2025banana,\n  title={Banana bunch image and video dataset for variety classification and grading},\n  author={Guru, DS and Saritha, N},\n  journal={Data in Brief},\n  volume={60},\n  pages={111478},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MH_Weed16_weed_detection",
@@ -6640,7 +6780,8 @@
     "platform": [
       "ground",
       "handheld"
-    ]
+    ],
+    "bibtex": "@article{shinde2025indian,\n  title={An Indian annotated weed dataset for computer vision tasks in precision farming},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={61},\n  pages={111691},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MH_Weed16_weed_variety_classification",
@@ -6700,7 +6841,8 @@
     "platform": [
       "ground",
       "handheld"
-    ]
+    ],
+    "bibtex": "@article{shinde2025indian,\n  title={An Indian annotated weed dataset for computer vision tasks in precision farming},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={61},\n  pages={111691},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "agarwood_leaf_disease_classification",
@@ -6754,7 +6896,8 @@
       "Canon PowerShot G7X Mark III"
     ],
     "collection_period": "mid-October 2023 through May 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shafik2025comprehensive,\n  title={A comprehensive dataset of agarwood tree (Aquilaria Malaccensis) leaf images for disease analysis in Brunei Darussalam},\n  author={Shafik, Wasswa and Sukri, Rahayu Sukmaria and Liyanage, Chandratilak De Silva and Zaini, Nurul Hazlina and Yu, Soon Boon and Ruslan, Mohammad Amiruddin and Apong, Rosyzie Anna Awg Haji Mohd and Tufail, Ali},\n  journal={Data in Brief},\n  pages={112227},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_bunch_detection",
@@ -6797,7 +6940,8 @@
       "iPhone 12"
     ],
     "collection_period": "2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{baglat2025multi,\n  title={A multi-stage dataset for banana bunch detection and harvesting decision support},\n  author={Baglat, Preety and Mendon{\\c{c}}a, F{\\'a}bio and Mostafa, Shanawaz and Morgado-Dias, Fernando},\n  journal={Data in Brief},\n  pages={112337},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "weed_crop_detection",
@@ -6851,7 +6995,8 @@
       "Canon EOS 90D mounted on ground robotic platforms"
     ],
     "collection_period": "2021 and 2022",
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{upadhyay2025weed,\n  title={Weed-crop dataset in precision agriculture: Resource for AI-based robotic weed control systems},\n  author={Upadhyay, Arjun and Mahecha, Maria Villamil and Mettler, Joseph and Howatt, Kirk and Aderholdt, William and Ostlie, Michael and Sun, Xin and others},\n  journal={Data in Brief},\n  volume={60},\n  pages={111486},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "maize_disease_classification",
@@ -6886,7 +7031,8 @@
       "iPhone XS Max"
     ],
     "collection_period": "November 2022 to January 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{mduma2024updating,\n  title={Updating “machine learning imagery dataset for maize crop: A case of Tanzania” with expanded data to cover the new farming season},\n  author={Mduma, Neema and Mayo, Flavia},\n  journal={Data in Brief},\n  volume={54},\n  pages={110359},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_field_weed_classification",
@@ -6934,7 +7080,8 @@
       "Smartphones, 64MP, 50MP, 13MP, 12MP, 8MP, and 2MP"
     ],
     "collection_period": "November and December 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ali2024comprehensive,\n  title={A comprehensive dataset of rice field weed detection from Bangladesh},\n  author={Ali, Md Sawkat and Rashid, Mohammad Rifat Ahmmad and Hossain, Tasnim and Kabir, Md Ahsan and Kamrul, Md and Aumy, Sayam Hossain Bhuiyan and Mridha, Mehedi Hasan and Sajeeb, Imam Hossain and Islam, Mohammad Manzurul and Jabid, Taskeed},\n  journal={Data in Brief},\n  volume={57},\n  pages={110981},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "WaterHyacinth_variety_classification",
@@ -6982,7 +7129,8 @@
       "iPhone 12"
     ],
     "collection_period": "July 2023 to September 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{kabir2024waterhyacinth,\n  title={WaterHyacinth: a comprehensive image dataset of various water hyacinth species from different regions of Bangladesh},\n  author={Kabir, Hasnain and Juthi, Taslima and Islam, Md Tarequl and Rahman, Md Wahidur and Khan, Rahat},\n  journal={Data in Brief},\n  volume={52},\n  pages={109872},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "custard_apple_disease_classification",
@@ -7025,7 +7173,8 @@
       "Samsung Galaxy F 23 5 G (SM-E236B)"
     ],
     "collection_period": "August to September",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{thite2024empowering,\n  title={Empowering agricultural research: a comprehensive custard apple (Annona squamosa) disease dataset for precise detection},\n  author={Thite, Sandip and Patil, Kailas and Jadhav, Rohini and Suryawanshi, Yogesh and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={53},\n  pages={110078},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sugarcane_leaf_disease_classification",
@@ -7071,7 +7220,8 @@
       "Samsung Galaxy F 23 5 G (SM-E236B)"
     ],
     "collection_period": "April to June",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{thite2024sugarcane,\n  title={Sugarcane leaf dataset: A dataset for disease detection and classification for machine learning applications},\n  author={Thite, Sandip and Suryawanshi, Yogesh and Patil, Kailas and Chumchu, Prawit},\n  journal={Data in brief},\n  volume={53},\n  pages={110268},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "okra_thermal_maturity_classification",
@@ -7107,7 +7257,8 @@
     "imaging_equipment": [
       "FLIR E75"
     ],
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{sasithradevi2024thermal,\n  title={Thermal image dataset for okra maturity analysis},\n  author={Sasithradevi, A and Shoba, S and Persiya, J and others},\n  journal={Data in Brief},\n  volume={55},\n  pages={110645},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "date_grade_variety_classification",
@@ -7144,7 +7295,8 @@
     "imaging_equipment": [
       "Huawei Y6s JAT-L29"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{maitlo2024novel,\n  title={A novel dataset of date fruit for inspection and classification},\n  author={Maitlo, Abdul Khalique and Shaikh, Riaz Ahmed and Arain, Rafaqat Hussain},\n  journal={Data in Brief},\n  volume={52},\n  pages={110026},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "mint_leaf_classification",
@@ -7183,7 +7335,8 @@
       "Canon HF R236 (LEGRIA HF R36)"
     ],
     "collection_period": "April to July",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{jadhav2023mint,\n  title={Mint leaves: dried, fresh, and spoiled dataset for condition analysis and machine learning applications},\n  author={Jadhav, Rohini and Suryawanshi, Yogesh and Bedmutha, Yashashree and Patil, Kailas and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={51},\n  pages={109717},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "plant_leaf_disease_classification",
@@ -7238,7 +7391,8 @@
     "imaging_equipment": [
       "Realme 9 5G"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{hasan2024comprehensive,\n  title={Comprehensive smart smartphone image dataset for plant leaf disease detection and freshness assessment from Bangladesh vegetable fields},\n  author={Hasan, Mahamudul and Gani, Raiyan and Rashid, Mohammad Rifat Ahmmad and Tarin, Taslima Khan and Kamara, Raka and Mou, Mahbuba Yasmin and Rabbi, Sheikh Fajlay},\n  journal={Data in Brief},\n  volume={56},\n  pages={110775},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_panicle_detection",
@@ -7274,7 +7428,8 @@
       "DJI Mavic Mini 2 Drone"
     ],
     "collection_period": "April 25th, 2023",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{rashid2023comprehensive,\n  title={Comprehensive dataset of annotated rice panicle image from Bangladesh},\n  author={Rashid, Mohammad Rifat Ahmmad and Hossain, Md Shafayat and Fahim, MD and Islam, Md Shajibul and Prito, Rizvee Hassan and Sheikh, Md Shahadat Anik and Ali, Md Sawkat and Hasan, Mahamudul and Islam, Maheen and others},\n  journal={Data in Brief},\n  volume={51},\n  pages={109772},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "date_palm_leaf_disease_classification_iraq",
@@ -7319,7 +7474,8 @@
     "platform": [
       "uav",
       "handheld"
-    ]
+    ],
+    "bibtex": "@article{al2023image,\n  title={Image dataset of infected date palm leaves by dubas insects},\n  author={Al-Mahmood, Abdullah Mazin and Shahadi, Haider Ismael and Khayeat, Ali Retha Hasoon},\n  journal={Data in Brief},\n  volume={49},\n  pages={109371},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "BananaLSD_leaf_disease_classification",
@@ -7362,7 +7518,8 @@
       "Xiaomi Redmi Note 9"
     ],
     "collection_period": "June 2021",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{arman2023bananalsd,\n  title={BananaLSD: A banana leaf images dataset for classification of banana leaf diseases using machine learning},\n  author={Arman, Shifat E and Bhuiyan, Md Abdullahil Baki and Abdullah, Hasan Muhammad and Islam, Shariful and Chowdhury, Tahsin Tanha and Hossain, Md Arban},\n  journal={Data in Brief},\n  volume={50},\n  pages={109608},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "groundnut_leaf_disease_classification_2",
@@ -7404,7 +7561,8 @@
       "canon mark II D"
     ],
     "collection_period": "Kharif and Rabi seasons",
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{aishwarya2023dataset,\n  title={Dataset of groundnut plant leaf images for classification and detection},\n  author={Aishwarya, MP and Reddy, A Padmanabha},\n  journal={Data in Brief},\n  volume={48},\n  pages={109185},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "DIMPSAR_medicinal_plant_classification",
@@ -7522,7 +7680,8 @@
       "Xiaomi Mi 4i",
       "Xiaomi Redmi Note3"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{pushpa2023dimpsar,\n  title={DIMPSAR: Dataset for Indian medicinal plant species analysis and recognition},\n  author={Pushpa, BR and Rani, N Shobha},\n  journal={Data in Brief},\n  volume={49},\n  pages={109388},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "DIMPSAR_medicinal_leaf_classification",
@@ -7720,7 +7879,8 @@
       "Xiaomi Mi 4i",
       "Xiaomi Redmi Note3"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{pushpa2023dimpsar,\n  title={DIMPSAR: Dataset for Indian medicinal plant species analysis and recognition},\n  author={Pushpa, BR and Rani, N Shobha},\n  journal={Data in Brief},\n  volume={49},\n  pages={109388},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "SoyNet_leaf_health_classification",
@@ -7760,7 +7920,8 @@
       "Motorola G40"
     ],
     "collection_period": "October to November",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rajput2023soynet,\n  title={SoyNet: A high-resolution Indian soybean image dataset for leaf disease classification},\n  author={Rajput, Arpan Singh and Shukla, Shailja and Thakur, SS},\n  journal={Data in Brief},\n  volume={49},\n  pages={109447},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "RoseNet_leaf_disease_classification",
@@ -7797,7 +7958,8 @@
       "Sony Cyber-Shot H200"
     ],
     "collection_period": "December to February",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sazzad2022rosenet,\n  title={RoseNet: Rose leave dataset for the development of an automation system to recognize the diseases of rose},\n  author={Sazzad, Sadia and Rajbongshi, Aditya and Shakil, Rashiduzzaman and Akter, Bonna and Kaiser, M Shamim},\n  journal={Data in Brief},\n  volume={44},\n  pages={108497},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "VegNet_cauliflower_disease_classification",
@@ -7835,7 +7997,8 @@
       "Sony Cyber-Shot W-530"
     ],
     "collection_period": "December 2021 to January 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sara2022vegnet,\n  title={VegNet: An organized dataset of cauliflower disease for a sustainable agro-based automation system},\n  author={Sara, Umme and Rajbongshi, Aditya and Shakil, Rashiduzzaman and Akter, Bonna and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={43},\n  pages={108422},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pomegranate_growth_detection",
@@ -7875,7 +8038,8 @@
       "iPhone XR camera"
     ],
     "collection_period": "May 2022 to September 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{zhao2023dataset,\n  title={A dataset of pomegranate growth stages for machine learning-based monitoring and analysis},\n  author={Zhao, Jifei and Almodfer, Rolla and Wu, Xiaoying and Wang, Xinfa},\n  journal={Data in brief},\n  volume={50},\n  pages={109468},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_leaf_nutrient_classification",
@@ -7929,7 +8093,8 @@
       "Motorola G5",
       "ONEPlus"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{sunitha2023fully,\n  title={A fully labelled image dataset of banana leaves deficient in nutrients},\n  author={Sunitha, P and Uma, B and Channakeshava, S and Suresh Babu, CS},\n  journal={Data in Brief},\n  volume={48},\n  pages={109155},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "CoLeaf_nutritional_deficiency_classification",
@@ -7975,7 +8140,8 @@
       "Canon PowerShot SX50 HS"
     ],
     "collection_period": "2014",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{tuesta2023coleaf,\n  title={CoLeaf-DB: Peruvian coffee leaf images dataset for coffee leaf nutritional deficiencies detection and classification},\n  author={Tuesta-Monteza, Victor A and Mejia-Cabrera, Heber I and Arcila-Diaz, Juan},\n  journal={Data in Brief},\n  volume={48},\n  pages={109226},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MangoLeafBD_disease_classification",
@@ -8024,7 +8190,8 @@
       "Samsung Galaxy s7 Edge"
     ],
     "collection_period": "before the winter of 2021",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ahmed2023mangoleafbd,\n  title={MangoLeafBD: A comprehensive image dataset to classify diseased and healthy mango leaves},\n  author={Ahmed, Sarder Iftekhar and Ibrahim, Muhammad and Nadim, Md and Rahman, Md Mizanur and Shejunti, Maria Mehjabin and Jabid, Taskeed and Ali, Md Sawkat},\n  journal={Data in Brief},\n  volume={47},\n  pages={108941},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "BPLD_leaf_disease_classification",
@@ -8067,7 +8234,8 @@
       "Samsung Galaxy F41"
     ],
     "collection_period": "Jan-April 2020 & 2021",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{talasila2022black,\n  title={Black gram Plant Leaf Disease (BPLD) dataset for recognition and classification of diseases using computer-vision algorithms},\n  author={Talasila, Srinivas and Rawal, Kirti and Sethi, Gaurav and Mss, Sanjay and others},\n  journal={Data in Brief},\n  volume={45},\n  pages={108725},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "VegNet_quality_classification",
@@ -8110,7 +8278,8 @@
       "Xiaomi Mi-10T"
     ],
     "collection_period": "April to June 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{suryawanshi2022vegnet,\n  title={VegNet: dataset of vegetable quality images for machine learning applications},\n  author={Suryawanshi, Yogesh and Patil, Kailas and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={45},\n  pages={108657},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "PFSD_Musa_banana_variety_classification",
@@ -8150,7 +8319,8 @@
       "Samsung SM-G610F",
       "Nikon SX 70"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{medhi2022psfd,\n  title={PSFD-Musa: A dataset of banana plant, stem, fruit, leaf, and disease},\n  author={Medhi, Epsita and Deb, Nabamita},\n  journal={Data in brief},\n  volume={43},\n  pages={108427},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "PFSD_Musa_banana_disease_classification",
@@ -8191,7 +8361,8 @@
       "Samsung SM-G610F",
       "Nikon SX 70"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{medhi2022psfd,\n  title={PSFD-Musa: A dataset of banana plant, stem, fruit, leaf, and disease},\n  author={Medhi, Epsita and Deb, Nabamita},\n  journal={Data in brief},\n  volume={43},\n  pages={108427},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "CoFly-Weed-DB_weed_segmentation",
@@ -8227,7 +8398,8 @@
     "imaging_equipment": [
       "DJI Phantom 4 Pro"
     ],
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{krestenitis2022cofly,\n  title={CoFly-WeedDB: A UAV image dataset for weed detection and species identification},\n  author={Krestenitis, Marios and Raptis, Emmanuel K and Kapoutsis, Athanasios Ch and Ioannidis, Konstantinos and Kosmatopoulos, Elias B and Vrochidis, Stefanos and Kompatsiaris, Ioannis},\n  journal={Data in Brief},\n  volume={45},\n  pages={108575},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "guava_disease_classification_bangladesh",
@@ -8266,7 +8438,8 @@
       "Nikon D3200"
     ],
     "collection_period": "July 2021",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rajbongshi2022comprehensive,\n  title={A comprehensive guava leaves and fruits dataset for guava disease recognition},\n  author={Rajbongshi, Aditya and Sazzad, Sadia and Shakil, Rashiduzzaman and Akter, Bonna and Sara, Umme},\n  journal={Data in Brief},\n  volume={42},\n  pages={108174},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "soybean_leaf_disease_classification_brazil",
@@ -8307,7 +8480,8 @@
       "smartphone"
     ],
     "collection_period": "January 2021",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{mignoni2022soybean,\n  title={Soybean images dataset for caterpillar and Diabrotica speciosa pest detection and classification},\n  author={Mignoni, Maria Eloisa and Honorato, Aislan and Kunst, Rafael and Righi, Rodrigo and Massuquetti, Ang{\\'e}lica},\n  journal={Data in Brief},\n  volume={40},\n  pages={107756},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "vegetable_crop_early_detection",
@@ -8355,7 +8529,8 @@
     "imaging_equipment": [
       "Basler acA2500-gc"
     ],
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{lac2022annotated,\n  title={An annotated image dataset of vegetable crops at an early stage of growth for proximal sensing applications},\n  author={Lac, Louis and Keresztes, Barna and Louargant, Marine and Donias, Marc and Da Costa, Jean-Pierre},\n  journal={Data in Brief},\n  volume={42},\n  pages={108035},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "guava_maturity_classification",
@@ -8390,7 +8565,8 @@
       "Canon EOS 5D Mark III"
     ],
     "collection_period": "December 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{maitlo2023novel,\n  title={A novel dataset of guava fruit for grading and classification},\n  author={Maitlo, Abdul Khalique and Aziz, Abdul and Raza, Hassnian and Abbas, Neelam},\n  journal={Data in Brief},\n  volume={49},\n  pages={109462},\n  year={2023}\n}"
   },
   {
     "name": "BDMediLeaves_variety_classification",
@@ -8446,7 +8622,8 @@
       "iPhone 13"
     ],
     "collection_period": "December 2022 to May 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{islam2023bdmedileaves,\n  title={BDMediLeaves: a leaf images dataset for Bangladeshi medicinal plants identification},\n  author={Islam, Saiful and Ahmed, Md Rayhan and Islam, Siful and Rishad, Md Mahfuzul Alam and Ahmed, Sayem and Utshow, Toyabur Rahman and Siam, Minhajul Islam},\n  journal={Data in Brief},\n  volume={50},\n  pages={109488},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "MangoClassify-12_variety_classification",
@@ -8498,7 +8675,8 @@
       "Realme C75"
     ],
     "collection_period": "early May and July 10, 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rahman2025mangoclassify,\n  title={MangoClassify-12: A high-resolution image dataset of twelve indigenous Bangladeshi mango cultivars},\n  author={Rahman, Md Sajedur and Nahin, Md Mahfuz Ahmed and Rahman, Md Mahbubur and Rani, Mollika and Islam, Md Ashraful and Bashir, Al and Shafkat, Ahmad and Mallik, Bijon and Majeed, Yaqoob},\n  journal={Data in Brief},\n  pages={112037},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "date_cluster_detection",
@@ -8521,7 +8699,8 @@
     "zip_size_bytes": 557801868,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/date_cluster_detection",
-    "examples_image_url": "/img/agml/sample_images/date_cluster_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/date_cluster_detection_sample.webp",
+    "bibtex": "@article{maghzaoui2025dataset,\n  title={Dataset of Deglet Nour date palm bunches for smart harvesting},\n  author={Maghzaoui, Ahlem and Aridhi, Emna and Yahia, Sadok Ben and Bahroun, Sahbi and Mami, Abdelkader},\n  journal={Data in Brief},\n  pages={112217},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grape_variety_classification",
@@ -8567,7 +8746,8 @@
     "imaging_equipment": [
       "Nikon 7200"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{al2023image,\n  title={Image dataset of important grape varieties in the commercial and consumer market},\n  author={Al-Khazraji, Lafta R and Mohammed, Mohammed Abdallazez and Abd, Dhafar Hamed and Khan, Wasiq and Khan, Bilal and Hussain, Abir Jaafar},\n  journal={Data in Brief},\n  volume={47},\n  pages={108906},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "PaddyVarietyBD_variety_classification",
@@ -8638,7 +8818,8 @@
       "microscopic camera device with 1000x zooming, tripod-mounted"
     ],
     "collection_period": "September 2023",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{tahsin2025paddyvarietybd,\n  title={Paddyvarietybd: Classifying paddy variations of bangladesh with a novel image dataset},\n  author={Tahsin, Md and Ibrahim, Muhammad and Nafisa, Anika Tabassum and Nuha, Maksura Binte Rabbani and Arnab, Mehrab Islam and Ferdaus, Md Hasanul and Islam, Mohammad Manzurul and Rashid, Mohammad Rifat Ahmmad and Jabid, Taskeed and Ali, Md Sawkat and others},\n  journal={Data in Brief},\n  volume={60},\n  pages={111514},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "soybean_damage_classification",
@@ -8674,7 +8855,8 @@
     "imaging_equipment": [
       "HIKVISION Co. MV-CA060-11GM"
     ],
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{lin2023soybean,\n  title={Soybean image dataset for classification},\n  author={Lin, Wei and Fu, Youhao and Xu, Peiquan and Liu, Shuo and Ma, Daoyi and Jiang, Zitian and Zang, Siyang and Yao, Heyang and Su, Qin},\n  journal={Data in Brief},\n  volume={48},\n  pages={109300},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grapevine_disease_classification",
@@ -8702,7 +8884,8 @@
     "zip_size_bytes": 792677414,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/grapevine_disease_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/grapevine_disease_classification_sample.webp",
+    "bibtex": "@article{tardif2023expertized,\n  title={An expertized grapevine disease image database including five grape varieties focused on Flavescence dor{\\'e}e and its confounding diseases, biotic and abiotic stresses},\n  author={Tardif, Malo and Amri, Ahmed and Deshayes, Aymeric and Greven, Marc and Keresztes, Barna and Fontaine, Ga{\\\"e}l and Sicaud, Laetitia and Paulhac, Laetitia and Bentejac, Sophie and Da Costa, Jean-Pierre},\n  journal={Data in Brief},\n  volume={48},\n  pages={109230},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tomato_factory_detection",
@@ -8737,7 +8920,8 @@
       "iPhone 11"
     ],
     "collection_period": "December 2021 to February 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{wu2023dataset,\n  title={A dataset of tomato fruits images for object detection in the complex lighting environment of plant factories},\n  author={Wu, Zhen-wei and Liu, Ming-hao and Sun, Cheng-xiu and Wang, Xin-fa},\n  journal={Data in Brief},\n  volume={48},\n  pages={109291},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "fresh_rotten_fruit_classification",
@@ -8780,7 +8964,8 @@
       "Nikon D5600"
     ],
     "collection_period": "16th to 31st March 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{SULTANA2022108552,\ntitle = {An extensive dataset for successful recognition of fresh and rotten fruits},\njournal = {Data in Brief},\nvolume = {44},\npages = {108552},\nyear = {2022},\nissn = {2352-3409},\ndoi = {https://doi.org/10.1016/j.dib.2022.108552},\nurl = {https://www.sciencedirect.com/science/article/pii/S2352340922007594},\n}"
   },
   {
     "name": "vineyard_grape_segmentation",
@@ -8814,7 +8999,8 @@
     "imaging_equipment": [
       "DJI Matrice 210 RTK with DJI Zenmuse X5S sensor"
     ],
-    "collection_period": "June 28th, 2021"
+    "collection_period": "June 28th, 2021",
+    "bibtex": "@article{ariza2023dataset,\n  title={Dataset on UAV RGB videos acquired over a vineyard including bunch labels for object detection and tracking},\n  author={Ariza-Sent{\\'\\i}s, Mar and V{\\'e}lez, Sergio and Valente, Jo{\\~a}o},\n  journal={Data in Brief},\n  volume={46},\n  pages={108848},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "bean_disease_classification_tanzania",
@@ -8852,7 +9038,8 @@
       "Samsung Galaxy A03 Core"
     ],
     "collection_period": "20th October 2022 to 10th April 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{laizer2024common,\n  title={Common beans imagery dataset for early detection of bean rust and bean anthracnose diseases},\n  author={Laizer, Hudson and Mduma, Neema and Machuve, Dina and Maganga, Reinfrid},\n  journal={Data in Brief},\n  volume={54},\n  pages={110508},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "ERWIAM_blight_detection",
@@ -8898,7 +9085,8 @@
       "Canon EOS 70D",
       "Canon EOS 90D"
     ],
-    "collection_period": "2021, 2022, 2023"
+    "collection_period": "2021, 2022, 2023",
+    "bibtex": "@article{mass2024annotated,\n  title={Annotated image dataset of fire blight symptoms for object detection in orchards},\n  author={Ma{\\ss}, Virginia and Alirezazadeh, Pendar and Seidl-Schulz, Johannes and Leipnitz, Matthias and Fritzsche, Eric and Ibraheem, Rasheed Ali Adam and Geyer, Martin and Pflanz, Michael and Reim, Stefanie},\n  journal={Data in Brief},\n  volume={56},\n  pages={110826},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "fruitseg30_segmentation",
@@ -8963,7 +9151,8 @@
     "imaging_equipment": [
       "Smartphones"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{shamrat2024fruitseg30_segmentation,\n  title={FruitSeg30\\_Segmentation dataset \\& mask annotations: A novel dataset for diverse fruit segmentation and classification},\n  author={Shamrat, FM Javed Mehedi and Shakil, Rashiduzzaman and Idris, Mohd Yamani Idna and Akter, Bonna and Zhou, Xujuan},\n  journal={Data in Brief},\n  volume={56},\n  pages={110821},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grapevine_esca_classification",
@@ -9002,7 +9191,8 @@
       "iPhone 8"
     ],
     "collection_period": "July-September",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{alessandrini2021grapevine,\n  title={A grapevine leaves dataset for early detection and classification of esca disease in vineyards through machine learning},\n  author={Alessandrini, M and Rivera, R Calero Fuentes and Falaschetti, L and Pau, D and Tomaselli, V and Turchetti, C},\n  journal={Data in Brief},\n  volume={35},\n  pages={106809},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "LSID_bean_segmentation",
@@ -9036,7 +9226,8 @@
       "Galaxy M31 (SM-M315F)"
     ],
     "collection_period": "April 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{da2025bean,\n  title={Bean leaf image dataset annotated with leaf dimensions, segmentation masks, and camera calibration},\n  author={da Silva, Karla Gabriele Florentino and de Magalh{\\~a}es Rozatto, Paulo Victor and e Sousa, Kaio de Oliveira and Hudson, Lucas Dias and Meyer, Artur Welerson Sott and Silva, Alemilson Fabiano and Mendes, Igor Tibiri{\\c{c}}{\\'a} and Borges, Alex Rodrigues and Morais, Leandro Elias and da Silva Maciel, Luiz Maur{\\'\\i}lio and others},\n  journal={Data in Brief},\n  volume={59},\n  pages={111328},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "maize_tomato_weed_classification",
@@ -9087,7 +9278,8 @@
       "Sony ILCE-6300L mounted on a microdones md4-1000"
     ],
     "collection_period": "18/05/2020, 27/05/2020, 01/06/2021, 02/06/2021",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{mesias2025drone,\n  title={Drone imagery dataset for early-season weed classification in maize and tomato crops},\n  author={Mes{\\'\\i}as-Ruiz, Gustavo A and Pe{\\~n}a, Jos{\\'e} M and de Castro, Ana I and Dorado, Jos{\\'e}},\n  journal={Data in Brief},\n  volume={58},\n  pages={111203},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "oil_palm_fruit_ripeness_classification",
@@ -9127,7 +9319,8 @@
       "iPhone 11",
       "Xiaomi 12 Lite"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{omar2024outdoor,\n  title={Outdoor oil palm fruit ripeness dataset},\n  author={Omar, Zaid and Majeed, Anwar PP Abdul and Rosbi, Munirah and Ghazalli, Shuwaibatul Aslamiah and Selamat, Hazlina},\n  journal={Data in brief},\n  volume={55},\n  pages={110667},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "onionfoliageset_detection",
@@ -9166,7 +9359,8 @@
       "DJI Mini2"
     ],
     "collection_period": "two weeks",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{restrepo2024onionfoliageset,\n  title={OnionFoliageSET: Labeled dataset for small onion and foliage flower crop detection},\n  author={Restrepo-Arias, Juan Felipe and Branch-Bedoya, John W and Arregoc{\\'e}s-Guerra, Paulina},\n  journal={Data in Brief},\n  volume={55},\n  pages={110679},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "seasveg_classification_bd",
@@ -9211,7 +9405,8 @@
     "zip_size_bytes": 2634005075,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/seasveg_classification_bd",
-    "examples_image_url": "/img/agml/sample_images/seasveg_classification_bd_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/seasveg_classification_bd_sample.webp",
+    "bibtex": "@article{bappy2024seasveg,\n  title={SeasVeg: An image dataset of Bangladeshi seasonal vegetables},\n  author={Bappy, Md Tusher Ahmad and Rabbi, Kazi Mehedi Hasan and Ahmed, Md Jonayed and Rahman, Wahidur and Zeesan, Mahin and Sadi, AHM Saifullah and Rahman, Mohammad Motiur},\n  journal={Data in Brief},\n  volume={55},\n  pages={110564},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sunflower_detection",
@@ -9249,7 +9444,8 @@
       "DJI Mavic Mini 2"
     ],
     "collection_period": "January 16, 2024, and February 7, 2024",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{hossain2025drone,\n  title={Drone-based dataset of annotated sunflower images from Bangladesh},\n  author={Hossain, Md Shafayat and Rashid, Mohammad Rifat Ahmmad and Fahim, Md and Ali, Md Sawkat and Islam, Maheen and Islam, Mohammad Manzurul and Ferdaus, Md Hasanul and Niloy, Nishat Tasnim and others},\n  journal={Data in Brief},\n  volume={59},\n  pages={111417},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "TealeafAgeQuality_detection",
@@ -9287,7 +9483,8 @@
     "imaging_equipment": [
       "Smartphone"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{kabir2024tea,\n  title={Tea leaf age quality: age-stratified tea leaf quality classification dataset},\n  author={Kabir, Md Mohsin and Hafiz, Md Sadman and Bandyopadhyaa, Shattik and Jim, Jamin Rahman and Mridha, MF},\n  journal={Data in brief},\n  volume={54},\n  pages={110462},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "ACHENY_variety_classification",
@@ -9350,7 +9547,8 @@
       "Samsung SM-J701F"
     ],
     "collection_period": "November and December",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{heidary2021acheny,\n  title={ACHENY: A standard Chenopodiaceae image dataset for deep learning models},\n  author={Heidary-Sharifabad, Ahmad and Zarchi, Mohsen Sardari and Emadi, Sima and Zarei, Gholamreza},\n  journal={Data in Brief},\n  volume={39},\n  pages={107478},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "citrus_fruit_leaf_disease_classification",
@@ -9387,7 +9585,8 @@
     "imaging_equipment": [
       "Canon EOS 1300D"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{rauf2019citrus,\n  title={A citrus fruits and leaves dataset for detection and classification of citrus diseases through machine learning},\n  author={Rauf, Hafiz Tayyab and Saleem, Basharat Ali and Lali, M Ikram Ullah and Khan, Muhammad Attique and Sharif, Muhammad and Bukhari, Syed Ahmad Chan},\n  journal={Data in brief},\n  volume={26},\n  pages={104340},\n  year={2019},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "crop_weed_detection_latvia",
@@ -9430,7 +9629,8 @@
       "Sony W800",
       "Intel RealSense D435"
     ],
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{sudars2020dataset,\n  title={Dataset of annotated food crops and weed images for robotic computer vision control},\n  author={Sudars, Kaspars and Jasko, Janis and Namatevs, Ivars and Ozola, Liva and Badaukis, Niks},\n  journal={Data in brief},\n  volume={31},\n  pages={105833},\n  year={2020},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "fortunella_margarita_growth_detection",
@@ -9468,7 +9668,8 @@
     "imaging_equipment": [
       "iPhone 11 Pro"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{huang2021dataset,\n  title={A dataset of fortunella margarita images for object detection of deep learning based methods},\n  author={Huang, Mei-Ling and Wu, Yi-Shun},\n  journal={Data in Brief},\n  volume={38},\n  pages={107293},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "maize_weed_detection",
@@ -9505,7 +9706,8 @@
       "Sony A6000"
     ],
     "collection_period": "February and March 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{olaniyi2023development,\n  title={Development of maize plant dataset for intelligent recognition and weed control},\n  author={Olaniyi, Olayemi Mikail and Salaudeen, Muhammadu Tajudeen and Daniya, Emmanuel and Abdullahi, Ibrahim Mohammed and Folorunso, Taliha Abiodun and Bala, Jibril Abdullahi and Nuhu, Bello Kontagora and Adedigba, Adeyinka Peace and Oluwole, Blessing Israel and Bankole, Abdullah Oreoluwa and others},\n  journal={Data in Brief},\n  volume={47},\n  pages={109030},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "merlot_mildew_segmentation",
@@ -9540,7 +9742,8 @@
       "Industrial Basler Ace (acA2500-14gc GigE) mounted on a vineyard tractor"
     ],
     "collection_period": "July 2018",
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{abdelghafour2021annotated,\n  title={An annotated image dataset of downy mildew symptoms on Merlot grape variety},\n  author={Abdelghafour, Florent and Keresztes, Barna and Deshayes, Aymeric and Germain, Christian and Da Costa, Jean-Pierre},\n  journal={Data in Brief},\n  volume={37},\n  pages={107250},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "CocoaMFDB_detection",
@@ -9577,7 +9780,8 @@
       "infinix cameras"
     ],
     "collection_period": "May 26, 2022, and August 18, 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{ayikpa2023cocoamfdb,\n  title={CocoaMFDB: A dataset of cocoa pod maturity and families in an uncontrolled environment in C{\\^o}te d'Ivoire},\n  author={Ayikpa, Kacoutchy Jean and Mamadou, Diarra and Ballo, Abou Bakary and Yao, Konan and Gouton, Pierre and Adou, Kablan J{\\'e}r{\\^o}me},\n  journal={Data in Brief},\n  volume={48},\n  pages={109196},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pomegranate_quality_classification",
@@ -9615,7 +9819,8 @@
       "Logitech C905 720p Webcam with 2MP sensor, custom-built image acquisition unit"
     ],
     "collection_period": "eight days",
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{kumar2021image,\n  title={Image dataset of pomegranate fruits (Punica granatum) for various machine vision applications},\n  author={Kumar, Arun and Rajpurohit, Vijay S and Gaikwad, Nilesh N},\n  journal={data in Brief},\n  volume={37},\n  pages={107249},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "QuinceSet_detection",
@@ -9650,7 +9855,8 @@
       "Samsung Galaxy A8"
     ],
     "collection_period": "June 2021, August 2021",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{kaufmane2022quinceset,\n  title={QuinceSet: Dataset of annotated Japanese quince images for object detection},\n  author={Kaufmane, Ed{\\=\\i}te and Sudars, Kaspars and Namat{\\=e}vs, Ivars and Kalni{\\c{n}}a, Ieva and Judvaitis, J{\\=a}nis and Bala{\\v{s}}s, Rihards and Strauti{\\c{n}}a, Sarm{\\=\\i}te},\n  journal={Data in Brief},\n  volume={42},\n  pages={108332},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Medjool_date_ripeness_detection",
@@ -9689,7 +9895,8 @@
       "Samsung SM-N960F"
     ],
     "collection_period": "September 2020",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{perez2021dataset,\n  title={Dataset for localization and classification of Medjool dates in digital images},\n  author={P{\\'e}rez-P{\\'e}rez, Dalila Blanca and Salom{\\'o}n-Torres, Ricardo and Garc{\\'\\i}a-V{\\'a}zquez, Juan Pablo},\n  journal={Data in Brief},\n  volume={36},\n  pages={107116},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sapota_fruit_size_classification",
@@ -9730,7 +9937,8 @@
       "Realme X"
     ],
     "collection_period": "January 2022 to February 2022, November 2022 to February 2023, December 2024 and February 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{bhatt2025dedicated,\n  title={Dedicated dataset of Sapota (Manilkara zapota) fruit for machine vision applications},\n  author={Bhatt, Anita and Joshi, Maulin},\n  journal={Data in Brief},\n  pages={111896},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_variety_classification_bangladesh",
@@ -9803,7 +10011,8 @@
       "1600x digital microscope camera"
     ],
     "collection_period": "15 January and 28 February 2024",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{tahsin2024extensive,\n  title={An extensive image dataset for deep learning-based classification of rice kernel varieties in Bangladesh},\n  author={Tahsin, Md and Matin, Md Mafiul Hasan and Khandaker, Mashrufa and Reemu, Redita Sultana and Arnab, Mehrab Islam and Rashid, Mohammad Rifat Ahmmad and Rasel, Md Mostofa Kamal and Islam, Mohammad Manzurul and Islam, Maheen and Ali, Md Sawkat},\n  journal={Data in Brief},\n  volume={57},\n  pages={111109},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pomegranate_thermal_defect_classification",
@@ -9838,7 +10047,8 @@
       "Seek Thermal"
     ],
     "collection_period": "January 2024 to May 2024",
-    "platform": "fixed"
+    "platform": "fixed",
+    "bibtex": "@article{gaikwad2025dataset,\n  title={Dataset creation of thermal images of pomegranate for internal defect detection},\n  author={Gaikwad, Ashvini and Deshpande, Manoj and Bhole, Varsha},\n  journal={Data in brief},\n  volume={60},\n  pages={111538},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "mangifera2012_variety_classification",
@@ -9880,7 +10090,8 @@
       "Sony DSLR-A230Y"
     ],
     "collection_period": "May 1 and August 1, 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{bharati2025comprehensive,\n  title={A comprehensive image dataset of Bangladeshi mango variety},\n  author={Bharati, Rup Kumar and Islam, Md Masudul and Sheikh, Md Ripon and Himel, Galib Muhammad Shahriar},\n  journal={Data in Brief},\n  volume={60},\n  pages={111560},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "bacterial_grain_rot_classification",
@@ -9918,7 +10129,8 @@
     "imaging_equipment": [
       "smartphone"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{quoc2024grain,\n  title={Grain rot dataset caused by Burkholderia Glumae Bacteria},\n  author={Quoc, Khang Nguyen and Quach, Luyl-Da},\n  journal={Data in Brief},\n  volume={54},\n  pages={110334},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "bruised_vegetable_classification",
@@ -9962,7 +10174,8 @@
       "Redmi Note 9 pro max",
       "OnePlus Nord"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{samanta2025nature,\n  title={Nature's best vs. bruised: A veggie edibility evaluation database},\n  author={Samanta, Bidisha and Banerjee, Sriparna and Das, Ranadhir and Chaudhuri, Sheli Sinha and Djemal, Khalifa and Feiz, Amir Ali},\n  journal={Data in Brief},\n  volume={60},\n  pages={111483},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "corn_leaf_pest_classification",
@@ -10021,7 +10234,8 @@
       "iPhone 6"
     ],
     "collection_period": "March 5, 2024",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{tchokogoue2025towards,\n  title={Towards precision agriculture: A dataset for early detection of corn leaf pests},\n  author={Tchokogou{\\'e}, Thierry and Noumsi, Auguste Vigny and Atemkeng, Marcellin and Fono, Louis Aim{\\'e}},\n  journal={Data in Brief},\n  volume={59},\n  pages={111394},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "SapBark_64_variety_classification",
@@ -10180,7 +10394,8 @@
       "iPhone 16 Pro Max"
     ],
     "collection_period": "late April-mid May 2025",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{alizadeh2025sapbark,\n  title={SapBark-64: A dataset of bark images for 64 fruit-tree sapling classes},\n  author={Alizadeh, Sayyad and Shamsi, Hamed},\n  journal={Data in Brief},\n  pages={112354},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "soybean_harvest_damage_segmentation",
@@ -10214,7 +10429,8 @@
       "Midway Vision Technology 1080P(V5610)_PCBA mounted on a grain collection device on a soybean combine harvester)"
     ],
     "collection_period": "October 9, 2018",
-    "platform": "ground"
+    "platform": "ground",
+    "bibtex": "@article{chen2024dataset,\n  title={A dataset of the quality of soybean harvested by mechanization for deep-learning-based monitoring and analysis},\n  author={Chen, Man and Jin, Chengqian and Ni, Youliang and Yang, Tengxiang and Xu, Jinshan},\n  journal={Data in Brief},\n  volume={52},\n  pages={109833},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "RoCoLe_disease_detection",
@@ -10254,7 +10470,8 @@
     "imaging_equipment": [
       "Smartphone"
     ],
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{parraga2019rocole,\n  title={RoCoLe: A robusta coffee leaf images dataset for evaluation of machine learning based methods in plant diseases recognition},\n  author={Parraga-Alava, Jorge and Cusme, Kevin and Loor, Ang{\\'e}lica and Santander, Esneider},\n  journal={Data in brief},\n  volume={25},\n  pages={104414},\n  year={2019},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "coffee_detection",
@@ -10294,7 +10511,8 @@
       "DJI Mini 3 Pro"
     ],
     "collection_period": "November-December 2022, June 2023, March 2023",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{sanya2024coffee,\n  title={Coffee and cashew nut dataset: A dataset for detection, classification, and yield estimation for machine learning applications},\n  author={Sanya, Rahman and Nabiryo, Ann Lisa and Tusubira, Jeremy Francis and Murindanyi, Sudi and Katumba, Andrew and Nakatumba-Nabende, Joyce},\n  journal={Data in Brief},\n  volume={52},\n  pages={109952},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cashew_detection",
@@ -10335,7 +10553,8 @@
       "DJI Mini 3 Pro UAV/drone"
     ],
     "collection_period": "November-December 2022, June 2023, March 2023",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{sanya2024coffee,\n  title={Coffee and cashew nut dataset: A dataset for detection, classification, and yield estimation for machine learning applications},\n  author={Sanya, Rahman and Nabiryo, Ann Lisa and Tusubira, Jeremy Francis and Murindanyi, Sudi and Katumba, Andrew and Nakatumba-Nabende, Joyce},\n  journal={Data in Brief},\n  volume={52},\n  pages={109952},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "chitrak_leaf_disease_classification",
@@ -10373,7 +10592,8 @@
       "OnePlus 6"
     ],
     "collection_period": "August 2023 to October 2023",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{patil2024plumbago,\n  title={Plumbago Zeylanica (Chitrak) leaf image dataset: a comprehensive collection for botanical studies, herbal medicine research, and environmental analyses},\n  author={Patil, Kailas and Suryawanshi, Yogesh and Dhoka, Amit and Chumchu, Prawit},\n  journal={Data in Brief},\n  volume={52},\n  pages={109929},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tomato_quality_classification",
@@ -10411,7 +10631,8 @@
       "Redmi Y3"
     ],
     "collection_period": "September 22 to April 23",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{khatun2023extensive,\n  title={An extensive real-world in field tomato image dataset involving maturity classification and recognition of fresh and defect tomatoes},\n  author={Khatun, Tania and Razzak, Abdur and Islam, Md Shofiul and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={51},\n  pages={109688},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tomato_maturity_classification",
@@ -10449,7 +10670,8 @@
       "Redmi Y3"
     ],
     "collection_period": "September 22 to April 23",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{khatun2023extensive,\n  title={An extensive real-world in field tomato image dataset involving maturity classification and recognition of fresh and defect tomatoes},\n  author={Khatun, Tania and Razzak, Abdur and Islam, Md Shofiul and Uddin, Mohammad Shorif},\n  journal={Data in Brief},\n  volume={51},\n  pages={109688},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "ImageWeeds_weed_detection",
@@ -10499,7 +10721,8 @@
       "Canon 90D"
     ],
     "collection_period": "late May to late June 2021, mid-July to late August of 2021, mid-August to late September 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@misc{https://doi.org/10.17632/8kjcztbjz2.2,\n  doi = {10.17632/8KJCZTBJZ2.2},\n  url = {https://data.mendeley.com/datasets/8kjcztbjz2/2},\n  author = {Rai, Nitin and Villamil Mahecha, Maria and Christensen, Annika and Quanbeck, Jamison and Howatt, Kirk and Ostlie, Michael and Zhang, Yu and Sun, Xin},\n  keywords = {Weed-Mapping, Precision Agriculture, Drone (Aircraft)},\n  title = {ImageWeeds: An Image dataset consisting of weeds in multiple formats to advance computer vision algorithms for real-time weed identification and spot spraying application},\n  publisher = {Mendeley Data},\n  year = {2023}\n}"
   },
   {
     "name": "ImageWeeds_aerial_weed_detection",
@@ -10549,7 +10772,8 @@
       "DJI Phantom 4 Pro (V2.0)"
     ],
     "collection_period": "late May to late June 2021, mid-July to late August of 2021, mid-August to late September 2022",
-    "platform": "uav"
+    "platform": "uav",
+    "bibtex": "@article{rai2023multi,\n  title={Multi-format open-source weed image dataset for real-time weed identification in precision agriculture},\n  author={Rai, Nitin and Mahecha, Maria Villamil and Christensen, Annika and Quanbeck, Jamison and Zhang, Yu and Howatt, Kirk and Ostlie, Michael and Sun, Xin},\n  journal={Data in Brief},\n  volume={51},\n  pages={109691},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "date_fruit_maturity_detection",
@@ -10586,7 +10810,8 @@
       "Canon camera"
     ],
     "collection_period": "June-September 2022",
-    "platform": "handheld"
+    "platform": "handheld",
+    "bibtex": "@article{zarouit2024date,\n  title={Date fruit detection dataset for automatic harvesting},\n  author={Zarouit, Yousra and Zekkouri, Hassan and Ouhda, Mohamed and Aksasse, Brahim},\n  journal={Data in Brief},\n  volume={52},\n  pages={109876},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "ICPTC_pistachio_tree_variety_classification",
@@ -10625,7 +10850,8 @@
     "imaging_equipment": [
       "Samsung SM-J701F"
     ],
-    "collection_period": "April and May"
+    "collection_period": "April and May",
+    "bibtex": "@article{heidary2021icptc,\n  title={ICPTC: Iranian commercial pistachio tree cultivars standard dataset},\n  author={Heidary-Sharifabad, Ahmad and Zarchi, Mohsen Sardari and Zarei, Gholamreza},\n  journal={Data in Brief},\n  volume={38},\n  pages={107348},\n  year={2021},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "citrus_fruit_variety_classification",
@@ -10670,7 +10896,8 @@
     "country": "Taiwan",
     "imaging_equipment": [
       "Sony DSC-HX300"
-    ]
+    ],
+    "bibtex": "@article{huang2023citrus,\n  title={Citrus dataset for image classification},\n  author={Huang, Mei-Ling and Chen, You-An},\n  journal={Data in Brief},\n  volume={51},\n  pages={109628},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Basmati_rice_seed_varitey_classification",
@@ -10712,7 +10939,8 @@
     "country": "India",
     "imaging_equipment": [
       "Micromax Canvas TAB P802"
-    ]
+    ],
+    "bibtex": "@article{sharma2020indian,\n  title={Indian major basmati paddy seed varieties images dataset},\n  author={Sharma, Arun and Satish, Deepshikha and Sharma, Sushmita and Gupta, Dinesh},\n  journal={Data in Brief},\n  volume={33},\n  pages={106460},\n  year={2020},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "crop_pest_disease_classification",
@@ -10769,7 +10997,8 @@
     "zip_size_bytes": 1336382819,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/crop_pest_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/crop_pest_disease_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/crop_pest_disease_classification_sample.webp",
+    "bibtex": "@article{mensah2023ccmt,\n  title={CCMT: Dataset for crop pest and disease detection},\n  author={Mensah, Patrick Kwabena and Akoto-Adjepong, Vivian and Adu, Kwabena and Ayidzoe, Mighty Abra and Bediako, Elvis Asare and Nyarko-Boateng, Owusu and Boateng, Samuel and Donkor, Esther Fobi and Bawah, Faiza Umar and Awarayi, Nicodemus Songose and others},\n  journal={Data in Brief},\n  volume={49},\n  pages={109306},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "FruitNet_quality_classification",
@@ -10816,7 +11045,8 @@
     "zip_size_bytes": 3292469625,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/FruitNet_quality_classification",
-    "examples_image_url": "/img/agml/sample_images/FruitNet_quality_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/FruitNet_quality_classification_sample.webp",
+    "bibtex": "@article{meshram2022fruitnet,\n  title={FruitNet: Indian fruits image dataset with quality for machine learning applications},\n  author={Meshram, Vishal and Patil, Kailas},\n  journal={Data in Brief},\n  volume={40},\n  pages={107686},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grapevine_development_stage_classification",
@@ -10852,7 +11082,8 @@
     "zip_size_bytes": 18186712,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_development_stage_classification",
-    "examples_image_url": "/img/agml/sample_images/grapevine_development_stage_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/grapevine_development_stage_classification_sample.webp",
+    "bibtex": "@article{schieck2023comparison,\n  title={Comparison of deep learning methods for grapevine growth stage recognition},\n  author={Schieck, Martin and Krajsic, Philippe and Loos, Felix and Hussein, Abdulbaree and Franczyk, Bogdan and Kozierkiewicz, Adrianna and Pietranik, Marcin},\n  journal={Computers and Electronics in Agriculture},\n  volume={211},\n  pages={107944},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "grapevine_growth_detection",
@@ -10885,7 +11116,8 @@
     "zip_size_bytes": 120873756,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_growth_detection",
-    "examples_image_url": "/img/agml/sample_images/grapevine_growth_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/grapevine_growth_detection_sample.webp",
+    "bibtex": "@article{schieck2023comparison,\n  title={Comparison of deep learning methods for grapevine growth stage recognition},\n  author={Schieck, Martin and Krajsic, Philippe and Loos, Felix and Hussein, Abdulbaree and Franczyk, Bogdan and Kozierkiewicz, Adrianna and Pietranik, Marcin},\n  journal={Computers and Electronics in Agriculture},\n  volume={211},\n  pages={107944},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "strawberry_growth_detection",
@@ -10922,7 +11154,8 @@
     "zip_size_bytes": 6749132402,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_growth_detection",
-    "examples_image_url": "/img/agml/sample_images/strawberry_growth_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/strawberry_growth_detection_sample.webp",
+    "bibtex": "@article{yang2024predicting,\n  title={Predicting the growth trajectory and yield of greenhouse strawberries based on knowledge-guided computer vision},\n  author={Yang, Qi and Liu, Licheng and Zhou, Junxiong and Rogers, Mary and Jin, Zhenong},\n  journal={Computers and Electronics in Agriculture},\n  volume={220},\n  pages={108911},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "greenhouse_crop_weed_classification",
@@ -10982,7 +11215,8 @@
     "zip_size_bytes": 1421843930,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_crop_weed_classification",
-    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_classification_sample.webp",
+    "bibtex": "@article{sunil2024novel,\n  title={A novel automated cloud-based image datasets for high throughput phenotyping in weed classification},\n  author={Sunil, GC and Koparan, Cengiz and Upadhyay, Arjun and Ahmed, Mohammed Raju and Zhang, Yu and Howatt, Kirk and Sun, Xin},\n  journal={Data in Brief},\n  volume={57},\n  pages={111097},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "greenhouse_crop_weed_detection",
@@ -11041,7 +11275,8 @@
     "zip_size_bytes": 2802663140,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_crop_weed_detection",
-    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/greenhouse_crop_weed_detection_sample.webp",
+    "bibtex": "@article{sunil2024novel,\n  title={A novel automated cloud-based image datasets for high throughput phenotyping in weed classification},\n  author={Sunil, GC and Koparan, Cengiz and Upadhyay, Arjun and Ahmed, Mohammed Raju and Zhang, Yu and Howatt, Kirk and Sun, Xin},\n  journal={Data in Brief},\n  volume={57},\n  pages={111097},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rice_leaf_disease_classification_india",
@@ -11077,7 +11312,8 @@
     "zip_size_bytes": 208012992,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_india",
-    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_india_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_india_sample.webp",
+    "bibtex": "@article{sethy2020deep,\n  title={Deep feature based rice leaf disease identification using support vector machine},\n  author={Sethy, Prabira Kumar and Barpanda, Nalini Kanta and Rath, Amiya Kumar and Behera, Santi Kumari},\n  journal={Computers and Electronics in Agriculture},\n  volume={175},\n  pages={105527},\n  year={2020},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "three_season_weed_detection",
@@ -11132,7 +11368,8 @@
     "zip_size_bytes": 48636045406,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/three_season_weed_detection",
-    "examples_image_url": "/img/agml/sample_images/three_season_weed_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/three_season_weed_detection_sample.webp",
+    "bibtex": "@article{deng2025weed,\n  title={Weed image augmentation by ControlNet-added stable diffusion for multi-class weed detection},\n  author={Deng, Boyang and Lu, Yuzhen},\n  journal={Computers and Electronics in Agriculture},\n  volume={232},\n  pages={110123},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "AgroMind",
@@ -11208,7 +11445,8 @@
         "Maize Tassel Identification",
         "7-Provinces Ground Dataset"
       ]
-    }
+    },
+    "bibtex": "@misc{li2025largemultimodalmodelsunderstand,\n      title={Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind},\n      author={Li, Qingmei and Zhang, Yang and Mai, Zurong and Chen, Yuhang and Lou, Shuohong and Huang, Henglian and Zhang, Jiarui and Zhang, Zhiwei and Wen, Yibin and Li, Weijia and Fu, Haohuan and Huang, Jianxi and Zheng, Juepeng},\n      year={2025},\n      eprint={2505.12207},\n      archivePrefix={arXiv},\n      primaryClass={cs.CV},\n      url={https://arxiv.org/abs/2505.12207}\n}"
   },
   {
     "name": "AgroBench",
@@ -11598,7 +11836,8 @@
     "zip_size_bytes": 514189935,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_nitrogen_deficiency_classification",
-    "examples_image_url": "/img/agml/sample_images/maize_nitrogen_deficiency_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/maize_nitrogen_deficiency_classification_sample.webp",
+    "bibtex": "@article{salai2023nitrogen,\n  title={Nitrogen deficiency in maize: Annotated image classification dataset},\n  author={Salaić, Miroslav and Novoselnik, Filip and Žarko, Ivana Podnar and Galić, Vlatko},\n  journal={Data in Brief},\n  volume={50},\n  pages={109625},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "guava_damage_classification",
@@ -11641,7 +11880,8 @@
     "zip_size_bytes": 11174264286,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/guava_damage_classification",
-    "examples_image_url": "/img/agml/sample_images/guava_damage_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/guava_damage_classification_sample.webp",
+    "bibtex": "@article{pathmanaban2023comprehensive,\n  title={Comprehensive guava fruit data set: Digital and thermal images for analysis and classification},\n  author={Pathmanaban, P. and Gnanavel, B.K. and Anandan, Shanmuga Sundaram},\n  journal={Data in Brief},\n  volume={50},\n  pages={109486},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "banana_disease_classification_tanzania",
@@ -11680,7 +11920,8 @@
     "zip_size_bytes": 4631882825,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_disease_classification_tanzania",
-    "examples_image_url": "/img/agml/sample_images/banana_disease_classification_tanzania_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/banana_disease_classification_tanzania_sample.webp",
+    "bibtex": "@article{mduma2023dataset,\n  title={Dataset of banana leaves and stem images for object detection, classification and segmentation: A case of Tanzania},\n  author={Mduma, Neema and Leo, Judith},\n  journal={Data in Brief},\n  volume={49},\n  pages={109322},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "greenhouse_leafy_segmentation",
@@ -11712,7 +11953,8 @@
     "zip_size_bytes": 86412781,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/greenhouse_leafy_segmentation",
-    "examples_image_url": "/img/agml/sample_images/greenhouse_leafy_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/greenhouse_leafy_segmentation_sample.webp",
+    "bibtex": "@article{cardenasgallegos2025reliable,\n  title={Reliable plant segmentation under variable greenhouse illumination conditions},\n  author={Cardenas-Gallegos, Jonathan S. and Severns, Paul M. and Klimeš, Pavel and N. Lacerda, Lorena and Peduzzi, Alicia and Soranz Ferrarezi, Rhuanito},\n  journal={Computers and Electronics in Agriculture},\n  volume={229},\n  pages={109711},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "litchi_fruit_detection",
@@ -11748,7 +11990,8 @@
     "zip_size_bytes": 1116377210,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/litchi_fruit_detection",
-    "examples_image_url": "/img/agml/sample_images/litchi_fruit_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/litchi_fruit_detection_sample.webp",
+    "bibtex": "@article{peng2026litchi,\n  title={Litchi-SORT: Overcoming occlusion and motion instability for accurate low-altitude UAV-based litchi tracking and counting},\n  author={Peng, Hongxing and Chen, Lide and Xie, Haopei and Liu, Huanai and Li, Ximing},\n  journal={Smart Agricultural Technology},\n  volume={14},\n  pages={102159},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "maize_individual_detection",
@@ -11782,7 +12025,8 @@
     "zip_size_bytes": 1231488169,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_individual_detection",
-    "examples_image_url": "/img/agml/sample_images/maize_individual_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/maize_individual_detection_sample.webp",
+    "bibtex": "@article{sangjan2026matchplant,\n  title={MatchPlant: An Open-Source Pipeline for UAV-Based Single-Plant Detection from Undistorted Images with Orthomosaic Projection},\n  author={Sangjan, Worasit and Pandey, Piyush and Best, Norman B. and Washburn, Jacob D.},\n  journal={Smart Agricultural Technology},\n  volume={15},\n  pages={102421},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "strawberry_runner_segmentation",
@@ -11818,7 +12062,8 @@
     "zip_size_bytes": 249510494,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_runner_segmentation",
-    "examples_image_url": "/img/agml/sample_images/strawberry_runner_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/strawberry_runner_segmentation_sample.webp",
+    "bibtex": "@article{zhou2025deep,\n  title={Deep learning for strawberry runner detection integrating ground and aerial imaging},\n  author={Zhou, Xue and Wang, Xu and Ji, Liyike and Daggubati, Santhi and Shen, Kai and Whitaker, Vance M.},\n  journal={Smart Agricultural Technology},\n  volume={12},\n  pages={101290},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "papaya_leaf_disease_classification_bd",
@@ -11863,7 +12108,8 @@
     "zip_size_bytes": 13399856515,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/papaya_leaf_disease_classification_bd",
-    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_classification_bd_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/papaya_leaf_disease_classification_bd_sample.webp",
+    "bibtex": "@article{dey2026swinghost,\n  title={SwinGhost-ClustNet: An explainable deep ensemble model for papaya leaf disease detection and field deployment in Bangladeshi agriculture},\n  author={Dey, Shourav and Hasan, Mohammad Kamrul and Adhikary, Apurba and Akter, Sanjida and Ejaz, Md Sabbir},\n  journal={Smart Agricultural Technology},\n  volume={13},\n  pages={101824},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "plum_leaf_disease_classification",
@@ -11900,7 +12146,8 @@
     "zip_size_bytes": 15064133751,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/plum_leaf_disease_classification",
-    "examples_image_url": "/img/agml/sample_images/plum_leaf_disease_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/plum_leaf_disease_classification_sample.webp",
+    "bibtex": "@article{bhowmik2024customised,\n  title={A customised vision transformer for accurate detection and classification of Java Plum leaf disease},\n  author={Bhowmik, Auvick Chandra and Ahad, Md. Taimur and Emon, Yousuf Rayhan and Ahmed, Faruk and Song, Bo and Li, Yan},\n  journal={Smart Agricultural Technology},\n  volume={8},\n  pages={100500},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "blueberry_maturity_detection",
@@ -11939,7 +12186,8 @@
     "zip_size_bytes": 112412658,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/blueberry_maturity_detection",
-    "examples_image_url": "/img/agml/sample_images/blueberry_maturity_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/blueberry_maturity_detection_sample.webp",
+    "bibtex": "@article{deng2024detection,\n  title={Detection, counting, and maturity assessment of blueberries in canopy images using YOLOv8 and YOLOv9},\n  author={Deng, Boyang and Lu, Yuzhen and Li, Zhaojian},\n  journal={Smart Agricultural Technology},\n  volume={9},\n  pages={100620},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "coffee_rust_multispec_classification",
@@ -11978,7 +12226,8 @@
     "zip_size_bytes": 336085903,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/coffee_rust_multispec_classification",
-    "examples_image_url": "/img/agml/sample_images/coffee_rust_multispec_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/coffee_rust_multispec_classification_sample.webp",
+    "bibtex": "@article{arocatrujillo2025colombian,\n  title={Colombian coffee tree leaves multispectral images dataset},\n  author={Aroca-Trujillo, Jorge Luis and Perez-Ruiz, Alexander},\n  journal={Data in Brief},\n  volume={59},\n  pages={111421},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cocoa_agroforestry_multispectral",
@@ -12012,7 +12261,8 @@
     "zip_size_bytes": 27678268359,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_agroforestry_multispectral",
-    "examples_image_url": "/img/agml/sample_images/cocoa_agroforestry_multispectral_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/cocoa_agroforestry_multispectral_sample.webp",
+    "bibtex": "@article{lammoglia2024high,\n  title={High-resolution multispectral and RGB dataset from UAV surveys of ten cocoa agroforestry typologies in Côte d'Ivoire},\n  author={Lammoglia, Sabine-Karen and Akpa, You Lucette and Danumah, Jean Homian and Brou, Yves Laurent Assoua and Kassi, Justin N'Dja},\n  journal={Data in Brief},\n  volume={55},\n  pages={110664},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tropical_dry_forest_multispectral",
@@ -12044,7 +12294,8 @@
     "zip_size_bytes": 4258868520,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_dry_forest_multispectral",
-    "examples_image_url": "/img/agml/sample_images/tropical_dry_forest_multispectral_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/tropical_dry_forest_multispectral_sample.webp",
+    "bibtex": "@article{vegapuga2024high,\n  title={High resolution image dataset by RGB and multispectral cameras on an unmanned aerial vehicle over a secondary tropical dry forest},\n  author={Vega-Puga, Masuly and Garatuza-Payán, Jaime and Rivera-Diaz, Miguel A. and Galaz, Onésimo and Alvarez-Yépiz, Juan C. and Yepéz, Enrico A.},\n  journal={Data in Brief},\n  volume={52},\n  pages={109869},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "GobhiSet_cauliflower_segmentation",
@@ -12078,7 +12329,8 @@
     "zip_size_bytes": 266860668,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/GobhiSet_cauliflower_segmentation",
-    "examples_image_url": "/img/agml/sample_images/GobhiSet_cauliflower_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/GobhiSet_cauliflower_segmentation_sample.webp",
+    "bibtex": "@article{rana2024gobhiset,\n  title={GobhiSet: Dataset of raw, manually, and automatically annotated RGB images across phenology of Brassica oleracea var. Botrytis},\n  author={Rana, Shubham and Crimaldi, Mariano and Barretta, Domenico and Carillo, Petronia and Cirillo, Valerio and Maggio, Albino and Sarghini, Fabrizio and Gerbino, Salvatore},\n  journal={Data in Brief},\n  volume={54},\n  pages={110506},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "weedy_rice_segmentation",
@@ -12114,7 +12366,8 @@
     "zip_size_bytes": 3946789128,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/weedy_rice_segmentation",
-    "examples_image_url": "/img/agml/sample_images/weedy_rice_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/weedy_rice_segmentation_sample.webp",
+    "bibtex": "@article{nguyen2025dataset,\n  title={A dataset of aligned RGB and multispectral UAV imagery for semantic segmentation of weedy rice},\n  author={Nguyen, Van-Hoa and Le, Cong-Doan and Truong, Minh-Tuyen and Bui, Mai-Phung Thi and Le, Thanh-Phong},\n  journal={Data in Brief},\n  volume={63},\n  pages={112237},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "cocoa_monilia_detection",
@@ -12159,7 +12412,8 @@
     "zip_size_bytes": 2667926676,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_monilia_detection",
-    "examples_image_url": "/img/agml/sample_images/cocoa_monilia_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/cocoa_monilia_detection_sample.webp",
+    "bibtex": "@article{alvarado2026cocoamoniliadataset,\n  title={CocoaMoniliaDataSet: A cocoa pod dataset to detect and classify Monilia roreri in real conditions},\n  author={Alvarado, Joan and Restrepo-Arias, Juan Felipe and Velásquez, David and Branch-Bedoya, John W. and Maiza, Mikel},\n  journal={Data in Brief},\n  volume={64},\n  pages={112447},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "arecanut_xray_grade_detection",
@@ -12197,7 +12451,8 @@
     "zip_size_bytes": 21484506,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/arecanut_xray_grade_detection",
-    "examples_image_url": "/img/agml/sample_images/arecanut_xray_grade_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/arecanut_xray_grade_detection_sample.webp",
+    "bibtex": "@article{naik2025x,\n  title={X-ArecaNet: Dataset of arecanut X-ray images for deep learning applications},\n  author={Naik, Praveen M. and Rudra, Bhawana},\n  journal={Data in Brief},\n  volume={61},\n  pages={111721},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "gran_canaria_vegetation_segmentation",
@@ -12227,7 +12482,8 @@
     "zip_size_bytes": 1663136992,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/gran_canaria_vegetation_segmentation",
-    "examples_image_url": "/img/agml/sample_images/gran_canaria_vegetation_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/gran_canaria_vegetation_segmentation_sample.webp",
+    "bibtex": "@article{salascceres2025gran,\n  title={Gran canaria vegetation segmentation dataset from multi-year aerial imagery for environmental monitoring and conservation},\n  author={Salas-Cáceres, José and Balia, Riccardo and Salas-Pascual, Marcos and Lorenzo-Navarro, Javier and Castrillón-Santana, Modesto},\n  journal={Data in Brief},\n  volume={59},\n  pages={111419},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Wheat_Coccinellid_detection",
@@ -12267,7 +12523,8 @@
     "zip_size_bytes": 171037916,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Wheat_Coccinellid_detection",
-    "examples_image_url": "/img/agml/sample_images/Wheat_Coccinellid_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/Wheat_Coccinellid_detection_sample.webp",
+    "bibtex": "@article{grijalva2024comprehensive,\n  title={Comprehensive wheat coccinellid detection dataset: Essential resource for digital entomology},\n  author={Grijalva, Ivan and Clark, Nicholas and Hamilton, Emma and Orpin, Carson and Perez, Carmen and Schaefer, James and Vogts, Kaylynn and McCornack, Brian},\n  journal={Data in Brief},\n  volume={55},\n  pages={110585},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Cassava_whitefly_detection",
@@ -12303,7 +12560,8 @@
     "zip_size_bytes": 4117790959,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Cassava_whitefly_detection",
-    "examples_image_url": "/img/agml/sample_images/Cassava_whitefly_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/Cassava_whitefly_detection_sample.webp",
+    "bibtex": "@article{nakatumbanabende2022dataset,\n  title={A dataset of cassava whitefly count images},\n  author={Nakatumba-Nabende, Joyce and Tusubira, Jeremy Francis and Babirye, Claire and Nsumba, Solomon and Abu, Christopher Omongo},\n  journal={Data in Brief},\n  volume={41},\n  pages={107911},\n  year={2022},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "sentinel_SAR_NDVI",
@@ -12332,7 +12590,8 @@
     "zip_size_bytes": 4543771770,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/sentinel_SAR_NDVI",
-    "examples_image_url": "/img/agml/sample_images/sentinel_SAR_NDVI_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/sentinel_SAR_NDVI_sample.webp",
+    "bibtex": "@article{cardonamesa2024dataset,\n  title={Dataset of Sentinel-1 SAR and Sentinel-2 RGB-NDVI imagery},\n  author={Cardona-Mesa, Ahmed Alejandro and Vásquez-Salazar, Rubén Darío and Gómez, Luis and Travieso-González, Carlos M. and Garavito-González, Andrés F. and Vásquez-Cano, Esteban and Díaz-Paz, Jean Pierre},\n  journal={Data in Brief},\n  volume={57},\n  pages={111160},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "PaddyNet_LCC_classification",
@@ -12370,7 +12629,8 @@
     "zip_size_bytes": 75760718,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PaddyNet_LCC_classification",
-    "examples_image_url": "/img/agml/sample_images/PaddyNet_LCC_classification_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/PaddyNet_LCC_classification_sample.webp",
+    "bibtex": "@article{siddique2023paddynet,\n  title={Paddynet: An organized dataset of paddy leaves for a smart fertilizer recommendation system},\n  author={Siddique, Md. Moradul and Islam, Torikul and Tusher, Yeasir Arefin and Ema, Romana Rahman and Adnan, Md. Nasim and Galib, Syed Md.},\n  journal={Data in Brief},\n  volume={50},\n  pages={109516},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pheno4d_point_cloud_segmentation",
@@ -12400,7 +12660,8 @@
     "parent_dataset": null,
     "zip_size_bytes": 5293657341,
     "stats_mean": null,
-    "stats_std": null
+    "stats_std": null,
+    "bibtex": "@article{schunck2021pheno4d,\n  title={Pheno4D: A spatio-temporal dataset of maize and tomato plant point clouds for phenotyping and advanced plant analysis},\n  author={Schunck, David and Magistri, Federico and Rosu, Radu Alexandru and Corneli{\\ss}en, Anne and Chebrolu, Nived and Paulus, Stefan and L{\\'e}on, Jens and Behnke, Sven and Stachniss, Cyrill and Kuhlmann, Heiner and Klingbeil, Lasse},\n  journal={PLOS ONE},\n  volume={16},\n  number={8},\n  pages={1--18},\n  year={2021},\n  publisher={Public Library of Science},\n  doi={10.1371/journal.pone.0256340}\n}"
   },
   {
     "name": "Sen2_LULC",
@@ -12430,7 +12691,8 @@
     "zip_size_bytes": 3099453834,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Sen2_LULC",
-    "examples_image_url": "/img/agml/sample_images/Sen2_LULC_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/Sen2_LULC_sample.webp",
+    "bibtex": "@article{sawant2023sen,\n  title={Sen-2 LULC: Land use land cover dataset for deep learning approaches},\n  author={Sawant, Suraj and Garg, Rahul Dev and Meshram, Vishal and Mistry, Shrayank},\n  journal={Data in Brief},\n  volume={51},\n  pages={109724},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "pine_wilt_segmentation",
@@ -12462,7 +12724,8 @@
     "zip_size_bytes": 1907862607,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/pine_wilt_segmentation",
-    "examples_image_url": "/img/agml/sample_images/pine_wilt_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/pine_wilt_segmentation_sample.webp",
+    "bibtex": "@article{ha2025enhanced,\n  title={Enhanced pine wilt disease outbreak prediction: Integrating deep learning- detected infected trees with species distribution modeling},\n  author={Ha, Uirin and Kim, Hyungho and Kim, Seunguk and Choe, Hyeyeong},\n  journal={Ecological Informatics},\n  volume={91},\n  pages={103421},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "tree_crown_segmentation",
@@ -12494,7 +12757,8 @@
     "zip_size_bytes": 352006130,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tree_crown_segmentation",
-    "examples_image_url": "/img/agml/sample_images/tree_crown_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/tree_crown_segmentation_sample.webp",
+    "bibtex": "@article{peng2026uav,\n  title={UAV-based two-stage deep learning for tree crown segmentation and height estimation in Camellia oleifera plantations},\n  author={Peng, Yongkang and Yan, Enping and Xu, Xiaocheng and Mo, Dengkui and Wei, Wei},\n  journal={Ecological Informatics},\n  volume={96},\n  pages={103868},\n  year={2026},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "subalpine_forest_segmentation",
@@ -12524,7 +12788,8 @@
     "zip_size_bytes": 3046798213,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/subalpine_forest_segmentation",
-    "examples_image_url": "/img/agml/sample_images/subalpine_forest_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/subalpine_forest_segmentation_sample.webp",
+    "bibtex": "@article{shi2025evaluation,\n  title={Evaluation of a CNN model to map vegetation classification in a subalpine coniferous forest using UAV imagery},\n  author={Shi, Weibo and Liao, Xiaohan and Wang, Shaoqiang and Ye, Huping and Wang, Dongliang and Yue, Huanyin and Liu, Jianli},\n  journal={Ecological Informatics},\n  volume={87},\n  pages={103111},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "Alphonso_Mango_phenotyping",
@@ -12558,7 +12823,8 @@
     "zip_size_bytes": 32519190,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Alphonso_Mango_phenotyping",
-    "examples_image_url": "/img/agml/sample_images/Alphonso_Mango_phenotyping_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/Alphonso_Mango_phenotyping_sample.webp",
+    "bibtex": "@article{prabhu2023amdpwe,\n  title={AMDPWE: Alphonso Mango Dataset for Precision Weight Estimation},\n  author={Prabhu, Akshatha and Rani, N. Shobha},\n  journal={Data in Brief},\n  volume={51},\n  pages={109778},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "rural_LUCC_segmentation",
@@ -12586,13 +12852,16 @@
     "zip_size_bytes": 18017979,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rural_LUCC_segmentation",
-    "examples_image_url": "/img/agml/sample_images/rural_LUCC_segmentation_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/rural_LUCC_segmentation_sample.webp",
+    "bibtex": "@article{zhao2025land,\n  title={Land-Unet: A deep learning network for precise segmentation and identification of non-structured land use types in rural areas for green urban space analysis},\n  author={Zhao, Yan and Xie, Junru and Zhu, Huiru and Luo, Taige and Xiong, Yao and Fan, Chenyang and Xia, Haoxiang and Chen, Yuheng and Zhang, Fuquan},\n  journal={Ecological Informatics},\n  volume={87},\n  pages={103078},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
     "name": "horseradish_weed_detection",
     "machine_learning_task": "object_detection",
     "agricultural_task": "weed_detection",
-    "location": ["Illinois, United States of America"],
+    "location": [
+      "Illinois, United States of America"
+    ],
     "lat_lon": [],
     "country": "United States of America",
     "environment": "field",
@@ -12620,6 +12889,7 @@
     "zip_size_bytes": 506390258,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/horseradish_weed_detection",
-    "examples_image_url": "/img/agml/sample_images/horseradish_weed_detection_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/horseradish_weed_detection_sample.webp",
+    "bibtex": "@article{pagadala2026evaluation,\n  title={Evaluation of YOLO-based weed detection models on commercial horseradish fields in Southern Illinois},\n  author={Pagadala, Abhinav and Poudel, Sandesh and Rathi, Janmejay Umakanth and Sunoj, S and Reid, John F},\n  journal={Frontiers in Agronomy},\n  volume={8},\n  pages={1777087},\n  year={2026},\n  publisher={Frontiers Media SA}\n}"
   }
 ]

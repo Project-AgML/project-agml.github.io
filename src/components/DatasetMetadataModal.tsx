@@ -113,6 +113,12 @@ function formatLoaderInstructions(dataset: Dataset) {
 				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
 			};
 		}
+		if (dataset.sensor_modality?.toLowerCase().includes('multispectral')) {
+			return {
+				title: 'Load from Hugging Face',
+				code: `from agml.data.multispectral_hf_loader import MultispectralDataLoader\nloader = MultispectralDataLoader("Project-AgML/${dataset.name}")`,
+			};
+		}
 		return {
 			title: 'Load from Hugging Face',
 			code: `from agml.data.hf_loader import HuggingFaceDataLoader\nloader = HuggingFaceDataLoader("Project-AgML/${dataset.name}")`,
@@ -1166,6 +1172,7 @@ export function DatasetMetadataModal({
 	const [classesExpanded, setClassesExpanded] = useState(false);
 	const [copied, setCopied] = useState(false);
 	const [citationCopied, setCitationCopied] = useState(false);
+	const [bibtexCopied, setBibtexCopied] = useState(false);
 
 	const [expandedRowKeys, setExpandedRowKeys] = useState<Set<string>>(new Set());
 	const toggleExpandedRow = (key: string) => {
@@ -1595,23 +1602,47 @@ export function DatasetMetadataModal({
 					)}
 				</section>
 
-				{dataset.citation && (
+				{(dataset.citation || dataset.bibtex) && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Citation</h3>
-						<div className={styles.snippetRow}>
-							<pre className={styles.citationCode}>{dataset.citation}</pre>
-							<button
-								type="button"
-								className={styles.snippetCopyButton}
-								onClick={() => {
-									navigator.clipboard.writeText(dataset.citation ?? '');
-									setCitationCopied(true);
-									setTimeout(() => setCitationCopied(false), 1500);
-								}}
-							>
-								{citationCopied ? 'Copied!' : 'Copy'}
-							</button>
-						</div>
+						{dataset.citation && (
+							<>
+								{dataset.bibtex && <p className={styles.snippetLabel}>Citation</p>}
+								<div className={styles.snippetRow}>
+									<pre className={styles.citationCode}>{dataset.citation}</pre>
+									<button
+										type="button"
+										className={styles.snippetCopyButton}
+										onClick={() => {
+											navigator.clipboard.writeText(dataset.citation ?? '');
+											setCitationCopied(true);
+											setTimeout(() => setCitationCopied(false), 1500);
+										}}
+									>
+										{citationCopied ? 'Copied!' : 'Copy'}
+									</button>
+								</div>
+							</>
+						)}
+						{dataset.bibtex && (
+							<>
+								{dataset.citation && <p className={styles.snippetLabel}>BibTeX</p>}
+								<div className={styles.snippetRow}>
+									<pre className={styles.citationCode}>{dataset.bibtex}</pre>
+									<button
+										type="button"
+										className={styles.snippetCopyButton}
+										onClick={() => {
+											navigator.clipboard.writeText(dataset.bibtex ?? '');
+											setBibtexCopied(true);
+											setTimeout(() => setBibtexCopied(false), 1500);
+										}}
+									>
+										{bibtexCopied ? 'Copied!' : 'Copy'}
+									</button>
+								</div>
+							</>
+						)}
 					</section>
 				)}
 				</div>

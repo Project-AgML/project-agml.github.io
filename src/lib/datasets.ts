@@ -19,6 +19,10 @@ export interface Dataset {
     augmented_counterpart: string | null;
     crop_types: string[] | null;
     sensor_modality: string | null;
+    // Derived: `sensor_modality` split into individual lowercase values (it's stored as a single
+    // comma-joined string, e.g. "rgb, thermal") so the search page can filter by modality even
+    // when a dataset has more than one.
+    display_modality: string[] | null;
     real_or_synthetic: string | null;
     platform: string[] | null;
     input_data_format: string | null;
@@ -34,6 +38,10 @@ export interface Dataset {
     point_cloud_sample_url: string | null;
     license: string | null;
     citation: string | null;
+    // BibTeX entry for the article the dataset was sourced from, scraped from the dataset's
+    // Hugging Face README (or resolved from a DOI found there) — distinct from `citation`,
+    // which is free-form and not always valid BibTeX.
+    bibtex: string | null;
     parent_dataset?: string | null;
     // Derived (not present in the source manifests): for a dataset whose child variants are
     // hidden from search results (see isChildDataset/includeChildren), the crop/species names
@@ -158,6 +166,10 @@ function normalizeDataset(raw: unknown): Dataset | null {
         raw.ml_task,
         raw.task,
     );
+    const sensorModality =
+        firstString(raw.sensor_modality, raw.sensor, raw.modality) ??
+        toStringArray(raw.sensor_modality)?.join(", ") ??
+        null;
     const qaType = toStringArray(raw.qa_type);
     const taskDimensions = toStringArray(raw.task_dimensions);
     const isVlm =
@@ -188,10 +200,17 @@ function normalizeDataset(raw: unknown): Dataset | null {
                 ?.map((c) => c.trim().toLowerCase())
                 .filter((c) => c && !/^\+.*\b(more|others?)\b/i.test(c)) ??
             null,
-        sensor_modality:
-            firstString(raw.sensor_modality, raw.sensor, raw.modality) ??
-            toStringArray(raw.sensor_modality)?.join(", ") ??
-            null,
+        sensor_modality: sensorModality,
+        display_modality: sensorModality
+            ? Array.from(
+                  new Set(
+                      sensorModality
+                          .split(",")
+                          .map((entry) => entry.trim().toLowerCase())
+                          .filter(Boolean),
+                  ),
+              )
+            : null,
         real_or_synthetic: firstString(
             raw.real_or_synthetic,
             raw.real_synthetic,
@@ -225,6 +244,7 @@ function normalizeDataset(raw: unknown): Dataset | null {
         ),
         license: firstString(raw.license),
         citation: firstString(raw.citation),
+        bibtex: firstString(raw.bibtex),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
         child_crop_types: null,
         zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
@@ -261,6 +281,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
             current.augmented_counterpart ?? incoming.augmented_counterpart,
         crop_types: current.crop_types ?? incoming.crop_types,
         sensor_modality: current.sensor_modality ?? incoming.sensor_modality,
+        display_modality: current.display_modality ?? incoming.display_modality,
         real_or_synthetic:
             current.real_or_synthetic ?? incoming.real_or_synthetic,
         platform:
@@ -292,6 +313,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
             current.point_cloud_sample_url ?? incoming.point_cloud_sample_url,
         license: current.license ?? incoming.license,
         citation: current.citation ?? incoming.citation,
+        bibtex: current.bibtex ?? incoming.bibtex,
         parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
         child_crop_types: current.child_crop_types ?? incoming.child_crop_types,
         zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
