@@ -324,6 +324,18 @@
 	background: var(--agml-surface-soft);
 }
 
+.snippetLabel {
+	font-family: var(--ifm-code-font-family);
+	font-size: 0.68rem;
+	font-weight: 600;
+	color: var(--agml-muted);
+	margin: 0.9rem 0 0;
+}
+
+.snippetLabel:first-of-type {
+	margin-top: 0;
+}
+
 .snippetRow {
 	display: flex;
 	align-items: flex-start;

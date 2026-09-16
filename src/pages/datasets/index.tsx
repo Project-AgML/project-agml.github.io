@@ -67,6 +67,14 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     formatOption: (value) => toDisplayLabel(value),
   },
   {
+    key: 'modality',
+    label: 'Modality',
+    field: 'display_modality',
+    kind: 'dropdown',
+    mode: 'containsAny',
+    formatOption: (value) => toDisplayLabel(value),
+  },
+  {
     key: 'environment',
     label: 'Environment',
     field: 'environment',
