@@ -12891,5 +12891,263 @@
     "hf_link": "https://huggingface.co/datasets/Project-AgML/horseradish_weed_detection",
     "examples_image_url": "/img/agml/sample_images/horseradish_weed_detection_sample.webp",
     "bibtex": "@article{pagadala2026evaluation,\n  title={Evaluation of YOLO-based weed detection models on commercial horseradish fields in Southern Illinois},\n  author={Pagadala, Abhinav and Poudel, Sandesh and Rathi, Janmejay Umakanth and Sunoj, S and Reid, John F},\n  journal={Frontiers in Agronomy},\n  volume={8},\n  pages={1777087},\n  year={2026},\n  publisher={Frontiers Media SA}\n}"
+  },
+  {
+    "name": "SDAU_wheat_head_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Science and Technology Innovation Park, Shandong, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "lab",
+    "real_or_synthetic": "synthetic",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "EOS 70D, Canon, handheld"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3030,
+    "classes": [
+      "0"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2024.109633",
+    "citation": "",
+    "zip_size_bytes": 1787191795,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/SDAU_wheat_head_detection",
+    "examples_image_url": "/img/agml/sample_images/SDAU_wheat_head_detection_sample.webp"
+  },
+  {
+    "name": "strawberry_avocado_ripeness_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "Mahabaleshwar, Maharashtra, India",
+      "Pune, Maharashtra, India"
+    ],
+    "lat_lon": [],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "strawberry",
+      "avocado"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "dual 12 MP camera, f/1.6, 26 mm (wide), 1.4 µm pixel size"
+    ],
+    "collection_period": "25 days",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 758,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111663",
+    "citation": "",
+    "zip_size_bytes": 897725384,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_avocado_ripeness_detection",
+    "examples_image_url": "/img/agml/sample_images/strawberry_avocado_ripeness_detection_sample.webp"
+  },
+  {
+    "name": "tomato_leaf_disease_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Dinajpur, Bangladesh",
+      "Thakurgaon, Bangladesh",
+      "Kushtia, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS M50"
+    ],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 689,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111520",
+    "citation": "",
+    "zip_size_bytes": 23983248,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_leaf_disease_detection",
+    "examples_image_url": "/img/agml/sample_images/tomato_leaf_disease_detection_sample.webp"
+  },
+  {
+    "name": "spittlebug_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Valenzano, Bari, Italy"
+    ],
+    "lat_lon": [
+      "41.028, 16.905"
+    ],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Intel RealSense D435 (1280x720, handheld)",
+      "iPhone 11 (3024x4032, handheld)",
+      "Canon EOS1100D (4272x2848, handheld)"
+    ],
+    "collection_period": "April 2024, April 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 347,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2026.112477",
+    "citation": "",
+    "zip_size_bytes": 787417583,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/spittlebug_segmentation",
+    "examples_image_url": "/img/agml/sample_images/spittlebug_segmentation_sample.webp"
+  },
+  {
+    "name": "Luffa_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Binokdia, Faridpur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "luffa"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "VIVO V25 5G smartphone (64 MP, 8 MP, 2 MP triple camera, handheld)"
+    ],
+    "collection_period": "2nd to 23rd October 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1227,
+    "classes": [
+      "Alternaria",
+      "Angular Spot",
+      "Fresh",
+      "Holed",
+      "Mosaic Virus"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110149",
+    "citation": "",
+    "zip_size_bytes": 990933241,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Luffa_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/Luffa_disease_classification_sample.webp"
+  },
+  {
+    "name": "Luffa_quality_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Binokdia, Faridpur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "luffa"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "VIVO V25 5G smartphone (64 MP, 8 MP, 2 MP triple camera, handheld)"
+    ],
+    "collection_period": "2nd to 23rd October 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 343,
+    "classes": [
+      "Faulty",
+      "Fresh"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110149",
+    "citation": "",
+    "zip_size_bytes": 359698062,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Luffa_quality_classification",
+    "examples_image_url": "/img/agml/sample_images/Luffa_quality_classification_sample.webp"
+  },
+  {
+    "name": "Luffa_flowers",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Binokdia, Faridpur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "luffa"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "VIVO V25 5G smartphone (64 MP, 8 MP, 2 MP triple camera, handheld)"
+    ],
+    "collection_period": "2nd to 23rd October 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 362,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110149",
+    "citation": "",
+    "zip_size_bytes": 213203225,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Luffa_flowers",
+    "examples_image_url": "/img/agml/sample_images/Luffa_flowers_sample.webp"
   }
 ]
