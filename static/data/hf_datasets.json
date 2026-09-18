@@ -13182,7 +13182,7 @@
     "zip_size_bytes": 2135721247,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_mosaic_classification_multispectral",
-    "examples_image_url": "/img/agml/sample_images/wheat_mosaic_classification_multispectral_sample.png"
+    "examples_image_url": "/img/agml/sample_images/wheat_mosaic_classification_multispectral_sample.webp"
   },
   {
     "name": "OpenEar_developmental_status_classification",
@@ -13220,7 +13220,7 @@
     "zip_size_bytes": 642727444,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_developmental_status_classification",
-    "examples_image_url": "/img/agml/sample_images/OpenEar_developmental_status_classification_sample.png"
+    "examples_image_url": "/img/agml/sample_images/OpenEar_developmental_status_classification_sample.webp"
   },
   {
     "name": "chili_leaf_curl_detection",
@@ -13259,7 +13259,7 @@
     "zip_size_bytes": 92376230,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/chili_leaf_curl_detection",
-    "examples_image_url": "/img/agml/sample_images/chili_leaf_curl_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/chili_leaf_curl_detection_sample.webp"
   },
   {
     "name": "spring_wheat_stomata_imprint",
@@ -13294,7 +13294,7 @@
     "zip_size_bytes": 1259046821,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/spring_wheat_stomata_imprint",
-    "examples_image_url": "/img/agml/sample_images/spring_wheat_stomata_imprint_sample.png"
+    "examples_image_url": "/img/agml/sample_images/spring_wheat_stomata_imprint_sample.webp"
   },
   {
     "name": "fava_bean_stomata_imprint",
@@ -13329,7 +13329,7 @@
     "zip_size_bytes": 2508114970,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/fava_bean_stomata_imprint",
-    "examples_image_url": "/img/agml/sample_images/fava_bean_stomata_imprint_sample.png"
+    "examples_image_url": "/img/agml/sample_images/fava_bean_stomata_imprint_sample.webp"
   },
   {
     "name": "OpenEar_base_segmentation",
@@ -13366,7 +13366,7 @@
     "zip_size_bytes": 91438823,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_base_segmentation",
-    "examples_image_url": "/img/agml/sample_images/OpenEar_base_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/OpenEar_base_segmentation_sample.webp"
   },
   {
     "name": "OpenEar_Projection_segmentation",
@@ -13401,7 +13401,7 @@
     "zip_size_bytes": 114667570,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_Projection_segmentation",
-    "examples_image_url": "/img/agml/sample_images/OpenEar_Projection_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/OpenEar_Projection_segmentation_sample.webp"
   },
   {
     "name": "barley_disease_segmentation",
@@ -13434,7 +13434,7 @@
     "zip_size_bytes": 4999423420,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/barley_disease_segmentation",
-    "examples_image_url": "/img/agml/sample_images/barley_disease_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/barley_disease_segmentation_sample.webp"
   },
   {
     "name": "grapevine_organ_segmentation",
@@ -13472,20 +13472,26 @@
     "zip_size_bytes": 642867213,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_organ_segmentation",
-    "examples_image_url": "/img/agml/sample_images/grapevine_organ_segmentation_sample.png"
+    "examples_image_url": "/img/agml/sample_images/grapevine_organ_segmentation_sample.webp"
   },
   {
     "name": "USU-Corn-WeedDB_detection",
     "machine_learning_task": "object_detection",
     "agricultural_task": "weed_detection",
-    "location": ["Cache Valley, Utah, United States of America"],
+    "location": [
+      "Cache Valley, Utah, United States of America"
+    ],
     "lat_lon": [],
     "country": "United States of America",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": ["Corn"],
+    "crop_types": [
+      "Corn"
+    ],
     "sensor_modality": "rgb",
-    "imaging_equipment": ["Autel EVO II Dual 640T V2"],
+    "imaging_equipment": [
+      "Autel EVO II Dual 640T V2"
+    ],
     "collection_period": "June 27 2025",
     "platform": "uav",
     "input_data_format": "parquet",
@@ -13497,12 +13503,12 @@
       "GFT"
     ],
     "license": "cc-by-4.0",
-    "documentation": "",
+    "documentation": "https://doi.org/10.48550/arXiv.2606.06709",
     "citation": "Bhandari, U., & Etienne, A. (2026). USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20044178",
     "bibtex": "@article{bhandari2026usu, \n title={USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn}, \n author={Bhandari, Utsav and Burlakoti, Saroj and Miller, Rhonda and Young, Sierra and Westra, Eric and Etienne, Aaron}, \n journal={arXiv preprint arXiv:2606.06709}, \nyear={2026}}",
     "zip_size_bytes": 223428563,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/USU-Corn-WeedDB_detection",
-    "examples_image_url": "/img/agml/sample_images/USU-Corn-WeedDB_detection_sample.png"
+    "examples_image_url": "/img/agml/sample_images/USU-Corn-WeedDB_detection_sample.webp"
   }
 ]
