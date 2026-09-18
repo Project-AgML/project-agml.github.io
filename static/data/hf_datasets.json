@@ -13149,5 +13149,360 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Luffa_flowers",
     "examples_image_url": "/img/agml/sample_images/Luffa_flowers_sample.webp"
+  },
+  {
+    "name": "wheat_mosaic_classification_multispectral",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "South Africa",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Canon EOS 800D (specially adapted DSLR)"
+    ],
+    "collection_period": "22-25 August and 2-6 October 2023",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 424,
+    "classes": [
+      "diseased",
+      "early"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103088",
+    "citation": "De Silva, Malithi (2025), “Wheat_dataset”, Mendeley Data, V1, doi: 10.17632/kgmcb5w5tk.1",
+    "bibtex": "@article{desilva2025early,\n  title={Early detection of Wheat Stripe Mosaic Virus using multispectral imaging with deep-learning},\n  author={De Silva, Malithi and Brown, Dane},\n  journal={Ecological Informatics},\n  volume={87},\n  pages={103088},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 2135721247,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_mosaic_classification_multispectral",
+    "examples_image_url": "/img/agml/sample_images/wheat_mosaic_classification_multispectral_sample.png"
+  },
+  {
+    "name": "OpenEar_developmental_status_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Hongqi Base, Hainan, China"
+    ],
+    "lat_lon": [
+      "18.360, 109.214"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Raspberry Pi HQ camera (Sony IMX477R sensor, 6 mm focal length, 63° field of view)"
+    ],
+    "collection_period": "March 2025-January 2026",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 6435,
+    "classes": [
+      "Abnormal_Developement",
+      "Normal_Developement"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-026-01504-x",
+    "citation": "Fan, S. (2025). <i>Datasets for OpenEar model training</i> (Version 2). figshare. https://doi.org/10.6084/m9.figshare.26282563.v2",
+    "bibtex": "@article{fan2026openear,\n  title={OpenEar: an ultra-affordable, high-throughput, and accurate maize ear phenotyping system},\n  author={Fan, Shaoqi and Li, Guoji and Bahitwa, Revocatus and Jia, Zhiguo and Zhang, Hongwei and Shao, Jinghong and Yu, Qiuying and Chen, Xiaoran and Qian, Yiheng and Xu, Mingchi and Zhu, Linlin and Wang, Hai},\n  journal={Plant Methods},\n  volume={22},\n  pages={26},\n  year={2026},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 642727444,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_developmental_status_classification",
+    "examples_image_url": "/img/agml/sample_images/OpenEar_developmental_status_classification_sample.png"
+  },
+  {
+    "name": "chili_leaf_curl_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "IARI, New Delhi, India"
+    ],
+    "lat_lon": [
+      "28.6417, 77.1708"
+    ],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "chili"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Motorola edge 40 neo smartphone (50 MP, 2160p, f/1.8)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1419,
+    "classes": [
+      "Healthy",
+      "Mites",
+      "Virus"
+    ],
+    "license": "Apache-2.0",
+    "documentation": "https://doi.org/10.1186/s13007-025-01453-x",
+    "citation": "https://github.com/SamratPaul16/YOLO_DyE",
+    "bibtex": "@article{paul2025sca,\n  title={SCA-MobiPlant: smartphone-deployed multistage attention fusion model for accurate field detection of chili leaf curl complex},\n  author={Paul, Samrat and Emmadi, Venu and Sarkar, Mehulee and Das, Shubhajyoti and Roy, Anirban and Sinha, Parimal},\n  journal={Plant Methods},\n  volume={21},\n  pages={138},\n  year={2025},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 92376230,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/chili_leaf_curl_detection",
+    "examples_image_url": "/img/agml/sample_images/chili_leaf_curl_detection_sample.png"
+  },
+  {
+    "name": "spring_wheat_stomata_imprint",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Taastrup campus, Denmark"
+    ],
+    "lat_lon": [
+      "55.646015, 12.297937"
+    ],
+    "country": "Denmark",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Leica ICC50 HD digital microscope camera (2048x1536, 300 dpi) and Leica DM750 light microscope"
+    ],
+    "collection_period": "December 2021 - Fall 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 973,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-025-01416-2",
+    "citation": "Wacker, T. S., Smith, A. G., Jensen, S. M., Pflüger, T., Herz, V., Rosenqvist, E., Liu, F., & Dresbøll, D. B. (2025). Datasets used in 'Stomata Morphology Measurement with interactive Machine Learning: Accuracy, Speed, and Biological Relevance?' [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.15316123",
+    "bibtex": "@article{wacker2025stomata,\n  title={Stomata morphology measurement with interactive machine learning: accuracy, speed, and biological relevance?},\n  author={Wacker, Tomke S. and Smith, Abraham G. and Jensen, Signe M. and Pflüger, Theresa and Hertz, Viktor G. and Rosenqvist, Eva and Liu, Fulai and Dresbøll, Dorte B.},\n  journal={Plant Methods},\n  volume={21},\n  pages={95},\n  year={2025},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 1259046821,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/spring_wheat_stomata_imprint",
+    "examples_image_url": "/img/agml/sample_images/spring_wheat_stomata_imprint_sample.png"
+  },
+  {
+    "name": "fava_bean_stomata_imprint",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Taastrup campus, Denmark"
+    ],
+    "lat_lon": [
+      "55.646015, 12.297937"
+    ],
+    "country": "Denmark",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "fava bean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Leica ICC50 HD digital microscope camera (2048x1536, 300 dpi) and Leica DM750 light microscope"
+    ],
+    "collection_period": "December 2021 - Fall 2022",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 2064,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-025-01416-2",
+    "citation": "Wacker, T. S., Smith, A. G., Jensen, S. M., Pflüger, T., Herz, V., Rosenqvist, E., Liu, F., & Dresbøll, D. B. (2025). Datasets used in 'Stomata Morphology Measurement with interactive Machine Learning: Accuracy, Speed, and Biological Relevance?' [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.15316123",
+    "bibtex": "@article{wacker2025stomata,\n  title={Stomata morphology measurement with interactive machine learning: accuracy, speed, and biological relevance?},\n  author={Wacker, Tomke S. and Smith, Abraham G. and Jensen, Signe M. and Pflüger, Theresa and Hertz, Viktor G. and Rosenqvist, Eva and Liu, Fulai and Dresbøll, Dorte B.},\n  journal={Plant Methods},\n  volume={21},\n  pages={95},\n  year={2025},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 2508114970,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fava_bean_stomata_imprint",
+    "examples_image_url": "/img/agml/sample_images/fava_bean_stomata_imprint_sample.png"
+  },
+  {
+    "name": "OpenEar_base_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Hongqi Base, Hainan, China"
+    ],
+    "lat_lon": [
+      "18.360, 109.214"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Raspberry Pi HQ camera (Sony IMX477R sensor, 6 mm focal length, 63° field of view)"
+    ],
+    "collection_period": "March 2025-January 2026",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 919,
+    "augmented_num_images": 3859,
+    "augmented_zip_size_bytes": 316729806,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-026-01504-x",
+    "citation": "Fan, S. (2025). <i>Datasets for OpenEar model training</i> (Version 2). figshare. https://doi.org/10.6084/m9.figshare.26282563.v2",
+    "bibtex": "@article{fan2026openear,\n  title={OpenEar: an ultra-affordable, high-throughput, and accurate maize ear phenotyping system},\n  author={Fan, Shaoqi and Li, Guoji and Bahitwa, Revocatus and Jia, Zhiguo and Zhang, Hongwei and Shao, Jinghong and Yu, Qiuying and Chen, Xiaoran and Qian, Yiheng and Xu, Mingchi and Zhu, Linlin and Wang, Hai},\n  journal={Plant Methods},\n  volume={22},\n  pages={26},\n  year={2026},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 91438823,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_base_segmentation",
+    "examples_image_url": "/img/agml/sample_images/OpenEar_base_segmentation_sample.png"
+  },
+  {
+    "name": "OpenEar_Projection_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Hongqi Base, Hainan, China"
+    ],
+    "lat_lon": [
+      "18.360, 109.214"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Raspberry Pi HQ camera (Sony IMX477R sensor, 6 mm focal length, 63° field of view)"
+    ],
+    "collection_period": "March 2025-January 2026",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 1048,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-026-01504-x",
+    "citation": "Fan, S. (2025). <i>Datasets for OpenEar model training</i> (Version 2). figshare. https://doi.org/10.6084/m9.figshare.26282563.v2",
+    "bibtex": "@article{fan2026openear,\n  title={OpenEar: an ultra-affordable, high-throughput, and accurate maize ear phenotyping system},\n  author={Fan, Shaoqi and Li, Guoji and Bahitwa, Revocatus and Jia, Zhiguo and Zhang, Hongwei and Shao, Jinghong and Yu, Qiuying and Chen, Xiaoran and Qian, Yiheng and Xu, Mingchi and Zhu, Linlin and Wang, Hai},\n  journal={Plant Methods},\n  volume={22},\n  pages={26},\n  year={2026},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 114667570,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_Projection_segmentation",
+    "examples_image_url": "/img/agml/sample_images/OpenEar_Projection_segmentation_sample.png"
+  },
+  {
+    "name": "barley_disease_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "disease_segmentation",
+    "location": [
+      "Estrées Saint Denis, France",
+      "Irlbach, Germany",
+      "Paitzkofen, Germany"
+    ],
+    "lat_lon": [],
+    "country": "France, Germany",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "barley"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2024-2025",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 4764,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-026-01532-7",
+    "citation": "Martello, Sofia; Genze, Nikita; Grimm, Dominik (2026), “Data for: Deep Learning-Based Identification of Visually Similar Foliar Diseases in Field-Grown Barley”, Mendeley Data, V1, doi: 10.17632/4ny92p2r8f.1",
+    "bibtex": "@article{martello2026deep,\n  title={Deep learning-based identification of visually similar foliar diseases in field-grown barley},\n  author={Martello, Sofia and Genze, Nikita and Grimm, Dominik G.},\n  journal={Plant Methods},\n  volume={22},\n  pages={41},\n  year={2026},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 4999423420,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/barley_disease_segmentation",
+    "examples_image_url": "/img/agml/sample_images/barley_disease_segmentation_sample.png"
+  },
+  {
+    "name": "grapevine_organ_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Piacenza, Italy",
+      "Alseno, Italy"
+    ],
+    "lat_lon": [
+      "45.0333, 9.7167",
+      "44.8596, 9.9333"
+    ],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grapevine"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "RGB camera (1280x720 pixels)",
+      "Nikon Coolpix (4608x3456 pixels)"
+    ],
+    "collection_period": "2018-2021",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 148,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1007/s11119-023-10006-y",
+    "citation": "Miguel Fernandes, Paolo Guadagna, & Alessandro Santamaria. (2021). Grapevine Dataset for plant organ segmentation (Version v1.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.5501784",
+    "bibtex": "@article{guadagna2023deep,\n  title={Using deep learning for pruning region detection and plant organ segmentation in dormant spur-pruned grapevines},\n  author={Guadagna, P. and Fernandes, M. and Chen, F. and Santamaria, A. and Teng, T. and Frioni, T. and Caldwell, D. G. and Poni, S. and Semini, C. and Gatti, M.},\n  journal={Precision Agriculture},\n  volume={24},\n  pages={1547-1569},\n  year={2023},\n  publisher={Springer US}\n}",
+    "zip_size_bytes": 642867213,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_organ_segmentation",
+    "examples_image_url": "/img/agml/sample_images/grapevine_organ_segmentation_sample.png"
+  },
+  {
+    "name": "USU-Corn-WeedDB_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": ["Cache Valley, Utah, United States of America"],
+    "lat_lon": [],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": ["Corn"],
+    "sensor_modality": "rgb",
+    "imaging_equipment": ["Autel EVO II Dual 640T V2"],
+    "collection_period": "June 27 2025",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 800,
+    "classes": [
+      "CL",
+      "RPW",
+      "GFT"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Bhandari, U., & Etienne, A. (2026). USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20044178",
+    "bibtex": "@article{bhandari2026usu, \n title={USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn}, \n author={Bhandari, Utsav and Burlakoti, Saroj and Miller, Rhonda and Young, Sierra and Westra, Eric and Etienne, Aaron}, \n journal={arXiv preprint arXiv:2606.06709}, \nyear={2026}}",
+    "zip_size_bytes": 223428563,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/USU-Corn-WeedDB_detection",
+    "examples_image_url": "/img/agml/sample_images/USU-Corn-WeedDB_detection_sample.png"
   }
 ]
