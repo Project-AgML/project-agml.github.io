@@ -13510,5 +13510,898 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/USU-Corn-WeedDB_detection",
     "examples_image_url": "/img/agml/sample_images/USU-Corn-WeedDB_detection_sample.webp"
+  },
+  {
+    "name": "Sesame_Aerial_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Mardan, Khyber Pakhtunkhwa, Pakistan",
+      "Ballo Shahabal Village, Jhang, Punjab, Pakistan"
+    ],
+    "lat_lon": [],
+    "country": "Pakistan",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sesame"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic mini drone (1/2.3\" CMOS sensor, 1920x1080 resolution)",
+      "Agrocam NDVI sensor"
+    ],
+    "collection_period": "",
+    "platform": "drone",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 160,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1007/s11119-023-10027-7",
+    "citation": "Moazzam, Imran (2023), “SeSame / Weed Aerial Dataset”, Mendeley Data, V2, doi: 10.17632/9pgv3ktk33.2",
+    "bibtex": "@article{moazzam2023w,\n  title={A W-shaped convolutional network for robust crop and weed classification in agriculture},\n  author={Moazzam, Syed Imran and Nawaz, Tahir and Qureshi, Waqar S. and Khan, Umar S. and Tiwana, Mohsin Islam},\n  journal={Precision Agriculture},\n  volume={24},\n  pages={2002-2018},\n  year={2023},\n  publisher={Springer US}\n}",
+    "zip_size_bytes": 1453744604,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Sesame_Aerial_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/Sesame_Aerial_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "WeedsGalore_maize_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Marquardt, Potsdam, Germany"
+    ],
+    "lat_lon": [
+      "52 27 50.6, 12 57 27.5"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom P4 Multispectral"
+    ],
+    "collection_period": "May 25, May 30, June 6, June 15",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 780,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1109/WACV61041.2025.00467",
+    "citation": "https://github.com/GFZ/weedsgalore",
+    "bibtex": "@inproceedings{celikkan2025weedsgalore, \n title={WeedsGalore: A multispectral and multitemporal UAV-based dataset for crop and weed segmentation in agricultural maize fields}, \n author={Celikkan, Ekin and Kunzmann, Timo and Yeskaliyev, Yertay and Itzerott, Sibylle and Klein, Nadja and Herold, Martin}, \n booktitle={2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)}, \n pages={4767--4777}, \n year={2025}, \n organization={IEEE}}",
+    "zip_size_bytes": 337727881,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WeedsGalore_maize_segmentation",
+    "examples_image_url": "/img/agml/sample_images/WeedsGalore_maize_segmentation_sample.webp"
+  },
+  {
+    "name": "WPDv2_BBCH_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "weed_classification",
+    "location": [
+      "Saint-Jean-sur-Richelieu, Québec, Canada"
+    ],
+    "lat_lon": [],
+    "country": "Canada",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DELL UltraSharp 4 K"
+    ],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3920,
+    "classes": [
+      "Amaranthus_retroflexus (AMARE)",
+      "Amaranthus_tuberculatus (AMATU)",
+      "Chenopodium_album (CHEAL)",
+      "Echinochloa_crus-galli (ECHCG)",
+      "Setaria_faberi (SETFA)"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1038/s41598-025-33961-0",
+    "citation": "https://github.com/etiennelord/TaxonomicalLoss",
+    "bibtex": "@article{fontaine2026taxonomical, \n title={Taxonomical loss for weed seedlings image classification}, \n author={Fontaine, Hans-Olivier and Foucher, Samuel and Fallon, Edith and Simard, Marie-Josee and Lord, Etienne}, \n journal={Scientific Reports}, \n volume={16}, \n number={1}, \n pages={3837}, \n year={2026},\n publisher={Nature Publishing Group UK London}}",
+    "zip_size_bytes": 379371761,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WPDv2_BBCH_classification",
+    "examples_image_url": "/img/agml/sample_images/WPDv2_BBCH_classification_sample.webp"
+  },
+  {
+    "name": "DeepWeeds_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "weed_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "FLIR Blackfly 23S6C"
+    ],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 17509,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1038/s41598-018-38343-3",
+    "citation": "https://github.com/AlexOlsen/DeepWeeds",
+    "bibtex": "@article{olsen2019deepweeds,\n title={DeepWeeds: A multiclass weed species image dataset for deep learning},\n author={Olsen, Alex and Konovalov, Dmitry A and Philippa, Bronson and Ridd, Peter and Wood, Jake C and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and others},\n journal={Scientific reports},\n volume={9},\n number={1},\n pages={2058},\n year={2019},\n publisher={Nature Publishing Group UK London}}",
+    "zip_size_bytes": 493506267,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/DeepWeeds_classification",
+    "examples_image_url": "/img/agml/sample_images/DeepWeeds_classification_sample.webp"
+  },
+  {
+    "name": "EuroSat_LULC_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 27000,
+    "classes": [
+      "AnnualCrop",
+      "Forest",
+      "HerbaceousVegetation",
+      "Highway",
+      "Industrial",
+      "Pasture",
+      "PermanentCrop",
+      "Residential",
+      "River",
+      "SeaLake"
+    ],
+    "license": "MIT",
+    "documentation": "https://doi.org/10.48550/arXiv.1709.00029",
+    "citation": "Helber, P., Bischke, B., Dengel, A., & Borth, D. (2018). EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification [Dataset]. In EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification (Vol. 12, Issue 7, pp. 2217-2226). Zenodo. Introducing Eurosat: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification, Valencia, Spain. https://doi.org/10.5281/zenodo.7711810",
+    "bibtex": "@article{helber2019eurosat,\n title={Eurosat: A novel dataset and deep learning benchmark for land use and land cover classification},\n author={Helber, Patrick and Bischke, Benjamin and Dengel, Andreas and Borth, Damian},\n journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n volume={12},\n number={7},\n pages={2217--2226},\n year={2019},\n publisher={IEEE}}",
+    "zip_size_bytes": 3002781156,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/EuroSat_LULC_classification",
+    "examples_image_url": "/img/agml/sample_images/EuroSat_LULC_classification_sample.webp"
+  },
+  {
+    "name": "WE3DS_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "University of Natural Resources and Life Sciences, Vienna, Austria"
+    ],
+    "lat_lon": [
+      "48 20, 16 56"
+    ],
+    "country": "Austria",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "XIMEA MC023CG-SY"
+    ],
+    "collection_period": "2020, 2021",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 2568,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Kitzler, F., Barta, N., Neugschwandtner, R. W., Gronauer, A., & Motsch, V. (2023). WE3DS: An RGB-D image dataset for semantic segmentation in agriculture [Dataset]. In Sensors (Vol. 23, Issue 5, p. 2713). Zenodo. https://doi.org/10.5281/zenodo.7457983",
+    "bibtex": "@article{kitzler2023we3ds,\n title={WE3DS: An RGB-D image dataset for semantic segmentation in agriculture},\n author={Kitzler, Florian and Barta, Norbert and Neugschwandtner, Reinhard W and Gronauer, Andreas and Motsch, Viktoria},\n journal={Sensors},\n volume={23},\n number={5},\n pages={2713},\n year={2023},\n publisher={MDPI}}",
+    "zip_size_bytes": 10786781504,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WE3DS_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/WE3DS_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "carrot_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Lincolnshire, UK"
+    ],
+    "lat_lon": [],
+    "country": "UK",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "carrot"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "TeledyneDALSA Genie Nano"
+    ],
+    "collection_period": "June 2017",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 20,
+    "classes": [],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1002/rob.21869Digital Object Identifier (DOI)",
+    "citation": "Petra Bosilj, Erchan Aptoula, Tom Duckett, and Grzegorz Cielniak: “Transfer learning between crop types for semantic segmentation of crops versus weeds in precision agriculture”, Journal of Field Robotics (2019)",
+    "bibtex": "@article{bosilj2020transfer,\n title={Transfer learning between crop types for semantic segmentation of crops versus weeds in precision agriculture},\n author={Bosilj, Petra and Aptoula, Erchan and Duckett, Tom and Cielniak, Grzegorz},\n journal={Journal of Field Robotics},\n volume={37},\n number={1},\n pages={7--19},\n year={2020},\n publisher={Wiley Online Library}}",
+    "zip_size_bytes": 205422097,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/carrot_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/carrot_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "onion_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Lincolnshire, UK"
+    ],
+    "lat_lon": [],
+    "country": "UK",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "onion"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "TeledyneDALSA Genie Nano"
+    ],
+    "collection_period": "April 2017",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 20,
+    "classes": [],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1002/rob.21869Digital Object Identifier (DOI)",
+    "citation": "Petra Bosilj, Erchan Aptoula, Tom Duckett, and Grzegorz Cielniak: “Transfer learning between crop types for semantic segmentation of crops versus weeds in precision agriculture”, Journal of Field Robotics (2019)",
+    "bibtex": "@article{bosilj2020transfer,\n title={Transfer learning between crop types for semantic segmentation of crops versus weeds in precision agriculture},\n author={Bosilj, Petra and Aptoula, Erchan and Duckett, Tom and Cielniak, Grzegorz},\n journal={Journal of Field Robotics},\n volume={37},\n number={1},\n pages={7--19},\n year={2020},\n publisher={Wiley Online Library}}",
+    "zip_size_bytes": 147436484,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/onion_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/onion_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "PhenoBench_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Campus Klein-Altendorf farm, University of Bonn, Germany"
+    ],
+    "lat_lon": [
+      "50 37.51, 6 59.32"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Chenopodium album",
+      "Polygonum aviculare",
+      "Thlaspi arvense",
+      "Persicaria lapathifolia",
+      "Bilderdykia convolvulus",
+      "Polygonum hydropiper"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI M600"
+    ],
+    "collection_period": "May 15, May 26, June 6, 2020, May 20, May 28, June 1, and June 10, 2021",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 2179,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.48550/arXiv.2306.04557",
+    "citation": "https://www.phenobench.org/dataset.html",
+    "bibtex": "@article{weyler2024phenobench,\n title={Phenobench: A large dataset and benchmarks for semantic image interpretation in the agricultural domain},\n author={Weyler, Jan and Magistri, Federico and Marks, Elias and Chong, Yue Linn and Sodano, Matteo and Roggiolani, Gianmarco and Chebrolu, Nived and Stachniss, Cyrill and Behley, Jens},\n journal={IEEE transactions on pattern analysis and machine intelligence},\n volume={46},\n number={12},\n pages={9583--9594},\n year={2024},\n publisher={IEEE}}",
+    "zip_size_bytes": 5667042196,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/PhenoBench_segmentation",
+    "examples_image_url": "/img/agml/sample_images/PhenoBench_segmentation_sample.webp"
+  },
+  {
+    "name": "CWF788_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weedTongzhou, Beijing",
+    "location": [
+      "Tongzhou, Beijing, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon PowerShot SX150 IS",
+      "iPhone 6",
+      "Huawei Note 8"
+    ],
+    "collection_period": "May 23, June 18, 2018",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 788,
+    "classes": [],
+    "license": "MIT",
+    "documentation": "https://doi.org/10.1109/ACCESS.2019.2942158",
+    "citation": "https://github.com/ZhangXG001/Real-Time-Crop-Recognition",
+    "bibtex": "@article{li2019real,\n title={Real-time crop recognition in transplanted fields with prominent weed growth: a visual-attention-based approach},\n author={Li, Nan and Zhang, Xiaoguang and Zhang, Chunlong and Guo, Huiwen and Sun, Zhe and Wu, Xinyu},\n journal={IEEE Access},\n volume={7},\n pages={185310--185321},\n year={2019},\n publisher={IEEE}}",
+    "zip_size_bytes": 29559326,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CWF788_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/CWF788_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "early-crop-weed_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "weed_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 508,
+    "classes": [
+      "black_nightsade",
+      "cotton",
+      "tomato",
+      "velvet_leaf "
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "https://github.com/AUAgroup/early-crop-weed",
+    "bibtex": "",
+    "zip_size_bytes": 2573393067,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/early-crop-weed_classification",
+    "examples_image_url": "/img/agml/sample_images/early-crop-weed_classification_sample.webp"
+  },
+  {
+    "name": "CottonWeedID15_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "weed_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "United States of America",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cotton"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2020, 2021",
+    "platform": "handhled",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 5187,
+    "classes": [
+      "Carpetweeds",
+      "Crabgrass",
+      "Eclipta",
+      "Goosegrass",
+      "Morningglory",
+      "Nutsedge",
+      "PalmerAmaranth",
+      "Prickly Sida",
+      "Purslane",
+      "Ragweed",
+      "Sicklepod",
+      "SpottedSpurge",
+      "SpurredAnoda",
+      "Swinecress",
+      "Waterhemp"
+    ],
+    "license": "cc-by-nc-4.0",
+    "documentation": "https://doi.org/10.1038/s41598-026-51099-5",
+    "citation": "https://www.kaggle.com/datasets/yuzhenlu/cottonweedid15",
+    "bibtex": "@article{chen2022performance,\n title={Performance evaluation of deep transfer learning on multi-class identification of common weed species in cotton production systems},\n author={Chen, Dong and Lu, Yuzhen and Li, Zhaojian and Young, Sierra},\n journal={Computers and Electronics in Agriculture},\n volume={198},\n pages={107091},\n year={2022},\n publisher={Elsevier}}",
+    "zip_size_bytes": 10352034071,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CottonWeedID15_classification",
+    "examples_image_url": "/img/agml/sample_images/CottonWeedID15_classification_sample.webp"
+  },
+  {
+    "name": "Dhan-Shomadhan_rice_leaf_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Dhaka, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Vivo Y15"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1106,
+    "classes": [
+      "Brown Spot",
+      "Browon Spot",
+      "Leaf Scaled",
+      "Rice Blast",
+      "Rice Tungro",
+      "Rice Turgro",
+      "Shath Blight",
+      "Sheath Blight"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.48550/arXiv.2309.07515",
+    "citation": "Hossain, Md Fahad; Abujar , Sheikh ; Noori, Sheak Rashed Haider ; Hossain, Syed Akhter  (2021), “Dhan-Shomadhan: A Dataset of Rice Leaf Disease Classification for Bangladeshi Local Rice”, Mendeley Data, V1, doi: 10.17632/znsxdctwtt.1",
+    "bibtex": "@article{hossain2023dhan,\n title={Dhan-Shomadhan: A dataset of rice leaf disease classification for Bangladeshi local rice},\n author={Hossain, Md Fahad},\n journal={arXiv preprint arXiv:2309.07515},\n year={2023}}",
+    "zip_size_bytes": 669798386,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Dhan-Shomadhan_rice_leaf_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/Dhan-Shomadhan_rice_leaf_disease_classification_sample.webp"
+  },
+  {
+    "name": "Musa_banana_tier_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Carmen, Philippines",
+      "Cebu, Philippines"
+    ],
+    "lat_lon": [],
+    "country": "Philippines",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "A4Tech PK-910H"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1164,
+    "classes": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108856",
+    "citation": "Piedad, Eduardo Jr; Ferrer, Laura Vithalie; Pojas, Glydel; Cascabel, Honey Faith; Pantilgan, Rosemarie; Larada, Julaiza; Cabinatan, Ian Paul (2018), “Tier-based Dataset: Musa-Acuminata Banana Fruit Species”, Mendeley Data, V2, doi: 10.17632/zk3tkxndjw.2",
+    "bibtex": "@article{piedad2023post,\n  title={Post-harvested Musa acuminata Banana Tiers Dataset},\n  author={Piedad, Eduardo Jr and Caladcad, June Anne},\n  journal={Data in Brief},\n  volume={46},\n  pages={108856},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 62609011,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Musa_banana_tier_classification",
+    "examples_image_url": "/img/agml/sample_images/Musa_banana_tier_classification_sample.webp"
+  },
+  {
+    "name": "pepper_disease_pest_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Shouguang City, Shandong Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pepper"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2022-2023",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 26377,
+    "classes": [
+      "Alternaria_Boltch",
+      "Brown_Spot",
+      "Grey_spot",
+      "Mosaic",
+      "Rust"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-025-01387-4",
+    "citation": "liu, jun (2024), “vegetable disease”, Mendeley Data, V1, doi: 10.17632/tg3z7xxkdb.1",
+    "bibtex": "@article{wang2025advanced,\n  title={An advanced deep learning method for pepper diseases and pests detection},\n  author={Wang, Xuewei and Liu, Jun and Chen, Qian},\n  journal={Plant Methods},\n  volume={21},\n  pages={70},\n  year={2025},\n  publisher={BioMed Central}\n}",
+    "zip_size_bytes": 887159399,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/pepper_disease_pest_classification",
+    "examples_image_url": "/img/agml/sample_images/pepper_disease_pest_classification_sample.webp"
+  },
+  {
+    "name": "OPPD_plant_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Research Centre Flakkebjerg, Aarhus University, Denmark"
+    ],
+    "lat_lon": [
+      "55 19 28.4736, 11 23 24.0144"
+    ],
+    "country": "Denmark",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Flir GS3-U3-123S6C"
+    ],
+    "collection_period": "2017, 2018, 2019",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 7590,
+    "classes": [
+      "ALOMY",
+      "ANGAR",
+      "APESV",
+      "ARTVU",
+      "AVEFA",
+      "BROST",
+      "BRSNN",
+      "CAPBP",
+      "CENCY",
+      "CHEAL",
+      "CHYSE",
+      "CIRAR",
+      "CONAR",
+      "EPHHE",
+      "EPHPE",
+      "EROCI",
+      "FUMOF",
+      "GALAP",
+      "GERMO",
+      "LAPCO",
+      "LOLMU",
+      "LYCAR",
+      "MATCH",
+      "MATIN",
+      "MELNO",
+      "MYOAR",
+      "PAPRH",
+      "PLALA",
+      "PLAMA",
+      "POAAN",
+      "POLAV",
+      "POLCO",
+      "POLLA",
+      "POLPE",
+      "RUMCR",
+      "SENVU",
+      "SINAR",
+      "SOLNI",
+      "SONOL",
+      "STEME",
+      "THLAR",
+      "URTUR",
+      "VERAR",
+      "VERPE",
+      "VICHI",
+      "VIOAR"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.3390/rs12081246",
+    "citation": "https://vision.eng.au.dk/open-plant-phenotyping-database/",
+    "bibtex": "@article{leminen2020open,\n title={Open plant phenotype database of common weeds in Denmark},\n author={Leminen Madsen, Simon and Mathiassen, Solvejg Kopp and Dyrmann, Mads and Laursen, Morten Stigaard and Paz, Laura-Carlota and Jorgensen, Rasmus Nyholm},\n journal={Remote Sensing},\n volume={12},\n number={8},\n pages={1246},\n year={2020},\n publisher={MDPI}}",
+    "zip_size_bytes": 44694655707,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OPPD_plant_detection",
+    "examples_image_url": "/img/agml/sample_images/OPPD_plant_detection_sample.webp"
+  },
+  {
+    "name": "GrapesNet_single_cluster",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Yelavi, Sangli, Maharashtra"
+    ],
+    "lat_lon": [
+      "17.0408, 74.5126"
+    ],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Sonaka"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "OnePlus 7 Mobile phone (48-megapixel, f/1.7, 1.6-micron), tripod-mounted",
+      "Intel Real-Sense D435I Depth Camera (1280 x 720 resolution), Raspberry Pi 4 processing unit, tripod-mounted"
+    ],
+    "collection_period": "",
+    "platform": "tripod",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 4312,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109100",
+    "citation": "Barbole, Dhanashree; Jadhav, Parul (2023), “GrapesNet: Indian Grape Clusters RGB & RGB-D Image Datasets”, Mendeley Data, V1, doi: 10.17632/mhzmzd5cwx.1",
+    "bibtex": "@article{barbole2023grapesnet,\n  title={GrapesNet: Indian RGB & RGB-D vineyard image datasets for deep learning applications},\n  author={Barbole, Dhanashree K. and Jadhav, Parul M.},\n  journal={Data in Brief},\n  volume={48},\n  pages={109100},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 220980797,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GrapesNet_single_cluster",
+    "examples_image_url": "/img/agml/sample_images/GrapesNet_single_cluster_sample.webp"
+  },
+  {
+    "name": "GrapesNet_multiple_cluster",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Yelavi, Sangli, Maharashtra"
+    ],
+    "lat_lon": [
+      "17.0408, 74.5126"
+    ],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Sonaka"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "OnePlus 7 Mobile phone (48-megapixel, f/1.7, 1.6-micron), tripod-mounted",
+      "Intel Real-Sense D435I Depth Camera (1280 x 720 resolution), Raspberry Pi 4 processing unit, tripod-mounted"
+    ],
+    "collection_period": "",
+    "platform": "tripod",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 2960,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109100",
+    "citation": "Barbole, Dhanashree; Jadhav, Parul (2023), “GrapesNet: Indian Grape Clusters RGB & RGB-D Image Datasets”, Mendeley Data, V1, doi: 10.17632/mhzmzd5cwx.1",
+    "bibtex": "@article{barbole2023grapesnet,\n  title={GrapesNet: Indian RGB & RGB-D vineyard image datasets for deep learning applications},\n  author={Barbole, Dhanashree K. and Jadhav, Parul M.},\n  journal={Data in Brief},\n  volume={48},\n  pages={109100},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 279070642,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GrapesNet_multiple_cluster",
+    "examples_image_url": "/img/agml/sample_images/GrapesNet_multiple_cluster_sample.webp"
+  },
+  {
+    "name": "GrapesNet_depth",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Yelavi, Sangli, Maharashtra"
+    ],
+    "lat_lon": [
+      "17.0408, 74.5126"
+    ],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Sonaka"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "OnePlus 7 Mobile phone (48-megapixel, f/1.7, 1.6-micron), tripod-mounted",
+      "Intel Real-Sense D435I Depth Camera (1280 x 720 resolution), Raspberry Pi 4 processing unit, tripod-mounted"
+    ],
+    "collection_period": "",
+    "platform": "tripod",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 847,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109100",
+    "citation": "Barbole, Dhanashree; Jadhav, Parul (2023), “GrapesNet: Indian Grape Clusters RGB & RGB-D Image Datasets”, Mendeley Data, V1, doi: 10.17632/mhzmzd5cwx.1",
+    "bibtex": "@article{barbole2023grapesnet,\n  title={GrapesNet: Indian RGB & RGB-D vineyard image datasets for deep learning applications},\n  author={Barbole, Dhanashree K. and Jadhav, Parul M.},\n  journal={Data in Brief},\n  volume={48},\n  pages={109100},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 886965320,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GrapesNet_depth",
+    "examples_image_url": "/img/agml/sample_images/GrapesNet_depth_sample.webp"
+  },
+  {
+    "name": "GrapesNet_single_cluster_depth",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Yelavi, Sangli, Maharashtra"
+    ],
+    "lat_lon": [
+      "17.0408, 74.5126"
+    ],
+    "country": "India",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Sonaka"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "OnePlus 7 Mobile phone (48-megapixel, f/1.7, 1.6-micron), tripod-mounted",
+      "Intel Real-Sense D435I Depth Camera (1280 x 720 resolution), Raspberry Pi 4 processing unit, tripod-mounted"
+    ],
+    "collection_period": "",
+    "platform": "tripod",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 696,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109100",
+    "citation": "Barbole, Dhanashree; Jadhav, Parul (2023), “GrapesNet: Indian Grape Clusters RGB & RGB-D Image Datasets”, Mendeley Data, V1, doi: 10.17632/mhzmzd5cwx.1",
+    "bibtex": "@article{barbole2023grapesnet,\n  title={GrapesNet: Indian RGB & RGB-D vineyard image datasets for deep learning applications},\n  author={Barbole, Dhanashree K. and Jadhav, Parul M.},\n  journal={Data in Brief},\n  volume={48},\n  pages={109100},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 664320817,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/GrapesNet_single_cluster_depth",
+    "examples_image_url": "/img/agml/sample_images/GrapesNet_single_cluster_depth_sample.webp"
+  },
+  {
+    "name": "medicinal_plant_classification_bd",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Pharmacy Garden, Sirajganj, Bangladesh",
+      "Khwaja Yunus Ali Medical College & Hospital, Sirajganj, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Nayantara",
+      "Pathor kuchi",
+      "Longevity spinach",
+      "Bohera",
+      "Haritaki",
+      "Thankuni",
+      "Neem",
+      "Tulsi",
+      "Lemon grass",
+      "Devil backbone"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Redmi Note 8, 13 megapixel, 409ppi, 1080x2340, handheld",
+      "Xiaomi 7, 8 megapixel, 269ppi, 720x1520, handheld",
+      "Samsung Galaxy A51, 32 megapixel, 405ppi, 1080x2400, handheld"
+    ],
+    "collection_period": "July to August",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 5000,
+    "classes": [
+      "Bohera",
+      "Devilbackbone",
+      "Haritoki",
+      "Lemongrass",
+      "Nayontara",
+      "Neem",
+      "Pathorkuchi",
+      "Thankuni",
+      "Tulsi",
+      "Zenora"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109211",
+    "citation": "Bijly Borkatullah, Jannatul Ferdous, Abdul Hasib Uddin, and Prince Mahmud. (2022). Medicinal Plant Raw [Dataset]. Kaggle. https://doi.org/10.34740/KAGGLE/DSV/4510170",
+    "bibtex": "@article{borkatulla2023bangladeshi,\n  title={Bangladeshi medicinal plant dataset},\n  author={Borkatulla, Bijly and Ferdous, Jannatul and Uddin, Abdul Hasib and Mahmud, Prince},\n  journal={Data in Brief},\n  volume={48},\n  pages={109211},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 10176004709,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/medicinal_plant_classification_bd",
+    "examples_image_url": "/img/agml/sample_images/medicinal_plant_classification_bd_sample.webp"
+  },
+  {
+    "name": "DeepRootLab_root_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "root_segmentation",
+    "location": [
+      "University of Copenhagen, Taastrup, Denmark"
+    ],
+    "lat_lon": [
+      "55 40, 12 18"
+    ],
+    "country": "Denmark",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 438,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1111/nph.71065",
+    "citation": "Han, E., Clément, C., Czaban, W., Smith, A. G., Dresbøll, D. B., & Thorup-Kristensen, K. (2025). Dataset used in 'Five seasons with DeepRootLab: A unique facility for easier deep root research in the field' [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.15213661",
+    "bibtex": "@article{han2026deep,\n title={Deep roots through time and crops: insight from five seasons at DeepRootLab},\n author={Han, Eusun and Clement, Corentin and Czaban, Weronika and Smith, Abraham George and Dresboll, Dorte Bodin and Thorup-Kristensen, Kristian},\n journal={New Phytologist},\n volume={250},\n number={4},\n pages={2670--2688},\n year={2026},\n publisher={Wiley Online Library}}",
+    "zip_size_bytes": 69952405,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/DeepRootLab_root_segmentation",
+    "examples_image_url": "/img/agml/sample_images/DeepRootLab_root_segmentation_sample.webp"
+  },
+  {
+    "name": "chicory_root_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "root_segmentation",
+    "location": [
+      "University of Copenhagen, Taastrup, Denmark"
+    ],
+    "lat_lon": [],
+    "country": "Denmark",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "chicory"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2016",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 48,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-020-0563-0",
+    "citation": "Smith, A. G., Petersen, J., Selvan, R., & Rasmussen, C. R. (2019). Data for paper 'Segmentation of Roots in Soil with U-Net' [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.3527713",
+    "bibtex": "@article{smith2020segmentation,\n title={Segmentation of roots in soil with U-Net},\n author={Smith, Abraham George and Petersen, Jens and Selvan, Raghavendra and Rasmussen, Camilla Ruo},\n journal={Plant Methods},\n volume={16},\n number={1},\n pages={13},\n year={2020},\n publisher={Springer}}",
+    "zip_size_bytes": 420783965,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/chicory_root_segmentation",
+    "examples_image_url": "/img/agml/sample_images/chicory_root_segmentation_sample.webp"
   }
 ]
