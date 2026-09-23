@@ -14822,6 +14822,7 @@
     "zip_size_bytes": 1040101823,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tls_treevolume",
+    "point_cloud_sample_url": "/data/point_cloud_samples/tls_treevolume_point_cloud_sample.json",
     "examples_image_url": "/img/agml/sample_images/tls_treevolume_sample.webp"
   }
 ]
