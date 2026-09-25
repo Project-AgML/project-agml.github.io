@@ -1503,3 +1503,14 @@
 		grid-template-columns: 1fr !important;
 	}
 }
+
+.externalDisclaimer {
+	margin: 0.5rem 0 0;
+	padding: 0.6rem 0.8rem;
+	border-left: 3px solid var(--agml-border-strong);
+	border-radius: 4px;
+	background: var(--agml-tag-bg);
+	color: var(--agml-tag-fg);
+	font-size: 0.82rem;
+	line-height: 1.45;
+}

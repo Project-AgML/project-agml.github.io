@@ -12603,7 +12603,7 @@
     "lat_lon": [],
     "country": "Bangladesh",
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "paddy"
     ],
@@ -15330,5 +15330,1327 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/UAV_weed_plant_detection",
     "examples_image_url": "/img/agml/sample_images/UAV_weed_plant_detection_sample.webp"
+  },
+  {
+    "name": "GrainShape_japonica_rice",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Nanjing, Jiangsu Province, China",
+      "Nanjing"
+    ],
+    "lat_lon": [
+      "32.02, 118.46",
+      "32.03, 118.84"
+    ],
+    "country": "China",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Olympus TG-6 digital macro camera (4000 × 3000 px, 314 dpi, aperture f/2.3, exposure 1/13 s, +1 EV, 5 mm focal length) fixed on a copy stand"
+    ],
+    "collection_period": "2022",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111781",
+    "citation": "Xu, J. (2025). *GrainShape: a landmark-annotated image dataset of japonica rice grains for geometric morphometric analysis* (Version v2) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.15307612",
+    "bibtex": "@article{xu2025grainshape,\n  title={GrainShape: A landmark-annotated image dataset of japonica rice grains for geometric morphometric analysis},\n  author={Xu, Jiexiong},\n  journal={Data in Brief},\n  volume={61},\n  pages={111781},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 591902708,
+    "num_files": 1,
+    "num_images": 462,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.15307612",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "vineyard_multispectral_disease_detection",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Correggio, Reggio Emilia, Emilia-Romagna, Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MicaSense RedEdge-P multispectral camera with Downwelling Light Sensor (DLS 2), tripod-mounted and hand-carried"
+    ],
+    "collection_period": "2019-2020",
+    "platform": "handheld",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111712",
+    "citation": "Saccuti, A., Lodi Rizzini, D., & Graziosi, F. (2025). *A Dataset for Vineyard Disease Detection via Multispectral Imaging* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14936375",
+    "bibtex": "@article{saccuti2025dataset,\n  title={A dataset for vineyard disease detection via multispectral imaging},\n  author={Saccuti, Alessio and Graziosi, Filippo and Lodi Rizzini, Dario},\n  journal={Data in Brief},\n  volume={61},\n  pages={111712},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 4806111022,
+    "num_files": 1,
+    "num_images": 3018,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14936375",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "snake_grass_spectral_reflectance",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Howick, KwaZulu-Natal",
+      "University of Johannesburg"
+    ],
+    "lat_lon": [
+      "-29.48115, 30.21735"
+    ],
+    "country": "South Africa",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "PSR-300 Spectral Evolution full-range spectrometer with leaf clip"
+    ],
+    "collection_period": "2024-04-16 to 2024-04-17",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111582",
+    "citation": "Sedibana, L., Kganyago, M., Yessoufou, K., & Jaca, T. (2024). *First spectral Reflectance Dataset of Equisetum hyemale (Snake grass) Invasive Alien Plant* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.13363924",
+    "bibtex": "@article{sedibana2025first,\n  title={First spectral reflectance dataset of a highly invasive and aggressive alien plant species, Equisetum hyemale (snakegrass), in South Africa: Towards early detection and effective eradication},\n  author={Sedibana, Lesibana and Kganyago, Mahlatse and Jaca, Thulisile and Yessoufou, Kowiyou},\n  journal={Data in Brief},\n  volume={60},\n  pages={111582},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 12248820,
+    "num_files": 3,
+    "num_images": 10,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.13363924",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "GloCab_cropland_boundary",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "22 regions across Brazil, Ukraine, United States, Canada and Russia"
+    ],
+    "lat_lon": [],
+    "country": "Brazil, Ukraine, United States, Canada, Russia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2"
+    ],
+    "collection_period": "2016-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110739",
+    "citation": "Hall, J., Argueta, F., & Giglio, L. (2024). *GloCAB Cropland Field Boundary Dataset* (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10479121",
+    "bibtex": "@article{hall2024glocab,\n  title={GloCAB cropland field boundary dataset},\n  author={Hall, Joanne V. and Argueta, Fernanda and Giglio, Louis},\n  journal={Data in Brief},\n  volume={55},\n  pages={110739},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 17203795,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.10479121",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "cabbage_hyperspectral_reflectance",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Gandhi Krishi Vigyana Kendra, Bengaluru, India"
+    ],
+    "lat_lon": [
+      "13.088, 77.567"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cabbage"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "Headwall Photonics A-series (tripod-mounted)"
+    ],
+    "collection_period": "February to June 2022",
+    "platform": "tripod",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110649",
+    "citation": "Nidamanuri, R. R. (2024). *cabbage_Hyperspectral_dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/WHGNF4S4BP.1",
+    "bibtex": "@article{munipalle2024ultra,\n  title={Ultra-high-resolution hyperspectral imagery datasets for precision agriculture applications},\n  author={Munipalle, Vamshi Krishna and Nelakuditi, Usha Rani and C.V.S.S., Manohar Kumar and Nidamanuri, Rama Rao},\n  journal={Data in Brief},\n  volume={55},\n  pages={110649},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 6165387114,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/whgnf4s4bp.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "eggplant_hyperspectral_reflectance",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Gandhi Krishi Vigyana Kendra, Bengaluru, India"
+    ],
+    "lat_lon": [
+      "13.088, 77.567"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "eggplant"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "Headwall Photonics A-series (tripod-mounted)"
+    ],
+    "collection_period": "February to June 2022",
+    "platform": "tripod",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110649",
+    "citation": "Nidamanuri, R. R. (2024). *Eggplant_Hyperspectral_Dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/T4RYSH9RXF.1",
+    "bibtex": "@article{munipalle2024ultra,\n  title={Ultra-high-resolution hyperspectral imagery datasets for precision agriculture applications},\n  author={Munipalle, Vamshi Krishna and Nelakuditi, Usha Rani and C.V.S.S., Manohar Kumar and Nidamanuri, Rama Rao},\n  journal={Data in Brief},\n  volume={55},\n  pages={110649},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 2377658272,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/t4rysh9rxf.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "vegetation_phenology_central_asia",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Central Asia (45-100°E, 33-57°N)"
+    ],
+    "lat_lon": [],
+    "country": "Central Asia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MODIS"
+    ],
+    "collection_period": "2001-2023",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110297",
+    "citation": "Ding, C. (2024). *A land surface phenology dataset for Central Asia derived from MODIS NIRv time series* [Dataset]. Mendeley Data. https://doi.org/10.17632/FRVNT3JJ4W.1",
+    "bibtex": "@article{ding2024satellite,\n  title={A satellite-derived dataset on vegetation phenology across Central Asia from 2001 to 2023},\n  author={Ding, Chao},\n  journal={Data in Brief},\n  volume={54},\n  pages={110297},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 77853555,
+    "num_files": 2,
+    "num_images": 161,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/frvnt3jj4w.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "pine_needle_shoots_3D",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Järvselja RAMI pine stand, Estonia"
+    ],
+    "lat_lon": [
+      "58.3131, 27.2967"
+    ],
+    "country": "Estonia",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Scots pine",
+      "Norway spruce"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "GOM Scan 1 (MV 200) blue-light 3D scanner"
+    ],
+    "collection_period": "2022-07-26",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110543",
+    "citation": "Pisek, J., & Borysenko, O. (2023). *A dataset of detailed 3D representations of Scots pine, Norway spruce needle shoots from Järvselja RAdiation transfer Model Intercomparison (RAMI) pine stand in Estonia* [Dataset]. Mendeley Data. https://doi.org/10.17632/RS3F6TRDVW.1",
+    "bibtex": "@article{pisek20243,\n  title={3-dimensional surface geometry dataset of Scots pine and Norway spruce shoots from the Järvselja RAdiation transfer Model Intercomparison (RAMI) pine stand},\n  author={Pisek, Jan and Borysenko, Oleksandr},\n  journal={Data in Brief},\n  volume={54},\n  pages={110543},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 401505647,
+    "num_files": 2,
+    "num_images": 10,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/rs3f6trdvw.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "coffe_leaf_BRDF",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Hokkaido University, Sapporo, Hokkaido, Japan"
+    ],
+    "lat_lon": [],
+    "country": "Japan",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "coffee"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Liquid crystal tunable filter (LCTF) multispectral camera (460-780 nm) with linear polarizer and automatic goniometer"
+    ],
+    "collection_period": "2017",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110204",
+    "citation": "Khuralbaatar, L. (2023). *Measurement of single Coffea canephora leaf spectro-polarimetric Bidirectional Reflectance Factor dataset and prediction model* [Dataset]. Mendeley Data. https://doi.org/10.17632/NV8RXDBW7K.2",
+    "bibtex": "@article{tumendemberel2024measurement,\n  title={Measurement of single Coffea canephora leaf spectro-polarimetric bidirectional reflectance factor dataset},\n  author={Tumendemberel, Begzsuren and Khurelbaatar, Luvsanbat and Takahashi, Yukihiro and Tumenjargal, Turtogtokh and Dashdondog, Erdenebaatar},\n  journal={Data in Brief},\n  volume={53},\n  pages={110204},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 50265498,
+    "num_files": 1,
+    "num_images": 70,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/nv8rxdbw7k.2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Poitiers_land_cover_1993",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Poitiers, France"
+    ],
+    "lat_lon": [
+      "46.34, 0.20"
+    ],
+    "country": "France",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat-5 TM",
+      "IGN aerial orthophotos (0.5 m)"
+    ],
+    "collection_period": "1993",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109829",
+    "citation": "Morin, E., Razafimbelo, N. T., Yengué, J.-L., Guinard, Y., Grandjean, F., & Bech, N. (2023). *Mapping past land cover on Poitiers in 1993 at Very High Resolution using GEOBIA approach and open data* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.8220467",
+    "bibtex": "@article{morin2024mapping,\n  title={Mapping past land cover on Poitiers in 1993 at very high resolution using GEOBIA approach and open data},\n  author={Morin, Elie and Razafimbelo, Ny Tolotra and Yengué, Jean-Louis and Guinard, Yvonnick and Grandjean, Frédéric and Bech, Nicolas},\n  journal={Data in Brief},\n  volume={52},\n  pages={109829},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 3270421930,
+    "num_files": 2,
+    "num_images": 3,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.8220467",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "potato_leaf_hyperspectral",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "IHAR-PIB, Jadwisin, Legionowo County, Masovian Voivodeship, Poland"
+    ],
+    "lat_lon": [
+      "52.4834, 21.0446"
+    ],
+    "country": "Poland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "potato"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "UAV with 150-band hyperspectral camera"
+    ],
+    "collection_period": "2020-06-30, 2020-07-14, 2020-07-21, 2020-07-30",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108087",
+    "citation": "Bogdan Ruszczak. (2022). *Deep Potato* [Dataset]. Mendeley. https://doi.org/10.17632/XN2WY75F8M.2",
+    "bibtex": "@article{ruszczak2022deep,\n  title={Deep potato – The hyperspectral imagery of potato cultivation with reference agronomic measurements dataset: Towards potato physiological features modeling},\n  author={Ruszczak, Bogdan and Boguszewska-Mańkowska, Dominika},\n  journal={Data in Brief},\n  volume={42},\n  pages={108087},\n  year={2022},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 6449146,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/xn2wy75f8m.2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Italy_forest_disturbance",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2A",
+      "Sentinel-2B"
+    ],
+    "collection_period": "2017-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108297",
+    "citation": "Saverio Francini. (2022). *A Sentinel-2 derived dataset of forest disturbance occurred in Italy between 2017 and 2020* [Dataset]. Mendeley. https://doi.org/10.17632/5JYP57YMW4.1",
+    "bibtex": "@article{francini2022sentinel,\n  title={A Sentinel-2 derived dataset of forest disturbances occurred in Italy between 2017 and 2020},\n  author={Francini, Saverio and Chirici, Gherardo},\n  journal={Data in Brief},\n  volume={42},\n  pages={108297},\n  year={2022},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 6283247141,
+    "num_files": 12,
+    "num_images": 12,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/5jyp57ymw4.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "vineyard_multispectral_botrytis_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Tomiño, Pontevedra, Spain"
+    ],
+    "lat_lon": [
+      "41.9551, -8.7948"
+    ],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI M210 UAV with Micasense RedEdge 3 multispectral camera (f/2.8, 1280x960 resolution, 1/523s exposure)"
+    ],
+    "collection_period": "16 September 2021",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108876",
+    "citation": "Vélez, S., Ariza-Sentís, M., & Valente, J. (2022). *UAV multispectral imagery dataset over a vineyard affected by Botrytis in 'Tomiño', Pontevedra, Spain. It includes GPS location of vine trunks, diseases and GCP points.* (Version 2) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.7064894",
+    "bibtex": "@article{vlez2023dataset,\n  title={Dataset on unmanned aerial vehicle multispectral images acquired over a vineyard affected by Botrytis cinerea in northern Spain},\n  author={Vélez, Sergio and Ariza-Sentís, Mar and Valente, João},\n  journal={Data in Brief},\n  volume={46},\n  pages={108876},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 31142466498,
+    "num_files": 7,
+    "num_images": 9435,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.7064894",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "olive_hyperspectral",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Espartinas, Seville province, Spain"
+    ],
+    "lat_lon": [
+      "37.3943, -6.1219"
+    ],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "olive"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [],
+    "collection_period": "2019-May-2020",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108812",
+    "citation": "samdomcid Samuel. (2022). *In-field hyperspectral imaging dataset of Manzanilla and Gordal olive varieties throughout the season* [Dataset]. Mendeley. https://doi.org/10.17632/8XVHCSDVST.2",
+    "bibtex": "@article{domnguezcid2023field,\n  title={In-field hyperspectral imaging dataset of Manzanilla and Gordal olive varieties throughout the season},\n  author={Domínguez-Cid, Samuel and Barbancho, Julio and Larios, Diego F. and Molina, F.J. and Gómez, Ariel and León, C.},\n  journal={Data in Brief},\n  volume={46},\n  pages={108812},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 10459478402,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/8xvhcsdvst.2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "dutch_ecosystem_structure",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Netherlands (nationwide)"
+    ],
+    "lat_lon": [],
+    "country": "Netherlands",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "AHN3 airborne laser scanning (LiDAR)"
+    ],
+    "collection_period": "2014-2019",
+    "platform": "aerial",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108798",
+    "citation": "W. Daniel Kissling, Yifang Shi, Zsófia Koma, Christiaan Meijer, Ou Ku, Francesco Nattino, Arie C. Seijmonsbergen, & Meiert W. Grootes. (2024). *Country-wide data products for the ecosystem structure metrics derived from ALS data across the Netherlands (AHN3)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.6421380",
+    "bibtex": "@article{kissling2023country,\n  title={Country-wide data of ecosystem structure from the third Dutch airborne laser scanning survey},\n  author={Kissling, W. Daniel and Shi, Yifang and Koma, Zsófia and Meijer, Christiaan and Ku, Ou and Nattino, Francesco and Seijmonsbergen, Arie C. and Grootes, Meiert W.},\n  journal={Data in Brief},\n  volume={46},\n  pages={108798},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 20928111423,
+    "num_files": 30,
+    "num_images": 77,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.6421380",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "apple_orchard_flowering_intensity",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Randwijk, Overbetuwe"
+    ],
+    "lat_lon": [
+      "51.938, 5.7068"
+    ],
+    "country": "Netherlands",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2018-2020",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109356",
+    "citation": "Zhang, C., Valente, J., Van Dalfsen, P., & Kooistra, L. (2022). *Data on three-year flowering intensity monitoring in an apple orchard* [Graphic]. Zenodo. https://doi.org/10.5281/ZENODO.6802307",
+    "bibtex": "@article{zhang2023data,\n  title={Data on three-year flowering intensity monitoring in an apple orchard: A collection of RGB images acquired from unmanned aerial vehicles},\n  author={Zhang, Chenglong and Valente, João and Wang, Wensheng and van Dalfsen, Pieter and de Jong, Peter Frans and Rijk, Bert and Kooistra, Lammert},\n  journal={Data in Brief},\n  volume={49},\n  pages={109356},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 17075077319,
+    "num_files": 1,
+    "num_images": 4296,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.6802307",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "apple_fertilizer_hyperspectral",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "quality_classification",
+    "location": [
+      "Thiagarajar College of Engineering, Madurai, India"
+    ],
+    "lat_lon": [
+      "9.8821, 78.0816"
+    ],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "Resonon Pika L400-1000nm Hyperspectral Camera"
+    ],
+    "collection_period": "2018-2020",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109321",
+    "citation": "TCEIP SIG. (2022). *Apple-Hyperspectral images* [Dataset]. Mendeley. https://doi.org/10.17632/3BHR26JFFS.1",
+    "bibtex": "@article{mdmansoorroomi2023hyperspectral,\n  title={Hyperspectral dataset of pure and pesticide-coated apples for measuring the level of fertilizers used},\n  author={Md. Mansoor Roomi, S. and Sathya Bama, B. and Puvi Lakshmi, V. and Vaishnavi, M.},\n  journal={Data in Brief},\n  volume={49},\n  pages={109321},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/3bhr26jffs.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 617,
+    "num_files": 617,
+    "data_size_bytes": 925916380
+  },
+  {
+    "name": "dense_forest_hyperspectral",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Mudumalai Forest Range, Western Ghats",
+      "Naduvattam Forest Range, Western Ghats"
+    ],
+    "lat_lon": [
+      "11.5023, 76.4945",
+      "11.4559, 76.5555"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "AVIRIS-NG airborne imaging spectrometer",
+      "Spectra Vista Corporation HR-1024i field spectroradiometer"
+    ],
+    "collection_period": "2018",
+    "platform": "mixed",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2023.109510",
+    "citation": "Rama Rao Nidamanuri. (2023). *Agriculture_Forest_Hyperspectral_Data* [Dataset]. Mendeley. https://doi.org/10.17632/P7N6KTJDX7.1",
+    "bibtex": "@article{rajesh2023situ,\n  title={In-situ and airborne hyperspectral data for detecting agricultural activities in a dense forest landscape},\n  author={Rajesh, C.B. and Kumar, C. V. S. S. Manohar and Jha, Sudhanshu Shekhar and Ramachandran, K.I. and Nidamanuri, Rama Rao},\n  journal={Data in Brief},\n  volume={50},\n  pages={109510},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 4951684410,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/p7n6ktjdx7.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "orthomosaic_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Agricultural Management Experiment Station, Technical University of Munich, Dürnast, Freising, Germany"
+    ],
+    "lat_lon": [
+      "48.4, 11.7"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "potato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2023",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2025.100966",
+    "citation": "Lu, C. (2025). Weed Instance Segmentation from UAV Orthomosaic Images based on Deep Learning. *Zenodo*. https://doi.org/10.5281/ZENODO.15229620",
+    "bibtex": "@article{lu2025weed,\n  title={Weed instance segmentation from UAV Orthomosaic Images based on Deep Learning},\n  author={Lu, Chenghao and Gehring, Klaus and Kopfinger, Stefan and Bernhardt, Heinz and Beck, Michael and Walther, Simon and Ebertseder, Thomas and Minceva, Mirjana and Hu, Yuncai and Yu, Kang},\n  journal={Smart Agricultural Technology},\n  volume={11},\n  pages={100966},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.15229620",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 1,
+    "num_files": 5,
+    "data_size_bytes": 1175250394
+  },
+  {
+    "name": "rice_brown_spot_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Yopal, Casanare, Colombia",
+      "Aguazul, Casanare, Colombia"
+    ],
+    "lat_lon": [
+      "5.127, -72.404",
+      "5.181, -72.241"
+    ],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom 4 Multispectral (P4M)"
+    ],
+    "collection_period": "2019",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2026.102262",
+    "citation": "Chaparro, J. E. (2026). *A High-Resolution Proximal Multispectral Dataset for Early Detection of Brown Spot (Bipolaris oryzae) in Tropical Rice Crops* [Dataset]. Mendeley Data. https://doi.org/10.17632/NZ8BHZ7J9T.1",
+    "bibtex": "@article{chaparrom2026bio,\n  title={Bio-spectral tensors and ConvNeXt architectures: A proximal sensing framework for early detection of Bipolaris oryzae in tropical rice crops},\n  author={Chaparro M, Jorge E. and Aguilar Castellanos, María D. and Nieto Rodríguez, Diego A. and Vargas Villamizar, Camilo A. and Piamonte P, Luis M.},\n  journal={Smart Agricultural Technology},\n  volume={14},\n  pages={102262},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/nz8bhz7j9t.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 2772,
+    "num_files": 6,
+    "data_size_bytes": 6237424743
+  },
+  {
+    "name": "mongolia_vegetation_greening",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Inner Mongolia Autonomous Region, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2019-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2023.102378",
+    "citation": "Haoxin Li. (2023). *ECOINF_D_23_00977* [Dataset]. Mendeley. https://doi.org/10.17632/NCHDM88HBC.1",
+    "bibtex": "@article{li2023improved,\n  title={An improved dynamic threshold method for determining the start of the vegetation greening season in remote sensing monitoring: The case of Inner Mongolia},\n  author={Li, Haoxin and Li, Frank Yonghong and Guo, Jingpeng and Gao, Xiaotian},\n  journal={Ecological Informatics},\n  volume={78},\n  pages={102378},\n  year={2023},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/nchdm88hbc.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 689,
+    "num_files": 700,
+    "data_size_bytes": 5866418578
+  },
+  {
+    "name": "forest_carbon_sequestration",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Friuli Venezia Giulia, Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2019-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102828",
+    "citation": "Portelli, B., Fasihi, M., Cadez, L., Tomao, A., Falcon, A., Alberti, G., & Serra, G. (2024). *Accompanying software and data for the paper \"Assessing Ensemble Models for Carbon Sequestration and Storage Estimation in Forests Using Remote Sensing Data\"* [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.10932817",
+    "bibtex": "@article{fasihi2024assessing,\n  title={Assessing ensemble models for carbon sequestration and storage estimation in forests using remote sensing data},\n  author={Fasihi, Mehdi and Portelli, Beatrice and Cadez, Luca and Tomao, Antonio and Falcon, Alex and Alberti, Giorgio and Serra, Giuseppe},\n  journal={Ecological Informatics},\n  volume={83},\n  pages={102828},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 280947886,
+    "num_files": 1,
+    "num_images": 53,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.10932817",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "grassland_species_richness",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Paulinenaue, Havelländisches Luch, Brandenburg, Germany"
+    ],
+    "lat_lon": [
+      "52.6911, 12.7378"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2022-2023",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102813",
+    "citation": "Gonçalves Bazzo, C. O., Kamali, B., dos Santos Vianna, M., Behrend, D., Hueging, H., Schleip, I., Mosebach, P., Haub, A., Behrendt, A., & Gaiser, T. (2024). *Dataset for plant species richness estimation in a wet grassland field using UAV data features* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.13621748",
+    "bibtex": "@article{bazzo2024integration,\n  title={Integration of UAV-sensed features using machine learning methods to assess species richness in wet grassland ecosystems},\n  author={Bazzo, Clara Oliva Gonçalves and Kamali, Bahareh and dos Santos Vianna, Murilo and Behrend, Dominik and Hueging, Hubert and Schleip, Inga and Mosebach, Paul and Haub, Almut and Behrendt, Axel and Gaiser, Thomas},\n  journal={Ecological Informatics},\n  volume={83},\n  pages={102813},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 4469162649,
+    "num_files": 1,
+    "num_images": 35,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.13621748",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "pine_wood_nematode_multispectral_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Dahua Fang Reservoir",
+      "Fushan City",
+      "Liaoning Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Korean pine",
+      "Chinese pine"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2023-07-06 to 2023-08-25",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102846",
+    "citation": "Xu, shaoxiong. (2024). *The dataset for identifying diseased pine trees affected by pine wood nematode based on an improved YOLOv8 model with drone multispectral imagery* [Dataset]. Mendeley Data. https://doi.org/10.17632/3CF7T4XVW6.1",
+    "bibtex": "@article{xu2024automatic,\n  title={Automatic pine wilt disease detection based on improved YOLOv8 UAV multispectral imagery},\n  author={Xu, Shaoxiong and Huang, Wenjiang and Wang, Dacheng and Zhang, Biyao and Sun, Hong and Yan, Jiayu and Ding, Jianli and Wang, Jinjie and Yang, Qiuli and Huang, Tiecheng and Ma, Xu and Zhao, Longlong and Du, Zhuoqun},\n  journal={Ecological Informatics},\n  volume={84},\n  pages={102846},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/3cf7t4xvw6.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 435,
+    "num_files": 462,
+    "data_size_bytes": 1289261585
+  },
+  {
+    "name": "JNUSafflower_germplasm",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "variety_classification",
+    "location": [
+      "Rural Development Administration, Jeonju, Republic of Korea"
+    ],
+    "lat_lon": [],
+    "country": "South Korea",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "safflower"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2019",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.102998",
+    "citation": "Van Thien, H., & Yong Suk, C. (2024). *JNUSafflower* [Dataset]. Mendeley Data. https://doi.org/10.17632/4RS446VG8T.2",
+    "bibtex": "@article{thienvan2025deep,\n  title={A deep learning method for differentiating safflower germplasm using optimal leaf structure features},\n  author={Thien Van, Hoang and Khuat, Phuong Thuy and Van, Trang and Tuan, Thai Thanh and Suk Chung, Yong},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102998},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 1078943476,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/4rs446vg8t.2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "grassland_spectral_reflectance",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Bad Lauchstädt, Saxony-Anhalt, Germany"
+    ],
+    "lat_lon": [
+      "51.3928, 11.8803"
+    ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [],
+    "collection_period": "2023-06-01 to 2023-08-31",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103068",
+    "citation": "Iakunin, M. (2025). *Grassland management and phenology affect trait retrieval accuracy from remote sensing observations - field camaign dataset* (Version 01) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14777368",
+    "bibtex": "@article{iakunin2025grassland,\n  title={Grassland management and phenology affect trait retrieval accuracy from remote sensing observations},\n  author={Iakunin, Maksim and Taubert, Franziska and Goss, Reimund and Sasso, Severin and Feilhauer, Hannes and Doktor, Daniel},\n  journal={Ecological Informatics},\n  volume={87},\n  pages={103068},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 26469822,
+    "num_files": 6,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14777368",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "forest_LIDAR_germany",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Landshut",
+      "Germany"
+    ],
+    "lat_lon": [],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Norway spruce",
+      "Scots pine",
+      "European beech"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "2019",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103127",
+    "citation": "Eisenschink, P., Obermeier, W., Zerres, V., Suerbaum, A., & Lehnert, L. (2025). *Supplementary Data and Code: Forest variables from LiDAR: Drone flight parameters impact the detection of tree stems and diameter estimates* [Dataset]. Mendeley Data. https://doi.org/10.17632/5FJWB9HFPM.1",
+    "bibtex": "@article{eisenschink2025forest,\n  title={Forest variables from LiDAR: Drone flight parameters impact the detection of tree stems and diameter estimates},\n  author={Eisenschink, Paul M. and Obermeier, Wolfgang A. and Zerres, Vinzenz H.D. and Suerbaum, Annika M. and Lehnert, Lukas W.},\n  journal={Ecological Informatics},\n  volume={88},\n  pages={103127},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 7599145715,
+    "num_files": 6,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/5fjwb9hfpm.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "forest_LIDAR_spain",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Ávila Province, Spain",
+      "Yeste, Albacete, Spain"
+    ],
+    "lat_lon": [],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Pinus pinaster",
+      "Quercus ilex"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "Matrice 600 PRO"
+    ],
+    "collection_period": "2019-2020",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103135",
+    "citation": "Viedma, O., Moreno Rodríguez, J. M., & Viedma, O. (2025). *Input data for reproducibility of the results found in the paper entitled: \"Impact of LiDAR Pulse Density on Forest Fuels Metrics derived using LadderFuelsR\"* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14786023",
+    "bibtex": "@article{viedma2025impact,\n  title={Impact of LiDAR pulse density on forest fuels metrics derived using LadderFuelsR},\n  author={Viedma, O. and Moreno, J.M.},\n  journal={Ecological Informatics},\n  volume={88},\n  pages={103135},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 845410173,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14786023",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "forest_3D_videogrammetry",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Teliu, Brașov County, Romania"
+    ],
+    "lat_lon": [],
+    "country": "Romania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Insta 360 Pro 2"
+    ],
+    "collection_period": "2024",
+    "platform": "handheld",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103398",
+    "citation": "Swiss Federal Institute for Forest, Snow and Landscape Research. (2025). *360-degree Forest Videos* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.16258208",
+    "bibtex": "@article{hristova2025enhancing,\n  title={Enhancing forest inventory via a videogrammetry approach for robust 3D reconstruction: A study using Insta 360 Pro 2},\n  author={Hristova, Hristina and Blattert, Clemens and Candrea, Bogdan and Nita, Mihai and Florea, Sergiu and Kushwaha, Sunni Kanta Prasad and Schweier, Janine},\n  journal={Ecological Informatics},\n  volume={91},\n  pages={103398},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.16258208",
+    "examples_image_url": "",
+    "hosted_in_original_form": true,
+    "num_images": 0,
+    "num_files": 14,
+    "data_size_bytes": 8010095650
+  },
+  {
+    "name": "forest_lidar_plots",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Brașov City, Romania"
+    ],
+    "lat_lon": [],
+    "country": "Romania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "2024-01-01 to 2024-12-31",
+    "platform": "handheld",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103417",
+    "citation": "Morocho, J., Borz, S. A., Picchi, G., & Nati, C. (2025). *ACCURACY AND TIME EFFICIENCY OF A NEW APP DEVELOPED TO SOURCE AND MAP SINLGE TREE DATA: A COMPARISON TO STATE-OF-ART LIDAR DATA COLLECTORS IN TERMS OF BASAL AREA ESTIMATES* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.16522158",
+    "bibtex": "@article{toaza2025accuracy,\n  title={Accuracy and time efficiency of a new app developed to source and map single tree data: A comparison to state-of-art LiDAR data collectors in terms of basal area estimates},\n  author={Toaza, Jenny Magali Morocho and Picchi, Gianni and Nati, Carla and Borz, Stelian Alexandru},\n  journal={Ecological Informatics},\n  volume={91},\n  pages={103417},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 2067802052,
+    "num_files": 51,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.16522158",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "terrestrial_habitat_hyperspectral_mapping",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_segmentation",
+    "location": [
+      "Imam Turki bin Abdullah Royal Reserve, Saudi Arabia"
+    ],
+    "lat_lon": [],
+    "country": "Saudi Arabia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "EnMAP"
+    ],
+    "collection_period": "2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103534",
+    "citation": "Elgendy, A. (2025). *Harnessing Hyperspectral Imaging and Deep Learning for Precision Habitat Mapping in Arid Landscapes*. Zenodo. https://doi.org/10.5281/ZENODO.17195586",
+    "bibtex": "@article{elgendy2025harnessing,\n  title={Harnessing hyperspectral imaging and deep learning for terrestrial habitat mapping in arid landscapes: A case study in Saudi Arabia},\n  author={Elgendy, Ali and Morgan, Hesham and Tran, Brandon and Thomas, Rejoice and Ismail, Tamer and Shehadeh, Yehya Kh. and ElGharib, Ahmed and Al-Dughairi, Ahmed Abdullah and El Mubarak, Ali and Harhash, Khaled Allam and El-Askary, Hesham},\n  journal={Ecological Informatics},\n  volume={92},\n  pages={103534},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 3324567758,
+    "num_files": 1,
+    "num_images": 2,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17195586",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Hunan_orchard_mapping",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Hunan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MODIS",
+      "Landsat 8"
+    ],
+    "collection_period": "2020-2022",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103628",
+    "citation": "Wang, S. (2026). *Orchard plantation mapping using remote sensing phenological feature fusion and interpretable ML algorithms in Hunan Province, China* (Version V1) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18281811",
+    "bibtex": "@article{liu2026orchard,\n  title={Orchard plantation mapping using remote sensing phenological feature fusion and interpretable ML algorithms in Hunan Province, China},\n  author={Liu, Ying and Wang, Sihan and Liu, Zhaohua and Lyu, Dongmei and Li, Sijia and Zhu, Bingxue and Liu, Ge and Song, Kaishan},\n  journal={Ecological Informatics},\n  volume={94},\n  pages={103628},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 529931426,
+    "num_files": 1,
+    "num_images": 8,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18281811",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "plant_functional_diversity",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103636",
+    "citation": "Pacheco-Labrador, J., Weber, U., Li, W., Gomarasca, U., Pabon-Moreno, D. E., Migliavacca, M., Martin, J., & Duveiller, G. (2025). *The Biodiversity Observing System Simulation Experiment (BOSSE v1.0) ERA5-Land Meteorological time series* (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14717037",
+    "bibtex": "@article{pachecolabrador2026benchmarking,\n  title={Benchmarking remote sensing methods to capture plant functional diversity from space},\n  author={Pacheco-Labrador, Javier and Gomarasca, Ulisse and Pabon-Moreno, Daniel E. and Li, Wantong and Migliavacca, Mirco and Jung, Martin and Duveiller, Gregory},\n  journal={Ecological Informatics},\n  volume={94},\n  pages={103636},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 63526536,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14717037",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "thermal_drought_stress_sapling",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Freising, Germany"
+    ],
+    "lat_lon": [],
+    "country": "Germany",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "European beech",
+      "pedunculate oak",
+      "Douglas fir"
+    ],
+    "sensor_modality": "thermal",
+    "imaging_equipment": [],
+    "collection_period": "2022-2023",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103814",
+    "citation": "Hahn, L., & Schmidt, M. (2026). *Dataset for \"Capturing early signs of drought stress in tree saplings with a low-cost thermal camera to support irrigation monitoring in drought-prone reforestation sites\"* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18804212",
+    "bibtex": "@article{hahn2026capturing,\n  title={Capturing early signs of drought stress in tree saplings with a low-cost thermal camera to support irrigation monitoring in drought-prone reforestation sites},\n  author={Hahn, Leonie A. and Schmidt, Markus and Ahishali, Mete and Junttila, Samuli and Rothe, Andreas and Rammig, Anja and Zang, Christian S.},\n  journal={Ecological Informatics},\n  volume={96},\n  pages={103814},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 7550205700,
+    "num_files": 1,
+    "num_images": 48075,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18804212",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "land_cover_mapping_shadow_correction",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "land_use_segmentation",
+    "location": [
+      "Denmark",
+      "Japan",
+      "New Zealand",
+      "Sweden",
+      "United Kingdom"
+    ],
+    "lat_lon": [],
+    "country": "Denmark, Japan, New Zealand, Sweden, United Kingdom",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2"
+    ],
+    "collection_period": "2022-01-01 to 2023-12-31",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103809",
+    "citation": "Lasko, K., Pan, C., & Griffin, S. (2026). Winter tree and terrain shadow correction reveals land cover mapping errors in Sentinel-2 satellite imagery. *Zenodo*. https://doi.org/10.5281/ZENODO.18717888",
+    "bibtex": "@article{lasko2026winter,\n  title={Winter tree and terrain shadow correction reveals land cover mapping errors in Sentinel-2 satellite imagery},\n  author={Lasko, Kristofer and Pan, Caleb G. and Griffin, Sean P.},\n  journal={Ecological Informatics},\n  volume={96},\n  pages={103809},\n  year={2026}\n}",
+    "data_size_bytes": 29546299795,
+    "num_files": 5,
+    "num_images": 78,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18717888",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "beech_spring_phenology",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Slovenia"
+    ],
+    "lat_lon": [],
+    "country": "Slovenia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "European beech"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2"
+    ],
+    "collection_period": "2018-2021",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.ecoinf.2026.103934",
+    "citation": "Potočnik Buhvald, A., Oštir, K., & Skudnik, M. (2026). *Start-of-season raster maps for European beech in Slovenia derived from Sentinel-2 IRECI time series, 2018–2021* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20358834",
+    "bibtex": "@article{buhvald2026interannual,\n  title={Interannual variability of European beech spring phenology across elevation gradients derived from Sentinel-2 time series},\n  author={Buhvald, Ana Potočnik and Oštir, Krištof and Skudnik, Mitja},\n  journal={Ecological Informatics},\n  volume={97},\n  pages={103934},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "data_size_bytes": 186272848,
+    "num_files": 4,
+    "num_images": 4,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20358834",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "maize_root_growth_tracking",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "University of Padova, Padova, Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [],
+    "collection_period": "2019",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-024-01178-3",
+    "citation": "Simonetti, V. (2023). *Roots tips 3D trajectory reconstructed from stereovision cameras* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.8422241",
+    "bibtex": "@article{simonetti2024system,\n  title={A system for the study of roots 3D kinematics in hydroponic culture: a study on the oscillatory features of root tip},\n  author={Simonetti, Valentina and Ravazzolo, Laura and Ruperti, Benedetto and Quaggiotti, Silvia and Castiello, Umberto},\n  journal={Plant Methods},\n  volume={20},\n  pages={50},\n  year={2024},\n  publisher={BioMed Central}\n}",
+    "data_size_bytes": 4539159,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.8422241",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "wheat_root_CT_nitrate_response",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "University of Nottingham, Sutton Bonington Campus, UK"
+    ],
+    "lat_lon": [],
+    "country": "United Kingdom",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "x-ray",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1002/ppj2.20036",
+    "citation": "Griffiths, M., Mellor, N., & Wells, D. M. (2022). *Data and statistical analysis scripts for manuscript on wheat root response to nitrate using X-ray CT and OpenSimRoot* (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.5504298",
+    "bibtex": "",
+    "data_size_bytes": 37111411,
+    "num_files": 2,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.5504298",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
   }
 ]

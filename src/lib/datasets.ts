@@ -50,6 +50,11 @@ export interface Dataset {
     child_crop_types?: string[] | null;
     zip_size_bytes?: number | null;
     hf_link?: string | null;
+    // Externally hosted datasets (source "doi"/external): where the data actually lives, and
+    // whether AgML mirrors it unmodified. AgML does not rehost these.
+    data_link?: string | null;
+    num_files?: number | null;
+    hosted_in_original_form?: boolean | null;
     // VLM (vision-language) dataset fields — absent/null on plain vision datasets.
     dataset_type: "vision" | "vlm";
     qa_type: string[] | null;
@@ -247,7 +252,11 @@ function normalizeDataset(raw: unknown): Dataset | null {
         bibtex: firstString(raw.bibtex),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
         child_crop_types: null,
-        zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
+        zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes ?? raw.data_size_bytes),
+        data_link: firstString(raw.data_link),
+        num_files: toNumber(raw.num_files),
+        hosted_in_original_form:
+            typeof raw.hosted_in_original_form === "boolean" ? raw.hosted_in_original_form : null,
         hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
         dataset_type: isVlm ? "vlm" : "vision",
         qa_type: qaType,
@@ -318,6 +327,9 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         child_crop_types: current.child_crop_types ?? incoming.child_crop_types,
         zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
         hf_link: current.hf_link ?? incoming.hf_link,
+        data_link: current.data_link ?? incoming.data_link,
+        num_files: current.num_files ?? incoming.num_files,
+        hosted_in_original_form: current.hosted_in_original_form ?? incoming.hosted_in_original_form,
         dataset_type:
             current.dataset_type === "vlm" || incoming.dataset_type === "vlm"
                 ? "vlm"
