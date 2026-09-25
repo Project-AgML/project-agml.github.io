@@ -15193,7 +15193,7 @@
     "crop_types": [
       "cocoa"
     ],
-    "sensor_modality": "lidar",
+    "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "Leica ScanStation C10"
     ],
@@ -15214,7 +15214,8 @@
     "zip_size_bytes": 708184595,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_tree_point_cloud_segmented",
-    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_segmented_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_segmented_sample.webp",
+    "point_cloud_sample_url": "/data/point_cloud_samples/cocoa_tree_point_cloud_segmented_point_cloud_samples.json"
   },
   {
     "name": "cocoa_tree_point_cloud",
@@ -15232,7 +15233,7 @@
     "crop_types": [
       "cocoa"
     ],
-    "sensor_modality": "lidar",
+    "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "Leica ScanStation C10"
     ],
@@ -15254,7 +15255,8 @@
     "zip_size_bytes": 1146377445,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_tree_point_cloud",
-    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_sample.webp"
+    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_sample.webp",
+    "point_cloud_sample_url": "/data/point_cloud_samples/cocoa_tree_point_cloud_point_cloud_samples.json"
   },
   {
     "name": "apple_fruitlet_detection",
@@ -15272,7 +15274,7 @@
     "crop_types": [
       "cocoa"
     ],
-    "sensor_modality": "lidar",
+    "sensor_modality": "rgb",
     "imaging_equipment": [
       "Leica ScanStation C10"
     ],
