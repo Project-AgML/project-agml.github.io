@@ -323,7 +323,12 @@ async function generateDatasets() {
   const datasets = normalizeManifest(readJson(datasetsPath));
   const hfDatasetsRaw = readJson(hfDatasetsPath);
   const hfDatasets = Array.isArray(hfDatasetsRaw)
-    ? hfDatasetsRaw.map((entry) => ({ ...entry, source: 'huggingface' }))
+    ? hfDatasetsRaw.map((entry) => ({
+        ...entry,
+        // Only default to 'huggingface' — externally hosted entries (e.g. source: 'doi') must
+        // keep their own source so the site doesn't present them as rehosted AgML data.
+        source: typeof entry.source === 'string' && entry.source.trim() ? entry.source : 'huggingface',
+      }))
     : hfDatasetsRaw;
 
   writeJson(datasetsPath, datasets);

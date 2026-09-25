@@ -105,6 +105,11 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 	return entry.score != null ? entry.score.toLocaleString() : '—';
 }
 
+// Datasets AgML links to but does not rehost (e.g. source "doi"): no AgML loader exists for them.
+function isExternalDataset(dataset: Dataset) {
+	return dataset.source != null && dataset.source !== 'agml' && dataset.source !== 'huggingface';
+}
+
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
 		if(dataset.dataset_type === 'vlm') {
@@ -1199,6 +1204,7 @@ export function DatasetMetadataModal({
 				] as const)
 			: ([['Number of images', formatImageCount(dataset.num_images)]] as const)),
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
+		...(dataset.num_files != null ? ([['Number of files', dataset.num_files.toLocaleString()]] as const) : []),
 		...(dataset.augmented_num_images != null
 			? ([['Augmented images', formatImageCount(dataset.augmented_num_images)]] as const)
 			: []),
@@ -1423,6 +1429,16 @@ export function DatasetMetadataModal({
 					)}
 				</section>
 
+				{isExternalDataset(dataset) ? (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Get the data</h3>
+						<p className={styles.externalDisclaimer}>
+							This dataset is hosted externally and is not rehosted by AgML. AgML makes no claims about its
+							quality, accuracy, or availability — please review the original source
+							documentation before use.
+						</p>
+					</section>
+				) : (
 				<section className={styles.section}>
 					<h3 className={styles.sectionTitle}>{loader.title}</h3>
 					<div className={styles.snippetRow}>
@@ -1440,12 +1456,18 @@ export function DatasetMetadataModal({
 						</button>
 					</div>
 				</section>
+				)}
 
-				{(dataset.documentation || dataset.hf_link) && (
+				{(dataset.documentation || dataset.hf_link || (isExternalDataset(dataset) && dataset.data_link)) && (
 					<div className={styles.linkRow}>
 						{dataset.documentation && (
 							<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
 								Open source documentation
+							</a>
+						)}
+						{isExternalDataset(dataset) && dataset.data_link && (
+							<a className={styles.externalLink} href={dataset.data_link} target="_blank" rel="noreferrer">
+								Download from original source
 							</a>
 						)}
 						{dataset.hf_link && (

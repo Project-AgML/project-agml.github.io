@@ -12603,7 +12603,7 @@
     "lat_lon": [],
     "country": "Bangladesh",
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "paddy"
     ],
@@ -15913,7 +15913,7 @@
     ],
     "country": "India",
     "environment": "lab",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "apple"
     ],
@@ -16124,7 +16124,7 @@
     ],
     "country": "Germany",
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
@@ -16427,7 +16427,7 @@
     "lat_lon": [],
     "country": "China",
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -16459,7 +16459,7 @@
     "lat_lon": [],
     "country": "",
     "environment": "field",
-    "real_or_synthetic": "synthetic",
+    "real_or_synthetic": "real",
     "crop_types": [],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [],
@@ -16562,7 +16562,7 @@
     "lat_lon": [],
     "country": "Slovenia",
     "environment": "field",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "European beech"
     ],
@@ -16597,7 +16597,7 @@
     "lat_lon": [],
     "country": "Italy",
     "environment": "lab",
-    "real_or_synthetic": "mixed",
+    "real_or_synthetic": "real",
     "crop_types": [
       "maize"
     ],
