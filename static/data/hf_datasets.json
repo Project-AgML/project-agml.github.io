@@ -14430,7 +14430,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103159",
-    "citation": "",
+    "citation": "Trotta, Giacomo (2025), “Data from Capturing functional trait response of dune plants using close-range remote sensing ”, Mendeley Data, V3, doi: 10.17632/n2bp3ppr77.3",
     "bibtex": "@article{trotta2025capturing,\n  title={Capturing plant functional traits in coastal dunes using close-range remote sensing},\n  author={Trotta, Giacomo and Vuerich, Marco and Petrussa, Elisa and Asquini, Edoardo and Cingano, Paolo and Boscutti, Francesco},\n  journal={Ecological Informatics},\n  volume={88},\n  pages={103159},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 196621747,
     "source": "huggingface",
@@ -14461,7 +14461,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.atech.2025.100881",
-    "citation": "",
+    "citation": "Fevgas, Georgios; Lagkas, Thomas; Argyriou, Vasileios; Sarigiannidis, Panagiotis (2025), “A Dataset of Thermal Infrared (TIR) and RGB Images of Lettuces, soil moisture data, and Pseudo-coloring RGB Images of the Lettuce’s Stressed Areas”, Mendeley Data, V2, doi: 10.17632/294zk6k5wf.2",
     "bibtex": "@article{fevgas2025integrating,\n  title={Integrating thermal infrared and RGB imaging for early detection of water stress in lettuces with comparative analysis of IoT sensors},\n  author={Fevgas, Georgios and Lagkas, Thomas and Papadopoulos, Petros and Sarigiannidis, Panagiotis and Argyriou, Vasileios},\n  journal={Smart Agricultural Technology},\n  volume={11},\n  pages={100881},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 8278264,
     "source": "huggingface",
@@ -14507,7 +14507,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102932",
-    "citation": "",
+    "citation": "Kottilapurath Surendran, G., & Mokroš, M. (2025). Slovak exact cropped extended dataset [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14800379",
     "bibtex": "@article{surendran2025forestry,\n  title={A forestry investigation: Exploring factors behind improved tree species classification using bark images},\n  author={Surendran, Gokul Kottilapurath and Deekshitha, and Lukac, Martin and Lukac, Martin and Vybostok, Jozef and Mokros, Martin},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102932},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 512069677,
     "source": "huggingface",
@@ -14553,7 +14553,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102932",
-    "citation": "",
+    "citation": "Kottilapurath Surendran, G., & Mokroš, M. (2024). CZU exact cropped dataset [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14221740",
     "bibtex": "@article{surendran2025forestry,\n  title={A forestry investigation: Exploring factors behind improved tree species classification using bark images},\n  author={Surendran, Gokul Kottilapurath and Deekshitha, and Lukac, Martin and Lukac, Martin and Vybostok, Jozef and Mokros, Martin},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102932},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 451226925,
     "source": "huggingface",
@@ -14599,7 +14599,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102932",
-    "citation": "",
+    "citation": "Mokroš, M., & Kottilapurath Surendran, G. (2024). Slovak exact cropped dataset [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14221080",
     "bibtex": "@article{surendran2025forestry,\n  title={A forestry investigation: Exploring factors behind improved tree species classification using bark images},\n  author={Surendran, Gokul Kottilapurath and Deekshitha, and Lukac, Martin and Lukac, Martin and Vybostok, Jozef and Mokros, Martin},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102932},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 273571768,
     "source": "huggingface",
@@ -14645,7 +14645,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102932",
-    "citation": "",
+    "citation": "Kottilapurath Surendran, G., & Mokroš, M. (2024). CZU normal cropped dataset [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14221890",
     "bibtex": "@article{surendran2025forestry,\n  title={A forestry investigation: Exploring factors behind improved tree species classification using bark images},\n  author={Surendran, Gokul Kottilapurath and Deekshitha, and Lukac, Martin and Lukac, Martin and Vybostok, Jozef and Mokros, Martin},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102932},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 1448896701,
     "source": "huggingface",
@@ -14691,7 +14691,7 @@
     ],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2024.102932",
-    "citation": "",
+    "citation": "Kottilapurath Surendran, G., & Mokroš, M. (2024). Slovak normal cropped dataset [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14228004",
     "bibtex": "@article{surendran2025forestry,\n  title={A forestry investigation: Exploring factors behind improved tree species classification using bark images},\n  author={Surendran, Gokul Kottilapurath and Deekshitha, and Lukac, Martin and Lukac, Martin and Vybostok, Jozef and Mokros, Martin},\n  journal={Ecological Informatics},\n  volume={85},\n  pages={102932},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 2430923580,
     "source": "huggingface",
@@ -14723,7 +14723,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.atech.2023.100188",
-    "citation": "",
+    "citation": "Bertoglio, Riccardo; Mazzucchelli, Alessio; Catalano, Nico; Matteucci, Matteo (2023), “A Comparative Study of Fourier Transform and CycleGAN as Domain Adaptation Techniques for Weed Segmentation - Code and Data”, Politecnico di Milano, V2, doi: 10.17632/x8brgg2j28.2",
     "bibtex": "@article{bertoglio2023comparative,\n  title={A comparative study of Fourier transform and CycleGAN as domain adaptation techniques for weed segmentation},\n  author={Bertoglio, Riccardo and Mazzucchelli, Alessio and Catalano, Nico and Matteucci, Matteo},\n  journal={Smart Agricultural Technology},\n  volume={4},\n  pages={100188},\n  year={2023},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 3846694214,
     "source": "huggingface",
@@ -14757,7 +14757,7 @@
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.1016/j.compag.2024.109457",
-    "citation": "",
+    "citation": "Faina Khoroshevsky, Kaining Zhou, & Naftali Lazarovitch. (2024). Dataset of Grapevine roots with length, diameter, and color annotations [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.10727134",
     "bibtex": "@article{khoroshevsky2024cnn,\n  title={A CNN-based framework for estimation of root length, diameter, and color from in situ minirhizotron images},\n  author={Khoroshevsky, Faina and Zhou, Kaining and Bar-Hillel, Aharon and Hadar, Ofer and Rachmilevitch, Shimon and Ephrath, Jhonathan E. and Lazarovitch, Naftali and Edan, Yael},\n  journal={Computers and Electronics in Agriculture},\n  volume={227},\n  pages={109457},\n  year={2024},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 47336528,
     "source": "huggingface",
@@ -14788,9 +14788,9 @@
     "classes": [
       "HH"
     ],
-    "license": "cc-by-4.0",
+    "license": "cc-by-sa-4.0",
     "documentation": "https://doi.org/10.1016/j.compag.2024.108935",
-    "citation": "",
+    "citation": "Kargar, A., Zorbas, D., Gaffney, M., O'Flynn, B., & Tedesco, S. (2025). Image Dataset of Brown Marmorated Stink Bug (BMSB) or Halyomorpha Halys (HH) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.16088064",
     "bibtex": "@article{kargar2024detecting,\n  title={Detecting Halyomorpha halys using a low-power edge-based monitoring system},\n  author={Kargar, Amin and Zorbas, Dimitrios and Tedesco, Salvatore and Gaffney, Michael and O’Flynn, Brendan},\n  journal={Computers and Electronics in Agriculture},\n  volume={221},\n  pages={108935},\n  year={2024},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 129554843,
     "source": "huggingface",
@@ -14802,23 +14802,26 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "",
     "location": [],
-    "lat_lon": [],
-    "country": "",
-    "environment": "",
+    "lat_lon": [
+      "47.42, 8.49",
+      "47.504, 7.78"
+    ],
+    "country": "Switzerland",
+    "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [],
-    "collection_period": "",
+    "collection_period": "Winter 2020/2021",
     "platform": "",
     "input_data_format": "parquet",
     "annotation_format": "segmentationMask",
     "num_images": 59,
     "classes": [],
-    "license": "cc-by-4.0",
-    "documentation": "",
-    "citation": "",
-    "bibtex": "",
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.agrformet.2023.109654",
+    "citation": "Bornand, A. (2023). Individual tree TLS point clouds for tree volume estimation.  EnviDat.  https://www.doi.org/10.16904/envidat.403.",
+    "bibtex": "@article{bornand2023individual,\n title={Individual tree volume estimation with terrestrial laser scanning: Evaluating reconstructive and allometric approaches},\n author={Bornand, Aline and Rehush, Nataliia and Morsdorf, Felix and Th{\"u}rig, Esther and Abegg, Meinrad},\n journal={Agricultural and forest meteorology},\n volume={341},\n pages={109654},\n year={2023},\n publisher={Elsevier}}",
     "zip_size_bytes": 1040101823,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tls_treevolume",
@@ -14877,10 +14880,10 @@
       "Tilia_cordata",
       "Ulmus_laevis"
     ],
-    "license": "cc-by-4.0",
-    "documentation": "",
-    "citation": "",
-    "bibtex": "",
+    "license": "agpl-3.0",
+    "documentation": "https://doi.org/10.1111/2041-210X.14503Digital Object Identifier (DOI)",
+    "citation": "Puliti, S., Lines, E., Müllerová, J., Frey, J., Schindler, Z., Straker, A., Allen, M. J., Lukas, W., Rehush, N., Hristova, H., Murray, B., Calders, K., Terryn, L., Coops, N., Höfle, B., Junttila, S., Krucek, M., Krok, G., Král, K., … Astrup, R. (2024). FOR-species20K dataset [Dataset]. In Puliti, S., Lines, E., Müllerová, J., Frey, J., Schindler, Z., Straker, A., Allen, M.J., Winiwarter, L., Rehush, N., Hristova, H., Murray, B., Calders, K., Terryn, L., Coops, N., Höfle, B., Krůček, M., Krokm, G., Král, K., Luck, L., Levick, S.R., Missarov, A., Mokroš, M., Owen, H., Stereńczak, K., Pitkänen, T.P., Puletti, N., Saarinen, N., Hopkinson, C., Torresan, C., Tomelleri, E., Weiser, H., Junttila, S., and Astrup, R. (2025) Benchmarking tree species classification from proximally-sensed laser scanning data: introducing the FOR-species20K dataset. Methods in Ecology and Evolution, 00, 1–18. https://doi.org/10.1111/2041-210X.14503help (Vol. 00). Zenodo. https://doi.org/10.5281/zenodo.13255198",
+    "bibtex": "@article{puliti2025benchmarking,\n title={Benchmarking tree species classification from proximally sensed laser scanning data: Introducing the FOR-species20K dataset},\n author={Puliti, Stefano and Lines, Emily R and Mullerova, Jana and Frey, Julian and Schindler, Zoe and Straker, Adrian and Allen, Matthew J and Winiwarter, Lukas and Rehush, Nataliia and Hristova, Hristina and others},\n journal={Methods in Ecology and Evolution},\n volume={16},\n number={4},\n pages={801--818},\n year={2025},\n publisher={Wiley Online Library}}",
     "zip_size_bytes": 89573793964,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/FOR-species-20k_dev_classification",
@@ -14957,13 +14960,375 @@
       "RJ-OM",
       "RJ-SD"
     ],
-    "license": "cc-by-4.0",
+    "license": "cc0-1.0",
     "documentation": "https://doi.org/10.1016/j.atech.2025.101227",
-    "citation": "",
+    "citation": "https://www.kaggle.com/datasets/jianbinyao/minimum-dataset/data",
     "bibtex": "@article{obsie2025enhancing,\n  title={Enhancing drought prediction through machine learning: advanced techniques combining phenotypic and agrometeorological data},\n  author={Obsie, Efrem Yohannes and Liu, Yongguo},\n  journal={Smart Agricultural Technology},\n  volume={12},\n  pages={101227},\n  year={2025},\n  publisher={Elsevier}\n}",
     "zip_size_bytes": 699238786,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_growth_stage_classification",
     "examples_image_url": "/img/agml/sample_images/wheat_growth_stage_classification_sample.webp"
+  },
+  {
+    "name": "DeepCanola_br11",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "brassica napus"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 70,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2025.110470",
+    "citation": "Atkins, K., van Vliet, L., Doonan, J., & Lu, C. (2024). DeepCanola: Phenotyping Brassica Pods Using Semi-Synthetic Data and Active Learning [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14235543",
+    "bibtex": "@article{vanvliet2025deepcanola,\n  title={DeepCanola: Phenotyping brassica pods using semi-synthetic data and active learning},\n  author={van Vliet, Larissa J.J. and Atkins, Kieran and Kurup, Smita and Siles, Laura and Hepworth, Jo and Corke, Fiona M.K. and Doonan, John H. and Lu, Chuan},\n  journal={Computers and Electronics in Agriculture},\n  volume={237},\n  pages={110470},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 326078106,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/DeepCanola_br11",
+    "examples_image_url": "/img/agml/sample_images/DeepCanola_br11_sample.webp"
+  },
+  {
+    "name": "InterDuPa_UAV_papaya",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Chau Thanh, Hau Giang, Vietnam"
+    ],
+    "lat_lon": [
+      "9.884833, 105.816944"
+    ],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "papaya"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI-FC6310S (4864x3648 pixels) mounted on Phantom 4 Pro UAV"
+    ],
+    "collection_period": "September 20, 2023, January 14, 2024, and January 20, 2024",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 2872,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111843",
+    "citation": "Luu, T. H., Ngo, Q. H., Cao, H.-L., Vanderborght, B., & El Makrini, I. (2025). InterDuPa-UAV: A UAV-based Dataset for the Classification of Intercropped Durian and Papaya Trees [Dataset]. In Science & Technology Asia (Vol. 29, Issue 4, pp. 128–137). Zenodo. https://doi.org/10.5281/zenodo.15664908",
+    "bibtex": "@article{ngo2025interdupa,\n  title={InterDuPa-UAV: A UAV-based dataset for the classification of intercropped durian and papaya trees},\n  author={Ngo, Quang Hieu and Luu, Trong Hieu and Nguyen, Phuc Vinh and El Makrini, Ilias and Vanderborght, Bram and Cao, Hoang-Long},\n  journal={Data in Brief},\n  volume={61},\n  pages={111843},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 406723299,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/InterDuPa_UAV_papaya",
+    "examples_image_url": "/img/agml/sample_images/InterDuPa_UAV_papaya_sample.webp"
+  },
+  {
+    "name": "InterDuPa_UAV",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Chau Thanh, Hau Giang, Vietnam"
+    ],
+    "lat_lon": [
+      "9.884833, 105.816944"
+    ],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "durian",
+      "papaya"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI-FC6310S (4864x3648 pixels) mounted on Phantom 4 Pro UAV"
+    ],
+    "collection_period": "September 20, 2023, January 14, 2024, and January 20, 2024",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 311,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111843",
+    "citation": "Luu, T. H., Ngo, Q. H., Cao, H.-L., Vanderborght, B., & El Makrini, I. (2025). InterDuPa-UAV: A UAV-based Dataset for the Classification of Intercropped Durian and Papaya Trees [Dataset]. In Science & Technology Asia (Vol. 29, Issue 4, pp. 128–137). Zenodo. https://doi.org/10.5281/zenodo.15664908",
+    "bibtex": "@article{ngo2025interdupa,\n  title={InterDuPa-UAV: A UAV-based dataset for the classification of intercropped durian and papaya trees},\n  author={Ngo, Quang Hieu and Luu, Trong Hieu and Nguyen, Phuc Vinh and El Makrini, Ilias and Vanderborght, Bram and Cao, Hoang-Long},\n  journal={Data in Brief},\n  volume={61},\n  pages={111843},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 2452982249,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/InterDuPa_UAV",
+    "examples_image_url": "/img/agml/sample_images/InterDuPa_UAV_sample.webp"
+  },
+  {
+    "name": "InterDuPa_UAV_durian",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Chau Thanh, Hau Giang, Vietnam"
+    ],
+    "lat_lon": [
+      "9.884833, 105.816944"
+    ],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "durian"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI-FC6310S (4864x3648 pixels) mounted on Phantom 4 Pro UAV"
+    ],
+    "collection_period": "September 20, 2023, January 14, 2024, and January 20, 2024",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 3327,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111843",
+    "citation": "Luu, T. H., Ngo, Q. H., Cao, H.-L., Vanderborght, B., & El Makrini, I. (2025). InterDuPa-UAV: A UAV-based Dataset for the Classification of Intercropped Durian and Papaya Trees [Dataset]. In Science & Technology Asia (Vol. 29, Issue 4, pp. 128–137). Zenodo. https://doi.org/10.5281/zenodo.15664908",
+    "bibtex": "@article{ngo2025interdupa,\n  title={InterDuPa-UAV: A UAV-based dataset for the classification of intercropped durian and papaya trees},\n  author={Ngo, Quang Hieu and Luu, Trong Hieu and Nguyen, Phuc Vinh and El Makrini, Ilias and Vanderborght, Bram and Cao, Hoang-Long},\n  journal={Data in Brief},\n  volume={61},\n  pages={111843},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 985101705,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/InterDuPa_UAV_durian",
+    "examples_image_url": "/img/agml/sample_images/InterDuPa_UAV_durian_sample.webp"
+  },
+  {
+    "name": "DeepCanola_br9",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "brassica napus"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "numericMeasurements",
+    "num_images": 891,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.compag.2025.110470",
+    "citation": "Atkins, K., van Vliet, L., Doonan, J., & Lu, C. (2024). DeepCanola: Phenotyping Brassica Pods Using Semi-Synthetic Data and Active Learning [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14235543",
+    "bibtex": "@article{vanvliet2025deepcanola,\n  title={DeepCanola: Phenotyping brassica pods using semi-synthetic data and active learning},\n  author={van Vliet, Larissa J.J. and Atkins, Kieran and Kurup, Smita and Siles, Laura and Hepworth, Jo and Corke, Fiona M.K. and Doonan, John H. and Lu, Chuan},\n  journal={Computers and Electronics in Agriculture},\n  volume={237},\n  pages={110470},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 97707242,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/DeepCanola_br9",
+    "examples_image_url": "/img/agml/sample_images/DeepCanola_br9_sample.webp"
+  },
+  {
+    "name": "BAU_insectV2_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Mymensingh, Bangladesh",
+      "Dinajpur, Bangladesh",
+      "Kushtia, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "SAMSUNG smartphone camera",
+      "Canon digital camera"
+    ],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2616,
+    "classes": [
+      "aphids",
+      "armyworm",
+      "beetle",
+      "bollworm",
+      "grasshopper",
+      "mites",
+      "mosquito",
+      "sawfly",
+      "stem_borer"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110083",
+    "citation": "Salehin, Imrus; Angon, Prodipto Bishnu ; Habiba, Ummya  (2023), “BAU-Insectv2  Agricultural Plant Insect Dataset ”, Mendeley Data, V2, doi: 10.17632/x2c6c8thdk.2",
+    "bibtex": "@article{salehin2024bau,\n  title={BAU-Insectv2: An agricultural plant insect dataset for deep learning and biomedical image analysis},\n  author={Salehin, Imrus and Khan, Mahbubur Rahman and Habiba, Ummya and Badhon, Nazmul Huda and Moon, Nazmun Nessa},\n  journal={Data in Brief},\n  volume={53},\n  pages={110083},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 65000490,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/BAU_insectV2_classification",
+    "examples_image_url": "/img/agml/sample_images/BAU_insectV2_classification_sample.webp"
+  },
+  {
+    "name": "cocoa_tree_point_cloud_segmented",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Yorro, Bokito district, Cameroon"
+    ],
+    "lat_lon": [
+      "4.567, 11.117"
+    ],
+    "country": "Cameroon",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cocoa"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "Leica ScanStation C10"
+    ],
+    "collection_period": "27-30 August 2019",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 85,
+    "classes": [
+      "full",
+      "leaf",
+      "wood"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110108",
+    "citation": "Momo Takoudjou, S., & Peynaud, E. (2021). Cocoa tree point clouds obtained by terrestrial Lidar scanning in agroforestry systems in Cameroon (Version V3) [dataset]. CIRAD Dataverse. https://doi.org/doi:10.18167/DVN1/5HZB1F",
+    "bibtex": "@article{peynaud2024terrestrial,\n  title={Terrestrial LiDAR point cloud dataset of cocoa trees grown in agroforestry systems in Cameroon},\n  author={Peynaud, Emilie and Momo Takoudjou, Stéphane},\n  journal={Data in Brief},\n  volume={53},\n  pages={110108},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 708184595,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_tree_point_cloud_segmented",
+    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_segmented_sample.webp",
+    "point_cloud_sample_url": "/data/point_cloud_samples/cocoa_tree_point_cloud_segmented_point_cloud_samples.json"
+  },
+  {
+    "name": "cocoa_tree_point_cloud",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Yorro, Bokito district, Cameroon"
+    ],
+    "lat_lon": [
+      "4.567, 11.117"
+    ],
+    "country": "Cameroon",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cocoa"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "Leica ScanStation C10"
+    ],
+    "collection_period": "27-30 August 2019",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 55,
+    "classes": [
+      "alino",
+      "christ",
+      "obama",
+      "oloumou"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110108",
+    "citation": "Momo Takoudjou, S., & Peynaud, E. (2021). Cocoa tree point clouds obtained by terrestrial Lidar scanning in agroforestry systems in Cameroon (Version V3) [dataset]. CIRAD Dataverse. https://doi.org/doi:10.18167/DVN1/5HZB1F",
+    "bibtex": "@article{peynaud2024terrestrial,\n  title={Terrestrial LiDAR point cloud dataset of cocoa trees grown in agroforestry systems in Cameroon},\n  author={Peynaud, Emilie and Momo Takoudjou, Stéphane},\n  journal={Data in Brief},\n  volume={53},\n  pages={110108},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 1146377445,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/cocoa_tree_point_cloud",
+    "examples_image_url": "/img/agml/sample_images/cocoa_tree_point_cloud_sample.webp",
+    "point_cloud_sample_url": "/data/point_cloud_samples/cocoa_tree_point_cloud_point_cloud_samples.json"
+  },
+  {
+    "name": "apple_fruitlet_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Yorro, Bokito district, Cameroon"
+    ],
+    "lat_lon": [
+      "4.567, 11.117"
+    ],
+    "country": "Cameroon",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cocoa"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Leica ScanStation C10"
+    ],
+    "collection_period": "27-30 August 2019",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 481,
+    "classes": [
+      "0"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110108",
+    "citation": "Checola, G., Moser, D., Sonego, P., Iob, C., Micheli, F., & Franceschi, P. (2025). Fruitlet image dataset for apple phenotyping during early development [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.14844598",
+    "bibtex": "@article{peynaud2024terrestrial,\n  title={Terrestrial LiDAR point cloud dataset of cocoa trees grown in agroforestry systems in Cameroon},\n  author={Peynaud, Emilie and Momo Takoudjou, Stéphane},\n  journal={Data in Brief},\n  volume={53},\n  pages={110108},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 62093363,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_fruitlet_detection",
+    "examples_image_url": "/img/agml/sample_images/apple_fruitlet_detection_sample.webp"
+  },
+  {
+    "name": "UAV_weed_plant_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": [
+      "Wageningen, Netherlands"
+    ],
+    "lat_lon": [],
+    "country": "Netherlands",
+    "environment": "field",
+    "real_or_synthetic": "synthetic",
+    "crop_types": [
+      "grass"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Matrice 300 RTK UAV, Zenmuse P1 camera (DJI, Shenzhen, China), 35 mm focal length, 8192x5460 pixels"
+    ],
+    "collection_period": "13 February 2024, 23 April 2024, 18 July 2024, and 1 August 2024",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2507,
+    "classes": [
+      "W",
+      "F"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.atech.2025.101075",
+    "citation": "van Essen, R., van Henten, E., Kooistra, L., & Kootstra, G. (2025). Data underlying the publication: Adaptive path planning for efficient object search by UAVs in agricultural fields (Version 1) [Dataset]. 4TU.ResearchData. https://doi.org/10.4121/BBE97051-07DF-4934-B634-701D91A2075E.V1",
+    "bibtex": "@article{vanessen2025adaptive,\n  title={Adaptive path planning for efficient object search by UAVs in agricultural fields},\n  author={van Essen, Rick and van Henten, Eldert and Kooistra, Lammert and Kootstra, Gert},\n  journal={Smart Agricultural Technology},\n  volume={12},\n  pages={101075},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 78112505788,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/UAV_weed_plant_detection",
+    "examples_image_url": "/img/agml/sample_images/UAV_weed_plant_detection_sample.webp"
   }
 ]
