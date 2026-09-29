@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -7,7 +7,50 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
-import { computeDatasetStats, useDatasets } from '../lib/datasets';
+import {
+  computeAgriculturalTaskDistribution,
+  computeCropDistribution,
+  computeDatasetStats,
+  useDatasets,
+} from '../lib/datasets';
+import GrowthLineChart from '../components/GrowthLineChart';
+import DistributionBarChart from '../components/DistributionBarChart';
+import {
+  bucketByInterval,
+  lastNDaysForwardFilled,
+  remapAnnotations,
+  type DatasetHistoryAnnotation,
+  type DatasetHistoryPoint,
+} from '../lib/datasetHistory';
+
+interface DatasetHistory {
+  points: DatasetHistoryPoint[];
+  annotations: DatasetHistoryAnnotation[];
+}
+
+// Snapshot-based, not live — static/data/dataset_history.json is maintained by hand (see its
+// `_readme` field for the format new snapshots should follow).
+function useDatasetHistory(): DatasetHistory | null {
+  const [history, setHistory] = useState<DatasetHistory | null>(null);
+  const historyUrl = useBaseUrl('/data/dataset_history.json');
+
+  useEffect(() => {
+    let active = true;
+    fetch(historyUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        if (active) setHistory(data);
+      })
+      .catch(() => {
+        if (active) setHistory(null);
+      });
+    return () => {
+      active = false;
+    };
+  }, [historyUrl]);
+
+  return history;
+}
 
 // The ~30 most recently added sample images (by commit date) — hardcoded rather than
 // picked live from useDatasets() so the homepage doesn't depend on the full dataset fetch.
@@ -122,10 +165,10 @@ function StatsRow() {
 
   return (
     <section className={styles.statsRow}>
-      <div className={styles.statBlock}>
+      <Link to="/datasets" className={`${styles.statBlock} ${styles.statBlockLink}`}>
         <span className={styles.statValue}>{stats.datasetCount.toLocaleString()}</span>
         <span className={styles.statLabel}>Datasets indexed</span>
-      </div>
+      </Link>
       <div className={styles.statBlock}>
         <span className={styles.statValue}>{stats.imageCount.toLocaleString()}</span>
         <span className={styles.statLabel}>Labeled images</span>
@@ -138,6 +181,121 @@ function StatsRow() {
   );
 }
 
+// Every point in dataset_history.json is a hand-run snapshot at whatever cadence someone
+// happened to run the script, so the long-range charts are bucketed down to one point every two
+// weeks for an even x-axis, and annotations are re-anchored to whichever bucketed point survives
+// closest to their original snapshot.
+const BIWEEKLY_DAYS = 14;
+const RECENT_DAYS = 7;
+
+function GrowthCharts() {
+  const history = useDatasetHistory();
+
+  const biweekly = useMemo(
+    () => (history ? bucketByInterval(history.points, BIWEEKLY_DAYS) : []),
+    [history],
+  );
+  const recent = useMemo(
+    () => (history ? lastNDaysForwardFilled(history.points, RECENT_DAYS) : []),
+    [history],
+  );
+
+  return (
+    <>
+      <section className={styles.chartsSection}>
+        <p className={styles.sectionLabel}>Growth over time</p>
+        <div className={styles.chartsGrid}>
+          <div className={styles.chartPanel}>
+            <h3 className={styles.chartPanelTitle}>Top-level datasets over time</h3>
+            {history ? (
+              <GrowthLineChart
+                points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.datasetCount }))}
+                annotations={remapAnnotations(
+                  history.annotations.filter((a) => a.metric === 'datasetCount'),
+                  history.points,
+                  biweekly,
+                )}
+                color="primary"
+                yaxisTitle="Top-level datasets"
+              />
+            ) : (
+              <div className={styles.chartLoading}>Loading…</div>
+            )}
+          </div>
+          <div className={styles.chartPanel}>
+            <h3 className={styles.chartPanelTitle}>Images over time</h3>
+            {history ? (
+              <GrowthLineChart
+                points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.imageCount }))}
+                annotations={remapAnnotations(
+                  history.annotations.filter((a) => a.metric === 'imageCount'),
+                  history.points,
+                  biweekly,
+                )}
+                color="teal"
+                yaxisTitle="Images"
+              />
+            ) : (
+              <div className={styles.chartLoading}>Loading…</div>
+            )}
+          </div>
+        </div>
+      </section>
+      <section className={styles.chartsSection}>
+        <p className={styles.sectionLabel}>Last 7 days</p>
+        <div className={styles.chartsGrid}>
+          <div className={styles.chartPanel}>
+            <h3 className={styles.chartPanelTitle}>Top-level datasets</h3>
+            {history ? (
+              <GrowthLineChart
+                points={recent.map((p) => ({ period: p.period, date: p.date, value: p.datasetCount }))}
+                color="primary"
+                yaxisTitle="Top-level datasets"
+              />
+            ) : (
+              <div className={styles.chartLoading}>Loading…</div>
+            )}
+          </div>
+          <div className={styles.chartPanel}>
+            <h3 className={styles.chartPanelTitle}>Images</h3>
+            {history ? (
+              <GrowthLineChart
+                points={recent.map((p) => ({ period: p.period, date: p.date, value: p.imageCount }))}
+                color="teal"
+                yaxisTitle="Images"
+              />
+            ) : (
+              <div className={styles.chartLoading}>Loading…</div>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function DistributionCharts() {
+  const { data } = useDatasets();
+  const taskDistribution = useMemo(() => computeAgriculturalTaskDistribution(data), [data]);
+  const cropDistribution = useMemo(() => computeCropDistribution(data), [data]);
+
+  return (
+    <section className={styles.chartsSection}>
+      <p className={styles.sectionLabel}>What's covered</p>
+      <div className={styles.chartsGrid}>
+        <div className={styles.chartPanel}>
+          <h3 className={styles.chartPanelTitle}>Most common dataset types</h3>
+          <DistributionBarChart entries={taskDistribution} color="primary" xaxisTitle="Datasets" />
+        </div>
+        <div className={styles.chartPanel}>
+          <h3 className={styles.chartPanelTitle}>Most common crops</h3>
+          <DistributionBarChart entries={cropDistribution} color="teal" xaxisTitle="Dataset appearances" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   return (
     <Layout description="AgML is a comprehensive library for agricultural machine learning.">
@@ -145,6 +303,8 @@ export default function Home(): ReactNode {
         <HomepageHero />
         <SampleImagery />
         <StatsRow />
+        <GrowthCharts />
+        <DistributionCharts />
 
         <section className={styles.featuresSection}>
           <p className={styles.sectionLabel}>What AgML offers</p>

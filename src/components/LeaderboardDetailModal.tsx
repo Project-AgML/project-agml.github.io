@@ -1,31 +1,12 @@
 import { Fragment, useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
-import type { GlobalLeaderboardEntry } from '../lib/performance';
+import { formatGlobalResultTypeKey, globalResultTypeKey, METRIC_LABELS } from '../lib/performance';
+import type { ModelComparisonDetail } from '../lib/performance';
+import { toDisplayLabel } from '../lib/labelOverrides';
 import styles from './LeaderboardDetailModal.module.css';
 
-function toLabel(value: string) {
-  return value.replace(/_/g, ' ');
-}
-
-// 1st, 2nd, 3rd, 4th, ..., 11th-13th stay "th" (the exception the mod-10 rule alone gets wrong).
-function ordinal(value: number): string {
-  const rounded = Math.round(value);
-  const mod100 = rounded % 100;
-  if (mod100 >= 11 && mod100 <= 13) return `${rounded}th`;
-  switch (rounded % 10) {
-    case 1:
-      return `${rounded}st`;
-    case 2:
-      return `${rounded}nd`;
-    case 3:
-      return `${rounded}rd`;
-    default:
-      return `${rounded}th`;
-  }
-}
-
-function formatPercentile(value: number | null) {
-  return value == null ? null : `${ordinal(value)} pctl`;
+function formatRank(rank: number | null, totalModels: number) {
+  return rank == null ? null : `#${rank} of ${totalModels}`;
 }
 
 function formatScore(value: number) {
@@ -33,25 +14,16 @@ function formatScore(value: number) {
 }
 
 function formatResultType(entry: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }) {
-  const base = entry.variant === 'fine-tuned' ? 'Fine-tuned' : entry.variant === 'zero-shot' ? 'Zero-shot' : '—';
-  if (base === '—') return base;
-  return entry.optimized ? `${base} (optimized)` : base;
-}
-
-function taskBadgeClass(task: string | null): string {
-  if (!task) return styles.badgeOther;
-  if (task.includes('classif')) return styles.badgeClassification;
-  if (task.includes('detect')) return styles.badgeDetection;
-  if (task.includes('segment')) return styles.badgeSegmentation;
-  return styles.badgeOther;
+  const key = globalResultTypeKey(entry);
+  return key ? formatGlobalResultTypeKey(key) : '—';
 }
 
 export function LeaderboardDetailModal({
-  entry,
+  detail,
   open,
   onClose,
 }: {
-  entry: GlobalLeaderboardEntry | null;
+  detail: ModelComparisonDetail | null;
   open: boolean;
   onClose: () => void;
 }) {
@@ -73,7 +45,7 @@ export function LeaderboardDetailModal({
   }, [open, onClose]);
 
   const [expandedKeys, setExpandedKeys] = useState<Set<string>>(new Set());
-  useEffect(() => setExpandedKeys(new Set()), [entry]);
+  useEffect(() => setExpandedKeys(new Set()), [detail]);
   const toggleExpanded = (key: string) => {
     setExpandedKeys((current) => {
       const next = new Set(current);
@@ -83,7 +55,7 @@ export function LeaderboardDetailModal({
     });
   };
 
-  if (!open || entry == null) return null;
+  if (!open || detail == null) return null;
 
   return (
     <div className={styles.backdrop} role="presentation" onClick={onClose}>
@@ -97,17 +69,12 @@ export function LeaderboardDetailModal({
         <div className={styles.header}>
           <div>
             <h2 id="leaderboard-detail-title" className={styles.title}>
-              {entry.model}
+              {detail.model}
+              {detail.task ? ` (${toDisplayLabel(detail.task)})` : ''}
             </h2>
-            <div className={styles.badgeRow}>
-              <span className={`${styles.taskBadge} ${taskBadgeClass(entry.machineLearningTask)}`}>
-                {entry.machineLearningTask ? toLabel(entry.machineLearningTask) : 'Unknown task'}
-              </span>
-              <span className={styles.resultTypeBadge}>{entry.resultType}</span>
-            </div>
             <p className={styles.summaryLine}>
-              {entry.appearances} result{entry.appearances === 1 ? '' : 's'} across {entry.datasets.length} dataset
-              {entry.datasets.length === 1 ? '' : 's'}
+              Ranked by {METRIC_LABELS[detail.metric]} across {detail.datasets.length} dataset
+              {detail.datasets.length === 1 ? '' : 's'} shared with all {detail.totalModels} compared models
             </p>
           </div>
           <button type="button" className={styles.closeButton} onClick={onClose} aria-label="Close model details">
@@ -115,17 +82,17 @@ export function LeaderboardDetailModal({
           </button>
         </div>
 
-        <p className={styles.sectionTitle}>Datasets included ({entry.datasetDetails.length})</p>
+        <p className={styles.sectionTitle}>Datasets contributing to this average ({detail.datasets.length})</p>
         <div className={styles.tableWrap}>
           <div className={styles.table} role="table">
             <div className={styles.tableRow} role="row">
               <span role="columnheader">Dataset</span>
               <span role="columnheader">Split %</span>
               <span role="columnheader">Config</span>
-              <span role="columnheader">Scores (percentile)</span>
+              <span role="columnheader">Scores (rank)</span>
             </div>
-            {entry.datasetDetails.map((detail, index) => {
-              const rowKey = `${detail.dataset}-${index}`;
+            {detail.datasets.map((datasetDetail, index) => {
+              const rowKey = `${datasetDetail.dataset}-${index}`;
               const isExpanded = expandedKeys.has(rowKey);
               const scoreLines = (
                 [
@@ -136,12 +103,12 @@ export function LeaderboardDetailModal({
                 ] as [string, 'f1' | 'map' | 'precision' | 'recall'][]
               )
                 .map(([label, category]) => {
-                  const score = detail.scores[category];
-                  const pctl = detail.percentiles[category];
-                  if (score == null || pctl == null) return null;
-                  return [label, formatScore(score), formatPercentile(pctl)] as [string, string, string];
+                  const score = datasetDetail.scores[category];
+                  const rank = formatRank(datasetDetail.ranks[category], detail.totalModels);
+                  if (score == null) return null;
+                  return [label, formatScore(score), rank] as [string, string, string | null];
                 })
-                .filter((line): line is [string, string, string] => line != null);
+                .filter((line): line is [string, string, string | null] => line != null);
 
               return (
                 <Fragment key={rowKey}>
@@ -161,14 +128,14 @@ export function LeaderboardDetailModal({
                     <span role="cell">
                       <div className={styles.datasetCell}>
                         <button type="button" className={styles.datasetName}>
-                          {toLabel(detail.dataset)}
+                          {toDisplayLabel(datasetDetail.dataset)}
                           <span className={styles.expandChevron} aria-hidden>
                             {isExpanded ? '▲' : '▾'}
                           </span>
                         </button>
                         <Link
                           className={styles.viewDatasetLink}
-                          to={`/datasets?dataset=${encodeURIComponent(detail.dataset)}`}
+                          to={`/datasets?dataset=${encodeURIComponent(datasetDetail.dataset)}`}
                           onClick={(event) => event.stopPropagation()}
                         >
                           view dataset
@@ -176,19 +143,19 @@ export function LeaderboardDetailModal({
                       </div>
                     </span>
                     <span role="cell" className={styles.simpleCell}>
-                      {detail.splitBreakdown ?? '—'}
+                      {datasetDetail.splitBreakdown ?? '—'}
                     </span>
                     <span role="cell" className={styles.simpleCell}>
-                      {detail.datasetConfig ?? '—'}
+                      {datasetDetail.datasetConfig ?? '—'}
                     </span>
                     <span role="cell">
                       {scoreLines.length === 0 ? (
                         '—'
                       ) : (
                         <div className={styles.scoresCell}>
-                          {scoreLines.map(([label, score, pctl]) => (
+                          {scoreLines.map(([label, score, rank]) => (
                             <span key={label}>
-                              {label} {score} <span>({pctl})</span>
+                              {label} {score} {rank && <span>({rank})</span>}
                             </span>
                           ))}
                         </div>
@@ -197,7 +164,10 @@ export function LeaderboardDetailModal({
                   </div>
                   {isExpanded && (
                     <div className={styles.notesRow}>
-                      {formatResultType(detail)} · {detail.platform ?? 'unknown platform'}
+                      <p className={styles.notesMeta}>
+                        {formatResultType(datasetDetail)} · {datasetDetail.platform ?? 'unknown platform'}
+                      </p>
+                      <p className={styles.notesText}>{datasetDetail.notes ?? 'No additional notes for this result.'}</p>
                     </div>
                   )}
                 </Fragment>

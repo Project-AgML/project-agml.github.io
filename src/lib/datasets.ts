@@ -19,6 +19,10 @@ export interface Dataset {
     augmented_counterpart: string | null;
     crop_types: string[] | null;
     sensor_modality: string | null;
+    // Derived: `sensor_modality` split into individual lowercase values (it's stored as a single
+    // comma-joined string, e.g. "rgb, thermal") so the search page can filter by modality even
+    // when a dataset has more than one.
+    display_modality: string[] | null;
     real_or_synthetic: string | null;
     platform: string[] | null;
     input_data_format: string | null;
@@ -31,11 +35,26 @@ export interface Dataset {
     stats_mean: number[] | null;
     stats_std: number[] | null;
     examples_image_url: string | null;
+    point_cloud_sample_url: string | null;
     license: string | null;
     citation: string | null;
+    // BibTeX entry for the article the dataset was sourced from, scraped from the dataset's
+    // Hugging Face README (or resolved from a DOI found there) — distinct from `citation`,
+    // which is free-form and not always valid BibTeX.
+    bibtex: string | null;
     parent_dataset?: string | null;
+    // Derived (not present in the source manifests): for a dataset whose child variants are
+    // hidden from search results (see isChildDataset/includeChildren), the crop/species names
+    // rolled up from those children's names — so that info stays visible on the parent's card
+    // even though the children themselves no longer appear as separate results.
+    child_crop_types?: string[] | null;
     zip_size_bytes?: number | null;
     hf_link?: string | null;
+    // Externally hosted datasets (source "doi"/external): where the data actually lives, and
+    // whether AgML mirrors it unmodified. AgML does not rehost these.
+    data_link?: string | null;
+    num_files?: number | null;
+    hosted_in_original_form?: boolean | null;
     // VLM (vision-language) dataset fields — absent/null on plain vision datasets.
     dataset_type: "vision" | "vlm";
     qa_type: string[] | null;
@@ -152,6 +171,10 @@ function normalizeDataset(raw: unknown): Dataset | null {
         raw.ml_task,
         raw.task,
     );
+    const sensorModality =
+        firstString(raw.sensor_modality, raw.sensor, raw.modality) ??
+        toStringArray(raw.sensor_modality)?.join(", ") ??
+        null;
     const qaType = toStringArray(raw.qa_type);
     const taskDimensions = toStringArray(raw.task_dimensions);
     const isVlm =
@@ -182,10 +205,17 @@ function normalizeDataset(raw: unknown): Dataset | null {
                 ?.map((c) => c.trim().toLowerCase())
                 .filter((c) => c && !/^\+.*\b(more|others?)\b/i.test(c)) ??
             null,
-        sensor_modality:
-            firstString(raw.sensor_modality, raw.sensor, raw.modality) ??
-            toStringArray(raw.sensor_modality)?.join(", ") ??
-            null,
+        sensor_modality: sensorModality,
+        display_modality: sensorModality
+            ? Array.from(
+                  new Set(
+                      sensorModality
+                          .split(",")
+                          .map((entry) => entry.trim().toLowerCase())
+                          .filter(Boolean),
+                  ),
+              )
+            : null,
         real_or_synthetic: firstString(
             raw.real_or_synthetic,
             raw.real_synthetic,
@@ -213,10 +243,20 @@ function normalizeDataset(raw: unknown): Dataset | null {
             raw.examples_url,
             raw.image_url,
         ),
+        point_cloud_sample_url: firstString(
+            raw.point_cloud_sample_url,
+            raw.point_cloud_url,
+        ),
         license: firstString(raw.license),
         citation: firstString(raw.citation),
+        bibtex: firstString(raw.bibtex),
         parent_dataset: firstString(raw.parent_dataset, raw.parentDataset),
-        zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes),
+        child_crop_types: null,
+        zip_size_bytes: toNumber(raw.zip_size_bytes ?? raw.zipSizeBytes ?? raw.data_size_bytes),
+        data_link: firstString(raw.data_link),
+        num_files: toNumber(raw.num_files),
+        hosted_in_original_form:
+            typeof raw.hosted_in_original_form === "boolean" ? raw.hosted_in_original_form : null,
         hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
         dataset_type: isVlm ? "vlm" : "vision",
         qa_type: qaType,
@@ -250,6 +290,7 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
             current.augmented_counterpart ?? incoming.augmented_counterpart,
         crop_types: current.crop_types ?? incoming.crop_types,
         sensor_modality: current.sensor_modality ?? incoming.sensor_modality,
+        display_modality: current.display_modality ?? incoming.display_modality,
         real_or_synthetic:
             current.real_or_synthetic ?? incoming.real_or_synthetic,
         platform:
@@ -277,11 +318,18 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
         stats_std: current.stats_std ?? incoming.stats_std,
         examples_image_url:
             current.examples_image_url ?? incoming.examples_image_url,
+        point_cloud_sample_url:
+            current.point_cloud_sample_url ?? incoming.point_cloud_sample_url,
         license: current.license ?? incoming.license,
         citation: current.citation ?? incoming.citation,
+        bibtex: current.bibtex ?? incoming.bibtex,
         parent_dataset: current.parent_dataset ?? incoming.parent_dataset,
+        child_crop_types: current.child_crop_types ?? incoming.child_crop_types,
         zip_size_bytes: current.zip_size_bytes ?? incoming.zip_size_bytes,
         hf_link: current.hf_link ?? incoming.hf_link,
+        data_link: current.data_link ?? incoming.data_link,
+        num_files: current.num_files ?? incoming.num_files,
+        hosted_in_original_form: current.hosted_in_original_form ?? incoming.hosted_in_original_form,
         dataset_type:
             current.dataset_type === "vlm" || incoming.dataset_type === "vlm"
                 ? "vlm"
@@ -335,7 +383,7 @@ export async function loadDatasets(manifestUrls: string[]): Promise<Dataset[]> {
     }
 
     if (loadedAny) {
-        return Array.from(merged.values()).sort((a, b) =>
+        return attachChildCropTypes(Array.from(merged.values())).sort((a, b) =>
             a.name.localeCompare(b.name),
         );
     }
@@ -693,6 +741,39 @@ export function isChildDataset(dataset: Dataset): boolean {
     return Boolean(dataset.parent_dataset) && dataset.dataset_type !== "vlm";
 }
 
+// Child dataset names are "<parent>/<species_slug>", e.g. "iNatAg-mini/abelmoschus_esculentus".
+// Turns the slug into a readable crop/species name for display.
+function speciesNameFromChild(dataset: Dataset): string | null {
+    const slug = dataset.name.split("/").pop();
+    if (!slug) return null;
+    return toTitleCase(slug.replace(/_/g, " "));
+}
+
+// Rolls each parent's children's species names up onto that parent's `child_crop_types`, so the
+// crop/species info stays visible on the parent's card even though the children are filtered out
+// of search results by `isChildDataset`/`includeChildren`. Mutates nothing — returns a new array.
+export function attachChildCropTypes(datasets: Dataset[]): Dataset[] {
+    const byParent = new Map<string, Set<string>>();
+    for (const dataset of datasets) {
+        if (!isChildDataset(dataset)) continue;
+        const species = speciesNameFromChild(dataset);
+        if (!species) continue;
+        const parentName = dataset.parent_dataset!;
+        if (!byParent.has(parentName)) byParent.set(parentName, new Set());
+        byParent.get(parentName)!.add(species);
+    }
+    if (byParent.size === 0) return datasets;
+
+    return datasets.map((dataset) => {
+        const species = byParent.get(dataset.name);
+        if (!species) return dataset;
+        return {
+            ...dataset,
+            child_crop_types: Array.from(species).sort((a, b) => a.localeCompare(b)),
+        };
+    });
+}
+
 // Key for counting *distinct* datasets: child variants collapse onto their parent so an
 // augmented counterpart isn't counted twice, while VLM records key on their own name rather
 // than the upstream repo slug (which names a Hugging Face repo, not an AgML dataset).
@@ -718,4 +799,52 @@ export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
         imageCount,
         taskTypeCount,
     };
+}
+
+export interface DistributionEntry {
+    key: string;
+    label: string;
+    count: number;
+}
+
+// Top `limit` agricultural task types by number of (top-level) datasets tagged with them.
+export function computeAgriculturalTaskDistribution(
+    datasets: Dataset[],
+    limit = 10,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const task = dataset.agricultural_task;
+        if (!task) continue;
+        counts.set(task, (counts.get(task) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
+}
+
+// Top `limit` crop types by number of (top-level) datasets that include them — a dataset
+// covering several crops counts once toward each. Child datasets fold their species names up
+// onto `child_crop_types` (see attachChildCropTypes), so those count toward the parent instead.
+export function computeCropDistribution(
+    datasets: Dataset[],
+    limit = 12,
+): DistributionEntry[] {
+    const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
+    const counts = new Map<string, number>();
+    for (const dataset of topLevel) {
+        const crops = new Set([
+            ...(dataset.crop_types ?? []),
+            ...(dataset.child_crop_types ?? []),
+        ]);
+        for (const crop of crops) {
+            counts.set(crop, (counts.get(crop) ?? 0) + 1);
+        }
+    }
+    return Array.from(counts.entries())
+        .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+        .slice(0, limit);
 }

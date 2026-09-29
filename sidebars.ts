@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
       label: 'Guide',
       collapsible: false,
       className: 'sidebarCategoryLabel',
-      items: ['index', 'development', 'contributing-results'],
+      items: ['index', 'contributing-data', 'contributing-results', 'development'],
     },
     {
       type: 'category',

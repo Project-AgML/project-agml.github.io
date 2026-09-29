@@ -81,6 +81,11 @@ export function usePlotlyChrome() {
 			// separate via a gap rather than a contrasting stroke.
 			markerRing: resolveCssColor('--agml-surface-soft', '#171a17'),
 			fontFamily: resolveCssFontFamily('--ifm-code-font-family', 'monospace'),
+			// Two-series accent pair for charts that plot a primary metric and a secondary one
+			// side by side (e.g. datasets vs. images) — same hues as the site's primary green
+			// and its detection-badge teal, so charts read as part of the same system.
+			accentPrimary: resolveCssColor('--ifm-color-primary', '#2f6f4f'),
+			accentTeal: resolveCssColor('--agml-badge-detection-fg', '#2f8f7f'),
 		}),
 		[colorMode],
 	);

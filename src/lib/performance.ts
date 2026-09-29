@@ -83,8 +83,8 @@ function normalizeEntry(raw: unknown): PerformanceEntry | null {
     date: toText(raw.date ?? raw.submitted_at),
     link: toText(raw.link ?? raw.url ?? raw.source_link),
     notes: toText(raw.notes),
-    variant: null,
-    optimized: Boolean(raw.optimized),
+    variant: raw.variant === 'zero-shot' || raw.variant === 'fine-tuned' ? raw.variant : null,
+    optimized: isOptimized(raw.optimized),
     splitBreakdown: toText(raw.split_breakdown),
     trainPercentage: toNumber(raw.train_percentage),
     datasetConfig: toText(raw.dataset_config ?? raw.config) ?? 'raw',
@@ -157,6 +157,13 @@ export interface CategoryScores {
   precision: number | null;
   recall: number | null;
 }
+
+export const METRIC_LABELS: Record<keyof CategoryScores, string> = {
+  f1: 'F1',
+  map: 'mAP',
+  precision: 'Precision',
+  recall: 'Recall',
+};
 
 // Every run can report several metric families at once (F1, mAP, precision, recall),
 // independent of the single metric resolveMetricKey picks for the legacy per-dataset rank.
@@ -412,17 +419,7 @@ export interface GlobalPerformanceRecord {
   platform: string | null;
   splitBreakdown: string | null;
   datasetConfig: string | null;
-}
-
-export interface GlobalLeaderboardDatasetDetail {
-  dataset: string;
-  percentiles: CategoryPercentiles;
-  scores: CategoryScores;
-  variant: 'zero-shot' | 'fine-tuned' | null;
-  optimized: boolean;
-  platform: string | null;
-  splitBreakdown: string | null;
-  datasetConfig: string | null;
+  notes: string | null;
 }
 
 export function globalResultTypeKey(record: { variant: 'zero-shot' | 'fine-tuned' | null; optimized: boolean }): string | null {
@@ -435,21 +432,6 @@ export function formatGlobalResultTypeKey(key: string) {
   const base = optimized ? key.slice(0, -'-optimized'.length) : key;
   const label = base === 'fine-tuned' ? 'Fine-tuned' : 'Zero-shot';
   return optimized ? `${label} (optimized)` : label;
-}
-
-export interface GlobalLeaderboardEntry {
-  model: string;
-  machineLearningTask: string | null;
-  avgF1Percentile: number | null;
-  avgMapPercentile: number | null;
-  avgPrecisionPercentile: number | null;
-  avgRecallPercentile: number | null;
-  appearances: number;
-  datasets: string[];
-  fineTunedDatasets: string[];
-  resultType: string;
-  optimized: boolean;
-  datasetDetails: GlobalLeaderboardDatasetDetail[];
 }
 
 function normalizeCategoryPercentiles(raw: unknown): CategoryPercentiles {
@@ -499,32 +481,24 @@ function normalizeGlobalPerformanceRecord(raw: unknown): GlobalPerformanceRecord
     platform: toText(raw.platform),
     splitBreakdown: toText(raw.splitBreakdown),
     datasetConfig: toText(raw.datasetConfig),
+    notes: toText(raw.notes),
   };
 }
 
-function formatResultTypeLabel(variants: Set<'zero-shot' | 'fine-tuned'>, optimized: boolean) {
-  let base: string;
-  if (variants.size === 0) base = '—';
-  else if (variants.size > 1) base = 'Mixed';
-  else base = variants.has('fine-tuned') ? 'Fine-tuned' : 'Zero-shot';
-
-  if (base === '—') return base;
-  return optimized ? `${base} (optimized)` : base;
+export interface GlobalLeaderboardFilterOptions {
+  cropTypes?: string[];
+  mlTasks?: string[];
+  resultTypes?: string[];
+  tuned?: ('tuned' | 'not-tuned')[];
+  optimizedValues?: ('optimized' | 'not-optimized')[];
+  platforms?: string[];
+  datasets?: string[];
 }
 
-export function computeGlobalLeaderboard(
+function filterGlobalRecords(
   records: GlobalPerformanceRecord[],
-  options: {
-    cropTypes?: string[];
-    mlTasks?: string[];
-    resultTypes?: string[];
-    tuned?: ('tuned' | 'not-tuned')[];
-    optimizedValues?: ('optimized' | 'not-optimized')[];
-    platforms?: string[];
-    datasets?: string[];
-    minAppearances?: number;
-  } = {}
-): GlobalLeaderboardEntry[] {
+  options: GlobalLeaderboardFilterOptions
+): GlobalPerformanceRecord[] {
   const {
     cropTypes = [],
     mlTasks = [],
@@ -533,100 +507,302 @@ export function computeGlobalLeaderboard(
     optimizedValues = [],
     platforms = [],
     datasets = [],
-    minAppearances = 3,
   } = options;
-  const stats = new Map<
-    string,
-    {
-      model: string;
-      machineLearningTask: string | null;
-      categoryTotals: Record<keyof CategoryPercentiles, number>;
-      categoryCounts: Record<keyof CategoryPercentiles, number>;
-      appearances: number;
-      datasets: Set<string>;
-      fineTunedDatasets: Set<string>;
-      variants: Set<'zero-shot' | 'fine-tuned'>;
-      optimized: boolean;
-      datasetDetails: GlobalLeaderboardDatasetDetail[];
-    }
-  >();
 
-  for (const record of records) {
-    if (cropTypes.length && !record.crop_types?.some((crop) => cropTypes.includes(crop))) continue;
-    if (mlTasks.length && !(record.machine_learning_task && mlTasks.includes(record.machine_learning_task))) continue;
+  return records.filter((record) => {
+    if (cropTypes.length && !record.crop_types?.some((crop) => cropTypes.includes(crop))) return false;
+    if (mlTasks.length && !(record.machine_learning_task && mlTasks.includes(record.machine_learning_task))) return false;
     if (resultTypes.length) {
       const resultTypeKey = globalResultTypeKey(record);
-      if (!resultTypeKey || !resultTypes.includes(resultTypeKey)) continue;
+      if (!resultTypeKey || !resultTypes.includes(resultTypeKey)) return false;
     }
     if (tuned.length) {
       const tunedKey = record.variant === 'fine-tuned' ? 'tuned' : 'not-tuned';
-      if (!tuned.includes(tunedKey)) continue;
+      if (!tuned.includes(tunedKey)) return false;
     }
     if (optimizedValues.length) {
       const optimizedKey = record.optimized ? 'optimized' : 'not-optimized';
-      if (!optimizedValues.includes(optimizedKey)) continue;
+      if (!optimizedValues.includes(optimizedKey)) return false;
     }
-    if (platforms.length && !(record.platform && platforms.includes(record.platform))) continue;
-    if (datasets.length && !datasets.includes(record.dataset)) continue;
+    if (platforms.length && !(record.platform && platforms.includes(record.platform))) return false;
+    if (datasets.length && !datasets.includes(record.dataset)) return false;
+    return true;
+  });
+}
 
-    const key = `${record.model}|||${record.machine_learning_task ?? ''}`;
-    const entryStats =
-      stats.get(key) ??
-      {
-        model: record.model,
-        machineLearningTask: record.machine_learning_task,
-        categoryTotals: { f1: 0, map: 0, precision: 0, recall: 0 },
-        categoryCounts: { f1: 0, map: 0, precision: 0, recall: 0 },
-        appearances: 0,
-        datasets: new Set<string>(),
-        fineTunedDatasets: new Set<string>(),
-        variants: new Set<'zero-shot' | 'fine-tuned'>(),
-        optimized: false,
-        datasetDetails: [] as GlobalLeaderboardDatasetDetail[],
-      };
-    (Object.keys(record.percentiles) as (keyof CategoryPercentiles)[]).forEach((categoryKey) => {
-      const value = record.percentiles[categoryKey];
-      if (value == null) return;
-      entryStats.categoryTotals[categoryKey] += value;
-      entryStats.categoryCounts[categoryKey] += 1;
-    });
-    entryStats.appearances += 1;
-    entryStats.datasets.add(record.dataset);
-    if (record.variant === 'fine-tuned') entryStats.fineTunedDatasets.add(record.dataset);
-    if (record.variant) entryStats.variants.add(record.variant);
-    if (record.optimized) entryStats.optimized = true;
-    entryStats.datasetDetails.push({
-      dataset: record.dataset,
-      percentiles: record.percentiles,
-      scores: record.scores,
-      variant: record.variant,
-      optimized: record.optimized,
-      platform: record.platform,
-      splitBreakdown: record.splitBreakdown,
-      datasetConfig: record.datasetConfig,
-    });
-    stats.set(key, entryStats);
+// A model name alone isn't a stable comparison unit — the same model can appear under multiple
+// ML tasks (e.g. a VLM benchmarked on both classification and detection), and averaging ranks
+// across unrelated tasks would be meaningless. Every "model" selectable for comparison is really
+// a (model, task) pair, identified by this composite id.
+function modelOptionId(model: string, task: string | null): string {
+  return `${model}|||${task ?? ''}`;
+}
+
+// One row per distinct (model, ML task) pair, used to populate the "select models to compare"
+// list. No minimum-appearances gate here — unlike the averaged-percentile table this replaces, a
+// model with a single dataset result is still a valid (if narrow) thing to compare.
+export interface ModelOption {
+  id: string;
+  model: string;
+  task: string | null;
+  datasetCount: number;
+}
+
+export function computeModelOptions(
+  records: GlobalPerformanceRecord[],
+  options: GlobalLeaderboardFilterOptions = {}
+): ModelOption[] {
+  const byId = new Map<string, { model: string; task: string | null; datasets: Set<string> }>();
+  for (const record of filterGlobalRecords(records, options)) {
+    const task = record.machine_learning_task;
+    const id = modelOptionId(record.model, task);
+    const entry = byId.get(id) ?? { model: record.model, task, datasets: new Set<string>() };
+    entry.datasets.add(record.dataset);
+    byId.set(id, entry);
+  }
+  return Array.from(byId.entries())
+    .map(([id, data]) => ({
+      id,
+      model: data.model,
+      task: data.task,
+      datasetCount: data.datasets.size,
+    }))
+    .sort((a, b) => b.datasetCount - a.datasetCount || a.model.localeCompare(b.model) || (a.task ?? '').localeCompare(b.task ?? ''));
+}
+
+export interface ModelComparisonDatasetRank {
+  dataset: string;
+  score: number;
+  rank: number;
+}
+
+export interface ModelComparisonEntry {
+  id: string;
+  model: string;
+  task: string | null;
+  avgRank: number;
+  datasetRanks: ModelComparisonDatasetRank[];
+}
+
+export interface ModelComparisonResult {
+  datasets: string[];
+  entries: ModelComparisonEntry[];
+}
+
+// Ranks the selected (model, task) pairs against each other (not against the whole leaderboard),
+// using only the datasets every selection has a score for on the chosen metric — the
+// "intersection of all datasets that they have results on". Each dataset contributes one rank
+// (1 = best, ties share a rank, competition-style: 1,2,2,4) which is then averaged per selection.
+// `filtered` must already have GlobalLeaderboardFilterOptions applied — callers that need to
+// compute this for several metrics at once (computeModelComparisons) filter records once and
+// reuse the result instead of re-scanning the full record set per metric.
+function computeModelComparisonFromFiltered(
+  filtered: GlobalPerformanceRecord[],
+  selectedIds: string[],
+  metric: keyof CategoryScores
+): ModelComparisonResult {
+  if (selectedIds.length < 2) return { datasets: [], entries: [] };
+
+  const idSet = new Set(selectedIds);
+  const infoById = new Map<string, { model: string; task: string | null }>();
+  const scoreByIdDataset = new Map<string, Map<string, number>>(selectedIds.map((id) => [id, new Map()]));
+  for (const record of filtered) {
+    const id = modelOptionId(record.model, record.machine_learning_task);
+    if (!idSet.has(id)) continue;
+    infoById.set(id, { model: record.model, task: record.machine_learning_task });
+    const byDataset = scoreByIdDataset.get(id)!;
+    const score = record.scores[metric];
+    if (score == null) continue;
+    const existing = byDataset.get(record.dataset);
+    if (existing == null || score > existing) byDataset.set(record.dataset, score);
   }
 
-  const average = (total: number, count: number) => (count > 0 ? total / count : null);
+  const perIdDatasets: Set<string>[] = selectedIds.map((id) => new Set(scoreByIdDataset.get(id)!.keys()));
+  const [firstIdDatasets, ...restIdDatasets] = perIdDatasets;
+  const datasets: string[] = Array.from(firstIdDatasets)
+    .filter((dataset) => restIdDatasets.every((idDatasets) => idDatasets.has(dataset)))
+    .sort();
+  if (!datasets.length) return { datasets: [], entries: [] };
 
-  return Array.from(stats.values())
-    .filter((entryStats) => entryStats.appearances >= minAppearances)
-    .map((entryStats) => ({
-      model: entryStats.model,
-      machineLearningTask: entryStats.machineLearningTask,
-      avgF1Percentile: average(entryStats.categoryTotals.f1, entryStats.categoryCounts.f1),
-      avgMapPercentile: average(entryStats.categoryTotals.map, entryStats.categoryCounts.map),
-      avgPrecisionPercentile: average(entryStats.categoryTotals.precision, entryStats.categoryCounts.precision),
-      avgRecallPercentile: average(entryStats.categoryTotals.recall, entryStats.categoryCounts.recall),
-      appearances: entryStats.appearances,
-      datasets: Array.from(entryStats.datasets).sort(),
-      fineTunedDatasets: Array.from(entryStats.fineTunedDatasets).sort(),
-      resultType: formatResultTypeLabel(entryStats.variants, entryStats.optimized),
-      optimized: entryStats.optimized,
-      datasetDetails: entryStats.datasetDetails.sort((a, b) => a.dataset.localeCompare(b.dataset)),
-    }))
-    .sort((a, b) => (b.avgMapPercentile ?? b.avgF1Percentile ?? 0) - (a.avgMapPercentile ?? a.avgF1Percentile ?? 0));
+  const rankTotals = new Map<string, number>(selectedIds.map((id) => [id, 0]));
+  const datasetRanksById = new Map<string, ModelComparisonDatasetRank[]>(selectedIds.map((id) => [id, []]));
+
+  for (const dataset of datasets) {
+    const scored = selectedIds
+      .map((id) => ({ id, score: scoreByIdDataset.get(id)!.get(dataset)! }))
+      .sort((a, b) => b.score - a.score);
+
+    let rank = 1;
+    scored.forEach((item, index) => {
+      if (index > 0 && item.score < scored[index - 1].score) rank = index + 1;
+      rankTotals.set(item.id, rankTotals.get(item.id)! + rank);
+      datasetRanksById.get(item.id)!.push({ dataset, score: item.score, rank });
+    });
+  }
+
+  const entries: ModelComparisonEntry[] = selectedIds
+    .map((id) => {
+      const info = infoById.get(id)!;
+      return {
+        id,
+        model: info.model,
+        task: info.task,
+        avgRank: rankTotals.get(id)! / datasets.length,
+        datasetRanks: datasetRanksById.get(id)!,
+      };
+    })
+    .sort((a, b) => a.avgRank - b.avgRank);
+
+  return { datasets, entries };
+}
+
+export function computeModelComparison(
+  records: GlobalPerformanceRecord[],
+  selectedIds: string[],
+  metric: keyof CategoryScores,
+  options: GlobalLeaderboardFilterOptions = {}
+): ModelComparisonResult {
+  return computeModelComparisonFromFiltered(filterGlobalRecords(records, options), selectedIds, metric);
+}
+
+const COMPARISON_CATEGORY_KEYS: (keyof CategoryScores)[] = ['f1', 'map', 'precision', 'recall'];
+
+export type CategoryComparisons = Record<keyof CategoryScores, ModelComparisonResult>;
+
+// All four category rankings for the selected (model, task) pairs in one call — the leaderboard
+// table shows f1/precision/recall as sortable columns, and the detail modal needs all four
+// (including map) to annotate a model's per-dataset rows. Records are filtered once and reused
+// across all four metrics rather than re-scanning the full record set per metric.
+export function computeModelComparisons(
+  records: GlobalPerformanceRecord[],
+  selectedIds: string[],
+  options: GlobalLeaderboardFilterOptions = {}
+): CategoryComparisons {
+  const filtered = filterGlobalRecords(records, options);
+  const entries = COMPARISON_CATEGORY_KEYS.map(
+    (key) => [key, computeModelComparisonFromFiltered(filtered, selectedIds, key)] as const
+  );
+  return Object.fromEntries(entries) as CategoryComparisons;
+}
+
+export interface ModelComparisonDatasetDetail {
+  dataset: string;
+  scores: CategoryScores;
+  ranks: CategoryScores;
+  variant: 'zero-shot' | 'fine-tuned' | null;
+  optimized: boolean;
+  platform: string | null;
+  splitBreakdown: string | null;
+  datasetConfig: string | null;
+  notes: string | null;
+}
+
+export interface ModelComparisonDetail {
+  id: string;
+  model: string;
+  task: string | null;
+  totalModels: number;
+  metric: keyof CategoryScores;
+  datasets: ModelComparisonDatasetDetail[];
+}
+
+// Detail behind the "view details" modal: only the datasets that actually fed the selection's avg
+// rank for `metric` (the currently active/sorted column) — not every dataset the model has ever
+// reported a result on. Each dataset's other category scores are still shown, ranked against the
+// same selected group, when that category also happens to be available.
+//
+// The score shown for every category always comes from the same underlying record — the "winner"
+// for the active metric — and each category's rank is computed against that record's own score,
+// not against a different (possibly higher-scoring) record the model happens to have for that
+// category. Otherwise a zero-shot run's score could be displayed next to a rank a fine-tuned run
+// actually earned.
+export function computeModelComparisonDetail(
+  records: GlobalPerformanceRecord[],
+  id: string,
+  selectedIds: string[],
+  metric: keyof CategoryScores,
+  comparisons: CategoryComparisons,
+  options: GlobalLeaderboardFilterOptions = {}
+): ModelComparisonDetail {
+  const currentEntry = comparisons[metric].entries.find((entry) => entry.id === id);
+  const contributingDatasets = currentEntry ? currentEntry.datasetRanks.map((d) => d.dataset) : [];
+  const contributingSet = new Set(contributingDatasets);
+
+  const model = currentEntry?.model ?? id;
+  const task = currentEntry?.task ?? null;
+
+  const recordsByDataset = new Map<string, GlobalPerformanceRecord[]>();
+  for (const record of filterGlobalRecords(records, options)) {
+    if (modelOptionId(record.model, record.machine_learning_task) !== id || !contributingSet.has(record.dataset)) continue;
+    const list = recordsByDataset.get(record.dataset) ?? [];
+    list.push(record);
+    recordsByDataset.set(record.dataset, list);
+  }
+
+  // Per-category, per-id, per-dataset score lookup built once instead of re-deriving it (via
+  // nested .find() calls) inside the per-dataset loop below.
+  const scoreLookupByCategory = new Map<keyof CategoryScores, Map<string, Map<string, number>>>(
+    COMPARISON_CATEGORY_KEYS.map((key) => [
+      key,
+      new Map(
+        comparisons[key].entries.map((entry) => [entry.id, new Map(entry.datasetRanks.map((d) => [d.dataset, d.score]))])
+      ),
+    ])
+  );
+
+  const datasets: ModelComparisonDatasetDetail[] = contributingDatasets
+    .map((dataset) => {
+      const candidates = recordsByDataset.get(dataset) ?? [];
+      const winner = candidates.reduce<GlobalPerformanceRecord | null>((best, record) => {
+        const score = record.scores[metric];
+        if (score == null) return best;
+        if (!best || (best.scores[metric] ?? -Infinity) < score) return record;
+        return best;
+      }, null);
+      if (!winner) return null;
+
+      // Rank each of the winner's own category scores against the other selected ids' best score
+      // for that category on this dataset — substituting the winner's score in place of this id's
+      // own (possibly different-record) entry in comparisons[key], so the rank always matches the
+      // score displayed alongside it.
+      const ranks: CategoryScores = { f1: null, map: null, precision: null, recall: null };
+      COMPARISON_CATEGORY_KEYS.forEach((key) => {
+        const winnerScore = winner.scores[key];
+        if (winnerScore == null) return;
+
+        const byId = scoreLookupByCategory.get(key)!;
+        const scored = selectedIds
+          .map((otherId) => {
+            if (otherId === id) return { id, score: winnerScore };
+            const score = byId.get(otherId)?.get(dataset);
+            return score == null ? null : { id: otherId, score };
+          })
+          .filter((item): item is { id: string; score: number } => item != null)
+          .sort((a, b) => b.score - a.score);
+
+        let rank = 1;
+        scored.forEach((item, index) => {
+          if (index > 0 && item.score < scored[index - 1].score) rank = index + 1;
+          if (item.id === id) ranks[key] = rank;
+        });
+      });
+
+      return {
+        dataset,
+        scores: winner.scores,
+        ranks,
+        variant: winner.variant,
+        optimized: winner.optimized,
+        platform: winner.platform,
+        splitBreakdown: winner.splitBreakdown,
+        datasetConfig: winner.datasetConfig,
+        notes: winner.notes,
+      };
+    })
+    .filter((row): row is ModelComparisonDatasetDetail => row != null)
+    .sort((a, b) => a.dataset.localeCompare(b.dataset));
+
+  return { id, model, task, totalModels: selectedIds.length, metric, datasets };
 }
 
 export function useGlobalPerformance(): {

@@ -29,53 +29,6 @@
   margin-bottom: 1.1rem;
 }
 
-.badgeRow {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.taskBadge {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.badgeClassification {
-  background: var(--agml-badge-classification-bg);
-  color: var(--agml-badge-classification-fg);
-}
-
-.badgeDetection {
-  background: var(--agml-badge-detection-bg);
-  color: var(--agml-badge-detection-fg);
-}
-
-.badgeSegmentation {
-  background: var(--agml-badge-segmentation-bg);
-  color: var(--agml-badge-segmentation-fg);
-}
-
-.badgeOther {
-  background: var(--agml-badge-other-bg);
-  color: var(--agml-badge-other-fg);
-}
-
-.resultTypeBadge {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  background: var(--agml-tag-bg);
-  color: var(--agml-tag-fg);
-  display: inline-block;
-}
-
 .title {
   font-family: var(--ifm-code-font-family);
   font-weight: 700;
@@ -242,4 +195,17 @@
   font-size: 0.72rem;
   line-height: 1.5;
   color: var(--agml-muted);
+}
+
+.notesMeta {
+  margin: 0 0 0.4rem;
+}
+
+.notesText {
+  margin: 0;
+  color: var(--agml-text);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  max-height: 220px;
+  overflow-y: auto;
 }

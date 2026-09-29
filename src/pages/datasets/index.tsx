@@ -67,6 +67,14 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     formatOption: (value) => toDisplayLabel(value),
   },
   {
+    key: 'modality',
+    label: 'Modality',
+    field: 'display_modality',
+    kind: 'dropdown',
+    mode: 'containsAny',
+    formatOption: (value) => toDisplayLabel(value),
+  },
+  {
     key: 'environment',
     label: 'Environment',
     field: 'environment',
@@ -369,7 +377,7 @@ export default function DatasetBrowserPage() {
   // `substringFiltered` (below) and the semantic re-ranking path, instead of each running its own
   // full-corpus field-filter pass.
   const fieldFilteredOnly = useMemo(
-    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs }),
+    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs, includeChildren: false }),
     [safeData, fieldFilterConfigs]
   );
 

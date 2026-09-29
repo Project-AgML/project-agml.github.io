@@ -15,6 +15,7 @@ import type { MetricCategory, PerformanceEntry } from '../lib/performance';
 import { oklchToRgb } from '../lib/plotlyChrome';
 import { EmbeddingPlot2D } from './EmbeddingPlot2D';
 import { EmbeddingPlot3D } from './EmbeddingPlot3D';
+import { PointCloudPlot3D } from './PointCloudPlot3D';
 import { ScoringMethodologyModal } from './ScoringMethodologyModal';
 import styles from './DatasetMetadataModal.module.css';
 
@@ -104,12 +105,23 @@ function formatMetricScore(entry: { metrics: { key: string; label: string; value
 	return entry.score != null ? entry.score.toLocaleString() : '—';
 }
 
+// Datasets AgML links to but does not rehost (e.g. source "doi"): no AgML loader exists for them.
+function isExternalDataset(dataset: Dataset) {
+	return dataset.source != null && dataset.source !== 'agml' && dataset.source !== 'huggingface';
+}
+
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
 		if(dataset.dataset_type === 'vlm') {
 			return {
 				title: 'Load from Hugging Face',
 				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
+			};
+		}
+		if (dataset.sensor_modality?.toLowerCase().includes('multispectral')) {
+			return {
+				title: 'Load from Hugging Face',
+				code: `from agml.data.multispectral_hf_loader import MultispectralDataLoader\nloader = MultispectralDataLoader("Project-AgML/${dataset.name}")`,
 			};
 		}
 		return {
@@ -1151,6 +1163,7 @@ export function DatasetMetadataModal({
 	const [classesExpanded, setClassesExpanded] = useState(false);
 	const [copied, setCopied] = useState(false);
 	const [citationCopied, setCitationCopied] = useState(false);
+	const [bibtexCopied, setBibtexCopied] = useState(false);
 
 	const [expandedRowKeys, setExpandedRowKeys] = useState<Set<string>>(new Set());
 	const toggleExpandedRow = (key: string) => {
@@ -1177,6 +1190,7 @@ export function DatasetMetadataModal({
 				] as const)
 			: ([['Number of images', formatImageCount(dataset.num_images)]] as const)),
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
+		...(dataset.num_files != null ? ([['Number of files', dataset.num_files.toLocaleString()]] as const) : []),
 		...(dataset.augmented_num_images != null
 			? ([['Augmented images', formatImageCount(dataset.augmented_num_images)]] as const)
 			: []),
@@ -1185,7 +1199,7 @@ export function DatasetMetadataModal({
 			: []),
 	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
-	const cropList = dataset.crop_types ?? [];
+	const cropList = dataset.crop_types ?? dataset.child_crop_types ?? [];
 	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
 	const locationList = formatLocationList(dataset);
 	const coordinateList = formatCoordinateList(dataset.lat_lon);
@@ -1387,8 +1401,12 @@ export function DatasetMetadataModal({
 				)}
 
 				<section className={styles.section}>
-					<h3 className={styles.sectionTitle}>Sample image</h3>
-					{hasExampleImage(dataset.examples_image_url) ? (
+					<h3 className={styles.sectionTitle}>
+						{dataset.sensor_modality === 'point_cloud' ? 'Sample point cloud' : 'Sample image'}
+					</h3>
+					{dataset.sensor_modality === 'point_cloud' && dataset.point_cloud_sample_url ? (
+						<PointCloudPlot3D sampleUrl={dataset.point_cloud_sample_url} />
+					) : hasExampleImage(dataset.examples_image_url) ? (
 						<figure className={styles.figure}>
 							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
 						</figure>
@@ -1397,6 +1415,16 @@ export function DatasetMetadataModal({
 					)}
 				</section>
 
+				{isExternalDataset(dataset) ? (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Get the data</h3>
+						<p className={styles.externalDisclaimer}>
+							This dataset is hosted externally and is not rehosted by AgML. AgML makes no claims about its
+							quality, accuracy, or availability — please review the original source
+							documentation before use.
+						</p>
+					</section>
+				) : (
 				<section className={styles.section}>
 					<h3 className={styles.sectionTitle}>{loader.title}</h3>
 					<div className={styles.snippetRow}>
@@ -1414,12 +1442,18 @@ export function DatasetMetadataModal({
 						</button>
 					</div>
 				</section>
+				)}
 
-				{(dataset.documentation || dataset.hf_link) && (
+				{(dataset.documentation || dataset.hf_link || (isExternalDataset(dataset) && dataset.data_link)) && (
 					<div className={styles.linkRow}>
 						{dataset.documentation && (
 							<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
 								Open source documentation
+							</a>
+						)}
+						{isExternalDataset(dataset) && dataset.data_link && (
+							<a className={styles.externalLink} href={dataset.data_link} target="_blank" rel="noreferrer">
+								Download from original source
 							</a>
 						)}
 						{dataset.hf_link && (
@@ -1576,23 +1610,47 @@ export function DatasetMetadataModal({
 					)}
 				</section>
 
-				{dataset.citation && (
+				{(dataset.citation || dataset.bibtex) && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Citation</h3>
-						<div className={styles.snippetRow}>
-							<pre className={styles.citationCode}>{dataset.citation}</pre>
-							<button
-								type="button"
-								className={styles.snippetCopyButton}
-								onClick={() => {
-									navigator.clipboard.writeText(dataset.citation ?? '');
-									setCitationCopied(true);
-									setTimeout(() => setCitationCopied(false), 1500);
-								}}
-							>
-								{citationCopied ? 'Copied!' : 'Copy'}
-							</button>
-						</div>
+						{dataset.citation && (
+							<>
+								{dataset.bibtex && <p className={styles.snippetLabel}>Citation</p>}
+								<div className={styles.snippetRow}>
+									<pre className={styles.citationCode}>{dataset.citation}</pre>
+									<button
+										type="button"
+										className={styles.snippetCopyButton}
+										onClick={() => {
+											navigator.clipboard.writeText(dataset.citation ?? '');
+											setCitationCopied(true);
+											setTimeout(() => setCitationCopied(false), 1500);
+										}}
+									>
+										{citationCopied ? 'Copied!' : 'Copy'}
+									</button>
+								</div>
+							</>
+						)}
+						{dataset.bibtex && (
+							<>
+								{dataset.citation && <p className={styles.snippetLabel}>BibTeX</p>}
+								<div className={styles.snippetRow}>
+									<pre className={styles.citationCode}>{dataset.bibtex}</pre>
+									<button
+										type="button"
+										className={styles.snippetCopyButton}
+										onClick={() => {
+											navigator.clipboard.writeText(dataset.bibtex ?? '');
+											setBibtexCopied(true);
+											setTimeout(() => setBibtexCopied(false), 1500);
+										}}
+									>
+										{bibtexCopied ? 'Copied!' : 'Copy'}
+									</button>
+								</div>
+							</>
+						)}
 					</section>
 				)}
 				</div>
@@ -1616,3 +1674,4 @@ export function DatasetMetadataModal({
 		</div>
 	);
 }
+
