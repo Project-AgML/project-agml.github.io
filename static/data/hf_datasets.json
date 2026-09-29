@@ -17239,5 +17239,167 @@
     "data_link": "https://doi.org/10.5281/zenodo.15002560",
     "examples_image_url": "",
     "hosted_in_original_form": true
+  },
+  {
+    "name": "LeLePhid_classification",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Junín, Manabí, Ecuador"
+    ],
+    "lat_lon": [
+      "-0.9277, -80.2058"
+    ],
+    "country": "Ecuador",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "lemon"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone camera (2 megapixel)"
+    ],
+    "collection_period": "December to May",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 665,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data6050051",
+    "citation": "Parraga-Alava, J. (2021). *LeLePhid: An Images Dataset for Aphids Detection and Infestation Severity on Lemons Leaf* [Dataset]. Mendeley Data. https://doi.org/10.17632/TNDHS2ZNG4.1",
+    "bibtex": "",
+    "zip_size_bytes": 25406739,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeLePhid_classification",
+    "examples_image_url": "/img/agml/sample_images/LeLePhid_classification_sample.webp"
+  },
+  {
+    "name": "raspberry_maturity_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Dobele, Latvia"
+    ],
+    "lat_lon": [
+      "56.607, 23.303"
+    ],
+    "country": "Latvia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "raspberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Apple iPhone XS, 1773x1773 pixels, handheld"
+    ],
+    "collection_period": "June-August 2021",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2039,
+    "classes": [
+      "Buds",
+      "Flowers",
+      "Unripe Berries",
+      "Ripe Berries",
+      "Damaged Buds"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data8050086",
+    "citation": "Strautiņa, S., Kalniņa, I., Kaufmane, E., Sudars, K., Namatēvs, I., Ņikuļins, A., Judvaitis, J., &amp; Balašs, R. (2022). RaspberrySet: Dataset of Annotated Raspberry Images for Object Detection. *Zenodo*. https://doi.org/10.5281/ZENODO.7014728",
+    "bibtex": "",
+    "zip_size_bytes": 1546023922,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/raspberry_maturity_detection",
+    "examples_image_url": "/img/agml/sample_images/raspberry_maturity_detection_sample.webp"
+  },
+  {
+    "name": "orange_leaf_HLB_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Ciudad Fernández, San Luis Potosí, Mexico",
+      "Rioverde, San Luis Potosí, Mexico"
+    ],
+    "lat_lon": [],
+    "country": "Mexico",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "orange"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 13, 12MP, handheld",
+      "Motorola Edge 40 Neo, 50MP, handheld",
+      "Xiaomi Poco C65, 50MP, handheld",
+      "Samsung Galaxy A32, 64MP, handheld",
+      "Samsung Galaxy A52, 64MP, handheld"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 324,
+    "classes": [
+      "HLB",
+      "healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data10050056",
+    "citation": "",
+    "bibtex": "",
+    "zip_size_bytes": 1191171732,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/orange_leaf_HLB_classification",
+    "examples_image_url": "/img/agml/sample_images/orange_leaf_HLB_classification_sample.webp"
+  },
+  {
+    "name": "tropical_forest_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Popayan, Cauca, Colombia"
+    ],
+    "lat_lon": [],
+    "country": "Colombia",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "digital magnifying glass, 640x480 pixels, 3.9 microns/pixel"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 10795,
+    "augmented_num_images": 9664,
+    "augmented_zip_size_bytes": 502722302,
+    "classes": [
+      "Campnosperma panamensis",
+      "Cedrela Odorata",
+      "Cedrelinga cateniformis",
+      "Cordia alliodora",
+      "Cupresus Lusitanica",
+      "Dialyanthera gracilipes",
+      "Eucalyptus globulus",
+      "Fraxinus uhdei",
+      "Handroanthus chrysanthus",
+      "Humiriastrum procerum",
+      "Pinus patula"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data7080111",
+    "citation": "Ordoñez Urbano, C. F. (2020). *Tropical Forest Species* [Dataset]. Mendeley. https://doi.org/10.17632/YZZCBYVGMH.3",
+    "bibtex": "",
+    "zip_size_bytes": 5461199800,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_forest_classification",
+    "examples_image_url": "/img/agml/sample_images/tropical_forest_classification_sample.webp"
   }
 ]
