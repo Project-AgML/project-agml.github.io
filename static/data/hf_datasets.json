@@ -17826,5 +17826,47 @@
     "data_link": "https://doi.org/10.5281/zenodo.19949051",
     "examples_image_url": "",
     "hosted_in_original_form": true
+  },
+  {
+    "name": "wheat_disease_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Yuanyang, Henan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi 10S smartphone",
+      "Canon EOS 1500D camera"
+    ],
+    "collection_period": "February to late May 2023",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 4156,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture15141526",
+    "citation": "Ma, C. (2024). *Wheat Dataset* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.15621359",
+    "bibtex": "@article{qian2025gdfc,\n  title={GDFC-YOLO: An Efficient Perception Detection Model for Precise Wheat Disease Recognition},\n  author={Qian, Jiawei and Dai, Chenxu and Ji, Zhanlin and Liu, Jinyun},\n  journal={Agriculture},\n  volume={15},\n  pages={1526},\n  year={2025},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 1109856206,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_disease_detection",
+    "examples_image_url": "/img/agml/sample_images/wheat_disease_detection_sample.webp"
   }
 ]
