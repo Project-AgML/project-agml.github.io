@@ -17401,5 +17401,318 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_forest_classification",
     "examples_image_url": "/img/agml/sample_images/tropical_forest_classification_sample.webp"
+  },
+  {
+    "name": "tea_leaf_disease_classification_bangladesh_2",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Habiganj district, Sylhet, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro Max, 12-megapixel triple-camera (Ultra-Wide, Wide, Telephoto), 1080x1080-3024x3024 pixels, handheld"
+    ],
+    "collection_period": "April 7, 2025, to June 23, 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2500,
+    "classes": [
+      "Blight",
+      "Healthy_Leaf",
+      "Helopeltis",
+      "Red_Rust"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0349210",
+    "citation": "Chowdhury, S. H., &amp; Arman, M. S. (2025). *Tea Leaf Disease Image Dataset for Automated Classification of Tea Garden Diseases* [Dataset]. Mendeley Data. https://doi.org/10.17632/3X42RBJ8YV.1",
+    "bibtex": "@article{chowdhury2026curated,\n  title={A curated dataset and lightweight deep learning framework for tea leaf disease classification},\n  author={Chowdhury, Sakibul Hasan and Arman, Md Shohel and Siam, Masrafe Bin Hannan and Khan, Md Rayhan and Hasan, Afia and Fahim, Parvez Ahmed Moju},\n  journal={PLOS One},\n  volume={21},\n  pages={e0349210},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 2916601676,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification_bangladesh_2",
+    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_bangladesh_2_sample.webp"
+  },
+  {
+    "name": "rice_leaf_disease_classification_2",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1914,
+    "classes": [
+      "Bacterial leaf blight",
+      "Brown spot",
+      "Leaf Blast"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/110.1371/journal.pone.0348290",
+    "citation": "Shakeel, U. (2025). *Rice Leaf Disease* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.15817084",
+    "bibtex": "",
+    "zip_size_bytes": 464714729,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_2",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_2_sample.webp"
+  },
+  {
+    "name": "rice_leaf_bacterial_fungal",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Chapulia, Gazipur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro (handheld)"
+    ],
+    "collection_period": "Aman 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1701,
+    "augmented_num_images": 5188,
+    "augmented_zip_size_bytes": 2028175054,
+    "classes": [
+      "Bacterial Leaf Blight",
+      "Brown Spot",
+      "Healthy Rice Leaf",
+      "Leaf Blast",
+      "Leaf scald",
+      "Narrow Brown Leaf Spot",
+      "Rice Hispa",
+      "Sheath Blight"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0356383",
+    "citation": "Hasan, M. (2023). *Rice Leaf Bacterial and Fungal Disease Dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/HX6F852HW4.2",
+    "bibtex": "@article{masud2026iot,\n  title={IoT-RiceMobileNet: An improved lightweight MobileNetV2 Model for real-time multi-class rice disease detection using IoT},\n  author={Masud, Khawja Imran and Zihad, Md Yasin and Shuvo, Mehedi Hasan and Jannat, Mst Raonik and Uddin, Jia and Ali, Sahara},\n  journal={PLOS One},\n  volume={21},\n  pages={e0356383},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 501333000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_bacterial_fungal",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_bacterial_fungal_sample.webp"
+  },
+  {
+    "name": "mango_disease_detection_rgb",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Koothanatham village, Mallasamudram town, Namakkal district, Tamil Nadu, India"
+    ],
+    "lat_lon": [],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MAPIR Survey 3W (12MP, Sony Exmor IMX117, UAV)",
+      "RGB camera (visible light, 375-650 nm, UAV)"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 36,
+    "classes": [
+      "anthracnose",
+      "bacterial_canker",
+      "die_back",
+      "sooty_mould"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0349855",
+    "citation": "R P, K. (2026). *Mango Orchard UAV Image Dataset (RGB and Multispectral OCN)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18424647",
+    "bibtex": "@article{karthik2026uav,\n  title={UAV-based RGB and multispectral mango leaf disease detection with benchmarking of YOLOv5 to YOLOv10 and SeqOpt-optimised YOLOv8 for real-time edge deployment},\n  author={Karthik, R. P. and Murugesan, G. and Ballaji, Hattan Khaled and Anitha, J.},\n  journal={PLOS One},\n  volume={21},\n  pages={e0349855},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 41181327,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_disease_detection_rgb",
+    "examples_image_url": "/img/agml/sample_images/mango_disease_detection_rgb_sample.webp"
+  },
+  {
+    "name": "rice_leaf_disease_classification_bd",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Chapulia, Gazipur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro (handheld)"
+    ],
+    "collection_period": "Aman 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 773,
+    "classes": [
+      "bacterial_leaf_blight",
+      "brown_spot",
+      "healthy",
+      "leaf_blast",
+      "leaf_scald",
+      "narrow_brown_spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0356383",
+    "citation": "eimran. (2026). *eimran/IoT-RiceMobileNet: IoT-RiceMobileNet v1.0.0* (Version v1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.21140529",
+    "bibtex": "@article{masud2026iot,\n  title={IoT-RiceMobileNet: An improved lightweight MobileNetV2 Model for real-time multi-class rice disease detection using IoT},\n  author={Masud, Khawja Imran and Zihad, Md Yasin and Shuvo, Mehedi Hasan and Jannat, Mst Raonik and Uddin, Jia and Ali, Sahara},\n  journal={PLOS One},\n  volume={21},\n  pages={e0356383},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 90273018,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_bd",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_bd_sample.webp"
+  },
+  {
+    "name": "tea_leaf_disease_pest_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 9591,
+    "classes": [
+      "Black rot of tea",
+      "Brown blight of tea",
+      "Leaf rust of tea",
+      "Red Spider infested tea leaf",
+      "Tea Mosquito bug infested leaf",
+      "Tea leaf",
+      "White spot of tea",
+      "disease"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0354583",
+    "citation": "lv, xiang, &amp; ChengLei, S. (2026). *Tea-Leaf Disease and Pest Detection Dataset (v1.0)* (Version 1) [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.32253357.V1",
+    "bibtex": "@article{lyu2026spatial,\n  title={Spatial-aware lightweight network for real-time tea disease detection: A coordinate attention-enhanced YOLOv8n approach with path-decoupling strategy},\n  author={Lyu, Xiang and Yu, Yue and Song, ChengLei},\n  journal={PLOS One},\n  volume={21},\n  pages={e0354583},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 385811551,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_pest_detection",
+    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_pest_detection_sample.webp"
+  },
+  {
+    "name": "jujube_disease_spot_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "College of Horticulture and Forestry Experimental Station’s Jujube Cultivation Base, Xinjiang, China",
+      "10th Regiment, Xinjiang, China"
+    ],
+    "lat_lon": [
+      "40.548227, 81.305909",
+      "40.622797, 81.306232"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "jujube"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Industrial camera (4000x6000 resolution, fixed-focus lens, fixed platform)"
+    ],
+    "collection_period": "October 15th, October 30th, November 30th",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 127,
+    "classes": [
+      "bad",
+      "jujube"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0296314",
+    "citation": "inchar, inchar. (2023). *JujubeDataSet_mini.zip* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.24454576.V1",
+    "bibtex": "@article{yin2024high,\n  title={A high-precision jujube disease spot detection based on SSD during the sorting process},\n  author={Yin, Zhi-Ben and Liu, Fu-Yong and Geng, Hui and Xi, Ya-Jun and Zeng, De-Bin and Si, Chun-Jing and Shi, Ming-Deng},\n  journal={PLOS ONE},\n  volume={19},\n  pages={e0296314},\n  year={2024},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 28523081,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/jujube_disease_spot_detection",
+    "examples_image_url": "/img/agml/sample_images/jujube_disease_spot_detection_sample.webp"
+  },
+  {
+    "name": "tea_sickness_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Tea Experiment and Demonstration Station, Hefei City, Anhui Province",
+      "tea gardens, Shitai County, Chizhou City, Anhui Province"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 14 Pro Max (handheld)"
+    ],
+    "collection_period": "October 2-9, 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 885,
+    "classes": [
+      "Anthracnose",
+      "algal leaf",
+      "bird eye spot",
+      "brown blight",
+      "gray light",
+      "healthy",
+      "red leaf spot",
+      "white spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0323322",
+    "citation": "Gibson Kimutai. (2022). *tea sickness dataset* [Dataset]. Mendeley. https://doi.org/10.17632/J32XDT2FF5.2",
+    "bibtex": "@article{yang2025lightweight,\n  title={Lightweight wavelet-CNN tea leaf disease detection},\n  author={Yang, Jing and Xu, GaoJian and Yang, MengDao and Lin, ZhengPei},\n  journal={PLOS One},\n  volume={20},\n  pages={e0323322},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 781021361,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_sickness_classification",
+    "examples_image_url": "/img/agml/sample_images/tea_sickness_classification_sample.webp"
   }
 ]
