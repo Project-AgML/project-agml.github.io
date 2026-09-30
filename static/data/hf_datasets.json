@@ -13837,7 +13837,7 @@
   {
     "name": "CWF788_weed_segmentation",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "weedTongzhou, Beijing",
+    "agricultural_task": "weed_segmentation",
     "location": [
       "Tongzhou, Beijing, China"
     ],
@@ -16650,6 +16650,1180 @@
     "num_images": 1,
     "source": "doi",
     "data_link": "https://doi.org/10.5281/zenodo.5504298",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Quebec_australis_GNSS_detection",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Îles-de-Boucherville National Park, Quebec",
+      "Île Grosbois"
+    ],
+    "lat_lon": [],
+    "country": "Canada",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Phragmites australis subsp. australis"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2019-07-08 to 2019-09-17",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data6030032",
+    "citation": "Elmer, K., &amp; Kalacska, M. (2021). *A High-Accuracy GNSS Dataset of Ground Truth Points Collected within Îles-de-Boucherville National Park, Quebec, Canada* (Version 2) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.4504921",
+    "bibtex": "@article{elmer2021high,\n  title={A High-Accuracy GNSS Dataset of Ground Truth Points Collected within Îles-de-Boucherville National Park, Quebec, Canada},\n  author={Elmer, Kathryn and Kalacska, Margaret},\n  journal={Data},\n  volume={6},\n  pages={32},\n  year={2021},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 8476128195,
+    "num_files": 5,
+    "num_images": 319,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.4504921",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "pistachio_photogrammetry",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "La Seca, Valladolid, Castilla y León, Spain"
+    ],
+    "lat_lon": [
+      "41.4435, -4.8980"
+    ],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Pistacia vera"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2021",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data7110157",
+    "citation": "",
+    "bibtex": "@article{vlez2022high,\n  title={High-Resolution UAV RGB Imagery Dataset for Precision Agriculture and 3D Photogrammetric Reconstruction Captured over a Pistachio Orchard (Pistacia vera L.) in Spain},\n  author={Vélez, Sergio and Vacas, Rubén and Martín, Hugo and Ruano-Rosa, David and Álvarez, Sara},\n  journal={Data},\n  volume={7},\n  pages={157},\n  year={2022},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 22280568224,
+    "num_files": 9,
+    "num_images": 87,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.7239196",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "savanna_tree_species",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "Kakadu National Park, Northern Territory, Australia"
+    ],
+    "lat_lon": [],
+    "country": "Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Eucalyptus tetrodonta",
+      "Eucalyptus miniata",
+      "Corymbia bleeseri",
+      "Corymbia ferruginea",
+      "Corymbia polycarpa",
+      "Corymbia polysciada",
+      "Corymbia porrecta",
+      "Erythrophleum chlorostachys",
+      "Acacia dimidiata",
+      "Acacia lamprocarpa",
+      "Acacia mimula",
+      "Acacia oncinocarpa",
+      "Planchonia careya",
+      "Terminalia ferdinandiana",
+      "Terminalia grandiflora",
+      "Xanthostemon paradoxus"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2021-04",
+    "platform": "drone",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data8020044",
+    "citation": "",
+    "bibtex": "@article{jansen2023deep,\n  title={Deep Learning with Northern Australian Savanna Tree Species: A Novel Dataset},\n  author={Jansen, Andrew J. and Nicholson, Jaylen D. and Esparon, Andrew and Whiteside, Timothy and Welch, Michael and Tunstill, Matthew and Paramjyothi, Harinandanan and Gadhiraju, Varma and van Bodegraven, Steve and Bartolo, Renee E.},\n  journal={Data},\n  volume={8},\n  pages={44},\n  year={2023},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 19310003557,
+    "num_files": 2,
+    "num_images": 3336,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.7094915",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "VEPL_power_line_segmentation",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Envigado, Colombia"
+    ],
+    "lat_lon": [],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "DJI Mavic 2 Pro"
+    ],
+    "collection_period": "2023",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data8080128",
+    "citation": "",
+    "bibtex": "@article{canosolis2023vepl,\n  title={VEPL Dataset: A Vegetation Encroachment in Power Line Corridors Dataset for Semantic Segmentation of Drone Aerial Orthomosaics},\n  author={Cano-Solis, Mateo and Ballesteros, John R. and Branch-Bedoya, John W.},\n  journal={Data},\n  volume={8},\n  pages={128},\n  year={2023},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 3858450220,
+    "num_files": 4,
+    "num_images": 17060,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.7800233",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Noordwest_Natuurkern_orthomosaics",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "IJmuiden",
+      "Bloemendaal aan Zee",
+      "Zuid-Kennemerland National Park, Netherlands"
+    ],
+    "lat_lon": [
+      "52.4622, 4.5550"
+    ],
+    "country": "Netherlands",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2008, 2012-2023",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data9020037",
+    "citation": "Gerben Ruessink. (2026). *Topographic data and orthomosaics of the Noordwest Natuurkern project* (Version v3.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.7010095",
+    "bibtex": "@article{ruessink2024digital,\n  title={Digital Elevation Models and Orthomosaics of the Dutch Noordwest Natuurkern Foredune Restoration Project},\n  author={Ruessink, Gerben and Groenendijk, Dick and Arens, Bas},\n  journal={Data},\n  volume={9},\n  pages={37},\n  year={2024},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 15651534256,
+    "num_files": 7,
+    "num_images": 105,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.7010095",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Guangdong_terrestrial_carbon_storage",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Guangdong Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2000–2021",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data10040041",
+    "citation": "wang, wei. (2025). *Terrestrial Carbon Storage Estimation in Guangdong Province (2000–2021)* (J. Cai, Ed.; Version 2.0). Zenodo. https://doi.org/10.5281/ZENODO.14835470",
+    "bibtex": "@article{wang2025terrestrial,\n  title={Terrestrial Carbon Storage Estimation in Guangdong Province (2000–2021)},\n  author={Wang, Wei and Hu, Yueming and Mao, Xiaoyun and Zhang, Ying and Tang, Liangbo and Cai, Junxing},\n  journal={Data},\n  volume={10},\n  pages={41},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 514886099,
+    "num_files": 51,
+    "num_images": 36,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14835470",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Brazil_Cerrado_LULC",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Goiatuba, Goiás State, Brazil"
+    ],
+    "lat_lon": [
+      "-17.9772, -49.3049",
+      "-18.0591, -49.4144"
+    ],
+    "country": "Brazil",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize",
+      "soybean"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [],
+    "collection_period": "2025-11-03 to 2025-11-07",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data10120204",
+    "citation": "De Freitas, A., Gama, F. F., Augusto Lopes Magalhaes, I., &amp; SANO, E. D. S. O. N. (2025). *Early-Season Field Reference Dataset of Croplands in a Consolidated Agricultural Frontier in the Brazilian Cerrado* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17612590",
+    "bibtex": "@article{defreitas2025early,\n  title={Early-Season Field Reference Dataset of Croplands in a Consolidated Agricultural Frontier in the Brazilian Cerrado},\n  author={de Freitas, Ana Larissa Ribeiro and Gama, Fábio Furlan and Magalhães, Ivo Augusto Lopes and Sano, Edson Eyji},\n  journal={Data},\n  volume={10},\n  pages={204},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 754748,
+    "num_files": 5,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17612590",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "winter_wheat_crop_parameters",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Knezha, Bulgaria",
+      "Danubian Plain, Bulgaria"
+    ],
+    "lat_lon": [
+      "43.521917, 24.098848",
+      "43.511391, 24.092252"
+    ],
+    "country": "Bulgaria",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "winter wheat"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "UAV"
+    ],
+    "collection_period": "2016–17 and 2017–18",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data11020035",
+    "citation": "Dimitrov, P., Roumenina, E., Jelev, G., Filchev, L., Gikov, A., Kamenova, I., Ilieva, I., Ganeva, D., Kercheva, M., Banov, M., Krasteva, V., Kolchakov, V., Dimitrov, E., &amp; Miteva, N. (2025). *In-situ and UAV dataset with crop and soil parameters obtained from winter wheat fields* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17475741",
+    "bibtex": "@article{dimitrov2026situ,\n  title={In Situ Crop and Soil Data and UAV Imagery from Winter Wheat Fields in a Bulgarian Site},\n  author={Dimitrov, Petar and Roumenina, Eugenia and Jelev, Georgi and Filchev, Lachezar and Gikov, Alexander and Kamenova, Ilina and Ilieva, Iliana and Ganeva, Dessislava and Kercheva, Milena and Banov, Martin and Krasteva, Veneta and Kolchakov, Viktor and Dimitrov, Emil and Miteva, Nevena},\n  journal={Data},\n  volume={11},\n  pages={35},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 14184002126,
+    "num_files": 38,
+    "num_images": 20,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17475741",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "LeafScans_orchard_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Bielice",
+      "Kronowo",
+      "Olsztyn",
+      "Różnowo",
+      "Sętal",
+      "Warmian-Masurian Voivodeship, Poland"
+    ],
+    "lat_lon": [],
+    "country": "Poland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "pear",
+      "sweet cherry",
+      "sour cherry",
+      "plum",
+      "peach",
+      "apricot"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon CanoScan LiDE 30 (Canon Inc.), Plustek OpticSlim 1180 (Plustek Inc.)"
+    ],
+    "collection_period": "2015-2025",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data11070153",
+    "citation": "Chwietczuk, P., Lipiński, S., &amp; Chwietczuk, P. (2026). *LeafScans-Orchard dataset* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20187965",
+    "bibtex": "@article{chwietczuk2026leafscans,\n  title={LeafScans-Orchard: A Multi-Year Open RGB Scan Dataset of Orchard Plant Leaves for Species and Cultivar Classification},\n  author={Chwietczuk, Paweł and Lipiński, Seweryn and Chwietczuk, Paulina},\n  journal={Data},\n  volume={11},\n  pages={153},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 37260947164,
+    "num_files": 6,
+    "num_images": 10008,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20187965",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "maize_kernel_quality_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "quality_classification",
+    "location": [
+      "Mbauda Market",
+      "Kilombero Market",
+      "Tengeru Market",
+      "Arusha Region, Tanzania"
+    ],
+    "lat_lon": [],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2024-07-05 to 2024-07-06",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-0",
+    "documentation": "https://doi.org/10.3390/data11070175",
+    "citation": "Kiwoli, L. (2026). RGB Maize Kernels Image Dataset for grain quality screening: A use case- Detection of Aflatoxins and Fumonisins in Maize Using Computer Vision (Version V1) [dataset]. Harvard Dataverse. https://doi.org/10.7910/DVN/IWAUTS",
+    "bibtex": "@article{kiwoli2026rgb,\n  title={RGB Image Dataset of White Maize Kernels with Visible Quality Defects for Computer Vision-Based Assessment of Mycotoxin Contamination Risk and Grain Quality},\n  author={Kiwoli, Liston and Nyambo, Devotha Godfrey and Mgawe, Bonny and Kassim, Neema and Ally, Mussa},\n  journal={Data},\n  volume={11},\n  pages={175},\n  year={2026},\n  publisher={MDPI}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.7910/DVN/IWAUTS",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "UAV-Hyp_phenotyping",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "Quedlinburg, Germany"
+    ],
+    "lat_lon": [],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Hypericum perforatum"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "boundingBox",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data11080208",
+    "citation": "Y. Zhang et al. (2026-07-13): UAV-Hyp_ UAV Dataset for Remote Sensing based Phenotying of Hypericum perforatum. DOI:10.5447/ipk/2026/6",
+    "bibtex": "@article{zhang2026uav,\n  title={UAV-Hyp: UAV Dataset for Remote Sensing-Based Phenotyping of Hypericum perforatum},\n  author={Zhang, Yujie and Menuawy, Ahmed EL and Fitza, Katrin and Marthe, Frank and Reichardt, Sven},\n  journal={Data},\n  volume={11},\n  pages={208},\n  year={2026},\n  publisher={MDPI}\n}",
+    "source": "doi",
+    "data_link": "https://doi.org/10.5447/ipk/2026/6",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "LULC_change_Kef-Siliana",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Kesra",
+      "Chouarnia",
+      "Elles",
+      "Sers",
+      "Rhahla",
+      "Hammam Biadha",
+      "Kef Governorate, Tunisia",
+      "Siliana Governorate, Tunisia"
+    ],
+    "lat_lon": [],
+    "country": "Tunisia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2017-2022",
+    "platform": "",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.3390/data9080096",
+    "citation": "Shiri, Zahra; Frija, Aymen; Rejeb, Hichem; Ouerghemmi, Hassen; Le, Quang Bao, 2024, 'Land Cover change in Kef-Siliana region (2017-2022)', https://hdl.handle.net/20.500.11766.1/FK2/YUXPQY, MELDATA, V10",
+    "bibtex": "@article{shiri2024data,\n  title={Data on the Land Cover Transition, Subsequent Landscape Degradation, and Improvement in Semi-Arid Rainfed Agricultural Land in North-West Tunisia},\n  author={Shiri, Zahra and Frija, Aymen and Rejeb, Hichem and Ouerghemmi, Hassen and Le, Quang Bao},\n  journal={Data},\n  volume={9},\n  pages={96},\n  year={2024},\n  publisher={MDPI}\n}",
+    "source": "doi",
+    "data_link": "https://hdl.handle.net/20.500.11766.1/FK2/YUXPQY",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Brazil_forest_cover_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Xingu River basin, Brazil"
+    ],
+    "lat_lon": [],
+    "country": "Brazil",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "1989-2018",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data4030114",
+    "citation": "Kalacska, M., Lucanus, O., Arroyo-Mora, J. P., & Sousa, L. (2019). <i>Multi-temporal forest cover classification for the Xingu River basin, Brazil</i> (Version 1). figshare. https://doi.org/10.6084/m9.figshare.8303669.v1",
+    "bibtex": "@article{kalacska2019new,\n  title={A New Multi-Temporal Forest Cover Classification for the Xingu River Basin, Brazil},\n  author={Kalacska, Margaret and Lucanus, Oliver and Sousa, Leandro and Arroyo-Mora, J. Pablo},\n  journal={Data},\n  volume={4},\n  pages={114},\n  year={2019},\n  publisher={MDPI}\n}",
+    "source": "doi",
+    "data_link": "Kalacska, M., Lucanus, O., Arroyo-Mora, J. P., & Sousa, L. (2019). <i>Multi-temporal forest cover classification for the Xingu River basin, Brazil</i> (Version 1). figshare. https://doi.org/10.6084/m9.figshare.8303669.v1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Austria_forest_inventory_pointclouds",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Ofenbach forest district, Forchtenstein, Austria"
+    ],
+    "lat_lon": [],
+    "country": "Austria",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Fagus silvatica",
+      "Picea abies",
+      "Abies alba",
+      "Larix decidua",
+      "Quercus petraea",
+      "Quercus robur",
+      "Pinus silvestris",
+      "Pinus nigra",
+      "Pinus strobus",
+      "Populus nigra",
+      "Salix sp.",
+      "Betula pendula"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2019-03",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data5040103",
+    "citation": "Gollob, C., Ritter, T., &amp; Nothdurft, A. (2020). *LAUT - Terrestrial and Personal laser scanner data from Austrian forest Inventory plots* (Version 1.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.3698955",
+    "bibtex": "@article{gollob2020comparison,\n  title={Comparison of 3D Point Clouds Obtained by Terrestrial Laser Scanning and Personal Laser Scanning on Forest Inventory Sample Plots},\n  author={Gollob, Christoph and Ritter, Tim and Nothdurft, Arne},\n  journal={Data},\n  volume={5},\n  pages={103},\n  year={2020},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 15367190849,
+    "num_files": 8,
+    "num_images": 37,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.3698955",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "TALANDCOVER_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Antioquia, Colombia"
+    ],
+    "lat_lon": [
+      "5.4, -73.8",
+      "8.8, -77.5"
+    ],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [],
+    "collection_period": "2020",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "",
+    "documentation": "https://doi.org/10.3390/data8120185",
+    "citation": "Luisa Fernanda Gómez Ossa, German Sanchez Torres, &amp; John W. Branch-Bedoya. (2023). *Tropical Andes Land Cover Dataset (TALANDCOVER)* (Version v1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.8219552",
+    "bibtex": "@article{gomezossa2023land,\n  title={Land Cover Classification in the Antioquia Region of the Tropical Andes Using NICFI Satellite Data Program Imagery and Semantic Segmentation Techniques},\n  author={Gomez-Ossa, Luisa F. and Sanchez-Torres, German and Branch-Bedoya, John W.},\n  journal={Data},\n  volume={8},\n  pages={185},\n  year={2023},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 747784045,
+    "num_files": 1,
+    "num_images": 7120,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.8219552",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "plant_phenology_physiological",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Popayán, Cauca, Colombia",
+      "Cajibío, Cauca, Colombia",
+      "Paletará, Cauca, Colombia"
+    ],
+    "lat_lon": [
+      "2.4931, -76.5758",
+      "2.5703, -76.5972",
+      "2.2092, -76.5078"
+    ],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "coffee",
+      "Hass avocado",
+      "potato",
+      "tomato",
+      "sugar cane",
+      "maize",
+      "banana"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data10090142",
+    "citation": "Solis Pino, A. F. (2025). *Dataset of Leaf Phenology and Physiological Status: Chlorophyll Content and Spectral Vegetation Indices for Multiple Plant Species* (Version 1) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.15002560",
+    "bibtex": "@article{solispino2025leaf,\n  title={A Leaf Chlorophyll Content Dataset for Crops: A Comparative Study Using Spectrophotometric and Multispectral Imagery Data},\n  author={Solis Pino, Andrés Felipe and Solarte Moreno, Juan David and Vásquez Valencia, Carlos Iván and Guerrero Narváez, Jhon Alexander},\n  journal={Data},\n  volume={10},\n  pages={142},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 214888,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.15002560",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "LeLePhid_classification",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Junín, Manabí, Ecuador"
+    ],
+    "lat_lon": [
+      "-0.9277, -80.2058"
+    ],
+    "country": "Ecuador",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "lemon"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone camera (2 megapixel)"
+    ],
+    "collection_period": "December to May",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 665,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data6050051",
+    "citation": "Parraga-Alava, J. (2021). *LeLePhid: An Images Dataset for Aphids Detection and Infestation Severity on Lemons Leaf* [Dataset]. Mendeley Data. https://doi.org/10.17632/TNDHS2ZNG4.1",
+    "bibtex": "",
+    "zip_size_bytes": 25406739,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeLePhid_classification",
+    "examples_image_url": "/img/agml/sample_images/LeLePhid_classification_sample.webp"
+  },
+  {
+    "name": "raspberry_maturity_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Dobele, Latvia"
+    ],
+    "lat_lon": [
+      "56.607, 23.303"
+    ],
+    "country": "Latvia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "raspberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Apple iPhone XS, 1773x1773 pixels, handheld"
+    ],
+    "collection_period": "June-August 2021",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2039,
+    "classes": [
+      "Buds",
+      "Flowers",
+      "Unripe Berries",
+      "Ripe Berries",
+      "Damaged Buds"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data8050086",
+    "citation": "Strautiņa, S., Kalniņa, I., Kaufmane, E., Sudars, K., Namatēvs, I., Ņikuļins, A., Judvaitis, J., &amp; Balašs, R. (2022). RaspberrySet: Dataset of Annotated Raspberry Images for Object Detection. *Zenodo*. https://doi.org/10.5281/ZENODO.7014728",
+    "bibtex": "",
+    "zip_size_bytes": 1546023922,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/raspberry_maturity_detection",
+    "examples_image_url": "/img/agml/sample_images/raspberry_maturity_detection_sample.webp"
+  },
+  {
+    "name": "orange_leaf_HLB_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Ciudad Fernández, San Luis Potosí, Mexico",
+      "Rioverde, San Luis Potosí, Mexico"
+    ],
+    "lat_lon": [],
+    "country": "Mexico",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "orange"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 13, 12MP, handheld",
+      "Motorola Edge 40 Neo, 50MP, handheld",
+      "Xiaomi Poco C65, 50MP, handheld",
+      "Samsung Galaxy A32, 64MP, handheld",
+      "Samsung Galaxy A52, 64MP, handheld"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 324,
+    "classes": [
+      "HLB",
+      "healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data10050056",
+    "citation": "",
+    "bibtex": "",
+    "zip_size_bytes": 1191171732,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/orange_leaf_HLB_classification",
+    "examples_image_url": "/img/agml/sample_images/orange_leaf_HLB_classification_sample.webp"
+  },
+  {
+    "name": "tropical_forest_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Popayan, Cauca, Colombia"
+    ],
+    "lat_lon": [],
+    "country": "Colombia",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "digital magnifying glass, 640x480 pixels, 3.9 microns/pixel"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 10795,
+    "augmented_num_images": 9664,
+    "augmented_zip_size_bytes": 502722302,
+    "classes": [
+      "Campnosperma panamensis",
+      "Cedrela Odorata",
+      "Cedrelinga cateniformis",
+      "Cordia alliodora",
+      "Cupresus Lusitanica",
+      "Dialyanthera gracilipes",
+      "Eucalyptus globulus",
+      "Fraxinus uhdei",
+      "Handroanthus chrysanthus",
+      "Humiriastrum procerum",
+      "Pinus patula"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/data7080111",
+    "citation": "Ordoñez Urbano, C. F. (2020). *Tropical Forest Species* [Dataset]. Mendeley. https://doi.org/10.17632/YZZCBYVGMH.3",
+    "bibtex": "",
+    "zip_size_bytes": 5461199800,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tropical_forest_classification",
+    "examples_image_url": "/img/agml/sample_images/tropical_forest_classification_sample.webp"
+  },
+  {
+    "name": "tea_leaf_disease_classification_bangladesh_2",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Habiganj district, Sylhet, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro Max, 12-megapixel triple-camera (Ultra-Wide, Wide, Telephoto), 1080x1080-3024x3024 pixels, handheld"
+    ],
+    "collection_period": "April 7, 2025, to June 23, 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2500,
+    "classes": [
+      "Blight",
+      "Healthy_Leaf",
+      "Helopeltis",
+      "Red_Rust"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0349210",
+    "citation": "Chowdhury, S. H., &amp; Arman, M. S. (2025). *Tea Leaf Disease Image Dataset for Automated Classification of Tea Garden Diseases* [Dataset]. Mendeley Data. https://doi.org/10.17632/3X42RBJ8YV.1",
+    "bibtex": "@article{chowdhury2026curated,\n  title={A curated dataset and lightweight deep learning framework for tea leaf disease classification},\n  author={Chowdhury, Sakibul Hasan and Arman, Md Shohel and Siam, Masrafe Bin Hannan and Khan, Md Rayhan and Hasan, Afia and Fahim, Parvez Ahmed Moju},\n  journal={PLOS One},\n  volume={21},\n  pages={e0349210},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 2916601676,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification_bangladesh_2",
+    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_bangladesh_2_sample.webp"
+  },
+  {
+    "name": "rice_leaf_disease_classification_2",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1914,
+    "classes": [
+      "Bacterial leaf blight",
+      "Brown spot",
+      "Leaf Blast"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/110.1371/journal.pone.0348290",
+    "citation": "Shakeel, U. (2025). *Rice Leaf Disease* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.15817084",
+    "bibtex": "",
+    "zip_size_bytes": 464714729,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_2",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_2_sample.webp"
+  },
+  {
+    "name": "rice_leaf_bacterial_fungal",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Chapulia, Gazipur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro (handheld)"
+    ],
+    "collection_period": "Aman 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1701,
+    "augmented_num_images": 5188,
+    "augmented_zip_size_bytes": 2028175054,
+    "classes": [
+      "Bacterial Leaf Blight",
+      "Brown Spot",
+      "Healthy Rice Leaf",
+      "Leaf Blast",
+      "Leaf scald",
+      "Narrow Brown Leaf Spot",
+      "Rice Hispa",
+      "Sheath Blight"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0356383",
+    "citation": "Hasan, M. (2023). *Rice Leaf Bacterial and Fungal Disease Dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/HX6F852HW4.2",
+    "bibtex": "@article{masud2026iot,\n  title={IoT-RiceMobileNet: An improved lightweight MobileNetV2 Model for real-time multi-class rice disease detection using IoT},\n  author={Masud, Khawja Imran and Zihad, Md Yasin and Shuvo, Mehedi Hasan and Jannat, Mst Raonik and Uddin, Jia and Ali, Sahara},\n  journal={PLOS One},\n  volume={21},\n  pages={e0356383},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 501333000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_bacterial_fungal",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_bacterial_fungal_sample.webp"
+  },
+  {
+    "name": "mango_disease_detection_rgb",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Koothanatham village, Mallasamudram town, Namakkal district, Tamil Nadu, India"
+    ],
+    "lat_lon": [],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MAPIR Survey 3W (12MP, Sony Exmor IMX117, UAV)",
+      "RGB camera (visible light, 375-650 nm, UAV)"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 36,
+    "classes": [
+      "anthracnose",
+      "bacterial_canker",
+      "die_back",
+      "sooty_mould"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0349855",
+    "citation": "R P, K. (2026). *Mango Orchard UAV Image Dataset (RGB and Multispectral OCN)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18424647",
+    "bibtex": "@article{karthik2026uav,\n  title={UAV-based RGB and multispectral mango leaf disease detection with benchmarking of YOLOv5 to YOLOv10 and SeqOpt-optimised YOLOv8 for real-time edge deployment},\n  author={Karthik, R. P. and Murugesan, G. and Ballaji, Hattan Khaled and Anitha, J.},\n  journal={PLOS One},\n  volume={21},\n  pages={e0349855},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 41181327,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_disease_detection_rgb",
+    "examples_image_url": "/img/agml/sample_images/mango_disease_detection_rgb_sample.webp"
+  },
+  {
+    "name": "rice_leaf_disease_classification_bd",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Chapulia, Gazipur, Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 12 Pro (handheld)"
+    ],
+    "collection_period": "Aman 2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 773,
+    "classes": [
+      "bacterial_leaf_blight",
+      "brown_spot",
+      "healthy",
+      "leaf_blast",
+      "leaf_scald",
+      "narrow_brown_spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0356383",
+    "citation": "eimran. (2026). *eimran/IoT-RiceMobileNet: IoT-RiceMobileNet v1.0.0* (Version v1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.21140529",
+    "bibtex": "@article{masud2026iot,\n  title={IoT-RiceMobileNet: An improved lightweight MobileNetV2 Model for real-time multi-class rice disease detection using IoT},\n  author={Masud, Khawja Imran and Zihad, Md Yasin and Shuvo, Mehedi Hasan and Jannat, Mst Raonik and Uddin, Jia and Ali, Sahara},\n  journal={PLOS One},\n  volume={21},\n  pages={e0356383},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 90273018,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/rice_leaf_disease_classification_bd",
+    "examples_image_url": "/img/agml/sample_images/rice_leaf_disease_classification_bd_sample.webp"
+  },
+  {
+    "name": "tea_leaf_disease_pest_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 9591,
+    "classes": [
+      "Black rot of tea",
+      "Brown blight of tea",
+      "Leaf rust of tea",
+      "Red Spider infested tea leaf",
+      "Tea Mosquito bug infested leaf",
+      "Tea leaf",
+      "White spot of tea",
+      "disease"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0354583",
+    "citation": "lv, xiang, &amp; ChengLei, S. (2026). *Tea-Leaf Disease and Pest Detection Dataset (v1.0)* (Version 1) [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.32253357.V1",
+    "bibtex": "@article{lyu2026spatial,\n  title={Spatial-aware lightweight network for real-time tea disease detection: A coordinate attention-enhanced YOLOv8n approach with path-decoupling strategy},\n  author={Lyu, Xiang and Yu, Yue and Song, ChengLei},\n  journal={PLOS One},\n  volume={21},\n  pages={e0354583},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 385811551,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_pest_detection",
+    "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_pest_detection_sample.webp"
+  },
+  {
+    "name": "jujube_disease_spot_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "College of Horticulture and Forestry Experimental Station’s Jujube Cultivation Base, Xinjiang, China",
+      "10th Regiment, Xinjiang, China"
+    ],
+    "lat_lon": [
+      "40.548227, 81.305909",
+      "40.622797, 81.306232"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "jujube"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Industrial camera (4000x6000 resolution, fixed-focus lens, fixed platform)"
+    ],
+    "collection_period": "October 15th, October 30th, November 30th",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 127,
+    "classes": [
+      "bad",
+      "jujube"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0296314",
+    "citation": "inchar, inchar. (2023). *JujubeDataSet_mini.zip* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.24454576.V1",
+    "bibtex": "@article{yin2024high,\n  title={A high-precision jujube disease spot detection based on SSD during the sorting process},\n  author={Yin, Zhi-Ben and Liu, Fu-Yong and Geng, Hui and Xi, Ya-Jun and Zeng, De-Bin and Si, Chun-Jing and Shi, Ming-Deng},\n  journal={PLOS ONE},\n  volume={19},\n  pages={e0296314},\n  year={2024},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 28523081,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/jujube_disease_spot_detection",
+    "examples_image_url": "/img/agml/sample_images/jujube_disease_spot_detection_sample.webp"
+  },
+  {
+    "name": "tea_sickness_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Tea Experiment and Demonstration Station, Hefei City, Anhui Province",
+      "tea gardens, Shitai County, Chizhou City, Anhui Province"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 14 Pro Max (handheld)"
+    ],
+    "collection_period": "October 2-9, 2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 885,
+    "classes": [
+      "Anthracnose",
+      "algal leaf",
+      "bird eye spot",
+      "brown blight",
+      "gray light",
+      "healthy",
+      "red leaf spot",
+      "white spot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0323322",
+    "citation": "Gibson Kimutai. (2022). *tea sickness dataset* [Dataset]. Mendeley. https://doi.org/10.17632/J32XDT2FF5.2",
+    "bibtex": "@article{yang2025lightweight,\n  title={Lightweight wavelet-CNN tea leaf disease detection},\n  author={Yang, Jing and Xu, GaoJian and Yang, MengDao and Lin, ZhengPei},\n  journal={PLOS One},\n  volume={20},\n  pages={e0323322},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 781021361,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_sickness_classification",
+    "examples_image_url": "/img/agml/sample_images/tea_sickness_classification_sample.webp"
+  },
+  {
+    "name": "precision_agriculture_land_mapping",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Habiganj",
+      "Bangladesh"
+    ],
+    "lat_lon": [],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2015-2019",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0319268",
+    "citation": "Saha, G., Shahrin, F., Hasin Khan, F., Mohammad Meshkat, M., &amp; Azad, A. K. M. A. M. (2025). *Data from: Smart IoT-driven precision agriculture: Land mapping, crop prediction, and irrigation system* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.28120901.V2",
+    "bibtex": "@article{saha2025smart,\n  title={Smart IoT-driven precision agriculture: Land mapping, crop prediction, and irrigation system},\n  author={Saha, Gourab and Shahrin, Fariha and Khan, Farhan Hasin and Meshkat, Mashook Mohammad and Azad, AKM Abdul Malek},\n  journal={PLOS ONE},\n  volume={20},\n  pages={e0319268},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 769922636,
+    "num_files": 45,
+    "num_images": 44,
+    "source": "doi",
+    "data_link": "https://doi.org/10.6084/m9.figshare.28120901.v2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "barley_lidar_field_plot",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Olomouc, Czech Republic",
+      "Palacký University experimental field"
+    ],
+    "lat_lon": [
+      "49.5750947, 17.2843269"
+    ],
+    "country": "Czech Republic",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "barley"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "2021",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "CDLA-Permissive-1.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0297153",
+    "citation": "Humplík, J. F. (2023). *Dataset of point-clouds generated by UAV LiDAR scanning of barley field-plot trial.* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10161951",
+    "bibtex": "@article{fryk2024crop,\n  title={Crop growth dynamics: Fast automatic analysis of LiDAR images in field-plot experiments by specialized software ALFA},\n  author={Fryčák, Tadeáš and Fürst, Tomáš and Koprna, Radoslav and Špíšek, Zdeněk and Miřijovský, Jakub and Humplík, Jan F.},\n  journal={PLOS ONE},\n  volume={19},\n  pages={e0297153},\n  year={2024},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 3394483265,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.10161951",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "multi_annual_crop_classification_peru",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Chugay District, La Libertad",
+      "Andean highlands"
+    ],
+    "lat_lon": [
+      "-7.7822, -77.8675"
+    ],
+    "country": "Peru",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "potato",
+      "oat",
+      "barley",
+      "lupin",
+      "bean",
+      "pasture",
+      "fallow"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "handheld GPS"
+    ],
+    "collection_period": "2019-2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0353966",
+    "citation": "Bueno Dueñas, M., &amp; Loayza Loza, H. M. L. (2026). *Dataset of Sentinel 2 Image Time Series for Multi-annual Crop Type Classification in Perú* (Version V2) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19949051",
+    "bibtex": "@article{bueno2026can,\n  title={Can a history of crop rotations improve the prediction of soil organic carbon in the Andes? integrating machine learning multi-annual crop classification as a proxy of soil management},\n  author={Bueno, Marcelo and Loayza, Hildo and Ninanya, Johan and Rinza, Javier and Briceño, Percy and Silva, Luis and Mestanza, Carlos and Otiniano, Ronal and Kreuze, Jan and Ramírez, David A.},\n  journal={PLOS One},\n  volume={21},\n  pages={e0353966},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 7196747600,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19949051",
     "examples_image_url": "",
     "hosted_in_original_form": true
   }
