@@ -17868,5 +17868,2229 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_disease_detection",
     "examples_image_url": "/img/agml/sample_images/wheat_disease_detection_sample.webp"
+  },
+  {
+    "name": "Yangtze_rice_planting_distribution",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Middle and lower Yangtze River Basin, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2022-2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18020209",
+    "citation": "Yang, L., Dong, J., Xu, C., Huang, J., Wang, Y., Ma, H., Chen, Z., Wang, L., &amp; Zhang, J. (2025). *2022-2024 Dataset of 10-meter Resolution Rice Planting Distribution in the Middle and Lower Reaches of the Yangtze River, China* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.29336981.V2",
+    "bibtex": "@article{yang2026sparse,\n  title={From Sparse to Refined Samples: Iterative Enhancement-Based PDLCM for Multi-Annual 10 m Rice Mapping in the Middle-Lower Yangtze},\n  author={Yang, Lingbo and Dong, Jiancong and Xu, Cong and Huang, Jingfeng and Wang, Yichen and Ma, Huiqin and Chen, Zhongxin and Wang, Limin and Zhang, Jingcheng},\n  journal={Remote Sensing},\n  volume={18},\n  pages={209},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1749156590,
+    "num_files": 3,
+    "num_images": 3,
+    "source": "doi",
+    "data_link": "https://doi.org/10.6084/m9.figshare.29336981.v2",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "deciduous_physiochemical_reflectance",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Madingley Wood, Cambridge, United Kingdom"
+    ],
+    "lat_lon": [
+      "52.2173, 0.0486"
+    ],
+    "country": "United Kingdom",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Acer campestre",
+      "Acer pseudoplatanus",
+      "Betula pubescens",
+      "Corylus avellana",
+      "Crataegus monogyna",
+      "Fraxinus excelsior",
+      "Quercus robur",
+      "Ulmus glabra"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18030444",
+    "citation": "Chen, L. (2021). *Raw leaf trait and spectral data* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.16909330.V1",
+    "bibtex": "@article{shan2026enhancing,\n  title={Enhancing Cross-Species Prediction of Leaf Mass per Area from Hyperspectral Remote Sensing Using Fractional Order Derivatives and 1D-CNNs},\n  author={Shan, Shijie and Guo, Qiaozhen and Xu, Lu and Jiang, Weiguo and Shi, Shuo and Chen, Yiyun},\n  journal={Remote Sensing},\n  volume={18},\n  pages={444},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 74586867,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.6084/m9.figshare.16909330.v1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Verada_wetland_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Sub-middle São Francisco River Basin, Brazilian Cerrado"
+    ],
+    "lat_lon": [],
+    "country": "Brazil",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18050791",
+    "citation": "Machicao, J., Barbosa, A. A., O. Salles, L., Toledo, P., Corrêa, P., Oliveira, L., Collevatti, R., de Souza, E. B., &amp; Ometto, J. (2025). *[DATASET] Remote sensing imagery of threatened Vereda wetlands in the Brazilian Midwest: a segmentation-oriented model as a backbone for domain-specific applications* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17803750",
+    "bibtex": "@article{machicao2026mapping,\n  title={Mapping of Threatened Vereda Wetlands in the Brazilian Midwest Using a Domain-Specific U-Net},\n  author={Machicao, Jeaneth and Barbosa, Alexandre Augusto and Salles, Leandro O. and Toledo, Peter Mann and Corrêa, Pedro Luiz P. and Oliveira, Luiz Flamarion B. and Collevatti, Rosane Garcia and Barroso de Souza, Eduardo and Ometto, Jean Pierre H. B.},\n  journal={Remote Sensing},\n  volume={18},\n  pages={791},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 2486533310,
+    "num_files": 1,
+    "num_images": 4,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17803750",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "China_30m_land_cover",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Central Ningxia Hui Autonomous Region, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "1991-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18060871",
+    "citation": "Jie Yang, &amp; Xin Huang. (2026). *The 30 m annual land cover datasets and its dynamics in China from 1985 to 2025* (Version 1.0.5) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18180184",
+    "bibtex": "@article{zhang2026process,\n  title={A Process-Oriented Spatiotemporal Graph Framework for Analyzing Land-Cover Change from Remote Sensing Time Series},\n  author={Zhang, Qian and Zou, Xinyu and Chen, Weiwen and Shi, Tong and Liu, Meiling and Liu, Xiangnan},\n  journal={Remote Sensing},\n  volume={18},\n  pages={871},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 60566523891,
+    "num_files": 76,
+    "num_images": 208,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18180184",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "tea_plantation_spatial_characterization",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Xinyang City, Henan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18091281",
+    "citation": "Wang, R. (2026). *A feature-optimized deep learning framework for mapping and spatial 1 characterization of tea plantations in complex mountain landscapes* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18360843",
+    "bibtex": "@article{wang2026feature,\n  title={A Feature-Optimized Deep Learning Framework for Mapping and Spatial Characterization of Tea Plantations in Complex Mountain Landscapes},\n  author={Wang, Ruyi and Zhang, Jixian and Lu, Xiaoping and Kang, Qi and Chi, Bowen and Li, Junfeng and Li, Yahang and Lou, Zhengfang},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1281},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 4139120563,
+    "num_files": 11,
+    "num_images": 3888,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18360843",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "subalpine_grassland_dieback",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Hrubý Jeseník Mountains, Czech Republic"
+    ],
+    "lat_lon": [],
+    "country": "Czech Republic",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "1984–2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18091328",
+    "citation": "Kachalova, O. (2026). *Subalpine Grassland Dieback in Hruby Jesenik Mountains, Czech Republic* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19773962",
+    "bibtex": "@article{kachalova2026recurrent,\n  title={Recurrent Climate-Driven Dieback of Subalpine Grasslands in Central Europe Detected from Multi-Decadal Landsat and Sentinel-2 Time Series},\n  author={Kachalova, Olha and Řezník, Tomáš and Houška, Jakub and Řehoř, Jan and Trnka, Miroslav and Balek, Jan and Hédl, Radim},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1328},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 23705590,
+    "num_files": 3,
+    "num_images": 213,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19773962",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "field_parcel_delineation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Heilongjiang Province, China",
+      "Shandong Province, China",
+      "Zhejiang Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18111783",
+    "citation": "Duan, Y. (2025). *A field parcel dataset in China main cultivating area.* (Version v0.1) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17953919",
+    "bibtex": "@article{duan2026topology,\n  title={Topology-Aware Field Parcel Delineation: Bridging Deep Semantic Features and Geometric Constraints},\n  author={Duan, Yaming and Zhao, Runze and Xu, Xiangde and Zhang, Jinshui},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1783},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 6411281105,
+    "num_files": 6,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17953919",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "urban_tree_canopy_mapping",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Boyle Heights and City Terrace, Los Angeles, California, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "aerial",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18121899",
+    "citation": "Yoo, J., Qi, Y., Ashe-McNally, I., MacDonald, B., &amp; Wilson, J. P. (2025). *Urban Tree Canopy Data for Deep Learning Applications in Boyle Heights and City Terrace, Los Angeles, California, USA* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17459767",
+    "bibtex": "@article{yoo2026open,\n  title={An Open and Transferable Deep Learning Framework for Mapping Urban Tree Canopy Using NAIP Imagery},\n  author={Yoo, Jooyoung and Qi, Yi and Ashe-McNalley, Isaac and MacDonald, Beau and Wilson, John P.},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1899},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 637593685,
+    "num_files": 1,
+    "num_images": 1647,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17459767",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "decametric_LAI_estimation",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Barrax, Spain",
+      "Pshenichne, Ukraine",
+      "Collelongo, Italy",
+      "Maragua–Upper Tana, Kenya"
+    ],
+    "lat_lon": [],
+    "country": "Spain, Ukraine, Italy, Kenya",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2019-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-0",
+    "documentation": "https://doi.org/10.3390/rs18132137",
+    "citation": "Meng, K. (2025). *<b>Data used in MSDI</b>* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.30246472.V1",
+    "bibtex": "@article{meng2026interpretable,\n  title={An Interpretable Multi-Source Data Integration Framework for Prior-Guided Decametric-Resolution LAI Estimation},\n  author={Meng, Ke and Zhang, Zhewei and Wang, Qi and Wu, Tongzhou and Song, Zhubeijia and Wei, Haodong and Wang, Cong and Yin, Gaofei and Xu, Baodong},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2137},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1887910494,
+    "num_files": 99,
+    "num_images": 64,
+    "source": "doi",
+    "data_link": "https://doi.org/10.6084/m9.figshare.30246472.v1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "poland_forest_mapping",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Poland"
+    ],
+    "lat_lon": [],
+    "country": "Poland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "ESA WorldCover, ESA WC"
+    ],
+    "collection_period": "2021-2022",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18132215",
+    "citation": "Shahbandeh, M., Kaim, D., &amp; Kozak, J. (2026). *Forest Mapping Dataset Based on Contemporary Global Land Cover Products in Poland* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20816283",
+    "bibtex": "@article{shahbandeh2026contemporary,\n  title={Using Contemporary Global Land Cover Products to Improve Forest Mapping at the National Scale: Case Study of Poland},\n  author={Shahbandeh, Mahsa and Kaim, Dominik and Kozak, Jacek},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2215},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 845581020,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20816283",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "individual_tree_species_classification_point_cloud",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "",
+    "location": [
+      "Galicia, Spain",
+      "Paredes de Coura, Portugal"
+    ],
+    "lat_lon": [],
+    "country": "Spain, Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Castanea sativa",
+      "Quercus robur",
+      "Eucalyptus globulus",
+      "Eucalyptus nitens",
+      "Pinus pinaster",
+      "Pinus radiata",
+      "Chamaecyparis lawsoniana"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [
+      "GeoSLAM TM ZEB Horizon"
+    ],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18152471",
+    "citation": "Alonso, L., Ana, S.-C., Fernando, C., Picos, J., &amp; Armesto, J. (2025). *LiDAR pointcloud (MLS) for tree species classification* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17035446",
+    "bibtex": "@article{alonso2026automated,\n  title={Automated Individual-Tree Species Recognition Using Mobile Laser Scanner Point Clouds, Random Forest and 2D Convolutional Neural Networks},\n  author={Alonso, Laura and Solares-Canal, Ana and Costas, Fernando and Picos, Juan and Armesto, Julia},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2471},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 4659783475,
+    "num_files": 12,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17035446",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "karst_forest_LAI",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Postojna, Slovenian Classical Karst, Slovenia"
+    ],
+    "lat_lon": [
+      "45.77, 14.20"
+    ],
+    "country": "Slovenia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2021",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18162830",
+    "citation": "Machidon, A., &amp; Naparus-Aljancic, M. (2026). Evaluating Seasonal Fidelity and Cross-Site Structural Discrimination of Sentinel-2 LAI Products in Karst Forests. *Zenodo*. https://doi.org/10.5281/ZENODO.21899851",
+    "bibtex": "@article{nprualjani2026evaluating,\n  title={Evaluating Seasonal Fidelity and Cross-Site Structural Discrimination of Sentinel-2 LAI Products in Karst Forests},\n  author={Năpăruş-Aljančič, Magdalena and Machidon, Alina L. and Vilhar, Urša and Kozamernik, Erika and Kutnar, Lado and Kermavnar, Janez and Kafol, Žan and Ravbar, Nataša and Pipan, Tanja},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2830},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1350110831,
+    "num_files": 12,
+    "num_images": 12,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21899851",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "slovakia_parcel_crop_mapping",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Nitriansky",
+      "Banskobystrický",
+      "Košický kraj"
+    ],
+    "lat_lon": [],
+    "country": "Slovakia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2020–2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18172857",
+    "citation": "Florea, C., &amp; Dinescu, A.-A. (2026). *PixelSet-Slovakia a Multi-Year Sentinel-2 Dataset from Slovakia* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.21885996",
+    "bibtex": "@article{dinescu2026cross,\n  title={Cross-Domain Mixup for Parcel-Level Crop Mapping on a Multi-Year Sentinel-2 Dataset from Slovakia},\n  author={Dinescu, Antonela-Adelina and Florea, Corneliu},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2857},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 31251673271,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21885996",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "sardinia_crop_map_2018",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Sardinia",
+      "Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "olive",
+      "citrus",
+      "vineyard",
+      "grapevine",
+      "forage"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2018-2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18183118",
+    "citation": "Borgo, A., Thierion, V., Satta, G. G. A., Trabucco, A., Lupia, F., &amp; Debolini, M. (2026). *High-resolution crop map of Sardinia region applying IOTA2 chain, 2018* [Graphic]. Zenodo. https://doi.org/10.5281/ZENODO.21276837",
+    "bibtex": "@article{borgo2026applying,\n  title={Applying the IOTA2 Chain for Automated 10 m Crop Map Production in a Mediterranean Environment},\n  author={Borgo, Andrea and Thierion, Vincent and Satta, Gabriele Giuseppe Antonio and Trabucco, Antonio and Lupia, Flavio and Marras, Serena and Debolini, Marta},\n  journal={Remote Sensing},\n  volume={18},\n  pages={3118},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1014918606,
+    "num_files": 2,
+    "num_images": 13,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21276837",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "rice_cropping_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Guangdong Province, China",
+      "Hunan Province, China",
+      "Hubei Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18183241",
+    "citation": "Wang, J., Xue, B., Liu, Y., Lu, T., &amp; Shi, Y. (2026). *OCQT-PTS: A Multi-Region Rice Phenology Time-Series Dataset* (Version 1.1) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.21723694",
+    "bibtex": "@article{wang2026cross,\n  title={Cross-Regional Classification of Rice Cropping Systems Based on Within-Year Seasonal Composition Using Multimodal Remote-Sensing Time Series},\n  author={Wang, Jingrou and Lu, Tingting and Xue, Beibei and Xu, Lu and Shi, Yanyan and Ming, Dongping},\n  journal={Remote Sensing},\n  volume={18},\n  pages={3241},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1517696380,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21723694",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "fuzzy_tree_reconstruction",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Wytham Woods, United Kingdom"
+    ],
+    "lat_lon": [],
+    "country": "United Kingdom",
+    "environment": "field",
+    "real_or_synthetic": "synthetic",
+    "crop_types": [],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18183244",
+    "citation": "Verhoeven, V. (2026). *Data used to validate FuzzyQSM: A novel fuzzy tree reconstruction approach* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20793837",
+    "bibtex": "@article{verhoeven2026fuzzyqsm,\n  title={FuzzyQSM: A Novel Tree Structure Reconstruction Approach Using Uncertainty},\n  author={Verhoeven, Vincent B. and Raumonen, Pasi and Åkerblom, Markku},\n  journal={Remote Sensing},\n  volume={18},\n  pages={3244},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 5963820799,
+    "num_files": 1,
+    "num_images": 1144,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20793837",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "sardinia_surface_soil_moisture",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Sardinia, Italy"
+    ],
+    "lat_lon": [],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2019-02-06 to 2022-01-23",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18183262",
+    "citation": "Cavalli, R. M., Esposito, G., Pisano, L., &amp; Notti, D. (2026). *Supplemetnary data and code of \"Surface soil moisture from Sentinel-2 imagery: a systematic review complemented by a case study in Sardinia, Italy\"* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.22142621",
+    "bibtex": "@article{cavalli2026surface,\n  title={Surface Soil Moisture from Sentinel-2 Imagery: A Systematic Review Complemented by a Case Study in Sardinia, Italy},\n  author={Cavalli, Rosa Maria and Esposito, Giuseppe and Pisano, Luca and Notti, Davide},\n  journal={Remote Sensing},\n  volume={18},\n  pages={3262},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 13799704,
+    "num_files": 9,
+    "num_images": 32,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.22142621",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "yunnan_coffee_distribution_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Yunnan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Arabica"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2023",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "segmentationMask",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18060940",
+    "citation": "shan, hongyu. (2025). *coffee distribution map of main production region of Yunnan in 2023 based on DNN and GEE* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18158986",
+    "bibtex": "@article{shan2026high,\n  title={A High-Resolution Dataset for Arabica Coffee Distribution in Yunnan, Southwestern China},\n  author={Shan, Hongyu and Ye, Tao and Chen, Zhe and Zhao, Wenzhi and Chen, Xuehong and Sun, Hao},\n  journal={Remote Sensing},\n  volume={18},\n  pages={940},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 24673021,
+    "num_files": 2,
+    "num_images": 2,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18158986",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "colombia_corine_land_cover",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Colombia"
+    ],
+    "lat_lon": [],
+    "country": "Colombia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "2020, 2022, 2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18101448",
+    "citation": "ESPEJO VALERO, O. S. C. A. R. J. A. V. I. E. R., ZARAZA, M. A. Y. C. O. L., BASTIDAS, K. A. R. E. N., PERILLA, A. R. I. E. L., ZAMBRANO, N. A. T. A. L. I. A., SANDOVAL, J., JUAN, R. O. D. R. I. G. U. E. Z., MAYORGA, C. R. I. S. T. I. N. A., CASAS, O. S. C. A. R., &amp; JAIME, O. (2026). Artificial Intelligence and Cloud Computing for a New generation of Corine Land Cover Maps in Colombia. *Zenodo*. https://doi.org/10.5281/ZENODO.19924210",
+    "bibtex": "@article{espejo2026artificial,\n  title={Artificial Intelligence and Cloud Computing for a New Generation of Corine Land Cover Maps in Colombia},\n  author={Espejo, Javier and Zaraza, Maycol and Bastidas, Karen and Perilla, Ariel and Zambrano, Natalia and Sandoval, Jonathan and Rodríguez, Juan and Mayorga, Cristina and Ramírez, Diana and Casas, Oscar and Sanclemente, Xiomara and Morales, Silvia and Orejarena, Jaime},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1448},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 13149621,
+    "num_files": 3,
+    "num_images": 2,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19924210",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "sesame_breeding_phenotyping",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "IIFC/ELGO-DIMITRA, Larissa, Greece"
+    ],
+    "lat_lon": [],
+    "country": "Greece",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sesame"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [],
+    "collection_period": "July–September 2025",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "classLabel",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18132181",
+    "citation": "Petsoulas, C., Evangelou, E., Tsitouras, A., Vlachostergios, D., Kargiotidou, A., &amp; Pankou, C. (2026). *UAV multispectral phenotyping data of an M₂ sesame (Sesamum indicum L.) mutagenesis population under contrasting irrigation regimes (Larissa, Greece, 2025)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19923837",
+    "bibtex": "@article{petsoulas2026uav,\n  title={UAV Remote Sensing for Drought-Adaptive Sesame Breeding: Flight-Altitude Benchmarking, Predictive Modelling, and Composite Stress Tolerance Indexing},\n  author={Petsoulas, Christos and Tsitouras, Alexandros and Evangelou, Eleftherios and Kargiotidou, Anastasia and Pankou, Chrysanthi I. and Vlachostergios, Dimitrios N.},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2181},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 436780,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19923837",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "MPFCZ_zhouhu_china_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Zhouhu Village, Dongshi Town, Zhijiang City, Yichang, Hubei Province, China"
+    ],
+    "lat_lon": [
+      "30.573, 113.113"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice",
+      "rapeseed"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic 3E (SZ DJI Technology Co., Ltd., Shenzhen, China)",
+      "DJI Phantom 4 RTK (SZ DJI Technology Co., Ltd., Shenzhen, China)"
+    ],
+    "collection_period": "August 2023 to May 2024",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "apache-2.0",
+    "documentation": "https://doi.org/10.3390/agriculture16010032",
+    "citation": "",
+    "bibtex": "@article{li2026novel,\n  title={A Novel Dataset Generation Strategy and a Multi-Period Farmland Cultivation Zones Dataset from Unmanned Aerial Vehicle Imagery},\n  author={Li, Zirui and Gu, Jinping and Shang, Siying and Zhou, Yang and Luo, Qing and Zheng, Mingxue and Li, Xiaokai and Lin, Chengjun and Guan, Xuefeng},\n  journal={Agriculture},\n  volume={16},\n  pages={32},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 28919,
+    "num_files": 4,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://huggingface.co/datasets/a442823027/MPFCZ",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "fruit_trees_apple_cherry_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Shunyi District, Beijing, China"
+    ],
+    "lat_lon": [
+      "40.35, 116.9"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "cherry"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "Trimble TX8",
+      "Class 1 invisible laser"
+    ],
+    "collection_period": "9 March 2024",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/agriculture15141463",
+    "citation": "",
+    "bibtex": "@article{cao2025novel,\n  title={A Novel Adaptive Cuboid Regional Growth Algorithm for Trunk–Branch Segmentation of Point Clouds from Two Fruit Tree Species},\n  author={Cao, Yuheng and Wang, Ning and Wu, Bin and Zhang, Xin and Wang, Yaxiong and Xu, Shuting and Zhang, Man and Miao, Yanlong and Kang, Feng},\n  journal={Agriculture},\n  volume={15},\n  pages={1463},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 32847263,
+    "num_files": 8,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://github.com/henry3539/ACRGS",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "TeaPickingNet_behavior_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Yuhuatai area, Nanjing, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "NVIDIA GeForce RTX 3090 GPU with 24 GB memory"
+    ],
+    "collection_period": "2025",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/agriculture15232441",
+    "citation": "",
+    "bibtex": "@article{han2025teapickingnet,\n  title={TeaPickingNet: Towards Robust Recognition of Fine-Grained Picking Actions in Tea Gardens Using an Attention-Enhanced Framework},\n  author={Han, Ru and Zheng, Ye and Shu, Lei and Cielniak, Grzegorz},\n  journal={Agriculture},\n  volume={15},\n  pages={2441},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 2412964,
+    "num_files": 79,
+    "num_images": 7,
+    "source": "doi",
+    "data_link": "https://doi.org/10.21227/dnkh-8e73",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "HieraEdgeNet_pollen_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Shanghai Jiao Tong University, Shanghai, China",
+      "Shanghai Yangtze River Delta Eco-Environmental Change and Management Observation and Research Station, Shanghai, China",
+      "Institute of Eco-Chongming, Shanghai, China",
+      "Shanghai Forestry Station, Shanghai, China"
+    ],
+    "lat_lon": [
+      "31.23, 121.47"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "pollen grains"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "NVIDIA V100 GPUs (NVIDIA Corp., Santa Clara, CA, USA)"
+    ],
+    "collection_period": "2025",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "agpl-3.0",
+    "documentation": "https://doi.org/10.3390/agriculture15232518",
+    "citation": "",
+    "bibtex": "@article{long2025hieraedgenet,\n  title={HieraEdgeNet: A Multi-Scale Edge-Enhanced Framework for Automated Pollen Recognition},\n  author={Long, Yuchong and Sun, Wen and Sun, Ningxiao and Wang, Wenxiao and Li, Chao and Yin, Shan},\n  journal={Agriculture},\n  volume={15},\n  pages={2518},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 17004570,
+    "num_files": 958,
+    "num_images": 5,
+    "source": "doi",
+    "data_link": "https://www.kaggle.com/datasets/ayinven/hieraedgenetintegratesdatasets",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "raspberry_color_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "eastern Poland, Poland"
+    ],
+    "lat_lon": [
+      "51.194325, 21.816613"
+    ],
+    "country": "Poland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "raspberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Samsung Galaxy S25 smartphone (Samsung Electronics Co., Ltd., Suwon-si, Republic of Korea) equipped with RGB main camera (50 MP, 8160 × 6120 px F/1.8 aperture, sensor size 1/1.56 inches and 24 mm lens)",
+      "Hohem iSteady M7 gimbal (Shenzhen Hohem Technology Co., Ltd., Shenzhen Guangdong, China)"
+    ],
+    "collection_period": "20 June and 20 September 2025",
+    "platform": "smartphone",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/agriculture15242530",
+    "citation": "",
+    "bibtex": "@article{buczyski2025detection,\n  title={Detection of Red, Yellow, and Purple Raspberry Fruits Using YOLO Models},\n  author={Buczyński, Kamil and Kapłan, Magdalena and Jarosz, Zbigniew},\n  journal={Agriculture},\n  volume={15},\n  pages={2530},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 339283,
+    "num_files": 14,
+    "num_images": 3,
+    "source": "doi",
+    "data_link": "https://github.com/kamilczynski/Detection-of-Red-Yellow-and-Purple-Raspberry-Fruits-Using-YOLO-Models",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "apple_chip_budding_site_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "eastern Poland, Poland"
+    ],
+    "lat_lon": [
+      "51.224726, 22.426559"
+    ],
+    "country": "Poland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Samsung Galaxy S25 smartphone (Samsung Electronics Co., Ltd., Suwon-si, Republic of Korea) equipped with an RGB camera sensor (1/1.56″, 50 MP)"
+    ],
+    "collection_period": "2025 growing season",
+    "platform": "smartphone",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/agriculture15242565",
+    "citation": "",
+    "bibtex": "@article{kapan2025detection,\n  title={Detection and Segmentation of Chip Budding Graft Sites in Apple Nursery Using YOLO Models},\n  author={Kapłan, Magdalena and Wójcik, Damian I. and Buczyński, Kamil},\n  journal={Agriculture},\n  volume={15},\n  pages={2565},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 9951570,
+    "num_files": 20,
+    "num_images": 6,
+    "source": "doi",
+    "data_link": "https://github.com/kamilczynski/Detection-of-Chip-Budding-Graft-Sites-in-Apple-Nursery-Using-YOLO-Models",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "WSP_spray_quality_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Porto, Portugal"
+    ],
+    "lat_lon": [],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone"
+    ],
+    "collection_period": "2025",
+    "platform": "mobile",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture15030261",
+    "citation": "Simões, I. (2024). *Water-Sensitive Paper Droplet Annotation* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14010262",
+    "bibtex": "@article{simes2025spray,\n  title={Spray Quality Assessment on Water-Sensitive Paper Comparing AI and Classical Computer Vision Methods},\n  author={Simões, Inês and Sousa, Armando Jorge and Baltazar, André and Santos, Filipe},\n  journal={Agriculture},\n  volume={15},\n  pages={261},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 391727602,
+    "num_files": 1,
+    "num_images": 300,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.14010262",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "LeViT_ResUNet_multispectral_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Wageningen, Netherlands"
+    ],
+    "lat_lon": [],
+    "country": "Netherlands",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat",
+      "maize",
+      "soybean"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro UAV",
+      "MicaSense RedEdge-MX cameras (DJI, Shenzhen, China)",
+      "FLIR Vue Pro R sensors",
+      "Decagon GS3 soil sensors",
+      "HOBO weather stations"
+    ],
+    "collection_period": "",
+    "platform": "drone",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "",
+    "documentation": "https://doi.org/10.3390/agronomy15040928",
+    "citation": "",
+    "bibtex": "@article{aldossary2025federated,\n  title={Federated LeViT-ResUNet for Scalable and Privacy-Preserving Agricultural Monitoring Using Drone and Internet of Things Data},\n  author={Aldossary, Mohammad and Almutairi, Jaber and Alzamil, Ibrahim},\n  journal={Agronomy},\n  volume={15},\n  pages={928},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 75859560,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://www.kaggle.com/datasets/datasetengineer/crop-health-and-environmental-stress-dataset/versions/1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "rice_panicle_DRPD_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Ningxia Academy of Agricultural and Forestry Sciences, Yinchuan, Ningxia, China"
+    ],
+    "lat_lon": [
+      "38.386, 106.270"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI M300 drone",
+      "DJI Zenmuse P1 camera (35 mm focal length lens, maximum resolution of 8192 × 5460 pixels)"
+    ],
+    "collection_period": "2021–2022",
+    "platform": "drone",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "gpl-3.0",
+    "documentation": "https://doi.org/10.3390/agronomy15061396",
+    "citation": "",
+    "bibtex": "@article{guo2025frpnet,\n  title={FRPNet: A Lightweight Multi-Altitude Field Rice Panicle Detection and Counting Network Based on Unmanned Aerial Vehicle Images},\n  author={Guo, Yuheng and Zhan, Wei and Zhang, Zhiliang and Zhang, Yu and Guo, Hongshen},\n  journal={Agronomy},\n  volume={15},\n  pages={1396},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 604343,
+    "num_files": 97,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://github.com/changcaiyang/Panicle-AI/releases/tag/v1.0",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "rice_tiller_3d_reconstruction_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Lake Taihu region, Jiangsu Province, China"
+    ],
+    "lat_lon": [
+      "32.0367, 118.8802"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb-d",
+    "imaging_equipment": [
+      "smartphone (iPhone 15) with 48 MP RGB camera (26 mm focal length, ƒ/1.6 aperture) and motion mode (up to 2.8K resolution at 60 fps)",
+      "Microsoft Azure Kinect, Microsoft (China) Co., Ltd., Beijing, China with a 1-megapixel depth sensor"
+    ],
+    "collection_period": "2023",
+    "platform": "smartphone",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "other",
+    "documentation": "https://doi.org/10.3390/agronomy15081803",
+    "citation": "",
+    "bibtex": "@article{xu2025high,\n  title={High-Resolution 3D Reconstruction of Individual Rice Tillers for Genetic Studies},\n  author={Xu, Jiexiong and Lee, Jiyoung and Jiang, Gang and Gan, Xiangchao},\n  journal={Agronomy},\n  volume={15},\n  pages={1803},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 373318595,
+    "num_files": 1730,
+    "num_images": 1158,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.16080993",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "corn_row_navigation_root_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Changchun, Jilin Province, China"
+    ],
+    "lat_lon": [
+      "43.81, 125.41"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "corn"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Redmi Note 11 Pro; Xiaomi Inc., Beijing, China"
+    ],
+    "collection_period": "2024",
+    "platform": "smartphone",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "other",
+    "documentation": "https://doi.org/10.3390/agronomy15092069",
+    "citation": "",
+    "bibtex": "@article{xu2025farmland,\n  title={Farmland Navigation Line Extraction Method Based on RS-LineNet Network and Root Subordination Relationship Optimization},\n  author={Xu, Yanlei and Lu, Zhen and Li, Jian and Zhai, Yuting and Liu, Chao and Zhang, Xinyu and Zhou, Yang},\n  journal={Agronomy},\n  volume={15},\n  pages={2069},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 8655,
+    "num_files": 5,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://github.com/Zhenrrrrr/RS-LineNet",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "soybeanweed_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "weed_detection",
+    "location": [
+      "Ya’an, Sichuan, China"
+    ],
+    "lat_lon": [
+      "29.51, 102.42"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Sony RX100 VA camera (Sony, Tokyo, Japan)"
+    ],
+    "collection_period": "2025",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "",
+    "documentation": "https://doi.org/10.3390/agronomy15071712",
+    "citation": "",
+    "bibtex": "@article{shuai2025yolo,\n  title={YOLO-SW: A Real-Time Weed Detection Model for Soybean Fields Using Swin Transformer and RT-DETR},\n  author={Shuai, Yizhou and Shi, Jingsha and Li, Yi and Zhou, Shaohao and Zhang, Lihua and Mu, Jiong},\n  journal={Agronomy},\n  volume={15},\n  pages={1712},\n  year={2025},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 1988988650,
+    "num_files": 220,
+    "num_images": 109,
+    "source": "doi",
+    "data_link": "https://www.kaggle.com/datasets/boatshuai/soybeanweed",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "tobacco_maize_multispectral_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Youshuo Town, Chengjiang City, Yuxi City, Yunnan Province"
+    ],
+    "lat_lon": [
+      "24.5, 102.5"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tobacco",
+      "maize"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Elf 4 multispectral drone"
+    ],
+    "collection_period": "August 19 and August 27, 2024",
+    "platform": "drone",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.1371/journal.pone.0339644",
+    "citation": "Xu, C. (2025). *Training dataset and training code based on ResNet50* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17451761",
+    "bibtex": "@article{xu2025crop,\n  title={Crop classification with UAV multispectral remote sensing, employing an enhanced ResNet50 residual network},\n  author={Xu, Chenwei and Lu, Shixian and Feng, Xiang and Zhang, Xuelin and Wang, Jianxiong},\n  journal={PLOS One},\n  volume={20},\n  pages={e0339644},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 648871768,
+    "num_files": 99,
+    "num_images": 86,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17451761",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "SmartFertigation_lettuce_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Purdue University, West Lafayette, Indiana, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "greenhouse",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "buttercrunch lettuce"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Raspberry Pi 3B, Cana Kit Corp., OR",
+      "Raspberry Pi Camera V2.0, 8 MP, Cana Kit Corp.",
+      "CS655; Campbell Scientific, Logan, UT",
+      "CR1000, Campbell Sci.",
+      "LI-3100C, LI-COR Environmental, Lincoln, NE",
+      "Groline, Hannah Instruments, RI"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0357482",
+    "citation": "Nemali, K. (2026). *SmartFertigation_data* (Version 1) [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.32747820.V1",
+    "bibtex": "@article{son2026smart,\n  title={Smart fertigation: Automated fertilizer application based on plant growth using digital sensors with IoT capability},\n  author={Son, Sangrak and Wei-Kocsis, Jin and Deering, Amanda and Hoagland, Lori and Nemali, Krishna},\n  journal={PLOS One},\n  volume={21},\n  pages={e0357482},\n  year={2026},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 62726,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.6084/m9.figshare.32747820.v1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "soil_ph_tropical_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "Patrocinio Paulista, São Paulo, Brazil"
+    ],
+    "lat_lon": [
+      "-20.6342520, -47.2905210"
+    ],
+    "country": "Brazil",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Galaxy S5, Samsung",
+      "PL-D734CU-T, Pixelink",
+      "Newport",
+      "LED144A, AmScope"
+    ],
+    "collection_period": "",
+    "platform": "mobile",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "bsd-3-clause",
+    "documentation": "https://doi.org/10.1371/journal.pone.0317739",
+    "citation": "",
+    "bibtex": "@article{ferreiradasilva2025ai,\n  title={AI enabled, mobile soil pH classification with colorimetric paper sensors for sustainable agriculture},\n  author={Ferreira da Silva, Ademir and Ohta, Ricardo Luis and Tirapu Azpiroz, Jaione and Esteves Ferreira, Matheus and Marçal, Daniel Vitor and Botelho, André and Coppola, Tulio and Melo de Oliveira, Allysson Flavio and Bettarello, Murilo and Schneider, Lauren and Vilaça, Rodrigo and Abdool, Noorunisha and Junior, Vanderlei and Furlaneti, Wellington and Malanga, Pedro Augusto and Steiner, Mathias},\n  journal={PLOS ONE},\n  volume={20},\n  pages={e0317739},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 14969869,
+    "num_files": 18,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://doi.org/10.24435/materialscloud:vt-4t",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "FloralArea_flower_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "State College, Pennsylvania, USA"
+    ],
+    "lat_lon": [
+      "40.79, -77.86"
+    ],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "flowering plants"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "YOLOv8m (fine-tuned from Ultralytics)",
+      "YOLOv8 (fine-tuned from Ultralytics)"
+    ],
+    "collection_period": "",
+    "platform": "laptop",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "other",
+    "documentation": "https://doi.org/10.1371/journal.pone.0332165",
+    "citation": "",
+    "bibtex": "@article{amoah2025floralarea,\n  title={FloralArea: AI-powered algorithm for automated calculation of floral area from flower images to support plant and pollinator research},\n  author={Amoah, Edward I. and White, Khayri and Patch, Harland M. and Grozinger, Christina M.},\n  journal={PLOS One},\n  volume={20},\n  pages={e0332165},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 114748026,
+    "num_files": 18,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://scholarsphere.psu.edu/resources/33452dff-b807-44b0-8783-71c8c47b5242",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "strawberry_ripeness_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Western Innovation for Renewable Energy Deployment (WIRED) agrivoltaic agrotunnel, London, Ontario, Canada"
+    ],
+    "lat_lon": [
+      "42.98, -81.25"
+    ],
+    "country": "Canada",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "strawberry"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Blender version 4.0.2",
+      "Samsung Galaxy S7 Edge smartphone"
+    ],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "gpl-3.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0322189",
+    "citation": "",
+    "bibtex": "@article{aghamohammadesmaeilketabforoosh2025blender,\n  title={From blender to farm: Transforming controlled environment agriculture with synthetic data and SwinUNet for precision crop monitoring},\n  author={Aghamohammadesmaeilketabforoosh, Kimia and Parfitt, Joshua and Nikan, Soodeh and Pearce, Joshua M.},\n  journal={PLOS One},\n  volume={20},\n  pages={e0322189},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "data_size_bytes": 7328247,
+    "num_files": 4,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://osf.io/5kzcb/",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "sentinel1_landsat8_crop_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "southwestern France, France"
+    ],
+    "lat_lon": [
+      "43.52198, 1.17032"
+    ],
+    "country": "France",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "corn",
+      "sunflower",
+      "soybean",
+      "sorghum",
+      "rapeseed",
+      "wheat",
+      "durum wheat",
+      "barley"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-1A and -1B (C-band SAR, 5.405 GHz)",
+      "Sentinel-2 (MSI, 13 spectral bands, 443 to 2190 nm, 10, 20, and 60 m spatial resolutions)",
+      "Landsat-8 (OLI, 9 bands from 435 to 2294 nm, 15–30 m resolution)"
+    ],
+    "collection_period": "2016–2021",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "other",
+    "documentation": "https://doi.org/10.3390/rs18050790",
+    "citation": "FRAPPART, FREDERIC, YGORRA, BERTRAND, BAUP, FREDERIC, MARTIN-COMTE, ALEXIS, GROSS, KEVIN, FIEUZAL, REMY, BATTISTA, CLEMENT, &amp; RIAZANOFF, SERGE. (2026). *Timeseries of multispectral and radar observations and vegetation indices from Sentinel-1, Sentinel-2 and Landsat-8 at field scale* [Dataset]. Recherche Data Gouv. https://doi.org/10.57745/QLKA8K",
+    "bibtex": "@article{baup20266,\n  title={6 Years of SAR (Sentinel-1) and Optical (Sentinel 2, Landsat-8) Acquisitions over Agricultural Surfaces in Southwestern France},\n  author={Baup, Frédéric and Fieuzal, Rémy and Ygorra, Bertrand and Frappart, Frédéric and Riazanoff, Serge and Martin-Comte, Alexis and Gorrab, Azza},\n  journal={Remote Sensing},\n  volume={18},\n  pages={790},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 164629748,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.57745/QLKA8K",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "wetland_grass_species_mapping_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Dajiu Lake National Wetland Park, Hubei Province, China"
+    ],
+    "lat_lon": [
+      "31.4706, 110.0475"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Sanguisorba officinalis",
+      "Carex argyi",
+      "Juncus effusus",
+      "Polygonum sieboldii",
+      "Artemisia lavandulaefolia",
+      "Calamagrostis epigejos",
+      "Bidens pilosa",
+      "Fragaria orientalis"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Zenmuse P1 camera (DJI, Shenzhen, China)",
+      "DJI Matrice 300 RTK UAV (DJI, Shenzhen, China)",
+      "DJI Phantom 4 Multispectral UAV system (DJI, Shenzhen, China)"
+    ],
+    "collection_period": "2022-2023",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "",
+    "documentation": "https://doi.org/10.3390/rs18060927",
+    "citation": "",
+    "bibtex": "@article{zhao2026improved,\n  title={Improved Grass Species Mapping in High-Diversity Wetland by Combining UAV-Based Spectral, Textural, Geometric Measurements},\n  author={Zhao, Ping and Meng, Ran and Xu, Binyuan and Wu, Jin and Shen, Yanyan and Liu, Jie and Huang, Bo and Yin, Tiangang and Ferreira, Matheus Pinheiro and Zhao, Feng},\n  journal={Remote Sensing},\n  volume={18},\n  pages={927},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 36513612,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://www.kaggle.com/datasets/oanotdata/wetland-grass-remote-sensing-feature-dataset/versions/1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Jiangxi_forest_water_storage_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Southern Jiangxi Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Chinese fir",
+      "Masson pine",
+      "slash pine (Pinus elliottii Engelm.)",
+      "Schima superba Gardner & Champ"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Handheld Laser Scanning (HLS) (LiGrip v100, Digital Green Land, Beijing, China)",
+      "UAV-LiDAR (LiAir H800 lidar system, Digital Green Land, Beijing, China)"
+    ],
+    "collection_period": "July 2025",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18091325",
+    "citation": "Liu, Q., Xiao, S., Huang, C., Li, S., Wu, Z., &amp; Tao, L. (2026). *Spatial scale-up modeling of forest canopy water storage capacity by using multi-source remote sensing data: A case study in southern Jiangxi province* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19253926",
+    "bibtex": "@article{liu2026spatial,\n  title={Spatial Scale-Up Modeling of Forest Canopy Water Storage Capacity by Using Multi-Source Remote Sensing Data: A Case Study in Southern Jiangxi Province},\n  author={Liu, Quan and Xiao, Shengsheng and Huang, Chao and Li, Shun and Wu, Zhiwei and Tao, Lizhi},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1325},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 877447,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19253926",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Pinus_halepensis_fire_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Aragón, Spain"
+    ],
+    "lat_lon": [],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Pinus halepensis",
+      "Quercus coccifera"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 5 TM",
+      "Landsat 7 ETM+",
+      "Landsat 8 OLI"
+    ],
+    "collection_period": "2001, 1995, 1991, 1994, 1987, 2015",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18091352",
+    "citation": "Martín Ortiz, P., Iranzo, C., Alves, D. B., Montorio, R., &amp; Pérez-Cabello, F. (2025). *Post-fire NDVI Time Series for Pinus halepensis in Aragón: Multi-year Monitoring and Baseline Comparisons for Resilience Assessment* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17183984",
+    "bibtex": "@article{martnortiz2026effect,\n  title={Effect of Baseline Definition on Post-Fire Resilience Metrics Derived from Landsat Time Series in Pinus halepensis},\n  author={Martín-Ortiz, Pedro and Iranzo, Cristian and Alves, Daniel Borini and Montorio, Raquel and Pérez-Cabello, Fernando},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1352},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 2576005,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.17183984",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "NDVI_AUC_soil_salt_content_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Dongying City, Shandong Province, China"
+    ],
+    "lat_lon": [
+      "36.9167, 118.1667"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Phragmites australis",
+      "Suaeda salsa",
+      "Tamarix chinensis"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2",
+      "Landsat-8/9",
+      "MODIS"
+    ],
+    "collection_period": "2022, 2024, and 2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18101522",
+    "citation": "Cui, Z., &amp; Han, L. (2026). *NDVI-AUC original dataset* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18905858",
+    "bibtex": "@article{cui2026thresholded,\n  title={A Thresholded NDVI-AUC Metric from Multi-Source Optical Time Series for Mapping Surface Soil Salt Content in Vegetated Coastal Areas},\n  author={Cui, Zi’ang and Liu, Yazhou and Song, Rufei and Wang, Jingzhe and Zhang, Zipeng and Ge, Xiangyu and Liu, Fangbing and Wang, Zhengdong and Ding, Jianli and Wang, Jinjie and Han, Lijing},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1522},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 25837523,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18905858",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "leaf_litterfall_eastern_china_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Siming Mountain, Zhejiang Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2"
+    ],
+    "collection_period": "October 2023 to December 2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18101604",
+    "citation": "Xie, Chen, D., Sun, X., Chen, X., Wang, H., Wang, K., Li, W., Yu, H., Ma, J., &amp; Yang, X. (2026). *Date for Remote Sensing Monitoring of Leaf Litterfall Dynamics in Eastern China's Subtropical Forests Using Field-Based Litterfall Data* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18884593",
+    "bibtex": "@article{xie2026remote,\n  title={Remote Sensing Monitoring of Leaf Litterfall Dynamics in Eastern China’s Subtropical Forests Using Field-Based Litterfall Data},\n  author={Xie, Meizhen and Chen, Daosheng and Sun, Xiqing and Cheng, Xiaoyan and Wang, Huimin and Wang, Kehan and Li, Weiqiang and Yu, Hongwei and Ma, Jiahao and Yang, Xiaodong},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1604},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 120862,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18884593",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "xilingol_grassland_mowing_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Xilinhot City, Inner Mongolia, China",
+      "East Ujimqin Banner, Inner Mongolia, China",
+      "West Ujimqin Banner, Inner Mongolia, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grassland"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-1",
+      "Sentinel-2",
+      "Landsat-8"
+    ],
+    "collection_period": "August to September 2023",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18111778",
+    "citation": "Yang, Y., &amp; Wang, H. (2026). *Identification of Mown Grassland in the Xilingol League by Leveraging Multi-Modal Remote Sensing Data and the MAD-Net Model* [Dataset]. Mendeley Data. https://doi.org/10.17632/5S6JZZXWCN.1",
+    "bibtex": "@article{yang2026identification,\n  title={Identification of Mown Grassland in the Xilingol League by Leveraging Multi-Modal Remote Sensing Data and the MAD-Net Model},\n  author={Yang, Yalei and Wang, Hong and Li, Xiaobing and Wang, Yixuan and Tang, Zengwei and Jia, Zixuan and Wang, Ziru},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1778},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 60272728,
+    "num_files": 1,
+    "num_images": 3300,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/5s6jzzxwcn.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "jiangsu_coast_apsp_1985_2025_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Jiangsu coast, Jiangsu Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 5 Thematic Mapper (TM)",
+      "Landsat 8 Operational Land Imager (OLI)",
+      "Google Earth Pro"
+    ],
+    "collection_period": "1985–2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18111782",
+    "citation": "Hu, Z., Dai, W., Xu, Y., Mei, yuqing, &amp; Chen, X. (2026). *Spatiotemporal distribution dataset of aquaculture ponds and salt pans along the Jiangsu coast, China, 1985–2025* (Version 1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19696441",
+    "bibtex": "@article{hu2026mapping,\n  title={Mapping 40 Years of Coastal Production Spaces: Spatiotemporal Co-Evolution of Aquaculture Ponds and Salt Pans Along the Jiangsu Coast, China (1985–2025)},\n  author={Hu, Zichuan and Dai, Wen and Chen, Xinye and Mei, Yuqing and Sun, Jiangbing and Xu, Yansen},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1782},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 7611898,
+    "num_files": 1,
+    "num_images": 9,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19696441",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Orzan_LiDARStructure_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Taipana and Lusevera, Friuli Venezia Giulia Region, Italy"
+    ],
+    "lat_lon": [
+      "46.433, 13.518"
+    ],
+    "country": "Italy",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Fraxinus excelsior L.",
+      "Acer pseudoplatanus L.",
+      "Ostrya carpinifolia Scop.",
+      "Corylus avellana L.",
+      "Castanea sativa Mill."
+    ],
+    "sensor_modality": "lidar",
+    "imaging_equipment": [
+      "Zenmuse L1 (DJI, Shenzhen, China) LiDAR sensor mounted on a DJI Matrice 300 RTK UAV (DJI, Shenzhen, China)"
+    ],
+    "collection_period": "December 2024",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18132099",
+    "citation": "Orzan, L., Tomao, A., Casolo, V., Cingano, P., Král, K., Kratoš, F., Krůček, M., Trotta, G., Živec, M., &amp; Alberti, G. (2026). *LiDARStructure_UnderstoryDiversity* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19914025",
+    "bibtex": "@article{orzan2026high,\n  title={High-Resolution LiDAR Reveals Scale-Dependent Links Between Forest Structure and Understory Plant Diversity Across Successional Stages},\n  author={Orzan, Lorenzo and Tomao, Antonio and Casolo, Valentino and Cingano, Paolo and Král, Kamil and Kratoš, Filip and Krůček, Martin and Trotta, Giacomo and Živec, Miha and Alberti, Giorgio},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2099},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 21511,
+    "num_files": 1,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19914025",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "cerrado_vegetation_mapping_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Brazilian Cerrado biome, Brazil"
+    ],
+    "lat_lon": [],
+    "country": "Brazil",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-2/MultiSpectral Instrument (MSI)"
+    ],
+    "collection_period": "2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18132162",
+    "citation": "Silva, B. L. de C. e, Ferreira, K. R., Queiroz, G. R. de, Mota, J. S. da, Monteiro, E. C. S., Teodoro, M., Silva, I. C. de O., Silva, M. B. da, Inácio, R. D., Aluvei, R. A., Gomes, A. F., Almeida, C., &amp; Adami, M. (2026). *Scalable Clustering-Based Vegetation Mapping from Satellite Image Time Series — Paper Compendium* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20820627",
+    "bibtex": "@article{silva2026scalable,\n  title={A Scalable Clustering-Based Method for Vegetation Mapping in Large Areas Using Satellite Image Time Series},\n  author={Silva, Baggio Luiz de Castro e and Ferreira, Karine Reis and Queiroz, Gilberto Ribeiro de and da Mota, Juliana Santos and Monteiro, Erison C. S. and Teodoro, Mayara and de Oliveira Silva, Isabel Cristina and Silva, Murilo Brasil da and Inácio, Rodrigo Delgado and Aluvei, Rafael Andrade and Gomes, Agata Fabielle and Almeida, Claudio and Adami, Marcos},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2162},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 14641224096,
+    "num_files": 4,
+    "num_images": 58,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20820627",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "aquatic_vegetation_crab_pond_classification",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Gaochun District, Nanjing City, Jiangsu Province, China",
+      "Yixing City, Wuxi City, Jiangsu Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Alternanthera philoxeroides",
+      "Vallisneria natans",
+      "Hydrilla verticillata",
+      "Elodea nuttallii"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "DJI Phantom 4 Multispectral UAV"
+    ],
+    "collection_period": "May–October 2024",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18142269",
+    "citation": "Jiangsu Academy of Agricultural Sciences. (2026). *Dataset of aquatic vegetation detection in crab ponds* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.19561645",
+    "bibtex": "@article{mao2026aquatic,\n  title={Aquatic Vegetation Classification in Crab Ponds Using UAV Multispectral Imagery and a Multi-Scale Frequency-Spatial Collaborative Model},\n  author={Mao, Xing and Dong, Jianbin and Zhang, Xin and Ren, Ni and Li, Weiguo and Wang, Jing and Dai, Peiyu},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2269},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 13183838003,
+    "num_files": 1,
+    "num_images": 54,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.19561645",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "multi_sensor_crop_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Urta Chirchik district, Uzbekistan"
+    ],
+    "lat_lon": [
+      "41.02344, 69.21266"
+    ],
+    "country": "Uzbekistan",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat",
+      "cotton"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat-8 (OLI sensor)",
+      "Sentinel-2 (multispectral instrument)",
+      "Sentinel-1 (C-band Synthetic Aperture Radar)"
+    ],
+    "collection_period": "March–November 2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "",
+    "documentation": "https://doi.org/10.3390/rs18152571",
+    "citation": "",
+    "bibtex": "@article{tukhtamishov2026comprehensive,\n  title={A Comprehensive Machine Learning Approach for Crop Classification Using Multi-Sensor Satellite Datasets and Multiple Vegetation Indices},\n  author={Tukhtamishov, Oybek and Fawzy, Mohamed and Abdelmohsen, Karem and Barsi, Arpad and Kodirov, Rustambek and Foldvary, Lorant and Mamatkulov, Zokhid},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2571},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 104109274,
+    "num_files": 36,
+    "num_images": 20,
+    "source": "doi",
+    "data_link": "https://osf.io/jy4f8/",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Sangamon_wetland_change_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Sangamon River Watershed, Illinois, USA"
+    ],
+    "lat_lon": [
+      "40.4436, -88.6326",
+      "40.187, -90.4325"
+    ],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "corn",
+      "soybeans"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 5 Thematic Mapper (TM)",
+      "Sentinel–2 Surface Reflectance (SR)",
+      "Synthetic Aperture Radar (SAR)"
+    ],
+    "collection_period": "2000–2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18172949",
+    "citation": "Sadaf, A. (2026). *GeoAI-Driven Wetland Change Analysis in the Sangamon River Watershed (2000–2025): A Comparative Assessment of Machine Learning and Deep Learning Approaches.* [Dataset]. Mendeley Data. https://doi.org/10.17632/SJDBTM73P4.1",
+    "bibtex": "@article{sadaf2026geoai,\n  title={GeoAI-Driven Wetland Change Analysis in the Sangamon River Watershed (2000–2025): A Comparative Assessment of Machine Learning and Deep Learning Approaches},\n  author={Sadaf, Afsheen and Amer, Reda},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2949},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 362576,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.17632/sjdbtm73p4.1",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Vietnam_land_use_map_2024_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Red River Delta, Vietnam, Vietnam",
+      "Mekong Delta, Vietnam, Vietnam",
+      "Central Highlands, Vietnam, Vietnam"
+    ],
+    "lat_lon": [
+      "10.3712, 106.4938",
+      "10.2817, 105.3859",
+      "14.0101, 107.5508",
+      "11.5435, 108.0908"
+    ],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "coffee",
+      "rubber tree",
+      "rice",
+      "durian",
+      "dragon fruit",
+      "pomelo"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Sentinel-1",
+      "Sentinel-2"
+    ],
+    "collection_period": "2020, 2024",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "gpl-2.0",
+    "documentation": "https://doi.org/10.3390/rs18030430",
+    "citation": "",
+    "bibtex": "@article{trung2026first,\n  title={First Agriculture Land Use Map in Vietnam Using an Adaptive Weighted Combined Loss Function for UNET++},\n  author={Trung, Ta Hoang and Ky, Nguyen Vu and Phan, Duong Cao and Minh, Duong Binh and Nguyen, Ho and Nasahara, Kenlo Nishida},\n  journal={Remote Sensing},\n  volume={18},\n  pages={430},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 172637,
+    "num_files": 10,
+    "num_images": 2,
+    "source": "doi",
+    "data_link": "https://github.com/tatrung/AgrUNet",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Mekong_River_Delta_land_cover_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Mekong River Delta, Vietnam"
+    ],
+    "lat_lon": [],
+    "country": "Vietnam",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "paddy rice"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 8/9 OLI/TIRS C2 L1"
+    ],
+    "collection_period": "late July 2022, late December 2022, early March 2023, and late May 2023",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/rs18070989",
+    "citation": "",
+    "bibtex": "@article{bui2026advanced,\n  title={Advanced Semi-Supervised Learning for Remote Sensing-Based Land Cover Classification in the Mekong River Delta, Vietnam},\n  author={Bui, Hai-An and Hsu, Chih-Hua and Young, Hsu-Wen Vincent and Chen, Yi-Ying and Liou, Yuei-An},\n  journal={Remote Sensing},\n  volume={18},\n  pages={989},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 117397,
+    "num_files": 15,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://github.com/buihaian1403/Land-use-land-cover-classification",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "hyperspectral_band_selection_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Lubrecht Experimental Forest, Montana, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Douglas Fir",
+      "Ponderosa Pine",
+      "Western Larch"
+    ],
+    "sensor_modality": "hyperspectral",
+    "imaging_equipment": [
+      "Headwall co-aligned visible–near infrared (VNIR) and short-wave infrared (SWIR) imaging system",
+      "FreeFly ALTA X heavy-duty Unmanned Aircraft System (UAS)"
+    ],
+    "collection_period": "2024",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/rs18091440",
+    "citation": "",
+    "bibtex": "@article{karankot2026hyperspectral,\n  title={Hyperspectral Band Selection for Ground Fuel Classification for Prescribed Fires},\n  author={Karankot, Mahmad Isaq and Glenn, Ethan M. and Masood, Muhammad Umer and Zhou, Xiaobing and Whitaker, Bradley M.},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1440},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 85622546,
+    "num_files": 92,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.18796586",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "dea_woody_vegetation_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "mid-Murrumbidgee River floodplain, southern New South Wales, Australia"
+    ],
+    "lat_lon": [
+      "-34.333, 148.833"
+    ],
+    "country": "Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "river red gum"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 5, 7, and 8"
+    ],
+    "collection_period": "1988 to 2023",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/rs18132069",
+    "citation": "",
+    "bibtex": "@article{toqeer2026long,\n  title={Long-Term Automated Mapping of Woody-Vegetation Dynamics in Hydrologically Altered Floodplains: An Open Data Cube Workflow Using Digital Earth Australia},\n  author={Toqeer, Abdullah and Hall, Andrew and Horta, Ana and Habiba, Ume and Wassens, Skye},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2069},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 144199,
+    "num_files": 13,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://github.com/abbi776/dea-wetland-woody-change-detection",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Ontario_forest_canopy_height_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Ontario, Canada"
+    ],
+    "lat_lon": [],
+    "country": "Canada",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Tamarack",
+      "Black Spruce",
+      "White Birch",
+      "Dwarf Birch",
+      "Willow",
+      "Black and White Spruce",
+      "Jack Pine",
+      "Balsam Fir",
+      "Tamarack",
+      "eastern White Cedar",
+      "Poplar",
+      "White Birch",
+      "Maple",
+      "Oak",
+      "Yellow Birch",
+      "White and Red Pine",
+      "mixed forests containing White Pine, Red Pine, Hemlock, White Cedar, Yellow Birch, Sugar and Red Maples, Basswood, and Red Oak"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 7",
+      "Landsat 8",
+      "Sentinel-1",
+      "ALOS-PALSAR-2",
+      "GEDI"
+    ],
+    "collection_period": "2019–2020",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "apache-2.0",
+    "documentation": "https://doi.org/10.3390/rs18152477",
+    "citation": "",
+    "bibtex": "@article{bermudez2026integrated,\n  title={An Integrated Deep Learning Approach to Estimate Canopy Height and Uncertainty by Combining Seasonal Optical, SAR and Limited GEDI LiDAR Data over Ontario’s Managed Forests, Canada},\n  author={Bermudez, Jose and Rogers, Cheryl and Sothe, Camile and Cyr, Dominic and Gonsamo, Alemu},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2477},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 16231,
+    "num_files": 3,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://github.com/MacRemoteSensing/gedi-guided-ch-uncertainty",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "UAV_multispectral_cabbage_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Segyo-ri, Baebang-eup, Asan-si, Chungcheongnam-do, Republic of Korea"
+    ],
+    "lat_lon": [
+      "36.333, 127.333"
+    ],
+    "country": "Republic of Korea",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cabbage"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "MicaSense RedEdge-MX camera (MicaSense Inc., Seattle, WA, USA)"
+    ],
+    "collection_period": "2022",
+    "platform": "uav",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "other",
+    "documentation": "https://doi.org/10.3390/rs18162811",
+    "citation": "",
+    "bibtex": "@article{jung2026spectral,\n  title={Spectral-Consistency-Aware Evaluation of Deep Super-Resolution Methods for UAV Five-Band Multispectral Crop Imagery},\n  author={Jung, Whanjo and Wi, Seung Hwan and Ryu, Jae-Hyun and Lee, Hoonsoo},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2811},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 8045056,
+    "num_files": 16,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://aihub.or.kr/",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "Sierra_greening_gradient_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Wheeler Ridge, eastern Sierra Nevada, California, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "perennial bunchgrasses",
+      "desert needlegrass",
+      "rabbitbrush",
+      "Ceanothus"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "TimelapseCam Pro model; Wingscapes, Birmingham, AL, USA"
+    ],
+    "collection_period": "2018-2024",
+    "platform": "time-lapse",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "gpl-3.0",
+    "documentation": "https://doi.org/10.3390/rs18172951",
+    "citation": "",
+    "bibtex": "@article{john2026landscape,\n  title={Landscape Greening Following Unseasonal Precipitation Along a Desert–Alpine Gradient},\n  author={John, Christian and O’Connor, Bradyn and Stephenson, Thomas R. and Post, Eric},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2951},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 9952551,
+    "num_files": 28,
+    "num_images": 7,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21891402",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "noah_sensor_fusion_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Canada"
+    ],
+    "lat_lon": [],
+    "country": "Canada",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "Landsat 8"
+    ],
+    "collection_period": "2013 to 2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "mit",
+    "documentation": "https://doi.org/10.3390/rs18030466",
+    "citation": "",
+    "bibtex": "@article{mutakabbir2026noah,\n  title={NOAH: A Multi-Modal and Sensor Fusion Dataset for Generative Modeling in Remote Sensing},\n  author={Mutakabbir, Abdul and Lung, Chung-Horng and Zaman, Marzia and Upadhyay, Darshana and Naik, Kshirasagar and Millard, Koreen and Ravichandran, Thambirajah and Purcell, Richard},\n  journal={Remote Sensing},\n  volume={18},\n  pages={466},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 18468889,
+    "num_files": 5945,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://huggingface.co/datasets/mutakabbirCarleton/NOAH-mini",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "GK2_AMI_FireHotspotsData_India_classification",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Northwestern India, Punjab and Haryana, India"
+    ],
+    "lat_lon": [
+      "30.73, 76.25"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice",
+      "wheat"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "GK2A-AMI sensor (16 channels spanning the 0.47 μm to 13.21 μm spectral range)"
+    ],
+    "collection_period": "2019–2025",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "none",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18101506",
+    "citation": "Jethva, H. (2026). *Hourly Fire Detection Dataset of Post-monsoon Stubble Burning in Northwestern India derived from GK2-AMI Geostationary Satellite Observations* (Version v1) [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20084790",
+    "bibtex": "@article{jethva2026timing,\n  title={Timing the Flames: Geostationary Satellite Detection of Diurnally Shifting Stubble Burning in Northwestern India},\n  author={Jethva, Hiren},\n  journal={Remote Sensing},\n  volume={18},\n  pages={1506},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 28393722,
+    "num_files": 16,
+    "num_images": 1,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.20084790",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
+  },
+  {
+    "name": "dias_deforestation_alert_classification",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "",
+    "location": [
+      "Eastern Madagascar, Madagascar"
+    ],
+    "lat_lon": [],
+    "country": "Madagascar",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "PlanetScope constellation of 5 kg satellites",
+      "Landsat 7–9",
+      "Sentinel-1",
+      "Sentinel-2"
+    ],
+    "collection_period": "2022",
+    "platform": "satellite",
+    "input_data_format": "external",
+    "annotation_format": "numericMeasurements",
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18132221",
+    "citation": "Healey, S., Yang, Z., &amp; Bullock, E. (2026). *Code and Reference Data for DIAS (Disturbance Index Alert System) in Madagascar* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.21109969",
+    "bibtex": "@article{yang2026integrating,\n  title={Integrating Commercial and Public Imagery to Accelerate Deforestation Alerts},\n  author={Yang, Zhiqiang and Bullock, Eric L. and Lindquist, Erik J. and Andrianirina, Carole and Healey, Sean P.},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2221},\n  year={2026},\n  publisher={MDPI}\n}",
+    "data_size_bytes": 379348,
+    "num_files": 2,
+    "num_images": 0,
+    "source": "doi",
+    "data_link": "https://doi.org/10.5281/zenodo.21109969",
+    "examples_image_url": "",
+    "hosted_in_original_form": true
   }
 ]
