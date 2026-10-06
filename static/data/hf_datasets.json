@@ -23275,5 +23275,408 @@
     "data_link": "https://github.com/meteahishali/sar-classification",
     "examples_image_url": "",
     "hosted_in_original_form": true
+  },
+  {
+    "name": "potato_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "potato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3905,
+    "classes": [
+      "Black Scurf",
+      "Blackleg",
+      "Blackspot Bruising",
+      "Brown Rot",
+      "Common Scab",
+      "Dry Rot",
+      "Healthy Potatoes",
+      "Miscellaneous",
+      "Pink Rot",
+      "Soft Rot"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture16131408",
+    "citation": "Islam, S., &amp; Afrin, T. (2025). *PotatoCare: Deep learning based potato disease dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/7VM7XSKFG4.2",
+    "bibtex": "@article{gkountakos2026potato,\n  title={Potato-Free: Eliminating Model Training for Disease Detection and Localization in Potato Tubers},\n  author={Gkountakos, Konstantinos and Pasios, Stefanos and Ioannidis, Konstantinos and Demestichas, Konstantinos and Vrochidis, Stefanos and Kompatsiaris, Ioannis},\n  journal={Agriculture},\n  volume={16},\n  pages={1408},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 93105088,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/potato_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/potato_disease_classification_sample.webp"
+  },
+  {
+    "name": "Plant_leaf_diseases_dataset_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Tainan, Taiwan, Taiwan"
+    ],
+    "lat_lon": [],
+    "country": "Taiwan",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sweet potato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Fujifilm GFX100s",
+      "Fujifilm X100F"
+    ],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 55448,
+    "augmented_num_images": 61486,
+    "augmented_zip_size_bytes": 944549209,
+    "classes": [
+      "Apple___Apple_scab",
+      "Apple___Black_rot",
+      "Apple___Cedar_apple_rust",
+      "Apple___healthy",
+      "Background_without_leaves",
+      "Blueberry___healthy",
+      "Cherry___Powdery_mildew",
+      "Cherry___healthy",
+      "Corn___Cercospora_leaf_spot Gray_leaf_spot",
+      "Corn___Common_rust",
+      "Corn___Northern_Leaf_Blight",
+      "Corn___healthy",
+      "Grape___Black_rot",
+      "Grape___Esca_(Black_Measles)",
+      "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "Grape___healthy",
+      "Orange___Haunglongbing_(Citrus_greening)",
+      "Peach___Bacterial_spot",
+      "Peach___healthy",
+      "Pepper,_bell___Bacterial_spot",
+      "Pepper,_bell___healthy",
+      "Potato___Early_blight",
+      "Potato___Late_blight",
+      "Potato___healthy",
+      "Raspberry___healthy",
+      "Soybean___healthy",
+      "Squash___Powdery_mildew",
+      "Strawberry___Leaf_scorch",
+      "Strawberry___healthy",
+      "Tomato___Bacterial_spot",
+      "Tomato___Early_blight",
+      "Tomato___Late_blight",
+      "Tomato___Leaf_Mold",
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Spider_mites Two-spotted_spider_mite",
+      "Tomato___Target_Spot",
+      "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "Tomato___Tomato_mosaic_virus",
+      "Tomato___healthy"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture16080854",
+    "citation": "J, A. R. U. N. P. A. N. D. I. A. N. (2019). *Data for: Identification of Plant Leaf Diseases Using a 9-layer Deep Convolutional Neural Network* [Dataset]. Mendeley. https://doi.org/10.17632/TYWBTSJRJV.1",
+    "bibtex": "@article{yang2026label,\n  title={Label-Free Deep Learning with Feature Adaptation for Crop Anomaly Detection on Small Datasets},\n  author={Yang, Ming-Der and Lee, Tzu-Han and Tseng, Hsin-Hung and Su, Tung-Ching and Hsu, Yu-Chun},\n  journal={Agriculture},\n  volume={16},\n  pages={854},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 863481329,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Plant_leaf_diseases_dataset_classification",
+    "examples_image_url": "/img/agml/sample_images/Plant_leaf_diseases_dataset_classification_sample.webp"
+  },
+  {
+    "name": "ws_dino_weed_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "University of Bonn, Germany",
+      "southern Germany, Germany"
+    ],
+    "lat_lon": [],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sugar beet",
+      "sorghum"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI M600 UAV, PhaseOne iXM-100 RGB camera",
+      "DJI Mavic 2 Pro UAV"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 19,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture16101105",
+    "citation": "",
+    "bibtex": "@article{zhou2026ws,\n  title={WS-DINO: A DINOv2-Based Weed Segmentation Method with Feature Priors and Spatial Fusion},\n  author={Zhou, Hongsheng and Liu, Jiangping and Wu, Rigeng and Zhao, Baoping},\n  journal={Agriculture},\n  volume={16},\n  pages={1105},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 192721915,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ws_dino_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/ws_dino_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "mango_fruit_stem_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Zhongyang Village, Hainan Province, China",
+      "Fuhua Farm, Hainan Province, China"
+    ],
+    "lat_lon": [
+      "18.5667, 109.9167",
+      "18.6167, 109.6167"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "mango"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi 14 smartphone (handheld)",
+      "Redmi K40 Pro smartphone (handheld)"
+    ],
+    "collection_period": "7-8 December 2024",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1782,
+    "classes": [
+      "fruit",
+      "stem"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture16171888",
+    "citation": "",
+    "bibtex": "@article{lu2026feature,\n  title={A Feature Enhancement Framework for Joint Mango Fruit and Stem Detection in Complex Orchard Environments},\n  author={Lu, Jiahuan and Deng, Qihan and Zheng, Weiping and Cai, Binglong and Zeng, Shan and Li, Jiehao},\n  journal={Agriculture},\n  volume={16},\n  pages={1888},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 7232660940,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_fruit_stem_detection",
+    "examples_image_url": "/img/agml/sample_images/mango_fruit_stem_detection_sample.webp"
+  },
+  {
+    "name": "OccPepSeg_YOLO_occluded_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "Otog Front Banner, Inner Mongolia Autonomous Region, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "pepper"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "ORBBEC Gemini 335L (1280x800 pixels)"
+    ],
+    "collection_period": "June to July 2025",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 1500,
+    "augmented_num_images": 6000,
+    "augmented_zip_size_bytes": 930596215,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy16171646",
+    "citation": "",
+    "bibtex": "@article{yu2026occpepseg,\n  title={OccPepSeg-YOLO for Instance Segmentation of Occluded Peppers in Field Images},\n  author={Yu, Xinran and Jiang, Mingxi and Gao, Fei and Fan, Yize and Bai, Yanyan and Peng, Zhigang and Lu, Qi and Liu, Qian and Xu, Shengyong},\n  journal={Agronomy},\n  volume={16},\n  pages={1646},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 831010277,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OccPepSeg_YOLO_occluded_segmentation",
+    "examples_image_url": "/img/agml/sample_images/OccPepSeg_YOLO_occluded_segmentation_sample.webp"
+  },
+  {
+    "name": "CosegPP_Buckwheat_Sunflower_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "University of Nebraska-Lincoln, Nebraska, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Buckwheat",
+      "Sunflower"
+    ],
+    "sensor_modality": "multispectral",
+    "imaging_equipment": [
+      "LemnaTec Scanalyzer 3D plant phenotyping system"
+    ],
+    "collection_period": "3 July to 18 August 2019",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 496,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0257001",
+    "citation": "",
+    "bibtex": "@article{quiones2021multi,\n  title={Multi-feature data repository development and analytics for image cosegmentation in high-throughput plant phenotyping},\n  author={Quiñones, Rubi and Munoz-Arriola, Francisco and Choudhury, Sruti Das and Samal, Ashok},\n  journal={PLOS ONE},\n  volume={16},\n  pages={e0257001},\n  year={2021},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 408198410,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CosegPP_Buckwheat_Sunflower_segmentation",
+    "examples_image_url": "/img/agml/sample_images/CosegPP_Buckwheat_Sunflower_segmentation_sample.webp"
+  },
+  {
+    "name": "grapevine_bunch_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Vairão, Portugal"
+    ],
+    "lat_lon": [
+      "41.4034, -2.1740"
+    ],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi Redmi Note 7 smartphone (dual camera, 8000 × 6000 pixels, handheld)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 10010,
+    "classes": [
+      "Bunch"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy13041120",
+    "citation": "",
+    "bibtex": "@article{pinheiro2023deep,\n  title={Deep Learning YOLO-Based Solution for Grape Bunch Detection and Assessment of Biophysical Lesions},\n  author={Pinheiro, Isabel and Moreira, Germano and Queirós da Silva, Daniel and Magalhães, Sandro and Valente, António and Moura Oliveira, Paulo and Cunha, Mário and Santos, Filipe},\n  journal={Agronomy},\n  volume={13},\n  pages={1120},\n  year={2023},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 673158584,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_bunch_detection",
+    "examples_image_url": "/img/agml/sample_images/grapevine_bunch_detection_sample.webp"
+  },
+  {
+    "name": "grapevine_bunch_condition_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Vairão, Portugal"
+    ],
+    "lat_lon": [
+      "41.4034, -2.1740"
+    ],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi Redmi Note 7 smartphone (dual camera, 8000 × 6000 pixels, handheld)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 10010,
+    "classes": [
+      "OptimalBunch",
+      "DamagedBunch"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy13041120",
+    "citation": "",
+    "bibtex": "@article{pinheiro2023deep,\n  title={Deep Learning YOLO-Based Solution for Grape Bunch Detection and Assessment of Biophysical Lesions},\n  author={Pinheiro, Isabel and Moreira, Germano and Queirós da Silva, Daniel and Magalhães, Sandro and Valente, António and Moura Oliveira, Paulo and Cunha, Mário and Santos, Filipe},\n  journal={Agronomy},\n  volume={13},\n  pages={1120},\n  year={2023},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 673158691,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_bunch_condition_detection",
+    "examples_image_url": "/img/agml/sample_images/grapevine_bunch_condition_detection_sample.webp"
+  },
+  {
+    "name": "paddy_weed_target_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon IXUS 1000 HS (EF-S 36–360 mm f/3.4–5.6 IS STM) handheld"
+    ],
+    "collection_period": "2018-2019",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 358,
+    "classes": [
+      "weed"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0294709",
+    "citation": "",
+    "bibtex": "@article{deng2023weed,\n  title={Weed target detection at seedling stage in paddy fields based on YOLOX},\n  author={Deng, Xiangwu and Qi, Long and Liu, Zhuwen and Liang, Song and Gong, Kunsong and Qiu, Guangjun},\n  journal={PLOS ONE},\n  volume={18},\n  pages={e0294709},\n  year={2023},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 12806459,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/paddy_weed_target_detection",
+    "examples_image_url": "/img/agml/sample_images/paddy_weed_target_detection_sample.webp"
+  },
+  {
+    "name": "AppleTreeDataset_intertwined_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "crop_segmentation",
+    "location": [
+      "National Institute of Horticultural and Herbal Science, Jeonju, South Korea"
+    ],
+    "lat_lon": [],
+    "country": "South Korea",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone 6, 2448 × 3264 pixels, handheld"
+    ],
+    "collection_period": "August to September 2021",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 150,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture13112097",
+    "citation": "",
+    "bibtex": "@article{la2023deep,\n  title={Deep Learning-Based Segmentation of Intertwined Fruit Trees for Agricultural Tasks},\n  author={La, Young-Jae and Seo, Dasom and Kang, Junhyeok and Kim, Minwoo and Yoo, Tae-Woong and Oh, Il-Seok},\n  journal={Agriculture},\n  volume={13},\n  pages={2097},\n  year={2023},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 3042182288,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AppleTreeDataset_intertwined_segmentation",
+    "examples_image_url": "/img/agml/sample_images/AppleTreeDataset_intertwined_segmentation_sample.webp"
   }
 ]
