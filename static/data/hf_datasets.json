@@ -23678,5 +23678,772 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/AppleTreeDataset_intertwined_segmentation",
     "examples_image_url": "/img/agml/sample_images/AppleTreeDataset_intertwined_segmentation_sample.webp"
+  },
+  {
+    "name": "Greenhouse_Tomato_AgRob_object_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Barroselas, Viana do Castelo, Portugal"
+    ],
+    "lat_lon": [],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Stereolabs ZED stereo camera (RGB frames, 1280 x 720 px) on the AgRob v16 mobile robot, guided through greenhouse inter-rows"
+    ],
+    "collection_period": "6 and 8 August 2020",
+    "platform": "robot",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 449,
+    "classes": [
+      "unripe",
+      "breaking",
+      "reddish",
+      "ripe"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy12020356",
+    "citation": "Magalhães, S. A., Moreira, G., dos Santos, F. N., &amp; Cunha, M. (2021). *AgRobTomato Dataset: Greenhouse tomatoes with different ripeness stages* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.5596799",
+    "bibtex": "@article{moreira2022benchmark,\n  title={Benchmark of Deep Learning and a Proposed HSV Colour Space Models for the Detection and Classification of Greenhouse Tomato},\n  author={Moreira, Germano and Magalhães, Sandro Augusto and Pinho, Tatiana and dos Santos, Filipe Neves and Cunha, Mário},\n  journal={Agronomy},\n  volume={12},\n  pages={356},\n  year={2022},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 139036606,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/Greenhouse_Tomato_AgRob_object_detection",
+    "examples_image_url": "/img/agml/sample_images/Greenhouse_Tomato_AgRob_object_detection_sample.webp"
+  },
+  {
+    "name": "sugar_beet_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": [
+      "Sokerijuurikkaan Tutkimuslaitos, Hevonpää, Paimio, Finland"
+    ],
+    "lat_lon": [],
+    "country": "Finland",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sugar beet"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "GoPro Hero 11 action camera (5568 x 4872 px) on a 2 m boom mounted on a FarmDroid FD20 seeding/weeding robot, ~1380 px/m",
+      "Parrot Anafi drone RGB camera (4608 x 3456 px) flown at 4 m, ~570 px/m",
+      "Mobile phone camera (handheld)"
+    ],
+    "collection_period": "May-July 2023",
+    "platform": "robot",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 18593,
+    "classes": [
+      "sugar_beet",
+      "weed"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy14102215",
+    "citation": "Bloch, V. (2024). *PaimioSB2023 dataset for sugar beet and weeds discrimination* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10716274",
+    "bibtex": "@article{palva2024assessment,\n  title={Assessment of the Performance of a Field Weeding Location-Based Robot Using YOLOv8},\n  author={Palva, Reetta and Kaila, Eerikki and García-Pascual, Borja and Bloch, Victor},\n  journal={Agronomy},\n  volume={14},\n  pages={2215},\n  year={2024},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 5714343217,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sugar_beet_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/sugar_beet_weed_detection_sample.webp"
+  },
+  {
+    "name": "CCOD_cotton_flower_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Changji Laolonghe Experimental Base, Xinjiang Uygur Autonomous Region, China",
+      "Keshan Farm, Heilongjiang, China",
+      "Future Smart Pastoral, Luja, Kunshan, Suzhou, Jiangsu, China"
+    ],
+    "lat_lon": [
+      "44.263, 87.332",
+      "48.033, 125.864",
+      "31.386, 120.976"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cotton",
+      "potato",
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic 3 Multispectral RTK (M3M) quadcopter, 20 MP RGB camera, nadir, 12 m flight altitude, 85%/75% front/side overlap"
+    ],
+    "collection_period": "2024 (rice panicle images partly from the DRPD dataset, 2021-2022)",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3986,
+    "classes": [
+      "cotton_flower",
+      "potato_flower",
+      "cotton_boll",
+      "rice_panicle"
+    ],
+    "license": "gpl",
+    "documentation": "https://doi.org/10.3390/rs17050906",
+    "citation": "",
+    "bibtex": "@article{liu2025improved,\n  title={Improved Detection and Location of Small Crop Organs by Fusing UAV Orthophoto Maps and Raw Images},\n  author={Liu, Huaiyang and Li, Huibin and Wang, Haozhou and Liu, Chuanghai and Qian, Jianping and Wang, Zhanbiao and Geng, Changxing},\n  journal={Remote Sensing},\n  volume={17},\n  pages={906},\n  year={2025},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 877608706,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CCOD_cotton_flower_detection",
+    "examples_image_url": "/img/agml/sample_images/CCOD_cotton_flower_detection_sample.webp"
+  },
+  {
+    "name": "maize_seedling_msdd_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Missouri Maize Center, University of Missouri, Columbia, Missouri, USA"
+    ],
+    "lat_lon": [],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 (RGB video, 24/30 fps, nadir and oblique views, flown manually)",
+      "DJI Mavic 2 Pro (RGB video, 24/30 fps, nadir and oblique views, flown manually)"
+    ],
+    "collection_period": "2019-2022 growing seasons",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3152,
+    "classes": [
+      "single_seedling",
+      "double_seedling",
+      "triple_seedling"
+    ],
+    "license": "unknown",
+    "documentation": "https://doi.org/10.3390/agronomy16161605",
+    "citation": "",
+    "bibtex": "@article{kharismawati2026maize,\n  title={Maize Seedling Detection Dataset (MSDD): A Curated High-Resolution RGB Dataset for Seedling Maize Detection and Benchmarking with YOLOv9, YOLO11, YOLOv12 and Faster-RCNN},\n  author={Kharismawati, Dewi Endah and Kazic, Toni},\n  journal={Agronomy},\n  volume={16},\n  pages={1605},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 15545624907,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/maize_seedling_msdd_detection",
+    "examples_image_url": "/img/agml/sample_images/maize_seedling_msdd_detection_sample.webp"
+  },
+  {
+    "name": "UAV_SaSeg_spartina_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "weed_segmentation",
+    "location": [
+      "Shaliu Subdistrict, Sanmen County, Taizhou, Zhejiang Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "Spartina alterniflora"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI multi-rotor UAV with RGB sensor and centimetre-level RTK module; orthomosaic at 0.02 m ground sample distance"
+    ],
+    "collection_period": "October 2025",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 358,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs18142375",
+    "citation": "Tang. (2026). *UAV-SaSeg* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.18697416",
+    "bibtex": "@article{chen2026fine,\n  title={Fine-Scale Spartina alterniflora Mapping Using Advanced Deep Learning and High-Resolution UAV Imagery},\n  author={Chen, Zegang and Tang, Yixing and Hu, Yulong and Chu, Bin and Long, Zhong and Xie, Dong and Zhang, Yunfei and Wang, Zhipan},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2375},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 668615529,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/UAV_SaSeg_spartina_segmentation",
+    "examples_image_url": "/img/agml/sample_images/UAV_SaSeg_spartina_segmentation_sample.webp"
+  },
+  {
+    "name": "sorghum_uav_nitrogen_regression",
+    "machine_learning_task": "ground_truth",
+    "agricultural_task": "crop_phenotyping",
+    "location": [
+      "International Crops Research Institute for the Semi-Arid Tropics (ICRISAT), Patancheru, Telangana, India"
+    ],
+    "lat_lon": [
+      "17.53, 78.27"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sorghum"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI ZENMUSE X5S RGB camera on a DJI Matrice 210 quadcopter, nadir view, 80-90% front/side overlap; plot images delineated from Agisoft Metashape orthomosaics (3-5 mm horizontal resolution)"
+    ],
+    "collection_period": "December 2021 - January 2022 (rabi 2021-2022) and December 2022 - January 2023 (rabi 2022-2023)",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "numericMeasurements",
+    "num_images": 470,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture14101682",
+    "citation": "Choudhary, S., Patil, S., Anbazhagan, K., Chandramouli, M., Mamidi, S., KSVV, P., Baddam, R., Hammouch, H., El-Yacoubi, M. A., Masner, J., Vaněk, J., Qin, H., Michal, S., &amp; Berbia, H. (2024). *RGB images of sorghum fields gathered by UAV flights* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.13733947",
+    "bibtex": "@article{hammouch2024hybrid,\n  title={Hybrid-AI and Model Ensembling to Exploit UAV-Based RGB Imagery: An Evaluation of Sorghum Crop’s Nitrogen Content},\n  author={Hammouch, Hajar and Patil, Suchitra and Choudhary, Sunita and El-Yacoubi, Mounim A. and Masner, Jan and Kholová, Jana and Anbazhagan, Krithika and Vaněk, Jiří and Qin, Huafeng and Stočes, Michal and Berbia, Hassan and Jagarlapudi, Adinarayana and Chandramouli, Magesh and Mamidi, Srinivas and Prasad, KVSV and Baddam, Rekha},\n  journal={Agriculture},\n  volume={14},\n  pages={1682},\n  year={2024},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 1881107110,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sorghum_uav_nitrogen_regression",
+    "examples_image_url": "/img/agml/sample_images/sorghum_uav_nitrogen_regression_sample.webp"
+  },
+  {
+    "name": "apple_blotch_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Julius Kühn Institute (JKI), Institute for Breeding Research on Fruit Crops, Dresden-Pillnitz, Saxony, Germany"
+    ],
+    "lat_lon": [],
+    "country": "Germany",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS 90D (2023) and Canon EOS 70D (2022) DSLR, 18-55 mm zoom lens at 45 mm, f/5.5, 1/250 s, ISO 125, tripod-mounted 30 cm above a Novoflex Magic Studio light table"
+    ],
+    "collection_period": "2022-2023",
+    "platform": "tripod",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 927,
+    "classes": [
+      "apple_blotch_acervulus"
+    ],
+    "license": "cc0-1.0",
+    "documentation": "https://doi.org/10.3390/agronomy14051042",
+    "citation": "",
+    "bibtex": "@article{reim2024yolo,\n  title={YOLO-Based Phenotyping of Apple Blotch Disease (Diplocarpon coronariae) in Genetic Resources after Artificial Inoculation},\n  author={Reim, Stefanie and Richter, Sophie and Leonhardt, Oskar and Maß, Virginia and Wöhner, Thomas Wolfgang},\n  journal={Agronomy},\n  volume={14},\n  pages={1042},\n  year={2024},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 123535822,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_blotch_detection",
+    "examples_image_url": "/img/agml/sample_images/apple_blotch_detection_sample.webp"
+  },
+  {
+    "name": "niwo_tree_crown_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "",
+    "location": [
+      "Niwot Ridge (NEON site NIWO), Colorado, USA"
+    ],
+    "lat_lon": [
+      "40.05425, -105.58237"
+    ],
+    "country": "USA",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "lodgepole pine",
+      "subalpine fir",
+      "Engelmann spruce"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "NEON Airborne Observation Platform (AOP) aircraft RGB camera, 0.1 m ground resolution orthomosaic tiles"
+    ],
+    "collection_period": "2018",
+    "platform": "aerial",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 88,
+    "classes": [
+      "tree"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/rs16234365",
+    "citation": "Harmon, I. (2024). *NEON Neuro-Symbolic Dataset* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.14194555",
+    "bibtex": "@article{harmon2024neuro,\n  title={A Neuro-Symbolic Framework for Tree Crown Delineation and Tree Species Classification},\n  author={Harmon, Ira and Weinstein, Ben and Bohlman, Stephanie and White, Ethan and Wang, Daisy Zhe},\n  journal={Remote Sensing},\n  volume={16},\n  pages={4365},\n  year={2024},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 31376870,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/niwo_tree_crown_detection",
+    "examples_image_url": "/img/agml/sample_images/niwo_tree_crown_detection_sample.webp"
+  },
+  {
+    "name": "appleleaf9_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Compiled from four public datasets captured with various cameras and phones (PlantVillage, ATLDSD, Plant Pathology 2020 and 2021)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 14582,
+    "classes": [
+      "Alternaria leaf spot",
+      "Brown spot",
+      "Frogeye leaf spot",
+      "Grey spot",
+      "Health",
+      "Mosaic",
+      "Powdery mildew",
+      "Rust",
+      "Scab"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agronomy12112784",
+    "citation": "",
+    "bibtex": "@article{yang2022efficient,\n  title={Efficient Identification of Apple Leaf Diseases in the Wild Using Convolutional Neural Networks},\n  author={Yang, Qing and Duan, Shukai and Wang, Lidan},\n  journal={Agronomy},\n  volume={12},\n  pages={2784},\n  year={2022},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 1184629808,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/appleleaf9_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/appleleaf9_disease_classification_sample.webp"
+  },
+  {
+    "name": "pdsnet_field_plant_disease_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "disease_segmentation",
+    "location": [
+      "Jiaozuo Academy of Agriculture and Forestry Sciences, Jiaozuo, Henan, China (wheat stripe rust); soybean and cedar apple rust images from public sources"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "soybean",
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Various cameras (field-collected and public images); padded to square and resized to 640 x 640"
+    ],
+    "collection_period": "May 2023 (wheat stripe rust)",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 240,
+    "classes": [],
+    "license": "cc-by-nc-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture15060583",
+    "citation": "",
+    "bibtex": "@article{zhao2025plant,\n  title={Plant Disease Segmentation Networks for Fast Automatic Severity Estimation Under Natural Field Scenarios},\n  author={Zhao, Chenyi and Li, Changchun and Wang, Xin and Wu, Xifang and Du, Yongquan and Chai, Huabin and Cai, Taiyi and Xiang, Hengmao and Jiao, Yinghua},\n  journal={Agriculture},\n  volume={15},\n  pages={583},\n  year={2025},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 11327467,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/pdsnet_field_plant_disease_segmentation",
+    "examples_image_url": "/img/agml/sample_images/pdsnet_field_plant_disease_segmentation_sample.webp"
+  },
+  {
+    "name": "tomato_detection_kaggle",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 895,
+    "classes": [
+      "tomato"
+    ],
+    "license": "cc0-1.0",
+    "documentation": "https://doi.org/10.3390/agronomy15071593",
+    "citation": "",
+    "bibtex": "@article{wang2025swmd,\n  title={SWMD-YOLO: A Lightweight Model for Tomato Detection in Greenhouse Environments},\n  author={Wang, Quan and Hua, Ye and Lou, Qiongdan and Kan, Xi},\n  journal={Agronomy},\n  volume={15},\n  pages={1593},\n  year={2025},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 188678632,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_detection_kaggle",
+    "examples_image_url": "/img/agml/sample_images/tomato_detection_kaggle_sample.webp"
+  },
+  {
+    "name": "mtl_plotcounter_soybean_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Soybean breeding field, Jinzhong, Shanxi Province, China"
+    ],
+    "lat_lon": [
+      "37.434, 112.594"
+    ],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Mavic 2 Pro UAV with Hasselblad L1D-20C camera, 5 m altitude, 2 m/s, 0.1 cm/pixel GSD"
+    ],
+    "collection_period": "2023",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 54,
+    "classes": [
+      "soybean_seedling"
+    ],
+    "license": "apache-2.0",
+    "documentation": "https://doi.org/10.3390/rs17152688",
+    "citation": "",
+    "bibtex": "@article{xue2025mtl,\n  title={MTL-PlotCounter: Multitask Driven Soybean Seedling Counting at the Plot Scale Based on UAV Imagery},\n  author={Xue, Xiaoqin and Li, Chenfei and Liu, Zonglin and Sun, Yile and Li, Xuru and Song, Haiyan},\n  journal={Remote Sensing},\n  volume={17},\n  pages={2688},\n  year={2025},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 137411141,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mtl_plotcounter_soybean_detection",
+    "examples_image_url": "/img/agml/sample_images/mtl_plotcounter_soybean_detection_sample.webp"
+  },
+  {
+    "name": "wheat_seed_variety_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "University of Agriculture, Faisalabad, Punjab, Pakistan"
+    ],
+    "lat_lon": [
+      "31.438425, 73.074146"
+    ],
+    "country": "Pakistan",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Canon EOS 5D Mark III DSLR; images resized to 256 x 256"
+    ],
+    "collection_period": "2024",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1124,
+    "classes": [
+      "Akbar-19",
+      "Dilkash-20",
+      "Urooj-22"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.111690",
+    "citation": "paal lab, precision lab. (2025). *Varietal purity of wheat seeds dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/W5248V9FK3.1",
+    "bibtex": "@article{nawaz2025high,\n  title={High-resolution RGB image dataset for wheat seed varietal identification and purity assessment},\n  author={Nawaz, Mehreen and Safder, Sadaf and Riaz, Shazia and Ali, Saqib},\n  journal={Data in Brief},\n  volume={61},\n  pages={111690},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 31122041,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_seed_variety_classification",
+    "examples_image_url": "/img/agml/sample_images/wheat_seed_variety_classification_sample.webp"
+  },
+  {
+    "name": "medicinal_leaf_species_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Diploma Krishibid Nursery and Hossain Nursery, Dattapara, Birulia, Savar, Dhaka, Bangladesh"
+    ],
+    "lat_lon": [
+      "23.755, 90.376"
+    ],
+    "country": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "arjun (Terminalia arjuna)",
+      "curry leaf (Murraya koenigii)",
+      "marsh pennywort (Hydrocotyle vulgaris)",
+      "mint (Mentha spp.)",
+      "neem (Azadirachta indica)",
+      "Kalanchoe pinnata"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Apple iPhone 13 Pro camera, natural light; images resized to 512 x 512"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 1380,
+    "augmented_num_images": 9660,
+    "augmented_zip_size_bytes": 134717043,
+    "classes": [
+      "Arjun Leaf",
+      "Curry Leaf",
+      "Marsh Pennywort Leaf",
+      "Mint Leaf",
+      "Neem Leaf",
+      "Rubble Leaf"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112129",
+    "citation": "Mafi, M. M. H. M. (2023). *Medicinal Plant Identification Dataset* [Dataset]. Mendeley Data. https://doi.org/10.17632/FJ93RRFV2Y.2",
+    "bibtex": "@article{matin2025extensive,\n  title={An extensive visual data for reliable identification of medicinal plant leaves},\n  author={Matin, Md. Mafiul Hasan and Sefatullah, Md. and Kabir, Md Shariar and Habib, Haifa Binte},\n  journal={Data in Brief},\n  volume={63},\n  pages={112129},\n  year={2025},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 217248961,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/medicinal_leaf_species_classification",
+    "examples_image_url": "/img/agml/sample_images/medicinal_leaf_species_classification_sample.webp"
+  },
+  {
+    "name": "roseleafset_disease_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Shumi Nursery, Shetu Nursery, Bismillah Nursery and other rose gardens, Amin Model Town, Khagan, Ashulia, Savar, Dhaka, Bangladesh"
+    ],
+    "lat_lon": [
+      "23.884, 90.324"
+    ],
+    "country": "Bangladesh",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rose"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Vivo IQOO Z9x smartphone camera, 3264 x 2448 px JPEG, handheld"
+    ],
+    "collection_period": "October 30 - November 6, 2024",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3113,
+    "augmented_num_images": 10000,
+    "augmented_zip_size_bytes": 400892951,
+    "classes": [
+      "Black Spot",
+      "Dry Leaf",
+      "Healthy Leaf",
+      "Leaf Holes"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112108",
+    "citation": "Jinia, J. T., Rahman, M. S., Mojumdar, M. U., &amp; Bijoy, M. H. I. (2025). *RoseLeafSet: Real-World Leaf Image Dataset for AI-Based Agricultural Solutions* [Dataset]. Mendeley Data. https://doi.org/10.17632/9G668BFHY5.3",
+    "bibtex": "",
+    "zip_size_bytes": 5570992551,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/roseleafset_disease_classification",
+    "examples_image_url": "/img/agml/sample_images/roseleafset_disease_classification_sample.webp"
+  },
+  {
+    "name": "medicinal_plant_parts_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "plant_classification",
+    "location": [
+      "Ethiopia"
+    ],
+    "lat_lon": [],
+    "country": "Ethiopia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "medicinal plants"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Samsung A30s smartphone (25 MP)",
+      "Tecno Spark K7 smartphone (13 MP)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 15100,
+    "classes": [
+      "leaf",
+      "seed",
+      "root",
+      "bark",
+      "root_leaf",
+      "leaf_seed",
+      "bark_leaf",
+      "un_identified"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1371/journal.pone.0322936",
+    "citation": "Aguate, M. (2024). *Medicinal Plant leaf images* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.26426806.V1",
+    "bibtex": "@article{widneh2025identification,\n  title={Identification of medicinal plant parts using depth-wise separable convolutional neural network},\n  author={Widneh, Misganaw Aguate and Alemu, Amlakie Aschale},\n  journal={PLOS One},\n  volume={20},\n  pages={e0322936},\n  year={2025},\n  publisher={Public Library of Science}\n}",
+    "zip_size_bytes": 88211394,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/medicinal_plant_parts_classification",
+    "examples_image_url": "/img/agml/sample_images/medicinal_plant_parts_classification_sample.webp"
+  },
+  {
+    "name": "sesame_crop_weed_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "weed_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sesame"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "camera (4000 x 3000 originals)"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1300,
+    "classes": [
+      "sesame",
+      "weed"
+    ],
+    "license": "cc0-1.0",
+    "documentation": "https://doi.org/10.3390/agriculture16101067",
+    "citation": "",
+    "bibtex": "@article{zhu2026d2fnet,\n  title={D2FNet: A Lightweight Dual-Driven Texture–Semantic Fusion Network for Fine-Grained Real-Time UAV Weed–Crop Detection},\n  author={Zhu, Chenghua and Wu, Siyan and Chao, Xingqi and Lao, Minxuan and Yang, Lei and Cai, Lihua},\n  journal={Agriculture},\n  volume={16},\n  pages={1067},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 82798437,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sesame_crop_weed_detection",
+    "examples_image_url": "/img/agml/sample_images/sesame_crop_weed_detection_sample.webp"
+  },
+  {
+    "name": "larch_casebearer_uav_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "forest_damage_detection",
+    "location": [
+      "Bebehojd, Ekbacka, Jallasvag, Kampe and Nordkap, Vastergotland, Sweden"
+    ],
+    "lat_lon": [],
+    "country": "Sweden",
+    "environment": "forest",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "larch",
+      "forest trees"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "UAV RGB camera"
+    ],
+    "collection_period": "May 27 and August 19, 2019",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 835,
+    "classes": [
+      "healthy_larch",
+      "light_damage",
+      "high_damage",
+      "other_tree",
+      "unknown"
+    ],
+    "license": "cdla-permissive-1.0",
+    "documentation": "https://doi.org/10.3390/rs18172916",
+    "citation": "",
+    "bibtex": "@article{wang2026dromal,\n  title={DROMAL-Net: A Forest Larch Casebearer Detection Model Focusing on Global Feature Enhancement and Positional Dynamic Clustering},\n  author={Wang, Jiaxuan and Liu, Lu and Tang, Yuyang and Ma, Tao and Song, Xiangyu and Qiao, Pan and Ding, Zhen},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2916},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 1920915230,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/larch_casebearer_uav_detection",
+    "examples_image_url": "/img/agml/sample_images/larch_casebearer_uav_detection_sample.webp"
+  },
+  {
+    "name": "tomato_adaptive_yolov8_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "fruit_maturity_detection",
+    "location": [
+      "Gazipur, Bangladesh"
+    ],
+    "lat_lon": [
+      "24.00, 90.42"
+    ],
+    "country": "Bangladesh",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2026",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 604,
+    "classes": [
+      "full_ripened",
+      "half_ripened",
+      "green"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture16101130",
+    "citation": "Rahim, U. F., &amp; Rahman, M. M. (2026). *OpenField-BD-Tomato-Maturity-Detection Dataset* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.20176021",
+    "bibtex": "@article{rahim2026tomato,\n  title={Tomato-Adaptive Attention YOLOv8 for Accurate and Interpretable Maturity Detection Across Diverse Environments},\n  author={Rahim, Umme Fawzia and Rahman, Md. Mushibur and Mineno, Hiroshi},\n  journal={Agriculture},\n  volume={16},\n  pages={1130},\n  year={2026},\n  publisher={MDPI}\n}",
+    "zip_size_bytes": 2396937281,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_adaptive_yolov8_detection",
+    "examples_image_url": "/img/agml/sample_images/tomato_adaptive_yolov8_detection_sample.webp"
+  },
+  {
+    "name": "uci_rice_leaf_diseases_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Gujarat, India (authors' region; collection sites not stated)"
+    ],
+    "lat_lon": [],
+    "country": "India",
+    "environment": "lab",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "digital camera"
+    ],
+    "collection_period": "",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 120,
+    "classes": [
+      "bacterial_leaf_blight",
+      "brown_spot",
+      "leaf_smut"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.3390/agriculture13081549",
+    "citation": "",
+    "bibtex": "@article{Prajapati_2017, title={Detection and classification of rice plant diseases}, volume={11}, ISSN={1875-8843}, url={http://dx.doi.org/10.3233/IDT-170301}, DOI={10.3233/idt-170301}, number={3}, journal={Intelligent Decision Technologies}, publisher={SAGE Publications}, author={Prajapati, Harshadkumar B. and Shah, Jitesh P. and Dabhi, Vipul K.}, year={2017}, month=Aug, pages={357--373} }",
+    "zip_size_bytes": 171414455,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/uci_rice_leaf_diseases_classification",
+    "examples_image_url": "/img/agml/sample_images/uci_rice_leaf_diseases_classification_sample.webp"
   }
 ]
