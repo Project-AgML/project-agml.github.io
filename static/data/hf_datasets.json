@@ -3818,7 +3818,7 @@
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
     "platform": "handheld",
-    "environment": "Field",
+    "environment": "field",
     "input_data_format": "JPG",
     "annotation_format": "classLabel",
     "num_images": 1295,
@@ -4312,7 +4312,7 @@
     "location": "India",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "uav",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -4346,7 +4346,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4379,7 +4379,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4412,7 +4412,7 @@
     "location": "Brazil",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4446,7 +4446,7 @@
     "location": "Spain",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4480,7 +4480,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "PNG",
     "annotation_format": "coco_json",
@@ -4584,7 +4584,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4617,7 +4617,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4650,7 +4650,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4683,7 +4683,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4851,7 +4851,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -4885,7 +4885,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -4953,7 +4953,7 @@
     "location": "Australia",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -4987,7 +4987,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -5019,7 +5019,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -5052,7 +5052,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -5085,7 +5085,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -5118,7 +5118,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
@@ -5152,7 +5152,7 @@
     "location": "Greece",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5187,7 +5187,7 @@
     "location": "Denmark",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground_fixed",
     "input_data_format": "PNG",
     "annotation_format": "directory_names",
@@ -5222,7 +5222,7 @@
     "location": "Brazil",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Lab",
+    "environment": "lab",
     "platform": "uav",
     "input_data_format": "tif",
     "annotation_format": "directory_names",
@@ -5256,7 +5256,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Lab",
+    "environment": "lab",
     "platform": "ground_fixed",
     "input_data_format": "bmp",
     "annotation_format": "directory_names",
@@ -5290,7 +5290,7 @@
     "location": "Pakistan",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5324,7 +5324,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5369,7 +5369,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Lab",
+    "environment": "lab",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5416,7 +5416,7 @@
     "location": "Australia",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5448,7 +5448,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "uav",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
@@ -5481,7 +5481,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "PNG",
     "annotation_format": "directory_names",
@@ -5515,7 +5515,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Lab",
+    "environment": "lab",
     "platform": "handheld",
     "input_data_format": "JPEG",
     "annotation_format": "directory_names",
@@ -5548,7 +5548,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld/ground",
     "input_data_format": "jpg, png, jpeg, JPG",
     "annotation_format": "directory_names",
@@ -5764,7 +5764,7 @@
     "location": "Germany",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground_mobile",
     "input_data_format": "PNG",
     "annotation_format": "image",
@@ -5798,7 +5798,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -5832,7 +5832,7 @@
     "location": "United States of America",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "PNG",
     "annotation_format": "image",
@@ -5866,7 +5866,7 @@
     "location": "China",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -5900,7 +5900,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "ground",
     "input_data_format": "PNG",
     "annotation_format": "image",
@@ -5934,7 +5934,7 @@
     "location": "Digital, Digital",
     "sensor_modality": "RGB",
     "real_or_synthetic": "synthetic",
-    "environment": "Field",
+    "environment": "field",
     "platform": "aerial",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -5960,7 +5960,7 @@
     "location": null,
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -5985,7 +5985,7 @@
     "location": null,
     "sensor_modality": null,
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": null,
     "input_data_format": null,
     "annotation_format": null,
@@ -6020,7 +6020,7 @@
     "location": "Greece",
     "sensor_modality": "RGB",
     "real_or_synthetic": "real",
-    "environment": "Field",
+    "environment": "field",
     "platform": "handheld/ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
@@ -9367,7 +9367,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "crop_classification",
     "location": "Bangladesh",
-    "environment": "Lab",
+    "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
       "Abelmoschus esculentus",
@@ -11013,7 +11013,7 @@
       "18.442866, 73.884894"
     ],
     "country": "India",
-    "environment": "Mixed",
+    "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
       "banana",
@@ -23685,16 +23685,14 @@
     "agricultural_task": "",
     "location": [
       "Laurel Creek Conservation Area, Waterloo, Ontario, Canada",
-      "Beechwoods Nature Reserve, Cambridge, United Kingdom"
+      "Beechwoods Nature Reserve, Cambridge, United Kingdom",
+      "Van Cortlandt Park Preserve, New York, NY, United States"
     ],
     "lat_lon": [],
-    "country": "Canada; United Kingdom",
+    "country": "Canada; United Kingdom; United States",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "broadleaf and conifer forest trees",
-      "beech"
-    ],
+    "crop_types": [],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
       "Huawei P30 Pro smartphone RGB camera with time-of-flight depth (LiDAR) sensor"
@@ -23755,46 +23753,15 @@
     "hosted_in_original_form": true
   },
   {
-    "name": "tree_cover_reconstruction_segmentation",
-    "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "",
-    "location": [
-      "North Korea"
-    ],
-    "lat_lon": [],
-    "country": "North Korea",
-    "environment": "field",
-    "real_or_synthetic": "real",
-    "crop_types": [],
-    "sensor_modality": "multispectral",
-    "imaging_equipment": [
-      "Sentinel-2 MSI time series"
-    ],
-    "collection_period": "2019-2024",
-    "platform": "satellite",
-    "input_data_format": "external",
-    "annotation_format": "segmentationMask",
-    "classes": [],
-    "license": "cc-by-4.0",
-    "documentation": "https://doi.org/10.3390/rs18010091",
-    "citation": "Jo, H.-W., Yoo, Y., & Jeon, S. (2025). *Tree Cover Classification in North Korea from Sentinel-2 Time Series (2019–2024)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17229956",
-    "bibtex": "@article{jo2026reconstruction,\n  title={A Reconstruction–Segmentation Framework for Robust Tree Cover Mapping in North Korea Using Time-Series Reconstruction Autoencoders},\n  author={Jo, Hyun-Woo and Yoo, Youngjae and Jeon, Seongwoo},\n  journal={Remote Sensing},\n  volume={18},\n  pages={91},\n  year={2026},\n  publisher={MDPI}\n}",
-    "data_size_bytes": 950871839,
-    "num_files": 6,
-    "num_images": 5,
-    "source": "doi",
-    "data_link": "https://doi.org/10.5281/zenodo.17229956",
-    "examples_image_url": "",
-    "hosted_in_original_form": true
-  },
-  {
     "name": "desert_vegetation_uav_segmentation",
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "",
     "location": [
       "Suhaitu Gacha, Alxa League, Inner Mongolia Autonomous Region, China"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "40.166944, 104.805833"
+    ],
     "country": "China",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -23830,7 +23797,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "crop_classification",
     "location": [
-      "Asturias, Spain"
+      "Siero, Asturias, Spain"
     ],
     "lat_lon": [],
     "country": "Spain",
@@ -23908,9 +23875,7 @@
     "country": "Netherlands",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "deciduous and evergreen forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
       "MicaSense multispectral camera on UAV"
@@ -23935,22 +23900,22 @@
   {
     "name": "alpine_meadow_restoration_hyperspectral",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "vegetation_monitoring",
+    "agricultural_task": "",
     "location": [
       "Ebao Town, Qilian County, Qinghai Province, China"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "37.949864, 100.941508"
+    ],
     "country": "China",
     "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "alpine meadow grassland"
-    ],
+    "crop_types": [],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
       "SOC710VP hyperspectral camera on tripod"
     ],
-    "collection_period": "",
+    "collection_period": "July 2023",
     "platform": "tripod",
     "input_data_format": "external",
     "annotation_format": "classLabel",
@@ -24045,9 +24010,11 @@
     "machine_learning_task": "unlabeled",
     "agricultural_task": "crop_phenotyping",
     "location": [
-      "Xinjiang, China"
+      "Huaxing Farm, Changji, Xinjiang, China"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "44.033333, 87.500000"
+    ],
     "country": "China",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -24055,9 +24022,11 @@
       "cotton"
     ],
     "sensor_modality": "point_cloud",
-    "imaging_equipment": [],
-    "collection_period": "",
-    "platform": "handheld",
+    "imaging_equipment": [
+      "UAV RGB camera"
+    ],
+    "collection_period": "25 October 2025",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -24078,9 +24047,11 @@
     "machine_learning_task": "unlabeled",
     "agricultural_task": "crop_phenotyping",
     "location": [
-      "Ljubljana, Slovenia"
+      "Srednji Globodol, Slovenia"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "45.851750, 15.047944"
+    ],
     "country": "Slovenia",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -24090,7 +24061,7 @@
     "sensor_modality": "point_cloud",
     "imaging_equipment": [],
     "collection_period": "2022-2023",
-    "platform": "",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -24144,15 +24115,13 @@
   {
     "name": "spread_synthetic_forest_ground_segmentation",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [],
     "lat_lon": [],
     "country": "",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "synthetic",
-    "crop_types": [
-      "forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
       "simulated ground-level camera"
@@ -24177,17 +24146,15 @@
   {
     "name": "treesatai_aerial_tree_species_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "tree_species_classification",
+    "agricultural_task": "",
     "location": [
       "Lower Saxony, Germany"
     ],
     "lat_lon": [],
     "country": "Germany",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
       "20 cm colour-infrared aerial orthophotos",
@@ -24214,9 +24181,9 @@
   {
     "name": "pixelcroprobot_vegetable_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "crop_phenology_detection",
+    "agricultural_task": "crop_detection",
     "location": [
-      "Portugal (greenhouse; PixelCropRobot project, FCUP / INESC TEC / FEUP)"
+      "Vairão, Vila do Conde, Portugal"
     ],
     "lat_lon": [],
     "country": "Portugal",
@@ -24236,7 +24203,7 @@
     "imaging_equipment": [
       "Huawei Mate 10 Lite smartphone"
     ],
-    "collection_period": "",
+    "collection_period": "March-July 2021",
     "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "boundingBox",
@@ -24381,47 +24348,6 @@
     "hosted_in_original_form": true
   },
   {
-    "name": "weed_species_hyperspectral_rgb",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "weed_classification",
-    "location": [
-      "Israel"
-    ],
-    "lat_lon": [],
-    "country": "Israel",
-    "environment": "lab",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "Amaranthus retroflexus",
-      "Solanum nigrum",
-      "Setaria adhaerens"
-    ],
-    "sensor_modality": "hyperspectral",
-    "imaging_equipment": [
-      "Specim IQ hyperspectral camera (204 bands, 400-1000 nm) with co-registered RGB"
-    ],
-    "collection_period": "",
-    "platform": "tripod",
-    "input_data_format": "external",
-    "annotation_format": "classLabel",
-    "classes": [
-      "Amaranthus retroflexus",
-      "Solanum nigrum",
-      "Setaria adhaerens"
-    ],
-    "license": "cc-by-4.0",
-    "documentation": "https://doi.org/10.3390/rs16152808",
-    "citation": "Kizel, F., & Ronay, I. (2024). *Weed Species Identification: A Hyperspectral and RGB Dataset with Labeled Data* [Dataset]. Mendeley Data. https://doi.org/10.17632/6WM4KZF9Y6.1",
-    "bibtex": "@article{Ronay_2024, title={Weed Species Identification: Acquisition, Feature Analysis, and Evaluation of a Hyperspectral and RGB Dataset with Labeled Data}, volume={16}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs16152808}, DOI={10.3390/rs16152808}, number={15}, journal={Remote Sensing}, publisher={MDPI AG}, author={Ronay, Inbal and Lati, Ran Nisim and Kizel, Fadi}, year={2024}, month=July, pages={2808} }",
-    "data_size_bytes": 4865438876,
-    "num_files": 1,
-    "num_images": 0,
-    "source": "doi",
-    "data_link": "https://doi.org/10.17632/6wm4kzf9y6.1",
-    "examples_image_url": "",
-    "hosted_in_original_form": true
-  },
-  {
     "name": "maize_stereo_matching_pairs",
     "machine_learning_task": "unlabeled",
     "agricultural_task": "crop_phenotyping",
@@ -24440,7 +24366,7 @@
     "collection_period": "2023, 2025",
     "platform": "",
     "input_data_format": "external",
-    "annotation_format": "",
+    "annotation_format": "none",
     "classes": [],
     "license": "cc-by-nc-4.0",
     "documentation": "https://doi.org/10.3390/agriculture15242573",
@@ -24459,7 +24385,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": [
-      "Western Australia, Australia"
+      "Mingenew, Western Australia, Australia"
     ],
     "lat_lon": [],
     "country": "Australia",
@@ -24493,10 +24419,10 @@
   },
   {
     "name": "grape_multimodal_detection",
-    "machine_learning_task": "segmentation_detection",
-    "agricultural_task": "fruit_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
     "location": [
-      "Anhui, China (Anhui Agricultural University)"
+      "Hefei, Anhui, China"
     ],
     "lat_lon": [],
     "country": "China",
@@ -24509,7 +24435,7 @@
     "imaging_equipment": [
       "RGB, depth and NIR camera"
     ],
-    "collection_period": "",
+    "collection_period": "August 2021 - July 2023",
     "platform": "",
     "input_data_format": "external",
     "annotation_format": "boundingBox",
@@ -24529,7 +24455,7 @@
   {
     "name": "tomato_multimodal_maturity_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "fruit_maturity_detection",
+    "agricultural_task": "maturity_detection",
     "location": [],
     "lat_lon": [],
     "country": "China",
@@ -24601,11 +24527,13 @@
   {
     "name": "tomato_greenhouse_label_errors_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "fruit_detection",
+    "agricultural_task": "crop_detection",
     "location": [
       "Zempoala, Hidalgo, Mexico"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "19.956306, -98.694694"
+    ],
     "country": "Mexico",
     "environment": "greenhouse",
     "real_or_synthetic": "real",
@@ -24634,7 +24562,7 @@
   {
     "name": "agripk_whitefly_cotton_classification",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "pest_damage_classification",
+    "agricultural_task": "damage_classification",
     "location": [
       "Bahawalpur, South Punjab, Pakistan"
     ],
@@ -24650,7 +24578,7 @@
       "mobile phones",
       "DSLR cameras (5-12 MP)"
     ],
-    "collection_period": "",
+    "collection_period": "August-October 2021",
     "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "classLabel",
@@ -24670,7 +24598,7 @@
   {
     "name": "wald5dplus_forest_sentinel_cubes",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
       "Bavarian Forest National Park, Germany",
       "Kranzberg Forest, Germany",
@@ -24678,11 +24606,9 @@
     ],
     "lat_lon": [],
     "country": "Germany",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
       "Sentinel-1 SAR",
@@ -24708,7 +24634,7 @@
   {
     "name": "esa_worldcover_2020_land_cover",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "land_use_classification",
     "location": [
       "global"
     ],
@@ -24752,49 +24678,17 @@
     "hosted_in_original_form": true
   },
   {
-    "name": "qinling_forest_disturbance_samples",
-    "machine_learning_task": "image_classification",
-    "agricultural_task": "forest_monitoring",
-    "location": [
-      "Qinling Mountains, China"
-    ],
-    "lat_lon": [],
-    "country": "China",
-    "environment": "forest",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "forest"
-    ],
-    "sensor_modality": "multispectral",
-    "imaging_equipment": [
-      "Landsat",
-      "Sentinel-2"
-    ],
-    "collection_period": "",
-    "platform": "satellite",
-    "input_data_format": "external",
-    "annotation_format": "classLabel",
-    "classes": [],
-    "license": "cc-by-4.0",
-    "documentation": "https://doi.org/10.3390/rs18111802",
-    "citation": "LIzengnan. (2026). *feiyunzhuiyancehng/LandTrendr-algorithm: GEE_LandTrendr  algorithm* (Version 1.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.19184777",
-    "bibtex": "@article{Wang_2026, title={Long-Term Forest Disturbance Mapping in the Qinling Mountains Using Landsat–Sentinel Annual Composites: A Regional Assessment of LandTrendr Performance}, volume={18}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs18111802}, DOI={10.3390/rs18111802}, number={11}, journal={Remote Sensing}, publisher={MDPI AG}, author={Wang, Yiting and Li, Zengnan and Zhang, Xin and Xie, Donghui}, year={2026}, month=June, pages={1802} }",
-    "data_size_bytes": 6873105,
-    "num_files": 1,
-    "num_images": 0,
-    "source": "doi",
-    "data_link": "https://doi.org/10.5281/zenodo.19184777",
-    "examples_image_url": "",
-    "hosted_in_original_form": true
-  },
-  {
     "name": "umbellularia_resprouting_tls",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "vegetation_monitoring",
+    "agricultural_task": "",
     "location": [
-      "California, United States"
+      "Pepperwood Preserve, Sonoma County, California, United States",
+      "Saddle Mountain, Sonoma County, California, United States"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "38.582639, -122.710361",
+      "38.500917, -122.629056"
+    ],
     "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -24825,17 +24719,15 @@
   {
     "name": "cfatd_china_forest_biomass",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
       "China"
     ],
     "lat_lon": [],
     "country": "China",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
     "collection_period": "",
@@ -24857,16 +24749,20 @@
   },
   {
     "name": "for_instance_uav_lidar_tree_segmentation",
-    "machine_learning_task": "segmentation_detection",
-    "agricultural_task": "tree_segmentation",
-    "location": [],
-    "lat_lon": [],
-    "country": "",
-    "environment": "forest",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "",
+    "location": [
+      "Norway",
+      "Czech Republic",
+      "Austria",
+      "New Zealand",
+      "Australia"
     ],
+    "lat_lon": [],
+    "country": "Norway; Czech Republic; Austria; New Zealand; Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "UAV laser scanner"
@@ -24874,7 +24770,7 @@
     "collection_period": "",
     "platform": "uav",
     "input_data_format": "external",
-    "annotation_format": "none",
+    "annotation_format": "pointLabels",
     "classes": [],
     "license": "cc-by-4.0",
     "documentation": "https://doi.org/10.3390/rs18162697",
@@ -24891,18 +24787,15 @@
   {
     "name": "global_natural_planted_forests_30m",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
       "global"
     ],
     "lat_lon": [],
     "country": "",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "natural forest",
-      "planted forest"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
     "collection_period": "",
@@ -24928,7 +24821,7 @@
   {
     "name": "sen12tp_sentinel_paired_vegetation_indices",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "vegetation_monitoring",
+    "agricultural_task": "",
     "location": [
       "global"
     ],
@@ -24962,13 +24855,13 @@
   {
     "name": "global_mangrove_watch_v3",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "vegetation_mapping",
+    "agricultural_task": "",
     "location": [
       "global"
     ],
     "lat_lon": [],
     "country": "",
-    "environment": "coastal",
+    "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "mangrove"
@@ -24997,23 +24890,21 @@
   {
     "name": "alberta_forest_rgb_thermal_drone",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
-      "Alberta, Canada"
+      "Cynthia, Alberta, Canada"
     ],
     "lat_lon": [],
     "country": "Canada",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
-    ],
-    "sensor_modality": "rgb",
+    "crop_types": [],
+    "sensor_modality": "thermal-rgb",
     "imaging_equipment": [
       "drone RGB camera",
       "drone thermal camera"
     ],
-    "collection_period": "",
+    "collection_period": "30 August 2022",
     "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
@@ -25033,7 +24924,7 @@
   {
     "name": "agrisen_cog_crop_type_benchmark",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "crop_type_mapping",
+    "agricultural_task": "crop_classification",
     "location": [
       "multiple European countries (LPIS)"
     ],
@@ -25066,7 +24957,7 @@
   {
     "name": "cgls_lc100_2019_land_cover",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "land_use_classification",
     "location": [
       "global"
     ],
@@ -25097,20 +24988,26 @@
   {
     "name": "tls_forest_pulse_frequency",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "forest_monitoring",
-    "location": [],
-    "lat_lon": [],
-    "country": "",
-    "environment": "forest",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
+    "agricultural_task": "",
+    "location": [
+      "Belgium",
+      "Cumberland Plain SuperSite, New South Wales, Australia",
+      "Gabon"
     ],
+    "lat_lon": [
+      "50.966667, 3.800000",
+      "-33.600000, 150.716667",
+      "0.500000, 12.783333"
+    ],
+    "country": "Belgium; Australia; Gabon",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner"
     ],
-    "collection_period": "",
+    "collection_period": "January-June 2022",
     "platform": "tripod",
     "input_data_format": "external",
     "annotation_format": "none",
@@ -25130,17 +25027,15 @@
   {
     "name": "eba_amazon_airborne_lidar_transects",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
       "Brazilian Amazon"
     ],
     "lat_lon": [],
     "country": "Brazil",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "tropical forest"
-    ],
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "airborne LiDAR"
@@ -25165,10 +25060,12 @@
   {
     "name": "crop_classification_planetscope_sentinel2",
     "machine_learning_task": "image_classification",
-    "agricultural_task": "crop_type_mapping",
-    "location": [],
+    "agricultural_task": "crop_classification",
+    "location": [
+      "Harichand, Khyber Pakhtunkhwa, Pakistan"
+    ],
     "lat_lon": [],
-    "country": "",
+    "country": "Pakistan",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -25197,7 +25094,7 @@
   {
     "name": "glass_glc_global_land_cover_1982_2015",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "land_use_classification",
     "location": [
       "global"
     ],
@@ -25238,17 +25135,18 @@
   {
     "name": "central_europe_forest_tls_uls_als_point_clouds",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "tree_species_classification",
+    "agricultural_task": "",
     "location": [
       "Bretten and Karlsruhe, Baden-Württemberg, Germany"
     ],
-    "lat_lon": [],
-    "country": "Germany",
-    "environment": "forest",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
+    "lat_lon": [
+      "49.034897, 8.426119",
+      "49.013789, 8.694831"
     ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner",
@@ -25275,17 +25173,18 @@
   {
     "name": "central_europe_forest_als_full_waveform",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "forest_monitoring",
+    "agricultural_task": "",
     "location": [
       "Bretten and Karlsruhe, Baden-Württemberg, Germany"
     ],
-    "lat_lon": [],
-    "country": "Germany",
-    "environment": "forest",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
+    "lat_lon": [
+      "49.034897, 8.426119",
+      "49.013789, 8.694831"
     ],
+    "country": "Germany",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "full-waveform airborne laser scanner"
@@ -25310,17 +25209,15 @@
   {
     "name": "rushworth_forest_tls_tree_point_clouds",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "tree_structure_reconstruction",
+    "agricultural_task": "",
     "location": [
       "Rushworth Forest, Victoria, Australia"
     ],
     "lat_lon": [],
     "country": "Australia",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner"
@@ -25345,7 +25242,7 @@
   {
     "name": "obsydya_benin_land_cover_reference",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "land_use_classification",
     "location": [
       "Central and Northern Benin"
     ],
@@ -25376,22 +25273,20 @@
   {
     "name": "jasper_mountain_pine_beetle_tls_fuel",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "forest_health_monitoring",
+    "agricultural_task": "",
     "location": [
       "Jasper National Park, Alberta, Canada"
     ],
     "lat_lon": [],
     "country": "Canada",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner"
     ],
-    "collection_period": "",
+    "collection_period": "July 2021",
     "platform": "tripod",
     "input_data_format": "external",
     "annotation_format": "pointLabels",
@@ -25420,7 +25315,7 @@
   {
     "name": "large_tropical_trees_tls_biomass_4tu",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "biomass_estimation",
+    "agricultural_task": "",
     "location": [
       "Guyana",
       "Central Kalimantan, Indonesia",
@@ -25431,12 +25326,10 @@
       "-2.41, 113.13",
       "-12.27, -69.10"
     ],
-    "country": "",
-    "environment": "forest",
+    "country": "Guyana; Indonesia; Peru",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "tropical forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner"
@@ -25461,17 +25354,15 @@
   {
     "name": "cameroon_tropical_trees_tls_biomass",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "biomass_estimation",
+    "agricultural_task": "",
     "location": [
       "eastern Cameroon"
     ],
     "lat_lon": [],
     "country": "Cameroon",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "tropical forest trees"
-    ],
+    "crop_types": [],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
       "terrestrial laser scanner"
@@ -25496,13 +25387,13 @@
   {
     "name": "assateague_phragmites_uas_multispectral",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "invasive_species_mapping",
+    "agricultural_task": "",
     "location": [
       "Assateague Island National Seashore, Maryland, United States"
     ],
     "lat_lon": [],
     "country": "United States",
-    "environment": "wetland",
+    "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "Phragmites australis"
@@ -25532,17 +25423,15 @@
   {
     "name": "dog_head_marsh_uas_multispectral_spectra",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "",
     "location": [
       "Dog Head Marsh, South Cape Beach, Mashpee, Massachusetts, United States"
     ],
     "lat_lon": [],
     "country": "United States",
-    "environment": "wetland",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "salt marsh vegetation"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
       "UAS multispectral camera",
@@ -25567,54 +25456,17 @@
     "hosted_in_original_form": true
   },
   {
-    "name": "dangermond_rangeland_rdm_uav_lidar",
-    "machine_learning_task": "unlabeled",
-    "agricultural_task": "rangeland_monitoring",
-    "location": [
-      "Jack and Laura Dangermond Preserve, Santa Barbara County, California, United States"
-    ],
-    "lat_lon": [],
-    "country": "United States",
-    "environment": "field",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "rangeland grasses"
-    ],
-    "sensor_modality": "point_cloud",
-    "imaging_equipment": [
-      "UAV LiDAR"
-    ],
-    "collection_period": "2024",
-    "platform": "uav",
-    "input_data_format": "external",
-    "annotation_format": "none",
-    "classes": [],
-    "license": "cc0-1.0",
-    "documentation": "https://doi.org/10.3390/rs17142352",
-    "citation": "OpenTopography. (2025). *UAV LiDAR Survey of RDM at Jack and Laura Dangermond Preserve, CA 2024*. OpenTopography. https://doi.org/10.5069/G9S180QV",
-    "bibtex": "@article{Markman_2025, title={Evaluating UAV LiDAR and Field Spectroscopy for Estimating Residual Dry Matter Across Conservation Grazing Lands}, volume={17}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs17142352}, DOI={10.3390/rs17142352}, number={14}, journal={Remote Sensing}, publisher={MDPI AG}, author={Markman, Bruce and Butterfield, H. Scott and Franklin, Janet and Coulter, Lloyd and Katkowski, Moses and Sousa, Daniel}, year={2025}, month=July, pages={2352} }",
-    "data_size_bytes": 0,
-    "num_files": 0,
-    "num_images": 0,
-    "source": "doi",
-    "data_link": "https://doi.org/10.5069/g9s180qv",
-    "examples_image_url": "",
-    "hosted_in_original_form": true
-  },
-  {
     "name": "globbiomass_global_forest_biomass",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "biomass_estimation",
+    "agricultural_task": "",
     "location": [
       "global"
     ],
     "lat_lon": [],
     "country": "",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
     "collection_period": "2010",
@@ -25639,9 +25491,11 @@
     "machine_learning_task": "unlabeled",
     "agricultural_task": "crop_phenotyping",
     "location": [
-      "China"
+      "Huazhong Agricultural University experimental field, Wuhan, Hubei, China"
     ],
-    "lat_lon": [],
+    "lat_lon": [
+      "30.4741, 114.3666"
+    ],
     "country": "China",
     "environment": "field",
     "real_or_synthetic": "real",
@@ -25672,17 +25526,15 @@
   {
     "name": "conghua_forest_agb_map",
     "machine_learning_task": "ground_truth",
-    "agricultural_task": "biomass_estimation",
+    "agricultural_task": "",
     "location": [
       "Conghua, Guangdong, China"
     ],
     "lat_lon": [],
     "country": "China",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
-    "crop_types": [
-      "forest"
-    ],
+    "crop_types": [],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
       "Sentinel-1 SAR",
@@ -25707,51 +25559,16 @@
     "hosted_in_original_form": true
   },
   {
-    "name": "gbr_catchments_ground_cover_convlstm",
-    "machine_learning_task": "ground_truth",
-    "agricultural_task": "ground_cover_prediction",
-    "location": [
-      "Great Barrier Reef catchments, Queensland, Australia"
-    ],
-    "lat_lon": [],
-    "country": "Australia",
-    "environment": "field",
-    "real_or_synthetic": "real",
-    "crop_types": [
-      "grazing land"
-    ],
-    "sensor_modality": "multispectral",
-    "imaging_equipment": [
-      "Landsat"
-    ],
-    "collection_period": "",
-    "platform": "satellite",
-    "input_data_format": "external",
-    "annotation_format": "numericMeasurements",
-    "classes": [],
-    "license": "mit",
-    "documentation": "https://doi.org/10.3390/rs16173193",
-    "citation": "Mao, Y. (2024). *ground_cover_convlstm* [Code and data]. GitHub. https://github.com/yongjingmao/ground_cover_convlstm",
-    "bibtex": "@article{Mao_2024, title={Predicting Ground Cover with Deep Learning Models—An Application of Spatio-Temporal Prediction Methods to Satellite-Derived Ground Cover Maps in the Great Barrier Reef Catchments}, volume={16}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs16173193}, DOI={10.3390/rs16173193}, number={17}, journal={Remote Sensing}, publisher={MDPI AG}, author={Mao, Yongjing and Turner, Ryan D. R. and McMahon, Joseph M. and Correa, Diego F. and Chamberlain, Debbie A. and Warne, Michael St. J.}, year={2024}, month=Aug, pages={3193} }",
-    "data_size_bytes": 0,
-    "num_files": 0,
-    "num_images": 0,
-    "source": "doi",
-    "data_link": "https://github.com/yongjingmao/ground_cover_convlstm",
-    "examples_image_url": "",
-    "hosted_in_original_form": true
-  },
-  {
     "name": "muufl_gulfport_hyperspectral_lidar",
     "machine_learning_task": "semantic_segmentation",
-    "agricultural_task": "land_cover_classification",
+    "agricultural_task": "",
     "location": [
       "University of Southern Mississippi Gulf Park campus, Long Beach, Mississippi, United States"
     ],
     "lat_lon": [],
     "country": "United States",
     "environment": "mixed",
-    "real_or_synthetic": "",
+    "real_or_synthetic": "real",
     "crop_types": [],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -25763,7 +25580,7 @@
     "input_data_format": "external",
     "annotation_format": "segmentationMask",
     "classes": [],
-    "license": "mit",
+    "license": "other",
     "documentation": "https://doi.org/10.3390/rs16163082",
     "citation": "Zare, A., Gader, P., Aitken, J., Close, R., Tuell, G., Glenn, T., Dranishnikov, D., & Xiaoxiao Du. (2018). *Gatorsense/Muuflgulfport: Release 01* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.1186326",
     "bibtex": "@article{Wang_2024, title={Multimodal Semantic Collaborative Classification for Hyperspectral Images and LiDAR Data}, volume={16}, ISSN={2072-4292}, url={http://dx.doi.org/10.3390/rs16163082}, DOI={10.3390/rs16163082}, number={16}, journal={Remote Sensing}, publisher={MDPI AG}, author={Wang, Aili and Dai, Shiyu and Wu, Haibin and Iwahori, Yuji}, year={2024}, month=Aug, pages={3082} }",
@@ -26437,11 +26254,10 @@
     ],
     "lat_lon": [],
     "country": "Sweden",
-    "environment": "forest",
+    "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "larch",
-      "forest trees"
+      "larch"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
