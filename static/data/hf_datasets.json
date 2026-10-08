@@ -26357,5 +26357,348 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/uci_rice_leaf_diseases_classification",
     "examples_image_url": "/img/agml/sample_images/uci_rice_leaf_diseases_classification_sample.webp"
+  },
+  {
+    "name": "image_safari_minor_sites",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Kiboko, Kenya",
+      "Senegal",
+      "Nairobi, Kenya",
+      "Kibos, Kenya",
+      "Kampala, Uganda",
+      "Nambala, Tanzania",
+      "Osogbo, Nigeria",
+      "Lilongwe, Malawi"
+    ],
+    "lat_lon": [
+      "7.4869, 3.8994",
+      "-2.2208, 37.7251",
+      "14.7081, -16.4798",
+      "13.7545, -15.7855",
+      "-0.3817, 35.9453",
+      "0.5317, 32.616",
+      "-3.4038, 36.7924",
+      "-3.4053, 36.7933",
+      "-3.4039, 36.7936",
+      "0.5297, 32.613",
+      "7.4851, 3.9016",
+      "-0.0374, 34.816",
+      "-13.9436, 33.8042",
+      "-2.2172, 37.7254",
+      "-3.404, 36.7939"
+    ],
+    "country": "Kenya, Malawi, Nigeria, Senegal, Tanzania, Uganda",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cassava",
+      "chickpea",
+      "finger millet",
+      "lentil",
+      "maize",
+      "pearl millet",
+      "pigeonpea",
+      "sorghum",
+      "unspecified crops",
+      "wheat"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "samsung SM-A346E",
+      "samsung SM-T295",
+      "Xiaomi 23117RA68G",
+      "INFINIX Infinix X6835B",
+      "TECNO MOBILE LIMITED TECNO KG5k",
+      "samsung SM-T225N"
+    ],
+    "collection_period": "2025-03-11 to 2025-11-10",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 651,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 1316011465,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_minor_sites",
+    "examples_image_url": "/img/agml/sample_images/image_safari_minor_sites_sample.webp"
+  },
+  {
+    "name": "image_safari_rice_africa_rice_sn",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Senegal"
+    ],
+    "lat_lon": [
+      "16.2018, -16.2648"
+    ],
+    "country": "Senegal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "rice"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "samsung SM-T295"
+    ],
+    "collection_period": "2025-10-31 to 2025-11-06",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 577,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 1849724012,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_rice_africa_rice_sn",
+    "examples_image_url": "/img/agml/sample_images/image_safari_rice_africa_rice_sn_sample.webp"
+  },
+  {
+    "name": "image_safari_crop_weed_segmentation",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop and weed segmentation",
+    "location": [
+      "Image Safari collection sites, sub-Saharan Africa"
+    ],
+    "lat_lon": [],
+    "country": "Kenya, Tanzania, Malawi, Uganda, Nigeria, Ghana, Senegal, Côte d'Ivoire",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana",
+      "common bean",
+      "cassava",
+      "chickpea",
+      "cowpea",
+      "groundnut",
+      "potato",
+      "maize",
+      "pearl millet",
+      "pigeonpea",
+      "rice",
+      "sorghum",
+      "soybean",
+      "sweet potato",
+      "wheat",
+      "yam"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone cameras"
+    ],
+    "collection_period": "2024-2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 2114,
+    "classes": [
+      "background",
+      "crop",
+      "weed_broadleaf",
+      "weed_narrowleaf",
+      "fruit"
+    ],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 4504506659,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_crop_weed_segmentation",
+    "examples_image_url": "/img/agml/sample_images/image_safari_crop_weed_segmentation_sample.webp"
+  },
+  {
+    "name": "image_safari_cassava_qed_lilongwe",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Lilongwe, Malawi"
+    ],
+    "lat_lon": [
+      "-13.9434, 33.804"
+    ],
+    "country": "Malawi",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "cassava"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "TECNO MOBILE LIMITED TECNO KG5k",
+      "TECNO TECNO KI5k"
+    ],
+    "collection_period": "2025-05-19 to 2025-11-13",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 11170,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 46934800780,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_cassava_qed_lilongwe",
+    "examples_image_url": "/img/agml/sample_images/image_safari_cassava_qed_lilongwe_sample.webp"
+  },
+  {
+    "name": "image_safari_chickpea_ciat_arusha",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Arusha, Tanzania"
+    ],
+    "lat_lon": [
+      "-3.3656, 36.6397"
+    ],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "chickpea"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "samsung SM-A235F",
+      "TECNO TECNO CK8n",
+      "samsung SM-G998U1",
+      "samsung SM-A556E",
+      "samsung SM-A536E",
+      "samsung SM-A256E"
+    ],
+    "collection_period": "2024-11-22 to 2025-11-20",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 18506,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 52930936277,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_chickpea_ciat_arusha",
+    "examples_image_url": "/img/agml/sample_images/image_safari_chickpea_ciat_arusha_sample.webp"
+  },
+  {
+    "name": "image_safari_common_bean_cip_nairobi",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Nairobi, Kenya"
+    ],
+    "lat_lon": [
+      "-0.3443, 35.9451"
+    ],
+    "country": "Kenya",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "common bean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "samsung SM-T225N",
+      "samsung SM-X115"
+    ],
+    "collection_period": "2025-09-26 to 2025-10-16",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 1179,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 2421236717,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_common_bean_cip_nairobi",
+    "examples_image_url": "/img/agml/sample_images/image_safari_common_bean_cip_nairobi_sample.webp"
+  },
+  {
+    "name": "image_safari_common_bean_ciat_arusha_gopro",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Arusha, Tanzania"
+    ],
+    "lat_lon": [
+      "-3.3655, 36.6406"
+    ],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "common bean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "GoPro HERO13 Black"
+    ],
+    "collection_period": "2025-02-11 to 2025-02-11",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 1725,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 9777565189,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_common_bean_ciat_arusha_gopro",
+    "examples_image_url": "/img/agml/sample_images/image_safari_common_bean_ciat_arusha_gopro_sample.webp"
+  },
+  {
+    "name": "image_safari_banana_iita_nambala",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Nambala, Tanzania"
+    ],
+    "lat_lon": [
+      "-3.4039, 36.7933"
+    ],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi 23117RA68G",
+      "samsung SM-T295",
+      "samsung SM-X216B"
+    ],
+    "collection_period": "2025-05-28 to 2025-11-26",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 28094,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 91434285837,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_banana_iita_nambala",
+    "examples_image_url": "/img/agml/sample_images/image_safari_banana_iita_nambala_sample.webp"
   }
 ]
