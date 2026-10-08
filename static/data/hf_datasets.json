@@ -26361,7 +26361,7 @@
   {
     "name": "image_safari_minor_sites",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kiboko, Kenya",
       "Senegal",
@@ -26431,7 +26431,7 @@
   {
     "name": "image_safari_rice_africa_rice_sn",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Senegal"
     ],
@@ -26520,7 +26520,7 @@
   {
     "name": "image_safari_cassava_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -26556,7 +26556,7 @@
   {
     "name": "image_safari_chickpea_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -26596,7 +26596,7 @@
   {
     "name": "image_safari_common_bean_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -26632,7 +26632,7 @@
   {
     "name": "image_safari_common_bean_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -26663,5 +26663,42 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_common_bean_ciat_arusha_gopro",
     "examples_image_url": "/img/agml/sample_images/image_safari_common_bean_ciat_arusha_gopro_sample.webp"
+  },
+  {
+    "name": "image_safari_banana_iita_nambala",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Nambala, Tanzania"
+    ],
+    "lat_lon": [
+      "-3.4039, 36.7933"
+    ],
+    "country": "Tanzania",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "banana"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi 23117RA68G",
+      "samsung SM-T295",
+      "samsung SM-X216B"
+    ],
+    "collection_period": "2025-05-28 to 2025-11-26",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 28094,
+    "classes": [],
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://doi.org/10.31220/agriRxiv.2026.00491",
+    "citation": "",
+    "bibtex": "@article{Mutuvi_2026,\n  title = {Artemis and Image Safari - crop imagery datasets spanning globally critical crop species},\n  author = {Mutuvi, Stephen and Guerena, David and Zych, Marcin and Henday, Shekinah and Girma, Ellena and Mungubariki, Tumaini and Agesa, Beverly and Zochowski, Marek and Ciolek, Daniel and Lazowik, Michael and Chen, Jiehua and Goeke, Leah and Omwandho, Justine and del Palma, Grace and Malabi, Jackson and Phomebeya, Sithembinkosi and Sanena, Maria and Marcos, Juliana T. C. and Ghandi, Harish and Nas, Mark and Rathore, Abhishek and Mendes, Thiago and Yadav, Shailesh and Adjah, Kossi Lorimpo and Woltering, Lennart and Lekasio, Elice and Mushi, Bryton and Abraham, Leah and Katunzi, Gaudensia and Remy, Sekou L. and Siyavora, Tavonga and Selvaraj, Michael and Casas, Jorge and Boukar, Ousmane and Ongom, Patrick and Nakato, Gloria Valentine and Mwanje, Gerald and Agre, Paterne and Laporte, Marie-Angélique and Asefa, Teshale and Odama, Roy and Mukankusi, Clare and Wu, William},\n  journal = {agriRxiv},\n  publisher = {CABI Publishing},\n  year = {2026},\n  month = sep,\n  doi = {10.31220/agriRxiv.2026.00491},\n  url = {https://doi.org/10.31220/agriRxiv.2026.00491}\n}",
+    "zip_size_bytes": 91434285837,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_banana_iita_nambala",
+    "examples_image_url": "/img/agml/sample_images/image_safari_banana_iita_nambala_sample.webp"
   }
 ]
