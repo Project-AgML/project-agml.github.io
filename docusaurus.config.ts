@@ -29,6 +29,16 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  // Umami analytics (AI Institute for Food Systems); data-domains keeps local and preview builds out.
+  scripts: [
+    {
+      src: 'https://umami.aifs.ucdavis.edu/script.js',
+      defer: true,
+      'data-website-id': 'de302040-4aef-4343-874e-7a7b3b5e84b1',
+      'data-domains': 'project-agml.github.io',
+    },
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
