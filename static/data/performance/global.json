@@ -166,7 +166,7 @@
       "thankuni (centella asiatica)",
       "pudina (mentha arvensis)",
       "pathor kuchi (kalanchoe pinnata)",
-      "neem (azadirachta indica)",
+      "neem",
       "dhonya pata (coriandrum sativum)",
       "datura (datura stramonium)"
     ],
@@ -200,7 +200,7 @@
       "thankuni (centella asiatica)",
       "pudina (mentha arvensis)",
       "pathor kuchi (kalanchoe pinnata)",
-      "neem (azadirachta indica)",
+      "neem",
       "dhonya pata (coriandrum sativum)",
       "datura (datura stramonium)"
     ],
@@ -289,7 +289,7 @@
       "centella asiatica",
       "justicia adhatoda",
       "mikania micrantha",
-      "azadirachta indica",
+      "neem",
       "hibiscus rosa-sinensis",
       "ocimum tenuiflorum",
       "calotropis gigantea"
@@ -320,7 +320,6 @@
     },
     "crop_types": [
       "black gram",
-      "urad bean",
       "black mapte"
     ],
     "machine_learning_task": "image_classification",
@@ -349,7 +348,6 @@
     },
     "crop_types": [
       "black gram",
-      "urad bean",
       "black mapte"
     ],
     "machine_learning_task": "image_classification",
@@ -593,7 +591,6 @@
       "recall": 0.41562
     },
     "crop_types": [
-      "brinjal",
       "eggplant"
     ],
     "machine_learning_task": "image_classification",
@@ -756,8 +753,7 @@
       "recall": 0.902159
     },
     "crop_types": [
-      "cocoa",
-      "theobroma cacao"
+      "cocoa"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -784,15 +780,15 @@
       "recall": 0.111838
     },
     "crop_types": [
-      "aloevera",
+      "aloe vera",
       "amla",
       "amruthaballi",
       "arali",
-      "astma_weed",
+      "astma weed",
       "badipala",
-      "balloon_vine",
+      "balloon vine",
       "bamboo",
-      "beans",
+      "bean",
       "betel",
       "bhrami",
       "bringaraja",
@@ -800,11 +796,11 @@
       "castor",
       "catharanthus",
       "chakte",
-      "chilly",
+      "chili",
       "citron lime (herelikai)",
       "coffee",
       "common rue(naagdalli)",
-      "coriender",
+      "coriander",
       "curry",
       "doddpathre",
       "drumstick",
@@ -827,9 +823,9 @@
       "kohlrabi",
       "lantana",
       "lemon",
-      "lemongrass",
-      "malabar_nut",
-      "malabar_spinach",
+      "lemon grass",
+      "malabar nut",
+      "malabar spinach",
       "mango",
       "marigold",
       "mint",
@@ -839,14 +835,14 @@
       "nooni",
       "onion",
       "padri",
-      "palak(spinach)",
+      "spinach",
       "papaya",
       "parijatha",
       "pea",
       "pepper",
-      "pomoegranate",
+      "pomegranate",
       "pumpkin",
-      "raddish",
+      "radish",
       "rose",
       "sampige",
       "sapota",
@@ -890,24 +886,24 @@
       "recall": 0.335134
     },
     "crop_types": [
-      "aloevera",
+      "aloe vera",
       "amla",
-      "amruta_balli",
+      "amruta balli",
       "arali",
       "ashoka",
       "ashwagandha",
-      "avacado",
+      "avocado",
       "bamboo",
       "basale",
       "betel",
-      "betel_nut",
+      "betel nut",
       "brahmi",
       "castor",
-      "curry_leaf",
+      "curry leaf",
       "doddapatre",
       "ekka",
       "ganike",
-      "gauva",
+      "guava",
       "geranium",
       "henna",
       "hibiscus",
@@ -915,21 +911,21 @@
       "insulin",
       "jasmine",
       "lemon",
-      "lemon_grass",
+      "lemon grass",
       "mango",
       "mint",
       "nagadali",
       "neem",
       "nithyapushpa",
       "nooni",
-      "pappaya",
+      "papaya",
       "pepper",
       "pomegranate",
       "raktachandini",
       "rose",
       "sapota",
       "tulasi",
-      "wood_sorel"
+      "wood sorel"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -956,24 +952,24 @@
       "recall": 0.24533
     },
     "crop_types": [
-      "aloevera",
+      "aloe vera",
       "amla",
-      "amruta_balli",
+      "amruta balli",
       "arali",
       "ashoka",
       "ashwagandha",
-      "avacado",
+      "avocado",
       "bamboo",
       "basale",
       "betel",
-      "betel_nut",
+      "betel nut",
       "brahmi",
       "castor",
-      "curry_leaf",
+      "curry leaf",
       "doddapatre",
       "ekka",
       "ganike",
-      "gauva",
+      "guava",
       "geranium",
       "henna",
       "hibiscus",
@@ -981,21 +977,21 @@
       "insulin",
       "jasmine",
       "lemon",
-      "lemon_grass",
+      "lemon grass",
       "mango",
       "mint",
       "nagadali",
       "neem",
       "nithyapushpa",
       "nooni",
-      "pappaya",
+      "papaya",
       "pepper",
       "pomegranate",
       "raktachandini",
       "rose",
       "sapota",
       "tulasi",
-      "wood_sorel"
+      "wood sorel"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -1112,7 +1108,7 @@
       "recall": 0.247628
     },
     "crop_types": [
-      "tea (camellia sinensis)",
+      "tea",
       "hibiscus"
     ],
     "machine_learning_task": "image_classification",
@@ -1225,7 +1221,7 @@
       "ragweed",
       "waterhemp",
       "horseweed",
-      "redrootpigweed",
+      "redroot pigweed",
       "kochia"
     ],
     "machine_learning_task": "object_detection",
@@ -1255,9 +1251,9 @@
     "crop_types": [
       "horseweed",
       "kochia",
-      "corn",
+      "maize",
       "ragweed",
-      "redrootpigweed"
+      "redroot pigweed"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -2824,8 +2820,7 @@
       "recall": 0.624098
     },
     "crop_types": [
-      "black gram",
-      "vigna mungo"
+      "black gram"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -2853,7 +2848,6 @@
     },
     "crop_types": [
       "black gram",
-      "urad bean",
       "black mapte"
     ],
     "machine_learning_task": "image_classification",
@@ -2882,7 +2876,6 @@
     },
     "crop_types": [
       "black gram",
-      "urad bean",
       "black mapte"
     ],
     "machine_learning_task": "image_classification",
@@ -3216,7 +3209,7 @@
       "murcott",
       "ponkan",
       "tankan",
-      "tangerines"
+      "tangerine"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -3351,7 +3344,6 @@
       "recall": 0.60866
     },
     "crop_types": [
-      "corn",
       "maize"
     ],
     "machine_learning_task": "image_classification",
@@ -3961,8 +3953,7 @@
       "recall": 0.480104
     },
     "crop_types": [
-      "date palm",
-      "phoenix dactylifera"
+      "date palm"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -3989,8 +3980,7 @@
       "recall": 0.45235
     },
     "crop_types": [
-      "date palm",
-      "phoenix dactylifera"
+      "date palm"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -4570,7 +4560,7 @@
       "orange",
       "strawberry",
       "mango",
-      "capsicum"
+      "bell pepper"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -4603,7 +4593,7 @@
       "orange",
       "strawberry",
       "mango",
-      "capsicum"
+      "bell pepper"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -4639,7 +4629,7 @@
       "lychee",
       "mango",
       "plum",
-      "star fruit"
+      "starfruit"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -5395,7 +5385,7 @@
       "recall": 0.260101
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -5422,7 +5412,7 @@
       "recall": 0.255188
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -5449,7 +5439,7 @@
       "recall": 0.79509
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -5476,7 +5466,7 @@
       "recall": 0.660534
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
@@ -5503,7 +5493,7 @@
       "recall": 0.031358
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -5530,7 +5520,7 @@
       "recall": 0.006329
     },
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "machine_learning_task": "object_detection",
     "benchmarkId": 1,
@@ -5557,9 +5547,9 @@
       "recall": 0.324761
     },
     "crop_types": [
-      "blackbean",
-      "canola",
-      "corn",
+      "black bean",
+      "rapeseed",
+      "maize",
       "field pea",
       "flax",
       "horseweed",
@@ -5597,9 +5587,9 @@
       "recall": 0.185239
     },
     "crop_types": [
-      "blackbean",
-      "canola",
-      "corn",
+      "black bean",
+      "rapeseed",
+      "maize",
       "field pea",
       "flax",
       "horseweed",
@@ -7108,10 +7098,10 @@
       "bell pepper",
       "blueberry",
       "cherry",
-      "corn",
+      "maize",
       "grape",
       "potato",
-      "rasperry",
+      "raspberry",
       "soybean",
       "squash",
       "strawberry",
@@ -7262,13 +7252,13 @@
       "apple",
       "blueberry",
       "cherry",
-      "corn",
+      "maize",
       "grape",
       "orange",
       "peach",
       "bell pepper",
       "potato",
-      "rasperry",
+      "raspberry",
       "soybean",
       "squash",
       "strawberry",
@@ -8081,7 +8071,6 @@
     },
     "crop_types": [
       "sapota",
-      "chikoo",
       "kalipatti"
     ],
     "machine_learning_task": "image_classification",
@@ -8110,7 +8099,6 @@
     },
     "crop_types": [
       "sapota",
-      "chikoo",
       "kalipatti"
     ],
     "machine_learning_task": "image_classification",
@@ -9395,12 +9383,12 @@
     },
     "crop_types": [
       "black bean",
-      "corn",
+      "maize",
       "soybean",
       "lentil",
       "flax",
       "sugar beet",
-      "canola",
+      "rapeseed",
       "field pea"
     ],
     "machine_learning_task": "object_detection",

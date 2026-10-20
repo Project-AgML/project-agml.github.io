@@ -8,7 +8,7 @@
     ],
     "environment": "field",
     "crop_types": [
-      "grapes"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "real_or_synthetic": "real",
@@ -287,7 +287,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Moringa oleifera"
+      "moringa oleifera"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -331,7 +331,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Ash Gourd"
+      "ash gourd"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -646,7 +646,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Taro"
+      "taro"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1085,8 +1085,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "tea",
-      "Camellia sinensis"
+      "tea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1225,7 +1224,6 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brinjal",
       "eggplant"
     ],
     "sensor_modality": "rgb",
@@ -1268,26 +1266,26 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Abutilon Indicum",
-      "Aloe barbadensis miller",
-      "Calotropis gigantea",
-      "Canna indica",
-      "Cissus quadrangularis",
-      "Curcuma longa",
-      "Eclipta prostrate",
-      "Eichhornia Crassipes",
-      "Hibiscus Rosasinensis",
-      "Ixora coccinea",
-      "Justica adhatoda",
-      "Murraya koenigii",
-      "Ocimum tenuiflorum",
-      "Ouretlanata",
-      "Phyllanthus amarus",
-      "Ricinus communis",
-      "Senna Atriculata",
-      "Sesbania grandiflora",
-      "Trifolium Repens",
-      "Ziziphus mauritiana"
+      "abutilon indicum",
+      "aloe barbadensis miller",
+      "calotropis gigantea",
+      "canna indica",
+      "cissus quadrangularis",
+      "curcuma longa",
+      "eclipta prostrate",
+      "eichhornia crassipes",
+      "hibiscus rosasinensis",
+      "ixora coccinea",
+      "justica adhatoda",
+      "murraya koenigii",
+      "ocimum tenuiflorum",
+      "ouretlanata",
+      "phyllanthus amarus",
+      "ricinus communis",
+      "senna atriculata",
+      "sesbania grandiflora",
+      "trifolium repens",
+      "ziziphus mauritiana"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1405,7 +1403,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Vitis vinifera",
+      "grape",
       "pardina",
       "parda",
       "macabeo",
@@ -1544,8 +1542,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "black gram",
-      "Vigna mungo"
+      "black gram"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1652,7 +1649,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Hog plum"
+      "hog plum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1772,18 +1769,18 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Potato",
-      "Onion",
-      "Green Chili",
-      "Garlic",
-      "Radish",
-      "Bean",
-      "Ladies Finger",
-      "Cucumber",
-      "Bitter Melon",
-      "Brinjal (Eggplant)",
-      "Tomato",
-      "Pointed gourd"
+      "potato",
+      "onion",
+      "green chili",
+      "garlic",
+      "radish",
+      "bean",
+      "okra",
+      "cucumber",
+      "bitter gourd",
+      "eggplant",
+      "tomato",
+      "pointed gourd"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1833,7 +1830,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Centella asiatica"
+      "centella asiatica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1945,8 +1942,8 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Indian bay leaves",
-      "Cinnamomum Tamala"
+      "indian bay leaves",
+      "cinnamomum tamala"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1983,8 +1980,8 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bean",
-      "Cowpea"
+      "bean",
+      "cowpea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2069,22 +2066,22 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Alternanthera brasiliana L. Kuntze",
-      "Hemidesmus indicus (Linn.) R. Br",
-      "Achyranthes aspera",
-      "Ayapana triplinervis",
-      "Gloriosa superba",
-      "Andrographis paniculata Wall. Ex Nees",
-      "Datura stramonium L.",
-      "Gynura procumbens (Lour.) Merr.",
-      "Artocarpus chama",
-      "Eleutherine bulbosa",
-      "Boerhavia diffusa L.",
-      "Clerodendrum indicum L. Kuntze",
-      "Justicia adhatoda L.",
-      "Ocimum gratissimum L.",
-      "Asparagus racemosus Willd",
-      "Rauwolfia serpentina"
+      "alternanthera brasiliana l. kuntze",
+      "hemidesmus indicus (linn.) r. br",
+      "achyranthes aspera",
+      "ayapana triplinervis",
+      "gloriosa superba",
+      "andrographis paniculata wall. ex nees",
+      "datura stramonium l.",
+      "gynura procumbens (lour.) merr.",
+      "artocarpus chama",
+      "eleutherine bulbosa",
+      "boerhavia diffusa l.",
+      "clerodendrum indicum l. kuntze",
+      "justicia adhatoda l.",
+      "ocimum gratissimum l.",
+      "asparagus racemosus willd",
+      "rauwolfia serpentina"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2262,8 +2259,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Money Plant",
-      "Epipremnum aureum"
+      "money plant",
+      "epipremnum aureum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2351,8 +2348,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Malabar Spinach",
-      "Basella alba"
+      "malabar spinach",
+      "basella alba"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2607,7 +2604,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Oyster Mushroom"
+      "oyster mushroom"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2922,10 +2919,10 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Cinnamomum Camphora (Camphor)",
-      "Terminalia Chebula (Haritaki)",
-      "Moringa Oleifera (Sojina)",
-      "Azadirachta Indica (Neem)"
+      "cinnamomum camphora (camphor)",
+      "terminalia chebula (haritaki)",
+      "moringa oleifera (sojina)",
+      "azadirachta indica (neem)"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3003,8 +3000,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Tea (Camellia sinensis)",
-      "Hibiscus"
+      "tea",
+      "hibiscus"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3092,9 +3089,9 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aegle Marmelos",
-      "Lemon",
-      "Hog Plum"
+      "aegle marmelos",
+      "lemon",
+      "hog plum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3216,7 +3213,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Potato"
+      "potato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3332,10 +3329,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bottle Gourd",
-      "Zucchini",
-      "Papaya",
-      "Tomato"
+      "bottle gourd",
+      "zucchini",
+      "papaya",
+      "tomato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3449,8 +3446,8 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "plum",
-      "Deshi Kul",
-      "Apple Kul"
+      "deshi kul",
+      "apple kul"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3500,10 +3497,10 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "mandarin",
-      "Nagpuri",
-      "China Mishti",
-      "Darjeeling",
-      "Meandering"
+      "nagpuri",
+      "china mishti",
+      "darjeeling",
+      "meandering"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3636,16 +3633,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aegle marmelos",
-      "Black plum",
-      "Custard Apple",
-      "Guava",
-      "Jackfruit",
-      "Lotkon",
-      "Lychee",
-      "Mango",
-      "Plum",
-      "Star Fruit"
+      "aegle marmelos",
+      "black plum",
+      "custard apple",
+      "guava",
+      "jackfruit",
+      "lotkon",
+      "lychee",
+      "mango",
+      "plum",
+      "starfruit"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3701,7 +3698,7 @@
       "hibiscus",
       "crown of thorns",
       "jungle geranium",
-      "Madagascar periwinkle"
+      "madagascar periwinkle"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3872,8 +3869,7 @@
     "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
     "crop_types": [
       "black gram",
-      "Urad bean",
-      "Black mapte"
+      "black mapte"
     ],
     "hf_link": "https://huggingface.co/datasets/Project-AgML/blackgram_plant_leaf_disease_classification",
     "country": "India",
@@ -3982,7 +3978,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Malabar Spinach"
+      "malabar spinach"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -4130,7 +4126,6 @@
     "license": "",
     "citation": "Singh D, Jain N, Jain P, Kayal P, Kumawat S, Batra N. PlantDoc: a dataset for visual plant disease detection. InProceedings of the 7th ACM IKDD CoDS and 25th COMAD 2020 Jan 5 (pp. 249-253).",
     "crop_types": [
-      "corn",
       "maize"
     ]
   },
@@ -4573,7 +4568,7 @@
       "orange",
       "strawberry",
       "mango",
-      "capsicum"
+      "bell pepper"
     ],
     "bibtex": "@Article{s16081222,\nAUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\nTITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\nJOURNAL = {Sensors},\nVOLUME = {16},\nYEAR = {2016},\nNUMBER = {8},\nARTICLE-NUMBER = {1222},\nURL = {https://www.mdpi.com/1424-8220/16/8/1222},\nISSN = {1424-8220},\nDOI = {10.3390/s16081222}\n}"
   },
@@ -5348,17 +5343,17 @@
     "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
     "crop_types": [
       "apple",
-      "Bell Pepper",
-      "Blueberry",
-      "Cherry",
-      "corn",
+      "bell pepper",
+      "blueberry",
+      "cherry",
+      "maize",
       "grape",
-      "Potato",
-      "Rasperry",
-      "Soybean",
-      "Squash",
+      "potato",
+      "raspberry",
+      "soybean",
+      "squash",
       "strawberry",
-      "Tomato"
+      "tomato"
     ],
     "bibtex": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196},\ndoi = {10.1145/3371158.3371196},\nbooktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\npages = {249–253},\nnumpages = {5},\nseries = {CoDS COMAD 2020}\n}"
   },
@@ -5392,18 +5387,18 @@
     "license": "",
     "citation": "@article{DBLP:journals/corr/HughesS15,\n  author    = {David P. Hughes and\n               Marcel Salath{'{e} } },\n  title     = {An open access repository of images on plant health to enable the\n               development of mobile disease diagnostics through machine\n               learning and crowdsourcing},\n  journal   = {CoRR},\n  volume    = {abs/1511.08060},\n  year      = {2015},\n  url       = {http://arxiv.org/abs/1511.08060},\n  archivePrefix = {arXiv},\n  eprint    = {1511.08060},\n  timestamp = {Mon, 13 Aug 2018 16:48:21 +0200},\n  biburl    = {https://dblp.org/rec/bib/journals/corr/HughesS15},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
     "crop_types": [
-      "Apple",
-      "Blueberry",
-      "Cherry",
-      "Corn",
-      "Grape",
-      "Orange",
-      "Peach",
-      "Bell Pepper",
-      "Potato",
-      "Rasperry",
-      "Soybean",
-      "Squash",
+      "apple",
+      "blueberry",
+      "cherry",
+      "maize",
+      "grape",
+      "orange",
+      "peach",
+      "bell pepper",
+      "potato",
+      "raspberry",
+      "soybean",
+      "squash",
       "strawberry",
       "tomato"
     ],
@@ -5923,7 +5918,7 @@
     "license": "GPL-3.0",
     "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
     "crop_types": [
-      "sugarbeet"
+      "sugar beet"
     ],
     "bibtex": "@ARTICLE{8115245,\nauthor={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\njournal={IEEE Robotics and Automation Letters},\ntitle={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\nyear={2018},\nvolume={3},\nnumber={1},\npages={588-595},\ndoi={10.1109/LRA.2017.2774979},\nmonth={Jan}\n}"
   },
@@ -6125,14 +6120,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Kalokeshi (Eclipta prostrata)",
-      "Tulsi (Ocimum tenuiflorum)",
-      "Thankuni (Centella asiatica)",
-      "Pudina (Mentha arvensis)",
-      "Pathor Kuchi (Kalanchoe pinnata)",
-      "Neem (Azadirachta indica)",
-      "Dhonya Pata (Coriandrum sativum)",
-      "Datura (Datura stramonium)"
+      "kalokeshi (eclipta prostrata)",
+      "tulsi (ocimum tenuiflorum)",
+      "thankuni (centella asiatica)",
+      "pudina (mentha arvensis)",
+      "pathor kuchi (kalanchoe pinnata)",
+      "neem",
+      "dhonya pata (coriandrum sativum)",
+      "datura (datura stramonium)"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6406,7 +6401,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Soybean"
+      "soybean"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6861,7 +6856,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aquilaria malaccensis",
+      "aquilaria malaccensis",
       "agarwood"
     ],
     "sensor_modality": "rgb",
@@ -6955,14 +6950,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Black bean",
-      "Corn",
-      "Soybean",
-      "Lentil",
-      "Flax",
-      "Sugar beet",
-      "Canola",
-      "Field pea"
+      "black bean",
+      "maize",
+      "soybean",
+      "lentil",
+      "flax",
+      "sugar beet",
+      "rapeseed",
+      "field pea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7097,10 +7092,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Eichhornia crassipes",
-      "Lemna minor",
-      "Pistia stratiotes",
-      "Monochoria korsakowii"
+      "eichhornia crassipes",
+      "lemna minor",
+      "pistia stratiotes",
+      "monochoria korsakowii"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7147,7 +7142,7 @@
     "crop_types": [
       "custard apple",
       "sugar apple",
-      "Annona squamosa"
+      "annona squamosa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7351,12 +7346,12 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bitter Gourd",
-      "Bottle Gourd",
-      "Cauliflower",
-      "Eggplant",
-      "Cucumber",
-      "Tomato"
+      "bitter gourd",
+      "bottle gourd",
+      "cauliflower",
+      "eggplant",
+      "cucumber",
+      "tomato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7445,8 +7440,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "date palm",
-      "Phoenix dactylifera"
+      "date palm"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7578,46 +7572,46 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aloevera",
-      "Amla",
-      "Amruta_Balli",
-      "Arali",
-      "Ashoka",
-      "Ashwagandha",
-      "Avacado",
-      "Bamboo",
-      "Basale",
-      "Betel",
-      "Betel_Nut",
-      "Brahmi",
-      "Castor",
-      "Curry_Leaf",
-      "Doddapatre",
-      "Ekka",
-      "Ganike",
-      "Gauva",
-      "Geranium",
-      "Henna",
-      "Hibiscus",
-      "Honge",
-      "Insulin",
-      "Jasmine",
-      "Lemon",
-      "Lemon_grass",
-      "Mango",
-      "Mint",
-      "Nagadali",
-      "Neem",
-      "Nithyapushpa",
-      "Nooni",
-      "Pappaya",
-      "Pepper",
-      "Pomegranate",
-      "Raktachandini",
-      "Rose",
-      "Sapota",
-      "Tulasi",
-      "Wood_sorel"
+      "aloe vera",
+      "amla",
+      "amruta balli",
+      "arali",
+      "ashoka",
+      "ashwagandha",
+      "avocado",
+      "bamboo",
+      "basale",
+      "betel",
+      "betel nut",
+      "brahmi",
+      "castor",
+      "curry leaf",
+      "doddapatre",
+      "ekka",
+      "ganike",
+      "guava",
+      "geranium",
+      "henna",
+      "hibiscus",
+      "honge",
+      "insulin",
+      "jasmine",
+      "lemon",
+      "lemon grass",
+      "mango",
+      "mint",
+      "nagadali",
+      "neem",
+      "nithyapushpa",
+      "nooni",
+      "papaya",
+      "pepper",
+      "pomegranate",
+      "raktachandini",
+      "rose",
+      "sapota",
+      "tulasi",
+      "wood sorel"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7697,82 +7691,82 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aloevera",
-      "Amla",
-      "Amruthaballi",
-      "Arali",
-      "Astma_weed",
-      "Badipala",
-      "Balloon_Vine",
-      "Bamboo",
-      "Beans",
-      "Betel",
-      "Bhrami",
-      "Bringaraja",
-      "Caricature",
-      "Castor",
-      "Catharanthus",
-      "Chakte",
-      "Chilly",
-      "Citron lime (herelikai)",
-      "Coffee",
-      "Common rue(naagdalli)",
-      "Coriender",
-      "Curry",
-      "Doddpathre",
-      "Drumstick",
-      "Ekka",
-      "Eucalyptus",
-      "Ganigale",
-      "Ganike",
-      "Gasagase",
-      "Ginger",
-      "Globe Amarnath",
-      "Guava",
-      "Henna",
-      "Hibiscus",
-      "Honge",
-      "Insulin",
-      "Jackfruit",
-      "Jasmine",
-      "Kambajala",
-      "Kasambruga",
-      "Kohlrabi",
-      "Lantana",
-      "Lemon",
-      "Lemongrass",
-      "Malabar_Nut",
-      "Malabar_Spinach",
-      "Mango",
-      "Marigold",
-      "Mint",
-      "Neem",
-      "Nelavembu",
-      "Nerale",
-      "Nooni",
-      "Onion",
-      "Padri",
-      "Palak(Spinach)",
-      "Papaya",
-      "Parijatha",
-      "Pea",
-      "Pepper",
-      "Pomoegranate",
-      "Pumpkin",
-      "Raddish",
-      "Rose",
-      "Sampige",
-      "Sapota",
-      "Seethaashoka",
-      "Seethapala",
-      "Spinach1",
-      "Tamarind",
-      "Taro",
-      "Tecoma",
-      "Thumbe",
-      "Tomato",
-      "Tulsi",
-      "Turmeric",
+      "aloe vera",
+      "amla",
+      "amruthaballi",
+      "arali",
+      "astma weed",
+      "badipala",
+      "balloon vine",
+      "bamboo",
+      "bean",
+      "betel",
+      "bhrami",
+      "bringaraja",
+      "caricature",
+      "castor",
+      "catharanthus",
+      "chakte",
+      "chili",
+      "citron lime (herelikai)",
+      "coffee",
+      "common rue(naagdalli)",
+      "coriander",
+      "curry",
+      "doddpathre",
+      "drumstick",
+      "ekka",
+      "eucalyptus",
+      "ganigale",
+      "ganike",
+      "gasagase",
+      "ginger",
+      "globe amarnath",
+      "guava",
+      "henna",
+      "hibiscus",
+      "honge",
+      "insulin",
+      "jackfruit",
+      "jasmine",
+      "kambajala",
+      "kasambruga",
+      "kohlrabi",
+      "lantana",
+      "lemon",
+      "lemon grass",
+      "malabar nut",
+      "malabar spinach",
+      "mango",
+      "marigold",
+      "mint",
+      "neem",
+      "nelavembu",
+      "nerale",
+      "nooni",
+      "onion",
+      "padri",
+      "spinach",
+      "papaya",
+      "parijatha",
+      "pea",
+      "pepper",
+      "pomegranate",
+      "pumpkin",
+      "radish",
+      "rose",
+      "sampige",
+      "sapota",
+      "seethaashoka",
+      "seethapala",
+      "spinach1",
+      "tamarind",
+      "taro",
+      "tecoma",
+      "thumbe",
+      "tomato",
+      "tulsi",
+      "turmeric",
       "ashoka",
       "camphor",
       "kamakasturi",
@@ -8207,8 +8201,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "black gram",
-      "Urad bean",
-      "Black mapte"
+      "black mapte"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8250,10 +8243,10 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bell Pepper",
-      "Tomato",
-      "Chili Pepper",
-      "New Mexico Chile"
+      "bell pepper",
+      "tomato",
+      "chili",
+      "new mexico chile"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8581,16 +8574,16 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phyllanthus emblica",
-      "Terminalia arjuna",
-      "Kalanchoe pinnata",
-      "Centella asiatica",
-      "Justicia adhatoda",
-      "Mikania micrantha",
-      "Azadirachta indica",
-      "Hibiscus rosa-sinensis",
-      "Ocimum tenuiflorum",
-      "Calotropis gigantea"
+      "phyllanthus emblica",
+      "terminalia arjuna",
+      "kalanchoe pinnata",
+      "centella asiatica",
+      "justicia adhatoda",
+      "mikania micrantha",
+      "neem",
+      "hibiscus rosa-sinensis",
+      "ocimum tenuiflorum",
+      "calotropis gigantea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8760,7 +8753,6 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "paddy",
       "rice"
     ],
     "sensor_modality": "rgb",
@@ -8866,7 +8858,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8980,7 +8972,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Vitis vinifera cv. Loureiro"
+      "vitis vinifera cv. loureiro"
     ],
     "sensor_modality": "rgb",
     "platform": "uav",
@@ -9100,36 +9092,36 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Apple_Gala",
-      "Apple_Golden Delicious",
-      "Avocado",
-      "Banana",
-      "Berry",
-      "Burmese Grape",
-      "Carambola",
-      "Date Palm",
-      "Dragon",
-      "Elephant Apple",
-      "Grape",
-      "Green Coconut",
-      "Guava",
-      "Hog Plum",
-      "Kiwi",
-      "Lichi",
-      "Malta",
-      "Mango Golden Queen",
-      "Mango_Alphonso",
-      "Mango_Amrapali",
-      "Mango_Bari",
-      "Mango_Himsagar",
-      "Olive",
-      "Orange",
-      "Palm",
-      "Persimmon",
-      "Pineapple",
-      "Pomegranate",
-      "Watermelon",
-      "White Pear"
+      "apple gala",
+      "apple golden delicious",
+      "avocado",
+      "banana",
+      "berry",
+      "burmese grape",
+      "carambola",
+      "date palm",
+      "dragon",
+      "elephant apple",
+      "grape",
+      "green coconut",
+      "guava",
+      "hog plum",
+      "kiwi",
+      "lychee",
+      "malta",
+      "mango golden queen",
+      "mango alphonso",
+      "mango amrapali",
+      "mango bari",
+      "mango himsagar",
+      "olive",
+      "orange",
+      "palm",
+      "persimmon",
+      "pineapple",
+      "pomegranate",
+      "watermelon",
+      "white pear"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9167,7 +9159,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9207,7 +9199,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "common beans"
+      "common bean"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9293,8 +9285,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "oil palm",
-      "Elaeis guineensis"
+      "oil palm"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9370,16 +9361,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Abelmoschus esculentus",
-      "Brassica oleracea",
-      "Carica Papaya",
-      "Lablab purpureus",
-      "Momordica charantia",
-      "Momordica dioica",
-      "Raphanus sativus",
-      "Solanum Iycopersicum",
-      "Trichosanthes cucumerina",
-      "Trichosanthes dioica"
+      "okra",
+      "brassica oleracea",
+      "papaya",
+      "lablab purpureus",
+      "bitter gourd",
+      "momordica dioica",
+      "radish",
+      "tomato",
+      "trichosanthes cucumerina",
+      "trichosanthes dioica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9496,7 +9487,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chenopodiaceae"
+      "chenopodiaceae"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9646,7 +9637,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fortunella margarita"
+      "fortunella margarita"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9722,8 +9713,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine",
-      "Merlot Noir"
+      "grape",
+      "merlot noir"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9758,8 +9749,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "cocoa",
-      "Theobroma cacao"
+      "cocoa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9835,8 +9825,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Japanese quince",
-      "Chaenomeles japonica"
+      "japanese quince",
+      "chaenomeles japonica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9871,7 +9861,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Medjool dates"
+      "medjool dates"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9912,8 +9902,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "sapota",
-      "Chikoo",
-      "Kalipatti"
+      "kalipatti"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10145,12 +10134,12 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Cowpea",
-      "Snake Gourd",
-      "Spiny Gourd",
-      "Ivy Gourd",
-      "Taro root",
-      "Turmeric"
+      "cowpea",
+      "snake gourd",
+      "spiny gourd",
+      "ivy gourd",
+      "taro root",
+      "turmeric"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10202,7 +10191,6 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
       "maize"
     ],
     "sensor_modality": "rgb",
@@ -10247,70 +10235,70 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Akca Pear",
-      "Amasya Apple",
-      "Angeleno Plum",
-      "Austria Everbearing Mulberry",
-      "Avocado",
-      "Bardacik Fig",
-      "Bilecik Walnut",
-      "Black Diamond Plum",
-      "Black Fig",
-      "Black Mulberry",
-      "Black Splendor Plum",
-      "Carob",
-      "Chestnut",
-      "Chocolate Persimmon",
-      "Cornelian Cherry",
-      "Deveci Pear",
-      "Duke Blueberry",
-      "Egrisap Pear",
-      "Ekmek Quince",
-      "Esme Quince",
-      "Feijoa",
-      "Ferragnes Almond",
-      "Fortune Plum",
-      "Fuji Apple",
-      "Golden Apple",
-      "Granny Smith Apple",
-      "Hachiya Persimmon",
-      "Hale Peach",
-      "Hazelnut",
-      "Igdir Apricot",
-      "Jujube",
-      "Kagizman Long Apple",
-      "Kiwi",
-      "Kumquat",
-      "Kutahya Sour Cherry",
-      "Lemon",
-      "Loquat",
-      "Margarita Marilla Pear",
-      "Medlar",
-      "Murdum Plum",
-      "Napolyon Cherry",
-      "Nashi Pear",
-      "Orange",
-      "Papaz Plum",
-      "Patlican Fig",
-      "Pomegranate",
-      "Red Azarol",
-      "Red Haven Peach",
-      "Red Nectarine",
-      "Redlove Apple",
-      "Santa Maria Pear",
-      "Sebin Walnut",
-      "Sekerpare Apricot",
-      "Show Time Plum",
-      "Sour Cherry",
-      "Starking Apple",
-      "Strawberry Tree",
-      "White Mulberry",
-      "White Nectarine",
-      "Wild Strawberry",
-      "Wild Walnut",
-      "Yellow Cherry",
-      "Yellow Peach",
-      "Ziraat 0900 Cherry"
+      "akca pear",
+      "amasya apple",
+      "angeleno plum",
+      "austria everbearing mulberry",
+      "avocado",
+      "bardacik fig",
+      "bilecik walnut",
+      "black diamond plum",
+      "black fig",
+      "black mulberry",
+      "black splendor plum",
+      "carob",
+      "chestnut",
+      "chocolate persimmon",
+      "cornelian cherry",
+      "deveci pear",
+      "duke blueberry",
+      "egrisap pear",
+      "ekmek quince",
+      "esme quince",
+      "feijoa",
+      "ferragnes almond",
+      "fortune plum",
+      "fuji apple",
+      "golden apple",
+      "granny smith apple",
+      "hachiya persimmon",
+      "hale peach",
+      "hazelnut",
+      "igdir apricot",
+      "jujube",
+      "kagizman long apple",
+      "kiwi",
+      "kumquat",
+      "kutahya sour cherry",
+      "lemon",
+      "loquat",
+      "margarita marilla pear",
+      "medlar",
+      "murdum plum",
+      "napolyon cherry",
+      "nashi pear",
+      "orange",
+      "papaz plum",
+      "patlican fig",
+      "pomegranate",
+      "red azarol",
+      "red haven peach",
+      "red nectarine",
+      "redlove apple",
+      "santa maria pear",
+      "sebin walnut",
+      "sekerpare apricot",
+      "show time plum",
+      "sour cherry",
+      "starking apple",
+      "strawberry tree",
+      "white mulberry",
+      "white nectarine",
+      "wild strawberry",
+      "wild walnut",
+      "yellow cherry",
+      "yellow peach",
+      "ziraat 0900 cherry"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10569,7 +10557,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chitrak"
+      "chitrak"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10694,9 +10682,9 @@
     "crop_types": [
       "horseweed",
       "kochia",
-      "corn",
+      "maize",
       "ragweed",
-      "redrootpigweed"
+      "redroot pigweed"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10746,7 +10734,7 @@
       "ragweed",
       "waterhemp",
       "horseweed",
-      "redrootpigweed",
+      "redroot pigweed",
       "kochia"
     ],
     "sensor_modality": "rgb",
@@ -10868,10 +10856,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Murcott",
-      "Ponkan",
-      "Tankan",
-      "Tangerines"
+      "murcott",
+      "ponkan",
+      "tankan",
+      "tangerine"
     ],
     "sensor_modality": "rgb",
     "platform": "handheld",
@@ -11059,7 +11047,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapes"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11096,7 +11084,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11168,20 +11156,20 @@
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Blackbean",
-      "Canola",
-      "Corn",
-      "Field Pea",
-      "Flax",
-      "Horseweed",
-      "Kochia",
-      "Lentil",
-      "Palmer Amaranth",
-      "Ragweed",
-      "Redroot Pigweed",
-      "Soybean",
-      "Sugar beet",
-      "Waterhemp"
+      "black bean",
+      "rapeseed",
+      "maize",
+      "field pea",
+      "flax",
+      "horseweed",
+      "kochia",
+      "lentil",
+      "palmer amaranth",
+      "ragweed",
+      "redroot pigweed",
+      "soybean",
+      "sugar beet",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11229,20 +11217,20 @@
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Blackbean",
-      "Canola",
-      "Corn",
-      "Field Pea",
-      "Flax",
-      "Horseweed",
-      "Kochia",
-      "Lentil",
-      "Palmer Amaranth",
-      "Ragweed",
-      "Redroot Pigweed",
-      "Soybean",
-      "Sugar beet",
-      "Waterhemp"
+      "black bean",
+      "rapeseed",
+      "maize",
+      "field pea",
+      "flax",
+      "horseweed",
+      "kochia",
+      "lentil",
+      "palmer amaranth",
+      "ragweed",
+      "redroot pigweed",
+      "soybean",
+      "sugar beet",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11329,16 +11317,16 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Carpetweed",
-      "Eclipta",
-      "Goosegrass",
-      "Lambsquarters",
-      "MorningGlory",
-      "PalmerAmaranth",
-      "Purslane",
-      "Ragweed",
-      "SpottedSpurge",
-      "Waterhemp"
+      "carpetweed",
+      "eclipta",
+      "goosegrass",
+      "lambsquarters",
+      "morningglory",
+      "palmer amaranth",
+      "purslane",
+      "ragweed",
+      "spottedspurge",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11541,7 +11529,7 @@
     "location": null,
     "environment": "mixed",
     "crop_types": [
-      "mixed_multiple_sources"
+      "mixed multiple sources"
     ],
     "sensor_modality": [
       "rgb",
@@ -11680,8 +11668,7 @@
       "orange",
       "grape",
       "apple",
-      "corn",
-      "vitis",
+      "maize",
       "rice",
       "soybean",
       "pepper",
@@ -11759,7 +11746,7 @@
       "wheat",
       "bell pepper",
       "rice",
-      "corn",
+      "maize",
       "soybean",
       "orange",
       "cherry",
@@ -11970,7 +11957,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "litchi"
+      "lychee"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -12123,7 +12110,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Java Plum"
+      "java plum"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -12605,7 +12592,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "paddy"
+      "rice"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -12739,7 +12726,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Camellia oleifera"
+      "camellia oleifera"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -13452,7 +13439,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -13486,7 +13473,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Corn"
+      "maize"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -13808,12 +13795,12 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chenopodium album",
-      "Polygonum aviculare",
-      "Thlaspi arvense",
-      "Persicaria lapathifolia",
-      "Bilderdykia convolvulus",
-      "Polygonum hydropiper"
+      "chenopodium album",
+      "polygonum aviculare",
+      "thlaspi arvense",
+      "persicaria lapathifolia",
+      "bilderdykia convolvulus",
+      "polygonum hydropiper"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14156,7 +14143,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -14192,7 +14179,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -14228,7 +14215,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -14264,7 +14251,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -14299,16 +14286,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Nayantara",
-      "Pathor kuchi",
-      "Longevity spinach",
-      "Bohera",
-      "Haritaki",
-      "Thankuni",
-      "Neem",
-      "Tulsi",
-      "Lemon grass",
-      "Devil backbone"
+      "nayantara",
+      "pathor kuchi",
+      "longevity spinach",
+      "bohera",
+      "haritaki",
+      "thankuni",
+      "neem",
+      "tulsi",
+      "lemon grass",
+      "devil backbone"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14481,13 +14468,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14527,13 +14514,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14573,13 +14560,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14619,13 +14606,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14665,13 +14652,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14742,7 +14729,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14979,7 +14966,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -15114,7 +15101,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -15595,8 +15582,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Scots pine",
-      "Norway spruce"
+      "scots pine",
+      "norway spruce"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -16159,8 +16146,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Korean pine",
-      "Chinese pine"
+      "korean pine",
+      "chinese pine"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
@@ -16260,9 +16247,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Norway spruce",
-      "Scots pine",
-      "European beech"
+      "norway spruce",
+      "scots pine",
+      "european beech"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [],
@@ -16296,8 +16283,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus pinaster",
-      "Quercus ilex"
+      "pinus pinaster",
+      "quercus ilex"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -16492,9 +16479,9 @@
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
+      "european beech",
       "pedunculate oak",
-      "Douglas fir"
+      "douglas fir"
     ],
     "sensor_modality": "thermal",
     "imaging_equipment": [],
@@ -16564,7 +16551,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech"
+      "european beech"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -16666,7 +16653,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis subsp. australis"
+      "phragmites australis subsp. australis"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -16701,7 +16688,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pistacia vera"
+      "pistacia vera"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -16734,22 +16721,22 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Eucalyptus tetrodonta",
-      "Eucalyptus miniata",
-      "Corymbia bleeseri",
-      "Corymbia ferruginea",
-      "Corymbia polycarpa",
-      "Corymbia polysciada",
-      "Corymbia porrecta",
-      "Erythrophleum chlorostachys",
-      "Acacia dimidiata",
-      "Acacia lamprocarpa",
-      "Acacia mimula",
-      "Acacia oncinocarpa",
-      "Planchonia careya",
-      "Terminalia ferdinandiana",
-      "Terminalia grandiflora",
-      "Xanthostemon paradoxus"
+      "eucalyptus tetrodonta",
+      "eucalyptus miniata",
+      "corymbia bleeseri",
+      "corymbia ferruginea",
+      "corymbia polycarpa",
+      "corymbia polysciada",
+      "corymbia porrecta",
+      "erythrophleum chlorostachys",
+      "acacia dimidiata",
+      "acacia lamprocarpa",
+      "acacia mimula",
+      "acacia oncinocarpa",
+      "planchonia careya",
+      "terminalia ferdinandiana",
+      "terminalia grandiflora",
+      "xanthostemon paradoxus"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -17045,7 +17032,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Hypericum perforatum"
+      "hypericum perforatum"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -17161,18 +17148,18 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fagus silvatica",
-      "Picea abies",
-      "Abies alba",
-      "Larix decidua",
-      "Quercus petraea",
-      "Quercus robur",
-      "Pinus silvestris",
-      "Pinus nigra",
-      "Pinus strobus",
-      "Populus nigra",
-      "Salix sp.",
-      "Betula pendula"
+      "fagus silvatica",
+      "picea abies",
+      "abies alba",
+      "larix decidua",
+      "quercus petraea",
+      "quercus robur",
+      "pinus silvestris",
+      "pinus nigra",
+      "pinus strobus",
+      "populus nigra",
+      "salix sp.",
+      "betula pendula"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -17246,7 +17233,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "coffee",
-      "Hass avocado",
+      "hass avocado",
       "potato",
       "tomato",
       "sugar cane",
@@ -17948,14 +17935,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Acer campestre",
-      "Acer pseudoplatanus",
-      "Betula pubescens",
-      "Corylus avellana",
-      "Crataegus monogyna",
-      "Fraxinus excelsior",
-      "Quercus robur",
-      "Ulmus glabra"
+      "acer campestre",
+      "acer pseudoplatanus",
+      "betula pubescens",
+      "corylus avellana",
+      "crataegus monogyna",
+      "fraxinus excelsior",
+      "quercus robur",
+      "ulmus glabra"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [],
@@ -18246,13 +18233,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Castanea sativa",
-      "Quercus robur",
-      "Eucalyptus globulus",
-      "Eucalyptus nitens",
-      "Pinus pinaster",
-      "Pinus radiata",
-      "Chamaecyparis lawsoniana"
+      "castanea sativa",
+      "quercus robur",
+      "eucalyptus globulus",
+      "eucalyptus nitens",
+      "pinus pinaster",
+      "pinus radiata",
+      "chamaecyparis lawsoniana"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -18357,7 +18344,7 @@
       "olive",
       "citrus",
       "vineyard",
-      "grapevine",
+      "grape",
       "forage"
     ],
     "sensor_modality": "multispectral",
@@ -18488,7 +18475,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Arabica"
+      "arabica"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
@@ -19082,7 +19069,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
+      "maize",
       "sunflower",
       "soybean",
       "sorghum",
@@ -19128,14 +19115,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sanguisorba officinalis",
-      "Carex argyi",
-      "Juncus effusus",
-      "Polygonum sieboldii",
-      "Artemisia lavandulaefolia",
-      "Calamagrostis epigejos",
-      "Bidens pilosa",
-      "Fragaria orientalis"
+      "sanguisorba officinalis",
+      "carex argyi",
+      "juncus effusus",
+      "polygonum sieboldii",
+      "artemisia lavandulaefolia",
+      "calamagrostis epigejos",
+      "bidens pilosa",
+      "fragaria orientalis"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -19172,10 +19159,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chinese fir",
-      "Masson pine",
-      "slash pine (Pinus elliottii Engelm.)",
-      "Schima superba Gardner & Champ"
+      "chinese fir",
+      "masson pine",
+      "slash pine (pinus elliottii engelm.)",
+      "schima superba gardner & champ"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -19211,8 +19198,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus halepensis",
-      "Quercus coccifera"
+      "pinus halepensis",
+      "quercus coccifera"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19251,9 +19238,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis",
-      "Suaeda salsa",
-      "Tamarix chinensis"
+      "phragmites australis",
+      "suaeda salsa",
+      "tamarix chinensis"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19399,11 +19386,11 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fraxinus excelsior L.",
-      "Acer pseudoplatanus L.",
-      "Ostrya carpinifolia Scop.",
-      "Corylus avellana L.",
-      "Castanea sativa Mill."
+      "fraxinus excelsior l.",
+      "acer pseudoplatanus l.",
+      "ostrya carpinifolia scop.",
+      "corylus avellana l.",
+      "castanea sativa mill."
     ],
     "sensor_modality": "lidar",
     "imaging_equipment": [
@@ -19472,10 +19459,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Alternanthera philoxeroides",
-      "Vallisneria natans",
-      "Hydrilla verticillata",
-      "Elodea nuttallii"
+      "alternanthera philoxeroides",
+      "vallisneria natans",
+      "hydrilla verticillata",
+      "elodea nuttallii"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19553,8 +19540,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
-      "soybeans"
+      "maize",
+      "soybean"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19639,9 +19626,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Douglas Fir",
-      "Ponderosa Pine",
-      "Western Larch"
+      "douglas fir",
+      "ponderosa pine",
+      "western larch"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -19680,7 +19667,7 @@
       "perennial bunchgrasses",
       "desert needlegrass",
       "rabbitbrush",
-      "Ceanothus"
+      "ceanothus"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -19901,7 +19888,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn"
+      "maize"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -20741,7 +20728,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Brazil nut"
+      "brazil nut"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -21020,7 +21007,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Lemna minor"
+      "lemna minor"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -21145,7 +21132,7 @@
       "mustard",
       "oil radish",
       "winter barley",
-      "Egyptian clover"
+      "egyptian clover"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -21438,7 +21425,7 @@
       "barley",
       "wheat",
       "sunflower",
-      "corn",
+      "maize",
       "sugar beet",
       "soybean",
       "permanent grasslands"
@@ -21762,12 +21749,12 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus lambertiana",
-      "Quercus kelloggii",
-      "Abies magnifica",
-      "Abies concolor",
-      "Pinus jeffreyi",
-      "Pinus contorta"
+      "pinus lambertiana",
+      "quercus kelloggii",
+      "abies magnifica",
+      "abies concolor",
+      "pinus jeffreyi",
+      "pinus contorta"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -22048,12 +22035,12 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "spring wheat",
-      "corn",
-      "soybeans",
+      "maize",
+      "soybean",
       "sorghum",
       "rice",
       "winter wheat",
-      "peanuts",
+      "groundnut",
       "cotton",
       "vegetables",
       "fruits"
@@ -22160,8 +22147,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "canola",
-      "Brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22199,13 +22185,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Korean pine (Pinus koraiensis Siebold and Zucc.)",
-      "birch (Betula platyphylla Suk.)",
-      "Manchurian ash (Fraxinus mandshurica Rupr.)",
-      "Manchurian walnut (Juglans mandshurica Maxim.)",
-      "poplar (Populus L.)",
-      "elm (Ulmus pumila L.)",
-      "Acer pictum (Acer pictum Thunb)"
+      "korean pine (pinus koraiensis siebold and zucc.)",
+      "birch (betula platyphylla suk.)",
+      "manchurian ash (fraxinus mandshurica rupr.)",
+      "manchurian walnut (juglans mandshurica maxim.)",
+      "poplar (populus l.)",
+      "elm (ulmus pumila l.)",
+      "acer pictum (acer pictum thunb)"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -22417,10 +22403,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Quercus rubra",
-      "Platanus acerifolia",
-      "Acer platanoides",
-      "Fraxinus excelsior"
+      "quercus rubra",
+      "platanus acerifolia",
+      "acer platanoides",
+      "fraxinus excelsior"
     ],
     "sensor_modality": "",
     "imaging_equipment": [
@@ -22527,9 +22513,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Betula papyrifera",
-      "Acer rubrum",
-      "Populus grandidentata"
+      "betula papyrifera",
+      "acer rubrum",
+      "populus grandidentata"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22637,7 +22623,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Gilbertiodendron dewevrei"
+      "gilbertiodendron dewevrei"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22781,7 +22767,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Apocynum venetum L."
+      "apocynum venetum l."
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22885,12 +22871,12 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Picea abies",
-      "Abies alba",
-      "Pinus sylvestris",
-      "Fagus sylvatica",
-      "Alnus glutinosa",
-      "Ulmus glabra"
+      "picea abies",
+      "abies alba",
+      "pinus sylvestris",
+      "fagus sylvatica",
+      "alnus glutinosa",
+      "ulmus glabra"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -23246,12 +23232,12 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "alfalfa",
-      "canola",
+      "rapeseed",
       "sugar beet",
       "potato",
       "pea",
       "stem bean",
-      "wheat A/B/C",
+      "wheat a/b/c",
       "barley"
     ],
     "sensor_modality": "sar",
@@ -23516,8 +23502,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Buckwheat",
-      "Sunflower"
+      "buckwheat",
+      "sunflower"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -23767,9 +23753,9 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "tamarisk",
-      "Populus euphratica",
-      "Nitraria",
-      "Haloxylon ammodendron (saxaul)"
+      "populus euphratica",
+      "nitraria",
+      "haloxylon ammodendron (saxaul)"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -23839,7 +23825,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -24313,11 +24299,11 @@
       "citrus",
       "coconut tree",
       "coffee",
-      "corn",
+      "maize",
       "cotton",
       "cupuacu",
       "dry bean",
-      "grapevine",
+      "grape",
       "melon",
       "oil palm",
       "papaya",
@@ -24693,7 +24679,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Umbellularia californica (California bay laurel)"
+      "umbellularia californica (california bay laurel)"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -25396,7 +25382,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis"
+      "phragmites australis"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -25764,7 +25750,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Spartina alterniflora"
+      "spartina alterniflora"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -25871,7 +25857,7 @@
     "crop_types": [
       "lodgepole pine",
       "subalpine fir",
-      "Engelmann spruce"
+      "engelmann spruce"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -26091,12 +26077,12 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "arjun (Terminalia arjuna)",
-      "curry leaf (Murraya koenigii)",
-      "marsh pennywort (Hydrocotyle vulgaris)",
-      "mint (Mentha spp.)",
-      "neem (Azadirachta indica)",
-      "Kalanchoe pinnata"
+      "arjun (terminalia arjuna)",
+      "curry leaf (murraya koenigii)",
+      "marsh pennywort (hydrocotyle vulgaris)",
+      "mint (mentha spp.)",
+      "neem",
+      "kalanchoe pinnata"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -26287,7 +26273,7 @@
   {
     "name": "tomato_adaptive_yolov8_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "fruit_maturity_detection",
+    "agricultural_task": "maturity_detection",
     "location": [
       "Gazipur, Bangladesh"
     ],
@@ -26504,17 +26490,16 @@
       "bhindi",
       "bitter gourd",
       "bottle gourd",
-      "brinjal",
+      "eggplant",
       "broad bean",
       "cabbage",
-      "canola",
-      "capsicum",
+      "rapeseed",
+      "bell pepper",
       "carrot",
       "cauliflower",
       "chickpea",
-      "chikoo",
+      "sapota",
       "chili",
-      "chilli",
       "citrus",
       "coriander",
       "cotton",
@@ -26533,7 +26518,7 @@
       "jamun",
       "kidney bean",
       "lemon",
-      "lemongrass",
+      "lemon grass",
       "maize",
       "mango",
       "marigold",
@@ -26543,7 +26528,7 @@
       "mustard",
       "okra",
       "onion",
-      "paddy",
+      "rice",
       "papaya",
       "pea",
       "pearl millet",
@@ -26556,7 +26541,6 @@
       "radish",
       "rahi",
       "red gram",
-      "rice",
       "ridge gourd",
       "rose",
       "sorghum",
@@ -26789,7 +26773,7 @@
   {
     "name": "image_safari_crop_weed_segmentation",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "crop and weed segmentation",
+    "agricultural_task": "crop_and_weed_segmentation",
     "location": [
       "Image Safari collection sites, sub-Saharan Africa"
     ],
@@ -27886,7 +27870,7 @@
   {
     "name": "image_safari_plant_part_segmentation",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "plant part segmentation",
+    "agricultural_task": "plant_organ_segmentation",
     "location": [
       "Image Safari collection sites, sub-Saharan Africa"
     ],
@@ -28353,7 +28337,7 @@
   {
     "name": "image_safari_sorghum_cimmyt_kibos",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kibos, Kenya"
     ],
@@ -28389,7 +28373,7 @@
   {
     "name": "image_safari_potato_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28424,7 +28408,7 @@
   {
     "name": "image_safari_sorghum_cimmyt_kiboko",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kiboko, Kenya"
     ],
@@ -28463,7 +28447,7 @@
   {
     "name": "image_safari_sorghum_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28498,7 +28482,7 @@
   {
     "name": "image_safari_potato_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28536,7 +28520,7 @@
   {
     "name": "image_safari_soybean_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28572,7 +28556,7 @@
   {
     "name": "image_safari_sorghum_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28608,7 +28592,7 @@
   {
     "name": "image_safari_sweet_potato_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28644,7 +28628,7 @@
   {
     "name": "image_safari_unknown_crop_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28684,7 +28668,7 @@
   {
     "name": "image_safari_wheat_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28724,7 +28708,7 @@
   {
     "name": "image_safari_unknown_crop_cimmyt_kiboko",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kiboko, Kenya"
     ],
@@ -28764,7 +28748,7 @@
   {
     "name": "image_safari_sweet_potato_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28800,7 +28784,7 @@
   {
     "name": "image_safari_sweet_potato_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28835,7 +28819,7 @@
   {
     "name": "image_safari_unknown_crop_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28872,7 +28856,7 @@
   {
     "name": "image_safari_wheat_cimmyt_njoro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Njoro, Kenya"
     ],
@@ -28911,7 +28895,7 @@
   {
     "name": "image_safari_wheat_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28946,7 +28930,7 @@
   {
     "name": "image_safari_sweet_potato_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28986,7 +28970,7 @@
   {
     "name": "image_safari_yam_iita_osogbo",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Osogbo, Nigeria"
     ],
