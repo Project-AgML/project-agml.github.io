@@ -1,0 +1,4563 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-10-16",
+  "policy": "Externally hosted, open-weight agricultural models. AgML does not host, download, or redistribute these weights, and has NOT benchmarked them: every metric below is copied from the cited source and is unverified by AgML. These results are kept separate from the AgML leaderboard and are not comparable to it.",
+  "models": [
+    {
+      "id": "prithvi-eo-1-100m-multitemporal-crop-classification",
+      "name": "Prithvi-EO-1.0-100M Multi-Temporal Crop Classification",
+      "developer": "IBM & NASA (ibm-nasa-geospatial)",
+      "publisher_type": "institutional",
+      "summary": "Geospatial foundation model (Prithvi-EO-1.0-100M, a temporal ViT/MAE) fine-tuned to map crop and land-cover types across the contiguous US from three time steps of 6-band Harmonized Landsat-Sentinel (HLS) imagery, using USDA Cropland Data Layer labels.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "land_use_segmentation",
+        "crop_type_mapping"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "soybean",
+        "winter wheat",
+        "alfalfa",
+        "cotton",
+        "sorghum"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "fine-tuned foundation model",
+      "architecture": "Prithvi-EO-1.0-100M encoder (ViT, MAE-pretrained) + segmentation head (mmsegmentation)",
+      "framework": "PyTorch (mmsegmentation / TerraTorch)",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-1.0-100M-multi-temporal-crop-classification",
+        "code": "https://github.com/NASA-IMPACT/hls-foundation-os",
+        "paper": null,
+        "demo": "https://huggingface.co/spaces/ibm-nasa-geospatial/Prithvi-100M-multi-temporal-crop-classification-demo",
+        "model_card": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-1.0-100M-multi-temporal-crop-classification"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "hls_multitemporal_crop_classification",
+          "split": "held-out validation chips (per model card config)",
+          "metrics": {
+            "miou": 0.4269,
+            "mean_accuracy": 0.6406,
+            "pixel_accuracy": 0.6064
+          },
+          "primary_metric": "miou",
+          "notes": "13 classes. Per-class IoU ranges from 0.3084 (Alfalfa) to 0.6804 (Open Water); Corn 0.5491, Soybeans 0.5297, Winter Wheat 0.4967, Cotton 0.3237, Sorghum 0.3283. The card notes CDL labels are noisy, which caps achievable scores.",
+          "source": "Hugging Face model card, Results table",
+          "source_url": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-1.0-100M-multi-temporal-crop-classification"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "hls_multitemporal_crop_classification",
+          "name": "HLS Multi-Temporal Crop Classification (HLS + USDA CDL)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "224×224 chips of Harmonized Landsat-Sentinel imagery over the contiguous US, 3 time steps × 6 bands (Blue, Green, Red, Narrow NIR, SWIR 1, SWIR 2) = 18 channels, labelled with 13 crop / land-cover classes from the USDA Cropland Data Layer.",
+          "link": "https://huggingface.co/datasets/ibm-nasa-geospatial/multi-temporal-crop-classification",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_config_available",
+        "notes": "Fine-tuning code and the exact mmseg config are public; the card reports an 80-epoch run with that config. A separate baseline (non-foundation) model is published by Clark CGA.",
+        "code_url": "https://github.com/NASA-IMPACT/hls-foundation-os/blob/main/configs/multi_temporal_crop_classification.py",
+        "commands": []
+      },
+      "strong_use_cases": "US-scale crop-type / land-cover mapping from HLS time series; a starting point to fine-tune for regional crop mapping with better labels.",
+      "limitations": "Requires 18-band HLS GeoTIFF input (3 dates). Trained on noisy CDL labels; modest per-class IoU for minor crops. US only.",
+      "citation": "Li, H. et al. (2023). HLS Multi Temporal Crop Classification Model. Hugging Face. doi:10.57967/hf/0954",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "bioclip",
+      "name": "BioCLIP",
+      "developer": "Imageomics Institute (Ohio State University)",
+      "publisher_type": "peer_reviewed",
+      "summary": "CLIP-style vision–language foundation model (ViT-B/16) trained on TreeOfLife-10M with taxonomic text labels. Usable zero-shot for plant species and plant-disease classification by writing class names as text prompts, or few-shot with a KNN on its embeddings.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "plant_classification",
+        "disease_classification"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "foundation model (zero-shot)",
+      "architecture": "CLIP ViT-B/16 image encoder + text transformer (initialised from OpenAI CLIP)",
+      "framework": "PyTorch (open_clip)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/imageomics/bioclip",
+        "code": "https://github.com/Imageomics/BioCLIP",
+        "paper": "https://doi.org/10.48550/arXiv.2311.18803",
+        "demo": "https://huggingface.co/spaces/imageomics/bioclip-demo",
+        "model_card": "https://huggingface.co/imageomics/bioclip"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantnet",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.914
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "OpenAI CLIP baseline: 58.5.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantvillage",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.244
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "Disease classification from class names alone is hard: OpenAI CLIP baseline 5.4.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_medicinal_leaf",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.386
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "OpenAI CLIP baseline: 15.9.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantdoc",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.284
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "OpenAI CLIP baseline: 26.1.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "treeoflife_10m",
+          "name": "TreeOfLife-10M",
+          "roles": [
+            "train"
+          ],
+          "description": "~10M organism images (iNat21, BIOSCAN-1M, Encyclopedia of Life) covering 450K+ taxa, each paired with taxonomic and common-name text.",
+          "link": "https://huggingface.co/datasets/imageomics/TreeOfLife-10M",
+          "license": null,
+          "agml": {
+            "status": "not_applicable",
+            "names": [],
+            "note": "General biodiversity pretraining corpus; out of scope for AgML hosting."
+          }
+        },
+        {
+          "id": "meta_album_plantvillage",
+          "name": "PlantVillage (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Lab-condition leaf images of 14 crops and 38 healthy/diseased classes, as resampled in the Meta-Album few-shot benchmark.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset (PlantVillage); Meta-Album uses a resized, resampled subset, so numbers are not directly comparable to the full set."
+          }
+        },
+        {
+          "id": "meta_album_plantnet",
+          "name": "PlantNet (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Pl@ntNet citizen-science plant species photos, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "meta_album_medicinal_leaf",
+          "name": "Medicinal Leaf (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Leaf images of Indian medicinal plant species, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "Not the same source as AgML's medicinal_leaf_species_classification (Mafi 2023)."
+          }
+        },
+        {
+          "id": "meta_album_plantdoc",
+          "name": "PlantDoc (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "In-the-wild web images of 13 crop species / 17 disease classes; harder than PlantVillage because of cluttered backgrounds.",
+          "link": "https://github.com/pratikkayal/PlantDoc-Dataset",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Evaluation code and prompts are in the GitHub repo; Meta-Album subsets are public. Few-shot results are in the paper.",
+        "code_url": "https://github.com/Imageomics/BioCLIP",
+        "commands": []
+      },
+      "strong_use_cases": "Zero-shot plant species identification and a strong embedding backbone for few-shot plant tasks.",
+      "limitations": "Zero-shot disease classification from class names is weak (24.4% on PlantVillage); expect to fine-tune or few-shot for disease work.",
+      "citation": "Stevens, S. et al. (2024). BioCLIP: A Vision Foundation Model for the Tree of Life. CVPR 2024.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "bioclip-2",
+      "name": "BioCLIP 2",
+      "developer": "Imageomics Institute (Ohio State University)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Successor to BioCLIP: CLIP ViT-L/14 (LAION-2B init) trained with hierarchical contrastive learning on TreeOfLife-200M. Stronger zero-shot species recognition and better features for non-species biological tasks.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "plant_classification",
+        "disease_classification"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "foundation model (zero-shot)",
+      "architecture": "CLIP ViT-L/14 image encoder + text transformer",
+      "framework": "PyTorch (open_clip)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/imageomics/bioclip-2",
+        "code": "https://github.com/Imageomics/bioclip-2",
+        "paper": "https://doi.org/10.48550/arXiv.2505.23883",
+        "demo": null,
+        "model_card": "https://huggingface.co/imageomics/bioclip-2"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantnet",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.968
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "BioCLIP: 88.2 in the same table.",
+          "source": "Model card, zero-shot species classification table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantvillage",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.251
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "SigLIP scores 28.5 here, higher than BioCLIP 2.",
+          "source": "Model card, zero-shot species classification table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_medicinal_leaf",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.578
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": null,
+          "source": "Model card, zero-shot species classification table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2"
+        },
+        {
+          "variant": null,
+          "setting": "few-shot (1-shot)",
+          "eval_dataset": "plantdoc",
+          "split": "multi-fold 1-shot",
+          "metrics": {
+            "accuracy": 0.404
+          },
+          "primary_metric": "accuracy",
+          "notes": "Average accuracy over test samples, multi-fold 1-shot protocol.",
+          "source": "Model card, non-species tasks table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2"
+        },
+        {
+          "variant": null,
+          "setting": "semi-supervised clustering",
+          "eval_dataset": "herbarium19",
+          "split": "seen + unseen classes",
+          "metrics": {
+            "clustering_accuracy": 0.486
+          },
+          "primary_metric": "clustering_accuracy",
+          "notes": "New-species discovery on herbarium sheets.",
+          "source": "Model card, non-species tasks table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "treeoflife_200m",
+          "name": "TreeOfLife-200M",
+          "roles": [
+            "train"
+          ],
+          "description": "~214M organism images covering 952K taxa (revision used for training), aggregated from GBIF, EOL, BIOSCAN-5M and FathomNet, with hierarchical taxonomic labels; museum-specimen, camera-trap and citizen-science images. Training also replayed a 26M-sample LAION-2B subset.",
+          "link": "https://huggingface.co/datasets/imageomics/TreeOfLife-200M",
+          "license": null,
+          "agml": {
+            "status": "not_applicable",
+            "names": [],
+            "note": "General biodiversity pretraining corpus; out of scope for AgML hosting."
+          }
+        },
+        {
+          "id": "meta_album_plantvillage",
+          "name": "PlantVillage (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Lab-condition leaf images of 14 crops and 38 healthy/diseased classes, as resampled in the Meta-Album few-shot benchmark.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset (PlantVillage); Meta-Album subset."
+          }
+        },
+        {
+          "id": "meta_album_plantnet",
+          "name": "PlantNet (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Pl@ntNet citizen-science plant species photos, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "meta_album_medicinal_leaf",
+          "name": "Medicinal Leaf (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Leaf images of Indian medicinal plant species, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "Not the same source as AgML's medicinal_leaf_species_classification (Mafi 2023)."
+          }
+        },
+        {
+          "id": "plantdoc",
+          "name": "PlantDoc",
+          "roles": [
+            "eval"
+          ],
+          "description": "2,598 in-the-wild images of 13 plant species with up to 17 disease classes.",
+          "link": "https://github.com/pratikkayal/PlantDoc-Dataset",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "herbarium19",
+          "name": "Herbarium 2019 (FGVC6)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Herbarium sheet images of Melastomataceae species from the FGVC6 Kaggle challenge.",
+          "link": "https://www.kaggle.com/c/herbarium-2019-fgvc6",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Training and evaluation code in the GitHub repo; evaluation datasets are public.",
+        "code_url": "https://github.com/Imageomics/bioclip-2",
+        "commands": []
+      },
+      "strong_use_cases": "Zero-shot plant species ID (96.8% on PlantNet subset); strong frozen features for trait / new-species tasks.",
+      "limitations": "Still weak zero-shot on crop disease names (25.1% PlantVillage). Large (ViT-L/14).",
+      "citation": "Gu, J. et al. (2025). BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning. NeurIPS 2025.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "deepweeds-baselines",
+      "name": "DeepWeeds ResNet-50 / Inception-v3",
+      "developer": "Olsen et al., James Cook University",
+      "publisher_type": "peer_reviewed",
+      "summary": "Baseline CNN classifiers released with the DeepWeeds dataset for identifying eight invasive weed species (plus a negative class) in Australian rangeland imagery from a ground robot camera.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "weed_classification"
+      ],
+      "crop_types": [
+        "rangeland",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "ground",
+      "model_type": "task-specific",
+      "architecture": "ResNet-50; Inception-v3 (ImageNet-initialised)",
+      "framework": "Keras / TensorFlow (also a TensorRT UFF export of ResNet-50)",
+      "license": "Apache-2.0 (code); CC BY 4.0 (images and annotations)",
+      "links": {
+        "weights": "https://drive.google.com/file/d/1MRbN5hXOTYnw7-71K-2vjY01uJ9GkQM5",
+        "code": "https://github.com/AlexOlsen/DeepWeeds",
+        "paper": "https://doi.org/10.1038/s41598-018-38343-3",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "github + google drive",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "ResNet-50",
+          "setting": "fine-tuned",
+          "eval_dataset": "deepweeds",
+          "split": "5-fold cross-validation (60/20/20 train/val/test per fold)",
+          "metrics": {
+            "accuracy": 0.957
+          },
+          "primary_metric": "accuracy",
+          "notes": "Average inference 53.4 ms/image reported for ResNet-50.",
+          "source": "Paper abstract (Sci. Rep. 2019) and repo README",
+          "source_url": "https://doi.org/10.1038/s41598-018-38343-3"
+        },
+        {
+          "variant": "Inception-v3",
+          "setting": "fine-tuned",
+          "eval_dataset": "deepweeds",
+          "split": "5-fold cross-validation (60/20/20 train/val/test per fold)",
+          "metrics": {
+            "accuracy": 0.951
+          },
+          "primary_metric": "accuracy",
+          "notes": null,
+          "source": "Paper abstract (Sci. Rep. 2019)",
+          "source_url": "https://doi.org/10.1038/s41598-018-38343-3"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "deepweeds",
+          "name": "DeepWeeds",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "17,509 RGB images of eight weed species native to Australia plus a negative class, collected at eight rangeland sites across northern Australia (Queensland).",
+          "link": "https://github.com/AlexOlsen/DeepWeeds",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "DeepWeeds_classification",
+              "rangeland_weeds_australia"
+            ],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Repo ships the training/cross-validation script; dataset is in AgML. Results are averaged over 5 folds.",
+        "code_url": "https://github.com/AlexOlsen/DeepWeeds",
+        "commands": [
+          "python3 deepweeds.py cross_validate --model resnet",
+          "python3 deepweeds.py cross_validate --model inception",
+          "python3 deepweeds.py inference --model models/resnet.hdf5"
+        ]
+      },
+      "strong_use_cases": "Rangeland weed species ID from ground-vehicle imagery; a well-documented baseline to compare against on an AgML-hosted dataset.",
+      "limitations": "Older Keras HDF5 format; trained only on northern-Australian rangeland species.",
+      "citation": "Olsen, A. et al. (2019). DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning. Scientific Reports 9, 2058.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "cropnet-cassava-disease",
+      "name": "CropNet Cassava Disease Classifier",
+      "developer": "Google",
+      "publisher_type": "institutional",
+      "summary": "MobileNetV3-based classifier that labels a cassava leaf image as bacterial blight, brown streak disease, green mite, mosaic disease, healthy, or unknown (out-of-distribution).",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "cassava"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "MobileNetV3",
+      "framework": "TensorFlow (SavedModel via TF Hub / Kaggle Models; TFLite available)",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://www.kaggle.com/models/google/cropnet",
+        "code": "https://www.tensorflow.org/hub/tutorials/cropnet_cassava",
+        "paper": null,
+        "demo": "https://www.tensorflow.org/hub/tutorials/cropnet_cassava",
+        "model_card": "https://www.kaggle.com/models/google/cropnet"
+      },
+      "hosting": "kaggle models",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "classifier-cassava-disease-v1",
+          "setting": "fine-tuned",
+          "eval_dataset": "icassava_2019",
+          "split": "TFDS cassava 'test' split, first ≤1,000 of 1,885 examples",
+          "metrics": {
+            "accuracy": 0.88
+          },
+          "primary_metric": "accuracy",
+          "notes": "Reported as the output of the official TF Hub tutorial notebook, not a paper; exact sample count not stated.",
+          "source": "TensorFlow Hub tutorial 'CropNet: Cassava Disease Detection'",
+          "source_url": "https://www.tensorflow.org/hub/tutorials/cropnet_cassava"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "icassava_2019",
+          "name": "iCassava 2019 (TFDS 'cassava')",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Smartphone photos of cassava leaves from Uganda labelled with four diseases (CBB, CBSD, CGM, CMD) or healthy; from the Makerere AI Lab / FGVC6 Kaggle challenge.",
+          "link": "https://www.tensorflow.org/datasets/catalog/cassava",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "AgML's image_safari_cassava_qed_lilongwe is an unrelated collection."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "inference_notebook_available",
+        "notes": "The evaluation notebook is public and runnable; the training recipe is not published.",
+        "code_url": "https://www.tensorflow.org/hub/tutorials/cropnet_cassava",
+        "commands": []
+      },
+      "strong_use_cases": "Lightweight on-device cassava disease screening (TFLite) with a built-in 'unknown' class for off-target images.",
+      "limitations": "Trained only on photos from Uganda; assumes a well-cropped cassava leaf. The model card says it may misdiagnose diseases.",
+      "citation": "Google. CropNet cassava disease classifier (TF Hub / Kaggle Models).",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "deepforest-tree",
+      "name": "DeepForest Tree Crown Detector",
+      "developer": "Weecology lab (University of Florida)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Prebuilt RGB airborne tree-crown detector from the DeepForest Python package. Trained semi-supervised: millions of LiDAR-derived pseudo-labels, then hand annotations of RGB imagery from selected NEON sites.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "tree_crown_detection"
+      ],
+      "crop_types": [
+        "trees",
+        "orchards",
+        "forest"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "aerial",
+      "model_type": "task-specific",
+      "architecture": "RetinaNet (DeepForest default)",
+      "framework": "PyTorch (deepforest package)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/weecology/deepforest-tree",
+        "code": "https://github.com/weecology/DeepForest",
+        "paper": "https://doi.org/10.1111/2041-210X.13472",
+        "demo": null,
+        "model_card": "https://huggingface.co/weecology/deepforest-tree"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "Weinstein et al. 2020",
+          "setting": "pretrained (no fine-tuning)",
+          "eval_dataset": "neon_tree_evaluation",
+          "split": "image-annotated crowns benchmark",
+          "metrics": {
+            "precision": 0.66,
+            "recall": 0.79
+          },
+          "primary_metric": "recall",
+          "notes": "IoU threshold not stated in the scores table (DeepForest's evaluation default is 0.4). The same table reports recall 0.61 on field-annotated crowns and 0.74 on field-collected stems.",
+          "source": "NeonTreeEvaluation R package README, scores table",
+          "source_url": "https://github.com/weecology/NeonTreeEvaluation_package"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "neon_tree_evaluation",
+          "name": "NeonTreeEvaluation benchmark",
+          "roles": [
+            "eval"
+          ],
+          "description": "Hand-annotated tree crowns on 40 m × 40 m NEON airborne RGB images (10 cm) across 22 US NEON sites (30,975 annotations), with co-registered LiDAR and hyperspectral data. CC0.",
+          "link": "https://github.com/weecology/NeonTreeEvaluation",
+          "license": "CC0-1.0",
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "niwo_tree_crown_detection"
+            ],
+            "note": "AgML's niwo_tree_crown_detection is a different NEON-derived dataset (NIWO site, Harmon 2024), not this benchmark."
+          }
+        },
+        {
+          "id": "neon_lidar_pseudolabels",
+          "name": "NEON LiDAR-derived pseudo-labels + hand-annotated RGB crowns",
+          "roles": [
+            "train"
+          ],
+          "description": "Millions of moderate-quality crown boxes generated by an unsupervised LiDAR tree detection algorithm, then refined with hand annotations of RGB imagery from selected NEON sites.",
+          "link": "https://doi.org/10.3390/rs11111309",
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Pretraining labels are not released as a standalone dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "evaluation_code_available",
+        "notes": "Evaluation via the NeonTreeEvaluation R package; the model loads in one line with the deepforest Python package.",
+        "code_url": "https://github.com/weecology/NeonTreeEvaluation_package",
+        "commands": [
+          "pip install deepforest",
+          "python -c \"from deepforest import main; m = main.deepforest(); m.load_model('weecology/deepforest-tree')\""
+        ]
+      },
+      "strong_use_cases": "Counting / delineating tree crowns in ~10 cm aerial or UAV RGB imagery (orchards, agroforestry, forests) as a starting point for fine-tuning.",
+      "limitations": "Tuned to ~10 cm NEON imagery; resolution mismatch degrades results. Forest-oriented training sites.",
+      "citation": "Weinstein, B. et al. (2020). DeepForest: A Python package for RGB deep learning tree crown delineation. Methods in Ecology and Evolution 11, 1743–1751.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plantnet-300k-baselines",
+      "name": "Pl@ntNet-300K Baseline CNNs",
+      "developer": "Pl@ntNet (Inria / CIRAD)",
+      "publisher_type": "peer_reviewed",
+      "summary": "ImageNet-pretrained CNN/ViT baselines (ResNet, DenseNet, EfficientNet, ViT, etc.) fine-tuned for 1,081-species plant identification on the long-tailed Pl@ntNet-300K dataset.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "plant_classification"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "ResNet-18/50, DenseNet, EfficientNet, ViT and others (one checkpoint per architecture)",
+      "framework": "PyTorch / torchvision / timm",
+      "license": "BSD-2-Clause (code); weights license not stated",
+      "links": {
+        "weights": "https://lab.plantnet.org/seafile/d/01ab6658dad6447c95ae/",
+        "code": "https://github.com/plantnet/PlantNet-300K",
+        "paper": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/7e7757b1e12abcb736ab9a754ffb617a-Abstract-round2.html",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "github + plantnet seafile",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "ResNet-50",
+          "setting": "fine-tuned",
+          "eval_dataset": "plantnet_300k",
+          "split": "official test split (31,112 images)",
+          "metrics": {
+            "accuracy_classes_lt10_imgs": 0.09,
+            "accuracy_classes_10_50": 0.35,
+            "accuracy_classes_50_500": 0.59,
+            "accuracy_classes_500_2000": 0.79,
+            "accuracy_classes_gt2000": 0.93
+          },
+          "primary_metric": "accuracy_classes_gt2000",
+          "notes": "Test accuracy binned by number of training images per class (paper Table 1). Headline top-1 / macro-average top-1 for all architectures are shown only as figures (Fig. 5, 8); macro-average top-1 stays below 40% for every model, which shows how hard the long tail is.",
+          "source": "NeurIPS 2021 Datasets & Benchmarks paper, Table 1",
+          "source_url": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/7e7757b1e12abcb736ab9a754ffb617a-Abstract-round2.html"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantnet_300k",
+          "name": "Pl@ntNet-300K",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "306,146 citizen-science plant photos of 1,081 species (train 243,916 / val 31,118 / test 31,112), strongly long-tailed: 80% of species have 11% of the images. Use v1.1.",
+          "link": "https://zenodo.org/record/5645731",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Training script and per-model hyperparameters (supplementary material) are public; dataset on Zenodo.",
+        "code_url": "https://github.com/plantnet/PlantNet-300K",
+        "commands": [
+          "python main.py --lr=0.01 --batch_size=32 --n_epochs=30 --seed=4 --model=resnet18 --pretrained --image_size=256 --crop_size=224 --root=<data> --save_name_xp=<out>"
+        ]
+      },
+      "strong_use_cases": "Plant species ID backbones; studying long-tail and set-valued (average-k) prediction.",
+      "limitations": "Weights license is not stated; check with the authors before redistributing. Weak on rare species.",
+      "citation": "Garcin, C. et al. (2021). Pl@ntNet-300K: a plant image dataset with high label ambiguity and a long-tailed distribution. NeurIPS Datasets and Benchmarks.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plantclef2024-dinov2-vitb14",
+      "name": "PlantCLEF 2024 DINOv2 ViT-B/14 (Pl@ntNet)",
+      "developer": "Pl@ntNet (CIRAD / Inria)",
+      "publisher_type": "institutional",
+      "summary": "Two ViT-B/14 (DINOv2, with registers) plant-species classifiers for 7,806 vascular species of south-western European flora, released as the official PlantCLEF 2024 pretrained models. One trains only the classifier head; the other then fine-tunes the full network.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "plant_classification"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "fine-tuned foundation model",
+      "architecture": "vit_base_patch14_reg4_dinov2 (timm)",
+      "framework": "PyTorch / timm 0.9.16",
+      "license": "CC BY 4.0",
+      "links": {
+        "weights": "https://doi.org/10.5281/zenodo.10848263",
+        "code": null,
+        "paper": "https://www.imageclef.org/node/315",
+        "demo": "https://huggingface.co/spaces/BVRA/PlantCLEF2024",
+        "model_card": "https://zenodo.org/records/10848263"
+      },
+      "hosting": "zenodo",
+      "agml_benchmarked": false,
+      "verification": "no_metrics_reported",
+      "reported_results": [],
+      "datasets": [
+        {
+          "id": "plantclef2024_train",
+          "name": "PlantCLEF 2024 training set (Pl@ntNet subset)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "~1.4M images of 7,806 vascular plant species from south-western Europe, split into train / val / test.",
+          "link": "https://www.imageclef.org/node/315",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "The Zenodo archive (2.3 GB) includes args.yaml, a training summary (loss and accuracy curves), class mapping, and an example inference script. No headline metric appears on the landing page.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "European flora / weed species ID; a strong DINOv2 backbone pre-adapted to plants for fine-tuning.",
+      "limitations": "No published single-image accuracy on the landing page. The challenge task is multi-label quadrat images, which is a different setting.",
+      "citation": "Goëau, H. et al. (2024). PlantCLEF 2024 pretrained models on the flora of the south western Europe. Zenodo. doi:10.5281/zenodo.10848263",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "yoloweeds-cottonweeddet12",
+      "name": "YOLOWeeds (CottonWeedDet12 YOLO benchmark)",
+      "developer": "Dang, Chen, Lu & Li (Mississippi State University)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Suite of YOLO detectors (YOLOv3 through YOLOv7, YOLOR, Scaled-YOLOv4, YOLOX variants) trained to detect 12 weed species common in southern US cotton fields.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "weed_detection"
+      ],
+      "crop_types": [
+        "cotton",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "YOLOv3/v4/v5/v6/v7, YOLOR, Scaled-YOLOv4, YOLOX",
+      "framework": "PyTorch",
+      "license": "Not stated in repo",
+      "links": {
+        "weights": "https://drive.google.com/drive/folders/1s_72kdEM6N2J9uklgH8P30HnAcjFkJ1X",
+        "code": "https://github.com/DongChen06/DCW",
+        "paper": "https://doi.org/10.1016/j.compag.2023.107655",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "github + google drive",
+      "agml_benchmarked": false,
+      "verification": "metrics_not_transcribed",
+      "reported_results": [],
+      "datasets": [
+        {
+          "id": "cottonweeddet12",
+          "name": "CottonWeedDet12",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "5,648 RGB images of 12 weed classes with 9,370 bounding boxes, taken with smartphones / handheld cameras in cotton fields of the southern US, June–September 2021.",
+          "link": "https://doi.org/10.5281/zenodo.7535814",
+          "license": "CC BY-NC 4.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "cottonweeddet12_weed_detection"
+            ],
+            "note": "Listed in AgML as an externally hosted (DOI) entry, not rehosted."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Repo includes dataset conversion, partitioning, and per-model training scripts; dataset on Zenodo. Per-model mAP is in the (paywalled) paper and was not transcribed here, because secondary summaries disagree on the exact figures.",
+        "code_url": "https://github.com/DongChen06/DCW",
+        "commands": [
+          "python commons/vig2yolov5.py",
+          "python commons/pationing_dataset_yolov5.py --outputDir <abs path>/DCW/datasets/Dataset_final",
+          "bash -i train_cuda0.sh"
+        ]
+      },
+      "strong_use_cases": "Multi-class weed detection in row crops (cotton) from handheld imagery; choosing a YOLO size for speed vs. accuracy.",
+      "limitations": "No license on code or weights; metrics need to be taken from the paper.",
+      "citation": "Dang, F., Chen, D., Lu, Y., Li, Z. (2023). YOLOWeeds: A novel benchmark of YOLO object detectors for multi-class weed detection in cotton production systems. Computers and Electronics in Agriculture 205, 107655.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "phenobench-semantic-baselines",
+      "name": "PhenoBench Semantic Segmentation Baselines (ERFNet, DeepLabV3+)",
+      "developer": "PRBonn, University of Bonn",
+      "publisher_type": "peer_reviewed",
+      "summary": "Official crop / weed / soil semantic segmentation baselines for PhenoBench UAV imagery of sugar beet fields.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "weed_segmentation",
+        "crop_segmentation"
+      ],
+      "crop_types": [
+        "sugar beet",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "uav",
+      "model_type": "task-specific",
+      "architecture": "ERFNet; DeepLabV3+",
+      "framework": "PyTorch",
+      "license": "See per-baseline sub-folder licenses in repo",
+      "links": {
+        "weights": "https://www.ipb.uni-bonn.de/html/projects/phenobench/semantic_segmentation/semantic-seg-erfnet.ckpt",
+        "code": "https://github.com/PRBonn/phenobench-baselines",
+        "paper": "https://doi.org/10.48550/arXiv.2306.04557",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "uni-bonn server",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "ERFNet",
+          "setting": "fine-tuned",
+          "eval_dataset": "phenobench",
+          "split": "hidden test set (CodaLab)",
+          "metrics": {
+            "miou": 0.8598,
+            "iou_crop": 0.943,
+            "iou_weed": 0.6437,
+            "iou_soil": 0.9928
+          },
+          "primary_metric": "miou",
+          "notes": "Weed IoU is the hard part.",
+          "source": "PhenoBench paper, semantic segmentation baseline table",
+          "source_url": "https://arxiv.org/abs/2306.04557"
+        },
+        {
+          "variant": "DeepLabV3+",
+          "setting": "fine-tuned",
+          "eval_dataset": "phenobench",
+          "split": "hidden test set (CodaLab)",
+          "metrics": {
+            "miou": 0.8597,
+            "iou_crop": 0.9407,
+            "iou_weed": 0.6459,
+            "iou_soil": 0.9925
+          },
+          "primary_metric": "miou",
+          "notes": null,
+          "source": "PhenoBench paper, semantic segmentation baseline table",
+          "source_url": "https://arxiv.org/abs/2306.04557"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "phenobench",
+          "name": "PhenoBench",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "2,872 labelled 1024×1024 UAV image tiles (train 1,407 / val 772 / test 693) of sugar beet and weeds at Campus Klein-Altendorf, Germany (DJI M600 + PhaseOne iXM-100), 2020 and 2021 seasons, plus ~129K unlabelled tiles. Test labels are hidden behind a CodaLab server.",
+          "link": "https://www.phenobench.org/",
+          "license": "CC BY-SA 4.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "PhenoBench_segmentation"
+            ],
+            "note": "AgML hosts the labelled train + val portion; test scores require the PhenoBench server."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Checkpoints, configs and val/test predictions are published per task; evaluate with the PhenoBench dev-kit / CodaLab server.",
+        "code_url": "https://github.com/PRBonn/phenobench-baselines",
+        "commands": []
+      },
+      "strong_use_cases": "Crop/weed segmentation in UAV sugar-beet imagery; a reference point when training on AgML's PhenoBench_segmentation.",
+      "limitations": "Single site / crop; weed class much harder (IoU ≈ 0.64).",
+      "citation": "Weyler, J. et al. (2024). PhenoBench: A Large Dataset and Benchmarks for Semantic Image Interpretation in the Agricultural Domain. IEEE TPAMI.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "phenobench-plant-detection-yolov7",
+      "name": "PhenoBench Plant Detection YOLOv7",
+      "developer": "PRBonn, University of Bonn",
+      "publisher_type": "peer_reviewed",
+      "summary": "Official PhenoBench plant-detection baseline: YOLOv7 detecting individual sugar beet and weed plants in UAV imagery. Faster R-CNN and Mask R-CNN checkpoints are also published.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "crop_detection",
+        "weed_detection"
+      ],
+      "crop_types": [
+        "sugar beet",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "uav",
+      "model_type": "task-specific",
+      "architecture": "YOLOv7 (also Faster R-CNN, Mask R-CNN)",
+      "framework": "PyTorch",
+      "license": "See per-baseline sub-folder licenses in repo",
+      "links": {
+        "weights": "https://www.ipb.uni-bonn.de/html/projects/phenobench/plant_detection/YOLOv7/yolov7_plant_detection.pt",
+        "code": "https://github.com/PRBonn/phenobench-baselines",
+        "paper": "https://doi.org/10.48550/arXiv.2306.04557",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "uni-bonn server",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "YOLOv7",
+          "setting": "fine-tuned",
+          "eval_dataset": "phenobench",
+          "split": "hidden test set (CodaLab)",
+          "metrics": {
+            "map": 0.6048,
+            "map_50": 0.8247,
+            "map_75": 0.623,
+            "ap_crop": 0.8306,
+            "ap_weed": 0.3791
+          },
+          "primary_metric": "map_50",
+          "notes": null,
+          "source": "PhenoBench paper, plant detection baseline table",
+          "source_url": "https://arxiv.org/abs/2306.04557"
+        },
+        {
+          "variant": "Faster R-CNN",
+          "setting": "fine-tuned",
+          "eval_dataset": "phenobench",
+          "split": "hidden test set (CodaLab)",
+          "metrics": {
+            "map": 0.4043,
+            "map_50": 0.6507,
+            "map_75": 0.4019,
+            "ap_crop": 0.6323,
+            "ap_weed": 0.1762
+          },
+          "primary_metric": "map_50",
+          "notes": null,
+          "source": "PhenoBench paper, plant detection baseline table",
+          "source_url": "https://arxiv.org/abs/2306.04557"
+        },
+        {
+          "variant": "Mask R-CNN",
+          "setting": "fine-tuned",
+          "eval_dataset": "phenobench",
+          "split": "hidden test set (CodaLab)",
+          "metrics": {
+            "map": 0.3868,
+            "map_50": 0.6372,
+            "map_75": 0.3807,
+            "ap_crop": 0.6032,
+            "ap_weed": 0.1705
+          },
+          "primary_metric": "map_50",
+          "notes": null,
+          "source": "PhenoBench paper, plant detection baseline table",
+          "source_url": "https://arxiv.org/abs/2306.04557"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "phenobench",
+          "name": "PhenoBench",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "2,872 labelled 1024×1024 UAV image tiles (train 1,407 / val 772 / test 693) of sugar beet and weeds at Campus Klein-Altendorf, Germany, 2020 and 2021 seasons. Test labels hidden behind a CodaLab server.",
+          "link": "https://www.phenobench.org/",
+          "license": "CC BY-SA 4.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "PhenoBench_segmentation"
+            ],
+            "note": "AgML hosts the segmentation form; plant boxes derive from the same instance masks."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Checkpoints and configs per detector in the baselines repo; evaluate via the PhenoBench dev-kit / CodaLab.",
+        "code_url": "https://github.com/PRBonn/phenobench-baselines",
+        "commands": []
+      },
+      "strong_use_cases": "Counting / locating individual crop and weed plants from UAV imagery for site-specific weeding.",
+      "limitations": "Weed AP far below crop AP (0.38 vs 0.83 for YOLOv7).",
+      "citation": "Weyler, J. et al. (2024). PhenoBench. IEEE TPAMI.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "agriclip",
+      "name": "AgriCLIP",
+      "developer": "Nawaz et al. (MBZUAI)",
+      "publisher_type": "peer_reviewed",
+      "summary": "CLIP adapted to agriculture and livestock by aligning a domain-pretrained DINO image encoder with a domain-pretrained CLIP, trained on the ~600K image-text ALive collection. Intended for zero-shot classification of crop, fish and livestock categories.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification",
+        "quality_classification",
+        "nutrient_deficiency_classification"
+      ],
+      "crop_types": [
+        "banana",
+        "citrus",
+        "wheat",
+        "bean",
+        "fruits"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "foundation model (zero-shot)",
+      "architecture": "DINO ViT + CLIP with learned linear aligner",
+      "framework": "PyTorch",
+      "license": "Not stated in repo",
+      "links": {
+        "weights": "https://github.com/umair1221/AgriCLIP#pretrained-weights",
+        "code": "https://github.com/umair1221/AgriCLIP",
+        "paper": "https://doi.org/10.48550/arXiv.2410.01407",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "github + sharepoint",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_banana_deficiency",
+          "split": "downstream eval (disjoint from ALive)",
+          "metrics": {
+            "accuracy": 0.2355
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 14.08.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_citrus_leaves",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.3427
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 2.18.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_citrus_fruits",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.4021
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 38.09.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_fruits_diseases",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.7398
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 68.90.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "plantdoc",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.3542
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 6.02.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_wheat_rust",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.6738
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 34.11.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "agriclip_bean_lesion",
+          "split": "downstream eval",
+          "metrics": {
+            "accuracy": 0.4085
+          },
+          "primary_metric": "accuracy",
+          "notes": "Standard CLIP: 18.73. The paper's text and table disagree on some numbers (e.g. 20 vs 19 datasets, average 48.27 vs recomputed ≈47.3); values here are from Table 1.",
+          "source": "Paper Table 1",
+          "source_url": "https://arxiv.org/abs/2410.01407"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "alive",
+          "name": "ALive (Agriculture and Livestock)",
+          "roles": [
+            "train"
+          ],
+          "description": "~600K image-text pairs assembled from 25 public crop, fish and livestock datasets, with templated captions.",
+          "link": "https://github.com/umair1221/AgriCLIP#dataset",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "agriclip_banana_deficiency",
+          "name": "Banana Deficiency",
+          "roles": [
+            "eval"
+          ],
+          "description": "Banana leaf images labelled by nutrient deficiency (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "banana_leaf_nutrient_classification"
+            ],
+            "note": "Possibly the same source; not verified."
+          }
+        },
+        {
+          "id": "agriclip_citrus_leaves",
+          "name": "Citrus Leaves",
+          "roles": [
+            "eval"
+          ],
+          "description": "Citrus leaf disease images (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "citrus_fruit_leaf_disease_classification"
+            ],
+            "note": "Likely the Rauf et al. 2019 citrus fruits & leaves dataset; not verified."
+          }
+        },
+        {
+          "id": "agriclip_citrus_fruits",
+          "name": "Citrus Fruits",
+          "roles": [
+            "eval"
+          ],
+          "description": "Citrus fruit disease images (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "citrus_fruit_leaf_disease_classification"
+            ],
+            "note": "Likely the Rauf et al. 2019 citrus fruits & leaves dataset; not verified."
+          }
+        },
+        {
+          "id": "agriclip_fruits_diseases",
+          "name": "Fruits Diseases",
+          "roles": [
+            "eval"
+          ],
+          "description": "Fruit disease / quality images (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "plantdoc",
+          "name": "PlantDoc",
+          "roles": [
+            "eval"
+          ],
+          "description": "2,598 in-the-wild images of 13 plant species with up to 17 disease classes.",
+          "link": "https://github.com/pratikkayal/PlantDoc-Dataset",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "agriclip_wheat_rust",
+          "name": "Wheat Rust",
+          "roles": [
+            "eval"
+          ],
+          "description": "Wheat leaf rust images (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "agriclip_bean_lesion",
+          "name": "Bean Lesion",
+          "roles": [
+            "eval"
+          ],
+          "description": "Bean leaf lesion images (AgriCLIP downstream set).",
+          "link": "https://github.com/umair1221/AgriCLIP",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "bean_disease_uganda"
+            ],
+            "note": "Related bean-leaf disease data; not verified to be the same source."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Alignment training and zero-shot scripts are public; downstream sets download via Dataset/download_downstream.py. The README's training command passes the DINO path to --clip-weights-path, which looks like a typo.",
+        "code_url": "https://github.com/umair1221/AgriCLIP",
+        "commands": [
+          "python AgriCLIP_alignment/AgriClip_zeroshot.py --dataset-name \"Banana Deficiency\" --data-path <data> --dino-path Weights/dino_pretrain.pth --aligner-path Weights/Aligned_Models/Agri_Dino_aligner_DPT_CPT.pth"
+        ]
+      },
+      "strong_use_cases": "Zero-shot labelling across many small ag classification tasks where no training data exists; wheat rust and fruit disease look strongest.",
+      "limitations": "No license stated. Weights are on SharePoint (link rot risk). Internal inconsistencies in the paper's reported numbers.",
+      "citation": "Nawaz, U. et al. (2025). AgriCLIP: Adapting CLIP for Agriculture and Livestock via Domain-Specialized Cross-Model Alignment. COLING 2025.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plant-disease-dinov2-small",
+      "name": "Plant Disease Classifier (DINOv2-small + linear head)",
+      "developer": "rodynaemad (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "Frozen DINOv2-small features + logistic-regression head for the 38 PlantVillage classes, evaluated on a leaf-grouped split so the same physical leaf never appears in both train and test. ONNX fp32 / int8 exports included.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "linear probe on foundation model",
+      "architecture": "facebook/dinov2-small (frozen) + linear classifier",
+      "framework": "PyTorch / Transformers; ONNX",
+      "license": "CC BY-SA 4.0",
+      "links": {
+        "weights": "https://huggingface.co/rodynaemad/plant-disease-dinov2-small",
+        "code": null,
+        "paper": null,
+        "demo": "https://huggingface.co/spaces/rodynaemad/plant-disease-scanner",
+        "model_card": "https://huggingface.co/rodynaemad/plant-disease-dinov2-small"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "fp32",
+          "setting": "linear-probe",
+          "eval_dataset": "plantvillage_color",
+          "split": "leaf-grouped stratified 80/20 split, 10,862 test images",
+          "metrics": {
+            "accuracy": 0.9886,
+            "f1_macro": 0.9849
+          },
+          "primary_metric": "f1_macro",
+          "notes": "A naive photo-level random split gives 99.1%; the card argues the leaf-grouped number is the one to trust. Weakest class: corn gray leaf spot (F1 0.900).",
+          "source": "Hugging Face model card (model-index + results table)",
+          "source_url": "https://huggingface.co/rodynaemad/plant-disease-dinov2-small"
+        },
+        {
+          "variant": "int8 ONNX",
+          "setting": "linear-probe",
+          "eval_dataset": "plantvillage_color",
+          "split": "leaf-grouped test set",
+          "metrics": {
+            "accuracy": 0.987,
+            "f1_macro": 0.981
+          },
+          "primary_metric": "f1_macro",
+          "notes": null,
+          "source": "Hugging Face model card",
+          "source_url": "https://huggingface.co/rodynaemad/plant-disease-dinov2-small"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantvillage_color",
+          "name": "PlantVillage (colour)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "54,305 lab-background colour photos of single leaves, 14 crops × 38 healthy/disease classes. Many photos show the same physical leaf (leaf-map.json links 40,490 photos to 7,524 leaves).",
+          "link": "https://huggingface.co/datasets/mohanty/PlantVillage",
+          "license": null,
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "AgML hosts PlantVillage; it does not ship the leaf-grouped split used here."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "partially_documented",
+        "notes": "Split procedure and hyperparameters (C = 0.1) are described on the card; no training script is published.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Fast, browser-deployable (ONNX int8, 24 MB) disease ID on clean single-leaf photos of PlantVillage crops; includes a feature-based OOD check.",
+      "limitations": "Lab-background images only; expect a large drop on field photos (cf. PlantDoc). Community model, created 2026-10-09.",
+      "citation": "rodynaemad (2026). plant-disease-dinov2-small. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "mobilenet-v2-plant-disease",
+      "name": "MobileNetV2 Plant Disease Identification",
+      "developer": "linkanjarad (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "google/mobilenet_v2_1.0_224 fine-tuned for 38-class plant disease classification on the Kaggle 'New Plant Diseases' (augmented PlantVillage) dataset. An ONNX / transformers.js port exists.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "MobileNetV2 1.0 224",
+      "framework": "PyTorch / Transformers",
+      "license": "other (unspecified on card)",
+      "links": {
+        "weights": "https://huggingface.co/linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "new_plant_diseases_kaggle",
+          "split": "card's evaluation set (split details not given)",
+          "metrics": {
+            "accuracy": 0.9541
+          },
+          "primary_metric": "accuracy",
+          "notes": "Auto-generated Trainer card; cross-entropy loss 0.15. The Kaggle set is an offline-augmented PlantVillage, so near-duplicate leakage between splits is likely.",
+          "source": "Hugging Face model card",
+          "source_url": "https://huggingface.co/linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "new_plant_diseases_kaggle",
+          "name": "New Plant Diseases Dataset (Kaggle, augmented PlantVillage)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "~87K offline-augmented RGB images of 38 PlantVillage classes with an 80/20 train/valid split, recreated from the original PlantVillage.",
+          "link": "https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Augmented derivative of PlantVillage; AgML hosts the original."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "hyperparameters_only",
+        "notes": "Hyperparameters are on the card (lr 5e-5, batch 256, 6 epochs, linear schedule, 0.2 warmup); no script.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Very small model for on-device PlantVillage-style disease ID; transformers.js port available.",
+      "limitations": "License unspecified; lab images only; likely optimistic eval because of augmentation leakage.",
+      "citation": "linkanjarad (2023). mobilenet_v2_1.0_224-plant-disease-identification. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "vit-mango-leaf-disease",
+      "name": "ViT-Base Mango Leaf Disease",
+      "developer": "DunnBC22 (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "google/vit-base-patch16-224-in21k fine-tuned for 2 epochs to classify mango leaves into 8 classes (7 diseases + healthy).",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "mango"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "ViT-B/16 (ImageNet-21k)",
+      "framework": "PyTorch / Transformers",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/DunnBC22/vit-base-patch16-224-in21k-Mango_leaf_Disease",
+        "code": "https://github.com/DunnBC22/Vision_Audio_and_Multimodal_Projects/blob/main/Computer%20Vision/Image%20Classification/Multiclass%20Classification/Mango%20Leaf%20Disease%20Dataset/Mango_Leaf_Disease_ViT.ipynb",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/DunnBC22/vit-base-patch16-224-in21k-Mango_leaf_Disease"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "mangoleafbd",
+          "split": "card's evaluation set (held-out split from the Kaggle copy; size not given)",
+          "metrics": {
+            "accuracy": 1.0,
+            "f1_macro": 1.0
+          },
+          "primary_metric": "f1_macro",
+          "notes": "A perfect score after 2 epochs. Treat it as a sign of an easy or leaky split, not of field performance.",
+          "source": "Hugging Face model card",
+          "source_url": "https://huggingface.co/DunnBC22/vit-base-patch16-224-in21k-Mango_leaf_Disease"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "mangoleafbd",
+          "name": "MangoLeafBD (Kaggle mirror: 'Mango Leaf Disease Dataset')",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "4,000 images of mango leaves from Bangladesh orchards in 8 classes (Anthracnose, Bacterial Canker, Cutting Weevil, Die Back, Gall Midge, Powdery Mildew, Sooty Mould, Healthy).",
+          "link": "https://www.kaggle.com/datasets/aryashah2k/mango-leaf-disease-dataset",
+          "license": "CC BY-NC 3.0 (original Mendeley release)",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "MangoLeafBD_disease_classification",
+              "mango_leaf_disease_classification"
+            ],
+            "note": "Model used the Kaggle mirror of the same Mendeley dataset; AgML lists it under both names."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "notebook_available",
+        "notes": "Training notebook linked from the card; dataset is in AgML.",
+        "code_url": "https://github.com/DunnBC22/Vision_Audio_and_Multimodal_Projects",
+        "commands": []
+      },
+      "strong_use_cases": "Quick mango leaf disease triage.",
+      "limitations": "Suspiciously perfect eval; single-country data.",
+      "citation": "DunnBC22 (2023). vit-base-patch16-224-in21k-Mango_leaf_Disease. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "crop-leaf-diseases-vit-tiny",
+      "name": "Crop Leaf Diseases ViT-Tiny (maize, potato, rice, wheat)",
+      "developer": "Wambugu Kinyua (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "ViT-Tiny fine-tuned to recognise 13 disease / healthy classes across maize, potato, rice and wheat, plus an 'Invalid' class for non-leaf images. ONNX weights available.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "potato",
+        "rice",
+        "wheat"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "ViT-Tiny/16 (WinKawaks/vit-tiny-patch16-224)",
+      "framework": "PyTorch / Transformers; ONNX",
+      "license": "MIT (repo metadata; card text says Apache 2.0)",
+      "links": {
+        "weights": "https://huggingface.co/wambugu71/crop_leaf_diseases_vit",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/wambugu71/crop_leaf_diseases_vit"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "wambugu_mixed_crop_leaves",
+          "split": "20% validation split of the training collection",
+          "metrics": {
+            "accuracy": 0.98,
+            "f1": 0.96
+          },
+          "primary_metric": "f1",
+          "notes": "Training data mixes unnamed public datasets with the author's private images, so the eval cannot be reproduced.",
+          "source": "Hugging Face model card, Evaluation section",
+          "source_url": "https://huggingface.co/wambugu71/crop_leaf_diseases_vit"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "wambugu_mixed_crop_leaves",
+          "name": "Mixed public + private crop leaf disease images",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Leaf images of maize (common rust, gray leaf spot, leaf blight), potato (early/late blight), rice (brown spot, leaf blast) and wheat (brown/yellow rust) plus healthy classes, in controlled and field conditions. Sources not individually named.",
+          "link": null,
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Partly private; public components unnamed."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "not_reproducible",
+        "notes": "Private training data and unnamed sources; only weights are available.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Small multi-crop staple-disease screener with an 'Invalid' reject class.",
+      "limitations": "Unverifiable data provenance; license metadata is inconsistent.",
+      "citation": "Kinyua, W. (2024). crop_leaf_diseases_vit. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "bioclip-2-5-huge",
+      "name": "BioCLIP 2.5 Huge",
+      "developer": "Imageomics Institute (Ohio State University)",
+      "publisher_type": "institutional",
+      "summary": "Largest BioCLIP model (ViT-H/14), trained on TreeOfLife-200M. Strongest zero-shot plant results of the BioCLIP family, including a jump on PlantVillage disease names and medicinal leaves.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "plant_classification",
+        "disease_classification"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "foundation model (zero-shot)",
+      "architecture": "CLIP ViT-H/14 image encoder + text transformer",
+      "framework": "PyTorch (open_clip)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/imageomics/bioclip-2.5-vith14",
+        "code": "https://github.com/Imageomics/bioclip-2",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/imageomics/bioclip-2.5-vith14"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantnet",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.969
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "BioCLIP 2: 96.8 in the same table.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2.5-vith14"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_plantvillage",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.335
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "BioCLIP 2: 25.1.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2.5-vith14"
+        },
+        {
+          "variant": null,
+          "setting": "zero-shot",
+          "eval_dataset": "meta_album_medicinal_leaf",
+          "split": "Meta-Album subset",
+          "metrics": {
+            "top1_accuracy": 0.732
+          },
+          "primary_metric": "top1_accuracy",
+          "notes": "BioCLIP 2: 57.8.",
+          "source": "Model card, zero-shot results table",
+          "source_url": "https://huggingface.co/imageomics/bioclip-2.5-vith14"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "treeoflife_200m",
+          "name": "TreeOfLife-200M",
+          "roles": [
+            "train"
+          ],
+          "description": "~214M organism images covering ~950K taxa from GBIF, EOL, BIOSCAN-5M and FathomNet, with hierarchical taxonomic labels.",
+          "link": "https://huggingface.co/datasets/imageomics/TreeOfLife-200M",
+          "license": null,
+          "agml": {
+            "status": "not_applicable",
+            "names": [],
+            "note": "General biodiversity pretraining corpus; out of scope for AgML hosting."
+          }
+        },
+        {
+          "id": "meta_album_plantvillage",
+          "name": "PlantVillage (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Lab-condition leaf images of 14 crops and 38 healthy/diseased classes, as resampled in the Meta-Album few-shot benchmark.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset (PlantVillage); Meta-Album subset."
+          }
+        },
+        {
+          "id": "meta_album_plantnet",
+          "name": "PlantNet (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Pl@ntNet citizen-science plant species photos, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "meta_album_medicinal_leaf",
+          "name": "Medicinal Leaf (Meta-Album subset)",
+          "roles": [
+            "eval"
+          ],
+          "description": "Leaf images of Indian medicinal plant species, as resampled in Meta-Album.",
+          "link": "https://meta-album.github.io/",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "Not the same source as AgML's medicinal_leaf_species_classification (Mafi 2023)."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Same evaluation code and benchmark subsets as BioCLIP 2.",
+        "code_url": "https://github.com/Imageomics/bioclip-2",
+        "commands": []
+      },
+      "strong_use_cases": "Best zero-shot option in this catalog for plant species / medicinal leaf ID without training data.",
+      "limitations": "ViT-H is heavy for edge use; zero-shot disease classification is still only 33.5% on PlantVillage.",
+      "citation": "Imageomics Institute (2026). BioCLIP 2.5 Huge (bioclip-2.5-vith14). Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "selfsynthx-llava-plant-disease",
+      "name": "LLaVA-1.5-7B Plant Leaf Disease (SelfSynthX)",
+      "developer": "Shi et al. (SelfSynthX)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Vision-language model (LLaVA-1.5-7B, LoRA) fine-tuned with self-synthesized symptom descriptions so it names the PlantVillage disease and explains the visual evidence in text.",
+      "machine_learning_task": "image-text-to-text",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "fine-tuned vision-language model",
+      "architecture": "LLaVA-1.5-7B (CLIP ViT-L/14 + Vicuna-7B), LoRA",
+      "framework": "PyTorch / Transformers",
+      "license": "Not stated on card",
+      "links": {
+        "weights": "https://huggingface.co/YuchengShi/LLaVA-v1.5-7B-Plant-Leaf-Diseases-Detection",
+        "code": "https://github.com/sycny/SelfSynthX",
+        "paper": "https://doi.org/10.48550/arXiv.2502.14044",
+        "demo": null,
+        "model_card": "https://huggingface.co/YuchengShi/LLaVA-v1.5-7B-Plant-Leaf-Diseases-Detection"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "final iteration (iteration 4)",
+          "setting": "fine-tuned",
+          "eval_dataset": "plantvillage_pld",
+          "split": "original dataset split as used in the paper (Table 8 lists 47,523 / 5,279 test/training cases, 37 labels)",
+          "metrics": {
+            "accuracy": 0.9716
+          },
+          "primary_metric": "accuracy",
+          "notes": "Zero-shot base LLaVA-1.5 scores 0.00 on the same task. The paper doesn't say explicitly which iteration's checkpoint was released; the final iteration is assumed. The unusual test/train ratio is as printed in the paper.",
+          "source": "Paper Table 1 (ICLR 2025)",
+          "source_url": "https://arxiv.org/abs/2502.14044"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantvillage_pld",
+          "name": "PlantVillage plant leaf diseases (as used by SelfSynthX)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Lab-background single-leaf photos of 14 crops with healthy/disease labels (37 label categories in the paper's version).",
+          "link": "https://github.com/spMohanty/PlantVillage-Dataset",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset; the paper's label set and split differ from AgML's copy."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Training pipeline (self-synthesis + rejection-sampling fine-tuning) is public.",
+        "code_url": "https://github.com/sycny/SelfSynthX",
+        "commands": []
+      },
+      "strong_use_cases": "Explainable disease ID on clean leaf photos where the user wants a textual rationale, or a starting point for ag VLM work.",
+      "limitations": "7B VLM (GPU needed); lab images only; no license stated.",
+      "citation": "Shi, Y. et al. (2025). Enhancing Cognition and Explainability of Multimodal Foundation Models with Self-Synthesized Data. ICLR 2025.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "presto",
+      "name": "Presto (Pretrained Remote Sensing Transformer)",
+      "developer": "NASA Harvest (University of Maryland) & collaborators",
+      "publisher_type": "peer_reviewed",
+      "summary": "Tiny (~0.4M-parameter encoder) self-supervised transformer for pixel time series of Sentinel-1/2, ERA5 weather, topography and Dynamic World. Frozen embeddings plus a simple classifier give strong crop / cropland mapping.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "crop_type_mapping",
+        "cropland_mapping"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "cropland (generic)"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "foundation model (frozen features)",
+      "architecture": "Transformer encoder (2 layers, width 128) over pixel time series",
+      "framework": "PyTorch",
+      "license": "MIT",
+      "links": {
+        "weights": "https://github.com/nasaharvest/presto/tree/main/data",
+        "code": "https://github.com/nasaharvest/presto",
+        "paper": "https://doi.org/10.48550/arXiv.2304.14065",
+        "demo": null,
+        "model_card": "https://huggingface.co/nasaharvest/presto"
+      },
+      "hosting": "github + huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "PrestoR (frozen embeddings + linear regression)",
+          "setting": "linear-probe",
+          "eval_dataset": "cropharvest",
+          "split": "CropHarvest benchmark tasks (Kenya, Brazil, Togo test sets)",
+          "metrics": {
+            "f1_kenya": 0.816,
+            "f1_brazil": 0.891,
+            "f1_togo": 0.798,
+            "f1_mean": 0.835,
+            "auc_roc_mean": 0.917
+          },
+          "primary_metric": "f1_mean",
+          "notes": "Without Dynamic World input: mean F1 0.836, mean AUC 0.921. Random-forest baseline mean F1 0.441; TIML 0.802.",
+          "source": "Presto paper, Table 12 (CropHarvest)",
+          "source_url": "https://arxiv.org/abs/2304.14065"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "presto_pretraining",
+          "name": "Presto pretraining pixels",
+          "roles": [
+            "pretrain"
+          ],
+          "description": "~21.5M globally sampled 10 m pixel time series (Dynamic World sampling) with Sentinel-1 VV/VH, Sentinel-2 bands, NDVI, ERA5 precipitation/temperature, Dynamic World classes, SRTM elevation/slope and location.",
+          "link": "https://github.com/nasaharvest/presto",
+          "license": null,
+          "agml": {
+            "status": "not_applicable",
+            "names": [],
+            "note": "Remote-sensing pretraining corpus, regenerated from public archives via Earth Engine."
+          }
+        },
+        {
+          "id": "cropharvest",
+          "name": "CropHarvest",
+          "roles": [
+            "eval"
+          ],
+          "description": "Global crop / non-crop and crop-type point labels with matched Sentinel-1/2, ERA5 and SRTM monthly time series. Benchmark tasks: maize vs. rest in Kenya, crop vs. non-crop in Brazil and Togo.",
+          "link": "https://github.com/nasaharvest/cropharvest",
+          "license": "CC BY-SA 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Pretrained weights ship in the repo (data/default_models.pt); evaluation scripts for CropHarvest and other tasks are included. Embeddings can also be generated in Google Earth Engine.",
+        "code_url": "https://github.com/nasaharvest/presto",
+        "commands": [
+          "from single_file_presto import Presto; model = Presto.load_pretrained()"
+        ]
+      },
+      "strong_use_cases": "Cheap crop / cropland mapping from satellite pixel time series in data-poor regions; runs on CPU.",
+      "limitations": "Pixel-level (no spatial context); needs the specific multi-source input stack.",
+      "citation": "Tseng, G. et al. (2023). Lightweight, Pre-trained Transformers for Remote Sensing Timeseries. arXiv:2304.14065.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "galileo",
+      "name": "Galileo (remote sensing foundation models)",
+      "developer": "NASA Harvest & collaborators",
+      "publisher_type": "peer_reviewed",
+      "summary": "Family of pretrained multi-modal remote sensing encoders (nano / tiny / base) learning both global and local features. The paper evaluates crop tasks including CropHarvest, BreizhCrops, PASTIS, cashew plantations and South-Africa crop types.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "crop_type_mapping",
+        "cropland_mapping"
+      ],
+      "crop_types": [
+        "cropland (generic)",
+        "cashew",
+        "maize",
+        "corn"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "foundation model (frozen features)",
+      "architecture": "ViT-Nano / ViT-Tiny / ViT-Base multi-modal encoders",
+      "framework": "PyTorch",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/nasaharvest/galileo",
+        "code": "https://github.com/nasaharvest/galileo",
+        "paper": "https://doi.org/10.48550/arXiv.2502.09356",
+        "demo": null,
+        "model_card": "https://huggingface.co/nasaharvest/galileo"
+      },
+      "hosting": "huggingface + github",
+      "agml_benchmarked": false,
+      "verification": "metrics_not_transcribed",
+      "reported_results": [],
+      "datasets": [
+        {
+          "id": "cropharvest",
+          "name": "CropHarvest",
+          "roles": [
+            "eval"
+          ],
+          "description": "Global crop / non-crop and crop-type point labels with matched Sentinel-1/2, ERA5 and SRTM monthly time series (Kenya, Brazil, Togo benchmark tasks).",
+          "link": "https://github.com/nasaharvest/cropharvest",
+          "license": "CC BY-SA 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "pastis",
+          "name": "PASTIS",
+          "roles": [
+            "eval"
+          ],
+          "description": "2,433 Sentinel-2 time-series patches (128×128 px, 10 m, dense multi-date) over four French tiles with semantic and instance labels for 18 crop types plus background (from the French Land Parcel Identification System).",
+          "link": "https://github.com/VSainteuf/pastis-benchmark",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Weights (nano/tiny/base) and evaluation code are public. Crop-task numbers are in paper Tables 5–6, but Table 6 does not name its metric and Table 5's flattened text makes column alignment uncertain, so they are not transcribed here; read them in the paper.",
+        "code_url": "https://github.com/nasaharvest/galileo",
+        "commands": [
+          "hf download nasaharvest/galileo --include \"models/**\" --local-dir data"
+        ]
+      },
+      "strong_use_cases": "Backbone for satellite crop mapping that needs both pixel-time-series and spatial context.",
+      "limitations": "General remote-sensing model; agricultural performance must be checked per task.",
+      "citation": "Tseng, G. et al. (2025). Galileo: Learning Global and Local Features in Pretrained Remote Sensing Models. arXiv:2502.09356.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "prithvi-eo-2-crop-segmentation",
+      "name": "Prithvi-EO-2.0 (300M / 600M) for crop segmentation",
+      "developer": "IBM & NASA (ibm-nasa-geospatial)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Second-generation Prithvi geospatial foundation models (ViT, MAE-pretrained on global HLS time series). The paper fine-tunes them for US multi-temporal crop segmentation and PASTIS. Official example notebook for multi-temporal crop segmentation.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "crop_type_mapping",
+        "land_use_segmentation"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "soybean",
+        "winter wheat",
+        "alfalfa",
+        "cotton",
+        "sorghum"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "fine-tuned foundation model",
+      "architecture": "Prithvi-EO-2.0 ViT encoder (300M or 600M) + segmentation head (TerraTorch)",
+      "framework": "PyTorch (TerraTorch)",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M",
+        "code": "https://github.com/NASA-IMPACT/Prithvi-EO-2.0/blob/main/examples/example_multitemporalcrop.ipynb",
+        "paper": "https://doi.org/10.48550/arXiv.2412.02732",
+        "demo": null,
+        "model_card": "https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "Prithvi-EO-2.0-300M",
+          "setting": "fine-tuned",
+          "eval_dataset": "hls_multitemporal_crop_classification",
+          "split": "paper's US multi-temporal crop segmentation test",
+          "metrics": {
+            "miou": 0.486,
+            "mean_accuracy": 0.668
+          },
+          "primary_metric": "miou",
+          "notes": "Same table: Prithvi-EO-1.0-100M 42.7 mIoU, U-Net 42.6.",
+          "source": "Prithvi-EO-2.0 paper, Table IX",
+          "source_url": "https://arxiv.org/abs/2412.02732"
+        },
+        {
+          "variant": "Prithvi-EO-2.0-600M",
+          "setting": "fine-tuned",
+          "eval_dataset": "hls_multitemporal_crop_classification",
+          "split": "paper's US multi-temporal crop segmentation test",
+          "metrics": {
+            "miou": 0.507,
+            "mean_accuracy": 0.688
+          },
+          "primary_metric": "miou",
+          "notes": null,
+          "source": "Prithvi-EO-2.0 paper, Table IX",
+          "source_url": "https://arxiv.org/abs/2412.02732"
+        },
+        {
+          "variant": "Prithvi-EO-2.0-600M",
+          "setting": "fine-tuned (100% training data)",
+          "eval_dataset": "pastis",
+          "split": "PASTIS semantic segmentation",
+          "metrics": {
+            "miou": 0.534
+          },
+          "primary_metric": "miou",
+          "notes": "300M: 51.6 (100% data), 36.3 (10%); 600M at 10% data: 37.4.",
+          "source": "Prithvi-EO-2.0 paper, Table XII",
+          "source_url": "https://arxiv.org/abs/2412.02732"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "hls_multitemporal_crop_classification",
+          "name": "HLS Multi-Temporal Crop Classification (HLS + USDA CDL)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "224×224 chips of Harmonized Landsat-Sentinel imagery over the contiguous US, 3 time steps × 6 bands, labelled with 13 crop / land-cover classes from the USDA Cropland Data Layer.",
+          "link": "https://huggingface.co/datasets/ibm-nasa-geospatial/multi-temporal-crop-classification",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "pastis",
+          "name": "PASTIS",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "2,433 Sentinel-2 time-series patches (128×128 px, 10 m) over four French tiles with labels for 18 crop types plus background.",
+          "link": "https://github.com/VSainteuf/pastis-benchmark",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Fine-tuning example notebook and TerraTorch configs are public; the fine-tuned crop checkpoints themselves are not released separately (fine-tune from the pretrained weights).",
+        "code_url": "https://github.com/NASA-IMPACT/Prithvi-EO-2.0",
+        "commands": []
+      },
+      "strong_use_cases": "Best-documented open foundation model for satellite crop-type segmentation; fine-tune for regional crop maps.",
+      "limitations": "Weights are the pretrained encoder; you fine-tune the crop head yourself (the ~43% Prithvi-1 crop checkpoint is separately catalogued).",
+      "citation": "Szwarcman, D. et al. (2024). Prithvi-EO-2.0: A Versatile Multi-Temporal Foundation Model for Earth Observation Applications. arXiv:2412.02732.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "utae-pastis",
+      "name": "U-TAE / U-TAE + PaPs (PASTIS crop-type segmentation)",
+      "developer": "Sainte Fare Garnot & Landrieu (IGN / LASTIG)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Spatio-temporal U-Net with temporal attention (U-TAE) for crop-type semantic segmentation from Sentinel-2 image time series, plus the PaPs head for parcel-level panoptic segmentation.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "crop_type_mapping",
+        "parcel_segmentation"
+      ],
+      "crop_types": [
+        "wheat",
+        "maize",
+        "corn",
+        "barley",
+        "rapeseed",
+        "sunflower",
+        "grassland",
+        "orchards",
+        "vineyards"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "task-specific",
+      "architecture": "U-TAE (U-Net + lightweight temporal attention encoder); PaPs panoptic head",
+      "framework": "PyTorch",
+      "license": "MIT (code)",
+      "links": {
+        "weights": "https://zenodo.org/record/5172293",
+        "code": "https://github.com/VSainteuf/utae-paps",
+        "paper": "https://doi.org/10.48550/arXiv.2107.07933",
+        "demo": null,
+        "model_card": null
+      },
+      "hosting": "zenodo + github",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "U-TAE (semantic)",
+          "setting": "fine-tuned",
+          "eval_dataset": "pastis",
+          "split": "PASTIS 5-fold cross-validation (official folds)",
+          "metrics": {
+            "miou": 0.631,
+            "overall_accuracy": 0.832
+          },
+          "primary_metric": "miou",
+          "notes": "1.1M parameters. Baselines in the same table: U-Net-3D 58.4 mIoU, U-Net-ConvLSTM 57.8. Semantic weights: Zenodo 5172293.",
+          "source": "Repo README results table (ICCV 2021)",
+          "source_url": "https://github.com/VSainteuf/utae-paps"
+        },
+        {
+          "variant": "U-TAE + PaPs (panoptic)",
+          "setting": "fine-tuned",
+          "eval_dataset": "pastis",
+          "split": "PASTIS 5-fold cross-validation (official folds)",
+          "metrics": {
+            "pq": 0.438,
+            "sq": 0.815,
+            "rq": 0.532
+          },
+          "primary_metric": "pq",
+          "notes": "Updated values after the 2022 panoptic-metric bugfix (the README prose still quotes the older 40.4 PQ). Panoptic weights: Zenodo 5172301.",
+          "source": "Repo README results table",
+          "source_url": "https://github.com/VSainteuf/utae-paps"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "pastis",
+          "name": "PASTIS",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "2,433 Sentinel-2 time-series patches (128×128 px, 10 m, dense multi-date series) over four French tiles; semantic + parcel-instance labels for 18 crop types plus background, from the French LPIS.",
+          "link": "https://github.com/VSainteuf/pastis-benchmark",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Weights per fold on Zenodo; training and evaluation scripts in repo.",
+        "code_url": "https://github.com/VSainteuf/utae-paps",
+        "commands": []
+      },
+      "strong_use_cases": "Crop-type and parcel mapping from Sentinel-2 time series; reference baseline for PASTIS-style tasks.",
+      "limitations": "Trained on French agriculture only; needs dense S2 time series.",
+      "citation": "Sainte Fare Garnot, V. & Landrieu, L. (2021). Panoptic Segmentation of Satellite Image Time Series with Convolutional Temporal Attention Networks. ICCV 2021.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "ftw-baselines-sentinel2",
+      "name": "Fields of The World (FTW) field-boundary baselines (Sentinel-2)",
+      "developer": "Fields of The World consortium (Taylor Geospatial et al.)",
+      "publisher_type": "peer_reviewed",
+      "summary": "U-Net / EfficientNet field-boundary segmentation models trained on the FTW benchmark (paired planting/harvest Sentinel-2 images across many countries). Predict background / field / boundary; polygonized with the `ftw` CLI.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "field_boundary_delineation"
+      ],
+      "crop_types": [
+        "cropland (generic)"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "task-specific",
+      "architecture": "U-Net with EfficientNet-B3 / B5 / B7 encoders (PRUE+ recipe)",
+      "framework": "PyTorch (segmentation-models-pytorch, TorchGeo)",
+      "license": "Code MIT; weights CC BY 4.0 (commercial set) or non-commercial set, per release",
+      "links": {
+        "weights": "https://github.com/fieldsoftheworld/ftw-baselines/releases",
+        "code": "https://github.com/fieldsoftheworld/ftw-baselines",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/torchgeo/ftw"
+      },
+      "hosting": "github releases + huggingface (torchgeo)",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "FTW-PRUE+ EfficientNet-B7",
+          "setting": "fine-tuned (cross-sensor evaluation)",
+          "eval_dataset": "ftp_holdout_countries",
+          "split": "ten dense-label held-out smallholder countries of Fields of the Planet",
+          "metrics": {
+            "pq": 0.242,
+            "sq": 0.71,
+            "rq_50": 0.328,
+            "pixel_iou": 0.636
+          },
+          "primary_metric": "pq",
+          "notes": "Reported in the Fields of the Planet model card (Table 1) as a comparison row; B3 variant: PQ 21.0, pixel IoU 61.8.",
+          "source": "Fields of the Planet model card, results table",
+          "source_url": "https://huggingface.co/fieldsoftheworld/ftp-b3"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ftw",
+          "name": "Fields of The World (FTW)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Global field-boundary benchmark: paired Sentinel-2 chips from planting and harvest windows with field-instance and boundary masks across 24 countries on four continents.",
+          "link": "https://github.com/fieldsoftheworld/ftw-baselines",
+          "license": "Per-country (mostly CC BY 4.0; some non-commercial)",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "ftp_holdout_countries",
+          "name": "Fields of the Planet held-out countries",
+          "roles": [
+            "eval"
+          ],
+          "description": "Dense field-boundary labels in ten held-out countries dominated by smallholder fields, paired with PlanetScope imagery (labels shared with FTW).",
+          "link": "https://huggingface.co/datasets/taylor-geospatial/ftw-planet",
+          "license": "CC BY-NC 4.0 (imagery removed; PlanetScope IDs provided)",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "`ftw` CLI downloads Sentinel-2 scenes by crop calendar, runs inference and polygonizes; `ftw model list` shows released models.",
+        "code_url": "https://github.com/fieldsoftheworld/ftw-baselines",
+        "commands": [
+          "pip install ftw-tools",
+          "ftw model list",
+          "ftw inference all --model FTW_PRUE_EFNET_B5 --year 2024 --bbox <minx,miny,maxx,maxy> -o out/"
+        ]
+      },
+      "strong_use_cases": "Country-scale field-boundary maps from free Sentinel-2 imagery.",
+      "limitations": "10 m resolution struggles with small (<0.5 ha) smallholder fields (PQ-small 5.8–7.5).",
+      "citation": "Kerner, H. et al. (2025). Fields of The World: A Machine Learning Benchmark Dataset For Global Agricultural Field Boundary Segmentation. AAAI 2025.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "ftp-prue-planetscope",
+      "name": "Fields of the Planet FTP-PRUE+ (PlanetScope field boundaries)",
+      "developer": "Taylor Geospatial / Fields of The World",
+      "publisher_type": "peer_reviewed",
+      "summary": "3 m PlanetScope field-boundary segmentation (U-Net + EfficientNet-B3/B7) from paired planting- and harvest-window imagery; the main model of the Fields of the Planet paper. Big gains over Sentinel-2 models on smallholder fields.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "field_boundary_delineation"
+      ],
+      "crop_types": [
+        "cropland (generic)"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "task-specific",
+      "architecture": "U-Net, EfficientNet-B3 (B7 variant also released), 8-channel input",
+      "framework": "PyTorch (segmentation-models-pytorch); ONNX and torch.export files",
+      "license": "CC BY-NC 4.0",
+      "links": {
+        "weights": "https://huggingface.co/fieldsoftheworld/ftp-b3",
+        "code": "https://github.com/taylor-geospatial/fields-of-the-planet",
+        "paper": "https://doi.org/10.48550/arXiv.2607.04449",
+        "demo": null,
+        "model_card": "https://huggingface.co/fieldsoftheworld/ftp-b3"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "FTP-PRUE+ EfficientNet-B3",
+          "setting": "fine-tuned",
+          "eval_dataset": "ftp_holdout_countries",
+          "split": "ten dense-label held-out smallholder countries (macro-average)",
+          "metrics": {
+            "pq": 0.355,
+            "sq": 0.757,
+            "rq_50": 0.462,
+            "f1_50_95": 0.271,
+            "pixel_iou": 0.688
+          },
+          "primary_metric": "pq",
+          "notes": "Mean boundary error 7.4 m. Same table: DelineateAnything (zero-shot) PQ 9.5; FTW-PRUE+ Sentinel-2 B7 PQ 24.2.",
+          "source": "Model card results table (paper Table 1)",
+          "source_url": "https://huggingface.co/fieldsoftheworld/ftp-b3"
+        },
+        {
+          "variant": "FTP-PRUE+ EfficientNet-B7",
+          "setting": "fine-tuned",
+          "eval_dataset": "ftp_holdout_countries",
+          "split": "ten dense-label held-out smallholder countries (macro-average)",
+          "metrics": {
+            "pq": 0.354,
+            "sq": 0.744,
+            "rq_50": 0.461,
+            "pixel_iou": 0.742
+          },
+          "primary_metric": "pq",
+          "notes": "Weights: huggingface.co/fieldsoftheworld/ftp-b7.",
+          "source": "Model card results table (paper Table 1)",
+          "source_url": "https://huggingface.co/fieldsoftheworld/ftp-b3"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ftp_planet",
+          "name": "Fields of the Planet (FTP)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Paired PlanetScope surface-reflectance scenes (planting and harvest windows, 4 bands each, 3 m) co-registered with FTW field-boundary labels; imagery removed for licensing, PlanetScope item IDs provided.",
+          "link": "https://huggingface.co/datasets/taylor-geospatial/ftw-planet",
+          "license": "CC BY-NC 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "Labels are public; imagery requires Planet access."
+          }
+        },
+        {
+          "id": "ftp_holdout_countries",
+          "name": "Fields of the Planet held-out countries",
+          "roles": [
+            "eval"
+          ],
+          "description": "Dense field-boundary labels in ten held-out countries dominated by smallholder fields.",
+          "link": "https://huggingface.co/datasets/taylor-geospatial/ftw-planet",
+          "license": "CC BY-NC 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Training/eval code including watershed post-processing; four weight formats on the card.",
+        "code_url": "https://github.com/taylor-geospatial/fields-of-the-planet",
+        "commands": []
+      },
+      "strong_use_cases": "Smallholder field-boundary mapping where PlanetScope imagery is available.",
+      "limitations": "Non-commercial license; needs paired seasonal PlanetScope scenes.",
+      "citation": "Fields of the Planet: Field Boundary Mapping Beyond 10m (2026). arXiv:2607.04449.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "ftw-q",
+      "name": "FTW-Q field-boundary model (quarterly Sentinel-2 mosaics)",
+      "developer": "Fields of The World",
+      "publisher_type": "institutional",
+      "summary": "U-Net / EfficientNet-B3 that segments agricultural field boundaries from one year of quarterly Copernicus Sentinel-2 cloudless mosaics, so no per-site scene selection is needed.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "field_boundary_delineation"
+      ],
+      "crop_types": [
+        "cropland (generic)"
+      ],
+      "sensor_modality": "multispectral",
+      "platform": "satellite",
+      "model_type": "task-specific",
+      "architecture": "U-Net, EfficientNet-B3 encoder, 16-channel input (4 bands × 4 quarters)",
+      "framework": "PyTorch (segmentation-models-pytorch); ONNX",
+      "license": "CC BY 4.0",
+      "links": {
+        "weights": "https://huggingface.co/fieldsoftheworld/ftw-q",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/fieldsoftheworld/ftw-q"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "ftw_q",
+          "split": "FTW-Q test split, 7,817 chips; polygons matched at IoU > 0.5, averaged over countries excluding Kenya and Portugal",
+          "metrics": {
+            "object_f1": 0.526,
+            "precision": 0.601,
+            "recall": 0.475
+          },
+          "primary_metric": "object_f1",
+          "notes": "Polygons under 1,000 m² dropped before matching.",
+          "source": "Model card, Evaluation",
+          "source_url": "https://huggingface.co/fieldsoftheworld/ftw-q"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ftw_q",
+          "name": "FTW-Q",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "FTW field-boundary labels paired with quarterly (Q1–Q4) Copernicus Sentinel-2 global mosaics (B04, B03, B02, B08 per quarter).",
+          "link": "https://huggingface.co/datasets/fieldsoftheworld/FTW-Q",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "partially_documented",
+        "notes": "Training recipe and preprocessing (÷3000, 4× bilinear upsampling to 2.5 m) on the card; no training script linked.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Field-boundary maps anywhere Copernicus quarterly mosaics exist, with no scene picking.",
+      "limitations": "Object F1 ~0.53; Kenya and Portugal excluded from the reported average.",
+      "citation": "Fields of The World (2026). ftw-q. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "delineate-anything",
+      "name": "Delineate Anything (v1 / v2) field-boundary instance segmentation",
+      "developer": "Lavreniuk, Kussul, Shelestov et al.",
+      "publisher_type": "peer_reviewed",
+      "summary": "Resolution-agnostic YOLO-based instance segmentation of agricultural fields from any satellite or aerial RGB imagery (0.25–10 m). v2 is trained on FBIS-73M across 61 countries.",
+      "machine_learning_task": "instance_segmentation",
+      "agricultural_tasks": [
+        "field_boundary_delineation"
+      ],
+      "crop_types": [
+        "cropland (generic)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "satellite",
+      "model_type": "foundation model (task-specific)",
+      "architecture": "YOLO11x-seg (DelineateAnything); YOLO11n-seg (-S variant)",
+      "framework": "PyTorch (Ultralytics); also in TorchGeo",
+      "license": "AGPL-3.0",
+      "links": {
+        "weights": "https://huggingface.co/MykolaL/DelineateAnything",
+        "code": "https://github.com/Lavreniuk/Delineate-Anything",
+        "paper": "https://doi.org/10.48550/arXiv.2504.02534",
+        "demo": "https://explorer.delineate-anything.apex.esa.int/",
+        "model_card": "https://huggingface.co/MykolaL/DelineateAnything"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "Delineate Anything v2",
+          "setting": "pretrained (zero-shot on unseen countries)",
+          "eval_dataset": "fbis_100_country",
+          "split": "manually curated 100-country independent benchmark",
+          "metrics": {
+            "map_50": 0.559,
+            "map": 0.278,
+            "precision": 0.639,
+            "recall": 0.525
+          },
+          "primary_metric": "map_50",
+          "notes": "Regional mAP@0.5: Europe 0.612, Africa 0.584, Asia & Oceania 0.440, Latin America 0.563, North America 0.618.",
+          "source": "GitHub README, global benchmark table",
+          "source_url": "https://github.com/Lavreniuk/Delineate-Anything"
+        },
+        {
+          "variant": "Delineate Anything (v1)",
+          "setting": "pretrained (zero-shot on unseen countries)",
+          "eval_dataset": "fbis_100_country",
+          "split": "manually curated 100-country independent benchmark",
+          "metrics": {
+            "map_50": 0.275,
+            "map": 0.103,
+            "precision": 0.345,
+            "recall": 0.454
+          },
+          "primary_metric": "map_50",
+          "notes": "The original v1 paper evaluated on FBIS-22M test splits (mostly Europe), not this benchmark. On Fields of the Planet's smallholder countries it scores PQ 9.5 zero-shot.",
+          "source": "GitHub README, global benchmark table",
+          "source_url": "https://github.com/Lavreniuk/Delineate-Anything"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "fbis_73m",
+          "name": "FBIS-73M",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "1,478,096 satellite image patches (0.25–10 m) with 74,015,889 field instance masks; train, test and a 100-country zero-shot test split.",
+          "link": "https://huggingface.co/datasets/MykolaL/FBIS-73M",
+          "license": "MIT",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        },
+        {
+          "id": "fbis_100_country",
+          "name": "Delineate Anything 100-country benchmark",
+          "roles": [
+            "eval"
+          ],
+          "description": "Manually curated field-boundary benchmark spanning 100 countries, used for independent zero-shot evaluation.",
+          "link": "https://huggingface.co/datasets/MykolaL/FBIS-73M",
+          "license": "MIT",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Inference scripts and sample Sentinel-2 images in repo; dataset on Hugging Face.",
+        "code_url": "https://github.com/Lavreniuk/Delineate-Anything",
+        "commands": []
+      },
+      "strong_use_cases": "Zero-shot field polygons from arbitrary-resolution RGB imagery; country-scale mapping on one GPU.",
+      "limitations": "AGPL license; weaker in Asia & Oceania; RGB only.",
+      "citation": "Lavreniuk, M. et al. (2025). Delineate Anything: Resolution-Agnostic Field Boundary Delineation on Satellite Imagery. ECAI 2025; v2: ECCV Workshops 2026.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "restor-tcd",
+      "name": "Restor OAM-TCD tree cover models (SegFormer, U-Net, Mask R-CNN)",
+      "developer": "Restor / ETH Zurich",
+      "publisher_type": "peer_reviewed",
+      "summary": "Tree-cover semantic segmentation (and tree instance segmentation) for 10 cm/px aerial imagery, trained on the globally diverse OAM-TCD dataset. Useful for canopy cover in orchards, agroforestry and restoration sites.",
+      "machine_learning_task": "semantic_segmentation",
+      "agricultural_tasks": [
+        "tree_cover_segmentation",
+        "tree_crown_detection"
+      ],
+      "crop_types": [
+        "trees",
+        "orchards",
+        "agroforestry"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "aerial",
+      "model_type": "task-specific",
+      "architecture": "SegFormer mit-b0…b5; U-Net ResNet-34/50; Mask R-CNN R50",
+      "framework": "PyTorch / Transformers / Detectron2",
+      "license": "Models CC BY-NC 4.0 (trained on partly NC imagery); pipeline code Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/restor/tcd-segformer-mit-b5",
+        "code": "https://github.com/restor-foundation/tcd",
+        "paper": "https://doi.org/10.48550/arXiv.2407.11743",
+        "demo": null,
+        "model_card": "https://huggingface.co/restor/tcd-segformer-mit-b5"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "SegFormer mit-b5",
+          "setting": "fine-tuned",
+          "eval_dataset": "oam_tcd",
+          "split": "OAM-TCD holdout split",
+          "metrics": {
+            "iou": 0.876,
+            "accuracy": 0.89,
+            "f1": 0.902
+          },
+          "primary_metric": "iou",
+          "notes": "Smallest SegFormer mit-b0: IoU 0.865, F1 0.882.",
+          "source": "OAM-TCD paper, Table 1 (NeurIPS 2024 D&B)",
+          "source_url": "https://arxiv.org/abs/2407.11743"
+        },
+        {
+          "variant": "U-Net ResNet-50",
+          "setting": "fine-tuned",
+          "eval_dataset": "oam_tcd",
+          "split": "OAM-TCD holdout split",
+          "metrics": {
+            "iou": 0.849,
+            "accuracy": 0.881,
+            "f1": 0.88
+          },
+          "primary_metric": "iou",
+          "notes": "U-Nets are more permissively licensed than SegFormer (NVIDIA research license).",
+          "source": "OAM-TCD paper, Table 1",
+          "source_url": "https://arxiv.org/abs/2407.11743"
+        },
+        {
+          "variant": "Mask R-CNN R50 (instance)",
+          "setting": "fine-tuned",
+          "eval_dataset": "oam_tcd",
+          "split": "OAM-TCD holdout split (COCO segm)",
+          "metrics": {
+            "map_50": 0.4322
+          },
+          "primary_metric": "map_50",
+          "notes": null,
+          "source": "OAM-TCD paper",
+          "source_url": "https://arxiv.org/abs/2407.11743"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "oam_tcd",
+          "name": "OAM-TCD",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "5,072 aerial images (2048×2048 px, 10 cm/px) sampled worldwide from OpenAerialMap, with 280k+ individual trees and 56k tree-group polygons; ~90% CC BY 4.0 labels.",
+          "link": "https://huggingface.co/datasets/restor/tcd",
+          "license": "CC BY 4.0 (mostly; some CC BY-NC / BY-SA)",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "fully_reproducible",
+        "notes": "Pipeline repo supports tiled prediction on large orthomosaics, training and evaluation; 5-fold CV results in the paper.",
+        "code_url": "https://github.com/restor-foundation/tcd",
+        "commands": []
+      },
+      "strong_use_cases": "Canopy-cover estimation for orchards, agroforestry plots and restoration monitoring from drone / aerial RGB at ~10 cm.",
+      "limitations": "Tuned to 10 cm imagery; false positives on shrubs and tree-like ground cover; non-commercial model license.",
+      "citation": "Veitch-Michaelis, J. et al. (2024). OAM-TCD: A globally diverse dataset of high-resolution tree cover maps. NeurIPS 2024 Datasets & Benchmarks.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "detectree2",
+      "name": "Detectree2 tree crown delineation (model garden)",
+      "developer": "Ball et al. (University of Cambridge)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Mask R-CNN (Detectron2) tree-crown delineation models for aerial and UAV RGB imagery: tropical closed-canopy models, an urban model, and a 'flexi' model for mixed settings.",
+      "machine_learning_task": "instance_segmentation",
+      "agricultural_tasks": [
+        "tree_crown_detection"
+      ],
+      "crop_types": [
+        "trees",
+        "forest",
+        "agroforestry"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "aerial",
+      "model_type": "task-specific",
+      "architecture": "Mask R-CNN R101-FPN (Detectron2)",
+      "framework": "PyTorch (Detectron2)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://zenodo.org/records/15863800",
+        "code": "https://github.com/PatBall1/detectree2",
+        "paper": "https://doi.org/10.1002/rse2.332",
+        "demo": null,
+        "model_card": "https://github.com/PatBall1/detectree2/tree/master/model_garden"
+      },
+      "hosting": "zenodo + github",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "urban_trees_Cambridge20230630",
+          "setting": "fine-tuned",
+          "eval_dataset": "detectree2_cambridge_urban",
+          "split": "model-garden validation",
+          "metrics": {
+            "map_50": 0.62
+          },
+          "primary_metric": "map_50",
+          "notes": "Only the urban model lists a score in the model garden; tropical models' accuracy is reported per site in the papers (Ball et al. 2023, Remote Sens. Ecol. Conserv.).",
+          "source": "Detectree2 model garden README",
+          "source_url": "https://github.com/PatBall1/detectree2/tree/master/model_garden"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "detectree2_tropical",
+          "name": "Detectree2 tropical crowns (Danum, Sepilok, Paracou, Harapan)",
+          "roles": [
+            "train"
+          ],
+          "description": "Manually delineated tree crowns over aeroplane (~10 cm) and UAV (~5 cm) RGB imagery of tropical forests in Malaysia (Danum, Sepilok), French Guiana (Paracou) and Indonesia (Harapan).",
+          "link": "https://github.com/PatBall1/detectree2",
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Data available on request from the authors."
+          }
+        },
+        {
+          "id": "detectree2_cambridge_urban",
+          "name": "Cambridge (UK) urban tree crowns",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Delineated urban tree crowns over aerial RGB of Cambridge, UK.",
+          "link": "https://github.com/PatBall1/detectree2",
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Not released as a standalone dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_available",
+        "notes": "Pip-installable package with tutorials; weights on Zenodo. Training data on request.",
+        "code_url": "https://github.com/PatBall1/detectree2",
+        "commands": [
+          "wget https://zenodo.org/records/15863800/files/250312_flexi.pth"
+        ]
+      },
+      "strong_use_cases": "Individual crown polygons in dense canopy (agroforestry, plantations) from UAV / aerial RGB.",
+      "limitations": "Mostly tropical forest training data; tile-size sensitive (~100 m tiles).",
+      "citation": "Ball, J. G. C. et al. (2023). Accurate delineation of individual tree crowns in tropical forests from aerial RGB imagery using Mask R-CNN. Remote Sensing in Ecology and Conservation 9(5), 641–655.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "weecology-neon-tree-species",
+      "name": "Weecology NEON tree species classifier (ResNet-18, 167 species)",
+      "developer": "Weecology lab (University of Florida) / GatorSense",
+      "publisher_type": "institutional",
+      "summary": "DeepForest CropModel that classifies detected tree-crown crops from 10 cm NEON airborne RGB into 167 species (USDA PLANTS codes). Pairs with the DeepForest tree detector.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "tree_species_classification"
+      ],
+      "crop_types": [
+        "trees",
+        "forest"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "aerial",
+      "model_type": "task-specific",
+      "architecture": "ResNet-18 (ImageNet-pretrained)",
+      "framework": "PyTorch (deepforest CropModel)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/weecology/cropmodel-neon-resnet18-species",
+        "code": "https://github.com/GatorSense/NeonTreeClassification",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/weecology/cropmodel-neon-resnet18-species"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "neon_vst_crowns_all",
+          "split": "random 70/15/15 split, seed 42 (test 7,197 crowns)",
+          "metrics": {
+            "accuracy": 0.869,
+            "f1_macro": 0.8,
+            "f1_weighted": 0.87
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Split is random over 47,971 crowns without per-tree deduplication, so repeated observations of the same tree may span train/test. Compare the deduplicated genus model (44% accuracy).",
+          "source": "Model card, Results (Test Set)",
+          "source_url": "https://huggingface.co/weecology/cropmodel-neon-resnet18-species"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "neon_vst_crowns_all",
+          "name": "NEON tree crowns with VST labels (30 sites)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "47,971 RGB crown crops (0.1 m) from 30 NEON sites across North America, labelled from NEON Vegetation Structure (VST) field surveys.",
+          "link": "https://github.com/GatorSense/NeonTreeClassification",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "niwo_tree_crown_detection"
+            ],
+            "note": "AgML has one NEON site's crowns (NIWO) as detection data; this labelled multi-site set is not in AgML."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_available",
+        "notes": "Trained with the NeonTreeClassification repo; per-class report on the card.",
+        "code_url": "https://github.com/GatorSense/NeonTreeClassification",
+        "commands": [
+          "from deepforest import main; from deepforest.model import CropModel",
+          "CropModel.load_model('weecology/cropmodel-neon-resnet18-species')"
+        ]
+      },
+      "strong_use_cases": "Species labels for DeepForest crowns in North American forests / tree plantations.",
+      "limitations": "Likely optimistic split (see notes); NEON 10 cm imagery only.",
+      "citation": "Weecology (2026). cropmodel-neon-resnet18-species. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "weecology-tree-genus",
+      "name": "Weecology tree genus classifier (ResNet-18, 54 genera, deduplicated)",
+      "developer": "Weecology lab (University of Florida) / GatorSense",
+      "publisher_type": "institutional",
+      "summary": "DeepForest CropModel classifying tree-crown crops into 54 genera, trained on one sample per unique individual tree, so its test score is a stricter estimate than the species model's.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "tree_species_classification"
+      ],
+      "crop_types": [
+        "trees",
+        "forest"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "aerial",
+      "model_type": "task-specific",
+      "architecture": "ResNet-18 (ImageNet-pretrained)",
+      "framework": "PyTorch (deepforest CropModel)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/weecology/cropmodel-tree-genus",
+        "code": "https://github.com/GatorSense/NeonTreeClassification",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/weecology/cropmodel-tree-genus"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "neon_vst_crowns_dedup",
+          "split": "stratified random 70/15/15, seed 42 (test 2,453 crowns)",
+          "metrics": {
+            "accuracy": 0.44,
+            "f1_macro": 0.25,
+            "f1_weighted": 0.44
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Sqrt inverse-frequency class weights; rare species (<6 samples) removed.",
+          "source": "Model card, Results (Test Set)",
+          "source_url": "https://huggingface.co/weecology/cropmodel-tree-genus"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "neon_vst_crowns_dedup",
+          "name": "NEON tree crowns, deduplicated (29 sites)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "16,348 deduplicated RGB crown crops (one per individual tree, 0.1 m) from 29 NEON sites, labelled from NEON VST field surveys.",
+          "link": "https://github.com/GatorSense/NeonTreeClassification",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "niwo_tree_crown_detection"
+            ],
+            "note": "AgML has one NEON site's crowns (NIWO) as detection data only."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_available",
+        "notes": "Trained with NeonTreeClassification; per-class report on the card.",
+        "code_url": "https://github.com/GatorSense/NeonTreeClassification",
+        "commands": []
+      },
+      "strong_use_cases": "Coarse genus labels for tree crowns; a realistic baseline for unseen-tree generalization.",
+      "limitations": "Low macro-F1 (0.25) — rare genera are hard.",
+      "citation": "Weecology (2026). cropmodel-tree-genus. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "croppie-coffee-cherry",
+      "name": "Croppie coffee cherry detector (YOLOv8m)",
+      "developer": "Alliance Bioversity & CIAT, Producers Direct, M-Omulimisa",
+      "publisher_type": "institutional",
+      "summary": "Counts coffee cherries by ripeness class (dark brown, green, red, yellow) in smartphone photos of coffee branches, for yield estimation with smallholder farmers in Uganda.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "fruit_detection",
+        "maturity_detection",
+        "yield_estimation"
+      ],
+      "crop_types": [
+        "coffee"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "YOLOv8m (Ultralytics, custom YOLO class)",
+      "framework": "PyTorch (Ultralytics 8.0.75)",
+      "license": "GPL-3.0",
+      "links": {
+        "weights": "https://huggingface.co/rgautroncgiar/croppie_coffee_ug",
+        "code": "https://huggingface.co/rgautroncgiar/croppie_coffee_ug/tree/main/scripts",
+        "paper": null,
+        "demo": "https://croppie.org/",
+        "model_card": "https://huggingface.co/rgautroncgiar/croppie_coffee_ug"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "model_v3_202402021",
+          "setting": "fine-tuned",
+          "eval_dataset": "croppie_coffee",
+          "split": "Croppie validation split",
+          "metrics": {
+            "map_50": 0.691
+          },
+          "primary_metric": "map_50",
+          "notes": "The model-index labels this value 'precision' but names it mAP@0.5(box); test curves are given only as images on the card.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/rgautroncgiar/croppie_coffee_ug"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "croppie_coffee",
+          "name": "Croppie coffee dataset (Uganda)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Smartphone photos of Arabica and Robusta coffee branches from Ugandan smallholder farms, with boxes for cherries by ripeness class (plus a low-visibility class not used for training).",
+          "link": "https://huggingface.co/datasets/rgautroncgiar/croppie_coffee_ug",
+          "license": "CC BY-SA 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "AgML's coffee_detection is a different (Makerere) dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Training args.yaml and test script in the repo; dataset public.",
+        "code_url": "https://huggingface.co/rgautroncgiar/croppie_coffee_ug",
+        "commands": [
+          "cd scripts && python3 test_script.py"
+        ]
+      },
+      "strong_use_cases": "Coffee yield estimation and harvest timing from phone photos.",
+      "limitations": "No occlusion correction for counts; GPL license.",
+      "citation": "Croppie (2024). Alliance Bioversity & CIAT, Producers Direct, M-Omulimisa. Funded by GIZ Fair Forward.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "cornvit-kernel",
+      "name": "CornViT corn kernel analysis (CvT-13)",
+      "developer": "Erukude, Mascarenhas & Shamir (Kansas State University)",
+      "publisher_type": "peer_reviewed",
+      "summary": "Three-stage hierarchical corn kernel quality pipeline: purity (pure / impure), shape (flat / round) and embryo orientation (up / down), each a CvT-13 classifier.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "quality_classification",
+        "seed_classification"
+      ],
+      "crop_types": [
+        "maize",
+        "corn"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "CvT-13 (384×384, ImageNet-22k pretrained)",
+      "framework": "PyTorch (+ Keras files on the Hub)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/erukude/cornvit",
+        "code": "https://huggingface.co/erukude/cornvit/tree/main",
+        "paper": "https://doi.org/10.3390/computers15010002",
+        "demo": null,
+        "model_card": "https://huggingface.co/erukude/cornvit"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "Stage 1 (purity)",
+          "setting": "fine-tuned",
+          "eval_dataset": "cornvit_kernels",
+          "split": "paper test split",
+          "metrics": {
+            "accuracy": 0.938
+          },
+          "primary_metric": "accuracy",
+          "notes": null,
+          "source": "Model card",
+          "source_url": "https://huggingface.co/erukude/cornvit"
+        },
+        {
+          "variant": "Stage 2 (shape)",
+          "setting": "fine-tuned",
+          "eval_dataset": "cornvit_kernels",
+          "split": "paper test split",
+          "metrics": {
+            "accuracy": 0.941
+          },
+          "primary_metric": "accuracy",
+          "notes": null,
+          "source": "Model card",
+          "source_url": "https://huggingface.co/erukude/cornvit"
+        },
+        {
+          "variant": "Stage 3 (embryo orientation)",
+          "setting": "fine-tuned",
+          "eval_dataset": "cornvit_kernels",
+          "split": "paper test split",
+          "metrics": {
+            "accuracy": 0.911
+          },
+          "primary_metric": "accuracy",
+          "notes": "ResNet-50 and DenseNet-121 baselines in the repo.",
+          "source": "Model card",
+          "source_url": "https://huggingface.co/erukude/cornvit"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "cornvit_kernels",
+          "name": "CornViT corn kernel images",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Single corn kernel images labelled for purity, shape and embryo orientation (see the paper for source and counts).",
+          "link": "https://doi.org/10.3390/computers15010002",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "AgML's maize_kernel_quality_detection is a different (aflatoxin) dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_available",
+        "notes": "Per-stage training and inference scripts on the Hub repo.",
+        "code_url": "https://huggingface.co/erukude/cornvit",
+        "commands": [
+          "python stage1/inference_cvt13.py"
+        ]
+      },
+      "strong_use_cases": "Seed / kernel quality sorting and grading in the lab.",
+      "limitations": "Lab imaging setup; per-stage binary classifiers.",
+      "citation": "Erukude, S. T., Mascarenhas, J., Shamir, L. (2026). CornViT: A Multi-Stage Convolutional Vision Transformer Framework for Hierarchical Corn Kernel Analysis. Computers 15(1), 2.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plantvillage-mobilenetv2-iiith",
+      "name": "PlantVillage MobileNetV2 (IIIT-H capstone, +PlantDoc)",
+      "developer": "neghani (IIIT Hyderabad capstone group)",
+      "publisher_type": "community",
+      "summary": "MobileNetV2 for the 38 PlantVillage classes, with a second training stage on Cropped-PlantDoc for phone-photo robustness. Card reports both the in-distribution test and a small real-world check.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "MobileNetV2 1.0 224",
+      "framework": "PyTorch / Transformers",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/neghani/plantvillage-mobilenetv2",
+        "code": "https://github.com/neghani/iiith-group4-capstone-plat-leaf-decease-detection",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/neghani/plantvillage-mobilenetv2"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "plantvillage_kaggle_color",
+          "split": "stratified per-class split, seed 42 (test 5,430 images)",
+          "metrics": {
+            "accuracy": 0.9917,
+            "f1_macro": 0.9851,
+            "top3_accuracy": 0.9998
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Photo-level split; weakest class Potato healthy (F1 0.85, 15 test images).",
+          "source": "Model card model-index / results",
+          "source_url": "https://huggingface.co/neghani/plantvillage-mobilenetv2"
+        },
+        {
+          "variant": null,
+          "setting": "fine-tuned (out-of-distribution check)",
+          "eval_dataset": "plantdoc",
+          "split": "Cropped-PlantDoc final split, 25 images",
+          "metrics": {
+            "accuracy": 0.16
+          },
+          "primary_metric": "accuracy",
+          "notes": "Top-1 on real-world field photos. Note the collapse from 99% on PlantVillage, a typical lab-to-field gap.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/neghani/plantvillage-mobilenetv2"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantvillage_kaggle_color",
+          "name": "PlantVillage (Kaggle 'color' copy)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "54,305 lab-background colour leaf photos, 14 crops × 38 healthy/disease classes (split 43,445 / 5,430 / 5,430).",
+          "link": "https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset",
+          "license": null,
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset."
+          }
+        },
+        {
+          "id": "plantdoc",
+          "name": "PlantDoc (cropped)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "In-the-wild web images of 13 crop species / up to 17 disease classes; the cropped variant isolates individual leaves. 27 of the 38 PlantVillage classes overlap.",
+          "link": "https://github.com/pratikkayal/PlantDoc-Dataset",
+          "license": "CC BY 4.0",
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "The corn subset of PlantDoc appears inside AgML's corn_maize_leaf_disease."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Capstone repo with training code; run_info.json records the PlantDoc commit and data manifest.",
+        "code_url": "https://github.com/neghani/iiith-group4-capstone-plat-leaf-decease-detection",
+        "commands": []
+      },
+      "strong_use_cases": "Lightweight PlantVillage-style classifier with a documented confidence threshold (0.5) for 'not sure'.",
+      "limitations": "Real-world accuracy is very low (16% on 25 field images) despite 99% in-distribution.",
+      "citation": "neghani (2026). plantvillage-mobilenetv2. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plant-disease-mobilenetv2-tamilnadu",
+      "name": "Plant Disease MobileNetV2 (Tamil Nadu focus)",
+      "developer": "Kathir56 (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "MobileNetV2 fine-tuned on a small stratified PlantVillage subset (8,000 training images) for the 38 classes, framed for Tamil Nadu crops.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "MobileNetV2",
+      "framework": "PyTorch / Transformers",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/Kathir56/plant-disease-tamilnadu",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/Kathir56/plant-disease-tamilnadu"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "plantvillage_brandonfors",
+          "split": "8,000 stratified train / 10,849 test images",
+          "metrics": {
+            "accuracy": 0.9731,
+            "f1_weighted": 0.9731
+          },
+          "primary_metric": "accuracy",
+          "notes": null,
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/Kathir56/plant-disease-tamilnadu"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantvillage_brandonfors",
+          "name": "PlantVillage (BrandonFors HF train/test split)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "PlantVillage re-uploaded to Hugging Face with an 80/20 train/test split; 38 classes, lab background.",
+          "link": "https://huggingface.co/datasets/BrandonFors/Plant-Diseases-PlantVillage-Dataset",
+          "license": "CC0-1.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset; different split."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "hyperparameters_only",
+        "notes": "No training script published.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Small PlantVillage classifier trained with limited data.",
+      "limitations": "Lab images only; the card's mention of Paddy Doctor and sugarcane data is future work, not part of this model.",
+      "citation": "Kathir56 (2026). plant-disease-tamilnadu. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "fitoasistente-vit-plantvillage",
+      "name": "FitoAsistente ViT-Base / ConvNeXt-Tiny (PlantVillage 20% subset)",
+      "developer": "Núñez Moya & Rietta González (Universidad San Sebastián)",
+      "publisher_type": "community",
+      "summary": "Controlled comparison of ViT-Base/16 and ConvNeXt-Tiny fine-tuned on the same 20% stratified PlantVillage subset; the card explains why macro-F1 separates them while accuracy doesn't.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "apple",
+        "blueberry",
+        "cherry",
+        "maize",
+        "corn",
+        "grape",
+        "orange",
+        "peach",
+        "bell pepper",
+        "potato",
+        "raspberry",
+        "soybean",
+        "squash",
+        "strawberry",
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "ViT-Base/16 (ImageNet-21k); ConvNeXt-Tiny (ImageNet-1k)",
+      "framework": "PyTorch / Transformers",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/JohnSupertramp2026/vit-base-plantvillage",
+        "code": null,
+        "paper": null,
+        "demo": "https://huggingface.co/spaces/JohnSupertramp2026/fitoasistente",
+        "model_card": "https://huggingface.co/JohnSupertramp2026/vit-base-plantvillage"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "ViT-Base/16",
+          "setting": "fine-tuned",
+          "eval_dataset": "plantvillage_brandonfors",
+          "split": "20% stratified subset (seed 42): 8,688 train / 1,086 val / 1,087 test",
+          "metrics": {
+            "accuracy": 0.9908,
+            "f1_macro": 0.988,
+            "f1_weighted": 0.991
+          },
+          "primary_metric": "f1_macro",
+          "notes": "CNN from scratch on the same data: 59.6% accuracy.",
+          "source": "Model card (Spanish), results table",
+          "source_url": "https://huggingface.co/JohnSupertramp2026/vit-base-plantvillage"
+        },
+        {
+          "variant": "ConvNeXt-Tiny",
+          "setting": "fine-tuned",
+          "eval_dataset": "plantvillage_brandonfors",
+          "split": "same split",
+          "metrics": {
+            "accuracy": 0.9641,
+            "f1_macro": 0.919,
+            "f1_weighted": 0.96
+          },
+          "primary_metric": "f1_macro",
+          "notes": "F1 = 0.000 on Potato healthy (3 test images). Weights: huggingface.co/JohnSupertramp2026/convnext-tiny-plantvillage.",
+          "source": "Model card results table",
+          "source_url": "https://huggingface.co/JohnSupertramp2026/convnext-tiny-plantvillage"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantvillage_brandonfors",
+          "name": "PlantVillage (BrandonFors HF copy)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "54,305 lab-background leaf photos in 38 classes; a 20% stratified subset was used.",
+          "link": "https://huggingface.co/datasets/BrandonFors/Plant-Diseases-PlantVillage-Dataset",
+          "license": "CC0-1.0",
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "plant_village_classification"
+            ],
+            "note": "Same source dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "hyperparameters_only",
+        "notes": "Full hyperparameters on the card (3 epochs, AdamW 5e-5, batch 32, seed 42, T4 GPU).",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Example of a low-data PlantVillage fine-tune with honest macro-F1 reporting.",
+      "limitations": "Lab images; tiny test set for rare classes.",
+      "citation": "Núñez Moya, J. & Rietta González, F. (2026). vit-base-plantvillage. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "arabica-coffee-leaf-effnet-b0",
+      "name": "Arabica Coffee Leaf Disease EfficientNet-B0 (dedup-aware)",
+      "developer": "Huyt (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "EfficientNet-B0 trained on AgML's arabica coffee leaf dataset after removing 93.6% duplicate rows and splitting by near-duplicate group. Reports both the leaky and the honest protocol.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "coffee"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "EfficientNet-B0 (timm, ImageNet-pretrained)",
+      "framework": "PyTorch (timm)",
+      "license": "CC BY 4.0",
+      "links": {
+        "weights": "https://huggingface.co/Huyt/arabica-coffee-leaf-disease-efficientnet-b0",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/Huyt/arabica-coffee-leaf-disease-efficientnet-b0"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "group-aware split",
+          "setting": "fine-tuned",
+          "eval_dataset": "jmuben_agml",
+          "split": "split by near-duplicate group over 2,891 independent images: 2,628 / 564 / 564",
+          "metrics": {
+            "accuracy": 0.9911,
+            "f1_macro": 0.9941
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Naive random split over all 58,549 rows gives 1.000 / 1.000. The Healthy class has only 43 independent training images.",
+          "source": "Model card, Results (honest split)",
+          "source_url": "https://huggingface.co/Huyt/arabica-coffee-leaf-disease-efficientnet-b0"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "jmuben_agml",
+          "name": "JMuBEN arabica coffee leaves (AgML copy)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Close-up arabica coffee leaf crops (Kenya) in 5 classes: Cerscospora, Healthy, Leaf rust, Miner, Phoma. Listed as 58,549 images, but only 3,756 are byte-unique and ~2,891 independent after perceptual-hash grouping.",
+          "link": "https://huggingface.co/datasets/Project-AgML/arabica_coffee_leaf_disease_classification",
+          "license": null,
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "arabica_coffee_leaf_disease_classification"
+            ],
+            "note": "Trained directly on the AgML Hugging Face copy."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "partially_documented",
+        "notes": "Deduplication procedure and hyperparameters on the card; no script published.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Coffee leaf disease triage; reference for how much duplication inflates this AgML dataset.",
+      "limitations": "Tiny effective dataset; 128×128 source crops upscaled to 224.",
+      "citation": "Huyt (2026). arabica-coffee-leaf-disease-efficientnet-b0. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "rice-leaf-disease-effnet-b0",
+      "name": "Rice Leaf Disease EfficientNet-B0 (17 classes, cleaned)",
+      "developer": "Huyt (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "EfficientNet-B0 for 17 rice leaf conditions after dropping a mislabeled Leaf Smut class, removing exact duplicates and splitting by base image.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "rice"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "EfficientNet-B0 (timm, ImageNet-pretrained)",
+      "framework": "PyTorch (timm)",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/Huyt/rice-leaf-disease-efficientnet-b0",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/Huyt/rice-leaf-disease-efficientnet-b0"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "rice_leaf_disease_images_29k",
+          "split": "group-aware 70/15/15 (18,601 / 3,984 / 3,984), zero group overlap",
+          "metrics": {
+            "accuracy": 0.9709,
+            "f1_macro": 0.9473
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Weakest: Sheath Rot F1 0.696 (15 test images). The card argues a lab/field confound, not just leakage, drives the ~98% figures quoted for this dataset.",
+          "source": "Model card, Results",
+          "source_url": "https://huggingface.co/Huyt/rice-leaf-disease-efficientnet-b0"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "rice_leaf_disease_images_29k",
+          "name": "Rice Leaf Disease Images (~29.4k, 18 folders)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Mixed lab and field rice leaf images in 18 folders (17 used): bacterial blight/streak, bakanae, brown spot, false smut, grassy/ragged stunt, hispa, leaf/neck blast, leaf scald, narrow brown spot, sheath blight/rot, stem rot, tungro, healthy. Many files are augmentations of shared base images.",
+          "link": null,
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "The model card does not give a source URL."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "partially_documented",
+        "notes": "Cleaning steps, split method and class-weighting ablation documented on the card.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Broad rice disease triage (17 conditions) with honest long-tail reporting.",
+      "limitations": "Rare classes have only 15 test images; source dataset provenance unclear.",
+      "citation": "Huyt (2026). rice-leaf-disease-efficientnet-b0. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "rice-leaf-disease-siglip2",
+      "name": "Rice Leaf Disease SigLIP2 (5 classes)",
+      "developer": "prithivMLmods (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "SigLIP2-base fine-tuned for 5 rice leaf classes: bacterial blight, blast, brown spot, healthy, tungro.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "rice"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "SigLIP2-base patch16-224",
+      "framework": "PyTorch / Transformers",
+      "license": "Apache-2.0",
+      "links": {
+        "weights": "https://huggingface.co/prithivMLmods/Rice-Leaf-Disease",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/prithivMLmods/Rice-Leaf-Disease"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "sharmin3_rice_leaf_disease",
+          "split": "evaluation set of 7,421 images (split not described)",
+          "metrics": {
+            "accuracy": 0.9477,
+            "f1_macro": 0.9479
+          },
+          "primary_metric": "f1_macro",
+          "notes": "Weakest class Blast (F1 0.885).",
+          "source": "Model card classification report",
+          "source_url": "https://huggingface.co/prithivMLmods/Rice-Leaf-Disease"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "sharmin3_rice_leaf_disease",
+          "name": "Rice-Leaf-Disease (sharmin3, Hugging Face)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Rice leaf images in 5 classes (Bacterialblight, Blast, Brownspot, Healthy, Tungro); dataset card gives no provenance.",
+          "link": "https://huggingface.co/datasets/sharmin3/Rice-Leaf-Disease",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": "Provenance and license are not stated on the dataset card."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "No training details beyond the classification report.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Quick 5-class rice disease screening.",
+      "limitations": "Undocumented split and dataset provenance.",
+      "citation": "prithivMLmods (2025). Rice-Leaf-Disease. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "plant-disease-yolov11x-116",
+      "name": "Plant Disease Detection YOLOv11x (116 classes, lab + field)",
+      "developer": "JK-TK / SIV-TK (community)",
+      "publisher_type": "community",
+      "summary": "YOLOv11x detecting 116 disease / leaf classes across many crops by combining a large controlled-image set (plantwild) with pathologist-annotated field images (FieldPlant).",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "disease_detection"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "tomato",
+        "cassava",
+        "raspberry",
+        "peach",
+        "celery",
+        "basil",
+        "multiple crops"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "YOLOv11x (57M parameters)",
+      "framework": "PyTorch (Ultralytics); TFLite, ONNX exports",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/JK-TK/PlantDiseaseDetection",
+        "code": "https://github.com/SIV-TK/A-YOLOv11x-Benchmark-on-116-Classes-Using-Combined-Laboratory-and-Field-Images",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/JK-TK/PlantDiseaseDetection"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "plantwild_fieldplant_combined",
+          "split": "70/20/10 split of 23,689 images (test 2,370)",
+          "metrics": {
+            "map_50": 0.698,
+            "map": 0.684,
+            "precision": 0.622,
+            "recall": 0.695
+          },
+          "primary_metric": "map_50",
+          "notes": "mAP50-95 being almost equal to mAP50 is unusual and suggests near-whole-image boxes. The card compares against FieldPlant/PlantDoc baselines run on different data.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/JK-TK/PlantDiseaseDetection"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "plantwild_fieldplant_combined",
+          "name": "plantwild (89 classes) + FieldPlant (27 classes)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "18,533 images in 89 classes from plantwild (the card describes them as controlled-environment images) plus 5,156 pathologist-annotated field images in 27 classes from FieldPlant (Cameroon).",
+          "link": "https://www.kaggle.com/datasets/manhhoangvan/fieldplant",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_and_data_available",
+        "notes": "Training notebook (YOLO.ipynb) in the GitHub repo.",
+        "code_url": "https://github.com/SIV-TK/A-YOLOv11x-Benchmark-on-116-Classes-Using-Combined-Laboratory-and-Field-Images",
+        "commands": []
+      },
+      "strong_use_cases": "Broad multi-crop disease localization including real field photos.",
+      "limitations": "Large model; dataset licensing unclear.",
+      "citation": "JK-TK (2026). PlantDiseaseDetection. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "ip102-yolo11s-pest",
+      "name": "IP102 Pest Detector (YOLO11s)",
+      "developer": "underdogquality (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "YOLO11s detecting 102 agricultural insect pest species (rice leaf roller, brown planthopper, aphids, mole cricket, …) trained on the IP102 benchmark.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "pest_detection"
+      ],
+      "crop_types": [
+        "rice",
+        "maize",
+        "corn",
+        "wheat",
+        "soybean",
+        "citrus",
+        "mango",
+        "multiple crops"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "YOLO11s",
+      "framework": "PyTorch (Ultralytics)",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/underdogquality/yolo11s-pest-detection",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/underdogquality/yolo11s-pest-detection"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "ip102",
+          "split": "validation set ('balanced' IP102, 34K+ images)",
+          "metrics": {
+            "map_50": 0.815,
+            "map": 0.605,
+            "precision": 0.744,
+            "recall": 0.789
+          },
+          "primary_metric": "map_50",
+          "notes": "Train-set mAP@0.5 is 0.941; the gap indicates some overfitting.",
+          "source": "Model card, Performance table",
+          "source_url": "https://huggingface.co/underdogquality/yolo11s-pest-detection"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ip102",
+          "name": "IP102",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Large insect-pest benchmark (Wu et al., CVPR 2019): ~75K images of 102 pest species affecting field and economic crops, with a bounding-box subset for detection. This model used a 'balanced' 34K+ version.",
+          "link": "https://github.com/xpwu95/IP102",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "CT_PestNet_crop_pest_classification"
+            ],
+            "note": "AgML hosts IP102 (via the CT-PestNet figshare copy) for classification; the balanced detection variant used here is not documented."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "Training sizes (640 and 896), 77 epochs on A100; no script.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Pest trap / leaf photo pest localization across many crops.",
+      "limitations": "Undocumented 'balanced' subset; card has no class-level breakdown.",
+      "citation": "underdogquality (2025). yolo11s-pest-detection. Hugging Face. Dataset: Wu, X. et al. (2019) IP102, CVPR.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "weedblaster-yolov8s-cropandweed",
+      "name": "WeedBlaster YOLOv8s (CropAndWeed, CropsOrWeed9)",
+      "developer": "NvMayMay (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "YOLOv8s at 1280 px detecting 8 crop species and a weed superclass for a laser-weeding robot, trained on the CropAndWeed dataset's CropsOrWeed9 mapping.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "weed_detection",
+        "crop_detection"
+      ],
+      "crop_types": [
+        "maize",
+        "corn",
+        "sugar beet",
+        "soybean",
+        "sunflower",
+        "potato",
+        "pea",
+        "bean",
+        "pumpkin",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "ground",
+      "model_type": "task-specific",
+      "architecture": "YOLOv8s (COCO-pretrained), 1280×1280 input",
+      "framework": "PyTorch (Ultralytics)",
+      "license": "AGPL-3.0",
+      "links": {
+        "weights": "https://huggingface.co/NvMayMay/weedblaster-vision-yolov8s",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/NvMayMay/weedblaster-vision-yolov8s"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "v1.9",
+          "setting": "fine-tuned",
+          "eval_dataset": "cropandweed",
+          "split": "card's validation split (not further described)",
+          "metrics": {
+            "precision": 0.96,
+            "precision_weed": 0.85
+          },
+          "primary_metric": "precision",
+          "notes": "Only precision is reported (no recall / mAP), so the card's claims can't be fully judged; per-crop precision 0.92 (potato) to 0.988 (bean).",
+          "source": "Model card, Model Performance",
+          "source_url": "https://huggingface.co/NvMayMay/weedblaster-vision-yolov8s"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "cropandweed",
+          "name": "CropAndWeed",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "8,034 top-down images (~1.1 m height) from 929 sessions at Austrian farms and plots, ~112k instances of 74 species (16 crops, 58 weeds) with boxes, semantic masks and stem positions (Steininger et al., WACV 2023).",
+          "link": "https://github.com/cropandweed/cropandweed-dataset",
+          "license": null,
+          "agml": {
+            "status": "not_in_agml",
+            "names": [],
+            "note": null
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "hyperparameters_only",
+        "notes": "Full augmentation and optimizer settings on the card; dataset public.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Crop-vs-weed detection for row-crop robots in European fields.",
+      "limitations": "Only precision reported; AGPL license.",
+      "citation": "NvMayMay (2026). weedblaster-vision-yolov8s. Hugging Face. Dataset: Steininger, D. et al. (2023) CropAndWeed, WACV.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "grassland-weeds-yolo",
+      "name": "Grassland Weeds YOLO (dock, cow parsley, nettle, thistle)",
+      "developer": "JacobsFarmextra (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "Family of Ultralytics YOLO detection and segmentation models for four grassland / pasture weeds from smartphone photos, with a careful card (validation-set fingerprints, per-class results, limitations).",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "weed_detection",
+        "weed_segmentation"
+      ],
+      "crop_types": [
+        "grassland",
+        "pasture",
+        "weeds"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "handheld",
+      "model_type": "task-specific",
+      "architecture": "Ultralytics YOLO (detection and -seg variants)",
+      "framework": "PyTorch (Ultralytics)",
+      "license": "AGPL-3.0",
+      "links": {
+        "weights": "https://huggingface.co/JacobsFarmextra/grassland_weeds",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/JacobsFarmextra/grassland_weeds"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "grassland_weedsV1 (detection)",
+          "setting": "fine-tuned",
+          "eval_dataset": "grassland_weeds_custom",
+          "split": "random 25% validation split (re-drawn per run)",
+          "metrics": {
+            "map_50": 0.76,
+            "map": 0.532,
+            "precision": 0.543,
+            "recall": 0.823
+          },
+          "primary_metric": "map_50",
+          "notes": "Small validation set (e.g. 4 cow-parsley instances), so per-class numbers are noisy.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/JacobsFarmextra/grassland_weeds"
+        },
+        {
+          "variant": "grassland_weedsV1-seg (mask)",
+          "setting": "fine-tuned",
+          "eval_dataset": "grassland_weeds_custom",
+          "split": "random 25% validation split",
+          "metrics": {
+            "map_50": 0.83,
+            "map": 0.583,
+            "precision": 0.827,
+            "recall": 0.708
+          },
+          "primary_metric": "map_50",
+          "notes": "Mask metrics; box mAP@50 of the seg model 0.825.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/JacobsFarmextra/grassland_weeds"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "grassland_weeds_custom",
+          "name": "Grassland weeds (custom smartphone set)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Full-resolution Google Pixel photos of dock, cow parsley, stinging nettle and thistle in grassland, polygon-labelled per species, plus 237 dock images exported from Roboflow.",
+          "link": null,
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Not released."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "partially_documented",
+        "notes": "Training script and split fingerprints described on the card; data not released.",
+        "code_url": null,
+        "commands": [
+          "yolo predict model=grassland_weedsV1.pt source=path/to/images imgsz=640 conf=0.25"
+        ]
+      },
+      "strong_use_cases": "Pasture weed spotting (dock, thistle) for spot-spraying.",
+      "limitations": "Small private dataset; AGPL.",
+      "citation": "JacobsFarmextra (2026). grassland_weeds. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "yolov8-tomato-ripeness",
+      "name": "YOLOv8 Tomato Ripeness Detector (greenhouse)",
+      "developer": "pablofntdz (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "YOLOv8n/s detecting greenhouse tomatoes in three ripeness stages (unripe, semi-ripe, fully ripe), with an OpenVINO INT8 export and RealSense 3D localization code.",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "maturity_detection",
+        "fruit_detection"
+      ],
+      "crop_types": [
+        "tomato"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "ground",
+      "model_type": "task-specific",
+      "architecture": "YOLOv8n (deployed); YOLOv8s compared",
+      "framework": "PyTorch (Ultralytics); OpenVINO INT8",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/pablofntdz/yolov8-tomato-detection",
+        "code": "https://github.com/pablofntdz/yolov8-tomato-detection",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/pablofntdz/yolov8-tomato-detection"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": "YOLOv8n",
+          "setting": "fine-tuned",
+          "eval_dataset": "tomato_ripeness_multisource",
+          "split": "card's validation/test split (not described)",
+          "metrics": {
+            "map_50": 0.843,
+            "map": 0.693,
+            "precision": 0.817,
+            "recall": 0.771
+          },
+          "primary_metric": "map_50",
+          "notes": "YOLOv8s: mAP50 0.850, mAP50-95 0.710.",
+          "source": "Model card, Performance table",
+          "source_url": "https://huggingface.co/pablofntdz/yolov8-tomato-detection"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "tomato_ripeness_multisource",
+          "name": "Greenhouse tomato ripeness (three public sources, unified in Roboflow)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Greenhouse tomato images from three public sources, re-annotated with boxes for unripe / semi-ripe / fully ripe.",
+          "link": "https://github.com/pablofntdz/yolov8-tomato-detection",
+          "license": null,
+          "agml": {
+            "status": "related_in_agml",
+            "names": [
+              "tomato_ripeness_detection"
+            ],
+            "note": "Related tomato ripeness detection data exists in AgML; the card doesn't name its three sources."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "code_available",
+        "notes": "GitHub repo includes ROS / RealSense deployment.",
+        "code_url": "https://github.com/pablofntdz/yolov8-tomato-detection",
+        "commands": []
+      },
+      "strong_use_cases": "Harvest-robot ripeness detection in greenhouses on CPU (OpenVINO).",
+      "limitations": "Sources unnamed; split undocumented.",
+      "citation": "pablofntdz (2026). yolov8-tomato-detection. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "maize-disease-cnn",
+      "name": "Maize Leaf Disease CNN (4 classes)",
+      "developer": "eligapris (community, Hugging Face)",
+      "publisher_type": "community",
+      "summary": "TensorFlow CNN classifying maize leaves as healthy, gray leaf spot, blight or common rust, trained on the Kaggle corn/maize leaf disease set derived from PlantVillage and PlantDoc.",
+      "machine_learning_task": "image_classification",
+      "agricultural_tasks": [
+        "disease_classification"
+      ],
+      "crop_types": [
+        "maize",
+        "corn"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "CNN (TensorFlow SavedModel)",
+      "framework": "TensorFlow / Keras",
+      "license": "MIT",
+      "links": {
+        "weights": "https://huggingface.co/eligapris/maize-diseases-detection",
+        "code": null,
+        "paper": null,
+        "demo": "https://colab.research.google.com/drive/13-S-obR6MZDDP5kgj6ytsbFiNKzzfXbp",
+        "model_card": "https://huggingface.co/eligapris/maize-diseases-detection"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "no_metrics_reported",
+      "reported_results": [],
+      "datasets": [
+        {
+          "id": "corn_maize_kaggle",
+          "name": "Corn or Maize Leaf Disease Dataset (Kaggle)",
+          "roles": [
+            "train"
+          ],
+          "description": "4,188 maize leaf images from PlantVillage and PlantDoc: Common Rust 1,306, Gray Leaf Spot 574, Blight 1,146, Healthy 1,162.",
+          "link": "https://www.kaggle.com/datasets/smaranjitghose/corn-or-maize-leaf-disease-dataset",
+          "license": null,
+          "agml": {
+            "status": "in_agml",
+            "names": [
+              "corn_maize_leaf_disease"
+            ],
+            "note": "Same 4,188-image dataset."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "Colab inference notebook; no metrics or training details.",
+        "code_url": null,
+        "commands": []
+      },
+      "strong_use_cases": "Simple maize disease classifier trained on the same images as AgML's corn_maize_leaf_disease.",
+      "limitations": "No reported accuracy.",
+      "citation": "eligapris (2024). maize-diseases-detection. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "leafmachine3-leaf-segmenter",
+      "name": "LeafMachine3 leaf / petiole / hole segmenter (YOLO26x-seg)",
+      "developer": "phyloforfun (LeafMachine project, William Weaver)",
+      "publisher_type": "institutional",
+      "summary": "Instance segmentation of leaves, petioles and holes on single-leaf crops at 1024 px, for automated leaf trait measurement (area, shape, damage) in the LeafMachine pipeline.",
+      "machine_learning_task": "instance_segmentation",
+      "agricultural_tasks": [
+        "plant_organ_segmentation",
+        "phenotyping"
+      ],
+      "crop_types": [
+        "plants (multi-species)"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "lab",
+      "model_type": "task-specific",
+      "architecture": "YOLO26x-seg (Ultralytics), 1024 px",
+      "framework": "PyTorch (Ultralytics)",
+      "license": "AGPL-3.0",
+      "links": {
+        "weights": "https://huggingface.co/phyloforfun/lm3_leaf_segmenter__yolo26x_seg_1024",
+        "code": "https://leafmachine.org",
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/phyloforfun/lm3_leaf_segmenter__yolo26x_seg_1024"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "lm3_leaf",
+          "split": "frozen 80/10/10 split, test 1,704 images",
+          "metrics": {
+            "map_50": 0.73,
+            "map": 0.503,
+            "precision": 0.836,
+            "recall": 0.692
+          },
+          "primary_metric": "map_50",
+          "notes": "Mask metrics. Test mask AP50 per class: Leaf 0.932, Petiole 0.827, Hole 0.432. Box mAP50 0.751.",
+          "source": "Model card, Evaluation",
+          "source_url": "https://huggingface.co/phyloforfun/lm3_leaf_segmenter__yolo26x_seg_1024"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "lm3_leaf",
+          "name": "LM3_Leaf",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "16,895 single-leaf crops from 5 Labelbox segmentation projects (herbarium / leaf imagery), labelled leaf, petiole and hole.",
+          "link": null,
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Images and labels are not distributed."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "Evaluation metrics file in the repo; data not released.",
+        "code_url": "https://leafmachine.org",
+        "commands": []
+      },
+      "strong_use_cases": "Leaf area / herbivory (hole) measurement from cropped leaf images.",
+      "limitations": "Hole class weak (AP50 0.43); trained on herbarium-style crops.",
+      "citation": "Weaver, W. (2026). LeafMachine3 leaf segmenter. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    },
+    {
+      "id": "foduu-plant-leaf-yolov8s",
+      "name": "FODUU Plant Leaf Detection & Classification (YOLOv8s)",
+      "developer": "FODUU AI",
+      "publisher_type": "community",
+      "summary": "YOLOv8s that detects leaves and classifies them by plant species across ~40 crops and ornamentals (ginger, banana, tobacco, rose, soybean, papaya, mango, cotton, corn, …).",
+      "machine_learning_task": "object_detection",
+      "agricultural_tasks": [
+        "plant_classification",
+        "leaf_detection"
+      ],
+      "crop_types": [
+        "ginger",
+        "banana",
+        "tobacco",
+        "soybean",
+        "papaya",
+        "garlic",
+        "mango",
+        "cotton",
+        "maize",
+        "corn",
+        "strawberry",
+        "potato",
+        "wheat",
+        "olive",
+        "rice",
+        "lemon",
+        "cabbage",
+        "guava",
+        "chili",
+        "multiple crops"
+      ],
+      "sensor_modality": "rgb",
+      "platform": "mixed",
+      "model_type": "task-specific",
+      "architecture": "YOLOv8s",
+      "framework": "PyTorch (Ultralytics 8.0.43, ultralyticsplus)",
+      "license": "Not stated",
+      "links": {
+        "weights": "https://huggingface.co/foduucom/plant-leaf-detection-and-classification",
+        "code": null,
+        "paper": null,
+        "demo": null,
+        "model_card": "https://huggingface.co/foduucom/plant-leaf-detection-and-classification"
+      },
+      "hosting": "huggingface",
+      "agml_benchmarked": false,
+      "verification": "source_reported",
+      "reported_results": [
+        {
+          "variant": null,
+          "setting": "fine-tuned",
+          "eval_dataset": "foduu_leaf_custom",
+          "split": "not described",
+          "metrics": {
+            "map_50": 0.946
+          },
+          "primary_metric": "map_50",
+          "notes": "Card calls this 'precision (mAP@0.5)'; no dataset or split details.",
+          "source": "Model card model-index",
+          "source_url": "https://huggingface.co/foduucom/plant-leaf-detection-and-classification"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "foduu_leaf_custom",
+          "name": "FODUU leaf dataset (undisclosed)",
+          "roles": [
+            "train",
+            "eval"
+          ],
+          "description": "Leaf images of ~40 plant species; the card does not describe sources, size or split.",
+          "link": null,
+          "license": null,
+          "agml": {
+            "status": "not_public",
+            "names": [],
+            "note": "Not released."
+          }
+        }
+      ],
+      "reproduction": {
+        "status": "weights_only",
+        "notes": "Inference snippet only.",
+        "code_url": null,
+        "commands": [
+          "pip install ultralyticsplus==0.0.28 ultralytics==8.0.43"
+        ]
+      },
+      "strong_use_cases": "Rough leaf localization + species tag across many crops (36 likes on the Hub).",
+      "limitations": "Undisclosed data; no license; old Ultralytics version.",
+      "citation": "FODUU AI (2023). plant-leaf-detection-and-classification. Hugging Face.",
+      "added": "2026-10-16",
+      "last_checked": "2026-10-16"
+    }
+  ]
+}

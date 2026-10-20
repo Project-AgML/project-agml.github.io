@@ -16,6 +16,7 @@ import { oklchToRgb } from '../lib/plotlyChrome';
 import { EmbeddingPlot2D } from './EmbeddingPlot2D';
 import { EmbeddingPlot3D } from './EmbeddingPlot3D';
 import { PointCloudPlot3D } from './PointCloudPlot3D';
+import { DatasetModelsSection } from './DatasetModelsSection';
 import { ScoringMethodologyModal } from './ScoringMethodologyModal';
 import styles from './DatasetMetadataModal.module.css';
 
@@ -1481,6 +1482,8 @@ export function DatasetMetadataModal({
 						    once the field is normalized to an absolute URL upstream. */}
 					</div>
 				)}
+
+				<DatasetModelsSection datasetName={dataset.name} />
 
 				<section className={styles.section}>
 					<h3 className={styles.sectionTitle}>

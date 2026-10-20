@@ -1,0 +1,332 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--agml-modal-overlay);
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  width: min(1040px, 95vw);
+  max-height: min(88vh, 920px);
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-surface-strong);
+  box-shadow: var(--agml-shadow-strong);
+  color: var(--agml-text);
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.headerBadges,
+.badgeWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.closeButton {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--agml-border-strong);
+  border-radius: 6px;
+  background: var(--agml-surface-soft);
+  color: var(--agml-text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  background: var(--agml-border);
+  outline: none;
+}
+
+.taskBadge,
+.tag,
+.unverifiedBadge,
+.verifiedBadge,
+.statusPill {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tag {
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
+}
+
+.badgeClassification {
+  background: var(--agml-badge-classification-bg);
+  color: var(--agml-badge-classification-fg);
+}
+
+.badgeDetection {
+  background: var(--agml-badge-detection-bg);
+  color: var(--agml-badge-detection-fg);
+}
+
+.badgeSegmentation {
+  background: var(--agml-badge-segmentation-bg);
+  color: var(--agml-badge-segmentation-fg);
+}
+
+.badgeOther {
+  background: var(--agml-badge-other-bg);
+  color: var(--agml-badge-other-fg);
+}
+
+.unverifiedBadge {
+  background: var(--agml-warning-soft);
+  color: var(--agml-warning-text);
+  font-weight: 600;
+}
+
+.verifiedBadge {
+  background: var(--agml-accent-soft);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.disclaimer {
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.85rem;
+  border-left: 3px solid var(--agml-warning-text);
+  border-radius: 4px;
+  background: var(--agml-warning-soft);
+  color: var(--agml-text);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0 1.25rem;
+}
+
+.detailItem {
+  min-width: 0;
+}
+
+.detailLabel {
+  margin: 0 0 0.3rem;
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--agml-muted);
+}
+
+.detailValue {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.externalLink,
+.primaryLink {
+  display: inline-flex;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-tag-bg);
+  color: var(--agml-tag-fg);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.primaryLink {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: var(--agml-page-bg);
+  font-weight: 600;
+}
+
+.externalLink:hover,
+.externalLink:focus-visible {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.primaryLink:hover,
+.primaryLink:focus-visible {
+  color: var(--agml-page-bg);
+  background: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.section {
+  margin-bottom: 1.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--agml-muted);
+  margin: 0 0 0.65rem;
+}
+
+.bodyText {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.bodyText + .bodyText {
+  margin-top: 0.5rem;
+}
+
+.smallText {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  color: var(--agml-muted);
+  line-height: 1.45;
+}
+
+.inlineLabel {
+  color: var(--agml-muted);
+  font-weight: 600;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.table th,
+.table td {
+  border: none;
+  border-bottom: 1px solid var(--agml-border);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--agml-muted);
+  background: transparent;
+}
+
+.table tr {
+  background: transparent;
+  border: none;
+}
+
+.primaryMetric {
+  font-weight: 700;
+}
+
+.datasetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.datasetRow {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--agml-border);
+  border-radius: 8px;
+  background: var(--agml-surface-soft);
+}
+
+.datasetHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.datasetName {
+  font-family: var(--ifm-code-font-family);
+  font-weight: 600;
+  font-size: 0.84rem;
+  margin-right: 0.25rem;
+}
+
+.statusInAgml {
+  background: var(--agml-accent-soft);
+  color: var(--ifm-color-primary);
+}
+
+.statusRelated {
+  background: var(--agml-tag-bg);
+  color: var(--agml-caution-text);
+}
+
+.statusOther {
+  background: var(--agml-tag-bg);
+  color: var(--agml-muted);
+}
+
+.code {
+  margin: 0.5rem 0 0;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.76rem;
+  border-radius: 6px;
+  background: var(--agml-surface-soft);
+  border: 1px solid var(--agml-border);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: 1.1rem;
+  }
+}
