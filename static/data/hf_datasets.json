@@ -29067,5 +29067,165 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/image_safari_yam_iita_osogbo",
     "examples_image_url": "/img/agml/sample_images/image_safari_yam_iita_osogbo_sample.webp"
+  },
+  {
+    "name": "escayard_vine_esca",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Vineyards B7 and B9, Tomiño, Pontevedra, Galicia, Spain"
+    ],
+    "lat_lon": [],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Apple iPhone X smartphone",
+      "Xiaomi Poco X3 Pro smartphone (datasheet: Poco Phone X4)"
+    ],
+    "collection_period": "July 14-15, 2022",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 253,
+    "classes": [
+      "NO",
+      "YES"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110497",
+    "citation": "Vélez, S., Ariza-Sentís, M., &amp; Valente, J. (2023). *Precision viticulture dataset for detailed vineyard mapping composed of geotagged smartphone ground images, phytosanitary status, UAV orthomosaics, 3D point clouds, and RTK GNSS data - Northern Spain, July 2022* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10362568",
+    "bibtex": "@article{vlez2024escayard,\n  title={EscaYard: Precision viticulture multimodal dataset of vineyards affected by Esca disease consisting of geotagged smartphone images, phytosanitary status, UAV 3D point clouds and Orthomosaics},\n  author={Vélez, Sergio and Ariza-Sentís, Mar and Valente, João},\n  journal={Data in Brief},\n  volume={54},\n  pages={110497},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 1536189879,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/escayard_vine_esca",
+    "examples_image_url": "/img/agml/sample_images/escayard_vine_esca_sample.webp"
+  },
+  {
+    "name": "gvsdb_grapevine_virus",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Ensenada, Baja California, Mexico"
+    ],
+    "lat_lon": [],
+    "country": "Mexico",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone cameras (not specified in the record)"
+    ],
+    "collection_period": "2022-2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3195,
+    "classes": [
+      "asymptomatic_or_negative",
+      "symptomatic_or_positive"
+    ],
+    "license": "cc-by-nc-4.0",
+    "documentation": "",
+    "citation": "García, K., &amp; Carrillo Tripp, J. (2025). *Grapevine Virus and Symptom Database (GVS-DB)* [Dataset]. Mendeley Data. https://doi.org/10.17632/WKBD3WSJPJ.1",
+    "bibtex": "",
+    "zip_size_bytes": 105041922,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gvsdb_grapevine_virus",
+    "examples_image_url": "/img/agml/sample_images/gvsdb_grapevine_virus_sample.webp"
+  },
+  {
+    "name": "gvlid_grapevine_leaf_disease",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "28 vineyards east of Pune, Maharashtra, India (metadata GPS 18.73-18.83 N, 73.97-74.07 E)"
+    ],
+    "lat_lon": [
+      "18.78, 74.02"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Redmi Note 10 5G smartphone (Sony IMX582 sensor), per the metadata"
+    ],
+    "collection_period": "2023-06-15 per the metadata (all photos)",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3477,
+    "classes": [
+      "black_rot",
+      "esca",
+      "healthy",
+      "leaf_blight"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Shikalgar, A., Savalkar, A., Bhasme, A., Chavan, S., &amp; Nikam, V. (2026). *GVLiD: GrapeVine Leaf identification of the Diseases* [Dataset]. Mendeley Data. https://doi.org/10.17632/WKYMF8BHCG.5",
+    "bibtex": "",
+    "zip_size_bytes": 902225946,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gvlid_grapevine_leaf_disease",
+    "examples_image_url": "/img/agml/sample_images/gvlid_grapevine_leaf_disease_sample.webp"
+  },
+  {
+    "name": "grapevine_leaf_disease_portugal",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Folhadela, Vila Real, Portugal",
+      "Mateus, Vila Real, Portugal",
+      "Refóios do Lima, Ponte de Lima, Portugal",
+      "Abaças, Vila Real, Portugal"
+    ],
+    "lat_lon": [
+      "41.2869, -7.7357",
+      "41.2944, -7.7148",
+      "41.7928, -8.5390",
+      "41.2266, -7.6991"
+    ],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi Redmi Note 12 Pro smartphone (108MP, f/1.9, 1/1.52'', 0.7 µm native, 2.1 µm effective, 6-element lens)"
+    ],
+    "collection_period": "2024-2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 5267,
+    "classes": [
+      "Downy Mildew",
+      "Erineum Mite",
+      "Esca Complex",
+      "Healthy",
+      "Powdery Mildew"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2026.112743",
+    "citation": "Portela, F. T., Gabriel, C., Ferreira, L., Paredes, C. A., Sousa, J. J., Peres, E., Morais, R., &amp; Pádua, L. (2025). *Grapevine Leaves RGB Images of  Disease Symptons (Esca, Downy Mildew, Powdery Mildew, and Erineum Mite)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17343474",
+    "bibtex": "@article{portela2026dataset,\n  title={Dataset of RGB images of healthy grapevine leaves and with downy mildew, powdery mildew, Esca complex, and erineum mite symptoms},\n  author={Portela, Fernando and Carneiro, Gabriel and Ferreira, Leilson and Paredes, Cláudio A and Sousa, Joaquim J and Peres, Emanuel and Morais, Raul and Pádua, Luís},\n  journal={Data in Brief},\n  volume={66},\n  pages={112743},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 770180001,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_leaf_disease_portugal",
+    "examples_image_url": "/img/agml/sample_images/grapevine_leaf_disease_portugal_sample.webp"
   }
 ]
