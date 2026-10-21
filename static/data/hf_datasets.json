@@ -29290,7 +29290,7 @@
     "zip_size_bytes": 252498675,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/ucm_land_use_classification",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/ucm_land_use_classification_sample.webp"
   },
   {
     "name": "siri_whu_scene_classification",
@@ -29332,7 +29332,7 @@
     "zip_size_bytes": 148124034,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/siri_whu_scene_classification",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/siri_whu_scene_classification_sample.webp"
   },
   {
     "name": "AvoAir_DB_unlabeled",
@@ -29365,7 +29365,7 @@
     "zip_size_bytes": 7546795942,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_unlabeled",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/AvoAir_DB_unlabeled_sample.webp"
   },
   {
     "name": "AvoAir_DB_annotated",
@@ -29402,7 +29402,7 @@
     "zip_size_bytes": 686520687,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_annotated",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/AvoAir_DB_annotated_sample.webp"
   },
   {
     "name": "tomato_disease_detection",
@@ -29444,7 +29444,7 @@
     "zip_size_bytes": 2988455725,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_disease_detection",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/tomato_disease_detection_sample.webp"
   },
   {
     "name": "YOLOPOD_Soyabean_Pod_Counting_Dataset",
@@ -29478,7 +29478,7 @@
     "zip_size_bytes": 6122850302,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/YOLOPOD_Soyabean_Pod_Counting_Dataset",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/YOLOPOD_Soyabean_Pod_Counting_Dataset_sample.webp"
   },
   {
     "name": "MTDC_Maize_Tassels_Detection_Counting_Dataset",
@@ -29509,7 +29509,7 @@
     "zip_size_bytes": 1241762118,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/MTDC_Maize_Tassels_Detection_Counting_Dataset",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/MTDC_Maize_Tassels_Detection_Counting_Dataset_sample.webp"
   },
   {
     "name": "CBDA_Cotton_Ball_Detection_Augmented",
@@ -29540,7 +29540,7 @@
     "zip_size_bytes": 220633221,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CBDA_Cotton_Ball_Detection_Augmented",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/CBDA_Cotton_Ball_Detection_Augmented_sample.webp"
   },
   {
     "name": "leaf_counting_denmark",
@@ -29577,7 +29577,7 @@
     "zip_size_bytes": 927547928,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/leaf_counting_denmark",
-    "examples_image_url": "",
+    "examples_image_url": "/img/agml/sample_images/leaf_counting_denmark_sample.webp",
     "stats_mean": [
       0.4266,
       0.4274,
@@ -29593,7 +29593,11 @@
     "name": "fruits_detection_australia",
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
-    "location": [],
+    "location": [
+      "Warburton, Victoria, Australia (apples)",
+      "Bundaberg, Queensland, Australia (mangoes)",
+      "Mildura, Victoria, Australia (almonds)"
+    ],
     "lat_lon": [],
     "country": "Australia",
     "environment": "field",
@@ -29604,9 +29608,13 @@
       "almond"
     ],
     "sensor_modality": "rgb",
-    "imaging_equipment": [],
+    "imaging_equipment": [
+      "PointGrey Ladybug3 on the Shrimp unmanned ground vehicle (apples, 1616 x 1232)",
+      "Prosilica GT3300c with external strobes on the Shrimp unmanned ground vehicle (mangoes, 3296 x 2472, night-time)",
+      "Canon EOS 60D, handheld (almonds, 3456 x 5184)"
+    ],
     "collection_period": "",
-    "platform": "ground",
+    "platform": "ground, handheld",
     "input_data_format": "parquet",
     "annotation_format": "boundingBox",
     "num_images": 3704,
@@ -29616,13 +29624,13 @@
       "almond"
     ],
     "license": "",
-    "documentation": "https://data.acfr.usyd.edu.au/ag/treecrops/2016-multifruit",
-    "citation": "Bargoti, S., & Underwood, J. (2017). Deep Fruit Detection in Orchards. 2017 IEEE International Conference on Robotics and Automation (ICRA). arXiv:1610.03677",
-    "bibtex": "",
+    "documentation": "https://data.acfr.usyd.edu.au/ag/treecrops/2016-multifruit/",
+    "citation": "Bargoti, S., & Underwood, J. (2017). Deep Fruit Detection in Orchards. 2017 IEEE International Conference on Robotics and Automation (ICRA), 3626-3633. arXiv:1610.03677. Dataset: ACFR Orchard Fruit Dataset, Australian Centre for Field Robotics, The University of Sydney.",
+    "bibtex": "@inproceedings{bargoti2017deep,\n  title={Deep Fruit Detection in Orchards},\n  author={Bargoti, Suchet and Underwood, James},\n  booktitle={2017 IEEE International Conference on Robotics and Automation (ICRA)},\n  pages={3626--3633},\n  year={2017},\n  eprint={1610.03677},\n  archivePrefix={arXiv}\n}",
     "zip_size_bytes": 2232261211,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/fruits_detection_australia",
-    "examples_image_url": ""
+    "examples_image_url": "/img/agml/sample_images/fruits_detection_australia_sample.webp"
   },
   {
     "name": "sorghum_lidar_point_cloud_segmentation",
