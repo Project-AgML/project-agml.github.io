@@ -5540,16 +5540,39 @@
     "name": "vine_virus_photo_dataset",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
-    "location": null,
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
+    "location": [
+      "Napa County and the North Coast, California, USA (25 UCCE vineyard blocks plus blocks of 15 participating growers)"
+    ],
+    "lat_lon": [],
+    "country": "United States",
     "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone",
+      "iPad"
+    ],
+    "collection_period": "2021 to 2023 growing seasons, early September to mid-October",
     "platform": "handheld, ground",
     "input_data_format": "jpg, png, jpeg, JPG",
     "annotation_format": "directory_names",
     "num_images": 3866,
-    "documentation": null,
-    "classes": "Leafroll 3, No Virus, Other Red, Red Blotch",
+    "classes": [
+      "Leafroll 3",
+      "No Virus",
+      "Other Red",
+      "Red Blotch"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1094/PDIS-09-24-2048-RE",
+    "citation": "MacDonald, S. L., Shapland, T., Fendell-Hummel, H. G., Hobbs, M. B., Rohrs, J. K., & Cooper, M. L. (2025). Leveraging Artificial Intelligence to Develop a Decision Support Tool for Visual Symptom Assessment of Grapevine Leafroll and Red Blotch Diseases. *Plant Disease*, 109(7). https://doi.org/10.1094/PDIS-09-24-2048-RE",
+    "bibtex": "@article{macdonald2025leveraging,\n  title={Leveraging Artificial Intelligence to Develop a Decision Support Tool for Visual Symptom Assessment of Grapevine Leafroll and Red Blotch Diseases},\n  author={MacDonald, Sarah L. and Shapland, Tom and Fendell-Hummel, Hannah G. and Hobbs, Malcolm B. and Rohrs, Jennifer K. and Cooper, Monica L.},\n  journal={Plant Disease},\n  volume={109},\n  number={7},\n  year={2025},\n  publisher={The American Phytopathological Society},\n  doi={10.1094/PDIS-09-24-2048-RE},\n  url={https://doi.org/10.1094/PDIS-09-24-2048-RE}\n}",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vine_virus_photo_dataset",
+    "examples_image_url": "/img/agml/sample_images/vine_virus_photo_dataset_sample.webp",
     "stats_mean": [
       0.45,
       0.449,
@@ -5559,14 +5582,6 @@
       0.231,
       0.228,
       0.23
-    ],
-    "examples_image_url": "/img/agml/sample_images/vine_virus_photo_dataset_sample.webp",
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/vine_virus_photo_dataset",
-    "license": "apache-2.0",
-    "citation": "",
-    "crop_types": [
-      "vine"
     ]
   },
   {
