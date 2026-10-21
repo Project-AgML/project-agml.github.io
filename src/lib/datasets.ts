@@ -730,6 +730,7 @@ export interface DatasetStats {
     datasetCount: number;
     imageCount: number;
     taskTypeCount: number;
+    cropCount: number;
 }
 
 // `parent_dataset` means two different things depending on the record. On vision datasets it
@@ -793,11 +794,21 @@ export function computeDatasetStats(datasets: Dataset[]): DatasetStats {
             .map((dataset) => dataset.machine_learning_task)
             .filter((task): task is string => Boolean(task)),
     ).size;
+    // Distinct crops named by top-level datasets. Species rolled up from child datasets
+    // (`child_crop_types`) are left out: iNatAg alone contributes ~2,900 wild plant species,
+    // which would swamp the count and aren't crops.
+    const cropCount = new Set(
+        topLevel
+            .flatMap((dataset) => dataset.crop_types ?? [])
+            .map((crop) => crop.trim().toLowerCase())
+            .filter(Boolean),
+    ).size;
 
     return {
         datasetCount: topLevel.length,
         imageCount,
         taskTypeCount,
+        cropCount,
     };
 }
 
