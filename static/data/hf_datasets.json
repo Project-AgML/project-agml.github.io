@@ -29242,5 +29242,797 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_leaf_disease_portugal",
     "examples_image_url": "/img/agml/sample_images/grapevine_leaf_disease_portugal_sample.webp"
+  },
+  {
+    "name": "ucm_land_use_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "United States",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "aerial",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2100,
+    "classes": [
+      "agricultural",
+      "airplane",
+      "baseball_diamond",
+      "beach",
+      "buildings",
+      "chaparral",
+      "dense_residential",
+      "forest",
+      "freeway",
+      "golf_course",
+      "harbor",
+      "intersection",
+      "medium_residential",
+      "mobile_home_park",
+      "overpass",
+      "parking_lot",
+      "river",
+      "runway",
+      "sparse_residential",
+      "storage_tanks",
+      "tennis_court"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.6084/M9.FIGSHARE.6085976.V2",
+    "citation": "Yang, Y., & Newsam, S. (2010). Bag-of-visual-words and spatial extensions for land-use classification. Proceedings of the 18th SIGSPATIAL International Conference on Advances in Geographic Information Systems, 270-279. https://doi.org/10.1145/1869790.1869829",
+    "bibtex": "@inproceedings{yang2010bag,\n  title={Bag-of-visual-words and spatial extensions for land-use classification},\n  author={Yang, Yi and Newsam, Shawn},\n  booktitle={Proceedings of the 18th SIGSPATIAL International Conference on Advances in Geographic Information Systems},\n  pages={270--279},\n  year={2010},\n  doi={10.1145/1869790.1869829}\n}",
+    "zip_size_bytes": 252498675,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ucm_land_use_classification",
+    "examples_image_url": ""
+  },
+  {
+    "name": "siri_whu_scene_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Wuhan, Hubei, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2400,
+    "classes": [
+      "agriculture",
+      "commercial",
+      "harbor",
+      "idle_land",
+      "industrial",
+      "meadow",
+      "overpass",
+      "park",
+      "pond",
+      "residential",
+      "river",
+      "water"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.6084/M9.FIGSHARE.8796980.V2",
+    "citation": "Zhao, B., Zhong, Y., Xia, G.-S., & Zhang, L. (2016). Dirichlet-derived multiple topic scene classification model for high spatial resolution remote sensing imagery. IEEE Transactions on Geoscience and Remote Sensing, 54(4), 2108-2123. https://doi.org/10.1109/TGRS.2015.2496185",
+    "bibtex": "@article{zhao2016dirichlet,\n  title={Dirichlet-derived multiple topic scene classification model for high spatial resolution remote sensing imagery},\n  author={Zhao, Bei and Zhong, Yanfei and Xia, Gui-Song and Zhang, Liangpei},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  volume={54},\n  number={4},\n  pages={2108--2123},\n  year={2016},\n  doi={10.1109/TGRS.2015.2496185}\n}",
+    "zip_size_bytes": 148124034,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/siri_whu_scene_classification",
+    "examples_image_url": ""
+  },
+  {
+    "name": "AvoAir_DB_unlabeled",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Allal Tazi, Kénitra Province, Morocco"
+    ],
+    "lat_lon": [],
+    "country": "Morocco",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "avocado"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro UAV with FC6310 RGB camera (20 MP CMOS), 90 m altitude, 2.7 cm/px"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 984,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108738",
+    "citation": "El Amraoui, K., El Ansari, M., Lghoul, M., El Alaoui, M., Abanay, A., Jabri, B., Masmoudi, L., & Valente, J. (2022). Avo-AirDB: An avocado UAV Database for agricultural image segmentation and classification. Data in Brief, 45, 108738. https://doi.org/10.1016/j.dib.2022.108738",
+    "bibtex": "",
+    "zip_size_bytes": 7546795942,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_unlabeled",
+    "examples_image_url": ""
+  },
+  {
+    "name": "AvoAir_DB_annotated",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Allal Tazi, Kénitra Province, Morocco"
+    ],
+    "lat_lon": [],
+    "country": "Morocco",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "avocado"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro UAV with FC6310 RGB camera (20 MP CMOS), 90 m altitude, 2.7 cm/px"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 89,
+    "classes": [
+      "large",
+      "medium",
+      "small"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108738",
+    "citation": "El Amraoui, K., El Ansari, M., Lghoul, M., El Alaoui, M., Abanay, A., Jabri, B., Masmoudi, L., & Valente, J. (2022). Avo-AirDB: An avocado UAV Database for agricultural image segmentation and classification. Data in Brief, 45, 108738. https://doi.org/10.1016/j.dib.2022.108738",
+    "bibtex": "",
+    "zip_size_bytes": 686520687,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_annotated",
+    "examples_image_url": ""
+  },
+  {
+    "name": "tomato_disease_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Modern agricultural park greenhouses, Sichuan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2024",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1026,
+    "classes": [
+      "GrayMold_Fruit",
+      "GrayMold_Leaf",
+      "Viral_Leaf",
+      "Viral_Top",
+      "Virus_Middle",
+      "Wilt_Base",
+      "Wilt_Leaf",
+      "Wilt_Middle",
+      "Wilt_Stem",
+      "Wilt_Top"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112032",
+    "citation": "Liu, Y., Zhu, Y., Hu, L., Huo, Y., Gao, W., Hu, R., & He, P. (2025). A labeled image dataset of common tomato diseases for classification and object detection. Data in Brief, 63, 112032. https://doi.org/10.1016/j.dib.2025.112032",
+    "bibtex": "@article{LIU2025112032,\n  title={A labeled image dataset of common tomato diseases for classification and object detection},\n  author={Liu, Yongbo and Zhu, Yuhang and Hu, Liang and Huo, Yao and Gao, Wenbo and Hu, Rongping and He, Peng},\n  journal={Data in Brief},\n  volume={63},\n  pages={112032},\n  year={2025},\n  doi={10.1016/j.dib.2025.112032}\n}",
+    "zip_size_bytes": 2988455725,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_disease_detection",
+    "examples_image_url": ""
+  },
+  {
+    "name": "YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Chongzhou, Sichuan, China",
+      "Renshou, Sichuan, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 1448,
+    "classes": [
+      "pod"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-023-00985-4",
+    "citation": "Xiang, S., Wang, S., Xu, M., Wang, W., & Liu, W. (2023). YOLO POD: a fast and accurate multi-task model for dense Soybean Pod counting. Plant Methods, 19(1). https://doi.org/10.1186/s13007-023-00985-4",
+    "bibtex": "@article{xiang2023yolopod,\n  title={YOLO POD: a fast and accurate multi-task model for dense Soybean Pod counting},\n  author={Xiang, Shuning and Wang, Sijun and Xu, Min and Wang, Wei and Liu, Wei},\n  journal={Plant Methods},\n  volume={19},\n  number={1},\n  year={2023},\n  publisher={Springer},\n  doi={10.1186/s13007-023-00985-4}\n}",
+    "zip_size_bytes": 6122850302,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "examples_image_url": ""
+  },
+  {
+    "name": "MTDC_Maize_Tassels_Detection_Counting_Dataset",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 361,
+    "classes": [
+      "maize"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-020-00651-1",
+    "citation": "Zou, H., Lu, H., Li, Y., Liu, L., & Cao, Z. (2020). Maize tassels detection: a benchmark of the state of the art. Plant Methods, 16(1). https://doi.org/10.1186/s13007-020-00651-1",
+    "bibtex": "@article{zou2020maize,\n  title={Maize tassels detection: a benchmark of the state of the art},\n  author={Zou, Hao and Lu, Hao and Li, Ying and Liu, Liu and Cao, Zhiguo},\n  journal={Plant Methods},\n  volume={16},\n  number={1},\n  year={2020},\n  publisher={Springer},\n  doi={10.1186/s13007-020-00651-1}\n}",
+    "zip_size_bytes": 1241762118,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MTDC_Maize_Tassels_Detection_Counting_Dataset",
+    "examples_image_url": ""
+  },
+  {
+    "name": "CBDA_Cotton_Ball_Detection_Augmented",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "cotton"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 180,
+    "classes": [
+      "cotton_ball"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Amrani, M., Sohel, F., Murray, N., & Hazel, S. (2023). Plant Detection and Counting: Enhancing Precision Agriculture in UAV and General Scenes. IEEE Access.",
+    "bibtex": "@article{amrani2023plant,\n  title={Plant Detection and Counting: Enhancing Precision Agriculture in UAV and General Scenes},\n  author={Amrani, Moussa and Sohel, Ferdous and Murray, Neil and Hazel, Susan},\n  journal={IEEE Access},\n  year={2023},\n  publisher={IEEE}\n}",
+    "zip_size_bytes": 220633221,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CBDA_Cotton_Ball_Detection_Augmented",
+    "examples_image_url": ""
+  },
+  {
+    "name": "leaf_counting_denmark",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_phenotyping",
+    "location": [],
+    "lat_lon": [],
+    "country": "Denmark",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "mixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 9372,
+    "classes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9+"
+    ],
+    "license": "",
+    "documentation": "https://vision.eng.au.dk/leaf-counting-dataset/",
+    "citation": "Teimouri, N., Dyrmann, M., Nielsen, P. R., Mathiassen, S. K., Somerville, G. J., & Jørgensen, R. N. (2018). Weed Growth Stage Estimation Using Deep Convolutional Neural Networks. Sensors, 18(5), 1580. https://doi.org/10.3390/s18051580",
+    "bibtex": "",
+    "zip_size_bytes": 927547928,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/leaf_counting_denmark",
+    "examples_image_url": "",
+    "stats_mean": [
+      0.4266,
+      0.4274,
+      0.3418
+    ],
+    "stats_std": [
+      0.123,
+      0.1435,
+      0.1149
+    ]
+  },
+  {
+    "name": "fruits_detection_australia",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "mango",
+      "almond"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3704,
+    "classes": [
+      "apple",
+      "mango",
+      "almond"
+    ],
+    "license": "",
+    "documentation": "https://data.acfr.usyd.edu.au/ag/treecrops/2016-multifruit",
+    "citation": "Bargoti, S., & Underwood, J. (2017). Deep Fruit Detection in Orchards. 2017 IEEE International Conference on Robotics and Automation (ICRA). arXiv:1610.03677",
+    "bibtex": "",
+    "zip_size_bytes": 2232261211,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fruits_detection_australia",
+    "examples_image_url": ""
+  },
+  {
+    "name": "sorghum_lidar_point_cloud_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "plant_organ_segmentation",
+    "location": [],
+    "lat_lon": [],
+    "country": "South Korea",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sorghum"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 502,
+    "classes": [
+      "leaf",
+      "stem",
+      "panicle"
+    ],
+    "license": "",
+    "documentation": "https://doi.org/10.17632/pfnfzrmrg7.1",
+    "citation": "Patel, A. K., Cho, B.-K., & Park, E.-S. (2023). Sorghum Plants Labeled 3D LiDAR Point Cloud Data (Version 1) [Data set]. Mendeley Data. https://doi.org/10.17632/pfnfzrmrg7.1",
+    "bibtex": "",
+    "zip_size_bytes": 1575119231,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sorghum_lidar_point_cloud_segmentation",
+    "examples_image_url": ""
+  },
+  {
+    "name": "AgriBench",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Land Cover",
+      "Land Use",
+      "Aesthetic Score",
+      "Quality Score"
+    ],
+    "num_task_types": 4,
+    "location": "European Union (27 countries)",
+    "environment": "field",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "ground",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 1784,
+    "augmented_num_images": null,
+    "num_rows": 7136,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://doi.org/10.1007/978-3-031-91835-3_14",
+    "examples_image_url": null,
+    "license": "cc-by-4.0",
+    "citation": "Zhou, Yutong; Ryo, Masahiro (2024), \"AgriBench: A Hierarchical Agriculture Benchmark for Multimodal Large Language Models\", ECCV 2024 Workshops, arXiv:2412.00465",
+    "bibtex": "@article{zhou2024agribench,\n  title={AgriBench: A Hierarchical Agriculture Benchmark for Multimodal Large Language Models},\n  author={Zhou, Yutong and Ryo, Masahiro},\n  journal={arXiv preprint arXiv:2412.00465},\n  year={2024}\n}",
+    "parent_dataset": "https://github.com/Yutong-Zhou-cv/AgriBench",
+    "zip_size_bytes": 917835987,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgriBench",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 1,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "LUCAS rural landscape street-view images (Martinez-Sanchez et al., 2024)"
+      ]
+    }
+  },
+  {
+    "name": "TomaMMU",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Healthy-Diseased Classification",
+      "Leaf Count",
+      "Crop Species Identification",
+      "Symptom Identification",
+      "Pathogen Classification",
+      "Disease Classification",
+      "Scientific Name Classification"
+    ],
+    "num_task_types": 7,
+    "location": null,
+    "environment": "mixed",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "ground",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 28112,
+    "augmented_num_images": null,
+    "num_rows": 213119,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2608.08727",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Truong, Gia-Han; Quoc, Khang Nguyen; Quach, Luyl-Da (2026), \"TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases\", arXiv, arXiv:2608.08727",
+    "bibtex": "@article{truong2026tomammu,\n  title={TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases},\n  author={Truong, Gia-Han and Quoc, Khang Nguyen and Quach, Luyl-Da},\n  journal={arXiv preprint arXiv:2608.08727},\n  year={2026}\n}",
+    "parent_dataset": "enalis/TomaMMU",
+    "zip_size_bytes": 334419476,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/TomaMMU",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 2,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "LeafNet",
+        "TOM2024"
+      ]
+    }
+  },
+  {
+    "name": "PlantMicro",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text",
+      "counting",
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Modality Identification",
+      "Domain Classification",
+      "Resin Identification",
+      "Stain/Dye Recognition",
+      "Host Identification",
+      "Pathogen Classification",
+      "Organelle Detection",
+      "Organ Prediction",
+      "Target Counting",
+      "Object Localization"
+    ],
+    "num_task_types": 10,
+    "location": null,
+    "environment": "lab",
+    "crop_types": [
+      "tomato",
+      "potato",
+      "grape",
+      "cucumber",
+      "+21 more host species"
+    ],
+    "sensor_modality": "microscopy",
+    "real_or_synthetic": "real",
+    "platform": "",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 5369,
+    "augmented_num_images": null,
+    "num_rows": 9718,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2606.22497",
+    "examples_image_url": null,
+    "license": "cc-by-4.0",
+    "citation": "Wei, Tianqi; Yu, Xin; Chen, Zhi; Chapman, Scott; Huang, Zi (2026), \"Benchmarking Vision-Language Models for Microscopic Plant Image Understanding\", arXiv, arXiv:2606.22497",
+    "bibtex": "@article{wei2026plantmicro,\n  title={Benchmarking Vision-Language Models for Microscopic Plant Image Understanding},\n  author={Wei, Tianqi and Yu, Xin and Chen, Zhi and Chapman, Scott and Huang, Zi},\n  journal={arXiv preprint arXiv:2606.22497},\n  year={2026}\n}",
+    "parent_dataset": "https://github.com/tqwei05/PlantMicro",
+    "zip_size_bytes": 537736171,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/PlantMicro",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": null,
+      "source_datasets_named": false,
+      "source_datasets": [
+        "Microscopy images gathered from peer-reviewed publications and institutional repositories"
+      ]
+    }
+  },
+  {
+    "name": "MIRAGE",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended",
+      "long_form_QA"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "MMST Standard",
+      "MMST Contextual",
+      "MMMT Direct",
+      "MMMT Decomp"
+    ],
+    "num_task_types": 4,
+    "location": null,
+    "environment": "mixed",
+    "crop_types": [
+      "mixed multiple sources"
+    ],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "handheld",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": null,
+    "augmented_num_images": null,
+    "num_rows": 40880,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2506.20100",
+    "examples_image_url": null,
+    "license": "cc-by-sa-4.0",
+    "citation": "Dongre, Vardhan; Gui, Chi; Garg, Shubham; Nayyeri, Hooshang; Tur, Gokhan; Hakkani-Tür, Dilek; Adve, Vikram S. (2025), \"MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations\", NeurIPS 2025, arXiv:2506.20100",
+    "bibtex": "@misc{mirage2025,\n  title={MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations},\n  author={Dongre, Vardhan and Gui, Chi and Garg, Shubham and Nayyeri, Hooshang and Tur, Gokhan and Hakkani-T{\\\"u}r, Dilek and Adve, Vikram S.},\n  year={2025},\n  eprint={2506.20100},\n  archivePrefix={arXiv},\n  note={NeurIPS 2025},\n  url={https://arxiv.org/abs/2506.20100}\n}",
+    "parent_dataset": "https://mirage-benchmark.github.io/",
+    "zip_size_bytes": 10953614936,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MIRAGE",
+    "composition": {
+      "is_compiled": false,
+      "num_source_datasets": 1,
+      "source_datasets_named": false,
+      "source_datasets": [
+        "Expert-guided crop health and pest diagnosis consultations (2012-2025)"
+      ]
+    }
+  },
+  {
+    "name": "LeafNet",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "open_ended"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Symptom Description"
+    ],
+    "num_task_types": 1,
+    "location": null,
+    "environment": "mixed",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "ground",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 121337,
+    "augmented_num_images": null,
+    "num_rows": 121337,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2602.13662",
+    "examples_image_url": null,
+    "license": "cc-by-4.0",
+    "citation": "Nguyen Quoc, Khang; Dao, Phuong D.; Quach, Luyl-Da (2026), \"LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases\", arXiv, arXiv:2602.13662",
+    "bibtex": "@misc{nguyenquoc2026leafnet,\n  title={LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases},\n  author={Nguyen Quoc, Khang and Dao, Phuong D. and Quach, Luyl-Da},\n  year={2026},\n  eprint={2602.13662},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2602.13662}\n}",
+    "parent_dataset": null,
+    "zip_size_bytes": 8605606121,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet",
+    "composition": {
+      "is_compiled": false,
+      "num_source_datasets": 1,
+      "source_datasets_named": false,
+      "source_datasets": []
+    }
+  },
+  {
+    "name": "AgroOmni",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [],
+    "agricultural_task": null,
+    "task_dimensions": [],
+    "num_task_types": 14,
+    "location": null,
+    "environment": "mixed",
+    "crop_types": [
+      "mixed multiple sources"
+    ],
+    "sensor_modality": "rgb, multispectral",
+    "real_or_synthetic": "real",
+    "platform": "uav, satellite, ground",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "mixed",
+    "num_images": 107488,
+    "augmented_num_images": null,
+    "num_rows": 288831,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2603.14342",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Zhang, Jiarui; Hu, Junqi; Mai, Zurong; Liu, Yang; Chen, Yuhang; Lou, Shuohong; Huang, Henglian; Cheng, Hong; Zhao, Lingyuan; Huang, Jianxi; Lu, Yutong; Fu, Haohuan; Zheng, Juepeng (2026), \"AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning\", arXiv, arXiv:2603.14342",
+    "bibtex": "@misc{agroomni2026,\n  title={AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning},\n  author={Zhang, Jiarui and Hu, Junqi and Mai, Zurong and Liu, Yang and Chen, Yuhang and Lou, Shuohong and Huang, Henglian and Cheng, Hong and Zhao, Lingyuan and Huang, Jianxi and Lu, Yutong and Fu, Haohuan and Zheng, Juepeng},\n  year={2026},\n  eprint={2603.14342},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2603.14342}\n}",
+    "parent_dataset": null,
+    "zip_size_bytes": 35948039429,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroOmni",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 14,
+      "source_datasets_named": true,
+      "source_datasets": [
+        "ACFR Orchard Fruit Dataset",
+        "2018 AI Challenger Dataset",
+        "IP102",
+        "Agriculture-Vision Challenge",
+        "OilPalmUAV",
+        "CropHarvest",
+        "GWHD 2021",
+        "CLCD",
+        "PhenoBench",
+        "Tomato Dataset (2023)",
+        "EarthVQA",
+        "OAM-TCD",
+        "Maize Tassel Identification Dataset (2025)",
+        "Private Parcel Dataset (2025)"
+      ]
+    }
+  },
+  {
+    "name": "PlantExpertVQA",
+    "machine_learning_task": "image-text-to-text",
+    "qa_type": [
+      "judgement",
+      "open_ended",
+      "long_form_QA"
+    ],
+    "agricultural_task": null,
+    "task_dimensions": [
+      "Existence & Sanity Check",
+      "Plant Species Identification",
+      "General Health Assessment",
+      "Visual Attribute Grounding",
+      "Detailed Verification",
+      "Specific Disease Identification",
+      "Comprehensive Description",
+      "Causal Reasoning",
+      "Counterfactual Reasoning"
+    ],
+    "num_task_types": 9,
+    "location": null,
+    "environment": "mixed",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "real_or_synthetic": "real",
+    "platform": "ground",
+    "input_data_format": "",
+    "annotation_format": null,
+    "conversation_format": "single_turn_reasoning",
+    "num_images": 150841,
+    "augmented_num_images": null,
+    "num_rows": 765186,
+    "classes": [],
+    "language": [
+      "en"
+    ],
+    "documentation": "https://arxiv.org/abs/2508.17117",
+    "examples_image_url": null,
+    "license": "cc-by-nc-4.0",
+    "citation": "Sakib, Syed Nazmus; Haque, Nafiul; Hossain, Mohammad Zabed; Arman, Shifat E. (2025), \"PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science\", arXiv, arXiv:2508.17117",
+    "bibtex": "@article{sakib2025plantexpertvqa,\n  title={PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science},\n  author={Sakib, Syed Nazmus and Haque, Nafiul and Hossain, Mohammad Zabed and Arman, Shifat E.},\n  year={2025},\n  eprint={2508.17117},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2508.17117}\n}",
+    "parent_dataset": "SyedNazmusSakib/PlantExpertVQA",
+    "zip_size_bytes": 67867732325,
+    "augmented_zip_size_bytes": null,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/PlantExpertVQA",
+    "composition": {
+      "is_compiled": true,
+      "num_source_datasets": 45,
+      "source_datasets_named": false,
+      "source_datasets": [
+        "PlantVillage"
+      ]
+    }
   }
 ]
