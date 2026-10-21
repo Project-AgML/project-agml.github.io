@@ -9328,7 +9328,7 @@
       "recall": 0.399749
     },
     "crop_types": [
-      "vine"
+      "grape"
     ],
     "machine_learning_task": "image_classification",
     "benchmarkId": 1,
