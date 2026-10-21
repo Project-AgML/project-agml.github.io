@@ -848,7 +848,7 @@
     "citation": "Alam, B M Shahria; Ahammed, Fahad; Kibria, Golam; Noor, Mohammad Tahmid; Shikdar, Omar Faruq; Mahazabin, Kazi Isat; Ali, Md Nawab Yousuf (2025), “teaLeafBD”, Mendeley Data, V4, doi: 10.17632/744vznw5k2.4",
     "zip_size_bytes": 1353513825,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/teaLeafBD_disease_classification_classification",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/teaLeafBD_disease_classification",
     "examples_image_url": "/img/agml/sample_images/teaLeafBD_disease_classification_classification_sample.webp",
     "country": "Bangladesh",
     "imaging_equipment": [
@@ -890,7 +890,7 @@
     "citation": "Kabir, Sayem ; Rashid, Mohammad Rifat Ahmmad (2024), “Image Dataset for Mango Growth Stages  Analysis”, Mendeley Data, V1, doi: 10.17632/5snwpzdtzs.1",
     "zip_size_bytes": 76123361,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_growth_object_detection",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_growth_detection",
     "examples_image_url": "/img/agml/sample_images/mango_growth_detection_sample.webp",
     "country": "Bangladesh",
     "imaging_equipment": [
@@ -1197,7 +1197,7 @@
     "citation": "Hayat, Ahatsham; Baglat, Preety; Mendonça, Fabio; Mostafa, Sheikh Shanawaz; Morgado-Dias, Fernando  (2024), “Banana Bunch Harvesting Dataset”, Mendeley Data, V1, doi: 10.17632/kjrsb7ztr9.1",
     "zip_size_bytes": 4881666205,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_bunch_maturity_classification_classification",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_bunch_maturity_classification",
     "examples_image_url": "/img/agml/sample_images/banana_bunch_maturity_classification_classification_sample.webp",
     "country": "Portugal",
     "imaging_equipment": [
@@ -5981,7 +5981,7 @@
     "stats_std": null,
     "examples_image_url": "/img/agml/sample_images/growliflower_cauliflower_segmentation_examples.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/growliflower_cauliflower_segmentation",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/growliflower_caluiflower_segmentation",
     "license": "",
     "citation": "Kierdorf, Jana & Junker-Frohn, Laura & Delaney, Mike & Olave, Mariele & Burkart, Andreas & Jaenicke, Hannah & Muller, Onno & Roscher, Ribana. (2022). GrowliFlower: An image time‐series dataset for GROWth analysis of cauLIFLOWER. Journal of Field Robotics. 40. 10.1002/rob.22122. ",
     "crop_types": [
@@ -6082,7 +6082,7 @@
     ],
     "examples_image_url": "/img/agml/sample_images/vegann_multicrop_presence_segmentation_examples.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/vegann_multicrop_presence_segmentation",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vegann_mulitcrop_presence_segmentation",
     "license": "cc-by-sa-4.0",
     "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop RGB images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of RGB images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop RGB images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n",
     "crop_types": null
@@ -13360,7 +13360,7 @@
     "bibtex": "@article{fan2026openear,\n  title={OpenEar: an ultra-affordable, high-throughput, and accurate maize ear phenotyping system},\n  author={Fan, Shaoqi and Li, Guoji and Bahitwa, Revocatus and Jia, Zhiguo and Zhang, Hongwei and Shao, Jinghong and Yu, Qiuying and Chen, Xiaoran and Qian, Yiheng and Xu, Mingchi and Zhu, Linlin and Wang, Hai},\n  journal={Plant Methods},\n  volume={22},\n  pages={26},\n  year={2026},\n  publisher={BioMed Central}\n}",
     "zip_size_bytes": 114667570,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_Projection_segmentation",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_projection_segmentation",
     "examples_image_url": "/img/agml/sample_images/OpenEar_Projection_segmentation_sample.webp"
   },
   {
