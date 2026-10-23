@@ -8,7 +8,7 @@
     ],
     "environment": "field",
     "crop_types": [
-      "grapes"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "real_or_synthetic": "real",
@@ -287,7 +287,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Moringa oleifera"
+      "moringa oleifera"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -331,7 +331,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Ash Gourd"
+      "ash gourd"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -498,7 +498,7 @@
     "imaging_equipment": [
       "Canon EOS 1500D DSLR camera, 18-55mm lens, tripod-mounted"
     ],
-    "platform": "ground_fixed",
+    "platform": "fixed",
     "bibtex": "@article{bharathi2025rgb,\n  title={RGB image dataset for okra maturity classification to enhance agricultural quality and market readiness},\n  author={Bharathi, Nikhilesh Kumar and Fj, Ferbin and others},\n  journal={Data in Brief},\n  pages={111982},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
@@ -646,7 +646,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Taro"
+      "taro"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -848,7 +848,7 @@
     "citation": "Alam, B M Shahria; Ahammed, Fahad; Kibria, Golam; Noor, Mohammad Tahmid; Shikdar, Omar Faruq; Mahazabin, Kazi Isat; Ali, Md Nawab Yousuf (2025), “teaLeafBD”, Mendeley Data, V4, doi: 10.17632/744vznw5k2.4",
     "zip_size_bytes": 1353513825,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/teaLeafBD_disease_classification_classification",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/teaLeafBD_disease_classification",
     "examples_image_url": "/img/agml/sample_images/teaLeafBD_disease_classification_classification_sample.webp",
     "country": "Bangladesh",
     "imaging_equipment": [
@@ -890,7 +890,7 @@
     "citation": "Kabir, Sayem ; Rashid, Mohammad Rifat Ahmmad (2024), “Image Dataset for Mango Growth Stages  Analysis”, Mendeley Data, V1, doi: 10.17632/5snwpzdtzs.1",
     "zip_size_bytes": 76123361,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_growth_object_detection",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_growth_detection",
     "examples_image_url": "/img/agml/sample_images/mango_growth_detection_sample.webp",
     "country": "Bangladesh",
     "imaging_equipment": [
@@ -1085,8 +1085,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "tea",
-      "Camellia sinensis"
+      "tea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1198,7 +1197,7 @@
     "citation": "Hayat, Ahatsham; Baglat, Preety; Mendonça, Fabio; Mostafa, Sheikh Shanawaz; Morgado-Dias, Fernando  (2024), “Banana Bunch Harvesting Dataset”, Mendeley Data, V1, doi: 10.17632/kjrsb7ztr9.1",
     "zip_size_bytes": 4881666205,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_bunch_maturity_classification_classification",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/banana_bunch_maturity_classification",
     "examples_image_url": "/img/agml/sample_images/banana_bunch_maturity_classification_classification_sample.webp",
     "country": "Portugal",
     "imaging_equipment": [
@@ -1225,7 +1224,6 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brinjal",
       "eggplant"
     ],
     "sensor_modality": "rgb",
@@ -1268,26 +1266,26 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Abutilon Indicum",
-      "Aloe barbadensis miller",
-      "Calotropis gigantea",
-      "Canna indica",
-      "Cissus quadrangularis",
-      "Curcuma longa",
-      "Eclipta prostrate",
-      "Eichhornia Crassipes",
-      "Hibiscus Rosasinensis",
-      "Ixora coccinea",
-      "Justica adhatoda",
-      "Murraya koenigii",
-      "Ocimum tenuiflorum",
-      "Ouretlanata",
-      "Phyllanthus amarus",
-      "Ricinus communis",
-      "Senna Atriculata",
-      "Sesbania grandiflora",
-      "Trifolium Repens",
-      "Ziziphus mauritiana"
+      "abutilon indicum",
+      "aloe barbadensis miller",
+      "calotropis gigantea",
+      "canna indica",
+      "cissus quadrangularis",
+      "curcuma longa",
+      "eclipta prostrate",
+      "eichhornia crassipes",
+      "hibiscus rosasinensis",
+      "ixora coccinea",
+      "justica adhatoda",
+      "murraya koenigii",
+      "ocimum tenuiflorum",
+      "ouretlanata",
+      "phyllanthus amarus",
+      "ricinus communis",
+      "senna atriculata",
+      "sesbania grandiflora",
+      "trifolium repens",
+      "ziziphus mauritiana"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1405,7 +1403,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Vitis vinifera",
+      "grape",
       "pardina",
       "parda",
       "macabeo",
@@ -1544,8 +1542,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "black gram",
-      "Vigna mungo"
+      "black gram"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1620,7 +1617,7 @@
       "unaffected",
       "unripe"
     ],
-    "license": "cc-by-SA-4.0",
+    "license": "cc-by-sa-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111351",
     "citation": "Arnaud Nguembang Fadja, and Armel Gabin Fameni Tagni. (2024). African Plums Dataset [Dataset]. Kaggle. https://doi.org/10.34740/KAGGLE/DSV/9694239",
     "zip_size_bytes": 307720141,
@@ -1652,7 +1649,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Hog plum"
+      "hog plum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1772,18 +1769,18 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Potato",
-      "Onion",
-      "Green Chili",
-      "Garlic",
-      "Radish",
-      "Bean",
-      "Ladies Finger",
-      "Cucumber",
-      "Bitter Melon",
-      "Brinjal (Eggplant)",
-      "Tomato",
-      "Pointed gourd"
+      "potato",
+      "onion",
+      "green chili",
+      "garlic",
+      "radish",
+      "bean",
+      "okra",
+      "cucumber",
+      "bitter gourd",
+      "eggplant",
+      "tomato",
+      "pointed gourd"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1833,7 +1830,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Centella asiatica"
+      "centella asiatica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1945,8 +1942,8 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Indian bay leaves",
-      "Cinnamomum Tamala"
+      "indian bay leaves",
+      "cinnamomum tamala"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -1969,7 +1966,7 @@
       "Realme 6i"
     ],
     "collection_period": "April-June",
-    "platform": "mobile",
+    "platform": "handheld",
     "bibtex": "@article{paygude2024dataset,\n  title={A dataset revolutionizing Indian bay leaf analysis},\n  author={Paygude, Priyanka and Thite, Sandip and Kumar, Ajay and Bhosle, Amol and Pawar, Rajendra and Mane, Renuka and Joshi, Rahul and Kasar, Manisha and Chavan, Prashant and Gayakwad, Milind},\n  journal={Data in Brief},\n  volume={57},\n  pages={111024},\n  year={2024},\n  publisher={Elsevier}\n}"
   },
   {
@@ -1983,8 +1980,8 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bean",
-      "Cowpea"
+      "bean",
+      "cowpea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2069,22 +2066,22 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Alternanthera brasiliana L. Kuntze",
-      "Hemidesmus indicus (Linn.) R. Br",
-      "Achyranthes aspera",
-      "Ayapana triplinervis",
-      "Gloriosa superba",
-      "Andrographis paniculata Wall. Ex Nees",
-      "Datura stramonium L.",
-      "Gynura procumbens (Lour.) Merr.",
-      "Artocarpus chama",
-      "Eleutherine bulbosa",
-      "Boerhavia diffusa L.",
-      "Clerodendrum indicum L. Kuntze",
-      "Justicia adhatoda L.",
-      "Ocimum gratissimum L.",
-      "Asparagus racemosus Willd",
-      "Rauwolfia serpentina"
+      "alternanthera brasiliana l. kuntze",
+      "hemidesmus indicus (linn.) r. br",
+      "achyranthes aspera",
+      "ayapana triplinervis",
+      "gloriosa superba",
+      "andrographis paniculata wall. ex nees",
+      "datura stramonium l.",
+      "gynura procumbens (lour.) merr.",
+      "artocarpus chama",
+      "eleutherine bulbosa",
+      "boerhavia diffusa l.",
+      "clerodendrum indicum l. kuntze",
+      "justicia adhatoda l.",
+      "ocimum gratissimum l.",
+      "asparagus racemosus willd",
+      "rauwolfia serpentina"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2262,8 +2259,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Money Plant",
-      "Epipremnum aureum"
+      "money plant",
+      "epipremnum aureum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2351,8 +2348,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Malabar Spinach",
-      "Basella alba"
+      "malabar spinach",
+      "basella alba"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2607,7 +2604,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Oyster Mushroom"
+      "oyster mushroom"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2922,10 +2919,10 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Cinnamomum Camphora (Camphor)",
-      "Terminalia Chebula (Haritaki)",
-      "Moringa Oleifera (Sojina)",
-      "Azadirachta Indica (Neem)"
+      "cinnamomum camphora (camphor)",
+      "terminalia chebula (haritaki)",
+      "moringa oleifera (sojina)",
+      "azadirachta indica (neem)"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -2984,7 +2981,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cotton_weed_detection",
     "examples_image_url": "/img/agml/sample_images/cotton_weed_detection_sample.webp",
-    "country": "United States of America",
+    "country": "United States",
     "imaging_equipment": [
       "Autel Robotics EVO II Dual 640T V3, 50 MP 0.8″ RYYB CMOS sensor (XL709 camera module)"
     ],
@@ -3003,8 +3000,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Tea (Camellia sinensis)",
-      "Hibiscus"
+      "tea",
+      "hibiscus"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3092,9 +3089,9 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aegle Marmelos",
-      "Lemon",
-      "Hog Plum"
+      "aegle marmelos",
+      "lemon",
+      "hog plum"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3216,7 +3213,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Potato"
+      "potato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3332,10 +3329,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bottle Gourd",
-      "Zucchini",
-      "Papaya",
-      "Tomato"
+      "bottle gourd",
+      "zucchini",
+      "papaya",
+      "tomato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3414,7 +3411,7 @@
       "Fresh",
       "Rotten"
     ],
-    "license": "cc-by-Nnc-nd-4.0",
+    "license": "cc-by-nc-nd-4.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111752",
     "citation": "Bijoy, Md Hasan Imam; Tasnim, Syeda Zarin; Awsaf, Syed Ali; Hasan, Md Zahid (2025), “FruitVision: A Benchmark Dataset for Fresh, Rotten, and Formalin-mixed Fruit Detection”, Mendeley Data, V2, doi: 10.17632/xkbjx8959c.2",
     "zip_size_bytes": 923949864,
@@ -3428,7 +3425,7 @@
       "Redmi Note 9 Pro"
     ],
     "collection_period": "April 18, 2024, and July 31, 2024",
-    "platform": "mobile",
+    "platform": "handheld",
     "bibtex": "@article{bijoy2025fruitvision,\n  title={FruitVision: A benchmark dataset for fresh, rotten, and formalin-mixed fruit detection},\n  author={Bijoy, Md Hasan Imam and Tasnim, Syeda Zarin and Awsaf, Syed Ali and Hasan, Md Zahid},\n  journal={Data in Brief},\n  volume={61},\n  pages={111752},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
@@ -3449,8 +3446,8 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "plum",
-      "Deshi Kul",
-      "Apple Kul"
+      "deshi kul",
+      "apple kul"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3500,10 +3497,10 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "mandarin",
-      "Nagpuri",
-      "China Mishti",
-      "Darjeeling",
-      "Meandering"
+      "nagpuri",
+      "china mishti",
+      "darjeeling",
+      "meandering"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3636,16 +3633,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aegle marmelos",
-      "Black plum",
-      "Custard Apple",
-      "Guava",
-      "Jackfruit",
-      "Lotkon",
-      "Lychee",
-      "Mango",
-      "Plum",
-      "Star Fruit"
+      "aegle marmelos",
+      "black plum",
+      "custard apple",
+      "guava",
+      "jackfruit",
+      "lotkon",
+      "lychee",
+      "mango",
+      "plum",
+      "starfruit"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3701,7 +3698,7 @@
       "hibiscus",
       "crown of thorns",
       "jungle geranium",
-      "Madagascar periwinkle"
+      "madagascar periwinkle"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -3781,7 +3778,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Ethiopia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "environment": "field",
@@ -3802,7 +3799,7 @@
     ],
     "examples_image_url": "/img/agml/sample_images/banana_leaf_disease_classification_examples.webp",
     "source": "huggingface",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "hailu, yordanos (2021), “Banana Leaf Disease Images”, Mendeley Data, V1, doi: 10.17632/rjykr62kdh.1",
     "crop_types": [
       "banana"
@@ -3815,7 +3812,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Uganda",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "handheld",
     "environment": "field",
@@ -3836,7 +3833,7 @@
     ],
     "examples_image_url": "/img/agml/sample_images/bean_disease_uganda_examples.webp",
     "source": "huggingface",
-    "license": "MIT",
+    "license": "mit",
     "citation": "",
     "crop_types": [
       "bean"
@@ -3868,12 +3865,11 @@
     "stats_std": null,
     "examples_image_url": "/img/agml/sample_images/blackgram_plant_leaf_disease_classification_examples.webp",
     "source": "huggingface",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Talasila, Srinivas; Rawal, Kirti; Sethi, Gaurav; MSS, Sanjay; M, Surya Prakash Reddy (2022), “Blackgram Plant Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/zfcv9fmrgv.3",
     "crop_types": [
       "black gram",
-      "Urad bean",
-      "Black mapte"
+      "black mapte"
     ],
     "hf_link": "https://huggingface.co/datasets/Project-AgML/blackgram_plant_leaf_disease_classification",
     "country": "India",
@@ -3982,7 +3978,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Malabar Spinach"
+      "malabar spinach"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -4069,7 +4065,7 @@
     "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "mobile",
+    "platform": "handheld",
     "input_data_format": "JPG",
     "annotation_format": "directory_names",
     "num_images": 5798,
@@ -4088,7 +4084,7 @@
     "examples_image_url": "/img/agml/sample_images/coconut_tree_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/coconut_tree_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "PATIL, Kailas; Thite, Sandip; Suryawanshi, Yogesh; chumchu, prawit (2023), “Coconut Tree Disease Dataset”, Mendeley Data, V1, doi: 10.17632/gh56wbsnj5.1",
     "crop_types": [
       "coconut"
@@ -4105,7 +4101,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "handheld",
@@ -4130,7 +4126,6 @@
     "license": "",
     "citation": "Singh D, Jain N, Jain P, Kayal P, Kumawat S, Batra N. PlantDoc: a dataset for visual plant disease detection. InProceedings of the 7th ACM IKDD CoDS and 25th COMAD 2020 Jan 5 (pp. 249-253).",
     "crop_types": [
-      "corn",
       "maize"
     ]
   },
@@ -4163,7 +4158,7 @@
     "examples_image_url": "/img/agml/sample_images/cucumber_disease_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/cucumber_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Sultana, Nusrat; Shorif, Sumaita Binte ; Akter, Morium ; Uddin, Mohammad Shorif  (2022), “Cucumber Disease Recognition Dataset”, Mendeley Data, V1, doi: 10.17632/y6d3z6f8z9.1",
     "crop_types": [
       "cucumber"
@@ -4180,7 +4175,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "uav",
@@ -4202,7 +4197,7 @@
     "examples_image_url": "/img/agml/sample_images/java_plum_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/java_plum_leaf_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Bhowmik, Auvick Chandra; Ahad, Taimur (2024), “Java Plum Leaf Disease Dataset”, Mendeley Data, V3, doi: 10.17632/43d75vptz4.3",
     "crop_types": [
       "java plum"
@@ -4248,7 +4243,7 @@
     "examples_image_url": "/img/agml/sample_images/mango_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/mango_leaf_disease_classification",
-    "license": "CC BY-NC 4.0",
+    "license": "cc-by-nc-4.0",
     "citation": "Ali, Sawkat; Ibrahim, Muhammad ; Ahmed, Sarder Iftekhar ; Nadim, Md. ; Mizanur, Mizanur Rahman; Shejunti, Maria Mehjabin ; Jabid, Taskeed (2022), “MangoLeafBD Dataset”, Mendeley Data, V1, doi: 10.17632/hxsnvwty3r.1",
     "crop_types": [
       "mango"
@@ -4292,7 +4287,7 @@
     "examples_image_url": "/img/agml/sample_images/orange_leaf_disease_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/orange_leaf_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Emon, Yousuf Rayhan; Ahad, Md Taimur (2023), “Multi-format open-source sweet orange leaf dataset for disease detection, classification, and analysis.”, Mendeley Data, V1, doi: 10.17632/f7cr74mwpj.1",
     "crop_types": [
       "orange"
@@ -4310,7 +4305,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -4332,7 +4327,7 @@
     "examples_image_url": "/img/agml/sample_images/paddy_disease_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/paddy_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Petchiammal A, Briskline Kiruba S, Murugan D, Pandarasamy Arjunan. (2022). Paddy Doctor: A Visual Image Dataset for Automated Paddy Disease Classification and Benchmarking. IEEE Dataport. https://dx.doi.org/10.21227/hz4v-af08",
     "crop_types": [
       "rice"
@@ -4344,7 +4339,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4366,7 +4361,7 @@
     "examples_image_url": "/img/agml/sample_images/almond_bloom_2023_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/almond_bloom_2023",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "almond"
@@ -4377,7 +4372,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4399,7 +4394,7 @@
     "examples_image_url": "/img/agml/sample_images/almond_harvest_2021_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/almond_harvest_2021",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "almond"
@@ -4410,7 +4405,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Brazil",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4432,7 +4427,7 @@
     "examples_image_url": "/img/agml/sample_images/apple_detection_drone_brazil_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_detection_drone_brazil",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@article{DBLP:journals/corr/abs-2110-12331,\n  author    = {Thiago T. Santos and\n               Luciano Gebler},\n  title     = {A methodology for detection and localization of fruits in apples orchards\n               from aerial images},\n  journal   = {CoRR},\n  volume    = {abs/2110.12331},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2110.12331},\n  eprinttype = {arXiv},\n  eprint    = {2110.12331},\n  timestamp = {Thu, 28 Oct 2021 15:25:31 +0200},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2110-12331.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
     "crop_types": [
       "apple"
@@ -4444,7 +4439,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Spain",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4478,7 +4473,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4512,9 +4507,9 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
     "num_images": 239,
@@ -4532,7 +4527,7 @@
     "examples_image_url": "/img/agml/sample_images/embrapa_wgisd_grape_detection_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/embrapa_wgisd_grape_detection",
-    "license": "CC BY-NC 4.0",
+    "license": "cc-by-nc-4.0",
     "citation": "",
     "crop_types": [
       "grape"
@@ -4543,7 +4538,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "mixed",
     "input_data_format": "JPG",
@@ -4573,7 +4568,7 @@
       "orange",
       "strawberry",
       "mango",
-      "capsicum"
+      "bell pepper"
     ],
     "bibtex": "@Article{s16081222,\nAUTHOR = {Sa, Inkyu and Ge, Zongyuan and Dayoub, Feras and Upcroft, Ben and Perez, Tristan and McCool, Chris},\nTITLE = {DeepFruits: A Fruit Detection System Using Deep Neural Networks},\nJOURNAL = {Sensors},\nVOLUME = {16},\nYEAR = {2016},\nNUMBER = {8},\nARTICLE-NUMBER = {1222},\nURL = {https://www.mdpi.com/1424-8220/16/8/1222},\nISSN = {1424-8220},\nDOI = {10.3390/s16081222}\n}"
   },
@@ -4582,7 +4577,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4604,7 +4599,7 @@
     "examples_image_url": "/img/agml/sample_images/gemini_flower_detection_2022_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_flower_detection",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "cowpea"
@@ -4615,7 +4610,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4637,7 +4632,7 @@
     "examples_image_url": "/img/agml/sample_images/gemini_leaf_detection_2022_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_leaf_detection",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "cowpea"
@@ -4648,7 +4643,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4670,7 +4665,7 @@
     "examples_image_url": "/img/agml/sample_images/gemini_plant_detection_2022_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_plant_detection",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "cowpea"
@@ -4681,7 +4676,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4703,7 +4698,7 @@
     "examples_image_url": "/img/agml/sample_images/gemini_pod_detection_2022_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/gemini_pod_detection",
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "citation": "",
     "crop_types": [
       "cowpea"
@@ -4849,7 +4844,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4883,7 +4878,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -4917,7 +4912,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "synthetic",
     "environment": "field",
     "platform": "ground",
@@ -4951,7 +4946,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": "Australia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "handheld",
@@ -4985,7 +4980,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5007,7 +5002,7 @@
     "examples_image_url": "/img/agml/sample_images/plant_doc_detection_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/plant_doc_detection",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
     "crop_types": null,
     "bibtex": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196},\ndoi = {10.1145/3371158.3371196},\nbooktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\npages = {249–253},\nseries = {CoDS COMAD 2020}\n}"
@@ -5017,10 +5012,10 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
     "num_images": 175,
@@ -5039,7 +5034,7 @@
     "examples_image_url": "/img/agml/sample_images/strawberry_detection_2022_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_detection_2022",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "",
     "crop_types": [
       "strawberry"
@@ -5050,10 +5045,10 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "coco_json",
     "num_images": 204,
@@ -5072,7 +5067,7 @@
     "examples_image_url": "/img/agml/sample_images/strawberry_detection_2023_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_detection_2023",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "",
     "crop_types": [
       "strawberry"
@@ -5083,7 +5078,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "maturity_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5105,7 +5100,7 @@
     "examples_image_url": "/img/agml/sample_images/tomato_ripeness_detection_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/strawberry_detection_2023",
-    "license": "CC BY-NC-SA 4.0",
+    "license": "cc-by-nc-sa-4.0",
     "citation": "",
     "crop_types": [
       "tomato"
@@ -5116,7 +5111,7 @@
     "machine_learning_task": "object_detection",
     "agricultural_task": "crop_detection",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5138,7 +5133,7 @@
     "examples_image_url": "/img/agml/sample_images/wheat_head_counting_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/wheat_head_counting",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@article{david2020global,\n  title={Global Wheat Head Detection (GWHD) dataset: a large and diverse dataset of high-resolution RGB-labelled images to develop and benchmark wheat head detection methods},\n  author={David, Etienne and Madec, Simon and Sadeghi-Tehran, Pouria and Aasen, Helge and Zheng, Bangyou and Liu, Shouyang and Kirchgessner, Norbert and Ishikawa, Goro and Nagasawa, Koichi and Badhon, Minhajul A and others},\n  journal={Plant Phenomics},\n  volume={2020},\n  year={2020},\n  publisher={Science Partner Journal}\n  }",
     "crop_types": [
       "wheat"
@@ -5150,7 +5145,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Greece",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "handheld",
@@ -5172,7 +5167,7 @@
     "examples_image_url": "/img/agml/sample_images/crop_weeds_greece_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/crop_weeds_greece",
-    "license": "MIT",
+    "license": "mit",
     "citation": "@article{ESPEJOGARCIA2020105306,\n  title = {Towards weeds identification assistance through transfer learning},\n  journal = {Computers and Electronics in Agriculture},\n  volume = {171},\n  pages = {105306},\n  year = {2020},\n  issn = {0168-1699},\n  doi = {https://doi.org/10.1016/j.compag.2020.105306},\n  url = {https://www.sciencedirect.com/science/article/pii/S0168169919319854},\n  author = {Borja Espejo-Garcia and Nikos Mylonas and Loukas Athanasakos and Spyros Fountas and Ioannis Vasilakoglou},\n  keywords = {Weed identification, Deep learning, Transfer learning, Open data, Precision agriculture},\n  abstract = {Reducing the use of pesticides through selective spraying is an important component towards a more sustainable computer-assisted agriculture. Weed identification at early growth stage contributes to reduced herbicide rates. However, while computer vision alongside deep learning have overcome the performance of approaches that use hand-crafted features, there are still some open challenges in the development of a reliable automatic plant identification system. These type of systems have to take into account different sources of variability, such as growth stages and soil conditions, with the added constraint of the limited size of usual datasets. This study proposes a novel crop/weed identification system that relies on a combination of fine-tuning pre-trained convolutional networks (Xception, Inception-Resnet, VGNets, Mobilenet and Densenet) with the “traditional” machine learning classifiers (Support Vector Machines, XGBoost and Logistic Regression) trained with the previously deep extracted features. The aim of this approach was to avoid overfitting and to obtain a robust and consistent performance. To evaluate this approach, an open access dataset of two crop [tomato (Solanum lycopersicum L.) and cotton (Gossypium hirsutum L.)] and two weed species [black nightshade (Solanum nigrum L.) and velvetleaf (Abutilon theophrasti Medik.)] was generated. The pictures were taken by different production sites across Greece under natural variable light conditions from RGB cameras. The results revealed that a combination of fine-tuned Densenet and Support Vector Machine achieved a micro F1 score of 99.29% with a very low performance difference between train and test sets. Other evaluated approaches also obtained repeatedly more than 95% F1 score. Additionally, our results analysis provides some heuristics for designing transfer-learning based systems to avoid overfitting without decreasing performance.}\n}",
     "crop_types": [
       "cotton",
@@ -5185,10 +5180,10 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Denmark",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "ground_fixed",
+    "platform": "fixed",
     "input_data_format": "PNG",
     "annotation_format": "directory_names",
     "num_images": 5539,
@@ -5207,7 +5202,7 @@
     "examples_image_url": "/img/agml/sample_images/plant_seedlings_aarhus_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/plant_seedlings_aarhus",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@article{Giselsson2017,\n  author = {Giselsson, Thomas Mosgaard and Dyrmann, Mads and J{\\o}rgensen, Rasmus Nyholm and Jensen, Peter Kryger and Midtiby, Henrik Skov},\n  journal = {arXiv preprint},\n  keywords = {benchmark,database,plant seedlings,segmentation,site-specific weed control},\n  title = {{A Public Image Database for Benchmark of Plant Seedling Classification Algorithms}},\n  year = {2017}\n}",
     "crop_types": [
       "maize",
@@ -5220,7 +5215,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Brazil",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "uav",
@@ -5242,7 +5237,7 @@
     "examples_image_url": "/img/agml/sample_images/soybean_weed_uav_brazil_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_weed_uav_brazil",
-    "license": "CC BY-NC 3.0",
+    "license": "cc-by-nc-3.0",
     "citation": "dos Santos Ferreira, Alessandro; Pistori, Hemerson; Matte Freitas, Daniel; Gonçalves da Silva, Gercina (2017), “Data for: Weed Detection in Soybean Crops Using ConvNets”, Mendeley Data, V2, doi: 10.17632/3fmjm7ncc6.2",
     "crop_types": [
       "soybean"
@@ -5254,10 +5249,10 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "damage_classification",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
-    "platform": "ground_fixed",
+    "platform": "fixed",
     "input_data_format": "bmp",
     "annotation_format": "directory_names",
     "num_images": 153,
@@ -5288,7 +5283,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Pakistan",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5322,7 +5317,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5344,21 +5339,21 @@
     "examples_image_url": "/img/agml/sample_images/plant_doc_classification_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/plant_doc_classification",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@inproceedings{10.1145/3371158.3371196,\n  author = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\n  title = {PlantDoc: A Dataset for Visual Plant Disease Detection},\n  year = {2020},\n  isbn = {9781450377386},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3371158.3371196},\n  doi = {10.1145/3371158.3371196},\n  booktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\n  pages = {249–253},\n  numpages = {5},\n  keywords = {Deep Learning, Object Detection, Image Classification},\n  location = {Hyderabad, India},\n  series = {CoDS COMAD 2020}\n  }",
     "crop_types": [
       "apple",
-      "Bell Pepper",
-      "Blueberry",
-      "Cherry",
-      "corn",
+      "bell pepper",
+      "blueberry",
+      "cherry",
+      "maize",
       "grape",
-      "Potato",
-      "Rasperry",
-      "Soybean",
-      "Squash",
+      "potato",
+      "raspberry",
+      "soybean",
+      "squash",
       "strawberry",
-      "Tomato"
+      "tomato"
     ],
     "bibtex": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\nisbn = {9781450377386},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196},\ndoi = {10.1145/3371158.3371196},\nbooktitle = {Proceedings of the 7th ACM IKDD CoDS and 25th COMAD},\npages = {249–253},\nnumpages = {5},\nseries = {CoDS COMAD 2020}\n}"
   },
@@ -5367,7 +5362,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "ground",
@@ -5392,18 +5387,18 @@
     "license": "",
     "citation": "@article{DBLP:journals/corr/HughesS15,\n  author    = {David P. Hughes and\n               Marcel Salath{'{e} } },\n  title     = {An open access repository of images on plant health to enable the\n               development of mobile disease diagnostics through machine\n               learning and crowdsourcing},\n  journal   = {CoRR},\n  volume    = {abs/1511.08060},\n  year      = {2015},\n  url       = {http://arxiv.org/abs/1511.08060},\n  archivePrefix = {arXiv},\n  eprint    = {1511.08060},\n  timestamp = {Mon, 13 Aug 2018 16:48:21 +0200},\n  biburl    = {https://dblp.org/rec/bib/journals/corr/HughesS15},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}",
     "crop_types": [
-      "Apple",
-      "Blueberry",
-      "Cherry",
-      "Corn",
-      "Grape",
-      "Orange",
-      "Peach",
-      "Bell Pepper",
-      "Potato",
-      "Rasperry",
-      "Soybean",
-      "Squash",
+      "apple",
+      "blueberry",
+      "cherry",
+      "maize",
+      "grape",
+      "orange",
+      "peach",
+      "bell pepper",
+      "potato",
+      "raspberry",
+      "soybean",
+      "squash",
       "strawberry",
       "tomato"
     ],
@@ -5414,7 +5409,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "weed_classification",
     "location": "Australia",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5436,7 +5431,7 @@
     "examples_image_url": "/img/agml/sample_images/rangeland_weeds_australia_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/rangeland_weeds_australia",
-    "license": "CC BY-SA 4.0",
+    "license": "cc-by-sa-4.0",
     "citation": "@Article{Olsen2019,\n  author={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\n  title={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\n  journal={Scientific Reports},\n  year={2019},\n  month={Feb},\n  day={14},\n  volume={9},\n  number={1},\n  pages={2058},\n  abstract={Robotic weed control has seen increased research of late with its potential for boosting productivity in agriculture. Majority of works focus on developing robotics for croplands, ignoring the weed management problems facing rangeland stock farmers. Perhaps the greatest obstacle to widespread uptake of robotic weed control is the robust classification of weed species in their natural environment. The unparalleled successes of deep learning make it an ideal candidate for recognising various weed species in the complex rangeland environment. This work contributes the first large, public, multiclass image dataset of weed species from the Australian rangelands; allowing for the development of robust classification methods to make robotic weed control viable. The DeepWeeds dataset consists of 17,509 labelled images of eight nationally significant weed species native to eight locations across northern Australia. This paper presents a baseline for classification performance on the dataset using the benchmark deep learning models, Inception-v3 and ResNet-50. These models achieved an average classification accuracy of 95.1{\\%} and 95.7{\\%}, respectively. We also demonstrate real time performance of the ResNet-50 architecture, with an average inference time of 53.4 ms per image. These strong results bode well for future field implementation of robotic weed control methods in the Australian rangelands.},\n  issn={2045-2322},\n  doi={10.1038/s41598-018-38343-3},\n  url={https://doi.org/10.1038/s41598-018-38343-3}\n}",
     "crop_types": null,
     "bibtex": "@Article{Olsen2019,\nauthor={Olsen, Alex and Konovalov, Dmitry A. and Philippa, Bronson and Ridd, Peter and Wood, Jake C. and Johns, Jamie and Banks, Wesley and Girgenti, Benjamin and Kenny, Owen and Whinney, James and Calvert, Brendan and Azghadi, Mostafa Rahimi and White, Ronald D.},\ntitle={DeepWeeds: A Multiclass Weed Species Image Dataset for Deep Learning},\njournal={Scientific Reports},\nyear={2019},\nmonth={Feb},\nday={14},\nvolume={9},\nnumber={1},\npages={2058},\nissn={2045-2322},\ndoi={10.1038/s41598-018-38343-3},\nurl={https://doi.org/10.1038/s41598-018-38343-3}\n}"
@@ -5446,7 +5441,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -5479,7 +5474,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5513,7 +5508,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "lab",
     "platform": "handheld",
@@ -5535,7 +5530,7 @@
     "examples_image_url": "/img/agml/sample_images/tomato_leaf_disease_sample.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_leaf_disease",
-    "license": "CC0: Public Domain",
+    "license": "cc0-1.0",
     "citation": "",
     "crop_types": [
       "tomato"
@@ -5545,16 +5540,39 @@
     "name": "vine_virus_photo_dataset",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
-    "location": null,
-    "sensor_modality": "RGB",
-    "real_or_synthetic": "real",
+    "location": [
+      "Napa County and the North Coast, California, USA (25 UCCE vineyard blocks plus blocks of 15 participating growers)"
+    ],
+    "lat_lon": [],
+    "country": "United States",
     "environment": "field",
-    "platform": "handheld/ground",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "iPhone",
+      "iPad"
+    ],
+    "collection_period": "2021 to 2023 growing seasons, early September to mid-October",
+    "platform": "handheld, ground",
     "input_data_format": "jpg, png, jpeg, JPG",
     "annotation_format": "directory_names",
     "num_images": 3866,
-    "documentation": null,
-    "classes": "Leafroll 3, No Virus, Other Red, Red Blotch",
+    "classes": [
+      "Leafroll 3",
+      "No Virus",
+      "Other Red",
+      "Red Blotch"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1094/PDIS-09-24-2048-RE",
+    "citation": "MacDonald, S. L., Shapland, T., Fendell-Hummel, H. G., Hobbs, M. B., Rohrs, J. K., & Cooper, M. L. (2025). Leveraging Artificial Intelligence to Develop a Decision Support Tool for Visual Symptom Assessment of Grapevine Leafroll and Red Blotch Diseases. *Plant Disease*, 109(7). https://doi.org/10.1094/PDIS-09-24-2048-RE",
+    "bibtex": "@article{macdonald2025leveraging,\n  title={Leveraging Artificial Intelligence to Develop a Decision Support Tool for Visual Symptom Assessment of Grapevine Leafroll and Red Blotch Diseases},\n  author={MacDonald, Sarah L. and Shapland, Tom and Fendell-Hummel, Hannah G. and Hobbs, Malcolm B. and Rohrs, Jennifer K. and Cooper, Monica L.},\n  journal={Plant Disease},\n  volume={109},\n  number={7},\n  year={2025},\n  publisher={The American Phytopathological Society},\n  doi={10.1094/PDIS-09-24-2048-RE},\n  url={https://doi.org/10.1094/PDIS-09-24-2048-RE}\n}",
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vine_virus_photo_dataset",
+    "examples_image_url": "/img/agml/sample_images/vine_virus_photo_dataset_sample.webp",
     "stats_mean": [
       0.45,
       0.449,
@@ -5564,14 +5582,6 @@
       0.231,
       0.228,
       0.23
-    ],
-    "examples_image_url": "/img/agml/sample_images/vine_virus_photo_dataset_sample.webp",
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/vine_virus_photo_dataset",
-    "license": "Apache 2.0",
-    "citation": "",
-    "crop_types": [
-      "vine"
     ]
   },
   {
@@ -5621,7 +5631,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "Bangladesh",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "uav",
@@ -5643,7 +5653,7 @@
     "examples_image_url": "/img/agml/sample_images/betel_leaf_disease_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/betel_leaf_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Rashid, Mohammad Rifat Ahmmad; Hossain, Md. Miskat ; Biswas,  Joy ; Majumder, Hredoy  (2024), “Betel Leaf Image Dataset from Bangladesh”, Mendeley Data, V2, doi: 10.17632/g7fpgj57wc.2",
     "crop_types": [
       "betel"
@@ -5655,7 +5665,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
     "location": "India",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "input_data_format": "JPG",
@@ -5676,7 +5686,7 @@
     "examples_image_url": "/img/agml/sample_images/tea_leaf_disease_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/tea_leaf_disease_classification",
-    "license": "CC BY-NC 4.0",
+    "license": "cc-by-nc-4.0",
     "citation": "@article{BALASUNDARAM2025103784, title = {Tea leaf disease detection using segment anything model and deep convolutional neural networks}, journal = {Results in Engineering}, volume = {25}, pages = {103784}, year = {2025}, issn = {2590-1230}, doi = {https://doi.org/10.1016/j.rineng.2024.103784}, url = {https://www.sciencedirect.com/science/article/pii/S2590123024020279}, author = {Ananthakrishnan Balasundaram and Prem Sundaresan and Aryan Bhavsar and Mishti Mattu and Muthu Subash Kavitha and Ayesha Shaik}}",
     "crop_types": [
       "tea"
@@ -5688,7 +5698,7 @@
     "machine_learning_task": "image_classification",
     "agricultural_task": "damage_classification",
     "location": "Brazil",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "uav",
     "input_data_format": "JPG",
@@ -5709,7 +5719,7 @@
     "examples_image_url": "/img/agml/sample_images/soybean_insect_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/soybean_insect_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Mignoni, Maria Eloisa (2021), “Images of Soybean Leaves”, Mendeley Data, V1, doi: 10.17632/bycbh73438.1",
     "crop_types": [
       "soybean"
@@ -5744,7 +5754,7 @@
     "examples_image_url": "/img/agml/sample_images/sunflower_disease_classification_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/sunflower_disease_classification",
-    "license": "CC BY 4.0",
+    "license": "cc-by-4.0",
     "citation": "Rajbongshi, Aditya; Sara, Umme ; Akter, Bonna ; Shakil, Rashiduzzaman ; Sazzad, Sadia (2022), “Sun Flower Fruits and Leaves dataset for Sunflower Disease Classification through Machine Learning and Deep Learning”, Mendeley Data, V1, doi: 10.17632/b83hmrzth8.1",
     "crop_types": [
       "sunflower"
@@ -5762,10 +5772,10 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": "Germany",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "ground_mobile",
+    "platform": "ground",
     "input_data_format": "PNG",
     "annotation_format": "image",
     "num_images": 60,
@@ -5796,7 +5806,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5818,7 +5828,7 @@
     "examples_image_url": "/img/agml/sample_images/apple_flower_segmentation_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_flower_segmentation",
-    "license": "US Public Domain",
+    "license": "us-public-domain",
     "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}",
     "crop_types": [
       "apple"
@@ -5830,7 +5840,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "United States of America",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5852,7 +5862,7 @@
     "examples_image_url": "/img/agml/sample_images/apple_segmentation_minnesota_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/apple_segmentation_minnesota",
-    "license": "MIT",
+    "license": "mit",
     "citation": "@misc{hani2019minneapple,\n    title={MinneApple: A Benchmark Dataset for Apple Detection and Segmentation},\n    author={Nicolai Häni and Pravakar Roy and Volkan Isler}\n    year={2019},\n    eprint={1909.06441},\n    archivePrefix={arXiv},\n    primaryClass={cs.CV}\n}",
     "crop_types": [
       "apple"
@@ -5864,7 +5874,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": "China",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "handheld",
@@ -5898,7 +5908,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "weed_segmentation",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
     "platform": "ground",
@@ -5920,10 +5930,10 @@
     "examples_image_url": "/img/agml/sample_images/sugarbeet_weed_segmentation_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/sugarbeet_weed_segmentation",
-    "license": "GPL-3.0",
+    "license": "gpl-3.0",
     "citation": "@ARTICLE{8115245,\n  author={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\n  journal={IEEE Robotics and Automation Letters},\n  title={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\n  year={2018},\n  volume={3},\n  number={1},\n  pages={588-595},\n  keywords={agriculture;agrochemicals;autonomous aerial vehicles;control engineering computing;convolution;crops;feature extraction;image classification;learning (artificial intelligence);neural nets;vegetation;MAV;SegNet;convolutional neural network;crop health;crop management;curve classification metrics;dense semantic classes;dense semantic weed classification;encoder-decoder;input image channels;multispectral images;selective weed treatment;vegetation index;weed detection;Agriculture;Cameras;Image segmentation;Robots;Semantics;Training;Vegetation mapping;Aerial systems;agricultural automation;applications;robotics in agriculture and forestry},\n  doi={10.1109/LRA.2017.2774979},\n  ISSN={},\n  month={Jan}\n}",
     "crop_types": [
-      "sugarbeet"
+      "sugar beet"
     ],
     "bibtex": "@ARTICLE{8115245,\nauthor={I. Sa and Z. Chen and M. Popović and R. Khanna and F. Liebisch and J. Nieto and R. Siegwart},\njournal={IEEE Robotics and Automation Letters},\ntitle={weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV for Smart Farming},\nyear={2018},\nvolume={3},\nnumber={1},\npages={588-595},\ndoi={10.1109/LRA.2017.2774979},\nmonth={Jan}\n}"
   },
@@ -5932,7 +5942,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "Digital, Digital",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "synthetic",
     "environment": "field",
     "platform": "aerial",
@@ -5946,7 +5956,7 @@
     "examples_image_url": "/img/agml/sample_images/bean_synthetic_earlygrowth_aerial_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/bean_synthetic_earlygrowth_aerial",
-    "license": "MIT",
+    "license": "mit",
     "citation": "@ARTICLE{10.3389/fpls.2019.01185,\n  \nAUTHOR={Bailey, Brian N.},   \n\t \nTITLE={Helios: A Scalable 3D Plant and Environmental Biophysical Modeling Framework},      \n\t\nJOURNAL={Frontiers in Plant Science},      \n\t\nVOLUME={10},      \n\t\nYEAR={2019},      \n\t  \nURL={https://www.frontiersin.org/article/10.3389/fpls.2019.01185},       \n\t\nDOI={10.3389/fpls.2019.01185},      \n\t\nISSN={1664-462X},   \n   \nABSTRACT={This article presents an overview of Helios, a new three-dimensional (3D) plant and environmental modeling framework. Helios is a model coupling framework designed to provide maximum flexibility in integrating and running arbitrary 3D environmental system models. Users interact with Helios through a well-documented open-source C++ API. Version 1.0 comes with model plug-ins for radiation transport, the surface energy balance, stomatal conductance, photosynthesis, solar position, and procedural tree generation. Additional plug-ins are also available for visualizing model geometry and data and for processing and integrating LiDAR scanning data. Many of the plug-ins perform calculations on the graphics processing unit, which allows for efficient simulation of very large domains with high detail. An example modeling study is presented in which leaf-level heterogeneity in water usage and photosynthesis of an orchard is examined to understand how this leaf-scale variability contributes to whole-tree and -canopy fluxes.}\n}",
     "crop_types": [
       "bean"
@@ -5958,10 +5968,10 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
     "num_images": 1542,
@@ -5971,7 +5981,7 @@
     "stats_std": null,
     "examples_image_url": "/img/agml/sample_images/growliflower_cauliflower_segmentation_examples.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/growliflower_cauliflower_segmentation",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/growliflower_caluiflower_segmentation",
     "license": "",
     "citation": "Kierdorf, Jana & Junker-Frohn, Laura & Delaney, Mike & Olave, Mariele & Burkart, Andreas & Jaenicke, Hannah & Muller, Onno & Roscher, Ribana. (2022). GrowliFlower: An image time‐series dataset for GROWth analysis of cauLIFLOWER. Journal of Field Robotics. 40. 10.1002/rob.22122. ",
     "crop_types": [
@@ -6005,7 +6015,7 @@
     "examples_image_url": "/img/agml/sample_images/peachpear_flower_segmentation_examples.webp",
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/peachpear_flower_segmentation",
-    "license": "US Public Domain",
+    "license": "us-public-domain",
     "citation": "@ARTICLE{8392727,\n  author={Dias, Philipe A. and Tabb, Amy and Medeiros, Henry},\n  journal={IEEE Robotics and Automation Letters}, \n  title={Multispecies Fruit Flower Detection Using a Refined Semantic Segmentation Network}, \n  year={2018},\n  volume={3},\n  number={4},\n  pages={3003-3010},\n  doi={10.1109/LRA.2018.2849498}}",
     "crop_types": [
       "peach",
@@ -6018,10 +6028,10 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "Greece",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "environment": "field",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
     "num_images": 258,
@@ -6052,7 +6062,7 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": null,
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
     "platform": "aerial",
     "input_data_format": "PNG",
@@ -6072,8 +6082,8 @@
     ],
     "examples_image_url": "/img/agml/sample_images/vegann_multicrop_presence_segmentation_examples.webp",
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/vegann_multicrop_presence_segmentation",
-    "license": "CC BY-SA 4.0",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/vegann_mulitcrop_presence_segmentation",
+    "license": "cc-by-sa-4.0",
     "citation": " @article{Madec_Irfan_Velumani_Baret_David_Daubige_Samatan_Serouart_Smith_James_et al._2023, title={VegAnn, Vegetation Annotation of multi-crop RGB images acquired under diverse conditions for segmentation}, volume={10}, ISSN={2052-4463}, url={https://www.nature.com/articles/s41597-023-02098-y}, DOI={10.1038/s41597-023-02098-y}, abstractNote={Abstract\n            \n              Applying deep learning to images of cropping systems provides new knowledge and insights in research and commercial applications. Semantic segmentation or pixel-wise classification, of RGB images acquired at the ground level, into vegetation and background is a critical step in the estimation of several canopy traits. Current state of the art methodologies based on convolutional neural networks (CNNs) are trained on datasets acquired under controlled or indoor environments. These models are unable to generalize to real-world images and hence need to be fine-tuned using new labelled datasets. This motivated the creation of the VegAnn -\n              Veg\n              etation\n              Ann\n              otation - dataset, a collection of 3775 multi-crop RGB images acquired for different phenological stages using different systems and platforms in diverse illumination conditions. We anticipate that VegAnn will help improving segmentation algorithm performances, facilitate benchmarking and promote large-scale crop vegetation segmentation research.}, number={1}, journal={Scientific Data}, author={Madec, Simon and Irfan, Kamran and Velumani, Kaaviya and Baret, Frederic and David, Etienne and Daubige, Gaetan and Samatan, Lucas Bernigaud and Serouart, Mario and Smith, Daniel and James, Chrisbin and Camacho, Fernando and Guo, Wei and De Solan, Benoit and Chapman, Scott C. and Weiss, Marie}, year={2023}, month=may, pages={302}, language={en} }\n",
     "crop_types": null
   },
@@ -6082,9 +6092,9 @@
     "machine_learning_task": "semantic_segmentation",
     "agricultural_task": "crop_segmentation",
     "location": "Greece",
-    "sensor_modality": "RGB",
+    "sensor_modality": "rgb",
     "real_or_synthetic": "real",
-    "platform": "handheld/ground",
+    "platform": "handheld, ground",
     "input_data_format": "JPG",
     "annotation_format": "image",
     "num_images": 273,
@@ -6125,14 +6135,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Kalokeshi (Eclipta prostrata)",
-      "Tulsi (Ocimum tenuiflorum)",
-      "Thankuni (Centella asiatica)",
-      "Pudina (Mentha arvensis)",
-      "Pathor Kuchi (Kalanchoe pinnata)",
-      "Neem (Azadirachta indica)",
-      "Dhonya Pata (Coriandrum sativum)",
-      "Datura (Datura stramonium)"
+      "kalokeshi (eclipta prostrata)",
+      "tulsi (ocimum tenuiflorum)",
+      "thankuni (centella asiatica)",
+      "pudina (mentha arvensis)",
+      "pathor kuchi (kalanchoe pinnata)",
+      "neem",
+      "dhonya pata (coriandrum sativum)",
+      "datura (datura stramonium)"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6406,7 +6416,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Soybean"
+      "soybean"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6777,10 +6787,7 @@
       "Canon R50 with RF 35 mm lens"
     ],
     "collection_period": "July 2023 to November 2023, July 2024 to November 2024",
-    "platform": [
-      "ground",
-      "handheld"
-    ],
+    "platform": "ground, handheld",
     "bibtex": "@article{shinde2025indian,\n  title={An Indian annotated weed dataset for computer vision tasks in precision farming},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={61},\n  pages={111691},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
@@ -6838,10 +6845,7 @@
       "Canon R50 with RF 35 mm lens"
     ],
     "collection_period": "July 2023 to November 2023, July 2024 to November 2024",
-    "platform": [
-      "ground",
-      "handheld"
-    ],
+    "platform": "ground, handheld",
     "bibtex": "@article{shinde2025indian,\n  title={An Indian annotated weed dataset for computer vision tasks in precision farming},\n  author={Shinde, Sayali and Attar, Vahida},\n  journal={Data in Brief},\n  volume={61},\n  pages={111691},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
@@ -6861,7 +6865,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aquilaria malaccensis",
+      "aquilaria malaccensis",
       "agarwood"
     ],
     "sensor_modality": "rgb",
@@ -6955,14 +6959,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Black bean",
-      "Corn",
-      "Soybean",
-      "Lentil",
-      "Flax",
-      "Sugar beet",
-      "Canola",
-      "Field pea"
+      "black bean",
+      "maize",
+      "soybean",
+      "lentil",
+      "flax",
+      "sugar beet",
+      "rapeseed",
+      "field pea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -6990,7 +6994,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/weed_crop_detection",
     "examples_image_url": "/img/agml/sample_images/weed_crop_detection_sample.webp",
-    "country": "United States of America",
+    "country": "United States",
     "imaging_equipment": [
       "Canon EOS 90D mounted on ground robotic platforms"
     ],
@@ -7097,10 +7101,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Eichhornia crassipes",
-      "Lemna minor",
-      "Pistia stratiotes",
-      "Monochoria korsakowii"
+      "eichhornia crassipes",
+      "lemna minor",
+      "pistia stratiotes",
+      "monochoria korsakowii"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7147,7 +7151,7 @@
     "crop_types": [
       "custard apple",
       "sugar apple",
-      "Annona squamosa"
+      "annona squamosa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7351,12 +7355,12 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bitter Gourd",
-      "Bottle Gourd",
-      "Cauliflower",
-      "Eggplant",
-      "Cucumber",
-      "Tomato"
+      "bitter gourd",
+      "bottle gourd",
+      "cauliflower",
+      "eggplant",
+      "cucumber",
+      "tomato"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7445,8 +7449,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "date palm",
-      "Phoenix dactylifera"
+      "date palm"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7471,10 +7474,7 @@
       "Mavic Air 2"
     ],
     "collection_period": "about 6 months",
-    "platform": [
-      "uav",
-      "handheld"
-    ],
+    "platform": "uav, handheld",
     "bibtex": "@article{al2023image,\n  title={Image dataset of infected date palm leaves by dubas insects},\n  author={Al-Mahmood, Abdullah Mazin and Shahadi, Haider Ismael and Khayeat, Ali Retha Hasoon},\n  journal={Data in Brief},\n  volume={49},\n  pages={109371},\n  year={2023},\n  publisher={Elsevier}\n}"
   },
   {
@@ -7578,46 +7578,46 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aloevera",
-      "Amla",
-      "Amruta_Balli",
-      "Arali",
-      "Ashoka",
-      "Ashwagandha",
-      "Avacado",
-      "Bamboo",
-      "Basale",
-      "Betel",
-      "Betel_Nut",
-      "Brahmi",
-      "Castor",
-      "Curry_Leaf",
-      "Doddapatre",
-      "Ekka",
-      "Ganike",
-      "Gauva",
-      "Geranium",
-      "Henna",
-      "Hibiscus",
-      "Honge",
-      "Insulin",
-      "Jasmine",
-      "Lemon",
-      "Lemon_grass",
-      "Mango",
-      "Mint",
-      "Nagadali",
-      "Neem",
-      "Nithyapushpa",
-      "Nooni",
-      "Pappaya",
-      "Pepper",
-      "Pomegranate",
-      "Raktachandini",
-      "Rose",
-      "Sapota",
-      "Tulasi",
-      "Wood_sorel"
+      "aloe vera",
+      "amla",
+      "amruta balli",
+      "arali",
+      "ashoka",
+      "ashwagandha",
+      "avocado",
+      "bamboo",
+      "basale",
+      "betel",
+      "betel nut",
+      "brahmi",
+      "castor",
+      "curry leaf",
+      "doddapatre",
+      "ekka",
+      "ganike",
+      "guava",
+      "geranium",
+      "henna",
+      "hibiscus",
+      "honge",
+      "insulin",
+      "jasmine",
+      "lemon",
+      "lemon grass",
+      "mango",
+      "mint",
+      "nagadali",
+      "neem",
+      "nithyapushpa",
+      "nooni",
+      "papaya",
+      "pepper",
+      "pomegranate",
+      "raktachandini",
+      "rose",
+      "sapota",
+      "tulasi",
+      "wood sorel"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -7697,82 +7697,82 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Aloevera",
-      "Amla",
-      "Amruthaballi",
-      "Arali",
-      "Astma_weed",
-      "Badipala",
-      "Balloon_Vine",
-      "Bamboo",
-      "Beans",
-      "Betel",
-      "Bhrami",
-      "Bringaraja",
-      "Caricature",
-      "Castor",
-      "Catharanthus",
-      "Chakte",
-      "Chilly",
-      "Citron lime (herelikai)",
-      "Coffee",
-      "Common rue(naagdalli)",
-      "Coriender",
-      "Curry",
-      "Doddpathre",
-      "Drumstick",
-      "Ekka",
-      "Eucalyptus",
-      "Ganigale",
-      "Ganike",
-      "Gasagase",
-      "Ginger",
-      "Globe Amarnath",
-      "Guava",
-      "Henna",
-      "Hibiscus",
-      "Honge",
-      "Insulin",
-      "Jackfruit",
-      "Jasmine",
-      "Kambajala",
-      "Kasambruga",
-      "Kohlrabi",
-      "Lantana",
-      "Lemon",
-      "Lemongrass",
-      "Malabar_Nut",
-      "Malabar_Spinach",
-      "Mango",
-      "Marigold",
-      "Mint",
-      "Neem",
-      "Nelavembu",
-      "Nerale",
-      "Nooni",
-      "Onion",
-      "Padri",
-      "Palak(Spinach)",
-      "Papaya",
-      "Parijatha",
-      "Pea",
-      "Pepper",
-      "Pomoegranate",
-      "Pumpkin",
-      "Raddish",
-      "Rose",
-      "Sampige",
-      "Sapota",
-      "Seethaashoka",
-      "Seethapala",
-      "Spinach1",
-      "Tamarind",
-      "Taro",
-      "Tecoma",
-      "Thumbe",
-      "Tomato",
-      "Tulsi",
-      "Turmeric",
+      "aloe vera",
+      "amla",
+      "amruthaballi",
+      "arali",
+      "astma weed",
+      "badipala",
+      "balloon vine",
+      "bamboo",
+      "bean",
+      "betel",
+      "bhrami",
+      "bringaraja",
+      "caricature",
+      "castor",
+      "catharanthus",
+      "chakte",
+      "chili",
+      "citron lime (herelikai)",
+      "coffee",
+      "common rue(naagdalli)",
+      "coriander",
+      "curry",
+      "doddpathre",
+      "drumstick",
+      "ekka",
+      "eucalyptus",
+      "ganigale",
+      "ganike",
+      "gasagase",
+      "ginger",
+      "globe amarnath",
+      "guava",
+      "henna",
+      "hibiscus",
+      "honge",
+      "insulin",
+      "jackfruit",
+      "jasmine",
+      "kambajala",
+      "kasambruga",
+      "kohlrabi",
+      "lantana",
+      "lemon",
+      "lemon grass",
+      "malabar nut",
+      "malabar spinach",
+      "mango",
+      "marigold",
+      "mint",
+      "neem",
+      "nelavembu",
+      "nerale",
+      "nooni",
+      "onion",
+      "padri",
+      "spinach",
+      "papaya",
+      "parijatha",
+      "pea",
+      "pepper",
+      "pomegranate",
+      "pumpkin",
+      "radish",
+      "rose",
+      "sampige",
+      "sapota",
+      "seethaashoka",
+      "seethapala",
+      "spinach1",
+      "tamarind",
+      "taro",
+      "tecoma",
+      "thumbe",
+      "tomato",
+      "tulsi",
+      "turmeric",
       "ashoka",
       "camphor",
       "kamakasturi",
@@ -8135,7 +8135,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/CoLeaf_nutritional_deficiency_classification",
     "examples_image_url": "/img/agml/sample_images/CoLeaf_nutritional_deficiency_classificiation_sample.webp",
-    "country": "Perú",
+    "country": "Peru",
     "imaging_equipment": [
       "Canon PowerShot SX50 HS"
     ],
@@ -8207,8 +8207,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "black gram",
-      "Urad bean",
-      "Black mapte"
+      "black mapte"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8250,10 +8249,10 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Bell Pepper",
-      "Tomato",
-      "Chili Pepper",
-      "New Mexico Chile"
+      "bell pepper",
+      "tomato",
+      "chili",
+      "new mexico chile"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8581,16 +8580,16 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phyllanthus emblica",
-      "Terminalia arjuna",
-      "Kalanchoe pinnata",
-      "Centella asiatica",
-      "Justicia adhatoda",
-      "Mikania micrantha",
-      "Azadirachta indica",
-      "Hibiscus rosa-sinensis",
-      "Ocimum tenuiflorum",
-      "Calotropis gigantea"
+      "phyllanthus emblica",
+      "terminalia arjuna",
+      "kalanchoe pinnata",
+      "centella asiatica",
+      "justicia adhatoda",
+      "mikania micrantha",
+      "neem",
+      "hibiscus rosa-sinensis",
+      "ocimum tenuiflorum",
+      "calotropis gigantea"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8760,7 +8759,6 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "paddy",
       "rice"
     ],
     "sensor_modality": "rgb",
@@ -8866,7 +8864,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -8980,7 +8978,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Vitis vinifera cv. Loureiro"
+      "vitis vinifera cv. loureiro"
     ],
     "sensor_modality": "rgb",
     "platform": "uav",
@@ -9100,36 +9098,36 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Apple_Gala",
-      "Apple_Golden Delicious",
-      "Avocado",
-      "Banana",
-      "Berry",
-      "Burmese Grape",
-      "Carambola",
-      "Date Palm",
-      "Dragon",
-      "Elephant Apple",
-      "Grape",
-      "Green Coconut",
-      "Guava",
-      "Hog Plum",
-      "Kiwi",
-      "Lichi",
-      "Malta",
-      "Mango Golden Queen",
-      "Mango_Alphonso",
-      "Mango_Amrapali",
-      "Mango_Bari",
-      "Mango_Himsagar",
-      "Olive",
-      "Orange",
-      "Palm",
-      "Persimmon",
-      "Pineapple",
-      "Pomegranate",
-      "Watermelon",
-      "White Pear"
+      "apple gala",
+      "apple golden delicious",
+      "avocado",
+      "banana",
+      "berry",
+      "burmese grape",
+      "carambola",
+      "date palm",
+      "dragon",
+      "elephant apple",
+      "grape",
+      "green coconut",
+      "guava",
+      "hog plum",
+      "kiwi",
+      "lychee",
+      "malta",
+      "mango golden queen",
+      "mango alphonso",
+      "mango amrapali",
+      "mango bari",
+      "mango himsagar",
+      "olive",
+      "orange",
+      "palm",
+      "persimmon",
+      "pineapple",
+      "pomegranate",
+      "watermelon",
+      "white pear"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9167,7 +9165,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9207,7 +9205,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "common beans"
+      "common bean"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9293,8 +9291,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "oil palm",
-      "Elaeis guineensis"
+      "oil palm"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9370,16 +9367,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Abelmoschus esculentus",
-      "Brassica oleracea",
-      "Carica Papaya",
-      "Lablab purpureus",
-      "Momordica charantia",
-      "Momordica dioica",
-      "Raphanus sativus",
-      "Solanum Iycopersicum",
-      "Trichosanthes cucumerina",
-      "Trichosanthes dioica"
+      "okra",
+      "brassica oleracea",
+      "papaya",
+      "lablab purpureus",
+      "bitter gourd",
+      "momordica dioica",
+      "radish",
+      "tomato",
+      "trichosanthes cucumerina",
+      "trichosanthes dioica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9496,7 +9493,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chenopodiaceae"
+      "chenopodiaceae"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9534,7 +9531,7 @@
       "SuaAcu",
       "SuaAeg"
     ],
-    "license": "cc0 1.0",
+    "license": "cc0-1.0",
     "documentation": "https://doi.org/10.1016/j.dib.2021.107478",
     "citation": "Heidary-Sharifabad, Ahmad; Sardari Zarchi, Mohsen; Emadi, Sima; Zarei, Gholamreza (2021), “ACHENY : A Standard Chenopodiaceae Image dataset  for Deep Learning Models”, Mendeley Data, V1, doi: 10.17632/fpfty8nn7j.1",
     "zip_size_bytes": 1036414540,
@@ -9646,7 +9643,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fortunella margarita"
+      "fortunella margarita"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9722,8 +9719,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine",
-      "Merlot Noir"
+      "grape",
+      "merlot noir"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9758,8 +9755,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "cocoa",
-      "Theobroma cacao"
+      "cocoa"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9835,8 +9831,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Japanese quince",
-      "Chaenomeles japonica"
+      "japanese quince",
+      "chaenomeles japonica"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9871,7 +9867,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Medjool dates"
+      "medjool dates"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -9888,7 +9884,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/Medjool_date_ripeness_detection",
     "examples_image_url": "/img/agml/sample_images/Medjool_date_ripeness_classification_sample.webp",
-    "country": "México",
+    "country": "Mexico",
     "imaging_equipment": [
       "Canon EOS Rebel T6",
       "Samsung SM-N950F",
@@ -9912,8 +9908,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "sapota",
-      "Chikoo",
-      "Kalipatti"
+      "kalipatti"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10145,12 +10140,12 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Cowpea",
-      "Snake Gourd",
-      "Spiny Gourd",
-      "Ivy Gourd",
-      "Taro root",
-      "Turmeric"
+      "cowpea",
+      "snake gourd",
+      "spiny gourd",
+      "ivy gourd",
+      "taro root",
+      "turmeric"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10202,7 +10197,6 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
       "maize"
     ],
     "sensor_modality": "rgb",
@@ -10247,70 +10241,70 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Akca Pear",
-      "Amasya Apple",
-      "Angeleno Plum",
-      "Austria Everbearing Mulberry",
-      "Avocado",
-      "Bardacik Fig",
-      "Bilecik Walnut",
-      "Black Diamond Plum",
-      "Black Fig",
-      "Black Mulberry",
-      "Black Splendor Plum",
-      "Carob",
-      "Chestnut",
-      "Chocolate Persimmon",
-      "Cornelian Cherry",
-      "Deveci Pear",
-      "Duke Blueberry",
-      "Egrisap Pear",
-      "Ekmek Quince",
-      "Esme Quince",
-      "Feijoa",
-      "Ferragnes Almond",
-      "Fortune Plum",
-      "Fuji Apple",
-      "Golden Apple",
-      "Granny Smith Apple",
-      "Hachiya Persimmon",
-      "Hale Peach",
-      "Hazelnut",
-      "Igdir Apricot",
-      "Jujube",
-      "Kagizman Long Apple",
-      "Kiwi",
-      "Kumquat",
-      "Kutahya Sour Cherry",
-      "Lemon",
-      "Loquat",
-      "Margarita Marilla Pear",
-      "Medlar",
-      "Murdum Plum",
-      "Napolyon Cherry",
-      "Nashi Pear",
-      "Orange",
-      "Papaz Plum",
-      "Patlican Fig",
-      "Pomegranate",
-      "Red Azarol",
-      "Red Haven Peach",
-      "Red Nectarine",
-      "Redlove Apple",
-      "Santa Maria Pear",
-      "Sebin Walnut",
-      "Sekerpare Apricot",
-      "Show Time Plum",
-      "Sour Cherry",
-      "Starking Apple",
-      "Strawberry Tree",
-      "White Mulberry",
-      "White Nectarine",
-      "Wild Strawberry",
-      "Wild Walnut",
-      "Yellow Cherry",
-      "Yellow Peach",
-      "Ziraat 0900 Cherry"
+      "akca pear",
+      "amasya apple",
+      "angeleno plum",
+      "austria everbearing mulberry",
+      "avocado",
+      "bardacik fig",
+      "bilecik walnut",
+      "black diamond plum",
+      "black fig",
+      "black mulberry",
+      "black splendor plum",
+      "carob",
+      "chestnut",
+      "chocolate persimmon",
+      "cornelian cherry",
+      "deveci pear",
+      "duke blueberry",
+      "egrisap pear",
+      "ekmek quince",
+      "esme quince",
+      "feijoa",
+      "ferragnes almond",
+      "fortune plum",
+      "fuji apple",
+      "golden apple",
+      "granny smith apple",
+      "hachiya persimmon",
+      "hale peach",
+      "hazelnut",
+      "igdir apricot",
+      "jujube",
+      "kagizman long apple",
+      "kiwi",
+      "kumquat",
+      "kutahya sour cherry",
+      "lemon",
+      "loquat",
+      "margarita marilla pear",
+      "medlar",
+      "murdum plum",
+      "napolyon cherry",
+      "nashi pear",
+      "orange",
+      "papaz plum",
+      "patlican fig",
+      "pomegranate",
+      "red azarol",
+      "red haven peach",
+      "red nectarine",
+      "redlove apple",
+      "santa maria pear",
+      "sebin walnut",
+      "sekerpare apricot",
+      "show time plum",
+      "sour cherry",
+      "starking apple",
+      "strawberry tree",
+      "white mulberry",
+      "white nectarine",
+      "wild strawberry",
+      "wild walnut",
+      "yellow cherry",
+      "yellow peach",
+      "ziraat 0900 cherry"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10569,7 +10563,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chitrak"
+      "chitrak"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10694,9 +10688,9 @@
     "crop_types": [
       "horseweed",
       "kochia",
-      "corn",
+      "maize",
       "ragweed",
-      "redrootpigweed"
+      "redroot pigweed"
     ],
     "sensor_modality": "rgb",
     "input_data_format": "image_folder",
@@ -10716,7 +10710,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/ImageWeeds_weed_detection",
     "examples_image_url": "/img/agml/sample_images/ImageWeeds_weed_detection_sample.webp",
-    "country": "United States of America",
+    "country": "United States",
     "imaging_equipment": [
       "Canon 90D"
     ],
@@ -10746,7 +10740,7 @@
       "ragweed",
       "waterhemp",
       "horseweed",
-      "redrootpigweed",
+      "redroot pigweed",
       "kochia"
     ],
     "sensor_modality": "rgb",
@@ -10767,7 +10761,7 @@
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/ImageWeeds_aerial_weed_detection",
     "examples_image_url": "/img/agml/sample_images/ImageWeeds_aerial_weed_detection_sample.webp",
-    "country": "United States of America",
+    "country": "United States",
     "imaging_equipment": [
       "DJI Phantom 4 Pro (V2.0)"
     ],
@@ -10868,10 +10862,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Murcott",
-      "Ponkan",
-      "Tankan",
-      "Tangerines"
+      "murcott",
+      "ponkan",
+      "tankan",
+      "tangerine"
     ],
     "sensor_modality": "rgb",
     "platform": "handheld",
@@ -11059,7 +11053,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapes"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11096,7 +11090,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11126,7 +11120,7 @@
     "location": [
       "Plant Growth Facility, University of Minnesota Twin Cities, Minneapolis, Minnesota, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -11164,24 +11158,24 @@
     "location": [
       "Waldron Greenhouse, North Dakota State University, Fargo, North Dakota, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Blackbean",
-      "Canola",
-      "Corn",
-      "Field Pea",
-      "Flax",
-      "Horseweed",
-      "Kochia",
-      "Lentil",
-      "Palmer Amaranth",
-      "Ragweed",
-      "Redroot Pigweed",
-      "Soybean",
-      "Sugar beet",
-      "Waterhemp"
+      "black bean",
+      "rapeseed",
+      "maize",
+      "field pea",
+      "flax",
+      "horseweed",
+      "kochia",
+      "lentil",
+      "palmer amaranth",
+      "ragweed",
+      "redroot pigweed",
+      "soybean",
+      "sugar beet",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11225,24 +11219,24 @@
     "location": [
       "Waldron Greenhouse, North Dakota State University, Fargo, North Dakota, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Blackbean",
-      "Canola",
-      "Corn",
-      "Field Pea",
-      "Flax",
-      "Horseweed",
-      "Kochia",
-      "Lentil",
-      "Palmer Amaranth",
-      "Ragweed",
-      "Redroot Pigweed",
-      "Soybean",
-      "Sugar beet",
-      "Waterhemp"
+      "black bean",
+      "rapeseed",
+      "maize",
+      "field pea",
+      "flax",
+      "horseweed",
+      "kochia",
+      "lentil",
+      "palmer amaranth",
+      "ragweed",
+      "redroot pigweed",
+      "soybean",
+      "sugar beet",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11325,20 +11319,20 @@
       "Black Belt Experiment Station, Brooksville, Mississippi, United States of America",
       "Horticultural Research and Extension Center, University of Michigan, Holt, Michigan, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Carpetweed",
-      "Eclipta",
-      "Goosegrass",
-      "Lambsquarters",
-      "MorningGlory",
-      "PalmerAmaranth",
-      "Purslane",
-      "Ragweed",
-      "SpottedSpurge",
-      "Waterhemp"
+      "carpetweed",
+      "eclipta",
+      "goosegrass",
+      "lambsquarters",
+      "morningglory",
+      "palmer amaranth",
+      "purslane",
+      "ragweed",
+      "spottedspurge",
+      "waterhemp"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11429,7 +11423,7 @@
       "FLIR One Pro"
     ],
     "collection_period": "",
-    "platform": "mobile",
+    "platform": "handheld",
     "input_data_format": "parquet",
     "annotation_format": "classLabel",
     "num_images": 3959,
@@ -11498,7 +11492,7 @@
     "location": [
       "United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -11538,7 +11532,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "litchi"
+      "lychee"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -11568,7 +11562,7 @@
     "location": [
       "University of Missouri Genetics Farm, Columbia, MO, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -11616,10 +11610,7 @@
       "DJI Mavic Pro 3 UAV (Hasselblad 20MP 4/3-inch CMOS camera)"
     ],
     "collection_period": "2023-2024, 2024-2025",
-    "platform": [
-      "uav",
-      "ground"
-    ],
+    "platform": "uav, ground",
     "input_data_format": "parquet",
     "annotation_format": "segmentationMask",
     "num_images": 3345,
@@ -11670,7 +11661,7 @@
       "Mosaic",
       "Ring Spot"
     ],
-    "license": "Apache 2.0",
+    "license": "apache-2.0",
     "documentation": "https://doi.org/10.1016/j.atech.2026.101824",
     "citation": "https://www.kaggle.com/datasets/shourav123/enlarged-data",
     "zip_size_bytes": 13399856515,
@@ -11691,7 +11682,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Java Plum"
+      "java plum"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -11726,7 +11717,7 @@
       "Richton, Mississippi, United States of America",
       "Holt, Michigan, United States of America"
     ],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -11788,7 +11779,7 @@
       "NoRust",
       "Rust"
     ],
-    "license": "cc-0",
+    "license": "cc0-1.0",
     "documentation": "https://doi.org/10.1016/j.dib.2025.111421",
     "citation": "https://www.kaggle.com/datasets/jorgearoca/coffee-rust",
     "zip_size_bytes": 336085903,
@@ -11886,7 +11877,7 @@
       "DJI Phantom 4 Pro-Obsidian (5472x3648 pixels, drone)"
     ],
     "collection_period": "8 October 2020 - 25 November 2020",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "parquet",
     "annotation_format": "segmentationMask",
     "num_images": 244,
@@ -12173,7 +12164,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "paddy"
+      "rice"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -12307,7 +12298,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Camellia oleifera"
+      "camellia oleifera"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -12414,7 +12405,7 @@
     "annotation_format": "segmentationMask",
     "num_images": 2042,
     "classes": [],
-    "license": "Apache-2.0",
+    "license": "apache-2.0",
     "documentation": "https://doi.org/10.1016/j.ecoinf.2025.103078",
     "citation": "https://www.kaggle.com/datasets/vvghigh/ruraluse",
     "zip_size_bytes": 18017979,
@@ -12431,7 +12422,7 @@
       "Illinois, United States of America"
     ],
     "lat_lon": [],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -12820,7 +12811,7 @@
       "Mites",
       "Virus"
     ],
-    "license": "Apache-2.0",
+    "license": "apache-2.0",
     "documentation": "https://doi.org/10.1186/s13007-025-01453-x",
     "citation": "https://github.com/SamratPaul16/YOLO_DyE",
     "bibtex": "@article{paul2025sca,\n  title={SCA-MobiPlant: smartphone-deployed multistage attention fusion model for accurate field detection of chili leaf curl complex},\n  author={Paul, Samrat and Emmadi, Venu and Sarkar, Mehulee and Das, Shubhajyoti and Roy, Anirban and Sinha, Parimal},\n  journal={Plant Methods},\n  volume={21},\n  pages={138},\n  year={2025},\n  publisher={BioMed Central}\n}",
@@ -12968,7 +12959,7 @@
     "bibtex": "@article{fan2026openear,\n  title={OpenEar: an ultra-affordable, high-throughput, and accurate maize ear phenotyping system},\n  author={Fan, Shaoqi and Li, Guoji and Bahitwa, Revocatus and Jia, Zhiguo and Zhang, Hongwei and Shao, Jinghong and Yu, Qiuying and Chen, Xiaoran and Qian, Yiheng and Xu, Mingchi and Zhu, Linlin and Wang, Hai},\n  journal={Plant Methods},\n  volume={22},\n  pages={26},\n  year={2026},\n  publisher={BioMed Central}\n}",
     "zip_size_bytes": 114667570,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_Projection_segmentation",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/OpenEar_projection_segmentation",
     "examples_image_url": "/img/agml/sample_images/OpenEar_Projection_segmentation_sample.webp"
   },
   {
@@ -12981,7 +12972,10 @@
       "Paitzkofen, Germany"
     ],
     "lat_lon": [],
-    "country": "France, Germany",
+    "country": [
+      "France",
+      "Germany"
+    ],
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -13020,7 +13014,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -13050,11 +13044,11 @@
       "Cache Valley, Utah, United States of America"
     ],
     "lat_lon": [],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Corn"
+      "maize"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -13100,7 +13094,7 @@
       "Agrocam NDVI sensor"
     ],
     "collection_period": "",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "parquet",
     "annotation_format": "segmentationMask",
     "num_images": 160,
@@ -13254,7 +13248,7 @@
       "River",
       "SeaLake"
     ],
-    "license": "MIT",
+    "license": "mit",
     "documentation": "https://doi.org/10.48550/arXiv.1709.00029",
     "citation": "Helber, P., Bischke, B., Dengel, A., & Borth, D. (2018). EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification [Dataset]. In EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification (Vol. 12, Issue 7, pp. 2217-2226). Zenodo. Introducing Eurosat: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification, Valencia, Spain. https://doi.org/10.5281/zenodo.7711810",
     "bibtex": "@article{helber2019eurosat,\n title={Eurosat: A novel dataset and deep learning benchmark for land use and land cover classification},\n author={Helber, Patrick and Bischke, Benjamin and Dengel, Andreas and Borth, Damian},\n journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n volume={12},\n number={7},\n pages={2217--2226},\n year={2019},\n publisher={IEEE}}",
@@ -13304,7 +13298,7 @@
       "Lincolnshire, UK"
     ],
     "lat_lon": [],
-    "country": "UK",
+    "country": "United Kingdom",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -13337,7 +13331,7 @@
       "Lincolnshire, UK"
     ],
     "lat_lon": [],
-    "country": "UK",
+    "country": "United Kingdom",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -13376,12 +13370,12 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chenopodium album",
-      "Polygonum aviculare",
-      "Thlaspi arvense",
-      "Persicaria lapathifolia",
-      "Bilderdykia convolvulus",
-      "Polygonum hydropiper"
+      "chenopodium album",
+      "polygonum aviculare",
+      "thlaspi arvense",
+      "persicaria lapathifolia",
+      "bilderdykia convolvulus",
+      "polygonum hydropiper"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -13426,7 +13420,7 @@
     "annotation_format": "segmentationMask",
     "num_images": 788,
     "classes": [],
-    "license": "MIT",
+    "license": "mit",
     "documentation": "https://doi.org/10.1109/ACCESS.2019.2942158",
     "citation": "https://github.com/ZhangXG001/Real-Time-Crop-Recognition",
     "bibtex": "@article{li2019real,\n title={Real-time crop recognition in transplanted fields with prominent weed growth: a visual-attention-based approach},\n author={Li, Nan and Zhang, Xiaoguang and Zhang, Chunlong and Guo, Huiwen and Sun, Zhe and Wu, Xinyu},\n journal={IEEE Access},\n volume={7},\n pages={185310--185321},\n year={2019},\n publisher={IEEE}}",
@@ -13473,7 +13467,7 @@
     "agricultural_task": "weed_classification",
     "location": [],
     "lat_lon": [],
-    "country": "United States of America",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -13482,7 +13476,7 @@
     "sensor_modality": "rgb",
     "imaging_equipment": [],
     "collection_period": "2020, 2021",
-    "platform": "handhled",
+    "platform": "handheld",
     "input_data_format": "parquet",
     "annotation_format": "classLabel",
     "num_images": 5187,
@@ -13724,7 +13718,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -13760,7 +13754,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -13796,7 +13790,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -13832,7 +13826,7 @@
     "environment": "mixed",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sonaka"
+      "sonaka"
     ],
     "sensor_modality": "rgb-d",
     "imaging_equipment": [
@@ -13867,16 +13861,16 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Nayantara",
-      "Pathor kuchi",
-      "Longevity spinach",
-      "Bohera",
-      "Haritaki",
-      "Thankuni",
-      "Neem",
-      "Tulsi",
-      "Lemon grass",
-      "Devil backbone"
+      "nayantara",
+      "pathor kuchi",
+      "longevity spinach",
+      "bohera",
+      "haritaki",
+      "thankuni",
+      "neem",
+      "tulsi",
+      "lemon grass",
+      "devil backbone"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14017,7 +14011,7 @@
     "crop_types": [
       "lettuce"
     ],
-    "sensor_modality": "thermal-rgb",
+    "sensor_modality": "rgb, thermal",
     "imaging_equipment": [
       "FLIR C5 (Teledyne FLIR LLC., USA)"
     ],
@@ -14045,17 +14039,20 @@
       "CZU campus, Czech Republic"
     ],
     "lat_lon": [],
-    "country": "Slovakia, Czech Republic",
+    "country": [
+      "Slovakia",
+      "Czech Republic"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14091,17 +14088,20 @@
       "CZU campus, Czech Republic"
     ],
     "lat_lon": [],
-    "country": "Slovakia, Czech Republic",
+    "country": [
+      "Slovakia",
+      "Czech Republic"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14137,17 +14137,20 @@
       "CZU campus, Czech Republic"
     ],
     "lat_lon": [],
-    "country": "Slovakia, Czech Republic",
+    "country": [
+      "Slovakia",
+      "Czech Republic"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14183,17 +14186,20 @@
       "CZU campus, Czech Republic"
     ],
     "lat_lon": [],
-    "country": "Slovakia, Czech Republic",
+    "country": [
+      "Slovakia",
+      "Czech Republic"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14229,17 +14235,20 @@
       "CZU campus, Czech Republic"
     ],
     "lat_lon": [],
-    "country": "Slovakia, Czech Republic",
+    "country": [
+      "Slovakia",
+      "Czech Republic"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
-      "Sessile oak",
-      "Norway spruce",
-      "European silver fir",
-      "Large-leaved linden",
-      "Norway Maple",
-      "Scots pine"
+      "european beech",
+      "sessile oak",
+      "norway spruce",
+      "european silver fir",
+      "large-leaved linden",
+      "norway maple",
+      "scots pine"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14310,7 +14319,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -14547,7 +14556,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -14682,7 +14691,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -15017,7 +15026,13 @@
       "22 regions across Brazil, Ukraine, United States, Canada and Russia"
     ],
     "lat_lon": [],
-    "country": "Brazil, Ukraine, United States, Canada, Russia",
+    "country": [
+      "Brazil",
+      "Ukraine",
+      "United States",
+      "Canada",
+      "Russia"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -15163,8 +15178,8 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Scots pine",
-      "Norway spruce"
+      "scots pine",
+      "norway spruce"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -15727,8 +15742,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Korean pine",
-      "Chinese pine"
+      "korean pine",
+      "chinese pine"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
@@ -15828,9 +15843,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Norway spruce",
-      "Scots pine",
-      "European beech"
+      "norway spruce",
+      "scots pine",
+      "european beech"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [],
@@ -15864,8 +15879,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus pinaster",
-      "Quercus ilex"
+      "pinus pinaster",
+      "quercus ilex"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -16060,9 +16075,9 @@
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech",
+      "european beech",
       "pedunculate oak",
-      "Douglas fir"
+      "douglas fir"
     ],
     "sensor_modality": "thermal",
     "imaging_equipment": [],
@@ -16095,7 +16110,13 @@
       "United Kingdom"
     ],
     "lat_lon": [],
-    "country": "Denmark, Japan, New Zealand, Sweden, United Kingdom",
+    "country": [
+      "Denmark",
+      "Japan",
+      "New Zealand",
+      "Sweden",
+      "United Kingdom"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -16132,7 +16153,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "European beech"
+      "european beech"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -16234,7 +16255,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis subsp. australis"
+      "phragmites australis subsp. australis"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -16269,7 +16290,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pistacia vera"
+      "pistacia vera"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -16302,27 +16323,27 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Eucalyptus tetrodonta",
-      "Eucalyptus miniata",
-      "Corymbia bleeseri",
-      "Corymbia ferruginea",
-      "Corymbia polycarpa",
-      "Corymbia polysciada",
-      "Corymbia porrecta",
-      "Erythrophleum chlorostachys",
-      "Acacia dimidiata",
-      "Acacia lamprocarpa",
-      "Acacia mimula",
-      "Acacia oncinocarpa",
-      "Planchonia careya",
-      "Terminalia ferdinandiana",
-      "Terminalia grandiflora",
-      "Xanthostemon paradoxus"
+      "eucalyptus tetrodonta",
+      "eucalyptus miniata",
+      "corymbia bleeseri",
+      "corymbia ferruginea",
+      "corymbia polycarpa",
+      "corymbia polysciada",
+      "corymbia porrecta",
+      "erythrophleum chlorostachys",
+      "acacia dimidiata",
+      "acacia lamprocarpa",
+      "acacia mimula",
+      "acacia oncinocarpa",
+      "planchonia careya",
+      "terminalia ferdinandiana",
+      "terminalia grandiflora",
+      "xanthostemon paradoxus"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
     "collection_period": "2021-04",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "boundingBox",
     "classes": [],
@@ -16613,7 +16634,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Hypericum perforatum"
+      "hypericum perforatum"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -16729,18 +16750,18 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fagus silvatica",
-      "Picea abies",
-      "Abies alba",
-      "Larix decidua",
-      "Quercus petraea",
-      "Quercus robur",
-      "Pinus silvestris",
-      "Pinus nigra",
-      "Pinus strobus",
-      "Populus nigra",
-      "Salix sp.",
-      "Betula pendula"
+      "fagus silvatica",
+      "picea abies",
+      "abies alba",
+      "larix decidua",
+      "quercus petraea",
+      "quercus robur",
+      "pinus silvestris",
+      "pinus nigra",
+      "pinus strobus",
+      "populus nigra",
+      "salix sp.",
+      "betula pendula"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [],
@@ -16814,7 +16835,7 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "coffee",
-      "Hass avocado",
+      "hass avocado",
       "potato",
       "tomato",
       "sugar cane",
@@ -17371,7 +17392,7 @@
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
-    "license": "CDLA-Permissive-1.0",
+    "license": "cdla-permissive-1.0",
     "documentation": "https://doi.org/10.1371/journal.pone.0297153",
     "citation": "Humplík, J. F. (2023). *Dataset of point-clouds generated by UAV LiDAR scanning of barley field-plot trial.* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10161951",
     "bibtex": "@article{fryk2024crop,\n  title={Crop growth dynamics: Fast automatic analysis of LiDAR images in field-plot experiments by specialized software ALFA},\n  author={Fryčák, Tadeáš and Fürst, Tomáš and Koprna, Radoslav and Špíšek, Zdeněk and Miřijovský, Jakub and Humplík, Jan F.},\n  journal={PLOS ONE},\n  volume={19},\n  pages={e0297153},\n  year={2024},\n  publisher={Public Library of Science}\n}",
@@ -17516,14 +17537,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Acer campestre",
-      "Acer pseudoplatanus",
-      "Betula pubescens",
-      "Corylus avellana",
-      "Crataegus monogyna",
-      "Fraxinus excelsior",
-      "Quercus robur",
-      "Ulmus glabra"
+      "acer campestre",
+      "acer pseudoplatanus",
+      "betula pubescens",
+      "corylus avellana",
+      "crataegus monogyna",
+      "fraxinus excelsior",
+      "quercus robur",
+      "ulmus glabra"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [],
@@ -17711,7 +17732,7 @@
       "Boyle Heights and City Terrace, Los Angeles, California, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -17745,7 +17766,12 @@
       "Maragua–Upper Tana, Kenya"
     ],
     "lat_lon": [],
-    "country": "Spain, Ukraine, Italy, Kenya",
+    "country": [
+      "Spain",
+      "Ukraine",
+      "Italy",
+      "Kenya"
+    ],
     "environment": "field",
     "real_or_synthetic": "mixed",
     "crop_types": [],
@@ -17756,7 +17782,7 @@
     "input_data_format": "external",
     "annotation_format": "classLabel",
     "classes": [],
-    "license": "cc-0",
+    "license": "cc0-1.0",
     "documentation": "https://doi.org/10.3390/rs18132137",
     "citation": "Meng, K. (2025). *<b>Data used in MSDI</b>* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.30246472.V1",
     "bibtex": "@article{meng2026interpretable,\n  title={An Interpretable Multi-Source Data Integration Framework for Prior-Guided Decametric-Resolution LAI Estimation},\n  author={Meng, Ke and Zhang, Zhewei and Wang, Qi and Wu, Tongzhou and Song, Zhubeijia and Wei, Haodong and Wang, Cong and Yin, Gaofei and Xu, Baodong},\n  journal={Remote Sensing},\n  volume={18},\n  pages={2137},\n  year={2026},\n  publisher={MDPI}\n}",
@@ -17810,17 +17836,20 @@
       "Paredes de Coura, Portugal"
     ],
     "lat_lon": [],
-    "country": "Spain, Portugal",
+    "country": [
+      "Spain",
+      "Portugal"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Castanea sativa",
-      "Quercus robur",
-      "Eucalyptus globulus",
-      "Eucalyptus nitens",
-      "Pinus pinaster",
-      "Pinus radiata",
-      "Chamaecyparis lawsoniana"
+      "castanea sativa",
+      "quercus robur",
+      "eucalyptus globulus",
+      "eucalyptus nitens",
+      "pinus pinaster",
+      "pinus radiata",
+      "chamaecyparis lawsoniana"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -17925,7 +17954,7 @@
       "olive",
       "citrus",
       "vineyard",
-      "grapevine",
+      "grape",
       "forage"
     ],
     "sensor_modality": "multispectral",
@@ -18056,7 +18085,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Arabica"
+      "arabica"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [],
@@ -18272,7 +18301,7 @@
       "smartphone"
     ],
     "collection_period": "2025",
-    "platform": "mobile",
+    "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -18313,7 +18342,7 @@
       "HOBO weather stations"
     ],
     "collection_period": "",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
@@ -18351,7 +18380,7 @@
       "DJI Zenmuse P1 camera (35 mm focal length lens, maximum resolution of 8192 × 5460 pixels)"
     ],
     "collection_period": "2021–2022",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -18389,7 +18418,7 @@
       "Microsoft Azure Kinect, Microsoft (China) Co., Ltd., Beijing, China with a 1-megapixel depth sensor"
     ],
     "collection_period": "2023",
-    "platform": "smartphone",
+    "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -18464,7 +18493,7 @@
       "DJI Elf 4 multispectral drone"
     ],
     "collection_period": "August 19 and August 27, 2024",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
@@ -18488,7 +18517,7 @@
       "Purdue University, West Lafayette, Indiana, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "greenhouse",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -18544,7 +18573,7 @@
       "LED144A, AmScope"
     ],
     "collection_period": "",
-    "platform": "mobile",
+    "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -18570,7 +18599,7 @@
     "lat_lon": [
       "40.79, -77.86"
     ],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -18582,7 +18611,7 @@
       "YOLOv8 (fine-tuned from Ultralytics)"
     ],
     "collection_period": "",
-    "platform": "laptop",
+    "platform": "",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -18650,7 +18679,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
+      "maize",
       "sunflower",
       "soybean",
       "sorghum",
@@ -18696,14 +18725,14 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Sanguisorba officinalis",
-      "Carex argyi",
-      "Juncus effusus",
-      "Polygonum sieboldii",
-      "Artemisia lavandulaefolia",
-      "Calamagrostis epigejos",
-      "Bidens pilosa",
-      "Fragaria orientalis"
+      "sanguisorba officinalis",
+      "carex argyi",
+      "juncus effusus",
+      "polygonum sieboldii",
+      "artemisia lavandulaefolia",
+      "calamagrostis epigejos",
+      "bidens pilosa",
+      "fragaria orientalis"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -18740,10 +18769,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Chinese fir",
-      "Masson pine",
-      "slash pine (Pinus elliottii Engelm.)",
-      "Schima superba Gardner & Champ"
+      "chinese fir",
+      "masson pine",
+      "slash pine (pinus elliottii engelm.)",
+      "schima superba gardner & champ"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -18779,8 +18808,8 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus halepensis",
-      "Quercus coccifera"
+      "pinus halepensis",
+      "quercus coccifera"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -18819,9 +18848,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis",
-      "Suaeda salsa",
-      "Tamarix chinensis"
+      "phragmites australis",
+      "suaeda salsa",
+      "tamarix chinensis"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -18967,11 +18996,11 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Fraxinus excelsior L.",
-      "Acer pseudoplatanus L.",
-      "Ostrya carpinifolia Scop.",
-      "Corylus avellana L.",
-      "Castanea sativa Mill."
+      "fraxinus excelsior l.",
+      "acer pseudoplatanus l.",
+      "ostrya carpinifolia scop.",
+      "corylus avellana l.",
+      "castanea sativa mill."
     ],
     "sensor_modality": "lidar",
     "imaging_equipment": [
@@ -19040,10 +19069,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Alternanthera philoxeroides",
-      "Vallisneria natans",
-      "Hydrilla verticillata",
-      "Elodea nuttallii"
+      "alternanthera philoxeroides",
+      "vallisneria natans",
+      "hydrilla verticillata",
+      "elodea nuttallii"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19117,12 +19146,12 @@
       "40.4436, -88.6326",
       "40.187, -90.4325"
     ],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn",
-      "soybeans"
+      "maize",
+      "soybean"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -19203,13 +19232,13 @@
       "Lubrecht Experimental Forest, Montana, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Douglas Fir",
-      "Ponderosa Pine",
-      "Western Larch"
+      "douglas fir",
+      "ponderosa pine",
+      "western larch"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -19241,21 +19270,21 @@
       "Wheeler Ridge, eastern Sierra Nevada, California, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "perennial bunchgrasses",
       "desert needlegrass",
       "rabbitbrush",
-      "Ceanothus"
+      "ceanothus"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
       "TimelapseCam Pro model; Wingscapes, Birmingham, AL, USA"
     ],
     "collection_period": "2018-2024",
-    "platform": "time-lapse",
+    "platform": "fixed",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -19469,7 +19498,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "corn"
+      "maize"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -20058,7 +20087,7 @@
       "DJIMini3 drone (Shenzhen DJI Innovation Technology Co., LTD., Nanshan District, Shenzhen City, Guangdong Province, China)"
     ],
     "collection_period": "5 March 2023 to 27 December 2023",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -20094,7 +20123,7 @@
       "RTK-capable GNSS receiver"
     ],
     "collection_period": "March 2025",
-    "platform": "mobile",
+    "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -20167,7 +20196,7 @@
       "Xiaomi M2010J19SG smartphone camera"
     ],
     "collection_period": "2025",
-    "platform": "smartphone",
+    "platform": "handheld",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -20204,7 +20233,7 @@
       "DJI Mavic 3 Multispectral (SZ DJI Technology Co., Ltd., Shenzhen, China)"
     ],
     "collection_period": "2024 and 2025 growing seasons",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
@@ -20309,7 +20338,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Brazil nut"
+      "brazil nut"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -20356,7 +20385,7 @@
       "Mavic 2 Pro Camera (Hasselblad, Gothenburg, Sweden)"
     ],
     "collection_period": "2024 to April 2025",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -20588,7 +20617,7 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Lemna minor"
+      "lemna minor"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -20679,7 +20708,7 @@
       "GEDI"
     ],
     "collection_period": "2019–2020",
-    "platform": "spaceborne",
+    "platform": "satellite",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -20713,7 +20742,7 @@
       "mustard",
       "oil radish",
       "winter barley",
-      "Egyptian clover"
+      "egyptian clover"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -20783,7 +20812,13 @@
       "Kenya, Kenya"
     ],
     "lat_lon": [],
-    "country": "Nigeria, Guinea-Bissau, Madagascar, Mozambique, Kenya",
+    "country": [
+      "Nigeria",
+      "Guinea-Bissau",
+      "Madagascar",
+      "Mozambique",
+      "Kenya"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21006,7 +21041,7 @@
       "barley",
       "wheat",
       "sunflower",
-      "corn",
+      "maize",
       "sugar beet",
       "soybean",
       "permanent grasslands"
@@ -21040,7 +21075,7 @@
       "North American ecoregions, North America"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21076,7 +21111,10 @@
       "Sub-Saharan Africa"
     ],
     "lat_lon": [],
-    "country": "Brazil, Russia",
+    "country": [
+      "Brazil",
+      "Russia"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21181,7 +21219,10 @@
       "Sundarbans, India/Bangladesh"
     ],
     "lat_lon": [],
-    "country": "India, Bangladesh",
+    "country": [
+      "India",
+      "Bangladesh"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21194,7 +21235,7 @@
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
-    "license": "gpl-3.0+",
+    "license": "gpl-3.0",
     "documentation": "https://doi.org/10.3390/rs15030625",
     "citation": "Zhang, Z. (2022). *Annual mangrove maps from 1988 to 2022 in the Sundarbans* [Dataset]. figshare. https://doi.org/10.6084/M9.FIGSHARE.21779636.V1",
     "bibtex": "@article{zhang2023monitoring,\n  title={Monitoring of 35-Year Mangrove Wetland Change Dynamics and Agents in the Sundarbans Using Temporal Consistency Checking},\n  author={Zhang, Zhen and Ahmed, Md Rasel and Zhang, Qian and Li, Yi and Li, Yangfan},\n  journal={Remote Sensing},\n  volume={15},\n  pages={625},\n  year={2023},\n  publisher={MDPI}\n}",
@@ -21326,16 +21367,16 @@
     "lat_lon": [
       "36.9975, -119.0244"
     ],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Pinus lambertiana",
-      "Quercus kelloggii",
-      "Abies magnifica",
-      "Abies concolor",
-      "Pinus jeffreyi",
-      "Pinus contorta"
+      "pinus lambertiana",
+      "quercus kelloggii",
+      "abies magnifica",
+      "abies concolor",
+      "pinus jeffreyi",
+      "pinus contorta"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -21343,7 +21384,7 @@
       "independently integrated UAV hyperspectral system of the Chinese Academy of Surveying and Mapping"
     ],
     "collection_period": "2017",
-    "platform": "airborne",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -21501,7 +21542,7 @@
       "Johnson WMA, Nebraska, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21616,12 +21657,12 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "spring wheat",
-      "corn",
-      "soybeans",
+      "maize",
+      "soybean",
       "sorghum",
       "rice",
       "winter wheat",
-      "peanuts",
+      "groundnut",
       "cotton",
       "vegetables",
       "fruits"
@@ -21688,7 +21729,7 @@
       "Iowa, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -21728,8 +21769,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "canola",
-      "Brassica napus"
+      "rapeseed"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -21767,13 +21807,13 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Korean pine (Pinus koraiensis Siebold and Zucc.)",
-      "birch (Betula platyphylla Suk.)",
-      "Manchurian ash (Fraxinus mandshurica Rupr.)",
-      "Manchurian walnut (Juglans mandshurica Maxim.)",
-      "poplar (Populus L.)",
-      "elm (Ulmus pumila L.)",
-      "Acer pictum (Acer pictum Thunb)"
+      "korean pine (pinus koraiensis siebold and zucc.)",
+      "birch (betula platyphylla suk.)",
+      "manchurian ash (fraxinus mandshurica rupr.)",
+      "manchurian walnut (juglans mandshurica maxim.)",
+      "poplar (populus l.)",
+      "elm (ulmus pumila l.)",
+      "acer pictum (acer pictum thunb)"
     ],
     "sensor_modality": "hyperspectral",
     "imaging_equipment": [
@@ -21851,7 +21891,7 @@
       "MicaSense RedEdge-M TM with a focal length of 6 mm (AgEagle Aerial Systems Inc., Wichita, KS, USA)"
     ],
     "collection_period": "2022",
-    "platform": "aircraft",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -21886,7 +21926,7 @@
       "airborne LiDAR"
     ],
     "collection_period": "2011–2017",
-    "platform": "airborne",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -21920,7 +21960,7 @@
       "AISAFenix sensor (Specim, Spectral Imaging, Ltd., Oulu, Finland)"
     ],
     "collection_period": "2016–2018",
-    "platform": "airborne",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -21955,7 +21995,7 @@
       "AISAFenix sensor (Specim, Spectral Imaging, Ltd., Oulu, Finland)"
     ],
     "collection_period": "2016–2018",
-    "platform": "airborne",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
@@ -21985,10 +22025,10 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Quercus rubra",
-      "Platanus acerifolia",
-      "Acer platanoides",
-      "Fraxinus excelsior"
+      "quercus rubra",
+      "platanus acerifolia",
+      "acer platanoides",
+      "fraxinus excelsior"
     ],
     "sensor_modality": "",
     "imaging_equipment": [
@@ -22095,9 +22135,9 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Betula papyrifera",
-      "Acer rubrum",
-      "Populus grandidentata"
+      "betula papyrifera",
+      "acer rubrum",
+      "populus grandidentata"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22128,7 +22168,7 @@
       "southeastern North Carolina, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -22201,11 +22241,15 @@
       "Sangha Trinational, Republic of Congo, Congo"
     ],
     "lat_lon": [],
-    "country": "Republic of the Congo, Central African Republic, Cameroon",
+    "country": [
+      "Republic of the Congo",
+      "Central African Republic",
+      "Cameroon"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Gilbertiodendron dewevrei"
+      "gilbertiodendron dewevrei"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22247,7 +22291,7 @@
       "Phantom 4 Pro v2.0 (DJI, Shenzhen, China) drone equipped with its default series RGB camera"
     ],
     "collection_period": "2025",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -22272,7 +22316,7 @@
       "Costa Rica"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -22349,7 +22393,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Apocynum venetum L."
+      "apocynum venetum l."
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22453,12 +22497,12 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Picea abies",
-      "Abies alba",
-      "Pinus sylvestris",
-      "Fagus sylvatica",
-      "Alnus glutinosa",
-      "Ulmus glabra"
+      "picea abies",
+      "abies alba",
+      "pinus sylvestris",
+      "fagus sylvatica",
+      "alnus glutinosa",
+      "ulmus glabra"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -22538,7 +22582,7 @@
       "DJI Zenmuse P1 sensor (full-frame 45-megapixel camera with a 35 mm lens)"
     ],
     "collection_period": "summer of 2022",
-    "platform": "drone",
+    "platform": "uav",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -22598,7 +22642,10 @@
       "Alaska region, USA"
     ],
     "lat_lon": [],
-    "country": "Russia, USA",
+    "country": [
+      "Russia",
+      "United States"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -22678,7 +22725,7 @@
       "digital hemispherical Mobotix Q 24 lens cameras (Mobotix AG-Germany, Winnweiler, Germany)"
     ],
     "collection_period": "four-year study period",
-    "platform": "phenocam",
+    "platform": "fixed",
     "input_data_format": "external",
     "annotation_format": "numericMeasurements",
     "classes": [],
@@ -22809,17 +22856,20 @@
       "San Francisco Bay Area, California, USA"
     ],
     "lat_lon": [],
-    "country": "Netherlands, USA",
+    "country": [
+      "Netherlands",
+      "United States"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "alfalfa",
-      "canola",
+      "rapeseed",
       "sugar beet",
       "potato",
       "pea",
       "stem bean",
-      "wheat A/B/C",
+      "wheat a/b/c",
       "barley"
     ],
     "sensor_modality": "sar",
@@ -23080,12 +23130,12 @@
       "University of Nebraska-Lincoln, Nebraska, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Buckwheat",
-      "Sunflower"
+      "buckwheat",
+      "sunflower"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -23257,7 +23307,11 @@
       "Van Cortlandt Park Preserve, New York, NY, United States"
     ],
     "lat_lon": [],
-    "country": "Canada; United Kingdom; United States",
+    "country": [
+      "Canada",
+      "United Kingdom",
+      "United States"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -23292,7 +23346,7 @@
       "Brewton Agricultural Research Unit, Brewton, Alabama, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -23335,9 +23389,9 @@
     "real_or_synthetic": "real",
     "crop_types": [
       "tamarisk",
-      "Populus euphratica",
-      "Nitraria",
-      "Haloxylon ammodendron (saxaul)"
+      "populus euphratica",
+      "nitraria",
+      "haloxylon ammodendron (saxaul)"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -23407,7 +23461,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "grapevine"
+      "grape"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -23730,7 +23784,7 @@
       "Sentinel-2"
     ],
     "collection_period": "",
-    "platform": "aircraft",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "classLabel",
     "classes": [],
@@ -23881,11 +23935,11 @@
       "citrus",
       "coconut tree",
       "coffee",
-      "corn",
+      "maize",
       "cotton",
       "cupuacu",
       "dry bean",
-      "grapevine",
+      "grape",
       "melon",
       "oil palm",
       "papaya",
@@ -24261,7 +24315,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Umbellularia californica (California bay laurel)"
+      "umbellularia californica (california bay laurel)"
     ],
     "sensor_modality": "point_cloud",
     "imaging_equipment": [
@@ -24327,7 +24381,13 @@
       "Australia"
     ],
     "lat_lon": [],
-    "country": "Norway; Czech Republic; Austria; New Zealand; Australia",
+    "country": [
+      "Norway",
+      "Czech Republic",
+      "Austria",
+      "New Zealand",
+      "Australia"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -24467,7 +24527,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
-    "sensor_modality": "thermal-rgb",
+    "sensor_modality": "rgb, thermal",
     "imaging_equipment": [
       "drone RGB camera",
       "drone thermal camera"
@@ -24567,7 +24627,11 @@
       "-33.600000, 150.716667",
       "0.500000, 12.783333"
     ],
-    "country": "Belgium; Australia; Gabon",
+    "country": [
+      "Belgium",
+      "Australia",
+      "Gabon"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -24609,7 +24673,7 @@
       "airborne LiDAR"
     ],
     "collection_period": "",
-    "platform": "aircraft",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -24758,7 +24822,7 @@
       "full-waveform airborne laser scanner"
     ],
     "collection_period": "July 2019",
-    "platform": "aircraft",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "none",
     "classes": [],
@@ -24894,7 +24958,11 @@
       "-2.41, 113.13",
       "-12.27, -69.10"
     ],
-    "country": "Guyana; Indonesia; Peru",
+    "country": [
+      "Guyana",
+      "Indonesia",
+      "Peru"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [],
@@ -24964,7 +25032,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Phragmites australis"
+      "phragmites australis"
     ],
     "sensor_modality": "multispectral",
     "imaging_equipment": [
@@ -25144,7 +25212,7 @@
       "Optech Gemini airborne LiDAR"
     ],
     "collection_period": "November 2010",
-    "platform": "aircraft",
+    "platform": "aerial",
     "input_data_format": "external",
     "annotation_format": "segmentationMask",
     "classes": [],
@@ -25290,7 +25358,7 @@
       "Missouri Maize Center, University of Missouri, Columbia, Missouri, USA"
     ],
     "lat_lon": [],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -25332,7 +25400,7 @@
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
-      "Spartina alterniflora"
+      "spartina alterniflora"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -25433,13 +25501,13 @@
     "lat_lon": [
       "40.05425, -105.58237"
     ],
-    "country": "USA",
+    "country": "United States",
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
       "lodgepole pine",
       "subalpine fir",
-      "Engelmann spruce"
+      "engelmann spruce"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -25659,12 +25727,12 @@
     "environment": "lab",
     "real_or_synthetic": "real",
     "crop_types": [
-      "arjun (Terminalia arjuna)",
-      "curry leaf (Murraya koenigii)",
-      "marsh pennywort (Hydrocotyle vulgaris)",
-      "mint (Mentha spp.)",
-      "neem (Azadirachta indica)",
-      "Kalanchoe pinnata"
+      "arjun (terminalia arjuna)",
+      "curry leaf (murraya koenigii)",
+      "marsh pennywort (hydrocotyle vulgaris)",
+      "mint (mentha spp.)",
+      "neem",
+      "kalanchoe pinnata"
     ],
     "sensor_modality": "rgb",
     "imaging_equipment": [
@@ -25855,7 +25923,7 @@
   {
     "name": "tomato_adaptive_yolov8_detection",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "fruit_maturity_detection",
+    "agricultural_task": "maturity_detection",
     "location": [
       "Gazipur, Bangladesh"
     ],
@@ -26072,17 +26140,16 @@
       "bhindi",
       "bitter gourd",
       "bottle gourd",
-      "brinjal",
+      "eggplant",
       "broad bean",
       "cabbage",
-      "canola",
-      "capsicum",
+      "rapeseed",
+      "bell pepper",
       "carrot",
       "cauliflower",
       "chickpea",
-      "chikoo",
+      "sapota",
       "chili",
-      "chilli",
       "citrus",
       "coriander",
       "cotton",
@@ -26101,7 +26168,7 @@
       "jamun",
       "kidney bean",
       "lemon",
-      "lemongrass",
+      "lemon grass",
       "maize",
       "mango",
       "marigold",
@@ -26111,7 +26178,7 @@
       "mustard",
       "okra",
       "onion",
-      "paddy",
+      "rice",
       "papaya",
       "pea",
       "pearl millet",
@@ -26124,7 +26191,6 @@
       "radish",
       "rahi",
       "red gram",
-      "rice",
       "ridge gourd",
       "rose",
       "sorghum",
@@ -26280,7 +26346,14 @@
       "-2.2172, 37.7254",
       "-3.404, 36.7939"
     ],
-    "country": "Kenya, Malawi, Nigeria, Senegal, Tanzania, Uganda",
+    "country": [
+      "Kenya",
+      "Malawi",
+      "Nigeria",
+      "Senegal",
+      "Tanzania",
+      "Uganda"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -26357,12 +26430,21 @@
   {
     "name": "image_safari_crop_weed_segmentation",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "crop and weed segmentation",
+    "agricultural_task": "crop_and_weed_segmentation",
     "location": [
       "Image Safari collection sites, sub-Saharan Africa"
     ],
     "lat_lon": [],
-    "country": "Kenya, Tanzania, Malawi, Uganda, Nigeria, Ghana, Senegal, Côte d'Ivoire",
+    "country": [
+      "Kenya",
+      "Tanzania",
+      "Malawi",
+      "Uganda",
+      "Nigeria",
+      "Ghana",
+      "Senegal",
+      "Côte d'Ivoire"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -27454,12 +27536,21 @@
   {
     "name": "image_safari_plant_part_segmentation",
     "machine_learning_task": "object_detection",
-    "agricultural_task": "plant part segmentation",
+    "agricultural_task": "plant_organ_segmentation",
     "location": [
       "Image Safari collection sites, sub-Saharan Africa"
     ],
     "lat_lon": [],
-    "country": "Kenya, Tanzania, Malawi, Uganda, Nigeria, Ghana, Senegal, Côte d'Ivoire",
+    "country": [
+      "Kenya",
+      "Tanzania",
+      "Malawi",
+      "Uganda",
+      "Nigeria",
+      "Ghana",
+      "Senegal",
+      "Côte d'Ivoire"
+    ],
     "environment": "field",
     "real_or_synthetic": "real",
     "crop_types": [
@@ -27921,7 +28012,7 @@
   {
     "name": "image_safari_sorghum_cimmyt_kibos",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kibos, Kenya"
     ],
@@ -27957,7 +28048,7 @@
   {
     "name": "image_safari_potato_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -27992,7 +28083,7 @@
   {
     "name": "image_safari_sorghum_cimmyt_kiboko",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kiboko, Kenya"
     ],
@@ -28031,7 +28122,7 @@
   {
     "name": "image_safari_sorghum_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28066,7 +28157,7 @@
   {
     "name": "image_safari_potato_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28104,7 +28195,7 @@
   {
     "name": "image_safari_soybean_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28140,7 +28231,7 @@
   {
     "name": "image_safari_sorghum_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28176,7 +28267,7 @@
   {
     "name": "image_safari_sweet_potato_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28212,7 +28303,7 @@
   {
     "name": "image_safari_unknown_crop_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28252,7 +28343,7 @@
   {
     "name": "image_safari_wheat_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28292,7 +28383,7 @@
   {
     "name": "image_safari_unknown_crop_cimmyt_kiboko",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Kiboko, Kenya"
     ],
@@ -28332,7 +28423,7 @@
   {
     "name": "image_safari_sweet_potato_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28368,7 +28459,7 @@
   {
     "name": "image_safari_sweet_potato_ciat_arusha_gopro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28403,7 +28494,7 @@
   {
     "name": "image_safari_unknown_crop_cip_nairobi",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Nairobi, Kenya"
     ],
@@ -28440,7 +28531,7 @@
   {
     "name": "image_safari_wheat_cimmyt_njoro",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Njoro, Kenya"
     ],
@@ -28479,7 +28570,7 @@
   {
     "name": "image_safari_wheat_qed_lilongwe",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Lilongwe, Malawi"
     ],
@@ -28514,7 +28605,7 @@
   {
     "name": "image_safari_sweet_potato_ciat_arusha",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Arusha, Tanzania"
     ],
@@ -28554,7 +28645,7 @@
   {
     "name": "image_safari_yam_iita_osogbo",
     "machine_learning_task": "unlabeled",
-    "agricultural_task": "crop image collection (unlabeled; for pretraining and foundation models)",
+    "agricultural_task": "",
     "location": [
       "Osogbo, Nigeria"
     ],
@@ -28592,6 +28683,588 @@
     "examples_image_url": "/img/agml/sample_images/image_safari_yam_iita_osogbo_sample.webp"
   },
   {
+    "name": "escayard_vine_esca",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Vineyards B7 and B9, Tomiño, Pontevedra, Galicia, Spain"
+    ],
+    "lat_lon": [],
+    "country": "Spain",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Apple iPhone X smartphone",
+      "Xiaomi Poco X3 Pro smartphone (datasheet: Poco Phone X4)"
+    ],
+    "collection_period": "July 14-15, 2022",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 253,
+    "classes": [
+      "NO",
+      "YES"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2024.110497",
+    "citation": "Vélez, S., Ariza-Sentís, M., &amp; Valente, J. (2023). *Precision viticulture dataset for detailed vineyard mapping composed of geotagged smartphone ground images, phytosanitary status, UAV orthomosaics, 3D point clouds, and RTK GNSS data - Northern Spain, July 2022* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.10362568",
+    "bibtex": "@article{vlez2024escayard,\n  title={EscaYard: Precision viticulture multimodal dataset of vineyards affected by Esca disease consisting of geotagged smartphone images, phytosanitary status, UAV 3D point clouds and Orthomosaics},\n  author={Vélez, Sergio and Ariza-Sentís, Mar and Valente, João},\n  journal={Data in Brief},\n  volume={54},\n  pages={110497},\n  year={2024},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 1536189879,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/escayard_vine_esca",
+    "examples_image_url": "/img/agml/sample_images/escayard_vine_esca_sample.webp"
+  },
+  {
+    "name": "gvsdb_grapevine_virus",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Ensenada, Baja California, Mexico"
+    ],
+    "lat_lon": [],
+    "country": "Mexico",
+    "environment": "mixed",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "smartphone cameras (not specified in the record)"
+    ],
+    "collection_period": "2022-2023",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3195,
+    "classes": [
+      "asymptomatic_or_negative",
+      "symptomatic_or_positive"
+    ],
+    "license": "cc-by-nc-4.0",
+    "documentation": "",
+    "citation": "García, K., &amp; Carrillo Tripp, J. (2025). *Grapevine Virus and Symptom Database (GVS-DB)* [Dataset]. Mendeley Data. https://doi.org/10.17632/WKBD3WSJPJ.1",
+    "bibtex": "",
+    "zip_size_bytes": 105041922,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gvsdb_grapevine_virus",
+    "examples_image_url": "/img/agml/sample_images/gvsdb_grapevine_virus_sample.webp"
+  },
+  {
+    "name": "gvlid_grapevine_leaf_disease",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "28 vineyards east of Pune, Maharashtra, India (metadata GPS 18.73-18.83 N, 73.97-74.07 E)"
+    ],
+    "lat_lon": [
+      "18.78, 74.02"
+    ],
+    "country": "India",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Redmi Note 10 5G smartphone (Sony IMX582 sensor), per the metadata"
+    ],
+    "collection_period": "2023-06-15 per the metadata (all photos)",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 3477,
+    "classes": [
+      "black_rot",
+      "esca",
+      "healthy",
+      "leaf_blight"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Shikalgar, A., Savalkar, A., Bhasme, A., Chavan, S., &amp; Nikam, V. (2026). *GVLiD: GrapeVine Leaf identification of the Diseases* [Dataset]. Mendeley Data. https://doi.org/10.17632/WKYMF8BHCG.5",
+    "bibtex": "",
+    "zip_size_bytes": 902225946,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/gvlid_grapevine_leaf_disease",
+    "examples_image_url": "/img/agml/sample_images/gvlid_grapevine_leaf_disease_sample.webp"
+  },
+  {
+    "name": "grapevine_leaf_disease_portugal",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "disease_classification",
+    "location": [
+      "Folhadela, Vila Real, Portugal",
+      "Mateus, Vila Real, Portugal",
+      "Refóios do Lima, Ponte de Lima, Portugal",
+      "Abaças, Vila Real, Portugal"
+    ],
+    "lat_lon": [
+      "41.2869, -7.7357",
+      "41.2944, -7.7148",
+      "41.7928, -8.5390",
+      "41.2266, -7.6991"
+    ],
+    "country": "Portugal",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "grape"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "Xiaomi Redmi Note 12 Pro smartphone (108MP, f/1.9, 1/1.52'', 0.7 µm native, 2.1 µm effective, 6-element lens)"
+    ],
+    "collection_period": "2024-2025",
+    "platform": "handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 5267,
+    "classes": [
+      "Downy Mildew",
+      "Erineum Mite",
+      "Esca Complex",
+      "Healthy",
+      "Powdery Mildew"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2026.112743",
+    "citation": "Portela, F. T., Gabriel, C., Ferreira, L., Paredes, C. A., Sousa, J. J., Peres, E., Morais, R., &amp; Pádua, L. (2025). *Grapevine Leaves RGB Images of  Disease Symptons (Esca, Downy Mildew, Powdery Mildew, and Erineum Mite)* [Dataset]. Zenodo. https://doi.org/10.5281/ZENODO.17343474",
+    "bibtex": "@article{portela2026dataset,\n  title={Dataset of RGB images of healthy grapevine leaves and with downy mildew, powdery mildew, Esca complex, and erineum mite symptoms},\n  author={Portela, Fernando and Carneiro, Gabriel and Ferreira, Leilson and Paredes, Cláudio A and Sousa, Joaquim J and Peres, Emanuel and Morais, Raul and Pádua, Luís},\n  journal={Data in Brief},\n  volume={66},\n  pages={112743},\n  year={2026},\n  publisher={Elsevier}\n}",
+    "zip_size_bytes": 770180001,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/grapevine_leaf_disease_portugal",
+    "examples_image_url": "/img/agml/sample_images/grapevine_leaf_disease_portugal_sample.webp"
+  },
+  {
+    "name": "ucm_land_use_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [],
+    "lat_lon": [],
+    "country": "United States",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "aerial",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2100,
+    "classes": [
+      "agricultural",
+      "airplane",
+      "baseball_diamond",
+      "beach",
+      "buildings",
+      "chaparral",
+      "dense_residential",
+      "forest",
+      "freeway",
+      "golf_course",
+      "harbor",
+      "intersection",
+      "medium_residential",
+      "mobile_home_park",
+      "overpass",
+      "parking_lot",
+      "river",
+      "runway",
+      "sparse_residential",
+      "storage_tanks",
+      "tennis_court"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.6084/M9.FIGSHARE.6085976.V2",
+    "citation": "Yang, Y., & Newsam, S. (2010). Bag-of-visual-words and spatial extensions for land-use classification. Proceedings of the 18th SIGSPATIAL International Conference on Advances in Geographic Information Systems, 270-279. https://doi.org/10.1145/1869790.1869829",
+    "bibtex": "@inproceedings{yang2010bag,\n  title={Bag-of-visual-words and spatial extensions for land-use classification},\n  author={Yang, Yi and Newsam, Shawn},\n  booktitle={Proceedings of the 18th SIGSPATIAL International Conference on Advances in Geographic Information Systems},\n  pages={270--279},\n  year={2010},\n  doi={10.1145/1869790.1869829}\n}",
+    "zip_size_bytes": 252498675,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/ucm_land_use_classification",
+    "examples_image_url": "/img/agml/sample_images/ucm_land_use_classification_sample.webp"
+  },
+  {
+    "name": "siri_whu_scene_classification",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "land_use_classification",
+    "location": [
+      "Wuhan, Hubei, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "satellite",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 2400,
+    "classes": [
+      "agriculture",
+      "commercial",
+      "harbor",
+      "idle_land",
+      "industrial",
+      "meadow",
+      "overpass",
+      "park",
+      "pond",
+      "residential",
+      "river",
+      "water"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.6084/M9.FIGSHARE.8796980.V2",
+    "citation": "Zhao, B., Zhong, Y., Xia, G.-S., & Zhang, L. (2016). Dirichlet-derived multiple topic scene classification model for high spatial resolution remote sensing imagery. IEEE Transactions on Geoscience and Remote Sensing, 54(4), 2108-2123. https://doi.org/10.1109/TGRS.2015.2496185",
+    "bibtex": "@article{zhao2016dirichlet,\n  title={Dirichlet-derived multiple topic scene classification model for high spatial resolution remote sensing imagery},\n  author={Zhao, Bei and Zhong, Yanfei and Xia, Gui-Song and Zhang, Liangpei},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  volume={54},\n  number={4},\n  pages={2108--2123},\n  year={2016},\n  doi={10.1109/TGRS.2015.2496185}\n}",
+    "zip_size_bytes": 148124034,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/siri_whu_scene_classification",
+    "examples_image_url": "/img/agml/sample_images/siri_whu_scene_classification_sample.webp"
+  },
+  {
+    "name": "AvoAir_DB_unlabeled",
+    "machine_learning_task": "unlabeled",
+    "agricultural_task": "",
+    "location": [
+      "Allal Tazi, Kénitra Province, Morocco"
+    ],
+    "lat_lon": [],
+    "country": "Morocco",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "avocado"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro UAV with FC6310 RGB camera (20 MP CMOS), 90 m altitude, 2.7 cm/px"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "none",
+    "num_images": 984,
+    "classes": [],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108738",
+    "citation": "El Amraoui, K., El Ansari, M., Lghoul, M., El Alaoui, M., Abanay, A., Jabri, B., Masmoudi, L., & Valente, J. (2022). Avo-AirDB: An avocado UAV Database for agricultural image segmentation and classification. Data in Brief, 45, 108738. https://doi.org/10.1016/j.dib.2022.108738",
+    "bibtex": "",
+    "zip_size_bytes": 7546795942,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_unlabeled",
+    "examples_image_url": "/img/agml/sample_images/AvoAir_DB_unlabeled_sample.webp"
+  },
+  {
+    "name": "AvoAir_DB_annotated",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Allal Tazi, Kénitra Province, Morocco"
+    ],
+    "lat_lon": [],
+    "country": "Morocco",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "avocado"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "DJI Phantom 4 Pro UAV with FC6310 RGB camera (20 MP CMOS), 90 m altitude, 2.7 cm/px"
+    ],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 89,
+    "classes": [
+      "large",
+      "medium",
+      "small"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2022.108738",
+    "citation": "El Amraoui, K., El Ansari, M., Lghoul, M., El Alaoui, M., Abanay, A., Jabri, B., Masmoudi, L., & Valente, J. (2022). Avo-AirDB: An avocado UAV Database for agricultural image segmentation and classification. Data in Brief, 45, 108738. https://doi.org/10.1016/j.dib.2022.108738",
+    "bibtex": "",
+    "zip_size_bytes": 686520687,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AvoAir_DB_annotated",
+    "examples_image_url": "/img/agml/sample_images/AvoAir_DB_annotated_sample.webp"
+  },
+  {
+    "name": "tomato_disease_detection",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "disease_detection",
+    "location": [
+      "Modern agricultural park greenhouses, Sichuan Province, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "2024",
+    "platform": "",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 1026,
+    "classes": [
+      "GrayMold_Fruit",
+      "GrayMold_Leaf",
+      "Viral_Leaf",
+      "Viral_Top",
+      "Virus_Middle",
+      "Wilt_Base",
+      "Wilt_Leaf",
+      "Wilt_Middle",
+      "Wilt_Stem",
+      "Wilt_Top"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1016/j.dib.2025.112032",
+    "citation": "Liu, Y., Zhu, Y., Hu, L., Huo, Y., Gao, W., Hu, R., & He, P. (2025). A labeled image dataset of common tomato diseases for classification and object detection. Data in Brief, 63, 112032. https://doi.org/10.1016/j.dib.2025.112032",
+    "bibtex": "@article{LIU2025112032,\n  title={A labeled image dataset of common tomato diseases for classification and object detection},\n  author={Liu, Yongbo and Zhu, Yuhang and Hu, Liang and Huo, Yao and Gao, Wenbo and Hu, Rongping and He, Peng},\n  journal={Data in Brief},\n  volume={63},\n  pages={112032},\n  year={2025},\n  doi={10.1016/j.dib.2025.112032}\n}",
+    "zip_size_bytes": 2988455725,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/tomato_disease_detection",
+    "examples_image_url": "/img/agml/sample_images/tomato_disease_detection_sample.webp"
+  },
+  {
+    "name": "YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Chongzhou, Sichuan, China",
+      "Renshou, Sichuan, China"
+    ],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "soybean"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "ground",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 1448,
+    "classes": [
+      "pod"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-023-00985-4",
+    "citation": "Xiang, S., Wang, S., Xu, M., Wang, W., & Liu, W. (2023). YOLO POD: a fast and accurate multi-task model for dense Soybean Pod counting. Plant Methods, 19(1). https://doi.org/10.1186/s13007-023-00985-4",
+    "bibtex": "@article{xiang2023yolopod,\n  title={YOLO POD: a fast and accurate multi-task model for dense Soybean Pod counting},\n  author={Xiang, Shuning and Wang, Sijun and Xu, Min and Wang, Wei and Liu, Wei},\n  journal={Plant Methods},\n  volume={19},\n  number={1},\n  year={2023},\n  publisher={Springer},\n  doi={10.1186/s13007-023-00985-4}\n}",
+    "zip_size_bytes": 6122850302,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "examples_image_url": "/img/agml/sample_images/YOLOPOD_Soyabean_Pod_Counting_Dataset_sample.webp"
+  },
+  {
+    "name": "MTDC_Maize_Tassels_Detection_Counting_Dataset",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "China",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 361,
+    "classes": [
+      "maize"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.1186/s13007-020-00651-1",
+    "citation": "Zou, H., Lu, H., Li, Y., Liu, L., & Cao, Z. (2020). Maize tassels detection: a benchmark of the state of the art. Plant Methods, 16(1). https://doi.org/10.1186/s13007-020-00651-1",
+    "bibtex": "@article{zou2020maize,\n  title={Maize tassels detection: a benchmark of the state of the art},\n  author={Zou, Hao and Lu, Hao and Li, Ying and Liu, Liu and Cao, Zhiguo},\n  journal={Plant Methods},\n  volume={16},\n  number={1},\n  year={2020},\n  publisher={Springer},\n  doi={10.1186/s13007-020-00651-1}\n}",
+    "zip_size_bytes": 1241762118,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MTDC_Maize_Tassels_Detection_Counting_Dataset",
+    "examples_image_url": "/img/agml/sample_images/MTDC_Maize_Tassels_Detection_Counting_Dataset_sample.webp"
+  },
+  {
+    "name": "CBDA_Cotton_Ball_Detection_Augmented",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [],
+    "lat_lon": [],
+    "country": "",
+    "environment": "field",
+    "real_or_synthetic": "mixed",
+    "crop_types": [
+      "cotton"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "uav",
+    "input_data_format": "image_folder",
+    "annotation_format": "coco_json",
+    "num_images": 180,
+    "classes": [
+      "cotton_ball"
+    ],
+    "license": "cc-by-4.0",
+    "documentation": "",
+    "citation": "Amrani, M., Sohel, F., Murray, N., & Hazel, S. (2023). Plant Detection and Counting: Enhancing Precision Agriculture in UAV and General Scenes. IEEE Access.",
+    "bibtex": "@article{amrani2023plant,\n  title={Plant Detection and Counting: Enhancing Precision Agriculture in UAV and General Scenes},\n  author={Amrani, Moussa and Sohel, Ferdous and Murray, Neil and Hazel, Susan},\n  journal={IEEE Access},\n  year={2023},\n  publisher={IEEE}\n}",
+    "zip_size_bytes": 220633221,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CBDA_Cotton_Ball_Detection_Augmented",
+    "examples_image_url": "/img/agml/sample_images/CBDA_Cotton_Ball_Detection_Augmented_sample.webp"
+  },
+  {
+    "name": "leaf_counting_denmark",
+    "machine_learning_task": "image_classification",
+    "agricultural_task": "crop_phenotyping",
+    "location": [],
+    "lat_lon": [],
+    "country": "Denmark",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "mixed",
+    "input_data_format": "parquet",
+    "annotation_format": "classLabel",
+    "num_images": 9372,
+    "classes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9+"
+    ],
+    "license": "",
+    "documentation": "https://vision.eng.au.dk/leaf-counting-dataset/",
+    "citation": "Teimouri, N., Dyrmann, M., Nielsen, P. R., Mathiassen, S. K., Somerville, G. J., & Jørgensen, R. N. (2018). Weed Growth Stage Estimation Using Deep Convolutional Neural Networks. Sensors, 18(5), 1580. https://doi.org/10.3390/s18051580",
+    "bibtex": "",
+    "zip_size_bytes": 927547928,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/leaf_counting_denmark",
+    "examples_image_url": "/img/agml/sample_images/leaf_counting_denmark_sample.webp",
+    "stats_mean": [
+      0.4266,
+      0.4274,
+      0.3418
+    ],
+    "stats_std": [
+      0.123,
+      0.1435,
+      0.1149
+    ]
+  },
+  {
+    "name": "fruits_detection_australia",
+    "machine_learning_task": "object_detection",
+    "agricultural_task": "crop_detection",
+    "location": [
+      "Warburton, Victoria, Australia (apples)",
+      "Bundaberg, Queensland, Australia (mangoes)",
+      "Mildura, Victoria, Australia (almonds)"
+    ],
+    "lat_lon": [],
+    "country": "Australia",
+    "environment": "field",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "mango",
+      "almond"
+    ],
+    "sensor_modality": "rgb",
+    "imaging_equipment": [
+      "PointGrey Ladybug3 on the Shrimp unmanned ground vehicle (apples, 1616 x 1232)",
+      "Prosilica GT3300c with external strobes on the Shrimp unmanned ground vehicle (mangoes, 3296 x 2472, night-time)",
+      "Canon EOS 60D, handheld (almonds, 3456 x 5184)"
+    ],
+    "collection_period": "",
+    "platform": "ground, handheld",
+    "input_data_format": "parquet",
+    "annotation_format": "boundingBox",
+    "num_images": 3704,
+    "classes": [
+      "apple",
+      "mango",
+      "almond"
+    ],
+    "license": "",
+    "documentation": "https://data.acfr.usyd.edu.au/ag/treecrops/2016-multifruit/",
+    "citation": "Bargoti, S., & Underwood, J. (2017). Deep Fruit Detection in Orchards. 2017 IEEE International Conference on Robotics and Automation (ICRA), 3626-3633. arXiv:1610.03677. Dataset: ACFR Orchard Fruit Dataset, Australian Centre for Field Robotics, The University of Sydney.",
+    "bibtex": "@inproceedings{bargoti2017deep,\n  title={Deep Fruit Detection in Orchards},\n  author={Bargoti, Suchet and Underwood, James},\n  booktitle={2017 IEEE International Conference on Robotics and Automation (ICRA)},\n  pages={3626--3633},\n  year={2017},\n  eprint={1610.03677},\n  archivePrefix={arXiv}\n}",
+    "zip_size_bytes": 2232261211,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/fruits_detection_australia",
+    "examples_image_url": "/img/agml/sample_images/fruits_detection_australia_sample.webp"
+  },
+  {
+    "name": "sorghum_lidar_point_cloud_segmentation",
+    "machine_learning_task": "semantic_segmentation",
+    "agricultural_task": "plant_organ_segmentation",
+    "location": [],
+    "lat_lon": [],
+    "country": "South Korea",
+    "environment": "",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "sorghum"
+    ],
+    "sensor_modality": "point_cloud",
+    "imaging_equipment": [],
+    "collection_period": "",
+    "platform": "fixed",
+    "input_data_format": "parquet",
+    "annotation_format": "segmentationMask",
+    "num_images": 502,
+    "classes": [
+      "leaf",
+      "stem",
+      "panicle"
+    ],
+    "license": "",
+    "documentation": "https://doi.org/10.17632/pfnfzrmrg7.1",
+    "citation": "Patel, A. K., Cho, B.-K., & Park, E.-S. (2023). Sorghum Plants Labeled 3D LiDAR Point Cloud Data (Version 1) [Data set]. Mendeley Data. https://doi.org/10.17632/pfnfzrmrg7.1",
+    "bibtex": "",
+    "zip_size_bytes": 1575119231,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/sorghum_lidar_point_cloud_segmentation",
+    "examples_image_url": ""
+  },
+  {
     "name": "AgroMind",
     "machine_learning_task": "image_text_to_text",
     "agricultural_task": [
@@ -28620,7 +29293,7 @@
       "grape",
       "citrus"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 19615,
     "num_qa_pairs": 27247,
     "license": "cc-by-sa-4.0",
@@ -28629,7 +29302,7 @@
     "bibtex": "@misc{li2025largemultimodalmodelsunderstand,\n  title = {Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind},\n  author = {Qingmei Li and Yang Zhang and Zurong Mai and Yuhang Chen and Shuohong Lou and Henglian Huang and Jiarui Zhang and Zhiwei Zhang and Yibin Wen and Weijia Li and Haohuan Fu and Jianxi Huang and Juepeng Zheng},\n  year = {2025},\n  eprint = {2505.12207},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.CV},\n  url = {https://arxiv.org/abs/2505.12207}\n}",
     "zip_size_bytes": 8365435047,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/Agromind",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroMind",
     "examples_image_url": "/img/agml/sample_images/AgroMind_sample.webp",
     "composition": {
       "num_source_datasets": 9,
@@ -28670,7 +29343,7 @@
     "country": "unknown",
     "real_or_synthetic": "real",
     "crop_types": [],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 3745,
     "num_qa_pairs": 4342,
     "license": "cc-by-nc-4.0",
@@ -28722,14 +29395,14 @@
       "rice",
       "oil palm"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 4809,
     "num_qa_pairs": 4759,
     "license": "cc-by-sa-4.0",
     "documentation": "https://arxiv.org/abs/2511.23253",
     "citation": "Wen, Y., Li, Q., Ye, Z., Zhang, J., Fan, X., Mai, Z., Wu, J., Lou, S., Chen, Y., Huang, H., Zhang, Y., Gu, D., Zhao, L., Lu, Y., Fu, H., Huang, J., & Zheng, J. (2025). AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture. arXiv:2511.23253.",
     "bibtex": "@misc{wen2025agrocot,\n  title = {AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture},\n  author = {Yibin Wen and Qingmei Li and Zi Ye and Jiarui Zhang and Xiaoya Fan and Zurong Mai and Jing Wu and Shuohong Lou and Yuhang Chen and Henglian Huang and Yang Zhang and Defeng Gu and Lingyuan Zhao and Yutong Lu and Haohuan Fu and Jianxi Huang and Juepeng Zheng},\n  year = {2025},\n  eprint = {2511.23253},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.AI},\n  url = {https://arxiv.org/abs/2511.23253}\n}",
-    "zip_size_bytes": null,
+    "zip_size_bytes": 4054598670,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroCoT",
     "examples_image_url": "/img/agml/sample_images/AgroCoT_sample.webp",
@@ -28775,7 +29448,7 @@
     "crop_types": [
       "wheat"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": null,
     "num_qa_pairs": 12151,
     "license": "cc-by-nc-4.0",
@@ -28864,7 +29537,7 @@
       "tea",
       "tomato"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 150841,
     "num_qa_pairs": 765186,
     "license": "cc-by-4.0",
@@ -28965,7 +29638,7 @@
       "tomato",
       "wheat"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 115025,
     "num_qa_pairs": 149244,
     "license": "other",
@@ -29022,7 +29695,7 @@
       "apple",
       "mango"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 107488,
     "num_qa_pairs": 288831,
     "license": "other",
@@ -29078,7 +29751,7 @@
     "country": "unknown",
     "real_or_synthetic": "real",
     "crop_types": [],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 62901,
     "num_qa_pairs": 40880,
     "license": "cc-by-sa-4.0",
@@ -29128,7 +29801,7 @@
     "crop_types": [
       "tomato"
     ],
-    "annotation_format": "none",
+    "annotation_format": "OpenAI-style",
     "num_images": 28808,
     "num_qa_pairs": 213119,
     "license": "cc-by-nc-4.0",
