@@ -24,12 +24,10 @@ def read_json(path: Path):
 def is_vlm_dataset(entry: dict) -> bool:
     """Mirrors the isVlm inference in normalizeDataset (src/lib/datasets.ts): raw manifests
     don't reliably set `dataset_type` itself, so VLM datasets are recognized by their
-    machine_learning_task/qa_type/task_dimensions instead."""
-    if entry.get("machine_learning_task") == "image-text-to-text":
+    machine_learning_task/qa_type instead."""
+    if entry.get("machine_learning_task") == "image_text_to_text":
         return True
     if entry.get("qa_type"):
-        return True
-    if entry.get("task_dimensions"):
         return True
     return False
 

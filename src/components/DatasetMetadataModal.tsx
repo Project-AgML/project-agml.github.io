@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import type { Dataset } from '../lib/datasets';
-import { formatCoordinateList, formatDisplayLocation, formatLocationList, toTitleCase } from '../lib/datasets';
-import { toDisplayLabel } from '../lib/labelOverrides';
+import { formatCoordinateList, formatDisplayLocation, formatLocationList, isVlmTask, toTitleCase } from '../lib/datasets';
+import { toDisplayLabel, toNameTitleCase } from '../lib/labelOverrides';
 import {
 	useBenchmark,
 	type BenchmarkData,
@@ -72,7 +72,7 @@ function formatResultType(entry: { variant: 'zero-shot' | 'fine-tuned' | null; o
 
 function taskBadgeClass(task: string | null): string {
 	if (!task) return styles.badgeOther;
-	if (task.includes('image-text') || task.includes('text-to-text')) return styles.badgeVlm;
+	if (isVlmTask(task)) return styles.badgeVlm;
 	if (task.includes('classif')) return styles.badgeClassification;
 	if (task.includes('detect')) return styles.badgeDetection;
 	if (task.includes('segment')) return styles.badgeSegmentation;
@@ -112,10 +112,13 @@ function isExternalDataset(dataset: Dataset) {
 
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
-		if(dataset.dataset_type === 'vlm') {
+		if (dataset.dataset_type === 'vlm') {
+			// Datasets with several Hugging Face configs list them in `hf_configs`; the rest only have "default".
+			const [config = 'default', ...otherConfigs] = dataset.hf_configs ?? [];
+			const configsComment = otherConfigs.length ? `\n# other configs: ${otherConfigs.join(', ')}` : '';
 			return {
 				title: 'Load from Hugging Face',
-				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
+				code: `from agml import loadImageTextToTextDataset\nds = loadImageTextToTextDataset("Project-AgML/${dataset.name}", config="${config}")${configsComment}`,
 			};
 		}
 		if (dataset.sensor_modality?.toLowerCase().includes('multispectral')) {
@@ -1161,6 +1164,7 @@ export function DatasetMetadataModal({
 
 	const [cropsExpanded, setCropsExpanded] = useState(false);
 	const [classesExpanded, setClassesExpanded] = useState(false);
+	const [sourcesExpanded, setSourcesExpanded] = useState(false);
 	const [copied, setCopied] = useState(false);
 	const [citationCopied, setCitationCopied] = useState(false);
 	const [bibtexCopied, setBibtexCopied] = useState(false);
@@ -1185,8 +1189,9 @@ export function DatasetMetadataModal({
 		['Platform', formatValue(dataset.platform)],
 		...(isVlm
 			? ([
-					['Conversation format', formatValue(dataset.conversation_format)],
-					['Num of samples', formatImageCount(dataset.num_rows)],
+					['Conversation type', formatValue(dataset.conversation_type)],
+					['QA pairs', formatImageCount(dataset.num_qa_pairs)],
+					['Number of images', formatImageCount(dataset.num_images)],
 				] as const)
 			: ([['Number of images', formatImageCount(dataset.num_images)]] as const)),
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
@@ -1199,7 +1204,11 @@ export function DatasetMetadataModal({
 			: []),
 	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
+	// `parent_dataset` is a URL on VLM records but a bare dataset name on child vision datasets
+	// (e.g. iNatAg species), which must not be linked.
+	const parentDatasetUrl = dataset.parent_dataset && /^https?:\/\//.test(dataset.parent_dataset) ? dataset.parent_dataset : null;
 	const cropList = dataset.crop_types ?? dataset.child_crop_types ?? [];
+	const sourceList = dataset.source_datasets ?? [];
 	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
 	const locationList = formatLocationList(dataset);
 	const coordinateList = formatCoordinateList(dataset.lat_lon);
@@ -1230,7 +1239,9 @@ export function DatasetMetadataModal({
 									{formatValue(dataset.machine_learning_task)}
 								</span>
 							)}
-							{dataset.agricultural_task && <span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>}
+							{!isVlm && dataset.agricultural_task && (
+								<span className={styles.tag}>{dataset.agricultural_task}</span>
+							)}
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
 							{dataset.license && <span className={styles.tag}>{dataset.license}</span>}
 						</div>
@@ -1274,7 +1285,7 @@ export function DatasetMetadataModal({
 					))}
 				</dl>
 
-				{(dataset.country || dataset.location || dataset.lat_lon || dataset.imaging_equipment || dataset.collection_period) && (
+				{!isVlm && (dataset.country || dataset.location || dataset.lat_lon || dataset.imaging_equipment || dataset.collection_period) && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Location &amp; collection</h3>
 						<div className={styles.locationColumns}>
@@ -1334,40 +1345,45 @@ export function DatasetMetadataModal({
 					</section>
 				)}
 
-				{isVlm && dataset.task_dimensions && dataset.task_dimensions.length > 0 && (
-					<section className={styles.section}>
-						<h3 className={styles.sectionTitle}>Task Dimensions</h3>
-						<div className={styles.badgeWrap}>
-							{dataset.task_dimensions.map((value) => (
-								<span key={value} className={styles.tag}>{toTitleCase(value)}</span>
-							))}
-						</div>
-					</section>
-				)}
-
-				{isVlm && dataset.source_datasets && dataset.source_datasets.length > 0 && (
-					<section className={styles.section}>
-						<h3 className={styles.sectionTitle}>Source Datasets</h3>
-						<div className={styles.badgeWrap}>
-							{dataset.source_datasets.map((sourceDataset) => (
-								<span key={sourceDataset} className={styles.tag}>{sourceDataset}</span>
-							))}
-						</div>
-					</section>
-				)}
-
 				{cropList.length > 0 && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Crops</h3>
 						<div className={styles.badgeWrap}>
 							{(cropsExpanded ? cropList : cropList.slice(0, 10)).map((crop) => (
-								<span key={crop} className={styles.tag}>{crop}</span>
+								<span key={crop} className={styles.tag}>{isVlm ? toTitleCase(crop) : crop}</span>
 							))}
 							{!cropsExpanded && cropList.length > 10 && (
 								<button type="button" className={styles.expandButton} onClick={() => setCropsExpanded(true)}>
 									+{cropList.length - 10} more
 								</button>
 							)}
+						</div>
+					</section>
+				)}
+
+				{isVlm && sourceList.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Source Datasets</h3>
+						<div className={styles.badgeWrap}>
+							{(sourcesExpanded ? sourceList : sourceList.slice(0, 10)).map((sourceDataset) => (
+								<span key={sourceDataset} className={styles.tag}>{toNameTitleCase(sourceDataset)}</span>
+							))}
+							{!sourcesExpanded && sourceList.length > 10 && (
+								<button type="button" className={styles.expandButton} onClick={() => setSourcesExpanded(true)}>
+									+{sourceList.length - 10} more
+								</button>
+							)}
+						</div>
+					</section>
+				)}
+
+				{isVlm && dataset.agricultural_task && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Agricultural Tasks</h3>
+						<div className={styles.badgeWrap}>
+							{[dataset.agricultural_task].flat().map((task) => (
+								<span key={task} className={styles.tag}>{toTitleCase(task)}</span>
+							))}
 						</div>
 					</section>
 				)}
@@ -1444,7 +1460,7 @@ export function DatasetMetadataModal({
 				</section>
 				)}
 
-				{(dataset.documentation || dataset.hf_link || (isExternalDataset(dataset) && dataset.data_link)) && (
+				{(dataset.documentation || dataset.hf_link || parentDatasetUrl || (isExternalDataset(dataset) && dataset.data_link)) && (
 					<div className={styles.linkRow}>
 						{dataset.documentation && (
 							<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
@@ -1461,10 +1477,11 @@ export function DatasetMetadataModal({
 								View on Hugging Face
 							</a>
 						)}
-						{/* "View Original Dataset" is hidden for now: VLM records carry `parent_dataset`
-						    as a bare Hugging Face repo slug (e.g. "AgroMind/AgroMind"), not a URL, so
-						    linking it directly resolved as a relative site link and 404'd. Restore this
-						    once the field is normalized to an absolute URL upstream. */}
+						{parentDatasetUrl && (
+							<a className={styles.externalLink} href={parentDatasetUrl} target="_blank" rel="noreferrer">
+								View Original Dataset
+							</a>
+						)}
 					</div>
 				)}
 

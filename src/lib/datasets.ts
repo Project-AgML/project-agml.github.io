@@ -6,7 +6,8 @@ export interface Dataset {
     name: string;
     source: "agml" | "huggingface" | string | null;
     machine_learning_task: string | null;
-    agricultural_task: string | null;
+    // A single string on vision datasets; a list of tasks on VLM (image-text-to-text) datasets.
+    agricultural_task: string | string[] | null;
     location: string | string[] | null;
     country: string | string[] | null;
     // Derived: `country`, falling back to `location` when country wasn't extracted. Used for the
@@ -58,10 +59,9 @@ export interface Dataset {
     // VLM (vision-language) dataset fields — absent/null on plain vision datasets.
     dataset_type: "vision" | "vlm";
     qa_type: string[] | null;
-    task_dimensions: string[] | null;
-    num_task_types: number | null;
-    conversation_format: string | null;
-    num_rows: number | null;
+    conversation_type: string[] | null;
+    num_qa_pairs: number | null;
+    hf_configs: string[] | null;
     source_datasets: string[] | null;
 }
 
@@ -147,6 +147,10 @@ function normalizeLocation(value: unknown): string | string[] | null {
     return firstString(value);
 }
 
+export function isVlmTask(task: string | null | undefined): boolean {
+    return task === "image_text_to_text";
+}
+
 function normalizeDataset(raw: unknown): Dataset | null {
     if (!isRecord(raw)) return null;
 
@@ -176,17 +180,15 @@ function normalizeDataset(raw: unknown): Dataset | null {
         toStringArray(raw.sensor_modality)?.join(", ") ??
         null;
     const qaType = toStringArray(raw.qa_type);
-    const taskDimensions = toStringArray(raw.task_dimensions);
-    const isVlm =
-        mlTask === "image-text-to-text" ||
-        Boolean(qaType?.length) ||
-        Boolean(taskDimensions?.length);
+    const isVlm = isVlmTask(mlTask) || Boolean(qaType?.length);
 
     return {
         name,
         machine_learning_task: mlTask,
         source: firstString(raw.source),
-        agricultural_task: firstString(raw.agricultural_task, raw.ag_task),
+        agricultural_task:
+            toStringArray(raw.agricultural_task) ??
+            firstString(raw.agricultural_task, raw.ag_task),
         location,
         country,
         display_location: country ?? location,
@@ -260,10 +262,9 @@ function normalizeDataset(raw: unknown): Dataset | null {
         hf_link: firstString(raw.hf_link, raw.huggingface_link, raw.hf_url),
         dataset_type: isVlm ? "vlm" : "vision",
         qa_type: qaType,
-        task_dimensions: taskDimensions,
-        num_task_types: toNumber(raw.num_task_types),
-        conversation_format: firstString(raw.conversation_format),
-        num_rows: toNumber(raw.num_rows),
+        conversation_type: toStringArray(raw.conversation_type),
+        num_qa_pairs: toNumber(raw.num_qa_pairs),
+        hf_configs: toStringArray(raw.hf_configs),
         source_datasets: toStringArray(
             (raw.composition as Record<string, unknown> | undefined)
                 ?.source_datasets,
@@ -335,11 +336,10 @@ function mergeDataset(current: Dataset, incoming: Dataset): Dataset {
                 ? "vlm"
                 : "vision",
         qa_type: current.qa_type ?? incoming.qa_type,
-        task_dimensions: current.task_dimensions ?? incoming.task_dimensions,
-        num_task_types: current.num_task_types ?? incoming.num_task_types,
-        conversation_format:
-            current.conversation_format ?? incoming.conversation_format,
-        num_rows: current.num_rows ?? incoming.num_rows,
+        conversation_type:
+            current.conversation_type ?? incoming.conversation_type,
+        num_qa_pairs: current.num_qa_pairs ?? incoming.num_qa_pairs,
+        hf_configs: current.hf_configs ?? incoming.hf_configs,
         source_datasets: current.source_datasets ?? incoming.source_datasets,
     };
 }
@@ -450,10 +450,10 @@ function matchesFieldValue(
     mode: "exact" | "containsAny",
 ) {
     if (value == null || values.length === 0) return false;
+    // Array-valued fields (e.g. a VLM dataset's list of agricultural tasks) match when any entry
+    // is one of the selected values.
     if (Array.isArray(value)) {
-        return mode === "containsAny"
-            ? value.some((entry) => values.includes(entry))
-            : values.length === value.length && values.every((entry) => value.includes(entry));
+        return value.some((entry) => values.includes(entry));
     }
     if (mode === "containsAny") {
         return values.some((entry) =>
@@ -494,9 +494,12 @@ export function filterDatasets(
                 d.crop_types?.some((entry) =>
                     entry.toLowerCase().includes(q),
                 ) ?? false;
+            const agTaskMatches = Array.isArray(d.agricultural_task)
+                ? d.agricultural_task.some((entry) => entry.toLowerCase().includes(q))
+                : (d.agricultural_task?.toLowerCase().includes(q) ?? false);
             return (
                 d.name.toLowerCase().includes(q) ||
-                d.agricultural_task?.toLowerCase().includes(q) ||
+                agTaskMatches ||
                 d.machine_learning_task?.toLowerCase().includes(q) ||
                 d.environment?.toLowerCase().includes(q) ||
                 d.augmented_counterpart?.toLowerCase().includes(q) ||
@@ -530,7 +533,9 @@ export function filterDatasets(
         out = out.filter(
             (d) =>
                 d.agricultural_task != null &&
-                opts.agTasks!.includes(d.agricultural_task),
+                (Array.isArray(d.agricultural_task)
+                    ? d.agricultural_task.some((t) => opts.agTasks!.includes(t))
+                    : opts.agTasks!.includes(d.agricultural_task)),
         );
     }
     if (opts.platforms?.length) {
@@ -583,9 +588,6 @@ export function useDatasetOptions(data: Dataset[]) {
             realOptions: unique(data.map((d) => d.real_or_synthetic)),
             datasetTypes: unique(data.map((d) => d.dataset_type)),
             qaTypes: unique(data.flatMap((d) => d.qa_type ?? [])),
-            taskDimensions: unique(
-                data.flatMap((d) => d.task_dimensions ?? []),
-            ),
         };
     }, [data]);
 }
@@ -815,9 +817,10 @@ export function computeAgriculturalTaskDistribution(
     const topLevel = datasets.filter((dataset) => !isChildDataset(dataset));
     const counts = new Map<string, number>();
     for (const dataset of topLevel) {
-        const task = dataset.agricultural_task;
-        if (!task) continue;
-        counts.set(task, (counts.get(task) ?? 0) + 1);
+        if (!dataset.agricultural_task) continue;
+        for (const task of [dataset.agricultural_task].flat()) {
+            counts.set(task, (counts.get(task) ?? 0) + 1);
+        }
     }
     return Array.from(counts.entries())
         .map(([key, count]) => ({ key, label: toTitleCase(key), count }))
