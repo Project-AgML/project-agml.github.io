@@ -124351,26 +124351,5 @@
     "crop_types": [
       "papaya"
     ]
-  },
-  {
-    "name": "susnato_plant_disease_detection_processed",
-    "machine_learning_task": "object_detection",
-    "agricultural_task": "disease_detection",
-    "location": null,
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": null,
-    "input_data_format": "jpg",
-    "annotation_format": "coco_json",
-    "num_images": 2324,
-    "documentation": "https://huggingface.co/datasets/susnato/plant_disease_detection_processed",
-    "classes": "",
-    "stats_mean": null,
-    "stats_std": null,
-    "examples_image_url": null,
-    "source": "agml",
-    "license": "cc-by-4.0",
-    "citation": "@inproceedings{10.1145/3371158.3371196,\nauthor = {Singh, Davinder and Jain, Naman and Jain, Pranjali and Kayal, Pratik and Kumawat, Sudhakar and Batra, Nipun},\ntitle = {PlantDoc: A Dataset for Visual Plant Disease Detection},\nyear = {2020},\npublisher = {Association for Computing Machinery},\nurl = {https://doi.org/10.1145/3371158.3371196}}",
-    "crop_types": null
   }
 ]
