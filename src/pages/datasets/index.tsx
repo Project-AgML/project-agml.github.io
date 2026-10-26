@@ -331,7 +331,7 @@ function DatasetCard({
             </span>
           )}
           {agTasks.slice(0, MAX_CARD_AG_TASKS).map((task) => (
-            <span key={task} className={styles.tag}>{isVlm ? toDisplayLabel(task) : task}</span>
+            <span key={task} className={styles.tag}>{toDisplayLabel(task)}</span>
           ))}
           {agTasks.length > MAX_CARD_AG_TASKS && (
             <span className={styles.tag}>+{agTasks.length - MAX_CARD_AG_TASKS} more</span>

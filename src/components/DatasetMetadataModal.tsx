@@ -599,7 +599,7 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 				{badge && <span className={styles.metricCardBadge}>{badge}</span>}
 			</div>
 
-			{card.kind === 'skipped' && <p className={styles.metricSkipped}>Skipped;  {card.message}</p>}
+			{card.kind === 'skipped' && <p className={styles.metricSkipped}>Skipped — {card.message}</p>}
 
 			{card.kind === 'stat-sections' && (
 				<div className={styles.metricStatSections}>
@@ -1244,7 +1244,7 @@ export function DatasetMetadataModal({
 								</span>
 							)}
 							{!isVlm && dataset.agricultural_task && (
-								<span className={styles.tag}>{dataset.agricultural_task}</span>
+								<span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>
 							)}
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
 							{dataset.license && <span className={styles.tag}>{dataset.license}</span>}
