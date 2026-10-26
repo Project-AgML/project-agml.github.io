@@ -1165,6 +1165,10 @@ export function DatasetMetadataModal({
 	const [cropsExpanded, setCropsExpanded] = useState(false);
 	const [classesExpanded, setClassesExpanded] = useState(false);
 	const [sourcesExpanded, setSourcesExpanded] = useState(false);
+	// Set when the sample image fails to load (e.g. its file is missing), so the "no example
+	// image" message shows instead of a broken image.
+	const [exampleImageFailed, setExampleImageFailed] = useState(false);
+	useEffect(() => setExampleImageFailed(false), [dataset?.examples_image_url]);
 	const [copied, setCopied] = useState(false);
 	const [citationCopied, setCitationCopied] = useState(false);
 	const [bibtexCopied, setBibtexCopied] = useState(false);
@@ -1422,9 +1426,14 @@ export function DatasetMetadataModal({
 					</h3>
 					{dataset.sensor_modality === 'point_cloud' && dataset.point_cloud_sample_url ? (
 						<PointCloudPlot3D sampleUrl={dataset.point_cloud_sample_url} />
-					) : hasExampleImage(dataset.examples_image_url) ? (
+					) : hasExampleImage(dataset.examples_image_url) && !exampleImageFailed ? (
 						<figure className={styles.figure}>
-							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
+							<img
+								className={styles.exampleImage}
+								src={dataset.examples_image_url}
+								alt={`Example for ${dataset.name}`}
+								onError={() => setExampleImageFailed(true)}
+							/>
 						</figure>
 					) : (
 						<p className={styles.bodyText}>No example image is available for this dataset.</p>

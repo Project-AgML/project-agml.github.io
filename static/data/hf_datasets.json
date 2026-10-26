@@ -29547,7 +29547,7 @@
     "zip_size_bytes": 11842351197,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PlantExpertVQA",
-    "examples_image_url": "/img/agml/sample_images/plantexpertvqa.webp",
+    "examples_image_url": "",
     "composition": {
       "num_source_datasets": 45,
       "source_datasets": [
@@ -29880,7 +29880,7 @@
     "zip_size_bytes": 7117690079,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet",
-    "examples_image_url": "/img/agml/sample_images/LeafNet_sample.jpeg",
+    "examples_image_url": "",
     "composition": {
       "num_source_datasets": 13,
       "source_datasets": [
@@ -29960,10 +29960,10 @@
     "documentation": "https://arxiv.org/abs/2602.13662",
     "citation": "Nguyen Quoc, K., Dao, P. D., & Quach, L.-D. (2026). LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases. arXiv:2602.13662.",
     "bibtex": "@misc{quoc2026leafnet, title={LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases}, author={Khang Nguyen Quoc and Phuong D. Dao and Luyl-Da Quach}, year={2026}, eprint={2602.13662}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2602.13662}}",
-    "zip_size_bytes": null,
+    "zip_size_bytes": 278000000,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafBench",
-    "examples_image_url": "/img/agml/sample_images/leafbench.webp",
+    "examples_image_url": "/img/agml/sample_images/LeafNet_sample.jpeg",
     "composition": {
       "num_source_datasets": 1,
       "source_datasets": [
@@ -30048,7 +30048,7 @@
     "zip_size_bytes": 1886923805,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet2.0",
-    "examples_image_url": "/img/agml/sample_images/leafnet2.0.webp",
+    "examples_image_url": "",
     "composition": {
       "num_source_datasets": 26,
       "source_datasets": [
@@ -30168,7 +30168,7 @@
     "zip_size_bytes": 401694166,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafBenchV2",
-    "examples_image_url": "/img/agml/sample_images/leafbenchv2.webp",
+    "examples_image_url": "",
     "composition": {
       "num_source_datasets": 1,
       "source_datasets": [
