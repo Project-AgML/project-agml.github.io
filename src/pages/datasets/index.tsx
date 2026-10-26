@@ -1,11 +1,11 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { computeDatasetStats, datasetGroupKey, filterDatasets, formatPrimaryLocation, useDatasets } from '../../lib/datasets';
-import { toDisplayLabel } from '../../lib/labelOverrides';
+import { computeDatasetStats, datasetGroupKey, filterDatasets, formatPrimaryLocation, isVlmTask, useDatasets } from '../../lib/datasets';
+import { toDisplayLabel, toNameTitleCase } from '../../lib/labelOverrides';
 import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
 type FilterKind = 'checkbox' | 'dropdown';
@@ -17,6 +17,8 @@ type DatasetFilterConfig = {
   kind: FilterKind;
   formatOption?: (value: string) => string;
   mode?: 'exact' | 'containsAny';
+  // Leave VLM (image-text-to-text) datasets' values out of this filter's options.
+  excludeVlm?: boolean;
 };
 
 const DATASET_FILTERS: DatasetFilterConfig[] = [
@@ -33,6 +35,9 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     field: 'agricultural_task',
     kind: 'dropdown',
     formatOption: (value) => toDisplayLabel(value),
+    // VLM agricultural tasks are free-form and rarely shared across datasets; keep them out of
+    // the options until they're standardized to a common set.
+    excludeVlm: true,
   },
   {
     key: 'crop_types',
@@ -75,6 +80,14 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
     formatOption: (value) => toDisplayLabel(value),
   },
   {
+    key: 'conversation_type',
+    label: 'Conversation Type',
+    field: 'conversation_type',
+    kind: 'checkbox',
+    mode: 'containsAny',
+    formatOption: (value) => toDisplayLabel(value),
+  },
+  {
     key: 'environment',
     label: 'Environment',
     field: 'environment',
@@ -98,17 +111,6 @@ const DATASET_FILTERS: DatasetFilterConfig[] = [
 ];
 
 type FilterKey = (typeof DATASET_FILTERS)[number]['key'];
-
-function toLabel(value: string) {
-  return value.replace(/_/g, ' ');
-}
-
-function toTitle(value: string) {
-  return toLabel(value)
-    .split(' ')
-    .map((word) => (word ? `${word[0].toUpperCase()}${word.slice(1)}` : ''))
-    .join(' ');
-}
 
 function formatImageCount(count: number | null) {
   if (count == null) return 'Unknown';
@@ -136,7 +138,7 @@ function formatBytesDecimal(bytes: number | null | undefined) {
 
 function taskBadgeClass(task: string | null): string {
   if (!task) return styles.badgeOther;
-  if (task.includes('image-text') || task.includes('text-to-text')) return styles.badgeVlm;
+  if (isVlmTask(task)) return styles.badgeVlm;
   if (task.includes('classif')) return styles.badgeClassification;
   if (task.includes('detect')) return styles.badgeDetection;
   if (task.includes('segment')) return styles.badgeSegmentation;
@@ -145,9 +147,10 @@ function taskBadgeClass(task: string | null): string {
 
 function getFilterValues(
   datasets: import('../../lib/datasets').Dataset[],
-  field: keyof import('../../lib/datasets').Dataset
+  { field, excludeVlm }: DatasetFilterConfig
 ): string[] {
   const values = datasets.flatMap((dataset) => {
+    if (excludeVlm && dataset.dataset_type === 'vlm') return [];
     const value = dataset[field];
     if (typeof value === 'string') return [value];
     if (Array.isArray(value)) return value.filter((entry): entry is string => typeof entry === 'string');
@@ -194,6 +197,96 @@ function CheckboxFilterGroup({
   );
 }
 
+// QA pairs range filter, in thousands. Stored in the URL as `qa_min` / `qa_max`; either is
+// omitted while its handle sits at the end of the track.
+const QA_MIN_PARAM = 'qa_min';
+const QA_MAX_PARAM = 'qa_max';
+// Left end of the slider: a log scale can't start at 0.
+const QA_SLIDER_MIN = 1;
+
+function parseThousands(value: string | null): number | null {
+  if (value == null || value === '') return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+// The slider's handles move on a log scale so small datasets (a few k) and large ones (hundreds
+// of k) are equally easy to pick out; values in between snap to 2 significant figures.
+const LOG_SLIDER_STEPS = 1000;
+
+function roundToTwoSignificant(n: number): number {
+  return n > 0 ? Number(n.toPrecision(2)) : 0;
+}
+
+function RangeSliderFilter({
+  label,
+  min,
+  max,
+  value,
+  onChange,
+}: {
+  label: string;
+  min: number;
+  max: number;
+  value: [number, number];
+  onChange: (next: [number, number]) => void;
+}) {
+  const toPosition = (n: number) =>
+    max > min ? Math.round((LOG_SLIDER_STEPS * Math.log(Math.max(n, min) / min)) / Math.log(max / min)) : 0;
+  const fromPosition = (position: number) => {
+    if (position <= 0) return min;
+    if (position >= LOG_SLIDER_STEPS) return max;
+    return Math.min(max, Math.max(min, roundToTwoSignificant(min * (max / min) ** (position / LOG_SLIDER_STEPS))));
+  };
+
+  // Local while dragging; committed to the URL after a short pause, like the search box.
+  const [draft, setDraft] = useState(value);
+  useEffect(() => setDraft(value), [value[0], value[1]]);
+  useEffect(() => {
+    if (draft[0] === value[0] && draft[1] === value[1]) return;
+    const timeout = setTimeout(() => onChange(draft), 200);
+    return () => clearTimeout(timeout);
+  }, [draft[0], draft[1]]);
+
+  const [low, high] = draft;
+  const pct = (n: number) => (toPosition(n) / LOG_SLIDER_STEPS) * 100;
+
+  return (
+    <div className={styles.filterGroup}>
+      <p className={styles.filterGroupLabel}>{label}</p>
+      <div className={styles.rangeSlider}>
+        <div className={styles.rangeTrack} />
+        <div className={styles.rangeFill} style={{ left: `${pct(low)}%`, right: `${100 - pct(high)}%` }} />
+        <input
+          type="range"
+          aria-label={`${label} minimum (thousands)`}
+          min={0}
+          max={LOG_SLIDER_STEPS}
+          step={1}
+          value={toPosition(low)}
+          onChange={(event) => setDraft([Math.min(fromPosition(Number(event.target.value)), high), high])}
+        />
+        <input
+          type="range"
+          aria-label={`${label} maximum (thousands)`}
+          min={0}
+          max={LOG_SLIDER_STEPS}
+          step={1}
+          value={toPosition(high)}
+          onChange={(event) => setDraft([low, Math.max(fromPosition(Number(event.target.value)), low)])}
+        />
+      </div>
+      <div className={styles.rangeLabels}>
+        <span>{low}k</span>
+        <span>{high}k</span>
+      </div>
+    </div>
+  );
+}
+
+// VLM datasets list many agricultural tasks; the card shows the first few, the modal shows all.
+const MAX_CARD_AG_TASKS = 2;
+
 function DatasetCard({
   dataset,
   onOpen,
@@ -206,7 +299,7 @@ function DatasetCard({
     machine_learning_task,
     agricultural_task,
     num_images,
-    num_rows,
+    num_qa_pairs,
     zip_size_bytes,
     augmented_num_images,
     augmented_zip_size_bytes,
@@ -215,10 +308,9 @@ function DatasetCard({
   const fileSize = formatBytesDecimal(zip_size_bytes);
   const augmentedFileSize = formatBytesDecimal(augmented_zip_size_bytes);
   const hasAugmented = augmented_num_images != null;
-  // VLM datasets are row-based (image/text pairs, conversations) rather than image-count based.
+  // VLM datasets are sized by QA pairs as well as images.
   const isVlm = dataset_type === 'vlm';
-  const countLabel = isVlm ? 'rows' : 'images';
-  const countValue = isVlm ? num_rows : num_images;
+  const agTasks = agricultural_task == null ? [] : [agricultural_task].flat();
   const primaryLocation = formatPrimaryLocation(dataset);
 
   return (
@@ -230,7 +322,7 @@ function DatasetCard({
     >
       <div className={styles.card}>
         <h2 className={styles.cardTitle}>
-          <span className={styles.cardTitleLink}>{toTitle(name)}</span>
+          <span className={styles.cardTitleLink}>{isVlm ? name : toNameTitleCase(name)}</span>
         </h2>
         <div className={styles.cardTags}>
           {machine_learning_task && (
@@ -238,12 +330,20 @@ function DatasetCard({
               {toDisplayLabel(machine_learning_task)}
             </span>
           )}
-          {agricultural_task && <span className={styles.tag}>{toDisplayLabel(agricultural_task)}</span>}
+          {agTasks.slice(0, MAX_CARD_AG_TASKS).map((task) => (
+            <span key={task} className={styles.tag}>{toDisplayLabel(task)}</span>
+          ))}
+          {agTasks.length > MAX_CARD_AG_TASKS && (
+            <span className={styles.tag}>+{agTasks.length - MAX_CARD_AG_TASKS} more</span>
+          )}
           {primaryLocation && <span className={styles.tag}>{primaryLocation}</span>}
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.cardFooterRow}>
-            <span>{formatImageCount(countValue)} {countLabel}</span>
+            <span>
+              {formatImageCount(num_images)} images
+              {isVlm && num_qa_pairs != null && <> · {formatImageCount(num_qa_pairs)} QA pairs</>}
+            </span>
             {fileSize && <span>{fileSize}</span>}
           </div>
           {hasAugmented && (
@@ -322,7 +422,12 @@ export default function DatasetBrowserPage() {
     });
   };
 
-  const activeFilterCount = DATASET_FILTERS.reduce((count, filter) => count + selections[filter.key].length, 0);
+  const qaMinParam = parseThousands(searchParams.get(QA_MIN_PARAM));
+  const qaMaxParam = parseThousands(searchParams.get(QA_MAX_PARAM));
+  const qaRangeActive = qaMinParam != null || qaMaxParam != null;
+
+  const activeFilterCount =
+    DATASET_FILTERS.reduce((count, filter) => count + selections[filter.key].length, 0) + (qaRangeActive ? 1 : 0);
   const hasActiveFilters = Boolean(qDeferred || activeFilterCount);
 
   const clearFilters = () => {
@@ -334,7 +439,7 @@ export default function DatasetBrowserPage() {
   const stats = useMemo(() => computeDatasetStats(safeData), [safeData]);
   const filterOptions = useMemo(
     () =>
-      Object.fromEntries(DATASET_FILTERS.map((filter) => [filter.key, getFilterValues(safeData, filter.field)])) as Record<FilterKey, string[]>,
+      Object.fromEntries(DATASET_FILTERS.map((filter) => [filter.key, getFilterValues(safeData, filter)])) as Record<FilterKey, string[]>,
     [safeData]
   );
   const filterCounts = useMemo(
@@ -376,10 +481,30 @@ export default function DatasetBrowserPage() {
   // Field filters alone, over the full corpus — computed once and shared by both
   // `substringFiltered` (below) and the semantic re-ranking path, instead of each running its own
   // full-corpus field-filter pass.
-  const fieldFilteredOnly = useMemo(
-    () => filterDatasets(safeData, { fieldFilters: fieldFilterConfigs, includeChildren: false }),
-    [safeData, fieldFilterConfigs]
+  const qaSliderMax = useMemo(
+    () => Math.ceil(Math.max(0, ...safeData.map((dataset) => dataset.num_qa_pairs ?? 0)) / 1000),
+    [safeData]
   );
+  const qaRange: [number, number] = [qaMinParam ?? QA_SLIDER_MIN, qaMaxParam ?? qaSliderMax];
+  const setQaRange = ([low, high]: [number, number]) => {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      if (low > QA_SLIDER_MIN) next.set(QA_MIN_PARAM, String(low));
+      else next.delete(QA_MIN_PARAM);
+      if (high < qaSliderMax) next.set(QA_MAX_PARAM, String(high));
+      else next.delete(QA_MAX_PARAM);
+      return next;
+    });
+  };
+
+  const fieldFilteredOnly = useMemo(() => {
+    const out = filterDatasets(safeData, { fieldFilters: fieldFilterConfigs, includeChildren: false });
+    if (!qaRangeActive) return out;
+    // Datasets without a QA pair count (i.e. vision datasets) drop out once the range is narrowed.
+    const low = (qaMinParam ?? 0) * 1000;
+    const high = qaMaxParam != null ? qaMaxParam * 1000 : Infinity;
+    return out.filter((dataset) => dataset.num_qa_pairs != null && dataset.num_qa_pairs >= low && dataset.num_qa_pairs <= high);
+  }, [safeData, fieldFilterConfigs, qaRangeActive, qaMinParam, qaMaxParam]);
 
   // Instant baseline — exact substring-match behavior. Always computed so results never blank
   // out while the semantic engine (model + index, ~46MB on first activation) is loading, or if
@@ -518,10 +643,14 @@ export default function DatasetBrowserPage() {
 
         <div className={styles.body}>
           <aside className={styles.sidebar}>
-            {DATASET_FILTERS.map((filter) =>
-              filter.kind === 'checkbox' ? (
+            {DATASET_FILTERS.map((filter) => (
+              <Fragment key={filter.key}>
+              {/* QA Pairs isn't a field filter, so it's slotted in right before Conversation Type. */}
+              {filter.key === 'conversation_type' && qaSliderMax > QA_SLIDER_MIN && (
+                <RangeSliderFilter label="QA Pairs" min={QA_SLIDER_MIN} max={qaSliderMax} value={qaRange} onChange={setQaRange} />
+              )}
+              {filter.kind === 'checkbox' ? (
                 <CheckboxFilterGroup
-                  key={filter.key}
                   label={filter.label}
                   options={filterOptions[filter.key]}
                   selected={selections[filter.key]}
@@ -530,7 +659,7 @@ export default function DatasetBrowserPage() {
                   counts={filterCounts[filter.key]}
                 />
               ) : (
-                <div key={filter.key} className={styles.filterGroup}>
+                <div className={styles.filterGroup}>
                   <MultiSelectDropdown
                     label={filter.label}
                     options={filterOptions[filter.key]}
@@ -539,8 +668,9 @@ export default function DatasetBrowserPage() {
                     formatOption={filter.formatOption}
                   />
                 </div>
-              )
-            )}
+              )}
+              </Fragment>
+            ))}
           </aside>
 
           <section className={styles.results}>

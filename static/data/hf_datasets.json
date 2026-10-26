@@ -11366,407 +11366,6 @@
     "bibtex": "@article{deng2025weed,\n  title={Weed image augmentation by ControlNet-added stable diffusion for multi-class weed detection},\n  author={Deng, Boyang and Lu, Yuzhen},\n  journal={Computers and Electronics in Agriculture},\n  volume={232},\n  pages={110123},\n  year={2025},\n  publisher={Elsevier}\n}"
   },
   {
-    "name": "AgroMind",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "judgement",
-      "counting",
-      "multiple_choice_text",
-      "multiple_choice_image",
-      "open_ended"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Spatial Perception",
-      "Object Understanding",
-      "Scene Understanding",
-      "Scene Reasoning"
-    ],
-    "num_task_types": 13,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "maize",
-      "oil palm",
-      "apple",
-      "almond",
-      "mango",
-      "rice",
-      "citrus",
-      "+multiple other crops"
-    ],
-    "sensor_modality": "rgb, multispectral",
-    "real_or_synthetic": "real",
-    "platform": "uav, satellite, ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 19615,
-    "augmented_num_images": null,
-    "num_rows": 27247,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2505.12207",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Li, Qingmei; Zhang, Yang; Mai, Zurong; Chen, Yuhang; Lou, Shuohong; Huang, Henglian; Zhang, Jiarui; Zhang, Zhiwei; Wen, Yibin; Li, Weijia; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind\", arXiv, arXiv:2505.12207",
-    "parent_dataset": "AgroMind/AgroMind",
-    "zip_size_bytes": 8220000000,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroMind",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 9,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "ACFR Orchard Fruit Dataset",
-        "2018 AI Challenge Dataset",
-        "IP102 Dataset",
-        "Agriculture Vision Challenge",
-        "OilPalmUAV Dataset",
-        "PhenoBench Dataset",
-        "OAM-TCD Dataset",
-        "Maize Tassel Identification",
-        "7-Provinces Ground Dataset"
-      ]
-    },
-    "bibtex": "@misc{li2025largemultimodalmodelsunderstand,\n      title={Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind},\n      author={Li, Qingmei and Zhang, Yang and Mai, Zurong and Chen, Yuhang and Lou, Shuohong and Huang, Henglian and Zhang, Jiarui and Zhang, Zhiwei and Wen, Yibin and Li, Weijia and Fu, Haohuan and Huang, Jianxi and Zheng, Juepeng},\n      year={2025},\n      eprint={2505.12207},\n      archivePrefix={arXiv},\n      primaryClass={cs.CV},\n      url={https://arxiv.org/abs/2505.12207}\n}"
-  },
-  {
-    "name": "AgroBench",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "multiple_choice_text"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Disease Identification",
-      "Disease Management",
-      "Pest Identification",
-      "Weed Identification",
-      "Crop Management",
-      "Machine Usage QA",
-      "Traditional Management"
-    ],
-    "num_task_types": 7,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "tomato",
-      "apple",
-      "maize",
-      "potato",
-      "rice",
-      "banana",
-      "grape",
-      "pepper",
-      "onion",
-      "wheat",
-      "+193 more"
-    ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 3745,
-    "augmented_num_images": null,
-    "num_rows": 4342,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2507.20519",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Shinoda, Risa; Inoue, Nakamasa; Kataoka, Hirokatsu; Onishi, Masaki; Ushiku, Yoshitaka (2025), \"AgroBench: Vision-Language Model Benchmark in Agriculture\", arXiv, arXiv:2507.20519",
-    "parent_dataset": "risashinoda/AgroBench",
-    "zip_size_bytes": 2118998617,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroBench",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 4,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "Perennial Plants Detection",
-        "CottonWeedDet3",
-        "Open Plant Phenotype Database of Common Weeds in Denmark",
-        "CropAndWeed Dataset"
-      ]
-    }
-  },
-  {
-    "name": "AgroCoT",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "judgement",
-      "counting",
-      "multiple_choice_text",
-      "multiple_choice_image",
-      "open_ended",
-      "long_form_QA"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Object Detection",
-      "Quantitative Analysis",
-      "Disease Monitoring",
-      "Spatial Understanding",
-      "Environmental Management"
-    ],
-    "num_task_types": 15,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "mixed multiple sources"
-    ],
-    "sensor_modality": "rgb, multispectral",
-    "real_or_synthetic": "real",
-    "platform": "uav, satellite, ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 4628,
-    "augmented_num_images": null,
-    "num_rows": 4759,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2511.23253",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Wen, Yibin; Li, Qingmei; Ye, Zi; Zhang, Jiarui; Fan, Xiaoya; Mai, Zurong; Wu, Jing; Lou, Shuohong; Chen, Yuhang; Huang, Henglian; Zhang, Yang; Gu, Defeng; Zhao, Lingyuan; Lu, Yutong; Fu, Haohuan; Huang, Jianxi; Zheng, Juepeng (2025), \"AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture\", arXiv, arXiv:2511.23253",
-    "parent_dataset": "AgroCoT/AgroCoT",
-    "zip_size_bytes": 5420000000,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroCoT",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 9,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "OilPalmUAV",
-        "PhenoBench",
-        "Agriculture-Vision Challenge (AVC)",
-        "IP102",
-        "CropHarvest",
-        "CDDM",
-        "AGMMU",
-        "AgroBench",
-        "Proprietary VQA dataset"
-      ]
-    }
-  },
-  {
-    "name": "WisWheat",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "multiple_choice_text",
-      "counting",
-      "open_ended"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Weed Detection",
-      "Yellow Rust",
-      "Stem Rust",
-      "Leaf Rust",
-      "Mildew",
-      "Septoria",
-      "Srought Abiotic Stress",
-      "Healthy Wheat",
-      "Growth Stage Diagnosis",
-      "Growth Stage Classification VQA",
-      "Organ Percentage Estimation",
-      "Rust Percentage Estimation",
-      "Spike Counting"
-    ],
-    "num_task_types": 13,
-    "location": "Australia",
-    "environment": "field",
-    "crop_types": [
-      "wheat"
-    ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": null,
-    "augmented_num_images": null,
-    "num_rows": 11265,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2506.06084",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Yuan, Bowen; Song, Selena; Fernandez, Javier; Luo, Yadan; Baktashmotlagh, Mahsa; Wang, Zijian (2025), \"WisWheat: A Three-Tiered Vision-Language Dataset for Wheat Management\", arXiv, arXiv:2506.06084",
-    "parent_dataset": null,
-    "zip_size_bytes": 13300000000,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/WisWheat",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 7,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "WFD",
-        "Minimal Dataset [Drought]",
-        "GWHD 2021",
-        "GWFSS",
-        "Radish Weed Dataset",
-        "Cobbity Wheat",
-        "Rust Segmentation Dataset"
-      ]
-    }
-  },
-  {
-    "name": "Agri-LLaVA",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "open_ended"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Feature Description",
-      "Category Identification",
-      "Symptom Identification"
-    ],
-    "num_task_types": 2,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "tomato",
-      "orange",
-      "grape",
-      "apple",
-      "maize",
-      "rice",
-      "soybean",
-      "pepper",
-      "mango",
-      "+24 more"
-    ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "annotation_format": null,
-    "conversation_format": "mixed",
-    "num_images": 391785,
-    "augmented_num_images": null,
-    "num_rows": 391785,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2412.02158",
-    "examples_image_url": null,
-    "license": "other",
-    "citation": "Wang, Liqiong; Jin, Teng; Yang, Jinyu; Leonardis, Ales; Wang, Fangyi; Zheng, Feng (2024), \"Agri-LLaVA: Knowledge-Infused Large Multimodal Assistant on Agricultural Pests and Diseases\", arXiv, arXiv:2412.02158",
-    "parent_dataset": "Agri-LLaVA-Anonymous/Agricultural_pests_and_diseases_feature_alignment_data",
-    "zip_size_bytes": 66500000000,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/Agri-LLaVA_Agricultural_Pests_And_Diseases_Feature_Alignment_Dataset",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 16,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "AppleLeaf9",
-        "LWDCD",
-        "PlantVillage-Dataset-master",
-        "Rice Leaf Disease Image samples",
-        "Chinese Academy of Sciences Disease Sample Data",
-        "IP102",
-        "Images of Apple Diseases and Pests",
-        "Crop Pest and Disease Detection",
-        "IDADP-grape Disease Identification",
-        "OLID I",
-        "Plant Disease Expert",
-        "RiceLeafs",
-        "Cabbage",
-        "Pepper Pests and Diseases",
-        "Wheat Disease Classification",
-        "Wheat Leaf Dataset"
-      ]
-    }
-  },
-  {
-    "name": "CDDM",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "open_ended"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Disease Diagnosis",
-      "Disease Knowledge QA"
-    ],
-    "num_task_types": 2,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "tomato",
-      "grape",
-      "potato",
-      "apple",
-      "wheat",
-      "bell pepper",
-      "rice",
-      "maize",
-      "soybean",
-      "orange",
-      "cherry",
-      "blueberry",
-      "strawberry",
-      "pumpkin",
-      "peach"
-    ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "annotation_format": null,
-    "conversation_format": "mixed",
-    "num_images": null,
-    "augmented_num_images": null,
-    "num_rows": 145261,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2503.06973",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Liu, Xiang; Liu, Zhaoxiang; Hu, Huan; Chen, Zezhou; Wang, Kohou; Wang, Kai; Lian, Shiguo (2025), \"A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis\", arXiv, arXiv:2503.06973",
-    "parent_dataset": "https://github.com/UnicomAI/UnicomBenchmark/tree/main/CDDMBench",
-    "zip_size_bytes": 3070000000,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/CDDM",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 2,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "Web Data (Kaggle + web-crawled)",
-        "Private Data (field surveys)"
-      ]
-    }
-  },
-  {
     "name": "maize_nitrogen_deficiency_classification",
     "machine_learning_task": "image_classification",
     "agricultural_task": "disease_classification",
@@ -29666,382 +29265,923 @@
     "examples_image_url": ""
   },
   {
-    "name": "AgriBench",
-    "machine_learning_task": "image-text-to-text",
+    "name": "AgroMind",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "Crop and Fruit Identification",
+      "Pest and Disease Diagnosis",
+      "Growth Status Assessment",
+      "Anomaly Detection",
+      "Object Counting",
+      "Weed and Crop Analysis",
+      "Field Boundary Delineation and Area Estimation",
+      "Tree Cover Assessment",
+      "spatial localization and relationship reasoning",
+      "yield prediction",
+      "climate zone classification"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "maize",
+      "rice",
+      "oil palm",
+      "almond",
+      "apple",
+      "mango",
+      "grape",
+      "citrus"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 19615,
+    "num_qa_pairs": 27247,
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://arxiv.org/abs/2505.12207",
+    "citation": "Li, Q., Zhang, Y., Mai, Z., Chen, Y., Lou, S., Huang, H., Zhang, J., Zhang, Z., Wen, Y., Li, W., Fu, H., Huang, J., & Zheng, J. (2025). Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind. arXiv:2505.12207.",
+    "bibtex": "@misc{li2025largemultimodalmodelsunderstand,\n  title = {Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with AgroMind},\n  author = {Qingmei Li and Yang Zhang and Zurong Mai and Yuhang Chen and Shuohong Lou and Henglian Huang and Jiarui Zhang and Zhiwei Zhang and Yibin Wen and Weijia Li and Haohuan Fu and Jianxi Huang and Juepeng Zheng},\n  year = {2025},\n  eprint = {2505.12207},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.CV},\n  url = {https://arxiv.org/abs/2505.12207}\n}",
+    "zip_size_bytes": 8365435047,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroMind",
+    "examples_image_url": "/img/agml/sample_images/AgroMind_sample.webp",
+    "composition": {
+      "num_source_datasets": 9,
+      "source_datasets": [
+        "OAM-TCD",
+        "OilPalmUAV",
+        "Agriculture-Vision",
+        "PhenoBench",
+        "Maize Tassel Identification Dataset",
+        "IP102",
+        "ACFR Orchard Fruit Dataset",
+        "2018 AI Challenger Dataset",
+        "7-Provinces Ground Dataset"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/AgroMind/AgroMind",
     "qa_type": [
       "multiple_choice_text",
       "open_ended"
     ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Land Cover",
-      "Land Use",
-      "Aesthetic Score",
-      "Quality Score"
-    ],
-    "num_task_types": 4,
-    "location": "European Union (27 countries)",
-    "environment": "field",
-    "crop_types": [],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 1784,
-    "augmented_num_images": null,
-    "num_rows": 7136,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://doi.org/10.1007/978-3-031-91835-3_14",
-    "examples_image_url": null,
-    "license": "cc-by-4.0",
-    "citation": "Zhou, Yutong; Ryo, Masahiro (2024), \"AgriBench: A Hierarchical Agriculture Benchmark for Multimodal Large Language Models\", ECCV 2024 Workshops, arXiv:2412.00465",
-    "bibtex": "@article{zhou2024agribench,\n  title={AgriBench: A Hierarchical Agriculture Benchmark for Multimodal Large Language Models},\n  author={Zhou, Yutong and Ryo, Masahiro},\n  journal={arXiv preprint arXiv:2412.00465},\n  year={2024}\n}",
-    "parent_dataset": "https://github.com/Yutong-Zhou-cv/AgriBench",
-    "zip_size_bytes": 917835987,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgriBench",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 1,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "LUCAS rural landscape street-view images (Martinez-Sanchez et al., 2024)"
-      ]
-    }
+    "conversation_type": [
+      "single_turn"
+    ]
   },
   {
-    "name": "TomaMMU",
-    "machine_learning_task": "image-text-to-text",
+    "name": "AgroBench",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "disease identification",
+      "pest identification",
+      "weed identification",
+      "crop management",
+      "disease management",
+      "agricultural machinery usage",
+      "traditional farming practices"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "annotation_format": "OpenAI-style",
+    "num_images": 3745,
+    "num_qa_pairs": 4342,
+    "license": "cc-by-nc-4.0",
+    "documentation": "https://arxiv.org/abs/2507.20519",
+    "citation": "Shinoda, R., Inoue, N., Kataoka, H., Onishi, M., & Ushiku, Y. (2025). AgroBench: Vision-Language Model Benchmark in Agriculture. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pp. 7634-7644.",
+    "bibtex": "@InProceedings{Shinoda_2025_ICCV,\n  author = {Shinoda, Risa and Inoue, Nakamasa and Kataoka, Hirokatsu and Onishi, Masaki and Ushiku, Yoshitaka},\n  title = {AgroBench: Vision-Language Model Benchmark in Agriculture},\n  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n  month = {October},\n  year = {2025},\n  pages = {7634-7644}\n}",
+    "zip_size_bytes": 1786174348,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroBench",
+    "examples_image_url": "/img/agml/sample_images/Agrobench_sample.webp",
+    "composition": {
+      "num_source_datasets": 5,
+      "source_datasets": [
+        "CropAndWeed",
+        "CottonWeedDet3",
+        "Open Plant Phenotype Database of Common Weeds in Denmark",
+        "Perennial plants detection",
+        "Web Data"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/risashinoda/AgroBench",
     "qa_type": [
       "multiple_choice_text"
     ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Healthy-Diseased Classification",
-      "Leaf Count",
-      "Crop Species Identification",
-      "Symptom Identification",
-      "Pathogen Classification",
-      "Disease Classification",
-      "Scientific Name Classification"
-    ],
-    "num_task_types": 7,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "tomato"
-    ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 28112,
-    "augmented_num_images": null,
-    "num_rows": 213119,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2608.08727",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Truong, Gia-Han; Quoc, Khang Nguyen; Quach, Luyl-Da (2026), \"TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases\", arXiv, arXiv:2608.08727",
-    "bibtex": "@article{truong2026tomammu,\n  title={TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases},\n  author={Truong, Gia-Han and Quoc, Khang Nguyen and Quach, Luyl-Da},\n  journal={arXiv preprint arXiv:2608.08727},\n  year={2026}\n}",
-    "parent_dataset": "enalis/TomaMMU",
-    "zip_size_bytes": 334419476,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/TomaMMU",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 2,
-      "source_datasets_named": true,
-      "source_datasets": [
-        "LeafNet",
-        "TOM2024"
-      ]
-    }
+    "conversation_type": [
+      "single_turn"
+    ]
   },
   {
-    "name": "PlantMicro",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "multiple_choice_text",
-      "counting",
-      "open_ended"
+    "name": "AgroCoT",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "organism identification",
+      "anomaly detection",
+      "object counting",
+      "morphological measurement",
+      "pest recognition",
+      "disease diagnosis",
+      "boundary and area analysis",
+      "spatial relationship reasoning",
+      "agricultural tools and methods recognition",
+      "management decision support"
     ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Modality Identification",
-      "Domain Classification",
-      "Resin Identification",
-      "Stain/Dye Recognition",
-      "Host Identification",
-      "Pathogen Classification",
-      "Organelle Detection",
-      "Organ Prediction",
-      "Target Counting",
-      "Object Localization"
-    ],
-    "num_task_types": 10,
-    "location": null,
-    "environment": "lab",
-    "crop_types": [
-      "tomato",
-      "potato",
-      "grape",
-      "cucumber",
-      "+21 more host species"
-    ],
-    "sensor_modality": "microscopy",
+    "location": [],
+    "country": "unknown",
     "real_or_synthetic": "real",
-    "platform": "",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 5369,
-    "augmented_num_images": null,
-    "num_rows": 9718,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2606.22497",
-    "examples_image_url": null,
-    "license": "cc-by-4.0",
-    "citation": "Wei, Tianqi; Yu, Xin; Chen, Zhi; Chapman, Scott; Huang, Zi (2026), \"Benchmarking Vision-Language Models for Microscopic Plant Image Understanding\", arXiv, arXiv:2606.22497",
-    "bibtex": "@article{wei2026plantmicro,\n  title={Benchmarking Vision-Language Models for Microscopic Plant Image Understanding},\n  author={Wei, Tianqi and Yu, Xin and Chen, Zhi and Chapman, Scott and Huang, Zi},\n  journal={arXiv preprint arXiv:2606.22497},\n  year={2026}\n}",
-    "parent_dataset": "https://github.com/tqwei05/PlantMicro",
-    "zip_size_bytes": 537736171,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/PlantMicro",
-    "composition": {
-      "is_compiled": true,
-      "num_source_datasets": null,
-      "source_datasets_named": false,
-      "source_datasets": [
-        "Microscopy images gathered from peer-reviewed publications and institutional repositories"
-      ]
-    }
-  },
-  {
-    "name": "MIRAGE",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "multiple_choice_text",
-      "open_ended",
-      "long_form_QA"
-    ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "MMST Standard",
-      "MMST Contextual",
-      "MMMT Direct",
-      "MMMT Decomp"
-    ],
-    "num_task_types": 4,
-    "location": null,
-    "environment": "mixed",
     "crop_types": [
-      "mixed multiple sources"
+      "maize",
+      "rice",
+      "oil palm"
     ],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "handheld",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "mixed",
-    "num_images": null,
-    "augmented_num_images": null,
-    "num_rows": 40880,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2506.20100",
-    "examples_image_url": null,
+    "annotation_format": "OpenAI-style",
+    "num_images": 4809,
+    "num_qa_pairs": 4759,
     "license": "cc-by-sa-4.0",
-    "citation": "Dongre, Vardhan; Gui, Chi; Garg, Shubham; Nayyeri, Hooshang; Tur, Gokhan; Hakkani-Tür, Dilek; Adve, Vikram S. (2025), \"MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations\", NeurIPS 2025, arXiv:2506.20100",
-    "bibtex": "@misc{mirage2025,\n  title={MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations},\n  author={Dongre, Vardhan and Gui, Chi and Garg, Shubham and Nayyeri, Hooshang and Tur, Gokhan and Hakkani-T{\\\"u}r, Dilek and Adve, Vikram S.},\n  year={2025},\n  eprint={2506.20100},\n  archivePrefix={arXiv},\n  note={NeurIPS 2025},\n  url={https://arxiv.org/abs/2506.20100}\n}",
-    "parent_dataset": "https://mirage-benchmark.github.io/",
-    "zip_size_bytes": 10953614936,
-    "augmented_zip_size_bytes": null,
+    "documentation": "https://arxiv.org/abs/2511.23253",
+    "citation": "Wen, Y., Li, Q., Ye, Z., Zhang, J., Fan, X., Mai, Z., Wu, J., Lou, S., Chen, Y., Huang, H., Zhang, Y., Gu, D., Zhao, L., Lu, Y., Fu, H., Huang, J., & Zheng, J. (2025). AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture. arXiv:2511.23253.",
+    "bibtex": "@misc{wen2025agrocot,\n  title = {AgroCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture},\n  author = {Yibin Wen and Qingmei Li and Zi Ye and Jiarui Zhang and Xiaoya Fan and Zurong Mai and Jing Wu and Shuohong Lou and Yuhang Chen and Henglian Huang and Yang Zhang and Defeng Gu and Lingyuan Zhao and Yutong Lu and Haohuan Fu and Jianxi Huang and Juepeng Zheng},\n  year = {2025},\n  eprint = {2511.23253},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.AI},\n  url = {https://arxiv.org/abs/2511.23253}\n}",
+    "zip_size_bytes": 4054598670,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/MIRAGE",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroCoT",
+    "examples_image_url": "/img/agml/sample_images/AgroCoT_sample.webp",
     "composition": {
-      "is_compiled": false,
-      "num_source_datasets": 1,
-      "source_datasets_named": false,
+      "num_source_datasets": 9,
       "source_datasets": [
-        "Expert-guided crop health and pest diagnosis consultations (2012-2025)"
+        "IP102",
+        "Agriculture-Vision",
+        "OilPalmUAV",
+        "PhenoBench",
+        "CropHarvest",
+        "CDDM",
+        "AGMMU",
+        "AgroBench",
+        "Private Dataset"
       ]
-    }
-  },
-  {
-    "name": "LeafNet",
-    "machine_learning_task": "image-text-to-text",
+    },
+    "parent_dataset": "https://huggingface.co/datasets/AgroCoT/AgroCoT",
     "qa_type": [
+      "multiple_choice_text",
       "open_ended"
     ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Symptom Description"
-    ],
-    "num_task_types": 1,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [],
-    "sensor_modality": "rgb",
-    "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 121337,
-    "augmented_num_images": null,
-    "num_rows": 121337,
-    "classes": [],
-    "language": [
-      "en"
-    ],
-    "documentation": "https://arxiv.org/abs/2602.13662",
-    "examples_image_url": null,
-    "license": "cc-by-4.0",
-    "citation": "Nguyen Quoc, Khang; Dao, Phuong D.; Quach, Luyl-Da (2026), \"LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases\", arXiv, arXiv:2602.13662",
-    "bibtex": "@misc{nguyenquoc2026leafnet,\n  title={LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases},\n  author={Nguyen Quoc, Khang and Dao, Phuong D. and Quach, Luyl-Da},\n  year={2026},\n  eprint={2602.13662},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2602.13662}\n}",
-    "parent_dataset": null,
-    "zip_size_bytes": 8605606121,
-    "augmented_zip_size_bytes": null,
-    "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet",
-    "composition": {
-      "is_compiled": false,
-      "num_source_datasets": 1,
-      "source_datasets_named": false,
-      "source_datasets": []
-    }
+    "conversation_type": [
+      "single_turn"
+    ]
   },
   {
-    "name": "AgroOmni",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [],
-    "agricultural_task": null,
-    "task_dimensions": [],
-    "num_task_types": 14,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [
-      "mixed multiple sources"
+    "name": "WisWheat",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "image description",
+      "growth stage classification",
+      "disease identification",
+      "weed identification",
+      "abiotic stress identification",
+      "object counting",
+      "trait quantification",
+      "crop management recommendation"
     ],
-    "sensor_modality": "rgb, multispectral",
+    "location": [],
+    "country": "unknown",
     "real_or_synthetic": "real",
-    "platform": "uav, satellite, ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "mixed",
-    "num_images": 107488,
-    "augmented_num_images": null,
-    "num_rows": 288831,
-    "classes": [],
-    "language": [
-      "en"
+    "crop_types": [
+      "wheat"
     ],
-    "documentation": "https://arxiv.org/abs/2603.14342",
-    "examples_image_url": null,
+    "annotation_format": "OpenAI-style",
+    "num_images": null,
+    "num_qa_pairs": 12151,
     "license": "cc-by-nc-4.0",
-    "citation": "Zhang, Jiarui; Hu, Junqi; Mai, Zurong; Liu, Yang; Chen, Yuhang; Lou, Shuohong; Huang, Henglian; Cheng, Hong; Zhao, Lingyuan; Huang, Jianxi; Lu, Yutong; Fu, Haohuan; Zheng, Juepeng (2026), \"AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning\", arXiv, arXiv:2603.14342",
-    "bibtex": "@misc{agroomni2026,\n  title={AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning},\n  author={Zhang, Jiarui and Hu, Junqi and Mai, Zurong and Liu, Yang and Chen, Yuhang and Lou, Shuohong and Huang, Henglian and Cheng, Hong and Zhao, Lingyuan and Huang, Jianxi and Lu, Yutong and Fu, Haohuan and Zheng, Juepeng},\n  year={2026},\n  eprint={2603.14342},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2603.14342}\n}",
-    "parent_dataset": null,
-    "zip_size_bytes": 35948039429,
-    "augmented_zip_size_bytes": null,
+    "documentation": "https://arxiv.org/abs/2506.06084",
+    "citation": "Yuan, B., Song, S., Fernandez, J., Luo, Y., Baktashmotlagh, M., & Wang, Z. (2025). WisWheat: A Three-Tiered Vision-Language Dataset for Wheat Management. In Proceedings of the 33rd ACM International Conference on Multimedia (MM '25). ACM. https://doi.org/10.1145/3746027.3758256",
+    "bibtex": "@inproceedings{Yuan_2025_WisWheat,\n  author = {Yuan, Bowen and Song, Selena and Fernandez, Javier and Luo, Yadan and Baktashmotlagh, Mahsa and Wang, Zijian},\n  title = {WisWheat: A Three-Tiered Vision-Language Dataset for Wheat Management},\n  booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},\n  series = {MM '25},\n  year = {2025},\n  publisher = {ACM},\n  address = {New York, NY, USA},\n  doi = {10.1145/3746027.3758256}\n}",
+    "zip_size_bytes": 30663404856,
     "source": "huggingface",
-    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroOmni",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/WisWheat",
+    "examples_image_url": "/img/agml/sample_images/WisWheat_sample.webp",
     "composition": {
-      "is_compiled": true,
-      "num_source_datasets": 14,
-      "source_datasets_named": true,
+      "num_source_datasets": 7,
       "source_datasets": [
-        "ACFR Orchard Fruit Dataset",
-        "2018 AI Challenger Dataset",
-        "IP102",
-        "Agriculture-Vision Challenge",
-        "OilPalmUAV",
-        "CropHarvest",
+        "WFD",
+        "Minimal Dataset",
         "GWHD 2021",
-        "CLCD",
-        "PhenoBench",
-        "Tomato Dataset (2023)",
-        "EarthVQA",
-        "OAM-TCD",
-        "Maize Tassel Identification Dataset (2025)",
-        "Private Parcel Dataset (2025)"
+        "GWFSS",
+        "Radish Weed Dataset",
+        "Cobbity Wheat",
+        "Rust Segmentation Dataset"
       ]
-    }
+    },
+    "parent_dataset": "",
+    "qa_type": [
+      "open_ended",
+      "multiple_choice_text"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ],
+    "hf_configs": [
+      "Instruct_Finetune",
+      "VQA_Quantitative"
+    ]
   },
   {
     "name": "PlantExpertVQA",
-    "machine_learning_task": "image-text-to-text",
-    "qa_type": [
-      "judgement",
-      "open_ended",
-      "long_form_QA"
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "crop identification",
+      "plant health assessment",
+      "disease identification",
+      "symptom recognition",
+      "disease severity assessment",
+      "disease cause reasoning",
+      "disease management recommendation",
+      "image description"
     ],
-    "agricultural_task": null,
-    "task_dimensions": [
-      "Existence & Sanity Check",
-      "Plant Species Identification",
-      "General Health Assessment",
-      "Visual Attribute Grounding",
-      "Detailed Verification",
-      "Specific Disease Identification",
-      "Comprehensive Description",
-      "Causal Reasoning",
-      "Counterfactual Reasoning"
-    ],
-    "num_task_types": 9,
-    "location": null,
-    "environment": "mixed",
-    "crop_types": [],
-    "sensor_modality": "rgb",
+    "location": [],
+    "country": "unknown",
     "real_or_synthetic": "real",
-    "platform": "ground",
-    "input_data_format": "",
-    "annotation_format": null,
-    "conversation_format": "single_turn_reasoning",
-    "num_images": 150841,
-    "augmented_num_images": null,
-    "num_rows": 765186,
-    "classes": [],
-    "language": [
-      "en"
+    "crop_types": [
+      "apple",
+      "arabian jasmine",
+      "bell pepper",
+      "bitter gourd",
+      "blueberry",
+      "bottle gourd",
+      "cauliflower",
+      "cherry",
+      "citrus",
+      "cotton",
+      "cucumber",
+      "eggplant",
+      "grape",
+      "guava",
+      "hibiscus",
+      "jackfruit",
+      "lemon",
+      "litchi",
+      "maize",
+      "mango",
+      "orange",
+      "papaya",
+      "pea",
+      "peach",
+      "pepper",
+      "potato",
+      "raspberry",
+      "rice",
+      "rubber",
+      "soybean",
+      "squash",
+      "strawberry",
+      "sunflower",
+      "tea",
+      "tomato"
     ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 150841,
+    "num_qa_pairs": 765186,
+    "license": "cc-by-4.0",
     "documentation": "https://arxiv.org/abs/2508.17117",
-    "examples_image_url": null,
-    "license": "cc-by-nc-4.0",
-    "citation": "Sakib, Syed Nazmus; Haque, Nafiul; Hossain, Mohammad Zabed; Arman, Shifat E. (2025), \"PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science\", arXiv, arXiv:2508.17117",
-    "bibtex": "@article{sakib2025plantexpertvqa,\n  title={PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science},\n  author={Sakib, Syed Nazmus and Haque, Nafiul and Hossain, Mohammad Zabed and Arman, Shifat E.},\n  year={2025},\n  eprint={2508.17117},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2508.17117}\n}",
-    "parent_dataset": "SyedNazmusSakib/PlantExpertVQA",
-    "zip_size_bytes": 67867732325,
-    "augmented_zip_size_bytes": null,
+    "citation": "Sakib, S. N., Haque, N., Hossain, M. Z., & Arman, S. E. (2025). PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science. arXiv:2508.17117.",
+    "bibtex": "@article{sakib2025plantexpertvqa,\n  title = {PlantExpertVQA: A Visual Question Answering Dataset for Benchmarking Vision-Language Models in Plant Science},\n  author = {Sakib, Syed Nazmus and Haque, Nafiul and Hossain, Mohammad Zabed and Arman, Shifat E},\n  journal = {arXiv preprint arXiv:2508.17117},\n  year = {2025},\n  doi = {10.57967/hf/9145}\n}",
+    "zip_size_bytes": 11842351197,
     "source": "huggingface",
     "hf_link": "https://huggingface.co/datasets/Project-AgML/PlantExpertVQA",
+    "examples_image_url": "",
     "composition": {
-      "is_compiled": true,
       "num_source_datasets": 45,
-      "source_datasets_named": false,
       "source_datasets": [
-        "PlantVillage"
+        "PlantVillage",
+        "Plant Pathology Challenge 2020",
+        "Apple Leaf Diseases Image Dataset of ICAR-CITH",
+        "Chili Plant Leaf Disease and Growth Stage",
+        "Banana and Banana Leaf Dataset",
+        "CAIR-BGD-2025",
+        "Plant Leaf Disease Recognition Dataset",
+        "Papaya Leaf Disease Image Dataset",
+        "Healthy and Unhealthy Papaya Leaf Images from Bangladeshi Orchards",
+        "Eggplant Leaf Disease Dataset",
+        "Eggplant Comprehensive Dataset",
+        "High-Resolution Eggplant Leaf Dataset",
+        "BrinjalFruitX",
+        "High-Resolution Lychee Plant Diseases",
+        "BDLitchi",
+        "LitchiLeaf4001",
+        "TLD-BD",
+        "Advanced Tea Crop Disease Study",
+        "Hibiscus and Tea Leaf Dataset",
+        "Hibiscus Leaf Diseases Classification",
+        "Leaf Image Dataset for Disease Detection in Bitter Gourd, Okra, Pumpkin, and Ridge Gourd",
+        "SAR-CLD-2024",
+        "Cotton Leaf Image Dataset for Disease Classification",
+        "MoringaLeafNet",
+        "MangoLeafBD",
+        "Comprehensive Mango Leaf Disease Dataset",
+        "Sunflower Fruits and Leaves",
+        "Sunflower Plant Health and Growth Stage",
+        "Multifaceted Rose Leaf Disease",
+        "Tomato Disease Dataset",
+        "Tomato Leaf Diseases",
+        "Tomato Leaf Dataset",
+        "High-Resolution Tomato Leaf Dataset from Bangladesh",
+        "AJLCD-2025",
+        "Durian Leaf Image Dataset of Common Diseases in Vietnam",
+        "BDRubberLeaf",
+        "Cauliflower Diseases Identification",
+        "CitrusLeafVision",
+        "Jackfruit Plant Leaf Disease",
+        "AgriLeafNet",
+        "Pisum sativum Image Dataset",
+        "Turmeric Plant Leaf Disease",
+        "Niphad Grape Leaf Disease Dataset",
+        "Burmese Grape Leaf Disease",
+        "UGV Guava Leaves Disease Dataset"
       ]
-    }
+    },
+    "parent_dataset": "https://huggingface.co/datasets/SyedNazmusSakib/PlantExpertVQA",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
+  },
+  {
+    "name": "CDDM",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "crop identification",
+      "disease identification",
+      "disease symptom description",
+      "disease cause reasoning",
+      "disease management recommendation"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "bell pepper",
+      "blueberry",
+      "cherry",
+      "corn",
+      "grape",
+      "orange",
+      "peach",
+      "potato",
+      "pumpkin",
+      "raspberry",
+      "rice",
+      "soybean",
+      "strawberry",
+      "tomato",
+      "wheat"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 115025,
+    "num_qa_pairs": 149244,
+    "license": "other",
+    "documentation": "https://arxiv.org/abs/2503.06973",
+    "citation": "Liu, X., Liu, Z., Hu, H., Chen, Z., Wang, K., Wang, K., & Lian, S. (2025). A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis. In Computer Vision – ECCV 2024 (pp. 157–170). Springer Nature Switzerland. https://doi.org/10.1007/978-3-031-73016-0_10",
+    "bibtex": "@InProceedings{10.1007/978-3-031-73016-0_10, author=\"Liu, Xiang and Liu, Zhaoxiang and Hu, Huan and Chen, Zezhou and Wang, Kohou and Wang, Kai and Lian, Shiguo\", title=\"A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis\", booktitle=\"Computer Vision -- ECCV 2024\", year=\"2025\", publisher=\"Springer Nature Switzerland\", address=\"Cham\", pages=\"157--170\", isbn=\"978-3-031-73016-0\" }",
+    "zip_size_bytes": 2421828184,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/CDDM",
+    "examples_image_url": "/img/agml/sample_images/CDDM_sample.webp",
+    "composition": {
+      "num_source_datasets": 2,
+      "source_datasets": [
+        "Web Data",
+        "Private Data"
+      ]
+    },
+    "parent_dataset": "https://github.com/UnicomAI/UnicomBenchmark/tree/main/CDDMBench",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended"
+    ],
+    "conversation_type": [
+      "multi_turn",
+      "single_turn"
+    ]
+  },
+  {
+    "name": "AgroOmni",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "object classification",
+      "pest and disease diagnosis",
+      "growth stage recognition",
+      "counting",
+      "spatial localization",
+      "boundary detection",
+      "area estimation",
+      "scene comparison",
+      "temporal change analysis",
+      "anomaly reasoning",
+      "climate type reasoning",
+      "agricultural planning"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "wheat",
+      "maize",
+      "oil palm",
+      "tomato",
+      "almond",
+      "apple",
+      "mango"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 107488,
+    "num_qa_pairs": 288831,
+    "license": "other",
+    "documentation": "https://arxiv.org/abs/2603.14342",
+    "citation": "Zhang, J., Hu, J., Mai, Z., Liu, Y., Chen, Y., Lou, S., Huang, H., Cheng, H., Zhao, L., Huang, J., Lu, Y., Fu, H., & Zheng, J. (2026). AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning. arXiv:2603.14342.",
+    "bibtex": "@misc{zhang2026agroomni, title={AgroOmni: A Large-Scale Multi-view Agricultural Dataset for Cross-Scale Multimodal Reasoning}, author={Jiarui Zhang and Junqi Hu and Zurong Mai and Yang Liu and Yuhang Chen and Shuohong Lou and Henglian Huang and Hong Cheng and Lingyuan Zhao and Jianxi Huang and Yutong Lu and Haohuan Fu and Juepeng Zheng}, year={2026}, eprint={2603.14342}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2603.14342}}",
+    "zip_size_bytes": 42703714964,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/AgroOmni",
+    "examples_image_url": "/img/agml/sample_images/AgroOmni_sample.webp",
+    "composition": {
+      "num_source_datasets": 14,
+      "source_datasets": [
+        "CLCD",
+        "EarthVQA",
+        "GWHD",
+        "OAM-TCD",
+        "OilPalmUAV",
+        "Agriculture Vision Challenge",
+        "PhenoBench",
+        "Maize Tassel Identification Dataset",
+        "IP102",
+        "ACFR Orchard Fruit Dataset",
+        "Tomato Dataset",
+        "2018 AI Challenge Dataset",
+        "CropHarvest",
+        "Private Parcel Dataset"
+      ]
+    },
+    "parent_dataset": "https://anonymous.4open.science/r/AgroOmni-6510",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
+  },
+  {
+    "name": "MIRAGE",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "plant identification",
+      "pest identification",
+      "disease identification",
+      "disease management recommendation",
+      "pest management recommendation",
+      "plant care guidance",
+      "weed management",
+      "clarification decision"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [],
+    "annotation_format": "OpenAI-style",
+    "num_images": 62901,
+    "num_qa_pairs": 40880,
+    "license": "cc-by-sa-4.0",
+    "documentation": "https://arxiv.org/abs/2506.20100",
+    "citation": "Dongre, V., Gui, C., Garg, S., Nayyeri, H., Tur, G., Hakkani-Tür, D., & Adve, V. S. (2025). MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations. arXiv:2506.20100.",
+    "bibtex": "@article{dongre2025mirage, title={MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agricultural Expert-Guided Conversations}, author={Dongre, Vardhan and Gui, Chi and Garg, Shubham and Nayyeri, Hooshang and Tur, Gokhan and Hakkani-T{\\\"u}r, Dilek and Adve, Vikram S}, journal={arXiv preprint arXiv:2506.20100}, year={2025}}",
+    "zip_size_bytes": 10953605304,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/MIRAGE",
+    "examples_image_url": "/img/agml/sample_images/MIRAGE_sample.webp",
+    "composition": {
+      "num_source_datasets": 1,
+      "source_datasets": [
+        "Ask Extension"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/MIRAGE-Benchmark/MIRAGE",
+    "qa_type": [
+      "open_ended"
+    ],
+    "conversation_type": [
+      "single_turn",
+      "multi_turn"
+    ],
+    "hf_configs": [
+      "MMMT_Decomp",
+      "MMMT_Direct",
+      "MMST_Contextual",
+      "MMST_Standard"
+    ]
+  },
+  {
+    "name": "TomaMMU",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "healthy vs diseased classification",
+      "leaf counting",
+      "disease identification",
+      "crop identification",
+      "scientific name classification",
+      "pathogen identification",
+      "symptom recognition"
+    ],
+    "location": [],
+    "country": "unknown",
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "tomato"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 28808,
+    "num_qa_pairs": 213119,
+    "license": "cc-by-nc-4.0",
+    "documentation": "https://arxiv.org/abs/2608.08727",
+    "citation": "Truong, G.-H., Nguyen Quoc, K., & Quach, L.-D. (2026). TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases. arXiv:2608.08727.",
+    "bibtex": "@misc{truong2026tomammu, title={TomaMMU: A Comprehensive Multimodal Understanding Benchmark for Tomato Leaf Diseases}, author={Gia-Han Truong and Khang Nguyen Quoc and Luyl-Da Quach}, year={2026}, eprint={2608.08727}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2608.08727}}",
+    "zip_size_bytes": 334409642,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/TomaMMU",
+    "examples_image_url": "/img/agml/sample_images/TomaMMU_sample.webp",
+    "composition": {
+      "num_source_datasets": 3,
+      "source_datasets": [
+        "LeafNet",
+        "TOM2024",
+        "In-house Collection"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/enalis/TomaMMU",
+    "qa_type": [
+      "multiple_choice_text",
+      "open_ended"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
+  },
+  {
+    "name": "LeafNet",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "Disease Identification",
+      "Symptom Description"
+    ],
+    "location": [],
+    "country": [
+      "United States of America",
+      "India",
+      "Bangladesh",
+      "Kenya",
+      "Ghana",
+      "Tanzania",
+      "Vietnam"
+    ],
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "black pepper",
+      "cashew",
+      "cassava",
+      "cherry",
+      "coffee",
+      "cucumber",
+      "grape",
+      "maize",
+      "mango",
+      "orange",
+      "peach",
+      "pepper",
+      "potato",
+      "raspberry",
+      "soybean",
+      "squash",
+      "strawberry",
+      "sugarcane",
+      "tea",
+      "tomato"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 80371,
+    "num_qa_pairs": 121337,
+    "license": "cc-by-4.0",
+    "documentation": "https://arxiv.org/abs/2602.13662",
+    "citation": "Nguyen Quoc, K., Dao, P. D., & Quach, L.-D. (2026). LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases. arXiv:2602.13662.",
+    "bibtex": "@misc{quoc2026leafnet, title={LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases}, author={Khang Nguyen Quoc and Phuong D. Dao and Luyl-Da Quach}, year={2026}, eprint={2602.13662}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2602.13662}}",
+    "zip_size_bytes": 7117690079,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet",
+    "examples_image_url": "",
+    "composition": {
+      "num_source_datasets": 13,
+      "source_datasets": [
+        "PlantVillage",
+        "Grape Leaf dataset",
+        "Sugarcane Leaf Dataset",
+        "MangoLeafBD Dataset",
+        "JMuBEN",
+        "Black Pepper Leaf Blight and Yellow Mottle Virus Dataset",
+        "Tea Crop Disease",
+        "Crop Pest and Disease Detection",
+        "Maize dataset",
+        "Cucumber dataset",
+        "Rice Leaf Disease",
+        "PlantDoc",
+        "In-house collection"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/enalis/LeafNet",
+    "qa_type": [
+      "image_caption"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
+  },
+  {
+    "name": "LeafBench",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "Healthy Vs Diseased Classification",
+      "Disease Identification",
+      "Crop Identification",
+      "Scientific Name Classification",
+      "Pathogen Identification",
+      "Symptom Recognition"
+    ],
+    "location": [],
+    "country": [
+      "United States of America",
+      "India",
+      "Bangladesh",
+      "Kenya",
+      "Ghana",
+      "Tanzania",
+      "Vietnam"
+    ],
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "black pepper",
+      "cashew",
+      "cassava",
+      "cherry",
+      "coffee",
+      "cucumber",
+      "grape",
+      "maize",
+      "mango",
+      "orange",
+      "peach",
+      "pepper",
+      "potato",
+      "raspberry",
+      "rice",
+      "soybean",
+      "squash",
+      "strawberry",
+      "sugarcane",
+      "tea",
+      "tomato"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 2535,
+    "num_qa_pairs": 13950,
+    "license": "mit",
+    "documentation": "https://arxiv.org/abs/2602.13662",
+    "citation": "Nguyen Quoc, K., Dao, P. D., & Quach, L.-D. (2026). LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases. arXiv:2602.13662.",
+    "bibtex": "@misc{quoc2026leafnet, title={LeafNet: A Large-Scale Dataset and Comprehensive Benchmark for Foundational Vision-Language Understanding of Plant Diseases}, author={Khang Nguyen Quoc and Phuong D. Dao and Luyl-Da Quach}, year={2026}, eprint={2602.13662}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2602.13662}}",
+    "zip_size_bytes": 278000000,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafBench",
+    "examples_image_url": "/img/agml/sample_images/LeafNet_sample.jpeg",
+    "composition": {
+      "num_source_datasets": 1,
+      "source_datasets": [
+        "LeafNet"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/enalis/LeafBench",
+    "qa_type": [
+      "multiple_choice_text"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
+  },
+  {
+    "name": "LeafNet2.0",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "Disease Identification",
+      "Symptom Description",
+      "Disease Stage Recognition"
+    ],
+    "location": [],
+    "country": [
+      "Bangladesh",
+      "Burkina Faso",
+      "Ethiopia",
+      "Ghana",
+      "India",
+      "Kenya",
+      "Tanzania",
+      "United States of America",
+      "Vietnam"
+    ],
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "bean",
+      "bell pepper",
+      "black gram",
+      "black pepper",
+      "cashew",
+      "cassava",
+      "cherry",
+      "chili",
+      "coffee",
+      "cowpea",
+      "cucumber",
+      "durian",
+      "eggplant",
+      "grape",
+      "guava",
+      "hog plum",
+      "maize",
+      "mango",
+      "onion",
+      "orange",
+      "papaya",
+      "peach",
+      "potato",
+      "radish",
+      "raspberry",
+      "rice",
+      "soursop",
+      "soybean",
+      "spinach",
+      "squash",
+      "strawberry",
+      "sugarcane",
+      "tea",
+      "tomato",
+      "watermelon",
+      "wheat"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 187441,
+    "num_qa_pairs": 255825,
+    "license": "cc-by-4.0",
+    "documentation": "https://doi.org/10.64898/2026.07.01.735881",
+    "citation": "Nguyen, T. V., Nguyen Quoc, K., Harwath, D., Quach, L.-D., & Dao, P. D. (2026). A multiregional image–text dataset and benchmark for vision-language modeling of plant diseases. bioRxiv. https://doi.org/10.64898/2026.07.01.735881",
+    "bibtex": "@article{nguyen2026leafmd, title={A multiregional image--text dataset and benchmark for vision-language modeling of plant diseases}, author={Nguyen, Trang V. and Nguyen Quoc, Khang and Harwath, David and Quach, Luyl-Da and Dao, Phuong D.}, journal={bioRxiv}, year={2026}, doi={10.64898/2026.07.01.735881}}",
+    "zip_size_bytes": 1886923805,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafNet2.0",
+    "examples_image_url": "",
+    "composition": {
+      "num_source_datasets": 26,
+      "source_datasets": [
+        "Grape (Mendeley)",
+        "Sugarcane (Mendeley)",
+        "Coffee (JMuBEN)",
+        "Mango (MangoLeafBD)",
+        "Black Pepper Leaf Blight and Yellow Mottle Virus",
+        "Tea (Data in Brief)",
+        "Hog Plum (Data in Brief)",
+        "Tomato, Onion and Maize (Data in Brief)",
+        "Bean and Cowpea (Data in Brief)",
+        "Papaya (Data in Brief)",
+        "Plant Pathology 2021 (Apple)",
+        "Wheat Leaf Dataset",
+        "Chilli (Mendeley)",
+        "Durian Diseases (Roboflow)",
+        "Onion (Mendeley)",
+        "Soursop (Mendeley)",
+        "Radish (Data in Brief)",
+        "Black Gram (Data in Brief)",
+        "Eggplant (Data in Brief)",
+        "Guava (Data in Brief)",
+        "Rice",
+        "Cucumber (Data in Brief)",
+        "PlantVillage",
+        "Cashew, Cassava, Maize and Tomato (Mendeley)",
+        "Maize (Data in Brief)",
+        "PlantDoc"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/enalis/LeafNet2.0",
+    "qa_type": [
+      "image_caption"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ],
+    "hf_configs": [
+      "LeafNet2.0",
+      "captions_eval"
+    ]
+  },
+  {
+    "name": "LeafBenchV2",
+    "machine_learning_task": "image_text_to_text",
+    "agricultural_task": [
+      "Disease Identification",
+      "Pathogen Identification",
+      "Crop Identification",
+      "Symptom Recognition",
+      "Healthy Vs Diseased Classification",
+      "Scientific Name Classification",
+      "Lesion Characterization",
+      "Leaf Symptom Detection",
+      "Disease Severity Assessment"
+    ],
+    "location": [],
+    "country": [
+      "Bangladesh",
+      "Burkina Faso",
+      "Ethiopia",
+      "Ghana",
+      "India",
+      "Kenya",
+      "Tanzania",
+      "United States of America",
+      "Vietnam"
+    ],
+    "real_or_synthetic": "real",
+    "crop_types": [
+      "apple",
+      "bean",
+      "bell pepper",
+      "black gram",
+      "black pepper",
+      "cashew",
+      "cassava",
+      "cherry",
+      "chili",
+      "coffee",
+      "cowpea",
+      "cucumber",
+      "durian",
+      "eggplant",
+      "grape",
+      "guava",
+      "hog plum",
+      "maize",
+      "mango",
+      "onion",
+      "orange",
+      "papaya",
+      "peach",
+      "potato",
+      "radish",
+      "raspberry",
+      "rice",
+      "soursop",
+      "soybean",
+      "spinach",
+      "squash",
+      "strawberry",
+      "sugarcane",
+      "tea",
+      "tomato",
+      "watermelon",
+      "wheat"
+    ],
+    "annotation_format": "OpenAI-style",
+    "num_images": 6189,
+    "num_qa_pairs": 54580,
+    "license": "apache-2.0",
+    "documentation": "https://doi.org/10.64898/2026.07.01.735881",
+    "citation": "Nguyen, T. V., Nguyen Quoc, K., Harwath, D., Quach, L.-D., & Dao, P. D. (2026). A multiregional image–text dataset and benchmark for vision-language modeling of plant diseases. bioRxiv. https://doi.org/10.64898/2026.07.01.735881",
+    "bibtex": "@article{nguyen2026leafmd, title={A multiregional image--text dataset and benchmark for vision-language modeling of plant diseases}, author={Nguyen, Trang V. and Nguyen Quoc, Khang and Harwath, David and Quach, Luyl-Da and Dao, Phuong D.}, journal={bioRxiv}, year={2026}, doi={10.64898/2026.07.01.735881}}",
+    "zip_size_bytes": 401694166,
+    "source": "huggingface",
+    "hf_link": "https://huggingface.co/datasets/Project-AgML/LeafBenchV2",
+    "examples_image_url": "",
+    "composition": {
+      "num_source_datasets": 1,
+      "source_datasets": [
+        "LeafNet 2.0"
+      ]
+    },
+    "parent_dataset": "https://huggingface.co/datasets/enalis/LeafBenchV2",
+    "qa_type": [
+      "multiple_choice_text"
+    ],
+    "conversation_type": [
+      "single_turn"
+    ]
   },
   {
     "name": "grassfield_weed_classification",

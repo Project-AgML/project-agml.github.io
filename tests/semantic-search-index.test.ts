@@ -48,10 +48,9 @@ describe('buildIndexRow', () => {
     bibtex: null,
     dataset_type: 'vision',
     qa_type: null,
-    task_dimensions: null,
-    num_task_types: null,
-    conversation_format: null,
-    num_rows: null,
+    conversation_type: null,
+    num_qa_pairs: null,
+    hf_configs: null,
     source_datasets: null,
   };
 

@@ -57,7 +57,9 @@ export function buildIndexRow(name: string, dataset: Dataset | undefined) {
     name,
     nameText: humanize(name),
     machine_learning_task: dataset?.machine_learning_task ? humanize(dataset.machine_learning_task) : '',
-    agricultural_task: dataset?.agricultural_task ? humanize(dataset.agricultural_task) : '',
+    agricultural_task: dataset?.agricultural_task
+      ? humanize([dataset.agricultural_task].flat().join(', '))
+      : '',
     // Includes child_crop_types so a parent whose own crop_types is empty (e.g. iNatAg,
     // iNatAg-mini) is still findable by the species names rolled up from its hidden children —
     // see attachChildCropTypes in datasets.ts.

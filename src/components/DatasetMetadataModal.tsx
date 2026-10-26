@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import type { Dataset } from '../lib/datasets';
-import { formatCoordinateList, formatDisplayLocation, formatLocationList, toTitleCase } from '../lib/datasets';
-import { toDisplayLabel } from '../lib/labelOverrides';
+import { formatCoordinateList, formatDisplayLocation, formatLocationList, isVlmTask, toTitleCase } from '../lib/datasets';
+import { toDisplayLabel, toNameTitleCase } from '../lib/labelOverrides';
 import {
 	useBenchmark,
 	type BenchmarkData,
@@ -72,7 +72,7 @@ function formatResultType(entry: { variant: 'zero-shot' | 'fine-tuned' | null; o
 
 function taskBadgeClass(task: string | null): string {
 	if (!task) return styles.badgeOther;
-	if (task.includes('image-text') || task.includes('text-to-text')) return styles.badgeVlm;
+	if (isVlmTask(task)) return styles.badgeVlm;
 	if (task.includes('classif')) return styles.badgeClassification;
 	if (task.includes('detect')) return styles.badgeDetection;
 	if (task.includes('segment')) return styles.badgeSegmentation;
@@ -112,10 +112,13 @@ function isExternalDataset(dataset: Dataset) {
 
 function formatLoaderInstructions(dataset: Dataset) {
 	if (dataset.source === 'huggingface') {
-		if(dataset.dataset_type === 'vlm') {
+		if (dataset.dataset_type === 'vlm') {
+			// Datasets with several Hugging Face configs list them in `hf_configs`; the rest only have "default".
+			const [config = 'default', ...otherConfigs] = dataset.hf_configs ?? [];
+			const configsComment = otherConfigs.length ? `\n# other configs: ${otherConfigs.join(', ')}` : '';
 			return {
 				title: 'Load from Hugging Face',
-				code: `from datasets import load_dataset\nloader = load_dataset("Project-AgML/${dataset.name}")`,
+				code: `from agml import loadImageTextToTextDataset\nds = loadImageTextToTextDataset("Project-AgML/${dataset.name}", config="${config}")${configsComment}`,
 			};
 		}
 		if (dataset.sensor_modality?.toLowerCase().includes('multispectral')) {
@@ -151,7 +154,7 @@ function StatTile({ label, value, hint, info }: { label: string; value: string; 
 
 type MetricBar = { label: string; value: string; pct: number; positive?: boolean };
 type MetricStat = { label: string; value: string; hint?: string; info?: string };
-type MetricStatSection = { title: string; description: string; badge?: string; stats: MetricStat[] };
+type MetricStatSection = { title: string; description: string; badge?: string; stats: MetricStat[]; collapsible?: boolean };
 // 'good' / 'mid' / 'poor' key into the same three-tier color scale used by the score boxes
 // (--ifm-color-primary / --agml-caution-text / --agml-warning-text) so a cartography split and
 // an axis score read as the same kind of judgment.
@@ -218,10 +221,11 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		if (m.exact_duplicate) {
 			const d = m.exact_duplicate;
 			sections.push({
-				title: 'Exact',
+				title: 'Exact Duplicates',
 				description:
 					'Images that are byte-for-byte identical to another image in the dataset. A high duplicate rate inflates the apparent dataset size and can leak the same example across train/test splits, making evaluation look better than it is.',
 				badge: `${d.total_images} images`,
+				collapsible: true,
 				stats: [
 					{ label: 'Duplicate count', value: String(d.exact_duplicate_count), info: 'Images that are byte-for-byte identical to another image in the dataset.' },
 					{
@@ -242,7 +246,7 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		if (m.near_duplicate) {
 			const d = m.near_duplicate;
 			sections.push({
-				title: 'Near',
+				title: 'Near Duplicates',
 				description:
 					'Images that are nearly identical (crops, recompressions, small edits) based on embedding similarity above a threshold — not exact byte matches. High near-duplicate rates risk train/test leakage even when the exact-duplicate count is zero.',
 				badge: d.embed_model,
@@ -295,7 +299,13 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		});
 	}
 
-	if (m.feature_separability) {
+	if (m.feature_separability?.skipped) {
+		cards.push({
+			kind: 'skipped',
+			title: 'Feature Separability',
+			message: m.feature_separability.reason || 'Skipped for this run.',
+		});
+	} else if (m.feature_separability) {
 		const d = m.feature_separability;
 		cards.push({
 			kind: 'signed',
@@ -358,7 +368,9 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 
 	const backbone = benchmark.reproducibility?.backbone;
 
-	if (m.dataset_cartography) {
+	if (m.dataset_cartography?.skipped) {
+		cards.push({ kind: 'skipped', title: 'Dataset Cartography', message: m.dataset_cartography.reason || 'Skipped for this run.' });
+	} else if (m.dataset_cartography) {
 		const d = m.dataset_cartography;
 		cards.push({
 			kind: 'proportion',
@@ -386,7 +398,9 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		});
 	}
 
-	if (m.class_confusability) {
+	if (m.class_confusability?.skipped) {
+		cards.push({ kind: 'skipped', title: 'Class Confusability', message: m.class_confusability.reason || 'Skipped for this run.' });
+	} else if (m.class_confusability) {
 		const d = m.class_confusability;
 		const allNames = Object.keys(d.per_class_accuracy);
 		let keepIdx = allNames.map((_, i) => i);
@@ -434,7 +448,9 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		});
 	}
 
-	if (m.label_noise) {
+	if (m.label_noise?.skipped) {
+		cards.push({ kind: 'skipped', title: 'Label Noise', message: m.label_noise.reason || 'Skipped for this run.' });
+	} else if (m.label_noise) {
 		const d = m.label_noise;
 		const max = Math.max(...Object.values(d.per_class_noise_counts));
 		cards.push({
@@ -587,8 +603,8 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 
 			{card.kind === 'stat-sections' && (
 				<div className={styles.metricStatSections}>
-					{card.sections.map((section) => (
-						<div key={section.title} className={styles.metricStatSection}>
+					{card.sections.map((section) => {
+						const header = (
 							<div className={styles.metricCardHeader}>
 								<div className={styles.metricCardTitleRow}>
 									<h5 className={styles.metricStatSectionTitle}>{section.title}</h5>
@@ -596,13 +612,31 @@ function MetricCard({ card }: { card: MetricCardVM }) {
 								</div>
 								{section.badge && <span className={styles.metricCardBadge}>{section.badge}</span>}
 							</div>
+						);
+						const statGrid = (
 							<div className={styles.statTileGrid}>
 								{section.stats.map((stat) => (
 									<StatTile key={stat.label} label={stat.label} value={stat.value} hint={stat.hint} info={stat.info} />
 								))}
 							</div>
-						</div>
-					))}
+						);
+
+						if (section.collapsible) {
+							return (
+								<details key={section.title} className={styles.metricStatSection}>
+									<summary className={styles.metricStatSectionSummary}>{header}</summary>
+									{statGrid}
+								</details>
+							);
+						}
+
+						return (
+							<div key={section.title} className={styles.metricStatSection}>
+								{header}
+								{statGrid}
+							</div>
+						);
+					})}
 				</div>
 			)}
 
@@ -749,23 +783,6 @@ function classColor(index: number, isDark: boolean): string {
 	return oklchToRgb(lightness, chroma, hue);
 }
 
-const EMBED_CLUSTER_CENTERS: [number, number, number][] = [
-	[-0.6, 0.5, 0.3],
-	[0.55, 0.55, -0.4],
-	[-0.5, -0.55, -0.2],
-	[0.6, -0.5, 0.45],
-];
-
-function mulberry32(seed: number) {
-	return function random() {
-		seed |= 0;
-		seed = (seed + 0x6d2b79f5) | 0;
-		let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-		t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-		return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-	};
-}
-
 export interface EmbedPoint {
 	id: string;
 	cls: string;
@@ -786,36 +803,6 @@ function embedPointsFromReal(embeddings: RawEmbedPoint[]): EmbedPoint[] {
 		y: p.y,
 		z: p.z ?? 0,
 	}));
-}
-
-function buildEmbeddingPoints(benchmark: BenchmarkData): EmbedPoint[] {
-	const counts = benchmark.metrics.class_imbalance?.counts ?? {};
-	const sep = benchmark.metrics.feature_separability?.per_class_silhouette ?? {};
-	const classes = Object.keys(counts);
-	const rand = mulberry32(42);
-	const splits = ['train', 'val', 'test'];
-	const points: EmbedPoint[] = [];
-	let globalIndex = 0;
-	classes.forEach((cls, i) => {
-		const center = EMBED_CLUSTER_CENTERS[i % EMBED_CLUSTER_CENTERS.length];
-		const sil = sep[cls] ?? 0.3;
-		const spread = 0.22 + Math.max(0, 0.65 - sil) * 0.55;
-		const n = Math.max(6, Math.round((counts[cls] || 30) / 8));
-		for (let k = 0; k < n; k += 1) {
-			const jitter = () => (((rand() + rand() + rand()) - 1.5) / 1.5) * spread;
-			points.push({
-				id: `${cls}-${k}`,
-				cls,
-				split: splits[globalIndex % splits.length],
-				index: globalIndex,
-				x: center[0] + jitter(),
-				y: center[1] + jitter(),
-				z: center[2] + jitter(),
-			});
-			globalIndex += 1;
-		}
-	});
-	return points;
 }
 
 function buildClassColorMap(points: EmbedPoint[], isDark: boolean): Record<string, string> {
@@ -843,10 +830,7 @@ function EmbeddingScatter({
 	// not the same points with one axis dropped.
 	const activeRaw = view === '2d' ? embeddings2d : embeddings3d;
 	const hasRealEmbeddings = Boolean(activeRaw && activeRaw.length > 0);
-	const points = useMemo(() => {
-		if (activeRaw && activeRaw.length > 0) return embedPointsFromReal(activeRaw);
-		return buildEmbeddingPoints(benchmark);
-	}, [activeRaw, benchmark]);
+	const points = useMemo(() => (activeRaw && activeRaw.length > 0 ? embedPointsFromReal(activeRaw) : []), [activeRaw]);
 
 	const colorMap = useMemo(() => buildClassColorMap(points, colorMode === 'dark'), [points, colorMode]);
 
@@ -877,32 +861,34 @@ function EmbeddingScatter({
 				</div>
 			</div>
 
-			{view === '2d' ? (
-				<EmbeddingPlot2D points={points} colorMap={colorMap} />
-			) : (
-				<EmbeddingPlot3D points={points} colorMap={colorMap} />
-			)}
+			{hasRealEmbeddings ? (
+				<>
+					{view === '2d' ? (
+						<EmbeddingPlot2D points={points} colorMap={colorMap} />
+					) : (
+						<EmbeddingPlot3D points={points} colorMap={colorMap} />
+					)}
 
-			<div className={styles.embedLegend}>
-				{Object.entries(colorMap)
-					.slice(0, LEGEND_CAP)
-					.map(([key, color]) => (
-						<span key={key} className={styles.embedLegendItem}>
-							<span className={styles.embedLegendDot} style={{ background: color }} />
-							{toTitleCase(key)}
-						</span>
-					))}
-				{Object.keys(colorMap).length > LEGEND_CAP && (
-					<span className={styles.embedLegendOverflow}>
-						+{Object.keys(colorMap).length - LEGEND_CAP} more (hover points for class)
-					</span>
-				)}
-			</div>
-			<p className={styles.embedNote}>
-				{hasRealEmbeddings
-					? `projected from real ${view.toUpperCase()} UMAP embeddings`
-					: `no ${view.toUpperCase()} UMAP embeddings found for this dataset · showing a seeded demo scatter around class clusters`}
-			</p>
+					<div className={styles.embedLegend}>
+						{Object.entries(colorMap)
+							.slice(0, LEGEND_CAP)
+							.map(([key, color]) => (
+								<span key={key} className={styles.embedLegendItem}>
+									<span className={styles.embedLegendDot} style={{ background: color }} />
+									{toTitleCase(key)}
+								</span>
+							))}
+						{Object.keys(colorMap).length > LEGEND_CAP && (
+							<span className={styles.embedLegendOverflow}>
+								+{Object.keys(colorMap).length - LEGEND_CAP} more (hover points for class)
+							</span>
+						)}
+					</div>
+					<p className={styles.embedNote}>{`Projected from real ${view.toUpperCase()} UMAP embeddings`}</p>
+				</>
+			) : (
+				<p className={styles.embedMissing}>{`No ${view.toUpperCase()} UMAP embeddings found for this dataset.`}</p>
+			)}
 		</section>
 	);
 }
@@ -921,7 +907,7 @@ function scoreTier(value: number): ScoreTier {
 	return 'poor';
 }
 
-type ScoreBoxVM = { label: string; value: string; tier: ScoreTier };
+type ScoreBoxVM = { label: string; value: string; tier: ScoreTier | 'na' };
 
 function buildScoreBoxes(scores: AxisScores): ScoreBoxVM[] {
 	const entries: { label: string; value: number | null }[] = [
@@ -931,9 +917,12 @@ function buildScoreBoxes(scores: AxisScores): ScoreBoxVM[] {
 		{ label: 'Diversity & Coverage', value: scores.diversity },
 		{ label: 'Annotation Reliability', value: scores.annotation },
 	];
-	return entries
-		.filter((entry): entry is { label: string; value: number } => entry.value != null && !Number.isNaN(entry.value))
-		.map((entry) => ({ label: entry.label, value: entry.value.toFixed(1), tier: scoreTier(entry.value) }));
+	return entries.map((entry) => {
+		if (entry.value == null || Number.isNaN(entry.value)) {
+			return { label: entry.label, value: 'N/A', tier: 'na' };
+		}
+		return { label: entry.label, value: entry.value.toFixed(1), tier: scoreTier(entry.value) };
+	});
 }
 
 type ReproRowVM = { label: string; value: string };
@@ -1175,6 +1164,11 @@ export function DatasetMetadataModal({
 
 	const [cropsExpanded, setCropsExpanded] = useState(false);
 	const [classesExpanded, setClassesExpanded] = useState(false);
+	const [sourcesExpanded, setSourcesExpanded] = useState(false);
+	// Set when the sample image fails to load (e.g. its file is missing), so the "no example
+	// image" message shows instead of a broken image.
+	const [exampleImageFailed, setExampleImageFailed] = useState(false);
+	useEffect(() => setExampleImageFailed(false), [dataset?.examples_image_url]);
 	const [copied, setCopied] = useState(false);
 	const [citationCopied, setCitationCopied] = useState(false);
 	const [bibtexCopied, setBibtexCopied] = useState(false);
@@ -1199,8 +1193,9 @@ export function DatasetMetadataModal({
 		['Platform', formatValue(dataset.platform)],
 		...(isVlm
 			? ([
-					['Conversation format', formatValue(dataset.conversation_format)],
-					['Num of samples', formatImageCount(dataset.num_rows)],
+					['Conversation type', formatValue(dataset.conversation_type)],
+					['QA pairs', formatImageCount(dataset.num_qa_pairs)],
+					['Number of images', formatImageCount(dataset.num_images)],
 				] as const)
 			: ([['Number of images', formatImageCount(dataset.num_images)]] as const)),
 		['Size', formatBytesDecimal(dataset.zip_size_bytes)],
@@ -1213,7 +1208,11 @@ export function DatasetMetadataModal({
 			: []),
 	] as [string, string][];
 	const loader = formatLoaderInstructions(dataset);
+	// `parent_dataset` is a URL on VLM records but a bare dataset name on child vision datasets
+	// (e.g. iNatAg species), which must not be linked.
+	const parentDatasetUrl = dataset.parent_dataset && /^https?:\/\//.test(dataset.parent_dataset) ? dataset.parent_dataset : null;
 	const cropList = dataset.crop_types ?? dataset.child_crop_types ?? [];
+	const sourceList = dataset.source_datasets ?? [];
 	const classList = dataset.classes ? dataset.classes.split(', ').filter(Boolean) : [];
 	const locationList = formatLocationList(dataset);
 	const coordinateList = formatCoordinateList(dataset.lat_lon);
@@ -1244,7 +1243,9 @@ export function DatasetMetadataModal({
 									{formatValue(dataset.machine_learning_task)}
 								</span>
 							)}
-							{dataset.agricultural_task && <span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>}
+							{!isVlm && dataset.agricultural_task && (
+								<span className={styles.tag}>{formatValue(dataset.agricultural_task)}</span>
+							)}
 							{dataset.real_or_synthetic && <span className={styles.tag}>{formatValue(dataset.real_or_synthetic)}</span>}
 							{dataset.license && <span className={styles.tag}>{dataset.license}</span>}
 						</div>
@@ -1288,7 +1289,7 @@ export function DatasetMetadataModal({
 					))}
 				</dl>
 
-				{(dataset.country || dataset.location || dataset.lat_lon || dataset.imaging_equipment || dataset.collection_period) && (
+				{!isVlm && (dataset.country || dataset.location || dataset.lat_lon || dataset.imaging_equipment || dataset.collection_period) && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Location &amp; collection</h3>
 						<div className={styles.locationColumns}>
@@ -1348,40 +1349,45 @@ export function DatasetMetadataModal({
 					</section>
 				)}
 
-				{isVlm && dataset.task_dimensions && dataset.task_dimensions.length > 0 && (
-					<section className={styles.section}>
-						<h3 className={styles.sectionTitle}>Task Dimensions</h3>
-						<div className={styles.badgeWrap}>
-							{dataset.task_dimensions.map((value) => (
-								<span key={value} className={styles.tag}>{toTitleCase(value)}</span>
-							))}
-						</div>
-					</section>
-				)}
-
-				{isVlm && dataset.source_datasets && dataset.source_datasets.length > 0 && (
-					<section className={styles.section}>
-						<h3 className={styles.sectionTitle}>Source Datasets</h3>
-						<div className={styles.badgeWrap}>
-							{dataset.source_datasets.map((sourceDataset) => (
-								<span key={sourceDataset} className={styles.tag}>{sourceDataset}</span>
-							))}
-						</div>
-					</section>
-				)}
-
 				{cropList.length > 0 && (
 					<section className={styles.section}>
 						<h3 className={styles.sectionTitle}>Crops</h3>
 						<div className={styles.badgeWrap}>
 							{(cropsExpanded ? cropList : cropList.slice(0, 10)).map((crop) => (
-								<span key={crop} className={styles.tag}>{crop}</span>
+								<span key={crop} className={styles.tag}>{isVlm ? toTitleCase(crop) : crop}</span>
 							))}
 							{!cropsExpanded && cropList.length > 10 && (
 								<button type="button" className={styles.expandButton} onClick={() => setCropsExpanded(true)}>
 									+{cropList.length - 10} more
 								</button>
 							)}
+						</div>
+					</section>
+				)}
+
+				{isVlm && sourceList.length > 0 && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Source Datasets</h3>
+						<div className={styles.badgeWrap}>
+							{(sourcesExpanded ? sourceList : sourceList.slice(0, 10)).map((sourceDataset) => (
+								<span key={sourceDataset} className={styles.tag}>{toNameTitleCase(sourceDataset)}</span>
+							))}
+							{!sourcesExpanded && sourceList.length > 10 && (
+								<button type="button" className={styles.expandButton} onClick={() => setSourcesExpanded(true)}>
+									+{sourceList.length - 10} more
+								</button>
+							)}
+						</div>
+					</section>
+				)}
+
+				{isVlm && dataset.agricultural_task && (
+					<section className={styles.section}>
+						<h3 className={styles.sectionTitle}>Agricultural Tasks</h3>
+						<div className={styles.badgeWrap}>
+							{[dataset.agricultural_task].flat().map((task) => (
+								<span key={task} className={styles.tag}>{toTitleCase(task)}</span>
+							))}
 						</div>
 					</section>
 				)}
@@ -1420,9 +1426,14 @@ export function DatasetMetadataModal({
 					</h3>
 					{dataset.sensor_modality === 'point_cloud' && dataset.point_cloud_sample_url ? (
 						<PointCloudPlot3D sampleUrl={dataset.point_cloud_sample_url} />
-					) : hasExampleImage(dataset.examples_image_url) ? (
+					) : hasExampleImage(dataset.examples_image_url) && !exampleImageFailed ? (
 						<figure className={styles.figure}>
-							<img className={styles.exampleImage} src={dataset.examples_image_url} alt={`Example for ${dataset.name}`} />
+							<img
+								className={styles.exampleImage}
+								src={dataset.examples_image_url}
+								alt={`Example for ${dataset.name}`}
+								onError={() => setExampleImageFailed(true)}
+							/>
 						</figure>
 					) : (
 						<p className={styles.bodyText}>No example image is available for this dataset.</p>
@@ -1458,7 +1469,7 @@ export function DatasetMetadataModal({
 				</section>
 				)}
 
-				{(dataset.documentation || dataset.hf_link || (isExternalDataset(dataset) && dataset.data_link)) && (
+				{(dataset.documentation || dataset.hf_link || parentDatasetUrl || (isExternalDataset(dataset) && dataset.data_link)) && (
 					<div className={styles.linkRow}>
 						{dataset.documentation && (
 							<a className={styles.externalLink} href={dataset.documentation} target="_blank" rel="noreferrer">
@@ -1475,10 +1486,11 @@ export function DatasetMetadataModal({
 								View on Hugging Face
 							</a>
 						)}
-						{/* "View Original Dataset" is hidden for now: VLM records carry `parent_dataset`
-						    as a bare Hugging Face repo slug (e.g. "AgroMind/AgroMind"), not a URL, so
-						    linking it directly resolved as a relative site link and 404'd. Restore this
-						    once the field is normalized to an absolute URL upstream. */}
+						{parentDatasetUrl && (
+							<a className={styles.externalLink} href={parentDatasetUrl} target="_blank" rel="noreferrer">
+								View Original Dataset
+							</a>
+						)}
 					</div>
 				)}
 

@@ -107,11 +107,14 @@ export default function GlobalLeaderboardPage() {
     const agTaskSet = new Set<string>();
     const byAgTask = new Map<string, string[]>();
     for (const dataset of datasets) {
-      if (!dataset.agricultural_task) continue;
-      agTaskSet.add(dataset.agricultural_task);
-      const list = byAgTask.get(dataset.agricultural_task) ?? [];
-      list.push(dataset.name);
-      byAgTask.set(dataset.agricultural_task, list);
+      // VLM agricultural tasks aren't standardized yet, so they're left out of this filter.
+      if (!dataset.agricultural_task || dataset.dataset_type === 'vlm') continue;
+      for (const task of [dataset.agricultural_task].flat()) {
+        agTaskSet.add(task);
+        const list = byAgTask.get(task) ?? [];
+        list.push(dataset.name);
+        byAgTask.set(task, list);
+      }
     }
     return {
       agTaskOptions: Array.from(agTaskSet).sort((a, b) => a.localeCompare(b)),
