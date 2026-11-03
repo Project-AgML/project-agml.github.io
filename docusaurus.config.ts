@@ -68,7 +68,8 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/datasets', label: 'Datasets', position: 'left'},
+        {to: '/datasets', label: 'Datasets', position: 'left', activeBaseRegex: '^/datasets/?$'},
+        {to: '/datasets/explore', label: 'Explore', position: 'left'},
         {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
         {
           href: 'https://github.com/Project-AgML/AgML',

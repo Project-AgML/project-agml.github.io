@@ -1,0 +1,133 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--agml-muted);
+}
+
+.hint strong {
+  font-weight: 600;
+  color: var(--agml-text);
+}
+
+.scroller {
+  position: relative;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+.svg {
+  display: block;
+  font-family: var(--ifm-font-family-base);
+}
+
+.link {
+  fill: none;
+  stroke: var(--agml-border-strong);
+  stroke-width: 1.25;
+}
+
+.node {
+  stroke: var(--ifm-color-primary);
+  stroke-width: 2;
+  transition: r 0.15s ease;
+}
+
+/* Has hidden children: solid — the "there's more in here" cue. */
+.nodeCollapsed {
+  fill: var(--ifm-color-primary);
+}
+
+/* Expanded parent: hollow. */
+.nodeOpen {
+  fill: var(--agml-surface-strong);
+}
+
+/* Leaf: tinted. */
+.nodeLeaf {
+  fill: color-mix(in oklch, var(--ifm-color-primary) 35%, var(--agml-surface-strong));
+}
+
+.nodeMore {
+  fill: var(--agml-surface-strong);
+  stroke: var(--agml-border-strong);
+  stroke-dasharray: 2 2;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover,
+.clickable:focus-visible {
+  stroke-width: 3;
+  outline: none;
+}
+
+.hit {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.label {
+  fill: var(--agml-text);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.label:hover,
+.label:focus-visible {
+  fill: var(--ifm-color-primary);
+  text-decoration: underline;
+  outline: none;
+}
+
+.labelRoot {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.labelMore {
+  fill: var(--ifm-color-primary);
+  font-family: var(--ifm-code-font-family);
+  font-size: 11.5px;
+}
+
+.count {
+  fill: var(--agml-muted);
+  font-family: var(--ifm-code-font-family);
+  font-size: 11px;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  max-width: 280px;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--agml-border-strong);
+  background: var(--agml-tag-bg);
+  color: var(--agml-text);
+  font-size: 0.78rem;
+  box-shadow: var(--agml-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.tooltip em {
+  color: var(--agml-muted);
+}
+
+.tooltipMeta {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.7rem;
+  color: var(--agml-muted);
+}

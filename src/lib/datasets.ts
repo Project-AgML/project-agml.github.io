@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { toDisplayLabel } from "./labelOverrides";
+import { parseLatLon } from "./coordinates";
 
 export interface Dataset {
     name: string;
@@ -666,43 +667,6 @@ export function formatLocationList(dataset: Pick<Dataset, 'location' | 'country'
   if (!singleCountry) return locations;
 
   return locations.map((entry) => stripTrailingCountry(entry, singleCountry));
-}
-
-// `lat_lon` entries come from source metadata in either decimal ("23.7654, 90.4449") or
-// DMS ("23 46 17.652, 90 22 30.2514") form, optionally with a trailing hemisphere letter.
-function parseCoordPart(part: string): number | null {
-  const trimmed = part.trim();
-
-  const dms = trimmed.match(/^(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s*([NSEW])?$/i);
-  if (dms) {
-    const [, degStr, minStr, secStr, dir] = dms;
-    const deg = Math.abs(Number(degStr));
-    const value = deg + Number(minStr) / 60 + Number(secStr) / 3600;
-    // Compare the raw text rather than the parsed number: Number("-0") < 0 is false in JS,
-    // which would silently drop the sign on values like "-0 28 59" (just south of the equator).
-    const negative = degStr.trim().startsWith('-') || (dir != null && /[SW]/i.test(dir));
-    return Number.isFinite(value) ? (negative ? -value : value) : null;
-  }
-
-  const decimal = trimmed.match(/^(-?\d+(?:\.\d+)?)\s*([NSEW])?$/i);
-  if (decimal) {
-    const [, numStr, dir] = decimal;
-    const value = Number(numStr);
-    if (!Number.isFinite(value)) return null;
-    return dir != null && /[SW]/i.test(dir) ? -Math.abs(value) : value;
-  }
-
-  return null;
-}
-
-function parseLatLon(raw: string): { lat: number; lon: number } | null {
-  const parts = raw.split(',');
-  if (parts.length !== 2) return null;
-  const lat = parseCoordPart(parts[0]);
-  const lon = parseCoordPart(parts[1]);
-  if (lat == null || lon == null) return null;
-  if (Math.abs(lat) > 90 || Math.abs(lon) > 180) return null;
-  return { lat, lon };
 }
 
 function toDMS(value: number, positiveLetter: string, negativeLetter: string): string {
