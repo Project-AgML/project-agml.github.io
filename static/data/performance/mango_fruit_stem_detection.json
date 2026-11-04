@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-11-03T01:50:01.346266+00:00",
+    "dataset": "Project-AgML/mango_fruit_stem_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 160.57,
+    "inference_time_seconds_per_image": 0.321132,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.371133,
+      "mAP50": 0.466586
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "scene"
+      ],
+      "seed": 42,
+      "samples_before": 1782,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T02:14:19.054012+00:00",
+    "dataset": "Project-AgML/mango_fruit_stem_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 213.88,
+    "inference_time_seconds_per_image": 0.427764,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.306723,
+      "mAP50": 0.445599
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "scene"
+      ],
+      "seed": 42,
+      "samples_before": 1782,
+      "samples_after": 500
+    }
+  }
+]

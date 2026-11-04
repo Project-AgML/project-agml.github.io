@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-10-31T20:43:22.986099+00:00",
+    "dataset": "Project-AgML/PaddyVarietyBD_variety_classification",
+    "dataset_config": "raw",
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "inference_time_seconds": 89.63,
+    "inference_time_seconds_per_image": 0.179256,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.018304,
+      "precision": 0.017223,
+      "recall": 0.023946,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: BD70, Bd30, Bd33, Bd34, Bd49, Bd51, Bd52, Bd56, Bd57, Bd72, Bd75, Bd76, Bd79, Bd85, Bd87, Bd91, Bd93, Bd95, Binadhan07, Binadhan08, Binadhan10, Binadhan11, Binadhan12, Binadhan14, Binadhan16, Binadhan17, Binadhan19, Binadhan20, Binadhan21, Binadhan23, Binadhan24, Binadhan25, Binadhan26, Br22, Br23. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: BD70, Bd30, Bd33, Bd34, Bd49, Bd51, Bd52, Bd56, Bd57, Bd72, Bd75, Bd76, Bd79, Bd85, Bd87, Bd91, Bd93, Bd95, Binadhan07, Binadhan08, Binadhan10, Binadhan11, Binadhan12, Binadhan14, Binadhan16, Binadhan17, Binadhan19, Binadhan20, Binadhan21, Binadhan23, Binadhan24, Binadhan25, Binadhan26, Br22, Br23), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 14000,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-02T05:55:17.798506+00:00",
+    "dataset": "Project-AgML/PaddyVarietyBD_variety_classification",
+    "dataset_config": "raw",
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA H100 NVL",
+    "inference_time_seconds": 63.71,
+    "inference_time_seconds_per_image": 0.127425,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.036294,
+      "precision": 0.037314,
+      "recall": 0.038524,
+      "skipped_samples": 2
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: BD70, Bd30, Bd33, Bd34, Bd49, Bd51, Bd52, Bd56, Bd57, Bd72, Bd75, Bd76, Bd79, Bd85, Bd87, Bd91, Bd93, Bd95, Binadhan07, Binadhan08, Binadhan10, Binadhan11, Binadhan12, Binadhan14, Binadhan16, Binadhan17, Binadhan19, Binadhan20, Binadhan21, Binadhan23, Binadhan24, Binadhan25, Binadhan26, Br22, Br23. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: BD70, Bd30, Bd33, Bd34, Bd49, Bd51, Bd52, Bd56, Bd57, Bd72, Bd75, Bd76, Bd79, Bd85, Bd87, Bd91, Bd93, Bd95, Binadhan07, Binadhan08, Binadhan10, Binadhan11, Binadhan12, Binadhan14, Binadhan16, Binadhan17, Binadhan19, Binadhan20, Binadhan21, Binadhan23, Binadhan24, Binadhan25, Binadhan26, Br22, Br23), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 14000,
+      "samples_after": 500
+    }
+  }
+]

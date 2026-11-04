@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-11-03T00:52:57.491230+00:00",
+    "dataset": "Project-AgML/cocoa_monilia_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 213.57,
+    "inference_time_seconds_per_image": 0.427147,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.008134,
+      "mAP50": 0.01608
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "treatment"
+      ],
+      "seed": 42,
+      "samples_before": 1950,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T00:55:13.237742+00:00",
+    "dataset": "Project-AgML/cocoa_monilia_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 120.56,
+    "inference_time_seconds_per_image": 0.241129,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.136489,
+      "mAP50": 0.151744
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "treatment"
+      ],
+      "seed": 42,
+      "samples_before": 1950,
+      "samples_after": 500
+    }
+  }
+]

@@ -56,5 +56,71 @@
       "false_negatives": 10945
     },
     "notes": "qwen detection prompt: 'Locate every instance of the Canopy, Crown, crop in the image. Output a JSON list where each entry contains the bounding box in \"bbox_2d\" and a text label in \"label\" (one of: Canopy, Crown, crop). The bbox_2d coordinates are [x1, y1, x2, y2], normalized to 0-1000.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=2048, batch_size=32. Box predictions are normalized to a 0-1000 grid (BOX_SCALE=1000) relative to the original image and rescaled to pixel coordinates before matching (see detections_to_prediction). Vision-tower input resolution (orthogonal to box coordinates) used min_pixels=784, max_pixels=78400000, factor=32 (see resolve_image_processor_config). precision_at_iou50/recall_at_iou50/f1_at_iou50 come from greedy same-class box matching at IoU>=0.5 (see match_detections); no mAP is computed since neither model emits a per-box confidence score to rank predictions by."
+  },
+  {
+    "timestamp": "2026-11-03T01:19:12.416078+00:00",
+    "dataset": "Project-AgML/ghai_broccoli_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 52.09,
+    "inference_time_seconds_per_image": 0.104189,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.184426,
+      "mAP50": 0.251301
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 500,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T01:30:39.762986+00:00",
+    "dataset": "Project-AgML/ghai_broccoli_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 121.42,
+    "inference_time_seconds_per_image": 0.242849,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.097477,
+      "mAP50": 0.177773
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 500,
+      "samples_after": 500
+    }
   }
 ]

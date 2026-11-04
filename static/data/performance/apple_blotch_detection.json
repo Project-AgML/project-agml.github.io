@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-11-03T00:30:35.865267+00:00",
+    "dataset": "Project-AgML/apple_blotch_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 40.5,
+    "inference_time_seconds_per_image": 0.080996,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.009169,
+      "mAP50": 0.026873
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 927,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T00:40:00.945625+00:00",
+    "dataset": "Project-AgML/apple_blotch_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 27.94,
+    "inference_time_seconds_per_image": 0.05588,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 6.1e-05,
+      "mAP50": 0.000376
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 927,
+      "samples_after": 500
+    }
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-10-31T20:25:29.456698+00:00",
+    "dataset": "Project-AgML/herbify_herb_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "inference_time_seconds": 306.68,
+    "inference_time_seconds_per_image": 0.61335,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.070204,
+      "precision": 0.092681,
+      "recall": 0.108108,
+      "skipped_samples": 3
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Allium cepa (Onion), Aloe barbadensis miller (Aloevera), Alpinia Galanga (Rasna), Amaranthus Viridis (Arive-Dantu), Andrographis paniculata (Nelavembu), Annona squamosa (Seethapala), Artocarpus heterophyllus (Jackfruit), Azadirachta indica (Neem), Bacopa monnieri (Bhrami), Bambusa vulgaris (Bamboo), Basella alba (Malabar Spinach), Brassica Juncea (Indian Mustard), Brassica oleracea (Kohlrabi), Calotropis gigantea (Crown flower_Ekka), Capsicum annuum (Chilly), Cardiospermum halicacabum (Balloon Vine), Carica papaya (Papaya), Carissa Carandas (Karanda), Catharanthus roseus (Catharanthus), Chamaecostus cuspidatus (Insulin), Cinnamomum camphora (Camphor), Citrus limon (Lemon), Citrus medica (herelikai), Coffea arabica (Coffee), Coleus amboinicus (Mexican mint_Doddpathre), Colocasia esculenta (Taro), Coriandrum sativum (Coriander), Cucurbita (Pumpkin), Curcuma longa (Turmeric), Cymbopogon (Lemongrass), Ducati Panigale (Ganigale), Eclipta prostrata (Bringaraja), Eucalyptus globulus Labill (Eucalyptus), Euphorbia hirta (Astma weed), Ficus Auriculata (Roxburgh fig), Ficus Religiosa (Peepal Tree), Gomphrena globosa (Globe Amarnath), Graptophyllum pictum (Caricature), Hibiscus rosa-sinensis (Hibiscus), Hymenaea courbaril (Chakte), Ixora coccinea (Jungle geranium_kepala), Jasminum (Jasmine), Justicia adhatoda (Malabar Nut), Lantana camara (Lantana), Lawsonia inermis (Henna), Leucas aspera (Kambajala), Magnolia champaca (Sampige), Mangifera indica (Mango), Manilkara zapota (Sapota), Mentha (Mint), Momordica dioica (Thumbai_Spiny gourd), Morinda citrifolia (Nooni), Moringa oleifera (Moringa_Drumstick), Muntingia Calabura (Jamaica Cherry-Gasagase), Murraya koenigii (Curry), Neolamarckia cadamba (Burflower-tree_Kasambruga), Nerium oleander (Arali), Nyctanthes arbor-tristis (Parijatha), Ocimum basilicum (kamakasturi), Ocimum tenuiflorum (Tulsi), Papaver somniferum (Poppy seed_Gasagase), Phaseolus vulgaris (Beans), Phyllanthus emblica (Amla), Piper betle (Betel), Piper nigrum (Black pepper), Pisum sativum (Pea), Plectranthus Amboinicus (Mexican Mint), Pongamia pinnata (Pongamia_Honge), Psidium guajava (Guava), Punica granatum (Pomoegranate), Radermachera xylocarpa (Padri), Raphanus sativus (Raddish), Ricinus communis (Castor), Rosa rubiginosa (Rose), Ruta graveolens (Common rue_naagdalli), Santalum Album (Sandalwood), Saraca asoca (Ashoka), Saraca asoca (Seethaashoka), Solanum lycopersicum (Tomato), Solanum nigrum (Blackberry nightshade_Ganike), Spinacia oleracea (Palak(Spinach)), Syzygium Jambos (Rose Apple), Syzygium cumini (Nerale), Tabernaemontana Divaricata (Crape Jasmine), Tagetes (Marigold), Tamarindus indica (Tamarind), Tecoma stans (Tecoma), Tinospora cordifolia (Amruthaballi), Trigonella Foenum-graecum (Fenugreek), Wrightia tinctoria (Badipala), Zingiber officinale (Ginger). Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Allium cepa (Onion), Aloe barbadensis miller (Aloevera), Alpinia Galanga (Rasna), Amaranthus Viridis (Arive-Dantu), Andrographis paniculata (Nelavembu), Annona squamosa (Seethapala), Artocarpus heterophyllus (Jackfruit), Azadirachta indica (Neem), Bacopa monnieri (Bhrami), Bambusa vulgaris (Bamboo), Basella alba (Malabar Spinach), Brassica Juncea (Indian Mustard), Brassica oleracea (Kohlrabi), Calotropis gigantea (Crown flower_Ekka), Capsicum annuum (Chilly), Cardiospermum halicacabum (Balloon Vine), Carica papaya (Papaya), Carissa Carandas (Karanda), Catharanthus roseus (Catharanthus), Chamaecostus cuspidatus (Insulin), Cinnamomum camphora (Camphor), Citrus limon (Lemon), Citrus medica (herelikai), Coffea arabica (Coffee), Coleus amboinicus (Mexican mint_Doddpathre), Colocasia esculenta (Taro), Coriandrum sativum (Coriander), Cucurbita (Pumpkin), Curcuma longa (Turmeric), Cymbopogon (Lemongrass), Ducati Panigale (Ganigale), Eclipta prostrata (Bringaraja), Eucalyptus globulus Labill (Eucalyptus), Euphorbia hirta (Astma weed), Ficus Auriculata (Roxburgh fig), Ficus Religiosa (Peepal Tree), Gomphrena globosa (Globe Amarnath), Graptophyllum pictum (Caricature), Hibiscus rosa-sinensis (Hibiscus), Hymenaea courbaril (Chakte), Ixora coccinea (Jungle geranium_kepala), Jasminum (Jasmine), Justicia adhatoda (Malabar Nut), Lantana camara (Lantana), Lawsonia inermis (Henna), Leucas aspera (Kambajala), Magnolia champaca (Sampige), Mangifera indica (Mango), Manilkara zapota (Sapota), Mentha (Mint), Momordica dioica (Thumbai_Spiny gourd), Morinda citrifolia (Nooni), Moringa oleifera (Moringa_Drumstick), Muntingia Calabura (Jamaica Cherry-Gasagase), Murraya koenigii (Curry), Neolamarckia cadamba (Burflower-tree_Kasambruga), Nerium oleander (Arali), Nyctanthes arbor-tristis (Parijatha), Ocimum basilicum (kamakasturi), Ocimum tenuiflorum (Tulsi), Papaver somniferum (Poppy seed_Gasagase), Phaseolus vulgaris (Beans), Phyllanthus emblica (Amla), Piper betle (Betel), Piper nigrum (Black pepper), Pisum sativum (Pea), Plectranthus Amboinicus (Mexican Mint), Pongamia pinnata (Pongamia_Honge), Psidium guajava (Guava), Punica granatum (Pomoegranate), Radermachera xylocarpa (Padri), Raphanus sativus (Raddish), Ricinus communis (Castor), Rosa rubiginosa (Rose), Ruta graveolens (Common rue_naagdalli), Santalum Album (Sandalwood), Saraca asoca (Ashoka), Saraca asoca (Seethaashoka), Solanum lycopersicum (Tomato), Solanum nigrum (Blackberry nightshade_Ganike), Spinacia oleracea (Palak(Spinach)), Syzygium Jambos (Rose Apple), Syzygium cumini (Nerale), Tabernaemontana Divaricata (Crape Jasmine), Tagetes (Marigold), Tamarindus indica (Tamarind), Tecoma stans (Tecoma), Tinospora cordifolia (Amruthaballi), Trigonella Foenum-graecum (Fenugreek), Wrightia tinctoria (Badipala), Zingiber officinale (Ginger)), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 6104,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-01T22:52:01.335862+00:00",
+    "dataset": "Project-AgML/herbify_herb_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA H100 NVL",
+    "inference_time_seconds": 301.38,
+    "inference_time_seconds_per_image": 0.60277,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.203893,
+      "precision": 0.22507,
+      "recall": 0.240164,
+      "skipped_samples": 80
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Allium cepa (Onion), Aloe barbadensis miller (Aloevera), Alpinia Galanga (Rasna), Amaranthus Viridis (Arive-Dantu), Andrographis paniculata (Nelavembu), Annona squamosa (Seethapala), Artocarpus heterophyllus (Jackfruit), Azadirachta indica (Neem), Bacopa monnieri (Bhrami), Bambusa vulgaris (Bamboo), Basella alba (Malabar Spinach), Brassica Juncea (Indian Mustard), Brassica oleracea (Kohlrabi), Calotropis gigantea (Crown flower_Ekka), Capsicum annuum (Chilly), Cardiospermum halicacabum (Balloon Vine), Carica papaya (Papaya), Carissa Carandas (Karanda), Catharanthus roseus (Catharanthus), Chamaecostus cuspidatus (Insulin), Cinnamomum camphora (Camphor), Citrus limon (Lemon), Citrus medica (herelikai), Coffea arabica (Coffee), Coleus amboinicus (Mexican mint_Doddpathre), Colocasia esculenta (Taro), Coriandrum sativum (Coriander), Cucurbita (Pumpkin), Curcuma longa (Turmeric), Cymbopogon (Lemongrass), Ducati Panigale (Ganigale), Eclipta prostrata (Bringaraja), Eucalyptus globulus Labill (Eucalyptus), Euphorbia hirta (Astma weed), Ficus Auriculata (Roxburgh fig), Ficus Religiosa (Peepal Tree), Gomphrena globosa (Globe Amarnath), Graptophyllum pictum (Caricature), Hibiscus rosa-sinensis (Hibiscus), Hymenaea courbaril (Chakte), Ixora coccinea (Jungle geranium_kepala), Jasminum (Jasmine), Justicia adhatoda (Malabar Nut), Lantana camara (Lantana), Lawsonia inermis (Henna), Leucas aspera (Kambajala), Magnolia champaca (Sampige), Mangifera indica (Mango), Manilkara zapota (Sapota), Mentha (Mint), Momordica dioica (Thumbai_Spiny gourd), Morinda citrifolia (Nooni), Moringa oleifera (Moringa_Drumstick), Muntingia Calabura (Jamaica Cherry-Gasagase), Murraya koenigii (Curry), Neolamarckia cadamba (Burflower-tree_Kasambruga), Nerium oleander (Arali), Nyctanthes arbor-tristis (Parijatha), Ocimum basilicum (kamakasturi), Ocimum tenuiflorum (Tulsi), Papaver somniferum (Poppy seed_Gasagase), Phaseolus vulgaris (Beans), Phyllanthus emblica (Amla), Piper betle (Betel), Piper nigrum (Black pepper), Pisum sativum (Pea), Plectranthus Amboinicus (Mexican Mint), Pongamia pinnata (Pongamia_Honge), Psidium guajava (Guava), Punica granatum (Pomoegranate), Radermachera xylocarpa (Padri), Raphanus sativus (Raddish), Ricinus communis (Castor), Rosa rubiginosa (Rose), Ruta graveolens (Common rue_naagdalli), Santalum Album (Sandalwood), Saraca asoca (Ashoka), Saraca asoca (Seethaashoka), Solanum lycopersicum (Tomato), Solanum nigrum (Blackberry nightshade_Ganike), Spinacia oleracea (Palak(Spinach)), Syzygium Jambos (Rose Apple), Syzygium cumini (Nerale), Tabernaemontana Divaricata (Crape Jasmine), Tagetes (Marigold), Tamarindus indica (Tamarind), Tecoma stans (Tecoma), Tinospora cordifolia (Amruthaballi), Trigonella Foenum-graecum (Fenugreek), Wrightia tinctoria (Badipala), Zingiber officinale (Ginger). Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Allium cepa (Onion), Aloe barbadensis miller (Aloevera), Alpinia Galanga (Rasna), Amaranthus Viridis (Arive-Dantu), Andrographis paniculata (Nelavembu), Annona squamosa (Seethapala), Artocarpus heterophyllus (Jackfruit), Azadirachta indica (Neem), Bacopa monnieri (Bhrami), Bambusa vulgaris (Bamboo), Basella alba (Malabar Spinach), Brassica Juncea (Indian Mustard), Brassica oleracea (Kohlrabi), Calotropis gigantea (Crown flower_Ekka), Capsicum annuum (Chilly), Cardiospermum halicacabum (Balloon Vine), Carica papaya (Papaya), Carissa Carandas (Karanda), Catharanthus roseus (Catharanthus), Chamaecostus cuspidatus (Insulin), Cinnamomum camphora (Camphor), Citrus limon (Lemon), Citrus medica (herelikai), Coffea arabica (Coffee), Coleus amboinicus (Mexican mint_Doddpathre), Colocasia esculenta (Taro), Coriandrum sativum (Coriander), Cucurbita (Pumpkin), Curcuma longa (Turmeric), Cymbopogon (Lemongrass), Ducati Panigale (Ganigale), Eclipta prostrata (Bringaraja), Eucalyptus globulus Labill (Eucalyptus), Euphorbia hirta (Astma weed), Ficus Auriculata (Roxburgh fig), Ficus Religiosa (Peepal Tree), Gomphrena globosa (Globe Amarnath), Graptophyllum pictum (Caricature), Hibiscus rosa-sinensis (Hibiscus), Hymenaea courbaril (Chakte), Ixora coccinea (Jungle geranium_kepala), Jasminum (Jasmine), Justicia adhatoda (Malabar Nut), Lantana camara (Lantana), Lawsonia inermis (Henna), Leucas aspera (Kambajala), Magnolia champaca (Sampige), Mangifera indica (Mango), Manilkara zapota (Sapota), Mentha (Mint), Momordica dioica (Thumbai_Spiny gourd), Morinda citrifolia (Nooni), Moringa oleifera (Moringa_Drumstick), Muntingia Calabura (Jamaica Cherry-Gasagase), Murraya koenigii (Curry), Neolamarckia cadamba (Burflower-tree_Kasambruga), Nerium oleander (Arali), Nyctanthes arbor-tristis (Parijatha), Ocimum basilicum (kamakasturi), Ocimum tenuiflorum (Tulsi), Papaver somniferum (Poppy seed_Gasagase), Phaseolus vulgaris (Beans), Phyllanthus emblica (Amla), Piper betle (Betel), Piper nigrum (Black pepper), Pisum sativum (Pea), Plectranthus Amboinicus (Mexican Mint), Pongamia pinnata (Pongamia_Honge), Psidium guajava (Guava), Punica granatum (Pomoegranate), Radermachera xylocarpa (Padri), Raphanus sativus (Raddish), Ricinus communis (Castor), Rosa rubiginosa (Rose), Ruta graveolens (Common rue_naagdalli), Santalum Album (Sandalwood), Saraca asoca (Ashoka), Saraca asoca (Seethaashoka), Solanum lycopersicum (Tomato), Solanum nigrum (Blackberry nightshade_Ganike), Spinacia oleracea (Palak(Spinach)), Syzygium Jambos (Rose Apple), Syzygium cumini (Nerale), Tabernaemontana Divaricata (Crape Jasmine), Tagetes (Marigold), Tamarindus indica (Tamarind), Tecoma stans (Tecoma), Tinospora cordifolia (Amruthaballi), Trigonella Foenum-graecum (Fenugreek), Wrightia tinctoria (Badipala), Zingiber officinale (Ginger)), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 6104,
+      "samples_after": 500
+    }
+  }
+]

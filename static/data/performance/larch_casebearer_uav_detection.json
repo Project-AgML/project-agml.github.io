@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-11-03T01:42:41.934426+00:00",
+    "dataset": "Project-AgML/larch_casebearer_uav_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 74.99,
+    "inference_time_seconds_per_image": 0.14998,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.050859,
+      "mAP50": 0.120672
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "site",
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 835,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T02:03:37.840273+00:00",
+    "dataset": "Project-AgML/larch_casebearer_uav_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 117.53,
+    "inference_time_seconds_per_image": 0.235069,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.014092,
+      "mAP50": 0.035495
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "site",
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 835,
+      "samples_after": 500
+    }
+  }
+]

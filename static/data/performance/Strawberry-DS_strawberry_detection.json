@@ -27,5 +27,71 @@
       "false_negatives": 690
     },
     "notes": "gemma detection prompt: 'Detect the 2d bounding boxes of the Early-Turning, Green, Late-Turning, Red, Turning, White. Output a JSON list where each entry contains the 2D bounding box in \"box_2d\" and a text label in \"label\" (one of: Early-Turning, Green, Late-Turning, Red, Turning, White). The box_2d coordinates are [y_min, x_min, y_max, x_max], normalized to 0-1000.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=2048, batch_size=32. Box predictions are normalized to a 0-1000 grid (BOX_SCALE=1000) relative to the original image and rescaled to pixel coordinates before matching (see detections_to_prediction). precision_at_iou50/recall_at_iou50/f1_at_iou50 come from greedy same-class box matching at IoU>=0.5 (see match_detections); no mAP is computed since neither model emits a per-box confidence score to rank predictions by."
+  },
+  {
+    "timestamp": "2026-11-03T02:18:07.724453+00:00",
+    "dataset": "Project-AgML/Strawberry-DS_strawberry_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 247,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 53.38,
+    "inference_time_seconds_per_image": 0.216108,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.067097,
+      "mAP50": 0.130052
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 247,
+      "samples_after": 247
+    }
+  },
+  {
+    "timestamp": "2026-11-03T02:51:55.677642+00:00",
+    "dataset": "Project-AgML/Strawberry-DS_strawberry_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 247,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 81.92,
+    "inference_time_seconds_per_image": 0.331669,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.08802,
+      "mAP50": 0.116771
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 247,
+      "samples_after": 247
+    }
   }
 ]

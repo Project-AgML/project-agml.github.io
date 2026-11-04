@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-11-03T01:57:36.448052+00:00",
+    "dataset": "Project-AgML/olive_tree_crown_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 39.33,
+    "inference_time_seconds_per_image": 0.07866,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.161047,
+      "mAP50": 0.249334
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "scale"
+      ],
+      "seed": 42,
+      "samples_before": 5842,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T02:24:31.367085+00:00",
+    "dataset": "Project-AgML/olive_tree_crown_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 41.05,
+    "inference_time_seconds_per_image": 0.0821,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.160997,
+      "mAP50": 0.268776
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "scale"
+      ],
+      "seed": 42,
+      "samples_before": 5842,
+      "samples_after": 500
+    }
+  }
+]

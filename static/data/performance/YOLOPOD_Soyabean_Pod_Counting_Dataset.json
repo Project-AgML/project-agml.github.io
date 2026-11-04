@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2026-11-03T03:05:16.921558+00:00",
+    "dataset": "Project-AgML/YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 163.41,
+    "inference_time_seconds_per_image": 0.326829,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.147581,
+      "mAP50": 0.349043
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 1448,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T03:56:48.619322+00:00",
+    "dataset": "Project-AgML/YOLOPOD_Soyabean_Pod_Counting_Dataset",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 251.41,
+    "inference_time_seconds_per_image": 0.502819,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.321193,
+      "mAP50": 0.668778
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 1448,
+      "samples_after": 500
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-11-03T00:48:38.167960+00:00",
+    "dataset": "Project-AgML/CCOD_cotton_flower_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/owlv2-large-patch14-ensemble",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "inference_time_seconds": 90.58,
+    "inference_time_seconds_per_image": 0.18116,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.055751,
+      "mAP50": 0.144825
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "crop_canopy",
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 3986,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-03T00:52:40.343184+00:00",
+    "dataset": "Project-AgML/CCOD_cotton_flower_detection",
+    "dataset_config": null,
+    "split": "train",
+    "model": "IDEA-Research/grounding-dino-base",
+    "task": "detection",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 64.64,
+    "inference_time_seconds_per_image": 0.12927,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "mAP": 0.06256,
+      "mAP50": 0.192914
+    },
+    "notes": "",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "crop_canopy",
+        "split"
+      ],
+      "seed": 42,
+      "samples_before": 3986,
+      "samples_after": 500
+    }
+  }
+]

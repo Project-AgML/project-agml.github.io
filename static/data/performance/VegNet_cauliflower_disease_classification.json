@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-11-01T02:51:22.228038+00:00",
+    "dataset": "Project-AgML/VegNet_cauliflower_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 63.48,
+    "inference_time_seconds_per_image": 0.126968,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.270098,
+      "precision": 0.398134,
+      "recall": 0.32459,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Bacterial spot rot, Black Rot, Downy Mildew, No disease. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Bacterial spot rot, Black Rot, Downy Mildew, No disease), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 656,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-02T07:49:37.052105+00:00",
+    "dataset": "Project-AgML/VegNet_cauliflower_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA H100 NVL",
+    "inference_time_seconds": 845.27,
+    "inference_time_seconds_per_image": 1.690537,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.374606,
+      "precision": 0.435207,
+      "recall": 0.404606,
+      "skipped_samples": 19
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Bacterial spot rot, Black Rot, Downy Mildew, No disease. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Bacterial spot rot, Black Rot, Downy Mildew, No disease), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 656,
+      "samples_after": 500
+    }
+  }
+]

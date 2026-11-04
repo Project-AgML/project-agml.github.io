@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-11-01T02:47:13.663985+00:00",
+    "dataset": "Project-AgML/tree_species_classification_CZU_normal_cropped",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 386,
+    "device": "cuda",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "inference_time_seconds": 112.95,
+    "inference_time_seconds_per_image": 0.292614,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.299801,
+      "precision": 0.396571,
+      "recall": 0.415813,
+      "skipped_samples": 0
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Beech, Maple, Pine, linden. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Beech, Maple, Pine, linden), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 386,
+      "samples_after": 386
+    }
+  },
+  {
+    "timestamp": "2026-11-02T08:09:22.739229+00:00",
+    "dataset": "Project-AgML/tree_species_classification_CZU_normal_cropped",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 386,
+    "device": "cuda",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "inference_time_seconds": 3093.55,
+    "inference_time_seconds_per_image": 8.014371,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.426521,
+      "precision": 0.451154,
+      "recall": 0.451475,
+      "skipped_samples": 0
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Beech, Maple, Pine, linden. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Beech, Maple, Pine, linden), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": null,
+      "seed": 42,
+      "samples_before": 386,
+      "samples_after": 386
+    }
+  }
+]

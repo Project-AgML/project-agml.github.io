@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-10-31T20:10:18.877369+00:00",
+    "dataset": "Project-AgML/CT_PestNet_crop_pest_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "inference_time_seconds": 183.3,
+    "inference_time_seconds_per_image": 0.366598,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.108174,
+      "precision": 0.156659,
+      "recall": 0.110835,
+      "skipped_samples": 1
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: rice leaf roller, rice leaf caterpillar, paddy stem maggot, asiatic rice borer, yellow rice borer, rice gall midge, Rice Stemfly, brown plant hopper, white backed plant hopper, small brown plant hopper, rice water weevil, rice leafhopper, grain spreader thrips, rice shell pest, grub, mole cricket, wireworm, white margined moth, black cutworm, large cutworm, yellow cutworm, red spider, corn borer, army worm, aphids, Potosiabre vitarsis, peach borer, english grain aphid, green bug, bird cherry-oataphid, wheat blossom midge, penthaleus major, longlegged spider mite, wheat phloeothrips, wheat sawfly, cerodonta denticornis, beet fly, flea beetle, cabbage army worm, beet army worm, Beet spot flies, meadow moth, beet weevil, sericaorient alismots chulsky, alfalfa weevil, flax budworm, alfalfa plant bug, tarnished plant bug, Locustoidea, lytta polita, legume blister beetle, blister beetle, therioaphis maculata Buckton, odontothrips loti, Thrips, alfalfa seed chalcid, Pieris canidia, Apolygus lucorum, Limacodidae, Viteus vitifoliae, Colomerus vitis, Brevipoalpus lewisi McGregor, oides decempunctata, Polyphagotars onemus latus, Pseudococcus comstocki Kuwana, parathrene regalis, Ampelophaga, Lycorma delicatula, Xylotrechus, Cicadella viridis, Miridae, Trialeurodes vaporariorum, Erythroneura apicalis, Papilio xuthus, Panonchus citri McGregor, Phyllocoptes oleiverus ashmead, Icerya purchasi Maskell, Unaspis yanonensis, Ceroplastes rubens, Chrysomphalus aonidum, Parlatoria zizyphus Lucus, Nipaecoccus vastalor, Aleurocanthus spiniferus, Tetradacus c Bactrocera minax, Dacus dorsalis(Hendel), Bactrocera tsuneonis, Prodenia litura, Adristyrannus, Phyllocnistis citrella Stainton, Toxoptera citricidus, Toxoptera aurantii, Aphis citricola Vander Goot, Scirtothrips dorsalis Hood, Dasineura sp, Lawana imitata Melichar, Salurnis marginella Guerr, Deporaus marginatus Pascoe, Chlumetia transversa, Mango flat beak leafhopper, Rhytidodera bowrinii white, Sternochetus frigidus, Cicadellidae. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: rice leaf roller, rice leaf caterpillar, paddy stem maggot, asiatic rice borer, yellow rice borer, rice gall midge, Rice Stemfly, brown plant hopper, white backed plant hopper, small brown plant hopper, rice water weevil, rice leafhopper, grain spreader thrips, rice shell pest, grub, mole cricket, wireworm, white margined moth, black cutworm, large cutworm, yellow cutworm, red spider, corn borer, army worm, aphids, Potosiabre vitarsis, peach borer, english grain aphid, green bug, bird cherry-oataphid, wheat blossom midge, penthaleus major, longlegged spider mite, wheat phloeothrips, wheat sawfly, cerodonta denticornis, beet fly, flea beetle, cabbage army worm, beet army worm, Beet spot flies, meadow moth, beet weevil, sericaorient alismots chulsky, alfalfa weevil, flax budworm, alfalfa plant bug, tarnished plant bug, Locustoidea, lytta polita, legume blister beetle, blister beetle, therioaphis maculata Buckton, odontothrips loti, Thrips, alfalfa seed chalcid, Pieris canidia, Apolygus lucorum, Limacodidae, Viteus vitifoliae, Colomerus vitis, Brevipoalpus lewisi McGregor, oides decempunctata, Polyphagotars onemus latus, Pseudococcus comstocki Kuwana, parathrene regalis, Ampelophaga, Lycorma delicatula, Xylotrechus, Cicadella viridis, Miridae, Trialeurodes vaporariorum, Erythroneura apicalis, Papilio xuthus, Panonchus citri McGregor, Phyllocoptes oleiverus ashmead, Icerya purchasi Maskell, Unaspis yanonensis, Ceroplastes rubens, Chrysomphalus aonidum, Parlatoria zizyphus Lucus, Nipaecoccus vastalor, Aleurocanthus spiniferus, Tetradacus c Bactrocera minax, Dacus dorsalis(Hendel), Bactrocera tsuneonis, Prodenia litura, Adristyrannus, Phyllocnistis citrella Stainton, Toxoptera citricidus, Toxoptera aurantii, Aphis citricola Vander Goot, Scirtothrips dorsalis Hood, Dasineura sp, Lawana imitata Melichar, Salurnis marginella Guerr, Deporaus marginatus Pascoe, Chlumetia transversa, Mango flat beak leafhopper, Rhytidodera bowrinii white, Sternochetus frigidus, Cicadellidae), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 75222,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-01T19:20:21.203473+00:00",
+    "dataset": "Project-AgML/CT_PestNet_crop_pest_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA H100 NVL",
+    "inference_time_seconds": 154.7,
+    "inference_time_seconds_per_image": 0.309406,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.236858,
+      "precision": 0.250079,
+      "recall": 0.276918,
+      "skipped_samples": 160
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: rice leaf roller, rice leaf caterpillar, paddy stem maggot, asiatic rice borer, yellow rice borer, rice gall midge, Rice Stemfly, brown plant hopper, white backed plant hopper, small brown plant hopper, rice water weevil, rice leafhopper, grain spreader thrips, rice shell pest, grub, mole cricket, wireworm, white margined moth, black cutworm, large cutworm, yellow cutworm, red spider, corn borer, army worm, aphids, Potosiabre vitarsis, peach borer, english grain aphid, green bug, bird cherry-oataphid, wheat blossom midge, penthaleus major, longlegged spider mite, wheat phloeothrips, wheat sawfly, cerodonta denticornis, beet fly, flea beetle, cabbage army worm, beet army worm, Beet spot flies, meadow moth, beet weevil, sericaorient alismots chulsky, alfalfa weevil, flax budworm, alfalfa plant bug, tarnished plant bug, Locustoidea, lytta polita, legume blister beetle, blister beetle, therioaphis maculata Buckton, odontothrips loti, Thrips, alfalfa seed chalcid, Pieris canidia, Apolygus lucorum, Limacodidae, Viteus vitifoliae, Colomerus vitis, Brevipoalpus lewisi McGregor, oides decempunctata, Polyphagotars onemus latus, Pseudococcus comstocki Kuwana, parathrene regalis, Ampelophaga, Lycorma delicatula, Xylotrechus, Cicadella viridis, Miridae, Trialeurodes vaporariorum, Erythroneura apicalis, Papilio xuthus, Panonchus citri McGregor, Phyllocoptes oleiverus ashmead, Icerya purchasi Maskell, Unaspis yanonensis, Ceroplastes rubens, Chrysomphalus aonidum, Parlatoria zizyphus Lucus, Nipaecoccus vastalor, Aleurocanthus spiniferus, Tetradacus c Bactrocera minax, Dacus dorsalis(Hendel), Bactrocera tsuneonis, Prodenia litura, Adristyrannus, Phyllocnistis citrella Stainton, Toxoptera citricidus, Toxoptera aurantii, Aphis citricola Vander Goot, Scirtothrips dorsalis Hood, Dasineura sp, Lawana imitata Melichar, Salurnis marginella Guerr, Deporaus marginatus Pascoe, Chlumetia transversa, Mango flat beak leafhopper, Rhytidodera bowrinii white, Sternochetus frigidus, Cicadellidae. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: rice leaf roller, rice leaf caterpillar, paddy stem maggot, asiatic rice borer, yellow rice borer, rice gall midge, Rice Stemfly, brown plant hopper, white backed plant hopper, small brown plant hopper, rice water weevil, rice leafhopper, grain spreader thrips, rice shell pest, grub, mole cricket, wireworm, white margined moth, black cutworm, large cutworm, yellow cutworm, red spider, corn borer, army worm, aphids, Potosiabre vitarsis, peach borer, english grain aphid, green bug, bird cherry-oataphid, wheat blossom midge, penthaleus major, longlegged spider mite, wheat phloeothrips, wheat sawfly, cerodonta denticornis, beet fly, flea beetle, cabbage army worm, beet army worm, Beet spot flies, meadow moth, beet weevil, sericaorient alismots chulsky, alfalfa weevil, flax budworm, alfalfa plant bug, tarnished plant bug, Locustoidea, lytta polita, legume blister beetle, blister beetle, therioaphis maculata Buckton, odontothrips loti, Thrips, alfalfa seed chalcid, Pieris canidia, Apolygus lucorum, Limacodidae, Viteus vitifoliae, Colomerus vitis, Brevipoalpus lewisi McGregor, oides decempunctata, Polyphagotars onemus latus, Pseudococcus comstocki Kuwana, parathrene regalis, Ampelophaga, Lycorma delicatula, Xylotrechus, Cicadella viridis, Miridae, Trialeurodes vaporariorum, Erythroneura apicalis, Papilio xuthus, Panonchus citri McGregor, Phyllocoptes oleiverus ashmead, Icerya purchasi Maskell, Unaspis yanonensis, Ceroplastes rubens, Chrysomphalus aonidum, Parlatoria zizyphus Lucus, Nipaecoccus vastalor, Aleurocanthus spiniferus, Tetradacus c Bactrocera minax, Dacus dorsalis(Hendel), Bactrocera tsuneonis, Prodenia litura, Adristyrannus, Phyllocnistis citrella Stainton, Toxoptera citricidus, Toxoptera aurantii, Aphis citricola Vander Goot, Scirtothrips dorsalis Hood, Dasineura sp, Lawana imitata Melichar, Salurnis marginella Guerr, Deporaus marginatus Pascoe, Chlumetia transversa, Mango flat beak leafhopper, Rhytidodera bowrinii white, Sternochetus frigidus, Cicadellidae), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 75222,
+      "samples_after": 500
+    }
+  }
+]

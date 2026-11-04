@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-10-31T20:12:45.242117+00:00",
+    "dataset": "Project-AgML/Dhan-Shomadhan_rice_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "google/gemma-4-12b-it",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "inference_time_seconds": 67.61,
+    "inference_time_seconds_per_image": 0.135216,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.095349,
+      "precision": 0.086762,
+      "recall": 0.161324,
+      "skipped_samples": 1
+    },
+    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: Brown Spot, Browon Spot, Leaf Scaled, Rice Blast, Rice Tungro, Rice Turgro, Shath Blight, Sheath Blight. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Brown Spot, Browon Spot, Leaf Scaled, Rice Blast, Rice Tungro, Rice Turgro, Shath Blight, Sheath Blight), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 1106,
+      "samples_after": 500
+    }
+  },
+  {
+    "timestamp": "2026-11-01T19:41:08.964155+00:00",
+    "dataset": "Project-AgML/Dhan-Shomadhan_rice_leaf_disease_classification",
+    "dataset_config": null,
+    "split": "train",
+    "model": "qwen/Qwen3.6-27B-FP8",
+    "task": "classification",
+    "result_type": "zero-shot",
+    "optimized": "no",
+    "train_pct": 0.0,
+    "test_pct": 100.0,
+    "val_pct": 0.0,
+    "num_samples": 500,
+    "device": "cuda",
+    "gpu_name": "NVIDIA H100 NVL",
+    "inference_time_seconds": 668.87,
+    "inference_time_seconds_per_image": 1.337747,
+    "train_time_seconds": 0.0,
+    "train_time_seconds_per_image": 0.0,
+    "metrics": {
+      "f1": 0.095626,
+      "precision": 0.153324,
+      "recall": 0.125033,
+      "skipped_samples": 3
+    },
+    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: Brown Spot, Browon Spot, Leaf Scaled, Rice Blast, Rice Tungro, Rice Turgro, Shath Blight, Sheath Blight. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: Brown Spot, Browon Spot, Leaf Scaled, Rice Blast, Rice Tungro, Rice Turgro, Shath Blight, Sheath Blight), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "sample": {
+      "fraction": null,
+      "max_samples": 500,
+      "stratify_cols": [
+        "label"
+      ],
+      "seed": 42,
+      "samples_before": 1106,
+      "samples_after": 500
+    }
+  }
+]
