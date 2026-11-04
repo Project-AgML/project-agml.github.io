@@ -629,9 +629,14 @@ export function formatDisplayLocation(
 }
 
 // Primary location label used on cards/badges: prefer the structured `country` field,
-// falling back to the free-text `location` field when country wasn't extracted.
-export function formatPrimaryLocation(dataset: Pick<Dataset, 'display_location'>): string | null {
+// falling back to the free-text `location` field when country wasn't extracted. Datasets spanning
+// several countries or sites show a count ("7 Countries"), since the full list overflows a card.
+export function formatPrimaryLocation(dataset: Pick<Dataset, 'country' | 'display_location'>): string | null {
   if (dataset.display_location == null) return null;
+  if (Array.isArray(dataset.display_location)) {
+    const distinct = new Set(dataset.display_location.map((entry) => entry.trim().toLowerCase()).filter(Boolean));
+    if (distinct.size > 1) return `${distinct.size} ${dataset.country != null ? 'Countries' : 'Locations'}`;
+  }
   const formatted = formatDisplayLocation(dataset.display_location);
   return formatted === '—' ? null : formatted;
 }
