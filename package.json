@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "npm run generate-datasets && npm run generate-embeddings",
-    "prestart": "npm run generate-datasets && npm run generate-embeddings",
+    "prebuild": "npm run validate-models && npm run generate-datasets && npm run generate-embeddings",
+    "prestart": "npm run validate-models && npm run generate-datasets && npm run generate-embeddings",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -18,7 +18,9 @@
     "generate-datasets": "node scripts/generate-datasets.mjs",
     "generate-embeddings": "node scripts/generate-embeddings.mjs",
     "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
-    "test:unit": "node --import tsx --test tests/generate-embeddings.test.mjs tests/semantic-search-index.test.ts"
+    "test:unit": "node --import tsx --test tests/generate-embeddings.test.mjs tests/semantic-search-index.test.ts tests/models.test.ts",
+    "validate-models": "node scripts/validate-models.mjs",
+    "export-dataset-candidates": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/export-dataset-candidates.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",
