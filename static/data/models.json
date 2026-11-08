@@ -16,7 +16,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "soybean",
         "winter wheat",
         "alfalfa",
@@ -1436,7 +1435,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -1541,7 +1539,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -1706,7 +1703,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "potato",
         "rice",
         "wheat"
@@ -1935,7 +1931,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -2023,7 +2018,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "cropland (generic)"
       ],
       "sensor_modality": "multispectral",
@@ -2121,8 +2115,7 @@
       "crop_types": [
         "cropland (generic)",
         "cashew",
-        "maize",
-        "corn"
+        "maize"
       ],
       "sensor_modality": "multispectral",
       "platform": "satellite",
@@ -2200,7 +2193,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "soybean",
         "winter wheat",
         "alfalfa",
@@ -2326,7 +2318,6 @@
       "crop_types": [
         "wheat",
         "maize",
-        "corn",
         "barley",
         "rapeseed",
         "sunflower",
@@ -3251,8 +3242,7 @@
         "seed_classification"
       ],
       "crop_types": [
-        "maize",
-        "corn"
+        "maize"
       ],
       "sensor_modality": "rgb",
       "platform": "lab",
@@ -3358,7 +3348,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -3479,7 +3468,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -3570,7 +3558,6 @@
         "blueberry",
         "cherry",
         "maize",
-        "corn",
         "grape",
         "orange",
         "peach",
@@ -3901,7 +3888,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "tomato",
         "cassava",
         "raspberry",
@@ -3987,7 +3973,6 @@
       "crop_types": [
         "rice",
         "maize",
-        "corn",
         "wheat",
         "soybean",
         "citrus",
@@ -4073,7 +4058,6 @@
       ],
       "crop_types": [
         "maize",
-        "corn",
         "sugar beet",
         "soybean",
         "sunflower",
@@ -4334,8 +4318,7 @@
         "disease_classification"
       ],
       "crop_types": [
-        "maize",
-        "corn"
+        "maize"
       ],
       "sensor_modality": "rgb",
       "platform": "mixed",
@@ -4484,7 +4467,6 @@
         "mango",
         "cotton",
         "maize",
-        "corn",
         "strawberry",
         "potato",
         "wheat",
