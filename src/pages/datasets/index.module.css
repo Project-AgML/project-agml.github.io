@@ -126,6 +126,73 @@
   cursor: pointer;
 }
 
+.rangeSlider {
+  position: relative;
+  height: 18px;
+}
+
+.rangeTrack,
+.rangeFill {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.rangeTrack {
+  left: 0;
+  right: 0;
+  background: var(--agml-border);
+}
+
+.rangeFill {
+  background: var(--ifm-color-primary);
+}
+
+/* Two overlapping native range inputs make one two-handle slider: the inputs ignore pointer
+   events so only their thumbs are draggable. */
+.rangeSlider input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.rangeSlider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: 2px solid var(--agml-surface-soft);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.rangeSlider input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: 2px solid var(--agml-surface-soft);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.7rem;
+  color: var(--agml-muted);
+}
+
 .checkboxCount {
   font-family: var(--ifm-code-font-family);
   font-size: 0.7rem;

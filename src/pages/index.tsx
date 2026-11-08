@@ -17,7 +17,6 @@ import GrowthLineChart from '../components/GrowthLineChart';
 import DistributionBarChart from '../components/DistributionBarChart';
 import {
   bucketByInterval,
-  lastNDaysForwardFilled,
   remapAnnotations,
   type DatasetHistoryAnnotation,
   type DatasetHistoryPoint,
@@ -174,19 +173,18 @@ function StatsRow() {
         <span className={styles.statLabel}>Labeled images</span>
       </div>
       <div className={styles.statBlock}>
-        <span className={styles.statValue}>{stats.taskTypeCount.toLocaleString()}</span>
-        <span className={styles.statLabel}>CV task types</span>
+        <span className={styles.statValue}>{stats.cropCount.toLocaleString()}</span>
+        <span className={styles.statLabel}>Crops covered</span>
       </div>
     </section>
   );
 }
 
 // Every point in dataset_history.json is a hand-run snapshot at whatever cadence someone
-// happened to run the script, so the long-range charts are bucketed down to one point every two
-// weeks for an even x-axis, and annotations are re-anchored to whichever bucketed point survives
-// closest to their original snapshot.
+// happened to run the script, so the charts are bucketed down to one point every two weeks for
+// an even x-axis, and annotations are re-anchored to whichever bucketed point survives closest
+// to their original snapshot.
 const BIWEEKLY_DAYS = 14;
-const RECENT_DAYS = 7;
 
 function GrowthCharts() {
   const history = useDatasetHistory();
@@ -195,82 +193,47 @@ function GrowthCharts() {
     () => (history ? bucketByInterval(history.points, BIWEEKLY_DAYS) : []),
     [history],
   );
-  const recent = useMemo(
-    () => (history ? lastNDaysForwardFilled(history.points, RECENT_DAYS) : []),
-    [history],
-  );
 
   return (
-    <>
-      <section className={styles.chartsSection}>
-        <p className={styles.sectionLabel}>Growth over time</p>
-        <div className={styles.chartsGrid}>
-          <div className={styles.chartPanel}>
-            <h3 className={styles.chartPanelTitle}>Top-level datasets over time</h3>
-            {history ? (
-              <GrowthLineChart
-                points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.datasetCount }))}
-                annotations={remapAnnotations(
-                  history.annotations.filter((a) => a.metric === 'datasetCount'),
-                  history.points,
-                  biweekly,
-                )}
-                color="primary"
-                yaxisTitle="Top-level datasets"
-              />
-            ) : (
-              <div className={styles.chartLoading}>Loading…</div>
-            )}
-          </div>
-          <div className={styles.chartPanel}>
-            <h3 className={styles.chartPanelTitle}>Images over time</h3>
-            {history ? (
-              <GrowthLineChart
-                points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.imageCount }))}
-                annotations={remapAnnotations(
-                  history.annotations.filter((a) => a.metric === 'imageCount'),
-                  history.points,
-                  biweekly,
-                )}
-                color="teal"
-                yaxisTitle="Images"
-              />
-            ) : (
-              <div className={styles.chartLoading}>Loading…</div>
-            )}
-          </div>
+    <section className={styles.chartsSection}>
+      <p className={styles.sectionLabel}>Growth over time</p>
+      <div className={styles.chartsGrid}>
+        <div className={styles.chartPanel}>
+          <h3 className={styles.chartPanelTitle}>Top-level datasets over time</h3>
+          {history ? (
+            <GrowthLineChart
+              points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.datasetCount }))}
+              annotations={remapAnnotations(
+                history.annotations.filter((a) => a.metric === 'datasetCount'),
+                history.points,
+                biweekly,
+              )}
+              color="primary"
+              yaxisTitle="Top-level datasets"
+            />
+          ) : (
+            <div className={styles.chartLoading}>Loading…</div>
+          )}
         </div>
-      </section>
-      <section className={styles.chartsSection}>
-        <p className={styles.sectionLabel}>Last 7 days</p>
-        <div className={styles.chartsGrid}>
-          <div className={styles.chartPanel}>
-            <h3 className={styles.chartPanelTitle}>Top-level datasets</h3>
-            {history ? (
-              <GrowthLineChart
-                points={recent.map((p) => ({ period: p.period, date: p.date, value: p.datasetCount }))}
-                color="primary"
-                yaxisTitle="Top-level datasets"
-              />
-            ) : (
-              <div className={styles.chartLoading}>Loading…</div>
-            )}
-          </div>
-          <div className={styles.chartPanel}>
-            <h3 className={styles.chartPanelTitle}>Images</h3>
-            {history ? (
-              <GrowthLineChart
-                points={recent.map((p) => ({ period: p.period, date: p.date, value: p.imageCount }))}
-                color="teal"
-                yaxisTitle="Images"
-              />
-            ) : (
-              <div className={styles.chartLoading}>Loading…</div>
-            )}
-          </div>
+        <div className={styles.chartPanel}>
+          <h3 className={styles.chartPanelTitle}>Images over time</h3>
+          {history ? (
+            <GrowthLineChart
+              points={biweekly.map((p) => ({ period: p.period, date: p.date, value: p.imageCount }))}
+              annotations={remapAnnotations(
+                history.annotations.filter((a) => a.metric === 'imageCount'),
+                history.points,
+                biweekly,
+              )}
+              color="teal"
+              yaxisTitle="Images"
+            />
+          ) : (
+            <div className={styles.chartLoading}>Loading…</div>
+          )}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

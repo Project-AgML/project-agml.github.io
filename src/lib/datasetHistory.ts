@@ -11,11 +11,6 @@ export interface DatasetHistoryAnnotation extends GrowthAnnotation {
 	metric: 'datasetCount' | 'imageCount';
 }
 
-function formatShortDate(iso: string): string {
-	const d = new Date(`${iso}T00:00:00Z`);
-	return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
-}
-
 // Buckets points into fixed-length windows (in days) counted from the earliest point's date,
 // keeping the most recent point in each window. Snapshots are appended by hand at whatever
 // cadence someone happens to run the script, so this is what turns that irregular series into an
@@ -56,28 +51,4 @@ export function remapAnnotations<T extends { date: string }>(
 		}
 		return { ...annotation, atPeriod: closest.period };
 	});
-}
-
-// Builds one point per calendar day for the last `days` days (ending today), forward-filling
-// each day with the most recent snapshot on or before it — snapshots aren't taken daily, so
-// without this a daily chart would just be gaps.
-export function lastNDaysForwardFilled(points: DatasetHistoryPoint[], days: number): DatasetHistoryPoint[] {
-	if (points.length === 0) return [];
-	const sorted = [...points].sort((a, b) => a.date.localeCompare(b.date));
-	const today = new Date();
-	today.setUTCHours(0, 0, 0, 0);
-
-	const result: DatasetHistoryPoint[] = [];
-	let cursor = 0;
-	let carried = sorted[0];
-	for (let i = days - 1; i >= 0; i--) {
-		const day = new Date(today.getTime() - i * 86_400_000);
-		const dayIso = day.toISOString().slice(0, 10);
-		while (cursor < sorted.length && sorted[cursor].date <= dayIso) {
-			carried = sorted[cursor];
-			cursor += 1;
-		}
-		result.push({ ...carried, period: formatShortDate(dayIso), date: dayIso });
-	}
-	return result;
 }
