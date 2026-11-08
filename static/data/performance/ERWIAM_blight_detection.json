@@ -125,7 +125,7 @@
     "result_type": "zero-shot",
     "optimized": "no",
     "train_pct": 0.0,
-    "test_pct": 100.0,
+    "test_pct": 29.45,
     "val_pct": 0.0,
     "num_samples": 500,
     "device": "cuda",
@@ -138,7 +138,7 @@
       "mAP": 0.007808,
       "mAP50": 0.016083
     },
-    "notes": "",
+    "notes": "Evaluated on a random (unstratified) sample of 500 of the 1,698 images in the train split (29.4%, seed=42); every model is scored on the identical subset, so results are comparable across models on this dataset but are an estimate of full-split performance. Grounding DINO detection prompt: the dataset's category names, lowercased and joined into a single caption \"name1. name2. ...\"; each box's score for a label is the max sigmoid score over that label's caption tokens. No score threshold is applied: every predicted box is a candidate for every label, and the top 100 boxes per label per image are kept. mAP is COCO-style mAP averaged over IoU 0.50:0.95 and mAP50 is AP at IoU 0.50 (torchmetrics MeanAveragePrecision, bbox).",
     "sample": {
       "fraction": null,
       "max_samples": 500,
@@ -158,7 +158,7 @@
     "result_type": "zero-shot",
     "optimized": "no",
     "train_pct": 0.0,
-    "test_pct": 100.0,
+    "test_pct": 29.45,
     "val_pct": 0.0,
     "num_samples": 500,
     "device": "cuda",
@@ -171,7 +171,7 @@
       "mAP": 0.008252,
       "mAP50": 0.015959
     },
-    "notes": "",
+    "notes": "Evaluated on a random (unstratified) sample of 500 of the 1,698 images in the train split (29.4%, seed=42); every model is scored on the identical subset, so results are comparable across models on this dataset but are an estimate of full-split performance. OWLv2 detection prompt: one text query per dataset category name. Images larger than twice the model's input side are downscaled before preprocessing; boxes are rescaled to the original image size before scoring. No score threshold is applied: every predicted box is a candidate for every label, and the top 100 boxes per label per image are kept. mAP is COCO-style mAP averaged over IoU 0.50:0.95 and mAP50 is AP at IoU 0.50 (torchmetrics MeanAveragePrecision, bbox).",
     "sample": {
       "fraction": null,
       "max_samples": 500,

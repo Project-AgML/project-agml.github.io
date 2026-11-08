@@ -9,7 +9,7 @@
     "result_type": "zero-shot",
     "optimized": "no",
     "train_pct": 0.0,
-    "test_pct": 100.0,
+    "test_pct": 0.85,
     "val_pct": 0.0,
     "num_samples": 500,
     "device": "cuda",
@@ -24,7 +24,7 @@
       "recall": 0.638436,
       "skipped_samples": 0
     },
-    "notes": "gemma classification prompt: 'Classify the image into exactly one of the following categories: anthracnose, healthy, rust. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: anthracnose, healthy, rust), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "notes": "Evaluated on a stratified sample (stratified on label) of 500 of the 59,071 images in the train split (0.8%, seed=42); every model is scored on the identical subset, so results are comparable across models on this dataset but are an estimate of full-split performance. gemma classification prompt: 'Classify the image into exactly one of the following categories: anthracnose, healthy, rust. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: anthracnose, healthy, rust), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 64}, max_tokens=256, batch_size=32. Chat template kwargs: {}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
     "sample": {
       "fraction": null,
       "max_samples": 500,
@@ -46,7 +46,7 @@
     "result_type": "zero-shot",
     "optimized": "no",
     "train_pct": 0.0,
-    "test_pct": 100.0,
+    "test_pct": 0.85,
     "val_pct": 0.0,
     "num_samples": 500,
     "device": "cuda",
@@ -61,7 +61,7 @@
       "recall": 0.739319,
       "skipped_samples": 0
     },
-    "notes": "qwen classification prompt: 'Classify the image into exactly one of the following categories: anthracnose, healthy, rust. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: anthracnose, healthy, rust), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
+    "notes": "Evaluated on a stratified sample (stratified on label) of 500 of the 59,071 images in the train split (0.8%, seed=42); every model is scored on the identical subset, so results are comparable across models on this dataset but are an estimate of full-split performance. qwen classification prompt: 'Classify the image into exactly one of the following categories: anthracnose, healthy, rust. Respond with a JSON object containing a single key \"label\" whose value is the single best-matching category name, exactly as written above (one of: anthracnose, healthy, rust), and nothing else.'. Generation sampling params (vLLM): {'temperature': 1.0, 'top_p': 0.95, 'top_k': 20, 'min_p': 0.0, 'presence_penalty': 0.0, 'repetition_penalty': 1.0}, max_tokens=256, batch_size=32. Chat template kwargs: {'enable_thinking': False}. Predicted labels are extracted from a JSON {\"label\": ...} response and matched to the dataset's category names by exact string match only (see parse_predicted_label); samples with no exact match are excluded from metrics (see metrics['skipped_samples']). Vision-tower input resolution used min_pixels=784, max_pixels=12845056, factor=32 (see resolve_image_processor_config). f1/precision/recall are macro-averaged multiclass metrics (see compute_classification_metrics).",
     "sample": {
       "fraction": null,
       "max_samples": 500,

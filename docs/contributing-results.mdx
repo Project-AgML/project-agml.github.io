@@ -55,7 +55,7 @@ Each element of a dataset's JSON array describes a single model evaluated on tha
 | `task` | **Yes** | One of `classification`, `detection`, `segmentation` — determines which `metrics` key is used as the row's primary score (see below). |
 | `result_type` | Optional | Free-text label such as `"zero-shot"`; informational only — whether a run is treated as zero-shot or fine-tuned is actually determined by the presence of a `finetune` object (see [Fine-tuned runs](#fine-tuned-runs)). |
 | `optimized` | Optional | `"yes"` or `"no"` (string, not boolean) — whether the model was run with inference optimizations. |
-| `train_pct` / `test_pct` / `val_pct` | Optional | Informational split percentages; not used to compute `splitBreakdown` (that's derived from sample counts instead — see `num_samples` and `finetune.train_samples`/`val_samples`). |
+| `train_pct` / `test_pct` / `val_pct` | Optional | Informational split percentages; not used to compute `splitBreakdown` (that's derived from sample counts instead — see `num_samples`, `sample.samples_before` and `finetune.train_samples`/`val_samples`). For a subsampled zero-shot run, `test_pct` is the evaluated share of the split (e.g. `19.11` for 500 of 2616 images). |
 | `num_samples` | Recommended | Number of samples the model was evaluated on. Shown in the row's notes and used as the "test" share of the split breakdown. |
 | `device` | Recommended | The hardware platform the run used, e.g. `"cuda"`. Shown as the row's platform. |
 | `inference_time_seconds` / `inference_time_seconds_per_image` | Optional | Timing info. |
@@ -63,6 +63,7 @@ Each element of a dataset's JSON array describes a single model evaluated on tha
 | `metrics` | **Yes** | Object of metric name → numeric value (see below). |
 | `notes` | Optional | Free-text notes, e.g. the prompt used for a zero-shot classification run. |
 | `finetune` | Only for fine-tuned runs | See [Fine-tuned runs](#fine-tuned-runs). |
+| `sample` | Only for subsampled runs | Describes how the evaluated images were drawn from the split: `{"max_samples": 500, "fraction": null, "stratify_cols": ["label"], "seed": 42, "samples_before": 2616, "samples_after": 500}`. `stratify_cols` is `null` for a plain random sample. For a zero-shot run, the split breakdown's test share is `num_samples / samples_before` (e.g. `-/19/-`), and the notes should say the result is on a sample. |
 
 #### `task` and `metrics`
 

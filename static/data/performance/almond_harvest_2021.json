@@ -80,7 +80,7 @@
       "mAP": 0.019991,
       "mAP50": 0.042309
     },
-    "notes": "",
+    "notes": "Evaluated on the full train split (50 images): it is within the 500-image sampling cap, so no subsampling was applied. OWLv2 detection prompt: one text query per dataset category name. Images larger than twice the model's input side are downscaled before preprocessing; boxes are rescaled to the original image size before scoring. No score threshold is applied: every predicted box is a candidate for every label, and the top 100 boxes per label per image are kept. mAP is COCO-style mAP averaged over IoU 0.50:0.95 and mAP50 is AP at IoU 0.50 (torchmetrics MeanAveragePrecision, bbox).",
     "sample": {
       "fraction": null,
       "max_samples": 500,
@@ -113,7 +113,7 @@
       "mAP": 0.000171,
       "mAP50": 0.000627
     },
-    "notes": "",
+    "notes": "Evaluated on the full train split (50 images): it is within the 500-image sampling cap, so no subsampling was applied. Grounding DINO detection prompt: the dataset's category names, lowercased and joined into a single caption \"name1. name2. ...\"; each box's score for a label is the max sigmoid score over that label's caption tokens. No score threshold is applied: every predicted box is a candidate for every label, and the top 100 boxes per label per image are kept. mAP is COCO-style mAP averaged over IoU 0.50:0.95 and mAP50 is AP at IoU 0.50 (torchmetrics MeanAveragePrecision, bbox).",
     "sample": {
       "fraction": null,
       "max_samples": 500,

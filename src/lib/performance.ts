@@ -286,10 +286,18 @@ function buildSplitBreakdown(entry: Record<string, unknown>, finetune: unknown):
   const testSamples = isFiniteNumber(entry.num_samples) ? entry.num_samples : null;
   const trainSamples = isRecord(finetune) && isFiniteNumber(finetune.train_samples) ? finetune.train_samples : null;
   const valSamples = isRecord(finetune) && isFiniteNumber(finetune.val_samples) ? finetune.val_samples : null;
-  const total = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
+  // A zero-shot run on a subsample (entry.sample) is shown as its share of the full split it was
+  // drawn from, e.g. 500 of 2616 images -> "-/19/-", not as 100% of what was evaluated.
+  const sampledFrom = isRecord(entry.sample) && isFiniteNumber(entry.sample.samples_before) ? entry.sample.samples_before : null;
+  const evaluated = (trainSamples ?? 0) + (testSamples ?? 0) + (valSamples ?? 0);
+  const total = !isRecord(finetune) && sampledFrom != null && sampledFrom > evaluated ? sampledFrom : evaluated;
   if (!total) return null;
 
-  const toShare = (value: number | null) => (value != null ? ((value / total) * 100).toFixed(0) : '-');
+  const toShare = (value: number | null) => {
+    if (value == null) return '-';
+    const pct = (value / total) * 100;
+    return pct > 0 && pct < 1 ? '<1' : pct.toFixed(0);
+  };
   return `${toShare(trainSamples)}/${toShare(testSamples)}/${toShare(valSamples)}`;
 }
 
