@@ -1,0 +1,35 @@
+.policyBanner {
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--agml-border);
+  background: var(--agml-warning-soft);
+  color: var(--agml-text);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.unverifiedBadge {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--agml-warning-soft);
+  color: var(--agml-warning-text);
+  font-weight: 600;
+}
+
+.cardSummary {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--agml-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sourceMark {
+  color: var(--agml-warning-text);
+}
