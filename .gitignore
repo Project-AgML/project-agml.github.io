@@ -5,6 +5,7 @@
 /build
 
 # Generated files
+/static/data/geo/
 .docusaurus
 .cache-loader
 

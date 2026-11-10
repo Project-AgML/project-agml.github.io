@@ -57,6 +57,12 @@
   white-space: nowrap;
 }
 
+.exploreLink {
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
 .clearButton {
   border: 1px solid var(--agml-border-strong);
   background: transparent;
@@ -203,137 +209,6 @@
   flex: 1;
   overflow-y: auto;
   padding: 1.5rem;
-}
-
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-}
-
-.cardButton {
-  appearance: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-
-.cardButton:focus-visible {
-  outline: none;
-}
-
-.cardTitleLink {
-  text-decoration: none;
-  color: inherit;
-  display: inline;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.card {
-  background: var(--agml-surface-strong);
-  border-radius: 8px;
-  padding: 1rem;
-  border: 1px solid var(--agml-border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: border-color 0.15s ease;
-}
-
-.cardButton:hover .card,
-.cardButton:focus-visible .card {
-  border-color: var(--agml-accent-border);
-}
-
-.cardButton:focus-visible .card {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.cardTitle {
-  margin: 0;
-  font-family: var(--ifm-code-font-family);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--agml-text);
-  line-height: 1.3;
-}
-
-.cardTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.taskBadge {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.68rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.badgeClassification {
-  background: var(--agml-badge-classification-bg);
-  color: var(--agml-badge-classification-fg);
-}
-
-.badgeDetection {
-  background: var(--agml-badge-detection-bg);
-  color: var(--agml-badge-detection-fg);
-}
-
-.badgeSegmentation {
-  background: var(--agml-badge-segmentation-bg);
-  color: var(--agml-badge-segmentation-fg);
-}
-
-.badgeOther {
-  background: var(--agml-badge-other-bg);
-  color: var(--agml-badge-other-fg);
-}
-
-.badgeVlm {
-  background: var(--agml-badge-vlm-bg);
-  color: var(--agml-badge-vlm-fg);
-}
-
-.tag {
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.68rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  display: inline-block;
-  white-space: nowrap;
-  background: var(--agml-tag-bg);
-  color: var(--agml-tag-fg);
-}
-
-.cardFooter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-family: var(--ifm-code-font-family);
-  font-size: 0.72rem;
-  color: var(--agml-muted);
-  padding-top: 0.6rem;
-  border-top: 1px solid var(--agml-border);
-}
-
-.cardFooterRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.cardFooterAugmented {
-  color: var(--ifm-color-primary);
 }
 
 .status {

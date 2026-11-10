@@ -1,0 +1,4883 @@
+{
+ "_doc": "Curated plant taxonomy for static/data/hf_datasets.json + datasets.json crop_types labels. 'labels' maps each raw lowercase crop_types value to a taxon (key into 'taxa'), optionally with a cultivar, a role/groups override, a review flag for uncertain identifications, or unresolved:true for noise. Labels with no taxon but a role/groups are group-level tags that attach to an inner tree node. Families follow APG IV as used by iNatAg. Add an entry here whenever a new crop_types value appears; tests/taxonomy.test.ts fails on unmapped labels.",
+ "roles": {
+  "crop": "Crops",
+  "weed": "Weeds",
+  "tree": "Trees & forestry",
+  "wild": "Wild & native vegetation",
+  "aquatic": "Aquatic & wetland",
+  "medicinal": "Medicinal plants",
+  "ornamental": "Ornamentals",
+  "land_cover": "Land cover & mixed",
+  "other": "Other"
+ },
+ "use_groups": {
+  "cereals": "Cereals",
+  "vegetables": "Vegetables & melons",
+  "fruit_nuts": "Fruit & nuts",
+  "oilseeds": "Oilseeds & oleaginous fruits",
+  "roots_tubers": "Roots & tubers",
+  "legumes": "Legumes & pulses",
+  "beverage_spice": "Beverage, spice & aromatic",
+  "sugar": "Sugar crops",
+  "fibre": "Fibre crops",
+  "fodder": "Fodder & cover crops",
+  "other_crops": "Other crops"
+ },
+ "taxa": {
+  "Abelmoschus esculentus": {
+   "common": "okra",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Abies alba": {
+   "common": "European silver fir",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Abies concolor": {
+   "common": "white fir",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Abies lasiocarpa": {
+   "common": "subalpine fir",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Abies magnifica": {
+   "common": "red fir",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Abutilon indicum": {
+   "common": "Indian mallow",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "medicinal"
+  },
+  "Acacia dimidiata": {
+   "common": "Acacia dimidiata",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Acacia lamprocarpa": {
+   "common": "Acacia lamprocarpa",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Acacia mimula": {
+   "common": "Acacia mimula",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Acacia oncinocarpa": {
+   "common": "Acacia oncinocarpa",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Acca sellowiana": {
+   "common": "feijoa",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Acer campestre": {
+   "common": "field maple",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "tree"
+  },
+  "Acer pictum": {
+   "common": "painted maple",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "tree"
+  },
+  "Acer platanoides": {
+   "common": "Norway maple",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "tree"
+  },
+  "Acer pseudoplatanus": {
+   "common": "sycamore maple",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "tree"
+  },
+  "Acer rubrum": {
+   "common": "red maple",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "tree"
+  },
+  "Achnatherum speciosum": {
+   "common": "desert needlegrass",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "wild"
+  },
+  "Achyranthes aspera": {
+   "common": "prickly chaff flower",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "medicinal"
+  },
+  "Actinidia deliciosa": {
+   "common": "kiwifruit",
+   "rank": "species",
+   "family": "Actinidiaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Aegle marmelos": {
+   "common": "bael",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Aerva lanata": {
+   "common": "mountain knotgrass",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "medicinal"
+  },
+  "Allium ampeloprasum": {
+   "common": "leek",
+   "rank": "species",
+   "family": "Amaryllidaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Allium cepa": {
+   "common": "onion",
+   "rank": "species",
+   "family": "Amaryllidaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Allium fistulosum": {
+   "common": "scallion",
+   "rank": "species",
+   "family": "Amaryllidaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Allium sativum": {
+   "common": "garlic",
+   "rank": "species",
+   "family": "Amaryllidaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Alnus glutinosa": {
+   "common": "black alder",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Aloe vera": {
+   "common": "aloe vera",
+   "rank": "species",
+   "family": "Asphodelaceae",
+   "role": "medicinal"
+  },
+  "Alternanthera brasiliana": {
+   "common": "Brazilian joyweed",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "medicinal"
+  },
+  "Alternanthera philoxeroides": {
+   "common": "alligator weed",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "aquatic"
+  },
+  "Amaranthaceae": {
+   "common": "amaranth family (incl. Chenopodiaceae)",
+   "rank": "family",
+   "family": "Amaranthaceae",
+   "role": "wild"
+  },
+  "Amaranthus palmeri": {
+   "common": "Palmer amaranth",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "weed"
+  },
+  "Amaranthus retroflexus": {
+   "common": "redroot pigweed",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "weed"
+  },
+  "Amaranthus tuberculatus": {
+   "common": "waterhemp",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "weed"
+  },
+  "Ambrosia artemisiifolia": {
+   "common": "common ragweed",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "weed"
+  },
+  "Anacardium occidentale": {
+   "common": "cashew",
+   "rank": "species",
+   "family": "Anacardiaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Ananas comosus": {
+   "common": "pineapple",
+   "rank": "species",
+   "family": "Bromeliaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Andrographis paniculata": {
+   "common": "green chiretta (nelavembu)",
+   "rank": "species",
+   "family": "Acanthaceae",
+   "role": "medicinal"
+  },
+  "Annona muricata": {
+   "common": "soursop",
+   "rank": "species",
+   "family": "Annonaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Annona squamosa": {
+   "common": "sugar apple (custard apple)",
+   "rank": "species",
+   "family": "Annonaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Apocynum venetum": {
+   "common": "dogbane (luobuma)",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "wild"
+  },
+  "Aquilaria malaccensis": {
+   "common": "agarwood",
+   "rank": "species",
+   "family": "Thymelaeaceae",
+   "role": "tree"
+  },
+  "Arabidopsis thaliana": {
+   "common": "thale cress",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "other"
+  },
+  "Arachis hypogaea": {
+   "common": "groundnut",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds",
+    "legumes"
+   ]
+  },
+  "Arbutus unedo": {
+   "common": "strawberry tree",
+   "rank": "species",
+   "family": "Ericaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Areca catechu": {
+   "common": "areca nut (betel nut)",
+   "rank": "species",
+   "family": "Arecaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Armoracia rusticana": {
+   "common": "horseradish",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables",
+    "beverage_spice"
+   ]
+  },
+  "Artemisia lavandulifolia": {
+   "common": "lavender-leaf wormwood",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "wild"
+  },
+  "Artocarpus chama": {
+   "common": "chaplash",
+   "rank": "species",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Artocarpus heterophyllus": {
+   "common": "jackfruit",
+   "rank": "species",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Asparagus racemosus": {
+   "common": "shatavari",
+   "rank": "species",
+   "family": "Asparagaceae",
+   "role": "medicinal"
+  },
+  "Avena sativa": {
+   "common": "oat",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Averrhoa carambola": {
+   "common": "carambola (starfruit)",
+   "rank": "species",
+   "family": "Oxalidaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Ayapana triplinervis": {
+   "common": "ayapana",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "medicinal"
+  },
+  "Azadirachta indica": {
+   "common": "neem",
+   "rank": "species",
+   "family": "Meliaceae",
+   "role": "medicinal"
+  },
+  "Baccaurea ramiflora": {
+   "common": "Burmese grape (lotkon)",
+   "rank": "species",
+   "family": "Phyllanthaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Bacopa monnieri": {
+   "common": "brahmi",
+   "rank": "species",
+   "family": "Plantaginaceae",
+   "role": "medicinal"
+  },
+  "Bambusoideae": {
+   "common": "bamboo",
+   "rank": "subfamily",
+   "family": "Poaceae",
+   "role": "tree"
+  },
+  "Basella alba": {
+   "common": "Malabar spinach",
+   "rank": "species",
+   "family": "Basellaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Bassia scoparia": {
+   "common": "kochia",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "weed"
+  },
+  "Benincasa hispida": {
+   "common": "ash gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Bertholletia excelsa": {
+   "common": "Brazil nut",
+   "rank": "species",
+   "family": "Lecythidaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Beta vulgaris": {
+   "common": "beet",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables",
+    "sugar"
+   ]
+  },
+  "Betula papyrifera": {
+   "common": "paper birch",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Betula pendula": {
+   "common": "silver birch",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Betula platyphylla": {
+   "common": "Asian white birch",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Betula pubescens": {
+   "common": "downy birch",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Bidens pilosa": {
+   "common": "black-jack",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "weed"
+  },
+  "Boerhavia diffusa": {
+   "common": "punarnava",
+   "rank": "species",
+   "family": "Nyctaginaceae",
+   "role": "medicinal"
+  },
+  "Bougainvillea": {
+   "common": "bougainvillea",
+   "rank": "genus",
+   "family": "Nyctaginaceae",
+   "role": "ornamental"
+  },
+  "Brassica juncea": {
+   "common": "mustard",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Brassica napus": {
+   "common": "rapeseed / canola",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Brassica oleracea": {
+   "common": "cabbage, cauliflower & kin",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Brassica rapa": {
+   "common": "turnip",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cajanus cajan": {
+   "common": "pigeon pea",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Calamagrostis epigejos": {
+   "common": "wood small-reed",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "wild"
+  },
+  "Calotropis gigantea": {
+   "common": "crown flower (ekka)",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "medicinal"
+  },
+  "Camellia oleifera": {
+   "common": "oil-tea camellia",
+   "rank": "species",
+   "family": "Theaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Camellia sinensis": {
+   "common": "tea",
+   "rank": "species",
+   "family": "Theaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Canna indica": {
+   "common": "Indian shot",
+   "rank": "species",
+   "family": "Cannaceae",
+   "role": "ornamental"
+  },
+  "Capsicum annuum": {
+   "common": "pepper / chili",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cardiospermum halicacabum": {
+   "common": "balloon vine",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "medicinal"
+  },
+  "Carex argyi": {
+   "common": "Carex argyi",
+   "rank": "species",
+   "family": "Cyperaceae",
+   "role": "aquatic"
+  },
+  "Carica papaya": {
+   "common": "papaya",
+   "rank": "species",
+   "family": "Caricaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Carthamus tinctorius": {
+   "common": "safflower",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Castanea sativa": {
+   "common": "sweet chestnut",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Catharanthus roseus": {
+   "common": "Madagascar periwinkle",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "medicinal"
+  },
+  "Ceanothus": {
+   "common": "ceanothus",
+   "rank": "genus",
+   "family": "Rhamnaceae",
+   "role": "wild"
+  },
+  "Centella asiatica": {
+   "common": "Asiatic pennywort (thankuni)",
+   "rank": "species",
+   "family": "Apiaceae",
+   "role": "medicinal"
+  },
+  "Ceratonia siliqua": {
+   "common": "carob",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Chaenomeles japonica": {
+   "common": "Japanese quince",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Chamaecyparis lawsoniana": {
+   "common": "Lawson cypress",
+   "rank": "species",
+   "family": "Cupressaceae",
+   "role": "tree"
+  },
+  "Chenopodium album": {
+   "common": "lambsquarters",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "weed"
+  },
+  "Cicer arietinum": {
+   "common": "chickpea",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Cichorium intybus": {
+   "common": "chicory",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cinnamomum camphora": {
+   "common": "camphor tree",
+   "rank": "species",
+   "family": "Lauraceae",
+   "role": "tree"
+  },
+  "Cinnamomum tamala": {
+   "common": "Indian bay leaf",
+   "rank": "species",
+   "family": "Lauraceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Cissus quadrangularis": {
+   "common": "veldt grape",
+   "rank": "species",
+   "family": "Vitaceae",
+   "role": "medicinal"
+  },
+  "Citrullus lanatus": {
+   "common": "watermelon",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Citrus": {
+   "common": "citrus",
+   "rank": "genus",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus aurantiifolia": {
+   "common": "lime",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus japonica": {
+   "common": "kumquat",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus limon": {
+   "common": "lemon",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus maxima": {
+   "common": "pomelo",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus medica": {
+   "common": "citron",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus reticulata": {
+   "common": "mandarin",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Citrus sinensis": {
+   "common": "sweet orange",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Clerodendrum indicum": {
+   "common": "Turk's turban",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "medicinal"
+  },
+  "Clitoria ternatea": {
+   "common": "butterfly pea (aparajita)",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "ornamental"
+  },
+  "Coccinia grandis": {
+   "common": "ivy gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cocos nucifera": {
+   "common": "coconut",
+   "rank": "species",
+   "family": "Arecaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds",
+    "fruit_nuts"
+   ]
+  },
+  "Coffea": {
+   "common": "coffee",
+   "rank": "genus",
+   "family": "Rubiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Coffea arabica": {
+   "common": "arabica coffee",
+   "rank": "species",
+   "family": "Rubiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Coffea canephora": {
+   "common": "robusta coffee",
+   "rank": "species",
+   "family": "Rubiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Coleus amboinicus": {
+   "common": "Indian borage (doddapatre)",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "medicinal"
+  },
+  "Colocasia esculenta": {
+   "common": "taro",
+   "rank": "species",
+   "family": "Araceae",
+   "role": "crop",
+   "groups": [
+    "roots_tubers"
+   ]
+  },
+  "Corchorus": {
+   "common": "jute",
+   "rank": "genus",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "fibre"
+   ]
+  },
+  "Coriandrum sativum": {
+   "common": "coriander",
+   "rank": "species",
+   "family": "Apiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Cornus mas": {
+   "common": "cornelian cherry",
+   "rank": "species",
+   "family": "Cornaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Corylus avellana": {
+   "common": "hazelnut",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Corymbia bleeseri": {
+   "common": "Bleeser's bloodwood",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Corymbia ferruginea": {
+   "common": "rusty bloodwood",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Corymbia polycarpa": {
+   "common": "long-fruited bloodwood",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Corymbia polysciada": {
+   "common": "smooth-stemmed bloodwood",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Corymbia porrecta": {
+   "common": "grey bloodwood",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Costus igneus": {
+   "common": "insulin plant",
+   "rank": "species",
+   "family": "Costaceae",
+   "role": "medicinal"
+  },
+  "Crataegus azarolus": {
+   "common": "azarole",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Crataegus monogyna": {
+   "common": "common hawthorn",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "tree"
+  },
+  "Crossandra infundibuliformis": {
+   "common": "firecracker flower (crossandra)",
+   "rank": "species",
+   "family": "Acanthaceae",
+   "role": "ornamental"
+  },
+  "Cucumis melo": {
+   "common": "melon",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cucumis sativus": {
+   "common": "cucumber",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cucurbita maxima": {
+   "common": "pumpkin",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cucurbita pepo": {
+   "common": "squash / zucchini",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Cunninghamia lanceolata": {
+   "common": "Chinese fir",
+   "rank": "species",
+   "family": "Cupressaceae",
+   "role": "tree"
+  },
+  "Curcuma longa": {
+   "common": "turmeric",
+   "rank": "species",
+   "family": "Zingiberaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Cydonia oblonga": {
+   "common": "quince",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Cymbopogon citratus": {
+   "common": "lemongrass",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Cynara cardunculus": {
+   "common": "artichoke",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Datura stramonium": {
+   "common": "jimsonweed",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "medicinal"
+  },
+  "Daucus carota": {
+   "common": "carrot",
+   "rank": "species",
+   "family": "Apiaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Dillenia indica": {
+   "common": "elephant apple",
+   "rank": "species",
+   "family": "Dilleniaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Dioscorea": {
+   "common": "yam",
+   "rank": "genus",
+   "family": "Dioscoreaceae",
+   "role": "crop",
+   "groups": [
+    "roots_tubers"
+   ]
+  },
+  "Diospyros kaki": {
+   "common": "persimmon",
+   "rank": "species",
+   "family": "Ebenaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Durio zibethinus": {
+   "common": "durian",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Eclipta prostrata": {
+   "common": "false daisy (bhringraj)",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "medicinal"
+  },
+  "Elaeis guineensis": {
+   "common": "oil palm",
+   "rank": "species",
+   "family": "Arecaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Eleusine coracana": {
+   "common": "finger millet",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Eleusine indica": {
+   "common": "goosegrass",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "weed"
+  },
+  "Eleutherine bulbosa": {
+   "common": "Eleutherine bulbosa",
+   "rank": "species",
+   "family": "Iridaceae",
+   "role": "medicinal"
+  },
+  "Elodea nuttallii": {
+   "common": "Nuttall's waterweed",
+   "rank": "species",
+   "family": "Hydrocharitaceae",
+   "role": "aquatic"
+  },
+  "Epipremnum aureum": {
+   "common": "money plant (pothos)",
+   "rank": "species",
+   "family": "Araceae",
+   "role": "ornamental"
+  },
+  "Ericameria nauseosa": {
+   "common": "rubber rabbitbrush",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "wild"
+  },
+  "Erigeron canadensis": {
+   "common": "horseweed",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "weed"
+  },
+  "Eriobotrya japonica": {
+   "common": "loquat",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Eruca vesicaria": {
+   "common": "arugula",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Erythrophleum chlorostachys": {
+   "common": "Cooktown ironwood",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Eucalyptus": {
+   "common": "eucalyptus",
+   "rank": "genus",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Eucalyptus globulus": {
+   "common": "Tasmanian blue gum",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Eucalyptus miniata": {
+   "common": "Darwin woollybutt",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Eucalyptus nitens": {
+   "common": "shining gum",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Eucalyptus tetrodonta": {
+   "common": "Darwin stringybark",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Euphorbia hirta": {
+   "common": "asthma weed",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "medicinal"
+  },
+  "Euphorbia maculata": {
+   "common": "spotted spurge",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "weed"
+  },
+  "Euphorbia milii": {
+   "common": "crown of thorns",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "ornamental"
+  },
+  "Euphorbia tithymaloides": {
+   "common": "devil's backbone",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "medicinal"
+  },
+  "Fagopyrum esculentum": {
+   "common": "buckwheat",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Fagus sylvatica": {
+   "common": "European beech",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Fallopia convolvulus": {
+   "common": "black bindweed",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "weed"
+  },
+  "Ficus carica": {
+   "common": "fig",
+   "rank": "species",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Fragaria orientalis": {
+   "common": "oriental strawberry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "wild"
+  },
+  "Fragaria vesca": {
+   "common": "wild strawberry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Fragaria × ananassa": {
+   "common": "strawberry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Fraxinus excelsior": {
+   "common": "European ash",
+   "rank": "species",
+   "family": "Oleaceae",
+   "role": "tree"
+  },
+  "Fraxinus mandshurica": {
+   "common": "Manchurian ash",
+   "rank": "species",
+   "family": "Oleaceae",
+   "role": "tree"
+  },
+  "Gilbertiodendron dewevrei": {
+   "common": "limbali",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "tree"
+  },
+  "Gloriosa superba": {
+   "common": "flame lily",
+   "rank": "species",
+   "family": "Colchicaceae",
+   "role": "medicinal"
+  },
+  "Glycine max": {
+   "common": "soybean",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds",
+    "legumes"
+   ]
+  },
+  "Gomphrena globosa": {
+   "common": "globe amaranth",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "ornamental"
+  },
+  "Gossypium hirsutum": {
+   "common": "cotton",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "fibre",
+    "oilseeds"
+   ]
+  },
+  "Gynura procumbens": {
+   "common": "longevity spinach",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "medicinal"
+  },
+  "Haloxylon ammodendron": {
+   "common": "saxaul",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "wild"
+  },
+  "Helianthus annuus": {
+   "common": "sunflower",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Hemidesmus indicus": {
+   "common": "Indian sarsaparilla",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "medicinal"
+  },
+  "Hevea brasiliensis": {
+   "common": "rubber",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "crop",
+   "groups": [
+    "other_crops"
+   ]
+  },
+  "Hibiscus rosa-sinensis": {
+   "common": "Chinese hibiscus",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "ornamental"
+  },
+  "Hordeum vulgare": {
+   "common": "barley",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Hydrilla verticillata": {
+   "common": "hydrilla",
+   "rank": "species",
+   "family": "Hydrocharitaceae",
+   "role": "aquatic"
+  },
+  "Hydrocotyle vulgaris": {
+   "common": "marsh pennywort",
+   "rank": "species",
+   "family": "Araliaceae",
+   "role": "aquatic"
+  },
+  "Hylocereus undatus": {
+   "common": "dragon fruit",
+   "rank": "species",
+   "family": "Cactaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Hypericum perforatum": {
+   "common": "St John's wort",
+   "rank": "species",
+   "family": "Hypericaceae",
+   "role": "medicinal"
+  },
+  "Ipomoea": {
+   "common": "morning glory",
+   "rank": "genus",
+   "family": "Convolvulaceae",
+   "role": "weed"
+  },
+  "Ipomoea batatas": {
+   "common": "sweet potato",
+   "rank": "species",
+   "family": "Convolvulaceae",
+   "role": "crop",
+   "groups": [
+    "roots_tubers"
+   ]
+  },
+  "Ixora coccinea": {
+   "common": "jungle geranium (ixora)",
+   "rank": "species",
+   "family": "Rubiaceae",
+   "role": "ornamental"
+  },
+  "Jasminum sambac": {
+   "common": "Arabian jasmine",
+   "rank": "species",
+   "family": "Oleaceae",
+   "role": "ornamental"
+  },
+  "Juglans mandshurica": {
+   "common": "Manchurian walnut",
+   "rank": "species",
+   "family": "Juglandaceae",
+   "role": "tree"
+  },
+  "Juglans regia": {
+   "common": "walnut",
+   "rank": "species",
+   "family": "Juglandaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Juncus effusus": {
+   "common": "soft rush",
+   "rank": "species",
+   "family": "Juncaceae",
+   "role": "aquatic"
+  },
+  "Justicia adhatoda": {
+   "common": "Malabar nut",
+   "rank": "species",
+   "family": "Acanthaceae",
+   "role": "medicinal"
+  },
+  "Kalanchoe pinnata": {
+   "common": "cathedral bells (pathor kuchi)",
+   "rank": "species",
+   "family": "Crassulaceae",
+   "role": "medicinal"
+  },
+  "Lablab purpureus": {
+   "common": "lablab bean",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Lactuca sativa": {
+   "common": "lettuce",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Lagenaria siceraria": {
+   "common": "bottle gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Lantana camara": {
+   "common": "lantana",
+   "rank": "species",
+   "family": "Verbenaceae",
+   "role": "weed"
+  },
+  "Larix": {
+   "common": "larch",
+   "rank": "genus",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Larix decidua": {
+   "common": "European larch",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Larix occidentalis": {
+   "common": "western larch",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Lawsonia inermis": {
+   "common": "henna",
+   "rank": "species",
+   "family": "Lythraceae",
+   "role": "medicinal"
+  },
+  "Lemna minor": {
+   "common": "common duckweed",
+   "rank": "species",
+   "family": "Araceae",
+   "role": "aquatic"
+  },
+  "Lens culinaris": {
+   "common": "lentil",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Leucas aspera": {
+   "common": "thumbe",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "medicinal"
+  },
+  "Linum usitatissimum": {
+   "common": "flax",
+   "rank": "species",
+   "family": "Linaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds",
+    "fibre"
+   ]
+  },
+  "Litchi chinensis": {
+   "common": "lychee",
+   "rank": "species",
+   "family": "Sapindaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Luffa": {
+   "common": "luffa",
+   "rank": "genus",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Luffa acutangula": {
+   "common": "ridge gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Luffa aegyptiaca": {
+   "common": "sponge gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Lupinus": {
+   "common": "lupin",
+   "rank": "genus",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Lupinus angustifolius": {
+   "common": "narrow-leafed lupin",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Lupinus cosentinii": {
+   "common": "sandplain lupin",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "weed"
+  },
+  "Magnolia champaca": {
+   "common": "champak (sampige)",
+   "rank": "species",
+   "family": "Magnoliaceae",
+   "role": "ornamental"
+  },
+  "Malus domestica": {
+   "common": "apple",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Mangifera indica": {
+   "common": "mango",
+   "rank": "species",
+   "family": "Anacardiaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Manihot esculenta": {
+   "common": "cassava",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "crop",
+   "groups": [
+    "roots_tubers"
+   ]
+  },
+  "Manilkara zapota": {
+   "common": "sapodilla (sapota)",
+   "rank": "species",
+   "family": "Sapotaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Medicago sativa": {
+   "common": "alfalfa",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "Mentha": {
+   "common": "mint",
+   "rank": "genus",
+   "family": "Lamiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Mentha arvensis": {
+   "common": "field mint (pudina)",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Mespilus germanica": {
+   "common": "medlar",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Mikania micrantha": {
+   "common": "mikania (mile-a-minute)",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "weed"
+  },
+  "Mollugo verticillata": {
+   "common": "carpetweed",
+   "rank": "species",
+   "family": "Molluginaceae",
+   "role": "weed"
+  },
+  "Momordica charantia": {
+   "common": "bitter gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Momordica dioica": {
+   "common": "spiny gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Monochoria korsakowii": {
+   "common": "Monochoria korsakowii",
+   "rank": "species",
+   "family": "Pontederiaceae",
+   "role": "aquatic"
+  },
+  "Morinda citrifolia": {
+   "common": "noni",
+   "rank": "species",
+   "family": "Rubiaceae",
+   "role": "medicinal"
+  },
+  "Moringa oleifera": {
+   "common": "moringa (drumstick)",
+   "rank": "species",
+   "family": "Moringaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Morus": {
+   "common": "mulberry",
+   "rank": "genus",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Morus alba": {
+   "common": "white mulberry",
+   "rank": "species",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Morus nigra": {
+   "common": "black mulberry",
+   "rank": "species",
+   "family": "Moraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Murraya koenigii": {
+   "common": "curry leaf",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Musa": {
+   "common": "banana",
+   "rank": "genus",
+   "family": "Musaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Nerium oleander": {
+   "common": "oleander (arali)",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "ornamental"
+  },
+  "Nicotiana tabacum": {
+   "common": "tobacco",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "crop",
+   "groups": [
+    "other_crops"
+   ]
+  },
+  "Nitraria": {
+   "common": "nitraria",
+   "rank": "genus",
+   "family": "Nitrariaceae",
+   "role": "wild"
+  },
+  "Nyctanthes arbor-tristis": {
+   "common": "night jasmine (parijatha)",
+   "rank": "species",
+   "family": "Oleaceae",
+   "role": "medicinal"
+  },
+  "Ocimum basilicum": {
+   "common": "basil",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Ocimum gratissimum": {
+   "common": "African basil",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "medicinal"
+  },
+  "Ocimum tenuiflorum": {
+   "common": "holy basil (tulsi)",
+   "rank": "species",
+   "family": "Lamiaceae",
+   "role": "medicinal"
+  },
+  "Olea europaea": {
+   "common": "olive",
+   "rank": "species",
+   "family": "Oleaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds",
+    "fruit_nuts"
+   ]
+  },
+  "Oryza sativa": {
+   "common": "rice",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Ostrya carpinifolia": {
+   "common": "hop hornbeam",
+   "rank": "species",
+   "family": "Betulaceae",
+   "role": "tree"
+  },
+  "Oxalis": {
+   "common": "wood sorrel",
+   "rank": "genus",
+   "family": "Oxalidaceae",
+   "role": "weed"
+  },
+  "Papaver somniferum": {
+   "common": "poppy (gasagase)",
+   "rank": "species",
+   "family": "Papaveraceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Passiflora edulis": {
+   "common": "passion fruit",
+   "rank": "species",
+   "family": "Passifloraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pelargonium graveolens": {
+   "common": "rose geranium",
+   "rank": "species",
+   "family": "Geraniaceae",
+   "role": "ornamental"
+  },
+  "Pennisetum glaucum": {
+   "common": "pearl millet",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Persea americana": {
+   "common": "avocado",
+   "rank": "species",
+   "family": "Lauraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Persicaria hydropiper": {
+   "common": "water pepper",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "aquatic"
+  },
+  "Persicaria lapathifolia": {
+   "common": "pale smartweed",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "aquatic"
+  },
+  "Persicaria sieboldii": {
+   "common": "Siebold's knotweed",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "aquatic"
+  },
+  "Phaseolus vulgaris": {
+   "common": "common bean",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Phoenix dactylifera": {
+   "common": "date palm",
+   "rank": "species",
+   "family": "Arecaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Phragmites australis": {
+   "common": "common reed",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "aquatic"
+  },
+  "Phyllanthus amarus": {
+   "common": "Phyllanthus amarus",
+   "rank": "species",
+   "family": "Phyllanthaceae",
+   "role": "medicinal"
+  },
+  "Phyllanthus emblica": {
+   "common": "amla (Indian gooseberry)",
+   "rank": "species",
+   "family": "Phyllanthaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Picea abies": {
+   "common": "Norway spruce",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Picea engelmannii": {
+   "common": "Engelmann spruce",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus": {
+   "common": "pine",
+   "rank": "genus",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus contorta": {
+   "common": "lodgepole pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus elliottii": {
+   "common": "slash pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus halepensis": {
+   "common": "Aleppo pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus jeffreyi": {
+   "common": "Jeffrey pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus koraiensis": {
+   "common": "Korean pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus lambertiana": {
+   "common": "sugar pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus massoniana": {
+   "common": "Masson pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus nigra": {
+   "common": "black pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus pinaster": {
+   "common": "maritime pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus ponderosa": {
+   "common": "ponderosa pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus radiata": {
+   "common": "Monterey pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus strobus": {
+   "common": "eastern white pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus sylvestris": {
+   "common": "Scots pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Pinus tabuliformis": {
+   "common": "Chinese pine",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Piper betle": {
+   "common": "betel",
+   "rank": "species",
+   "family": "Piperaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Piper nigrum": {
+   "common": "black pepper",
+   "rank": "species",
+   "family": "Piperaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Pistacia vera": {
+   "common": "pistachio",
+   "rank": "species",
+   "family": "Anacardiaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pistia stratiotes": {
+   "common": "water lettuce",
+   "rank": "species",
+   "family": "Araceae",
+   "role": "aquatic"
+  },
+  "Pisum sativum": {
+   "common": "pea",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Planchonia careya": {
+   "common": "cocky apple",
+   "rank": "species",
+   "family": "Lecythidaceae",
+   "role": "tree"
+  },
+  "Platanus × acerifolia": {
+   "common": "London plane",
+   "rank": "species",
+   "family": "Platanaceae",
+   "role": "tree"
+  },
+  "Pleurotus ostreatus": {
+   "common": "oyster mushroom",
+   "rank": "species",
+   "family": "Pleurotaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Plumbago zeylanica": {
+   "common": "white leadwort (chitrak)",
+   "rank": "species",
+   "family": "Plumbaginaceae",
+   "role": "medicinal"
+  },
+  "Poaceae": {
+   "common": "grasses",
+   "rank": "family",
+   "family": "Poaceae",
+   "role": "wild"
+  },
+  "Polygonum aviculare": {
+   "common": "knotgrass",
+   "rank": "species",
+   "family": "Polygonaceae",
+   "role": "weed"
+  },
+  "Pongamia pinnata": {
+   "common": "pongam (honge)",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "medicinal"
+  },
+  "Pontederia crassipes": {
+   "common": "water hyacinth",
+   "rank": "species",
+   "family": "Pontederiaceae",
+   "role": "aquatic"
+  },
+  "Populus": {
+   "common": "poplar",
+   "rank": "genus",
+   "family": "Salicaceae",
+   "role": "tree"
+  },
+  "Populus euphratica": {
+   "common": "Euphrates poplar",
+   "rank": "species",
+   "family": "Salicaceae",
+   "role": "tree"
+  },
+  "Populus grandidentata": {
+   "common": "bigtooth aspen",
+   "rank": "species",
+   "family": "Salicaceae",
+   "role": "tree"
+  },
+  "Populus nigra": {
+   "common": "black poplar",
+   "rank": "species",
+   "family": "Salicaceae",
+   "role": "tree"
+  },
+  "Portulaca oleracea": {
+   "common": "purslane",
+   "rank": "species",
+   "family": "Portulacaceae",
+   "role": "weed"
+  },
+  "Prunus armeniaca": {
+   "common": "apricot",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Prunus avium": {
+   "common": "sweet cherry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Prunus cerasus": {
+   "common": "sour cherry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Prunus domestica": {
+   "common": "plum",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Prunus dulcis": {
+   "common": "almond",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Prunus persica": {
+   "common": "peach / nectarine",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pseudotsuga menziesii": {
+   "common": "Douglas fir",
+   "rank": "species",
+   "family": "Pinaceae",
+   "role": "tree"
+  },
+  "Psidium guajava": {
+   "common": "guava",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Punica granatum": {
+   "common": "pomegranate",
+   "rank": "species",
+   "family": "Lythraceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pyrus bretschneideri": {
+   "common": "Chinese white pear",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pyrus communis": {
+   "common": "pear",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Pyrus pyrifolia": {
+   "common": "nashi pear",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Quercus": {
+   "common": "oak",
+   "rank": "genus",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus coccifera": {
+   "common": "kermes oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus ilex": {
+   "common": "holm oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus kelloggii": {
+   "common": "California black oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus petraea": {
+   "common": "sessile oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus robur": {
+   "common": "pedunculate oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Quercus rubra": {
+   "common": "northern red oak",
+   "rank": "species",
+   "family": "Fagaceae",
+   "role": "tree"
+  },
+  "Raphanus sativus": {
+   "common": "radish",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Rauvolfia serpentina": {
+   "common": "Indian snakeroot",
+   "rank": "species",
+   "family": "Apocynaceae",
+   "role": "medicinal"
+  },
+  "Ricinus communis": {
+   "common": "castor",
+   "rank": "species",
+   "family": "Euphorbiaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Rosa": {
+   "common": "rose",
+   "rank": "genus",
+   "family": "Rosaceae",
+   "role": "ornamental"
+  },
+  "Rubus idaeus": {
+   "common": "raspberry",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Ruta graveolens": {
+   "common": "common rue (nagadali)",
+   "rank": "species",
+   "family": "Rutaceae",
+   "role": "medicinal"
+  },
+  "Saccharum officinarum": {
+   "common": "sugarcane",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "sugar"
+   ]
+  },
+  "Salix": {
+   "common": "willow",
+   "rank": "genus",
+   "family": "Salicaceae",
+   "role": "tree"
+  },
+  "Sanguisorba officinalis": {
+   "common": "great burnet",
+   "rank": "species",
+   "family": "Rosaceae",
+   "role": "wild"
+  },
+  "Saraca asoca": {
+   "common": "ashoka tree",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "medicinal"
+  },
+  "Schima superba": {
+   "common": "schima",
+   "rank": "species",
+   "family": "Theaceae",
+   "role": "tree"
+  },
+  "Secale cereale": {
+   "common": "rye",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Senna auriculata": {
+   "common": "avaram senna",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "medicinal"
+  },
+  "Sesamum indicum": {
+   "common": "sesame",
+   "rank": "species",
+   "family": "Pedaliaceae",
+   "role": "crop",
+   "groups": [
+    "oilseeds"
+   ]
+  },
+  "Sesbania grandiflora": {
+   "common": "vegetable hummingbird",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "medicinal"
+  },
+  "Solanum lycopersicum": {
+   "common": "tomato",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Solanum melongena": {
+   "common": "eggplant",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Solanum nigrum": {
+   "common": "black nightshade (ganike)",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "medicinal"
+  },
+  "Solanum tuberosum": {
+   "common": "potato",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "crop",
+   "groups": [
+    "roots_tubers"
+   ]
+  },
+  "Sorghum bicolor": {
+   "common": "sorghum",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Spartina alterniflora": {
+   "common": "smooth cordgrass",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "aquatic"
+  },
+  "Spinacia oleracea": {
+   "common": "spinach",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Spondias mombin": {
+   "common": "hog plum",
+   "rank": "species",
+   "family": "Anacardiaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Suaeda salsa": {
+   "common": "seepweed",
+   "rank": "species",
+   "family": "Amaranthaceae",
+   "role": "aquatic"
+  },
+  "Syzygium cumini": {
+   "common": "jamun (black plum)",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Tagetes erecta": {
+   "common": "marigold",
+   "rank": "species",
+   "family": "Asteraceae",
+   "role": "ornamental"
+  },
+  "Tamarindus indica": {
+   "common": "tamarind",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Tamarix": {
+   "common": "tamarisk",
+   "rank": "genus",
+   "family": "Tamaricaceae",
+   "role": "wild"
+  },
+  "Tamarix chinensis": {
+   "common": "Chinese tamarisk",
+   "rank": "species",
+   "family": "Tamaricaceae",
+   "role": "wild"
+  },
+  "Tecoma stans": {
+   "common": "yellow trumpetbush",
+   "rank": "species",
+   "family": "Bignoniaceae",
+   "role": "ornamental"
+  },
+  "Terminalia arjuna": {
+   "common": "arjuna",
+   "rank": "species",
+   "family": "Combretaceae",
+   "role": "medicinal"
+  },
+  "Terminalia bellirica": {
+   "common": "bohera (bibhitaki)",
+   "rank": "species",
+   "family": "Combretaceae",
+   "role": "medicinal"
+  },
+  "Terminalia chebula": {
+   "common": "haritaki",
+   "rank": "species",
+   "family": "Combretaceae",
+   "role": "medicinal"
+  },
+  "Terminalia ferdinandiana": {
+   "common": "Kakadu plum",
+   "rank": "species",
+   "family": "Combretaceae",
+   "role": "tree"
+  },
+  "Terminalia grandiflora": {
+   "common": "nutwood",
+   "rank": "species",
+   "family": "Combretaceae",
+   "role": "tree"
+  },
+  "Theobroma cacao": {
+   "common": "cocoa",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Theobroma grandiflorum": {
+   "common": "cupuaçu",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Thlaspi arvense": {
+   "common": "field pennycress",
+   "rank": "species",
+   "family": "Brassicaceae",
+   "role": "weed"
+  },
+  "Tilia platyphyllos": {
+   "common": "large-leaved linden",
+   "rank": "species",
+   "family": "Malvaceae",
+   "role": "tree"
+  },
+  "Tinospora cordifolia": {
+   "common": "giloy (amruta balli)",
+   "rank": "species",
+   "family": "Menispermaceae",
+   "role": "medicinal"
+  },
+  "Trichosanthes cucumerina": {
+   "common": "snake gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Trichosanthes dioica": {
+   "common": "pointed gourd",
+   "rank": "species",
+   "family": "Cucurbitaceae",
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "Trifolium alexandrinum": {
+   "common": "Egyptian clover",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "Trifolium repens": {
+   "common": "white clover",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "Triticum aestivum": {
+   "common": "wheat",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Triticum durum": {
+   "common": "durum wheat",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Ulmus glabra": {
+   "common": "wych elm",
+   "rank": "species",
+   "family": "Ulmaceae",
+   "role": "tree"
+  },
+  "Ulmus pumila": {
+   "common": "Siberian elm",
+   "rank": "species",
+   "family": "Ulmaceae",
+   "role": "tree"
+  },
+  "Umbellularia californica": {
+   "common": "California bay laurel",
+   "rank": "species",
+   "family": "Lauraceae",
+   "role": "tree"
+  },
+  "Vaccinium corymbosum": {
+   "common": "blueberry",
+   "rank": "species",
+   "family": "Ericaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Vallisneria natans": {
+   "common": "Asian eelgrass",
+   "rank": "species",
+   "family": "Hydrocharitaceae",
+   "role": "aquatic"
+  },
+  "Vicia faba": {
+   "common": "faba bean",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Vigna mungo": {
+   "common": "black gram",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Vigna radiata": {
+   "common": "green gram (mung bean)",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Vigna unguiculata": {
+   "common": "cowpea",
+   "rank": "species",
+   "family": "Fabaceae",
+   "role": "crop",
+   "groups": [
+    "legumes"
+   ]
+  },
+  "Vitis vinifera": {
+   "common": "grape",
+   "rank": "species",
+   "family": "Vitaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Withania somnifera": {
+   "common": "ashwagandha",
+   "rank": "species",
+   "family": "Solanaceae",
+   "role": "medicinal"
+  },
+  "Xanthostemon paradoxus": {
+   "common": "bridal tree",
+   "rank": "species",
+   "family": "Myrtaceae",
+   "role": "tree"
+  },
+  "Zea mays": {
+   "common": "maize",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Zingiber officinale": {
+   "common": "ginger",
+   "rank": "species",
+   "family": "Zingiberaceae",
+   "role": "crop",
+   "groups": [
+    "beverage_spice"
+   ]
+  },
+  "Zizania palustris": {
+   "common": "wild rice",
+   "rank": "species",
+   "family": "Poaceae",
+   "role": "crop",
+   "groups": [
+    "cereals"
+   ]
+  },
+  "Ziziphus jujuba": {
+   "common": "jujube",
+   "rank": "species",
+   "family": "Rhamnaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "Ziziphus mauritiana": {
+   "common": "Indian jujube (kul)",
+   "rank": "species",
+   "family": "Rhamnaceae",
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  }
+ },
+ "labels": {
+  "abies alba": {
+   "taxon": "Abies alba"
+  },
+  "abies concolor": {
+   "taxon": "Abies concolor"
+  },
+  "abies magnifica": {
+   "taxon": "Abies magnifica"
+  },
+  "abutilon indicum": {
+   "taxon": "Abutilon indicum"
+  },
+  "acacia dimidiata": {
+   "taxon": "Acacia dimidiata"
+  },
+  "acacia lamprocarpa": {
+   "taxon": "Acacia lamprocarpa"
+  },
+  "acacia mimula": {
+   "taxon": "Acacia mimula"
+  },
+  "acacia oncinocarpa": {
+   "taxon": "Acacia oncinocarpa"
+  },
+  "acer campestre": {
+   "taxon": "Acer campestre"
+  },
+  "acer pictum (acer pictum thunb)": {
+   "taxon": "Acer pictum"
+  },
+  "acer platanoides": {
+   "taxon": "Acer platanoides"
+  },
+  "acer pseudoplatanus": {
+   "taxon": "Acer pseudoplatanus"
+  },
+  "acer pseudoplatanus l.": {
+   "taxon": "Acer pseudoplatanus"
+  },
+  "acer rubrum": {
+   "taxon": "Acer rubrum"
+  },
+  "achyranthes aspera": {
+   "taxon": "Achyranthes aspera"
+  },
+  "aegle marmelos": {
+   "taxon": "Aegle marmelos"
+  },
+  "agarwood": {
+   "taxon": "Aquilaria malaccensis"
+  },
+  "akca pear": {
+   "taxon": "Pyrus communis",
+   "cultivar": "Akça"
+  },
+  "alfalfa": {
+   "taxon": "Medicago sativa"
+  },
+  "almond": {
+   "taxon": "Prunus dulcis"
+  },
+  "alnus glutinosa": {
+   "taxon": "Alnus glutinosa"
+  },
+  "aloe barbadensis miller": {
+   "taxon": "Aloe vera"
+  },
+  "aloe vera": {
+   "taxon": "Aloe vera"
+  },
+  "alternanthera brasiliana l. kuntze": {
+   "taxon": "Alternanthera brasiliana"
+  },
+  "alternanthera philoxeroides": {
+   "taxon": "Alternanthera philoxeroides"
+  },
+  "amasya apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Amasya"
+  },
+  "amla": {
+   "taxon": "Phyllanthus emblica"
+  },
+  "amruta balli": {
+   "taxon": "Tinospora cordifolia"
+  },
+  "amruthaballi": {
+   "taxon": "Tinospora cordifolia"
+  },
+  "andrographis paniculata wall. ex nees": {
+   "taxon": "Andrographis paniculata"
+  },
+  "angeleno plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Angeleno"
+  },
+  "annona squamosa": {
+   "taxon": "Annona squamosa"
+  },
+  "aparajita": {
+   "taxon": "Clitoria ternatea"
+  },
+  "apocynum venetum l.": {
+   "taxon": "Apocynum venetum"
+  },
+  "apple": {
+   "taxon": "Malus domestica"
+  },
+  "apple (cider varieties)": {
+   "taxon": "Malus domestica",
+   "cultivar": "cider varieties"
+  },
+  "apple gala": {
+   "taxon": "Malus domestica",
+   "cultivar": "Gala"
+  },
+  "apple golden delicious": {
+   "taxon": "Malus domestica",
+   "cultivar": "Golden Delicious"
+  },
+  "apple kul": {
+   "taxon": "Ziziphus mauritiana",
+   "cultivar": "Apple kul"
+  },
+  "apricot": {
+   "taxon": "Prunus armeniaca"
+  },
+  "aquilaria malaccensis": {
+   "taxon": "Aquilaria malaccensis"
+  },
+  "arabian jasmine": {
+   "taxon": "Jasminum sambac"
+  },
+  "arabica": {
+   "taxon": "Coffea arabica"
+  },
+  "arabica coffee": {
+   "taxon": "Coffea arabica"
+  },
+  "arabidopsis": {
+   "taxon": "Arabidopsis thaliana"
+  },
+  "arali": {
+   "taxon": "Nerium oleander"
+  },
+  "arecanut": {
+   "taxon": "Areca catechu"
+  },
+  "arhar": {
+   "taxon": "Cajanus cajan"
+  },
+  "arjun (terminalia arjuna)": {
+   "taxon": "Terminalia arjuna"
+  },
+  "artemisia lavandulaefolia": {
+   "taxon": "Artemisia lavandulifolia"
+  },
+  "artichoke": {
+   "taxon": "Cynara cardunculus"
+  },
+  "artocarpus chama": {
+   "taxon": "Artocarpus chama"
+  },
+  "arugula": {
+   "taxon": "Eruca vesicaria"
+  },
+  "ash gourd": {
+   "taxon": "Benincasa hispida"
+  },
+  "ashoka": {
+   "taxon": "Saraca asoca",
+   "review": true,
+   "note": "Could also be false ashoka (Polyalthia longifolia)"
+  },
+  "ashwagandha": {
+   "taxon": "Withania somnifera"
+  },
+  "asparagus racemosus willd": {
+   "taxon": "Asparagus racemosus"
+  },
+  "astma weed": {
+   "taxon": "Euphorbia hirta"
+  },
+  "austria everbearing mulberry": {
+   "taxon": "Morus",
+   "cultivar": "Austria Everbearing"
+  },
+  "avocado": {
+   "taxon": "Persea americana"
+  },
+  "ayapana triplinervis": {
+   "taxon": "Ayapana triplinervis"
+  },
+  "azadirachta indica (neem)": {
+   "taxon": "Azadirachta indica"
+  },
+  "badipala": {
+   "unresolved": true,
+   "note": "DIMPSAR local name"
+  },
+  "balloon vine": {
+   "taxon": "Cardiospermum halicacabum"
+  },
+  "bamboo": {
+   "taxon": "Bambusoideae"
+  },
+  "banana": {
+   "taxon": "Musa"
+  },
+  "bardacik fig": {
+   "taxon": "Ficus carica",
+   "cultivar": "Bardacık"
+  },
+  "barley": {
+   "taxon": "Hordeum vulgare"
+  },
+  "basale": {
+   "taxon": "Basella alba"
+  },
+  "basella alba": {
+   "taxon": "Basella alba"
+  },
+  "basil": {
+   "taxon": "Ocimum basilicum"
+  },
+  "basmati paddy": {
+   "taxon": "Oryza sativa",
+   "cultivar": "Basmati"
+  },
+  "bean": {
+   "taxon": "Phaseolus vulgaris"
+  },
+  "beech": {
+   "taxon": "Fagus sylvatica"
+  },
+  "beetroot": {
+   "taxon": "Beta vulgaris",
+   "cultivar": "beetroot",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "bell pepper": {
+   "taxon": "Capsicum annuum",
+   "cultivar": "bell pepper"
+  },
+  "berry": {
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "betel": {
+   "taxon": "Piper betle"
+  },
+  "betel leaf": {
+   "taxon": "Piper betle"
+  },
+  "betel nut": {
+   "taxon": "Areca catechu"
+  },
+  "betula papyrifera": {
+   "taxon": "Betula papyrifera"
+  },
+  "betula pendula": {
+   "taxon": "Betula pendula"
+  },
+  "betula pubescens": {
+   "taxon": "Betula pubescens"
+  },
+  "bhindi": {
+   "taxon": "Abelmoschus esculentus"
+  },
+  "bhrami": {
+   "taxon": "Bacopa monnieri"
+  },
+  "bidens pilosa": {
+   "taxon": "Bidens pilosa"
+  },
+  "bilderdykia convolvulus": {
+   "taxon": "Fallopia convolvulus"
+  },
+  "bilecik walnut": {
+   "taxon": "Juglans regia",
+   "cultivar": "Bilecik"
+  },
+  "birch (betula platyphylla suk.)": {
+   "taxon": "Betula platyphylla"
+  },
+  "bitter gourd": {
+   "taxon": "Momordica charantia"
+  },
+  "black bean": {
+   "taxon": "Phaseolus vulgaris",
+   "cultivar": "black bean"
+  },
+  "black diamond plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Black Diamond"
+  },
+  "black fig": {
+   "taxon": "Ficus carica",
+   "cultivar": "black fig"
+  },
+  "black gram": {
+   "taxon": "Vigna mungo"
+  },
+  "black mapte": {
+   "taxon": "Vigna mungo",
+   "review": true,
+   "note": "Appears only alongside black gram; likely a local name"
+  },
+  "black mulberry": {
+   "taxon": "Morus nigra"
+  },
+  "black pepper": {
+   "taxon": "Piper nigrum"
+  },
+  "black plum": {
+   "taxon": "Syzygium cumini"
+  },
+  "black radish": {
+   "taxon": "Raphanus sativus",
+   "cultivar": "black radish"
+  },
+  "black splendor plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Black Splendor"
+  },
+  "blueberry": {
+   "taxon": "Vaccinium corymbosum"
+  },
+  "boerhavia diffusa l.": {
+   "taxon": "Boerhavia diffusa"
+  },
+  "bohera": {
+   "taxon": "Terminalia bellirica"
+  },
+  "bottle gourd": {
+   "taxon": "Lagenaria siceraria"
+  },
+  "bougainvillea": {
+   "taxon": "Bougainvillea"
+  },
+  "brahmi": {
+   "taxon": "Bacopa monnieri"
+  },
+  "brassica oleracea": {
+   "taxon": "Brassica oleracea"
+  },
+  "brazil nut": {
+   "taxon": "Bertholletia excelsa"
+  },
+  "bringaraja": {
+   "taxon": "Eclipta prostrata"
+  },
+  "broad bean": {
+   "taxon": "Vicia faba"
+  },
+  "broccoli": {
+   "taxon": "Brassica oleracea",
+   "cultivar": "broccoli"
+  },
+  "buckwheat": {
+   "taxon": "Fagopyrum esculentum"
+  },
+  "burmese grape": {
+   "taxon": "Baccaurea ramiflora"
+  },
+  "buttercrunch lettuce": {
+   "taxon": "Lactuca sativa",
+   "cultivar": "Buttercrunch"
+  },
+  "cabbage": {
+   "taxon": "Brassica oleracea",
+   "cultivar": "cabbage"
+  },
+  "calamagrostis epigejos": {
+   "taxon": "Calamagrostis epigejos"
+  },
+  "calotropis gigantea": {
+   "taxon": "Calotropis gigantea"
+  },
+  "camellia oleifera": {
+   "taxon": "Camellia oleifera"
+  },
+  "camphor": {
+   "taxon": "Cinnamomum camphora"
+  },
+  "canna indica": {
+   "taxon": "Canna indica"
+  },
+  "carambola": {
+   "taxon": "Averrhoa carambola"
+  },
+  "carex argyi": {
+   "taxon": "Carex argyi"
+  },
+  "caricature": {
+   "unresolved": true,
+   "note": "Noise label (DIMPSAR)"
+  },
+  "carob": {
+   "taxon": "Ceratonia siliqua"
+  },
+  "carpetweed": {
+   "taxon": "Mollugo verticillata"
+  },
+  "carrot": {
+   "taxon": "Daucus carota"
+  },
+  "cashew": {
+   "taxon": "Anacardium occidentale"
+  },
+  "cashew tree": {
+   "taxon": "Anacardium occidentale"
+  },
+  "cassava": {
+   "taxon": "Manihot esculenta"
+  },
+  "castanea sativa": {
+   "taxon": "Castanea sativa",
+   "role": "tree"
+  },
+  "castanea sativa mill.": {
+   "taxon": "Castanea sativa",
+   "role": "tree"
+  },
+  "castor": {
+   "taxon": "Ricinus communis"
+  },
+  "catharanthus": {
+   "taxon": "Catharanthus roseus"
+  },
+  "cauliflower": {
+   "taxon": "Brassica oleracea",
+   "cultivar": "cauliflower"
+  },
+  "ceanothus": {
+   "taxon": "Ceanothus"
+  },
+  "centella asiatica": {
+   "taxon": "Centella asiatica"
+  },
+  "chaenomeles japonica": {
+   "taxon": "Chaenomeles japonica"
+  },
+  "chakte": {
+   "unresolved": true,
+   "note": "DIMPSAR local name"
+  },
+  "chamaecyparis lawsoniana": {
+   "taxon": "Chamaecyparis lawsoniana"
+  },
+  "chenopodiaceae": {
+   "taxon": "Amaranthaceae"
+  },
+  "chenopodium album": {
+   "taxon": "Chenopodium album"
+  },
+  "cherry": {
+   "taxon": "Prunus avium"
+  },
+  "chestnut": {
+   "taxon": "Castanea sativa"
+  },
+  "chickpea": {
+   "taxon": "Cicer arietinum"
+  },
+  "chicory": {
+   "taxon": "Cichorium intybus"
+  },
+  "chili": {
+   "taxon": "Capsicum annuum"
+  },
+  "china mishti": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "China mishti"
+  },
+  "chinese fir": {
+   "taxon": "Cunninghamia lanceolata"
+  },
+  "chinese pine": {
+   "taxon": "Pinus tabuliformis"
+  },
+  "chitrak": {
+   "taxon": "Plumbago zeylanica"
+  },
+  "chocolate persimmon": {
+   "taxon": "Diospyros kaki",
+   "cultivar": "Chocolate"
+  },
+  "cinnamomum camphora (camphor)": {
+   "taxon": "Cinnamomum camphora"
+  },
+  "cinnamomum tamala": {
+   "taxon": "Cinnamomum tamala"
+  },
+  "cissus quadrangularis": {
+   "taxon": "Cissus quadrangularis"
+  },
+  "citron lime (herelikai)": {
+   "taxon": "Citrus medica"
+  },
+  "citrus": {
+   "taxon": "Citrus"
+  },
+  "clerodendrum indicum l. kuntze": {
+   "taxon": "Clerodendrum indicum"
+  },
+  "cocoa": {
+   "taxon": "Theobroma cacao"
+  },
+  "coconut": {
+   "taxon": "Cocos nucifera"
+  },
+  "coconut tree": {
+   "taxon": "Cocos nucifera"
+  },
+  "coffee": {
+   "taxon": "Coffea"
+  },
+  "common bean": {
+   "taxon": "Phaseolus vulgaris"
+  },
+  "common rue(naagdalli)": {
+   "taxon": "Ruta graveolens"
+  },
+  "coriander": {
+   "taxon": "Coriandrum sativum"
+  },
+  "corn": {
+   "taxon": "Zea mays"
+  },
+  "cornelian cherry": {
+   "taxon": "Cornus mas"
+  },
+  "corylus avellana": {
+   "taxon": "Corylus avellana"
+  },
+  "corylus avellana l.": {
+   "taxon": "Corylus avellana"
+  },
+  "corymbia bleeseri": {
+   "taxon": "Corymbia bleeseri"
+  },
+  "corymbia ferruginea": {
+   "taxon": "Corymbia ferruginea"
+  },
+  "corymbia polycarpa": {
+   "taxon": "Corymbia polycarpa"
+  },
+  "corymbia polysciada": {
+   "taxon": "Corymbia polysciada"
+  },
+  "corymbia porrecta": {
+   "taxon": "Corymbia porrecta"
+  },
+  "cotton": {
+   "taxon": "Gossypium hirsutum"
+  },
+  "cover crops": {
+   "role": "crop",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "cowpea": {
+   "taxon": "Vigna unguiculata"
+  },
+  "crataegus monogyna": {
+   "taxon": "Crataegus monogyna"
+  },
+  "crossandra": {
+   "taxon": "Crossandra infundibuliformis"
+  },
+  "crown of thorns": {
+   "taxon": "Euphorbia milii"
+  },
+  "cucumber": {
+   "taxon": "Cucumis sativus"
+  },
+  "cupuacu": {
+   "taxon": "Theobroma grandiflorum"
+  },
+  "curcuma longa": {
+   "taxon": "Curcuma longa"
+  },
+  "curry": {
+   "taxon": "Murraya koenigii"
+  },
+  "curry leaf": {
+   "taxon": "Murraya koenigii"
+  },
+  "curry leaf (murraya koenigii)": {
+   "taxon": "Murraya koenigii"
+  },
+  "custard apple": {
+   "taxon": "Annona squamosa"
+  },
+  "darjeeling": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "Darjeeling"
+  },
+  "date": {
+   "taxon": "Phoenix dactylifera"
+  },
+  "date fruit": {
+   "taxon": "Phoenix dactylifera"
+  },
+  "date palm": {
+   "taxon": "Phoenix dactylifera"
+  },
+  "datura (datura stramonium)": {
+   "taxon": "Datura stramonium"
+  },
+  "datura stramonium l.": {
+   "taxon": "Datura stramonium"
+  },
+  "desert needlegrass": {
+   "taxon": "Achnatherum speciosum"
+  },
+  "deshi kul": {
+   "taxon": "Ziziphus mauritiana",
+   "cultivar": "Deshi kul"
+  },
+  "deveci pear": {
+   "taxon": "Pyrus communis",
+   "cultivar": "Deveci"
+  },
+  "devil backbone": {
+   "taxon": "Euphorbia tithymaloides"
+  },
+  "dhonya pata (coriandrum sativum)": {
+   "taxon": "Coriandrum sativum"
+  },
+  "doddapatre": {
+   "taxon": "Coleus amboinicus"
+  },
+  "doddpathre": {
+   "taxon": "Coleus amboinicus"
+  },
+  "douglas fir": {
+   "taxon": "Pseudotsuga menziesii"
+  },
+  "dragon": {
+   "taxon": "Hylocereus undatus"
+  },
+  "dragon fruit": {
+   "taxon": "Hylocereus undatus"
+  },
+  "drumstick": {
+   "taxon": "Moringa oleifera"
+  },
+  "dry bean": {
+   "taxon": "Phaseolus vulgaris",
+   "cultivar": "dry bean"
+  },
+  "duke blueberry": {
+   "taxon": "Vaccinium corymbosum",
+   "cultivar": "Duke"
+  },
+  "durian": {
+   "taxon": "Durio zibethinus"
+  },
+  "durum wheat": {
+   "taxon": "Triticum durum"
+  },
+  "eclipta": {
+   "taxon": "Eclipta prostrata",
+   "role": "weed"
+  },
+  "eclipta prostrate": {
+   "taxon": "Eclipta prostrata"
+  },
+  "eggplant": {
+   "taxon": "Solanum melongena"
+  },
+  "egrisap pear": {
+   "taxon": "Pyrus communis",
+   "cultivar": "Eğrisap"
+  },
+  "egyptian clover": {
+   "taxon": "Trifolium alexandrinum"
+  },
+  "eichhornia crassipes": {
+   "taxon": "Pontederia crassipes"
+  },
+  "ekka": {
+   "taxon": "Calotropis gigantea"
+  },
+  "ekmek quince": {
+   "taxon": "Cydonia oblonga",
+   "cultivar": "Ekmek"
+  },
+  "elephant apple": {
+   "taxon": "Dillenia indica"
+  },
+  "eleutherine bulbosa": {
+   "taxon": "Eleutherine bulbosa"
+  },
+  "elm (ulmus pumila l.)": {
+   "taxon": "Ulmus pumila"
+  },
+  "elodea nuttallii": {
+   "taxon": "Elodea nuttallii"
+  },
+  "engelmann spruce": {
+   "taxon": "Picea engelmannii"
+  },
+  "epipremnum aureum": {
+   "taxon": "Epipremnum aureum"
+  },
+  "erythrophleum chlorostachys": {
+   "taxon": "Erythrophleum chlorostachys"
+  },
+  "esme quince": {
+   "taxon": "Cydonia oblonga",
+   "cultivar": "Eşme"
+  },
+  "eucalyptus": {
+   "taxon": "Eucalyptus"
+  },
+  "eucalyptus globulus": {
+   "taxon": "Eucalyptus globulus"
+  },
+  "eucalyptus miniata": {
+   "taxon": "Eucalyptus miniata"
+  },
+  "eucalyptus nitens": {
+   "taxon": "Eucalyptus nitens"
+  },
+  "eucalyptus tetrodonta": {
+   "taxon": "Eucalyptus tetrodonta"
+  },
+  "european beech": {
+   "taxon": "Fagus sylvatica"
+  },
+  "european silver fir": {
+   "taxon": "Abies alba"
+  },
+  "fagus silvatica": {
+   "taxon": "Fagus sylvatica"
+  },
+  "fagus sylvatica": {
+   "taxon": "Fagus sylvatica"
+  },
+  "fallow": {
+   "role": "land_cover"
+  },
+  "fava bean": {
+   "taxon": "Vicia faba"
+  },
+  "feijoa": {
+   "taxon": "Acca sellowiana"
+  },
+  "ferragnes almond": {
+   "taxon": "Prunus dulcis",
+   "cultivar": "Ferragnès"
+  },
+  "field pea": {
+   "taxon": "Pisum sativum",
+   "cultivar": "field pea"
+  },
+  "fig": {
+   "taxon": "Ficus carica"
+  },
+  "finger millet": {
+   "taxon": "Eleusine coracana"
+  },
+  "flax": {
+   "taxon": "Linum usitatissimum"
+  },
+  "flowering plants": {
+   "role": "ornamental"
+  },
+  "foliage flowers": {
+   "unresolved": true,
+   "note": "Onion foliage/flower class, not a taxon"
+  },
+  "forage": {
+   "role": "crop",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "fortune plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Fortune"
+  },
+  "fortunella margarita": {
+   "taxon": "Citrus japonica"
+  },
+  "fragaria orientalis": {
+   "taxon": "Fragaria orientalis"
+  },
+  "fraxinus excelsior": {
+   "taxon": "Fraxinus excelsior"
+  },
+  "fraxinus excelsior l.": {
+   "taxon": "Fraxinus excelsior"
+  },
+  "fruit trees": {
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "fruits": {
+   "role": "crop",
+   "groups": [
+    "fruit_nuts"
+   ]
+  },
+  "fuji apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Fuji"
+  },
+  "ganigale": {
+   "taxon": "Nerium oleander",
+   "review": true,
+   "note": "Kannada 'kanigile' = oleander"
+  },
+  "ganike": {
+   "taxon": "Solanum nigrum"
+  },
+  "garlic": {
+   "taxon": "Allium sativum"
+  },
+  "gasagase": {
+   "taxon": "Papaver somniferum",
+   "review": true,
+   "note": "Kannada name for poppy"
+  },
+  "geranium": {
+   "taxon": "Pelargonium graveolens",
+   "review": true
+  },
+  "gilbertiodendron dewevrei": {
+   "taxon": "Gilbertiodendron dewevrei"
+  },
+  "ginger": {
+   "taxon": "Zingiber officinale"
+  },
+  "globe amarnath": {
+   "taxon": "Gomphrena globosa"
+  },
+  "gloriosa superba": {
+   "taxon": "Gloriosa superba"
+  },
+  "golden apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Golden Delicious"
+  },
+  "goosegrass": {
+   "taxon": "Eleusine indica"
+  },
+  "gram": {
+   "taxon": "Cicer arietinum",
+   "review": true,
+   "note": "'Gram' alone usually means Bengal gram (chickpea)"
+  },
+  "granny smith apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Granny Smith"
+  },
+  "grape": {
+   "taxon": "Vitis vinifera"
+  },
+  "grass": {
+   "taxon": "Poaceae",
+   "role": "land_cover"
+  },
+  "grassland": {
+   "role": "land_cover"
+  },
+  "green chili": {
+   "taxon": "Capsicum annuum",
+   "cultivar": "green chili"
+  },
+  "green coconut": {
+   "taxon": "Cocos nucifera",
+   "cultivar": "green coconut"
+  },
+  "green gram": {
+   "taxon": "Vigna radiata"
+  },
+  "groundnut": {
+   "taxon": "Arachis hypogaea"
+  },
+  "guava": {
+   "taxon": "Psidium guajava"
+  },
+  "gum": {
+   "unresolved": true,
+   "note": "DigitalGreen; could be guar or gum arabic"
+  },
+  "gynura procumbens (lour.) merr.": {
+   "taxon": "Gynura procumbens"
+  },
+  "hachiya persimmon": {
+   "taxon": "Diospyros kaki",
+   "cultivar": "Hachiya"
+  },
+  "hale peach": {
+   "taxon": "Prunus persica",
+   "cultivar": "Hale"
+  },
+  "haloxylon ammodendron (saxaul)": {
+   "taxon": "Haloxylon ammodendron"
+  },
+  "haritaki": {
+   "taxon": "Terminalia chebula"
+  },
+  "hass avocado": {
+   "taxon": "Persea americana",
+   "cultivar": "Hass"
+  },
+  "hazelnut": {
+   "taxon": "Corylus avellana"
+  },
+  "hemidesmus indicus (linn.) r. br": {
+   "taxon": "Hemidesmus indicus"
+  },
+  "henna": {
+   "taxon": "Lawsonia inermis"
+  },
+  "hibiscus": {
+   "taxon": "Hibiscus rosa-sinensis",
+   "review": true,
+   "note": "Genus-level label; assumed Chinese hibiscus"
+  },
+  "hibiscus rosa-sinensis": {
+   "taxon": "Hibiscus rosa-sinensis"
+  },
+  "hibiscus rosasinensis": {
+   "taxon": "Hibiscus rosa-sinensis"
+  },
+  "hog plum": {
+   "taxon": "Spondias mombin",
+   "review": true,
+   "note": "Bangladeshi 'amra' may be S. pinnata"
+  },
+  "honge": {
+   "taxon": "Pongamia pinnata"
+  },
+  "horseradish": {
+   "taxon": "Armoracia rusticana"
+  },
+  "horseweed": {
+   "taxon": "Erigeron canadensis"
+  },
+  "hydrilla verticillata": {
+   "taxon": "Hydrilla verticillata"
+  },
+  "hypericum perforatum": {
+   "taxon": "Hypericum perforatum"
+  },
+  "igdir apricot": {
+   "taxon": "Prunus armeniaca",
+   "cultivar": "Iğdır"
+  },
+  "indian bay leaves": {
+   "taxon": "Cinnamomum tamala"
+  },
+  "insulin": {
+   "taxon": "Costus igneus"
+  },
+  "ivy gourd": {
+   "taxon": "Coccinia grandis"
+  },
+  "ixora coccinea": {
+   "taxon": "Ixora coccinea"
+  },
+  "jackfruit": {
+   "taxon": "Artocarpus heterophyllus"
+  },
+  "jamun": {
+   "taxon": "Syzygium cumini"
+  },
+  "japanese quince": {
+   "taxon": "Chaenomeles japonica"
+  },
+  "jasmine": {
+   "taxon": "Jasminum sambac",
+   "review": true
+  },
+  "java plum": {
+   "taxon": "Syzygium cumini"
+  },
+  "jujube": {
+   "taxon": "Ziziphus jujuba"
+  },
+  "juncus effusus": {
+   "taxon": "Juncus effusus"
+  },
+  "jungle geranium": {
+   "taxon": "Ixora coccinea"
+  },
+  "justica adhatoda": {
+   "taxon": "Justicia adhatoda"
+  },
+  "justicia adhatoda": {
+   "taxon": "Justicia adhatoda"
+  },
+  "justicia adhatoda l.": {
+   "taxon": "Justicia adhatoda"
+  },
+  "jute": {
+   "taxon": "Corchorus"
+  },
+  "kagizman long apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Kağızman Long"
+  },
+  "kalanchoe pinnata": {
+   "taxon": "Kalanchoe pinnata"
+  },
+  "kalipatti": {
+   "taxon": "Manilkara zapota",
+   "cultivar": "Kalipatti"
+  },
+  "kalokeshi (eclipta prostrata)": {
+   "taxon": "Eclipta prostrata"
+  },
+  "kamakasturi": {
+   "taxon": "Ocimum basilicum"
+  },
+  "kambajala": {
+   "unresolved": true,
+   "note": "DIMPSAR local name"
+  },
+  "kasambruga": {
+   "unresolved": true,
+   "note": "DIMPSAR local name"
+  },
+  "kepala": {
+   "taxon": "Ixora coccinea"
+  },
+  "kidney bean": {
+   "taxon": "Phaseolus vulgaris",
+   "cultivar": "kidney bean"
+  },
+  "kiwi": {
+   "taxon": "Actinidia deliciosa"
+  },
+  "kochia": {
+   "taxon": "Bassia scoparia"
+  },
+  "kohlrabi": {
+   "taxon": "Brassica oleracea",
+   "cultivar": "kohlrabi"
+  },
+  "korean pine": {
+   "taxon": "Pinus koraiensis"
+  },
+  "korean pine (pinus koraiensis siebold and zucc.)": {
+   "taxon": "Pinus koraiensis"
+  },
+  "kumquat": {
+   "taxon": "Citrus japonica"
+  },
+  "kutahya sour cherry": {
+   "taxon": "Prunus cerasus",
+   "cultivar": "Kütahya"
+  },
+  "lablab purpureus": {
+   "taxon": "Lablab purpureus"
+  },
+  "lambsquarters": {
+   "taxon": "Chenopodium album"
+  },
+  "lantana": {
+   "taxon": "Lantana camara"
+  },
+  "larch": {
+   "taxon": "Larix"
+  },
+  "lardot": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Lardot"
+  },
+  "large-leaved linden": {
+   "taxon": "Tilia platyphyllos"
+  },
+  "larix decidua": {
+   "taxon": "Larix decidua"
+  },
+  "leek": {
+   "taxon": "Allium ampeloprasum"
+  },
+  "lemna minor": {
+   "taxon": "Lemna minor"
+  },
+  "lemon": {
+   "taxon": "Citrus limon"
+  },
+  "lemon grass": {
+   "taxon": "Cymbopogon citratus"
+  },
+  "lentil": {
+   "taxon": "Lens culinaris"
+  },
+  "lettuce": {
+   "taxon": "Lactuca sativa"
+  },
+  "lime": {
+   "taxon": "Citrus aurantiifolia"
+  },
+  "litchi": {
+   "taxon": "Litchi chinensis"
+  },
+  "lodgepole pine": {
+   "taxon": "Pinus contorta"
+  },
+  "longevity spinach": {
+   "taxon": "Gynura procumbens"
+  },
+  "loquat": {
+   "taxon": "Eriobotrya japonica"
+  },
+  "lotkon": {
+   "taxon": "Baccaurea ramiflora"
+  },
+  "luffa": {
+   "taxon": "Luffa"
+  },
+  "lupin": {
+   "taxon": "Lupinus"
+  },
+  "lychee": {
+   "taxon": "Litchi chinensis"
+  },
+  "macabeo": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Macabeo"
+  },
+  "madagascar periwinkle": {
+   "taxon": "Catharanthus roseus"
+  },
+  "maize": {
+   "taxon": "Zea mays"
+  },
+  "malabar nut": {
+   "taxon": "Justicia adhatoda"
+  },
+  "malabar spinach": {
+   "taxon": "Basella alba"
+  },
+  "malta": {
+   "taxon": "Citrus sinensis",
+   "cultivar": "Malta"
+  },
+  "manchurian ash (fraxinus mandshurica rupr.)": {
+   "taxon": "Fraxinus mandshurica"
+  },
+  "manchurian walnut (juglans mandshurica maxim.)": {
+   "taxon": "Juglans mandshurica"
+  },
+  "mandarin": {
+   "taxon": "Citrus reticulata"
+  },
+  "mango": {
+   "taxon": "Mangifera indica"
+  },
+  "mango alphonso": {
+   "taxon": "Mangifera indica",
+   "cultivar": "Alphonso"
+  },
+  "mango amrapali": {
+   "taxon": "Mangifera indica",
+   "cultivar": "Amrapali"
+  },
+  "mango bari": {
+   "taxon": "Mangifera indica",
+   "cultivar": "BARI"
+  },
+  "mango golden queen": {
+   "taxon": "Mangifera indica",
+   "cultivar": "Golden Queen"
+  },
+  "mango himsagar": {
+   "taxon": "Mangifera indica",
+   "cultivar": "Himsagar"
+  },
+  "mangrove": {
+   "role": "tree",
+   "note": "Mangrove forest extent (many species)"
+  },
+  "margarita marilla pear": {
+   "taxon": "Pyrus communis",
+   "cultivar": "Margarita Marillat"
+  },
+  "marigold": {
+   "taxon": "Tagetes erecta"
+  },
+  "marsh pennywort (hydrocotyle vulgaris)": {
+   "taxon": "Hydrocotyle vulgaris"
+  },
+  "masson pine": {
+   "taxon": "Pinus massoniana"
+  },
+  "meandering": {
+   "unresolved": true,
+   "note": "Noise label (mandarin varieties dataset)"
+  },
+  "medicinal plants": {
+   "role": "medicinal"
+  },
+  "medjool dates": {
+   "taxon": "Phoenix dactylifera",
+   "cultivar": "Medjool"
+  },
+  "medlar": {
+   "taxon": "Mespilus germanica"
+  },
+  "melon": {
+   "taxon": "Cucumis melo"
+  },
+  "merlot noir": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Merlot noir"
+  },
+  "mikania micrantha": {
+   "taxon": "Mikania micrantha"
+  },
+  "mint": {
+   "taxon": "Mentha"
+  },
+  "mint (mentha spp.)": {
+   "taxon": "Mentha"
+  },
+  "momordica dioica": {
+   "taxon": "Momordica dioica"
+  },
+  "money plant": {
+   "taxon": "Epipremnum aureum"
+  },
+  "monochoria korsakowii": {
+   "taxon": "Monochoria korsakowii"
+  },
+  "moong": {
+   "taxon": "Vigna radiata"
+  },
+  "moringa": {
+   "taxon": "Moringa oleifera"
+  },
+  "moringa oleifera": {
+   "taxon": "Moringa oleifera"
+  },
+  "moringa oleifera (sojina)": {
+   "taxon": "Moringa oleifera"
+  },
+  "morningglory": {
+   "taxon": "Ipomoea"
+  },
+  "mulberry": {
+   "taxon": "Morus"
+  },
+  "murcott": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "Murcott"
+  },
+  "murdum plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Mürdüm"
+  },
+  "murraya koenigii": {
+   "taxon": "Murraya koenigii"
+  },
+  "mustard": {
+   "taxon": "Brassica juncea"
+  },
+  "nagadali": {
+   "taxon": "Ruta graveolens"
+  },
+  "nagpuri": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "Nagpur"
+  },
+  "napolyon cherry": {
+   "taxon": "Prunus avium",
+   "cultivar": "Napolyon"
+  },
+  "narrow-leafed lupin": {
+   "taxon": "Lupinus angustifolius"
+  },
+  "nashi pear": {
+   "taxon": "Pyrus pyrifolia"
+  },
+  "nayantara": {
+   "taxon": "Catharanthus roseus"
+  },
+  "neem": {
+   "taxon": "Azadirachta indica"
+  },
+  "nelavembu": {
+   "taxon": "Andrographis paniculata"
+  },
+  "nerale": {
+   "taxon": "Syzygium cumini"
+  },
+  "new mexico chile": {
+   "taxon": "Capsicum annuum",
+   "cultivar": "New Mexico chile"
+  },
+  "nithyapushpa": {
+   "taxon": "Catharanthus roseus"
+  },
+  "nitraria": {
+   "taxon": "Nitraria"
+  },
+  "nooni": {
+   "taxon": "Morinda citrifolia"
+  },
+  "norway maple": {
+   "taxon": "Acer platanoides"
+  },
+  "norway spruce": {
+   "taxon": "Picea abies"
+  },
+  "oak": {
+   "taxon": "Quercus"
+  },
+  "oat": {
+   "taxon": "Avena sativa"
+  },
+  "ocimum gratissimum l.": {
+   "taxon": "Ocimum gratissimum"
+  },
+  "ocimum tenuiflorum": {
+   "taxon": "Ocimum tenuiflorum"
+  },
+  "oil palm": {
+   "taxon": "Elaeis guineensis"
+  },
+  "oil radish": {
+   "taxon": "Raphanus sativus",
+   "cultivar": "oil radish",
+   "groups": [
+    "fodder"
+   ]
+  },
+  "okra": {
+   "taxon": "Abelmoschus esculentus"
+  },
+  "olive": {
+   "taxon": "Olea europaea"
+  },
+  "olive trees": {
+   "taxon": "Olea europaea"
+  },
+  "onion": {
+   "taxon": "Allium cepa"
+  },
+  "orange": {
+   "taxon": "Citrus sinensis"
+  },
+  "ostrya carpinifolia scop.": {
+   "taxon": "Ostrya carpinifolia"
+  },
+  "ouretlanata": {
+   "taxon": "Aerva lanata"
+  },
+  "oyster mushroom": {
+   "taxon": "Pleurotus ostreatus"
+  },
+  "padri": {
+   "unresolved": true,
+   "note": "DIMPSAR local name; possibly Stereospermum chelonoides"
+  },
+  "palm": {
+   "unresolved": true,
+   "note": "fruitseg30 'palm' — possibly palmyra (Borassus flabellifer)"
+  },
+  "palm plantations": {
+   "taxon": "Elaeis guineensis",
+   "review": true,
+   "note": "Colombian land-cover class; assumed oil palm"
+  },
+  "palmer amaranth": {
+   "taxon": "Amaranthus palmeri"
+  },
+  "papaya": {
+   "taxon": "Carica papaya"
+  },
+  "papaz plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Papaz"
+  },
+  "parda": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Parda"
+  },
+  "pardina": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Pardina"
+  },
+  "parijatha": {
+   "taxon": "Nyctanthes arbor-tristis"
+  },
+  "passion fruit": {
+   "taxon": "Passiflora edulis"
+  },
+  "pasture": {
+   "role": "land_cover"
+  },
+  "pathor kuchi": {
+   "taxon": "Kalanchoe pinnata"
+  },
+  "pathor kuchi (kalanchoe pinnata)": {
+   "taxon": "Kalanchoe pinnata"
+  },
+  "patlican fig": {
+   "taxon": "Ficus carica",
+   "cultivar": "Patlıcan"
+  },
+  "pea": {
+   "taxon": "Pisum sativum"
+  },
+  "peach": {
+   "taxon": "Prunus persica"
+  },
+  "pear": {
+   "taxon": "Pyrus communis"
+  },
+  "pearl millet": {
+   "taxon": "Pennisetum glaucum"
+  },
+  "peas": {
+   "taxon": "Pisum sativum"
+  },
+  "pedunculate oak": {
+   "taxon": "Quercus robur"
+  },
+  "pepper": {
+   "taxon": "Capsicum annuum",
+   "review": true,
+   "note": "Mostly Capsicum; DIMPSAR's 'pepper' may be Piper nigrum"
+  },
+  "perennial bunchgrasses": {
+   "taxon": "Poaceae"
+  },
+  "permanent grasslands": {
+   "role": "land_cover"
+  },
+  "persicaria lapathifolia": {
+   "taxon": "Persicaria lapathifolia"
+  },
+  "persimmon": {
+   "taxon": "Diospyros kaki"
+  },
+  "phragmites australis": {
+   "taxon": "Phragmites australis"
+  },
+  "phragmites australis subsp. australis": {
+   "taxon": "Phragmites australis"
+  },
+  "phyllanthus amarus": {
+   "taxon": "Phyllanthus amarus"
+  },
+  "phyllanthus emblica": {
+   "taxon": "Phyllanthus emblica"
+  },
+  "picea abies": {
+   "taxon": "Picea abies"
+  },
+  "pigeon pea": {
+   "taxon": "Cajanus cajan"
+  },
+  "pigeonpea": {
+   "taxon": "Cajanus cajan"
+  },
+  "pine": {
+   "taxon": "Pinus"
+  },
+  "pineapple": {
+   "taxon": "Ananas comosus"
+  },
+  "pinus contorta": {
+   "taxon": "Pinus contorta"
+  },
+  "pinus halepensis": {
+   "taxon": "Pinus halepensis"
+  },
+  "pinus jeffreyi": {
+   "taxon": "Pinus jeffreyi"
+  },
+  "pinus lambertiana": {
+   "taxon": "Pinus lambertiana"
+  },
+  "pinus nigra": {
+   "taxon": "Pinus nigra"
+  },
+  "pinus pinaster": {
+   "taxon": "Pinus pinaster"
+  },
+  "pinus radiata": {
+   "taxon": "Pinus radiata"
+  },
+  "pinus silvestris": {
+   "taxon": "Pinus sylvestris"
+  },
+  "pinus strobus": {
+   "taxon": "Pinus strobus"
+  },
+  "pinus sylvestris": {
+   "taxon": "Pinus sylvestris"
+  },
+  "piper betles": {
+   "taxon": "Piper betle"
+  },
+  "pistachio": {
+   "taxon": "Pistacia vera"
+  },
+  "pistacia vera": {
+   "taxon": "Pistacia vera"
+  },
+  "pistia stratiotes": {
+   "taxon": "Pistia stratiotes"
+  },
+  "planchonia careya": {
+   "taxon": "Planchonia careya"
+  },
+  "platanus acerifolia": {
+   "taxon": "Platanus × acerifolia"
+  },
+  "plum": {
+   "taxon": "Prunus domestica"
+  },
+  "pointed gourd": {
+   "taxon": "Trichosanthes dioica"
+  },
+  "pollen grains": {
+   "role": "other",
+   "note": "Pollen imagery, taxa not specified"
+  },
+  "polygonum aviculare": {
+   "taxon": "Polygonum aviculare"
+  },
+  "polygonum hydropiper": {
+   "taxon": "Persicaria hydropiper"
+  },
+  "polygonum sieboldii": {
+   "taxon": "Persicaria sieboldii"
+  },
+  "pomegranate": {
+   "taxon": "Punica granatum"
+  },
+  "pomelo": {
+   "taxon": "Citrus maxima"
+  },
+  "ponderosa pine": {
+   "taxon": "Pinus ponderosa"
+  },
+  "ponkan": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "Ponkan"
+  },
+  "poplar (populus l.)": {
+   "taxon": "Populus"
+  },
+  "populus euphratica": {
+   "taxon": "Populus euphratica"
+  },
+  "populus grandidentata": {
+   "taxon": "Populus grandidentata"
+  },
+  "populus nigra": {
+   "taxon": "Populus nigra"
+  },
+  "potato": {
+   "taxon": "Solanum tuberosum"
+  },
+  "primocane raspberry": {
+   "taxon": "Rubus idaeus",
+   "cultivar": "primocane-fruiting"
+  },
+  "pudina (mentha arvensis)": {
+   "taxon": "Mentha arvensis"
+  },
+  "pumpkin": {
+   "taxon": "Cucurbita maxima"
+  },
+  "purslane": {
+   "taxon": "Portulaca oleracea"
+  },
+  "quercus coccifera": {
+   "taxon": "Quercus coccifera"
+  },
+  "quercus ilex": {
+   "taxon": "Quercus ilex"
+  },
+  "quercus kelloggii": {
+   "taxon": "Quercus kelloggii"
+  },
+  "quercus petraea": {
+   "taxon": "Quercus petraea"
+  },
+  "quercus robur": {
+   "taxon": "Quercus robur"
+  },
+  "quercus rubra": {
+   "taxon": "Quercus rubra"
+  },
+  "rabbitbrush": {
+   "taxon": "Ericameria nauseosa"
+  },
+  "radish": {
+   "taxon": "Raphanus sativus"
+  },
+  "ragweed": {
+   "taxon": "Ambrosia artemisiifolia"
+  },
+  "rahi": {
+   "unresolved": true,
+   "note": "DigitalGreen; possibly 'rai' (Brassica juncea)"
+  },
+  "raktachandini": {
+   "unresolved": true,
+   "note": "DIMPSAR local name; possibly Pterocarpus santalinus"
+  },
+  "rapeseed": {
+   "taxon": "Brassica napus"
+  },
+  "raspberry": {
+   "taxon": "Rubus idaeus"
+  },
+  "rauwolfia serpentina": {
+   "taxon": "Rauvolfia serpentina"
+  },
+  "red azarol": {
+   "taxon": "Crataegus azarolus"
+  },
+  "red gram": {
+   "taxon": "Cajanus cajan"
+  },
+  "red haven peach": {
+   "taxon": "Prunus persica",
+   "cultivar": "Redhaven"
+  },
+  "red nectarine": {
+   "taxon": "Prunus persica",
+   "cultivar": "red nectarine"
+  },
+  "redlove apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Redlove"
+  },
+  "redroot pigweed": {
+   "taxon": "Amaranthus retroflexus"
+  },
+  "rice": {
+   "taxon": "Oryza sativa"
+  },
+  "ricinus communis": {
+   "taxon": "Ricinus communis"
+  },
+  "ridge gourd": {
+   "taxon": "Luffa acutangula"
+  },
+  "robusta coffee": {
+   "taxon": "Coffea canephora"
+  },
+  "rockmelon": {
+   "taxon": "Cucumis melo",
+   "cultivar": "rockmelon"
+  },
+  "romaine lettuce": {
+   "taxon": "Lactuca sativa",
+   "cultivar": "romaine"
+  },
+  "rose": {
+   "taxon": "Rosa"
+  },
+  "rubber": {
+   "taxon": "Hevea brasiliensis"
+  },
+  "rubber tree": {
+   "taxon": "Hevea brasiliensis"
+  },
+  "rye": {
+   "taxon": "Secale cereale"
+  },
+  "safflower": {
+   "taxon": "Carthamus tinctorius"
+  },
+  "salix sp.": {
+   "taxon": "Salix"
+  },
+  "sampige": {
+   "taxon": "Magnolia champaca"
+  },
+  "sandplain lupin (weed)": {
+   "taxon": "Lupinus cosentinii"
+  },
+  "sanguisorba officinalis": {
+   "taxon": "Sanguisorba officinalis"
+  },
+  "santa maria pear": {
+   "taxon": "Pyrus communis",
+   "cultivar": "Santa Maria"
+  },
+  "sapota": {
+   "taxon": "Manilkara zapota"
+  },
+  "scallion": {
+   "taxon": "Allium fistulosum"
+  },
+  "schima superba gardner & champ": {
+   "taxon": "Schima superba"
+  },
+  "scots pine": {
+   "taxon": "Pinus sylvestris"
+  },
+  "sebin walnut": {
+   "taxon": "Juglans regia",
+   "cultivar": "Şebin"
+  },
+  "seethaashoka": {
+   "taxon": "Saraca asoca"
+  },
+  "seethapala": {
+   "taxon": "Annona squamosa"
+  },
+  "sekerpare apricot": {
+   "taxon": "Prunus armeniaca",
+   "cultivar": "Şekerpare"
+  },
+  "senna atriculata": {
+   "taxon": "Senna auriculata"
+  },
+  "sesame": {
+   "taxon": "Sesamum indicum"
+  },
+  "sesbania grandiflora": {
+   "taxon": "Sesbania grandiflora"
+  },
+  "sessile oak": {
+   "taxon": "Quercus petraea"
+  },
+  "show time plum": {
+   "taxon": "Prunus domestica",
+   "cultivar": "Showtime"
+  },
+  "slash pine (pinus elliottii engelm.)": {
+   "taxon": "Pinus elliottii"
+  },
+  "snake gourd": {
+   "taxon": "Trichosanthes cucumerina"
+  },
+  "sonaka": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Sonaka"
+  },
+  "sorghum": {
+   "taxon": "Sorghum bicolor"
+  },
+  "sour cherry": {
+   "taxon": "Prunus cerasus"
+  },
+  "soursop": {
+   "taxon": "Annona muricata"
+  },
+  "soybean": {
+   "taxon": "Glycine max"
+  },
+  "spartina alterniflora": {
+   "taxon": "Spartina alterniflora"
+  },
+  "spinach": {
+   "taxon": "Spinacia oleracea"
+  },
+  "spinach1": {
+   "taxon": "Spinacia oleracea"
+  },
+  "spiny gourd": {
+   "taxon": "Momordica dioica"
+  },
+  "sponge gourd": {
+   "taxon": "Luffa aegyptiaca"
+  },
+  "spottedspurge": {
+   "taxon": "Euphorbia maculata"
+  },
+  "spring wheat": {
+   "taxon": "Triticum aestivum",
+   "cultivar": "spring wheat"
+  },
+  "squash": {
+   "taxon": "Cucurbita pepo"
+  },
+  "starfruit": {
+   "taxon": "Averrhoa carambola"
+  },
+  "starking apple": {
+   "taxon": "Malus domestica",
+   "cultivar": "Starking"
+  },
+  "stem bean": {
+   "taxon": "Phaseolus vulgaris",
+   "review": true,
+   "note": "Flevoland PolSAR class 'stembeans'"
+  },
+  "strawberry": {
+   "taxon": "Fragaria × ananassa"
+  },
+  "strawberry tree": {
+   "taxon": "Arbutus unedo"
+  },
+  "suaeda salsa": {
+   "taxon": "Suaeda salsa"
+  },
+  "subalpine fir": {
+   "taxon": "Abies lasiocarpa"
+  },
+  "sugar apple": {
+   "taxon": "Annona squamosa"
+  },
+  "sugar beet": {
+   "taxon": "Beta vulgaris",
+   "cultivar": "sugar beet",
+   "groups": [
+    "sugar"
+   ]
+  },
+  "sugar cane": {
+   "taxon": "Saccharum officinarum"
+  },
+  "sugarcane": {
+   "taxon": "Saccharum officinarum"
+  },
+  "sunflower": {
+   "taxon": "Helianthus annuus"
+  },
+  "sweet cherry": {
+   "taxon": "Prunus avium"
+  },
+  "sweet potato": {
+   "taxon": "Ipomoea batatas"
+  },
+  "swiss chard": {
+   "taxon": "Beta vulgaris",
+   "cultivar": "Swiss chard",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "tamarind": {
+   "taxon": "Tamarindus indica"
+  },
+  "tamarisk": {
+   "taxon": "Tamarix"
+  },
+  "tamarix chinensis": {
+   "taxon": "Tamarix chinensis"
+  },
+  "tangerine": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "tangerine"
+  },
+  "tankan": {
+   "taxon": "Citrus reticulata",
+   "cultivar": "Tankan"
+  },
+  "taro": {
+   "taxon": "Colocasia esculenta"
+  },
+  "taro root": {
+   "taxon": "Colocasia esculenta"
+  },
+  "tea": {
+   "taxon": "Camellia sinensis"
+  },
+  "tecoma": {
+   "taxon": "Tecoma stans"
+  },
+  "terminalia arjuna": {
+   "taxon": "Terminalia arjuna"
+  },
+  "terminalia chebula (haritaki)": {
+   "taxon": "Terminalia chebula"
+  },
+  "terminalia ferdinandiana": {
+   "taxon": "Terminalia ferdinandiana"
+  },
+  "terminalia grandiflora": {
+   "taxon": "Terminalia grandiflora"
+  },
+  "thankuni": {
+   "taxon": "Centella asiatica"
+  },
+  "thankuni (centella asiatica)": {
+   "taxon": "Centella asiatica"
+  },
+  "thlaspi arvense": {
+   "taxon": "Thlaspi arvense"
+  },
+  "thumbe": {
+   "taxon": "Leucas aspera"
+  },
+  "tobacco": {
+   "taxon": "Nicotiana tabacum"
+  },
+  "tomato": {
+   "taxon": "Solanum lycopersicum"
+  },
+  "trichosanthes cucumerina": {
+   "taxon": "Trichosanthes cucumerina"
+  },
+  "trichosanthes dioica": {
+   "taxon": "Trichosanthes dioica"
+  },
+  "trifolium repens": {
+   "taxon": "Trifolium repens"
+  },
+  "tulasi": {
+   "taxon": "Ocimum tenuiflorum"
+  },
+  "tulsi": {
+   "taxon": "Ocimum tenuiflorum"
+  },
+  "tulsi (ocimum tenuiflorum)": {
+   "taxon": "Ocimum tenuiflorum"
+  },
+  "turmeric": {
+   "taxon": "Curcuma longa"
+  },
+  "turnip": {
+   "taxon": "Brassica rapa"
+  },
+  "ulmus glabra": {
+   "taxon": "Ulmus glabra"
+  },
+  "umbellularia californica (california bay laurel)": {
+   "taxon": "Umbellularia californica"
+  },
+  "unspecified crops": {
+   "role": "crop"
+  },
+  "vallisneria natans": {
+   "taxon": "Vallisneria natans"
+  },
+  "vegetables": {
+   "role": "crop",
+   "groups": [
+    "vegetables"
+   ]
+  },
+  "vineyard": {
+   "taxon": "Vitis vinifera"
+  },
+  "vineyards": {
+   "taxon": "Vitis vinifera"
+  },
+  "vitis vinifera cv. loureiro": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Loureiro"
+  },
+  "viura": {
+   "taxon": "Vitis vinifera",
+   "cultivar": "Macabeo"
+  },
+  "walnut": {
+   "taxon": "Juglans regia"
+  },
+  "waterhemp": {
+   "taxon": "Amaranthus tuberculatus"
+  },
+  "watermelon": {
+   "taxon": "Citrullus lanatus"
+  },
+  "western larch": {
+   "taxon": "Larix occidentalis"
+  },
+  "wheat": {
+   "taxon": "Triticum aestivum"
+  },
+  "wheat a/b/c": {
+   "taxon": "Triticum aestivum"
+  },
+  "white mulberry": {
+   "taxon": "Morus alba"
+  },
+  "white nectarine": {
+   "taxon": "Prunus persica",
+   "cultivar": "white nectarine"
+  },
+  "white pear": {
+   "taxon": "Pyrus bretschneideri",
+   "review": true,
+   "note": "fruitseg30 class; assumed Chinese white pear"
+  },
+  "wild rice": {
+   "taxon": "Zizania palustris"
+  },
+  "wild strawberry": {
+   "taxon": "Fragaria vesca"
+  },
+  "wild walnut": {
+   "taxon": "Juglans regia",
+   "cultivar": "wild type"
+  },
+  "winter barley": {
+   "taxon": "Hordeum vulgare",
+   "cultivar": "winter barley"
+  },
+  "winter wheat": {
+   "taxon": "Triticum aestivum",
+   "cultivar": "winter wheat"
+  },
+  "wood sorel": {
+   "taxon": "Oxalis"
+  },
+  "xanthostemon paradoxus": {
+   "taxon": "Xanthostemon paradoxus"
+  },
+  "yam": {
+   "taxon": "Dioscorea"
+  },
+  "yellow cherry": {
+   "taxon": "Prunus avium",
+   "cultivar": "yellow cherry"
+  },
+  "yellow peach": {
+   "taxon": "Prunus persica",
+   "cultivar": "yellow peach"
+  },
+  "ziraat 0900 cherry": {
+   "taxon": "Prunus avium",
+   "cultivar": "0900 Ziraat"
+  },
+  "ziziphus mauritiana": {
+   "taxon": "Ziziphus mauritiana"
+  },
+  "zucchini": {
+   "taxon": "Cucurbita pepo",
+   "cultivar": "zucchini"
+  }
+ }
+}

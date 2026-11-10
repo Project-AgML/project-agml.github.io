@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "npm run validate-models && npm run generate-datasets && npm run generate-embeddings",
-    "prestart": "npm run validate-models && npm run generate-datasets && npm run generate-embeddings",
+    "prebuild": "npm run validate-models && npm run generate-datasets && npm run generate-geo && npm run generate-embeddings",
+    "prestart": "npm run validate-models && npm run generate-datasets && npm run generate-geo && npm run generate-embeddings",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -17,6 +17,7 @@
     "typecheck": "tsc",
     "generate-datasets": "node scripts/generate-datasets.mjs",
     "generate-embeddings": "node scripts/generate-embeddings.mjs",
+    "generate-geo": "node scripts/generate-geo.mjs",
     "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
     "test:unit": "node --import tsx --test tests/generate-embeddings.test.mjs tests/semantic-search-index.test.ts tests/models.test.ts",
     "validate-models": "node scripts/validate-models.mjs",
