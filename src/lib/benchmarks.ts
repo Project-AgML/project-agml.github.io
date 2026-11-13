@@ -150,7 +150,6 @@ export interface ImageClassificationBenchmark {
 		class_imbalance?: ClassImbalanceMetrics;
 		exact_duplicate?: ExactDuplicateMetrics;
 		resolution_consistency?: ResolutionConsistencyMetrics;
-		metadata_coverage?: { skipped: boolean; reason?: string; metadata_columns?: string[]; normalized_entropy?: Record<string, Record<string, number>> };
 		near_duplicate?: NearDuplicateMetrics;
 		feature_separability?: FeatureSeparabilityMetrics;
 		intra_class_diversity?: IntraClassDiversityMetrics;

@@ -14,7 +14,6 @@ type MetricDoc = {
 	meaning: string;
 	interpretation: string;
 	isPenalty?: boolean;
-	isPending?: boolean;
 };
 
 type AxisKey = 'structural' | 'difficulty' | 'diversity' | 'annotation';
@@ -141,16 +140,6 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				formula: 'S_diversity = clamp(mean_diversity / 0.4 × 10, 0, 10)',
 				interpretation:
 					'A score close to 0 means images in a class barely differ from each other. A score close to 10 means wide visual variety within each class. Higher is better.',
-			},
-			{
-				name: 'Metadata Coverage',
-				weight: 'Not yet weighted',
-				isPending: true,
-				how: 'Where metadata exists, such as location, lighting, growth stage, or sensor type, we build frequency tables per class.',
-				meaning:
-					'Shows whether a class was only ever captured under one condition, which limits how well a model trained on it will generalize.',
-				interpretation:
-					"This metric doesn't produce a numeric score yet. It shows up as frequency tables on the benchmark card so it can be reviewed by eye.",
 			},
 		],
 		axisFormula: 'Q_diversity = S_diversity',
@@ -375,14 +364,10 @@ function MetricCard({ metric, axisClass }: { metric: MetricDoc; axisClass: strin
 				<p className={styles.fieldText}>{metric.meaning}</p>
 			</div>
 
-			{metric.isPending ? (
-				<p className={styles.pendingNote}>{metric.interpretation}</p>
-			) : (
-				<div>
-					<p className={styles.fieldLabel}>Reading the score</p>
-					<p className={styles.fieldText}>{metric.interpretation}</p>
-				</div>
-			)}
+			<div>
+				<p className={styles.fieldLabel}>Reading the score</p>
+				<p className={styles.fieldText}>{metric.interpretation}</p>
+			</div>
 		</div>
 	);
 }

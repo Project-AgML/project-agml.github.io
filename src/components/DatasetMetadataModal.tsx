@@ -362,10 +362,6 @@ function buildMetricCards(benchmark: BenchmarkData): MetricCardVM[] {
 		});
 	}
 
-	if (m.metadata_coverage?.skipped) {
-		cards.push({ kind: 'skipped', title: 'Metadata Coverage', message: m.metadata_coverage.reason || 'Skipped for this run.' });
-	}
-
 	const backbone = benchmark.reproducibility?.backbone;
 
 	if (m.dataset_cartography?.skipped) {
@@ -575,7 +571,6 @@ const METRIC_AXIS_MAP: Record<string, (typeof METRIC_AXES)[number]> = {
 	'Class Confusability': 'Content Difficulty',
 	'Feature Separability': 'Content Difficulty',
 	'Intra-class Diversity': 'Diversity & Coverage',
-	'Metadata Coverage': 'Diversity & Coverage',
 	'Label Noise': 'Annotation Reliability',
 };
 

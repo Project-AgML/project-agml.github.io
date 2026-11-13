@@ -15,8 +15,7 @@ function clamp(x: number, min: number, max: number): number {
 	return Math.min(Math.max(x, min), max);
 }
 
-// A metric is "available" if its key exists in `metrics` and isn't a skipped run (e.g.
-// metadata_coverage with no metadata columns detected).
+// A metric is "available" if its key exists in `metrics` and isn't a skipped run.
 function has(metrics: ImageClassificationBenchmark['metrics'], key: keyof ImageClassificationBenchmark['metrics']): boolean {
 	const value = metrics[key];
 	return value != null && !(value as { skipped?: boolean }).skipped;
