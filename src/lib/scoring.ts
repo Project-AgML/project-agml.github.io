@@ -33,10 +33,13 @@ export function computeScores(benchmark: ImageClassificationBenchmark): AxisScor
 	// Axis 1 — Structural Quality
 	if (p1 && has(m, 'class_imbalance') && has(m, 'exact_duplicate') && has(m, 'near_duplicate') && has(m, 'resolution_consistency')) {
 		const balance = clamp(m.class_imbalance!.normalized_entropy * 10, 0, 10);
-		const combined = m.exact_duplicate!.exact_duplicate_rate + m.near_duplicate!.near_duplicate_rate;
-		const redundancy = clamp(10 * (1 - combined / 0.2), 0, 10);
+		// Near duplicates (similarity ≥ threshold) already include exact copies, so the duplicated
+		// share of the dataset is the larger of the two rates, not their sum — adding them counted
+		// exact copies twice and could exceed 100%. Same for the cross-split counts below.
+		const duplicateRate = Math.max(m.exact_duplicate!.exact_duplicate_rate, m.near_duplicate!.near_duplicate_rate);
+		const redundancy = clamp(10 * (1 - duplicateRate / 0.2), 0, 10);
 		const resolution = clamp(10 * (1 - m.resolution_consistency!.area_cv), 0, 10);
-		const crossSplit = m.exact_duplicate!.cross_split_duplicates + m.near_duplicate!.cross_split_near_duplicates;
+		const crossSplit = Math.max(m.exact_duplicate!.cross_split_duplicates, m.near_duplicate!.cross_split_near_duplicates);
 		const totalImages = m.exact_duplicate!.total_images;
 		const penalty = totalImages > 0 ? clamp((crossSplit * 100) / totalImages, 0, 2) : 0;
 		axes.structural = clamp(0.4 * balance + 0.35 * redundancy + 0.25 * resolution - penalty, 0, 10);
