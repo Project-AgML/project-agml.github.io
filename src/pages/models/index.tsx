@@ -15,8 +15,9 @@ import {
   useModelCatalog,
 } from '../../lib/models';
 import type { ExternalModel, PublisherType } from '../../lib/models';
-// Shares the dataset browser's layout (toolbar / sidebar / card grid) so both pages look the same.
+// Shares the dataset browser's layout (toolbar / sidebar) and card styles so both pages look the same.
 import shared from '../datasets/index.module.css';
+import cardStyles from '../../components/DatasetCard.module.css';
 import styles from './index.module.css';
 
 type ModelFilter = {
@@ -80,11 +81,11 @@ const MODEL_FILTERS: ModelFilter[] = [
 ];
 
 function taskBadgeClass(task: string | null): string {
-  if (!task) return shared.badgeOther;
-  if (task.includes('classif')) return shared.badgeClassification;
-  if (task.includes('detect')) return shared.badgeDetection;
-  if (task.includes('segment')) return shared.badgeSegmentation;
-  return shared.badgeOther;
+  if (!task) return cardStyles.badgeOther;
+  if (task.includes('classif')) return cardStyles.badgeClassification;
+  if (task.includes('detect')) return cardStyles.badgeDetection;
+  if (task.includes('segment')) return cardStyles.badgeSegmentation;
+  return cardStyles.badgeOther;
 }
 
 function ModelCard({ model, onOpen }: { model: ExternalModel; onOpen: (trigger: HTMLButtonElement) => void }) {
@@ -93,32 +94,32 @@ function ModelCard({ model, onOpen }: { model: ExternalModel; onOpen: (trigger: 
   return (
     <button
       type="button"
-      className={shared.cardButton}
+      className={cardStyles.cardButton}
       onClick={(event) => onOpen(event.currentTarget)}
       aria-label={`Open details for ${model.name}`}
     >
-      <div className={shared.card}>
-        <h2 className={shared.cardTitle}>{model.name}</h2>
-        <div className={shared.cardTags}>
+      <div className={cardStyles.card}>
+        <h2 className={cardStyles.cardTitle}>{model.name}</h2>
+        <div className={cardStyles.cardTags}>
           {model.machine_learning_task && (
-            <span className={`${shared.taskBadge} ${taskBadgeClass(model.machine_learning_task)}`}>
+            <span className={`${cardStyles.taskBadge} ${taskBadgeClass(model.machine_learning_task)}`}>
               {toDisplayLabel(model.machine_learning_task)}
             </span>
           )}
           {model.agricultural_tasks.slice(0, 2).map((task) => (
-            <span key={task} className={shared.tag}>
+            <span key={task} className={cardStyles.tag}>
               {toDisplayLabel(task)}
             </span>
           ))}
           {isUnverified(model) && <span className={styles.unverifiedBadge}>Unverified metrics</span>}
-          {model.publisher_type === 'community' && <span className={shared.tag}>Community</span>}
+          {model.publisher_type === 'community' && <span className={cardStyles.tag}>Community</span>}
         </div>
         {model.summary && <p className={styles.cardSummary}>{model.summary}</p>}
-        <div className={shared.cardFooter}>
-          <div className={shared.cardFooterRow}>
+        <div className={cardStyles.cardFooter}>
+          <div className={cardStyles.cardFooterRow}>
             <span>{crops.map(toDisplayLabel).join(', ')}{model.crop_types.length > crops.length ? ', …' : ''}</span>
           </div>
-          <div className={shared.cardFooterRow}>
+          <div className={cardStyles.cardFooterRow}>
             {headline ? (
               <span title="As reported by the source; not verified by AgML">
                 {headline.label} {headline.value}
@@ -313,7 +314,7 @@ export default function ModelBrowserPage() {
                 {filtered.length === 0 ? (
                   <p className={shared.status}>No models match the current filters.</p>
                 ) : (
-                  <div className={shared.cardGrid}>
+                  <div className={cardStyles.cardGrid}>
                     {filtered.map((model) => (
                       <ModelCard key={model.id} model={model} onOpen={(trigger) => openModel(model.id, trigger)} />
                     ))}
