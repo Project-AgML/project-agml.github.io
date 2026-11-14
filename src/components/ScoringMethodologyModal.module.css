@@ -389,17 +389,6 @@
 	overflow-wrap: anywhere;
 }
 
-.pendingNote {
-	margin: 0;
-	font-size: 0.78rem;
-	color: var(--agml-muted);
-	font-style: italic;
-	padding: 0.5rem 0.7rem;
-	background: var(--agml-tag-bg);
-	border-radius: 6px;
-	text-align: justify;
-}
-
 .placeholderCard {
 	margin-top: 0.9rem;
 	padding: 1.4rem;
@@ -666,7 +655,7 @@
 		display: none !important;
 	}
 
-	/* Keep each card, tile, and pending-note box from splitting across a page boundary — letting
+	/* Keep each card and tile from splitting across a page boundary — letting
 	   the *sections* break freely between pages (so a long axis isn't forced onto its own page
 	   and left mostly blank) while individual cards stay intact. */
 	.overallSection,
@@ -674,7 +663,6 @@
 	.metricCard,
 	.metricCardPenalty,
 	.placeholderCard,
-	.pendingNote,
 	.fieldRefRow {
 		break-inside: avoid;
 	}

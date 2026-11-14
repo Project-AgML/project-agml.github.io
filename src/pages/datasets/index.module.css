@@ -309,6 +309,9 @@
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
   background: var(--agml-tag-bg);
   color: var(--agml-tag-fg);

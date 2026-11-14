@@ -21,5 +21,7 @@ yarn-error.log*
 yarn.lock
 .external
 
+__pycache__/
+
 performance_staging/
 .claude/

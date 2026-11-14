@@ -4,7 +4,7 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import { DatasetMetadataModal } from '../../components/DatasetMetadataModal';
 import { MultiSelectDropdown } from '../../components/MultiSelectDropdown';
 import styles from './index.module.css';
-import { computeDatasetStats, datasetGroupKey, filterDatasets, formatPrimaryLocation, isVlmTask, useDatasets } from '../../lib/datasets';
+import { computeDatasetStats, datasetGroupKey, filterDatasets, formatDisplayLocation, formatPrimaryLocation, isVlmTask, useDatasets } from '../../lib/datasets';
 import { toDisplayLabel, toNameTitleCase } from '../../lib/labelOverrides';
 import { useSemanticDatasetSearch } from '../../lib/semanticSearch';
 
@@ -284,9 +284,6 @@ function RangeSliderFilter({
   );
 }
 
-// VLM datasets list many agricultural tasks; the card shows the first few, the modal shows all.
-const MAX_CARD_AG_TASKS = 2;
-
 function DatasetCard({
   dataset,
   onOpen,
@@ -330,13 +327,21 @@ function DatasetCard({
               {toDisplayLabel(machine_learning_task)}
             </span>
           )}
-          {agTasks.slice(0, MAX_CARD_AG_TASKS).map((task) => (
-            <span key={task} className={styles.tag}>{toDisplayLabel(task)}</span>
-          ))}
-          {agTasks.length > MAX_CARD_AG_TASKS && (
-            <span className={styles.tag}>+{agTasks.length - MAX_CARD_AG_TASKS} more</span>
+          {/* VLM datasets list many agricultural tasks: the card shows a count, the modal lists them. */}
+          {isVlm && agTasks.length > 1 ? (
+            <span className={styles.tag} title={agTasks.map(toDisplayLabel).join(', ')}>
+              {agTasks.length} Agricultural Tasks
+            </span>
+          ) : (
+            agTasks.map((task) => (
+              <span key={task} className={styles.tag}>{toDisplayLabel(task)}</span>
+            ))
           )}
-          {primaryLocation && <span className={styles.tag}>{primaryLocation}</span>}
+          {primaryLocation && (
+            <span className={styles.tag} title={formatDisplayLocation(dataset.display_location)}>
+              {primaryLocation}
+            </span>
+          )}
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.cardFooterRow}>

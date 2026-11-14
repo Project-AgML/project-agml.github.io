@@ -14,7 +14,6 @@ type MetricDoc = {
 	meaning: string;
 	interpretation: string;
 	isPenalty?: boolean;
-	isPending?: boolean;
 };
 
 type AxisKey = 'structural' | 'difficulty' | 'diversity' | 'annotation';
@@ -67,9 +66,9 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 			{
 				name: 'Redundancy',
 				weight: '35% of axis score',
-				how: "We hash every image to catch exact duplicates. For near duplicates, we embed images with a general purpose model and flag pairs with very high cosine similarity. Exact and near rates are added together so cleaning only one type can't inflate the score.",
+				how: "We hash every image to catch exact duplicates. For near duplicates, we embed images with a general purpose model and flag pairs with very high cosine similarity. Exact copies also count as near duplicates, so the score uses the larger of the two rates rather than adding them, which would count exact copies twice.",
 				meaning: 'High duplication means the dataset is smaller and less varied than its file count suggests.',
-				formula: 'S_redundancy = clamp(10 × (1 − (exact_rate + near_rate) / 0.20), 0, 10)',
+				formula: 'S_redundancy = clamp(10 × (1 − max(exact_rate, near_rate) / 0.20), 0, 10)',
 				interpretation:
 					'A score close to 10 means almost no duplicate images. A score close to 0 means a fifth or more of the dataset is duplicated. Higher is better.',
 			},
@@ -80,7 +79,7 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				how: 'Same duplicate detection as above, but restricted to pairs where one copy lands in the train set and the other in validation or test.',
 				meaning:
 					'Samples that appear in more than one split let a model see the test answers during training, which inflates test accuracy without the model actually being better.',
-				formula: 'P_cross = clamp((cross_dups + cross_near) × 100 / total_images, 0, 2)',
+				formula: 'P_cross = clamp(max(cross_dups, cross_near) × 100 / total_images, 0, 2)',
 				interpretation:
 					"This is a penalty, so lower is better and 0 is best. It grows as more images leak across splits and maxes out at 2 points once 2% or more of the dataset is contaminated this way. It's subtracted from the structural score rather than blended in, so it can't be hidden by a strong balance or resolution score.",
 				isPenalty: true,
@@ -142,16 +141,6 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 				interpretation:
 					'A score close to 0 means images in a class barely differ from each other. A score close to 10 means wide visual variety within each class. Higher is better.',
 			},
-			{
-				name: 'Metadata Coverage',
-				weight: 'Not yet weighted',
-				isPending: true,
-				how: 'Where metadata exists, such as location, lighting, growth stage, or sensor type, we build frequency tables per class.',
-				meaning:
-					'Shows whether a class was only ever captured under one condition, which limits how well a model trained on it will generalize.',
-				interpretation:
-					"This metric doesn't produce a numeric score yet. It shows up as frequency tables on the benchmark card so it can be reviewed by eye.",
-			},
 		],
 		axisFormula: 'Q_diversity = S_diversity',
 	},
@@ -174,7 +163,7 @@ const IMAGE_CLASSIFICATION_AXES: Record<AxisKey, { metrics: MetricDoc[]; axisFor
 const PLACEHOLDER_NOTE = "Metric formulas for this task type are still being worked out. The four axes above apply, but the per metric scoring isn't published yet.";
 
 const ANTI_GAMING_NOTES = [
-	"Exact and near duplicate rates are added together for the redundancy score, so removing only exact duplicates while keeping near duplicates doesn't improve the score.",
+	"The redundancy score uses the near duplicate rate whenever it's higher than the exact rate, so removing only exact duplicates while keeping near duplicates doesn't improve the score.",
 	"Cross split contamination is penalized on its own and subtracted at the end, so it can't be masked by a strong balance or resolution score.",
 	'Removing images to lower the duplicate rate also tends to lower diversity, since the removed images were adding variation. The two scores pull against each other.',
 	'Separability uses both silhouette and Davies-Bouldin. Optimizing for one alone tends to push the other in the wrong direction.',
@@ -375,14 +364,10 @@ function MetricCard({ metric, axisClass }: { metric: MetricDoc; axisClass: strin
 				<p className={styles.fieldText}>{metric.meaning}</p>
 			</div>
 
-			{metric.isPending ? (
-				<p className={styles.pendingNote}>{metric.interpretation}</p>
-			) : (
-				<div>
-					<p className={styles.fieldLabel}>Reading the score</p>
-					<p className={styles.fieldText}>{metric.interpretation}</p>
-				</div>
-			)}
+			<div>
+				<p className={styles.fieldLabel}>Reading the score</p>
+				<p className={styles.fieldText}>{metric.interpretation}</p>
+			</div>
 		</div>
 	);
 }
