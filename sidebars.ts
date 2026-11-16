@@ -23,6 +23,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Ag Stats',
+      collapsible: false,
+      className: 'sidebarCategoryLabel',
+      items: ['ag-stats/index', 'ag-stats/nass', 'ag-stats/calicropyield'],
+    },
+    {
+      type: 'category',
       label: 'Project',
       collapsible: false,
       className: 'sidebarCategoryLabel',
