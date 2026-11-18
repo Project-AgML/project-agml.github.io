@@ -1,0 +1,84 @@
+---
+title: Overview
+sidebar_position: 1
+slug: /ag-stats
+---
+
+## Agricultural Statistics
+
+`agml.ag_stats` gives access to agricultural statistics, such as crop yield, area, production,
+and crop progress, by crop, place, and year. Each data source is a subpackage with its own
+loader. All data is hosted on the [Hugging Face Hub](https://huggingface.co/) and is downloaded
+the first time it is used.
+
+To browse every table and layer, and to preview yield trends, open the
+[Ag Stats explorer](/ag-stats).
+
+| Source | Module | Loader | Coverage |
+| --- | --- | --- | --- |
+| [USDA NASS Crop Statistics](./nass.mdx) | `agml.ag_stats.nass` | `NASSDataLoader` | United States, national to county level, 1866 to the current season |
+| [California Crop Yield Benchmark](./calicropyield.mdx) | `agml.ag_stats.calicropyield` | `CaliCropYieldLoader` | 58 California counties, 2008 to 2024, yield plus satellite, climate, and soil layers |
+
+## Installation
+
+Each source has its own optional dependencies. Install the ones you need:
+
+```shell
+# USDA NASS crop statistics (pandas, pyarrow, huggingface_hub)
+pip install "agml[ag_stats]"
+
+# California Crop Yield Benchmark (adds rasterio, xarray, zarr, and geopandas)
+pip install "agml[calicropyield]"
+```
+
+:::note
+
+`agml.ag_stats` is new in AgML. Until it is part of a release on PyPI, install AgML from the
+`nass-usda-yield-data` branch:
+
+```shell
+pip install "agml[ag_stats] @ git+https://github.com/Project-AgML/AgML.git@nass-usda-yield-data"
+```
+
+:::
+
+## Quick Start
+
+A source is imported only when it is first used, so importing `agml.ag_stats` does not pull in
+the dependencies of every source.
+
+```python
+from agml.ag_stats.nass import NASSDataLoader
+from agml.ag_stats.calicropyield import CaliCropYieldLoader
+
+# County corn yield in Story County, Iowa
+nass = NASSDataLoader()
+corn = nass.load_yield(crop="corn", utilization="grain", state="IA",
+                       county="Story", years=(2000, 2024))
+
+# County tomato yield in Yolo County, California, and the matching CDL crop map
+cali = CaliCropYieldLoader()
+tomatoes = cali.load_yield(county="Yolo", crop="tomatoes", years=(2015, 2020))
+cdl = cali.load_cdl("Yolo", 2020, crops="Tomatoes")
+```
+
+## Shared Conventions
+
+Both loaders follow the same rules:
+
+- **Years** are one year (`2020`), an inclusive range (`(2010, 2020)`), or a list (`[2018, 2020]`).
+- **Names are forgiving.** Crops, states, and counties match regardless of letter case. A typo
+  raises an error that suggests the closest valid names.
+- **Hub or local copy.** By default the data comes from the Hugging Face Hub and is kept in the
+  Hugging Face cache. Pass `root=` (or set `AGML_NASS_PATH` or `AGML_CALICROPYIELD_PATH`) to read
+  a local copy instead.
+- **Reproducible versions.** Pass `revision=` with a commit hash to pin the exact version of
+  the dataset.
+
+## Adding a Source
+
+A new source is a new subpackage of `agml/ag_stats` with its own loader and optional
+dependencies. Add its name to `SOURCES` in `agml/ag_stats/__init__.py`. To list it on this
+site, add it to `scripts/generate_ag_stats.py` in the
+[website repository](https://github.com/Project-AgML/project-agml.github.io), run the script,
+and add a guide page next to this one.

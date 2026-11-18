@@ -1,0 +1,129 @@
+---
+title: California Crop Yield
+sidebar_position: 3
+---
+
+## California Crop Yield Benchmark
+
+`agml.ag_stats.calicropyield` downloads and reads the
+[California Crop Yield Benchmark](https://huggingface.co/datasets/hkaman/california-crop-yield-benchmark),
+a multi-modal dataset for county-level crop yield prediction. It pairs county crop yield for over
+100 crops with satellite, evapotranspiration, irrigation, climate, and soil layers for each of the
+58 California counties.
+
+```shell
+pip install "agml[calicropyield]"
+```
+
+## Quick Start
+
+```python
+from agml.ag_stats.calicropyield import CaliCropYieldLoader
+
+cali = CaliCropYieldLoader()
+
+yield_df = cali.load_yield(county="Yolo", crop="tomatoes", years=(2015, 2020))
+cdl = cali.load_cdl("Yolo", 2020, crops="Tomatoes")
+landsat = cali.load_landsat("Yolo", 2020, months=[6, 7, 8])
+weather = cali.load_climate("Yolo", years=2020, monthly=True)
+```
+
+## Layers
+
+| Layer | Method | Resolution | Time step | Years | Format |
+| --- | --- | --- | --- | --- | --- |
+| `cdl` | `load_cdl`, `crop_mask` | 30 m | annual | 2008 to 2024 | GeoTIFF |
+| `landsat` | `load_landsat` | 30 m | monthly | 2008 to 2023 | GeoTIFF, 6 bands (SR_B1 to SR_B5, SR_B7) |
+| `et` | `load_et` | 30 m | monthly | 2008 to 2023 | GeoTIFF (OpenET) |
+| `irrigation` | `load_irrigation` | 30 m | annual | 2008 to 2023 | GeoTIFF (IrrMapper, 1 irrigated, 0 not) |
+| `climate` | `load_climate` | 1 km | daily | 2008 to 2022 | Zarr (DayMet) |
+| `soil` | `load_soil` | 30 m | static (2020) | | Zarr (17 gNATSGO/SSURGO attributes) |
+
+No layer or table has data for 2012. A year range skips 2012, but asking for 2012 directly raises
+an error. All rasters are in EPSG:4326 and are returned as xarray objects.
+
+`CaliCropYieldLoader.layers()`, `years(layer)`, `counties()`, and `cdl_classes()` list what is
+available.
+
+## Yield
+
+`load_yield` returns county crop yield as a pandas DataFrame, with one row per county, crop, and
+year and the yield in `yield_t_per_ha`. Crops are merged groups such as `"TOMATOES"` or `"GRAPES"`,
+and `yield_crops()` lists them. The yield table covers 2008 to 2022.
+
+```python
+cali.load_yield(county=["Fresno", "Kern"], crop="almonds")
+
+# The per-commodity report rows, with harvested area, production, price, and value
+cali.load_yield(county="Fresno", crop="Tomatoes Processing", detail=True)
+```
+
+To find the fields of a yield crop on the CDL map, look up its CDL classes:
+
+```python
+codes = cali.yield_crop_cdl_codes("HAY")   # [36, 37]
+mask = cali.crop_mask("Yolo", 2020, crops=codes)
+```
+
+## Reading Less Data
+
+A full county is large. One year of Landsat for a mid-sized county is about 2 GB. To read less:
+
+- Pass `months` to the monthly layers.
+- Pass `geometry`, a shapely geometry or GeoJSON-like dict in EPSG:4326, to clip any layer to an
+  area of interest.
+- Pass `variables` to `load_climate` and `load_soil`.
+
+```python
+from shapely.geometry import box
+
+field = box(-121.80, 38.52, -121.74, 38.56)
+landsat = cali.load_landsat("Yolo", 2020, months=[6, 7], geometry=field)
+soil = cali.load_soil("Yolo", variables=["nccpi3all", "aws0100wta"], geometry=field)
+```
+
+## Downloading Ahead of Time
+
+The `download_*` methods fetch files in parallel without loading them and return their local
+paths. Use them before going offline or before a batch job:
+
+```python
+cali.download_landsat(["Yolo", "Fresno"], years=(2018, 2020), months=range(4, 10))
+cali.download_yield()
+```
+
+Files that are not in the dataset are skipped with a warning. Files that fail to download raise a
+`DownloadError` that lists them.
+
+## Local Copy and Versions
+
+```python
+# A local copy laid out like the Hub repo, e.g. made with `hf download --local-dir`
+cali = CaliCropYieldLoader("/path/to/california-crop-yield-benchmark")
+
+# Pin a commit of the Hugging Face dataset for reproducible results
+cali = CaliCropYieldLoader(revision="<commit hash>")
+```
+
+The `AGML_CALICROPYIELD_PATH` environment variable sets the default local copy. A branch or tag is
+resolved to its commit when the loader is created, so every file comes from the same version of
+the dataset.
+
+## Citation
+
+The [calicropyield viewer](https://hkaman7.github.io/calicropyield-viewer/) shows every layer on a
+map, county by county. If you use this dataset, please cite:
+
+```bibtex
+@InProceedings{Kamangir_2025_CVPR,
+    author    = {Kamangir, Hamid and Hajiesmaeeli, Mona and Earles, J. Mason},
+    title     = {California Crop Yield Benchmark: Combining Satellite Image, Climate,
+                 Evapotranspiration, and Soil Data Layers for County-Level Yield
+                 Forecasting of Over 70 Crops},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference
+                 (CVPR) Workshops},
+    month     = {June},
+    year      = {2025},
+    pages     = {5491--5500}
+}
+```

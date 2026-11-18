@@ -70,6 +70,7 @@ const config: Config = {
         },
         {to: '/datasets', label: 'Datasets', position: 'left'},
         {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
+        {to: '/ag-stats', label: 'Ag Stats', position: 'left'},
         {
           href: 'https://github.com/Project-AgML/AgML',
           label: 'View on GitHub',
