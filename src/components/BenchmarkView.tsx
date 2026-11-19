@@ -298,24 +298,14 @@ function gaugeGeometry(value: number | null, e: number) {
 	const c = 70;
 	const sw = 11;
 	const r = c - sw / 2 - 12;
-	const rz = r + sw / 2 + 6;
 	const C = 2 * Math.PI * r;
 	const L = 0.75 * C;
-	const Cz = 2 * Math.PI * rz;
-	const Lz = 0.75 * Cz;
 	const f = value == null ? 0 : (value / 10) * e;
 	const a = ((135 + 270 * f) * Math.PI) / 180;
-	const gap = 1.5;
 	return {
 		r,
-		rz,
 		track: `${L} ${C}`,
 		val: `${L * f} ${C}`,
-		zPoor: `${Lz * 0.5 - gap} ${Cz}`,
-		zMid: `${Lz * 0.25 - gap} ${Cz}`,
-		zMidOff: -Lz * 0.5,
-		zGood: `${Lz * 0.25} ${Cz}`,
-		zGoodOff: -Lz * 0.75,
 		dx: c + r * Math.cos(a),
 		dy: c + r * Math.sin(a),
 	};
@@ -330,9 +320,6 @@ function AxisGaugeCard({ label, value, driver, elapsed, index }: { label: string
 			<span className={styles.scoreCardLabel}>{label}</span>
 			<div className={styles.gauge}>
 				<svg width="140" height="140" viewBox="0 0 140 140" aria-hidden="true">
-					<circle cx="70" cy="70" r={g.rz} className={styles.zonePoor} strokeDasharray={g.zPoor} transform="rotate(135 70 70)" />
-					<circle cx="70" cy="70" r={g.rz} className={styles.zoneMid} strokeDasharray={g.zMid} strokeDashoffset={g.zMidOff} transform="rotate(135 70 70)" />
-					<circle cx="70" cy="70" r={g.rz} className={styles.zoneGood} strokeDasharray={g.zGood} strokeDashoffset={g.zGoodOff} transform="rotate(135 70 70)" />
 					<circle cx="70" cy="70" r={g.r} className={styles.ringTrack} strokeWidth="11" strokeLinecap="round" strokeDasharray={g.track} transform="rotate(135 70 70)" />
 					{value != null && (
 						<>

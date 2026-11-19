@@ -228,12 +228,6 @@
 .ringUnit { margin-top: 3px; font-family: var(--mono); font-size: 0.62rem; color: var(--agml-muted); }
 
 .gauge { position: relative; width: 112px; height: 102px; }
-.zonePoor,
-.zoneMid,
-.zoneGood { fill: none; stroke-width: 3; }
-.zonePoor { stroke: var(--agml-bm-poor-zone); }
-.zoneMid { stroke: var(--agml-bm-mid-zone); }
-.zoneGood { stroke: var(--agml-bm-good-zone); }
 .gaugeMin,
 .gaugeMax { position: absolute; bottom: 0; font-family: var(--mono); font-size: 0.6rem; color: var(--agml-muted); }
 .gaugeMin { left: 23px; }
