@@ -23,3 +23,6 @@ yarn.lock
 
 performance_staging/
 .claude/
+
+# Local, per-user working files (e.g. private/datasets_to_ingest.json from export-dataset-candidates)
+private/

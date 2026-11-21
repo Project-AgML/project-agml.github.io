@@ -1,0 +1,90 @@
+---
+title: Contributing External Models
+sidebar_position: 6
+---
+
+## Contributing External Models
+
+The [Models](/models) page lists **open-weight agricultural models hosted by their authors**. AgML does not
+download, host, or redistribute them, and they are not loadable through the `agml` package. The page points to
+where the weights are published, sorts models by task and crop the same way as the [dataset browser](/datasets),
+and shows performance **as reported by the original source**.
+
+### Ground rules
+
+- **Not benchmarked by AgML.** Every entry carries `"agml_benchmarked": false` and a `verification` value. The site
+  and the [agml-agent harness](https://github.com/Project-AgML/agml-harness) both show a *not benchmarked by AgML /
+  unverified metrics* flag for these entries. Only set `agml_verified` once AgML has re-run the evaluation itself.
+- **Separate from the leaderboard.** Source-reported numbers live only in `static/data/models.json`. Never add them to
+  `static/data/performance/`: splits and protocols differ, so the numbers are not comparable.
+- **Copy, don't compute.** Metrics are transcribed exactly from the cited source (model card, paper table, README)
+  and stored as fractions in `[0, 1]`. Every result row needs a `source_url`. If a number can't be read reliably
+  (paywall, conflicting secondary sources), leave `reported_results` empty and use
+  `"verification": "metrics_not_transcribed"`. Don't guess.
+- **Describe the data.** For each training / evaluation dataset, say what it contains (crop, classes, sensor,
+  platform, location, size) so users can judge whether the model fits their conditions.
+- **Link to AgML datasets.** Set `agml.status` for each dataset:
+
+| `agml.status` | Meaning |
+| :--- | :--- |
+| `in_agml` | The same source dataset is in AgML. List its AgML name(s) in `agml.names`. |
+| `related_in_agml` | A related or possibly identical dataset is in AgML (e.g. a Meta-Album subset of PlantVillage). List it and explain in `agml.note`. |
+| `not_in_agml` | A public dataset that AgML does not host. |
+| `not_public` | Private or unreleased data. |
+| `not_applicable` | Out of AgML's scope (e.g. a general biodiversity pretraining corpus). |
+
+### Entry format
+
+Each element of `models` in [`static/data/models.json`](https://github.com/Project-AgML/project-agml.github.io/tree/main/static/data/models.json):
+
+```json
+{
+  "id": "deepweeds-baselines",
+  "name": "DeepWeeds ResNet-50 / Inception-v3",
+  "publisher_type": "peer_reviewed",
+  "machine_learning_task": "image_classification",
+  "agricultural_tasks": ["weed_classification"],
+  "crop_types": ["rangeland", "weeds"],
+  "license": "Apache-2.0 (code); CC BY 4.0 (images and annotations)",
+  "links": { "weights": "https://…", "code": "https://…", "paper": "https://doi.org/…", "demo": null, "model_card": null },
+  "agml_benchmarked": false,
+  "verification": "source_reported",
+  "reported_results": [
+    {
+      "variant": "ResNet-50",
+      "setting": "fine-tuned",
+      "eval_dataset": "deepweeds",
+      "split": "5-fold cross-validation",
+      "metrics": { "accuracy": 0.957 },
+      "primary_metric": "accuracy",
+      "source": "Paper abstract",
+      "source_url": "https://doi.org/10.1038/s41598-018-38343-3"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "deepweeds",
+      "name": "DeepWeeds",
+      "roles": ["train", "eval"],
+      "description": "17,509 images of eight weed species …",
+      "link": "https://github.com/AlexOlsen/DeepWeeds",
+      "agml": { "status": "in_agml", "names": ["DeepWeeds_classification"], "note": null }
+    }
+  ],
+  "reproduction": { "status": "fully_reproducible", "notes": "…", "code_url": "https://…", "commands": ["…"] }
+}
+```
+
+`publisher_type` is `peer_reviewed` (released with a paper), `institutional` (a lab or organization release without a paper), or `community` (an individual upload); the Models page filters on it.
+
+`machine_learning_task` uses the dataset vocabulary (`image_classification`, `object_detection`,
+`semantic_segmentation`, …). `agricultural_tasks` and `crop_types` reuse the dataset browser's values where they
+exist (e.g. `disease_classification`, `weed_detection`; lowercase crop names). `setting` describes how the number
+was produced: `zero-shot`, `fine-tuned`, `linear-probe`, `few-shot (1-shot)`, and so on.
+
+### Validation
+
+`npm run validate-models` runs before every `npm start` / `npm run build` and fails on, among other things: an
+`agml.names` entry that isn't a real AgML dataset, a metric stored as a percentage, a result without a
+`source_url`, or `agml_benchmarked` disagreeing with `verification`. `npm run test:unit` also checks the published
+catalog.
