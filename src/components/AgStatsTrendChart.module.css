@@ -1,0 +1,14 @@
+.chart {
+  width: 100%;
+  height: 380px;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 380px;
+  font-family: var(--ifm-code-font-family);
+  font-size: 0.8rem;
+  color: var(--agml-muted);
+}

@@ -1,0 +1,135 @@
+---
+title: USDA NASS
+sidebar_position: 2
+---
+
+## USDA NASS Crop Statistics
+
+`agml.ag_stats.nass` queries crop statistics from the USDA National Agricultural Statistics
+Service (NASS) [Quick Stats](https://quickstats.nass.usda.gov/) database. It covers yield, area,
+production, the Census of Agriculture, in-season forecasts, crop progress, and crop condition, at
+national, state, agricultural district, and county level.
+
+The data is a set of parquet files on the Hugging Face Hub at
+[`Project-AgML/usda_nass_crop_statistics`](https://huggingface.co/datasets/Project-AgML/usda_nass_crop_statistics)
+(CC0 1.0). Each table is downloaded the first time it is queried. Filters are pushed down to the
+parquet reader, so a query for one county reads only a small part of each file.
+
+```shell
+pip install "agml[ag_stats]"
+```
+
+## Quick Start
+
+```python
+from agml.ag_stats.nass import NASSDataLoader
+
+nass = NASSDataLoader()  # reads from the Hugging Face Hub
+
+# County corn yield in Story County, Iowa
+df = nass.load_yield(crop="corn", utilization="grain", state="IA",
+                     county="Story", years=(2000, 2024))
+
+# Soybean planting progress in Illinois, returned as a polars DataFrame
+nass.load_progress(crop="soybeans", state="IL", years=2023,
+                   stage="planted", format="polars")
+```
+
+## Tables
+
+| Table | Method | Levels | Time step | Contents |
+| --- | --- | --- | --- | --- |
+| `yield` | `load_yield` | national, state, district, county | annual | Yield, with a t/ha column. |
+| `county_yield` | `load_county_yield` | county | annual | County yield for the main crop variants, on 2020 county FIPS codes, with QA flags. |
+| `area_production` | `load_area_production` | national, state, district, county | annual | Area planted, area harvested, and production (`statistic` column). |
+| `census` | `load_census` | national, state, county | every 5 years | Census of Agriculture crop records, from 1997. |
+| `forecast` | `load_forecast` | national, state | monthly, in season | In-season yield forecasts by `forecast_month`. |
+| `progress` | `load_progress` | national, state | weekly | Crop progress by `stage`, as percent. |
+| `condition` | `load_condition` | national, state | weekly | Crop condition, one column per rating. |
+| `condition_long` | `load_condition(long=True)` | national, state | weekly | Crop condition, one row per rating. |
+
+`NASSDataLoader.tables()` returns the same list with a one-line description of each table, and
+`nass.schema("yield")` returns its columns and types. The [Ag Stats explorer](/ag-stats) lists the
+row counts, year ranges, and columns of every table.
+
+## Filters
+
+Every `load_*` method is a shortcut for `query` and takes the same arguments:
+
+```python
+nass.query(
+    "yield",
+    crop="corn",              # commodity, crop label, or crop_id
+    crop_class=None,          # e.g. "winter" for wheat
+    practice=None,            # e.g. "irrigated"
+    utilization="grain",      # e.g. "grain" or "silage"
+    state=["IA", "Illinois"], # postal codes, names, or FIPS codes
+    county=None,              # 5-digit FIPS codes or names
+    district=None,            # agricultural statistics districts
+    years=(2010, 2024),       # a year, an inclusive range, or a list
+    level="county",           # "national", "state", "district", or "county"
+    where=None,               # extra equality filters, e.g. {"unit": "BU / ACRE"}
+    columns=None,             # a subset of columns
+    format="pandas",          # see Output formats
+)
+```
+
+A few details are worth knowing:
+
+- `crop="corn"` matches every corn variant, such as grain and silage, and every production
+  practice. Narrow it with `utilization`, `crop_class`, and `practice`. For example,
+  `practice="all production practices"` keeps only the all-practices total.
+- County names are not unique across states. Pass `state` together with a county name, or use the
+  5-digit FIPS code.
+- NASS reports some values for "other (combined) counties". These rows have no county FIPS code and
+  are dropped. Pass `include_other_counties=True` to keep them.
+- `load_area_production` and `load_census` take `statistic`, one or more of `area_planted`,
+  `area_harvested`, and `production`. `load_progress` takes `stage`, such as `"planted"`.
+
+## Looking Up Names
+
+`nass.catalog` is a `NASSCatalog` that lists crops and places and turns names into codes:
+
+```python
+nass.catalog.commodities()               # ['BARLEY', 'BEANS', ..., 'WHEAT']
+nass.catalog.crops("CORN")               # every corn variant and its crop_id
+nass.catalog.resolve_states("Iowa")      # ['19']
+nass.catalog.resolve_counties("Story", state="IA")  # ['19169']
+nass.catalog.districts(state="IA")       # agricultural statistics districts
+```
+
+## Output Formats
+
+`format` is one of `pandas` (default), `polars`, `arrow`, `records`, `csv`, or `parquet`. The `csv`
+and `parquet` formats write to `path` and return the file path:
+
+```python
+nass.load_county_yield(crop="wheat", state="KS", format="parquet",
+                       path="kansas_wheat.parquet")
+```
+
+## Boundaries
+
+`load_boundaries` returns the 2020 Census county or state boundaries. Each row has the FIPS code
+(`GEOID`), names, area, and centroid. With `geometry=True` it also has a `geometry` column of WKB
+polygons:
+
+```python
+import geopandas as gpd
+
+counties = nass.load_boundaries(level="county")
+counties = gpd.GeoDataFrame(counties, geometry=gpd.GeoSeries.from_wkb(counties["geometry"]),
+                            crs="EPSG:4326")
+```
+
+## Local Copy and Versions
+
+```python
+# A local copy of the dataset (the parquet folder or its parent)
+nass = NASSDataLoader("/path/to/nass-usda-full-data")
+
+# Pin a commit of the Hugging Face dataset for reproducible results
+nass = NASSDataLoader(revision="<commit hash>")
+```
+
+The `AGML_NASS_PATH` environment variable sets the default local copy.
