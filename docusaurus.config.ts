@@ -68,8 +68,20 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {
+          type: 'html',
+          position: 'left',
+          className: 'navbar__divider',
+          value: '<span aria-hidden="true"></span>',
+        },
         {to: '/datasets', label: 'Datasets', position: 'left'},
         {to: '/leaderboard', label: 'Leaderboard', position: 'left'},
+        {
+          type: 'html',
+          position: 'left',
+          className: 'navbar__divider',
+          value: '<span aria-hidden="true"></span>',
+        },
         {to: '/ag-stats', label: 'Ag Stats', position: 'left'},
         {
           href: 'https://github.com/Project-AgML/AgML',

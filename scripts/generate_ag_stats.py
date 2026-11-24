@@ -99,6 +99,11 @@ NASS_TABLES = {
     },
 }
 
+# Tables that repeat rows of another table in a different shape, left out of the source's row
+# total: `county_yield` is the county rows of `yield` for the main crops, and `condition_long`
+# is `condition` with one row per rating.
+NASS_DERIVED_TABLES = {"county_yield", "condition_long"}
+
 # The NASS crops shown in the yield trend chart: (commodity, class, utilization).
 NASS_TREND_CROPS = [
     ("CORN", "ALL CLASSES", "GRAIN"),
@@ -393,7 +398,11 @@ def main():
                     "county level."
                 ),
                 "years": [min(e["years"][0] for e in nass_items), max(e["years"][1] for e in nass_items)],
-                "rows": sum(e["rows"] for e in nass_items if not e["name"].startswith("boundaries")),
+                "rows": sum(
+                    e["rows"]
+                    for e in nass_items
+                    if not e["name"].startswith("boundaries") and e["name"] not in NASS_DERIVED_TABLES
+                ),
                 "crops": int(nass_dims["crop"]["commodity"].nunique()),
                 "places": {"states": int(len(nass_dims["state"])), "counties": int(len(nass_dims["county"]))},
                 "items": len(nass_items),

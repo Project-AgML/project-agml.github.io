@@ -151,13 +151,7 @@ function useSlottedSelection(initial: string[]) {
   const reset = useCallback((keys: string[]) => {
     setSelection(keys.slice(0, MAX_TREND_SERIES).map((key, slot) => ({ key, slot })));
   }, []);
-  const keep = useCallback((available: Set<string>) => {
-    setSelection((current) => {
-      const next = current.filter((s) => available.has(s.key));
-      return next.length === current.length ? current : next;
-    });
-  }, []);
-  return { selection, add, remove, reset, keep };
+  return { selection, add, remove, reset };
 }
 
 function SeriesPicker({
@@ -167,6 +161,8 @@ function SeriesPicker({
   onRemove,
   label,
   placeholder,
+  labelFor,
+  missing,
 }: {
   options: { key: string; label: string }[];
   selected: { key: string; slot: number }[];
@@ -174,17 +170,29 @@ function SeriesPicker({
   onRemove: (key: string) => void;
   label: string;
   placeholder: string;
+  // Names selected keys that are not among the options, e.g. a state with no data for this crop.
+  labelFor?: (key: string) => string;
+  // Selected keys with no data for the current choice. They stay selected, shown muted.
+  missing?: Set<string>;
 }) {
-  const labelOf = new Map(options.map((o) => [o.key, o.label]));
+  const optionLabels = new Map(options.map((o) => [o.key, o.label]));
+  const labelOf = { get: (key: string) => optionLabels.get(key) ?? labelFor?.(key) };
   const full = selected.length >= MAX_TREND_SERIES;
   return (
     <div className={styles.control}>
       <span className={styles.controlLabel}>{label}</span>
       <div className={styles.chips}>
         {selected.map((s) => (
-          <span key={s.key} className={styles.chip} data-slot={s.slot}>
+          <span
+            key={s.key}
+            className={styles.chip}
+            data-slot={s.slot}
+            data-missing={missing?.has(s.key) || undefined}
+            title={missing?.has(s.key) ? 'No data for this crop' : undefined}
+          >
             <span className={styles.chipSwatch} aria-hidden="true" />
             {labelOf.get(s.key) ?? s.key}
+            {missing?.has(s.key) && <span className={styles.chipNote}>no data</span>}
             <button type="button" onClick={() => onRemove(s.key)} aria-label={`Remove ${labelOf.get(s.key) ?? s.key}`}>
               ✕
             </button>
@@ -251,21 +259,20 @@ function NassTrend({ data }: { data: NassYieldData }) {
   const [cropId, setCropId] = useState(data.crops[0]?.id ?? '');
   const [unit, setUnit] = useState<'native' | 'tha'>('native');
   const [showTable, setShowTable] = useState(false);
-  const { selection, add, remove, keep } = useSlottedSelection(['US', 'IA', 'IL', 'NE']);
+  // States without data for the chosen crop stay selected, so switching back to a crop that has
+  // them restores their lines. The chart, table, and snippet skip them.
+  const { selection, add, remove } = useSlottedSelection(['US', 'IA', 'IL', 'NE']);
   const crop = data.crops.find((c) => c.id === cropId) ?? data.crops[0];
 
-  useEffect(() => {
-    if (crop) keep(new Set(Object.keys(crop.series)));
-  }, [crop, keep]);
-
+  const regionName = useCallback((key: string) => (key === 'US' ? 'United States' : data.states[key] ?? key), [data.states]);
   const options = useMemo(
-    () =>
-      crop
-        ? Object.keys(crop.series).map((key) => ({ key, label: key === 'US' ? 'United States' : data.states[key] ?? key }))
-        : [],
-    [crop, data.states],
+    () => (crop ? Object.keys(crop.series).map((key) => ({ key, label: regionName(key) })) : []),
+    [crop, regionName],
   );
-  const labelOf = useMemo(() => new Map(options.map((o) => [o.key, o.label])), [options]);
+  const missing = useMemo(
+    () => new Set(selection.filter((s) => !crop?.series[s.key]).map((s) => s.key)),
+    [crop, selection],
+  );
 
   const series: TrendSeries[] = useMemo(
     () =>
@@ -274,14 +281,14 @@ function NassTrend({ data }: { data: NassYieldData }) {
             .filter((s) => crop.series[s.key])
             .map((s) => ({
               key: s.key,
-              label: labelOf.get(s.key) ?? s.key,
+              label: regionName(s.key),
               slot: s.slot,
               points: crop.series[s.key]
                 .map(([year, native, tha]) => [year, unit === 'tha' ? tha : native] as [number, number | null])
                 .filter((p): p is [number, number] => p[1] != null),
             }))
         : [],
-    [crop, selection, unit, labelOf],
+    [crop, selection, unit, regionName],
   );
   const unitLabel = unit === 'tha' ? 't/ha' : titleCase(crop?.unit ?? '').replace(' / ', '/');
 
@@ -316,12 +323,14 @@ function NassTrend({ data }: { data: NassYieldData }) {
           onAdd={add}
           onRemove={remove}
           placeholder="Add a state…"
+          labelFor={regionName}
+          missing={missing}
         />
       </div>
       <AgStatsTrendChart series={series} yaxisTitle={`Yield (${unitLabel})`} />
       <TableToggle show={showTable} onToggle={() => setShowTable((v) => !v)} />
       {showTable && <TrendTable series={series} unit={unitLabel} />}
-      <pre className={styles.trendSnippet}>{nassSnippet(crop?.query ?? '', selection.map((s) => s.key))}</pre>
+      <pre className={styles.trendSnippet}>{nassSnippet(crop?.query ?? '', series.map((s) => s.key))}</pre>
     </>
   );
 }
@@ -333,6 +342,13 @@ function nassSnippet(query: string, keys: string[]) {
   if (states.length)
     lines.push(`nass.load_yield(${query},\n                level="state", state=[${states.map((key) => `"${key}"`).join(', ')}])`);
   return lines.join('\n');
+}
+
+// `county=[]` would match no rows, so with no county selected the snippet loads every county.
+function caliSnippet(crop: string, counties: string[]) {
+  const cropArg = `crop="${crop.toLowerCase()}"`;
+  if (!counties.length) return `cali.load_yield(${cropArg})`;
+  return `cali.load_yield(${cropArg},\n                county=[${counties.map((c) => `"${c}"`).join(', ')}])`;
 }
 
 function CaliTrend({ data }: { data: CaliYieldData }) {
@@ -394,10 +410,7 @@ function CaliTrend({ data }: { data: CaliYieldData }) {
       <AgStatsTrendChart series={series} yaxisTitle="Yield (t/ha)" />
       <TableToggle show={showTable} onToggle={() => setShowTable((v) => !v)} />
       {showTable && <TrendTable series={series} unit="t/ha" />}
-      <pre className={styles.trendSnippet}>
-        {`cali.load_yield(crop="${crop.toLowerCase()}",\n` +
-          `                county=[${selection.map((s) => `"${s.key}"`).join(', ')}])`}
-      </pre>
+      <pre className={styles.trendSnippet}>{caliSnippet(crop, series.map((s) => s.key))}</pre>
     </>
   );
 }

@@ -460,6 +460,16 @@
   font-size: 0.8rem;
 }
 
+.chip[data-missing] {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+.chipNote {
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
 /* Same fixed order as SERIES_COLORS in AgStatsTrendChart.tsx. */
 .chip[data-slot='1'] { --chip-color: #eb6834; }
 .chip[data-slot='2'] { --chip-color: #1baf7a; }
